@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RückbauPRO - Minimal Swiss Design</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray-100: #f7f7f7;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            --accent: #ff0000;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Grid System */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        
+        /* Typography */
+        .heading-1 {
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+            margin-bottom: 24px;
+        }
+        
+        .heading-2 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+        
+        .heading-3 {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        
+        .body-text {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--gray-600);
+        }
+        
+        .caption {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gray-500);
+        }
+        
+        /* Header */
+        header {
+            padding: 120px 0 80px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .red-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-left: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Service Cards */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .service-card {
+            grid-column: span 3;
+            padding: 48px 32px;
+            background: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--black);
+            transform: translateX(-100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            background: var(--white);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card:hover::before {
+            transform: translateX(0);
+        }
+        
+        .service-card.active {
+            background: var(--black);
+            color: var(--white);
+        }
+        
+        .service-card.active .body-text,
+        .service-card.active .caption {
+            color: var(--gray-300);
+        }
+        
+        .service-number {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 24px;
+            opacity: 0.1;
+        }
+        
+        .service-card.active .service-number {
+            opacity: 0.2;
+        }
+        
+        /* Form Section */
+        .form-section {
+            padding: 80px 0;
+            background: var(--gray-100);
+        }
+        
+        .form-group {
+            margin-bottom: 48px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 16px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.02em;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 16px 0;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--gray-300);
+            font-size: 24px;
+            font-weight: 300;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+        
+        .form-input:focus {
+            border-color: var(--black);
+        }
+        
+        /* Range Slider */
+        .range-container {
+            position: relative;
+            margin: 48px 0;
+        }
+        
+        .range-value {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 24px;
+        }
+        
+        .range-slider {
+            width: 100%;
+            height: 2px;
+            background: var(--gray-300);
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            background: var(--black);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        
+        .range-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+        
+        /* Price Display */
+        .price-section {
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .price-amount {
+            font-size: clamp(72px, 12vw, 144px);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+            margin-bottom: 24px;
+        }
+        
+        .price-label {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gray-500);
+            margin-bottom: 48px;
+        }
+        
+        /* Buttons */
+        .button-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .button {
+            padding: 20px 48px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            border: 2px solid var(--black);
+            background: transparent;
+            color: var(--black);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--black);
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+        
+        .button:hover {
+            color: var(--white);
+        }
+        
+        .button:hover::before {
+            transform: translateY(0);
+        }
+        
+        .button.primary {
+            background: var(--black);
+            color: var(--white);
+        }
+        
+        .button.primary::before {
+            background: var(--accent);
+        }
+        
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: var(--gray-200);
+            margin: 80px 0;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            border-top: 1px solid var(--gray-200);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .service-card {
+                grid-column: span 6;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .button {
+                width: 100%;
+            }
+            
+            header {
+                padding: 60px 0 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .service-card {
+                grid-column: span 12;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p class="caption">RückbauPRO® Kostenrechner</p>
+            <h1 class="heading-1">
+                Präzise.<br>
+                Transparent.<br>
+                Fair<span class="red-dot"></span>
+            </h1>
+            <p class="body-text" style="max-width: 480px;">
+                Berechnen Sie die Kosten für Ihr Rückbau-Projekt mit unserem 
+                minimalistischen Kalkulator. Swiss Design trifft deutsche Präzision.
+            </p>
+        </header>
+        
+        <section class="services">
+            <div class="grid">
+                <div class="service-card" onclick="this.classList.toggle('active')">
+                    <div class="service-number">01</div>
+                    <h3 class="heading-3">Rückbau</h3>
+                    <p class="body-text">Professioneller Gebäuderückbau</p>
+                    <p class="caption" style="margin-top: 24px;">AB 25€/M²</p>
+                </div>
+                
+                <div class="service-card" onclick="this.classList.toggle('active')">
+                    <div class="service-number">02</div>
+                    <h3 class="heading-3">Abbruch</h3>
+                    <p class="body-text">Komplettabbruch von Gebäuden</p>
+                    <p class="caption" style="margin-top: 24px;">AB 80€/M³</p>
+                </div>
+                
+                <div class="service-card" onclick="this.classList.toggle('active')">
+                    <div class="service-number">03</div>
+                    <h3 class="heading-3">Sanierung</h3>
+                    <p class="body-text">Schadstoffsanierung & Entsorgung</p>
+                    <p class="caption" style="margin-top: 24px;">AB 35€/M²</p>
+                </div>
+                
+                <div class="service-card" onclick="this.classList.toggle('active')">
+                    <div class="service-number">04</div>
+                    <h3 class="heading-3">Beratung</h3>
+                    <p class="body-text">Expertenberatung vor Ort</p>
+                    <p class="caption" style="margin-top: 24px;">KOSTENLOS</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="divider"></div>
+        
+        <section class="form-section">
+            <div class="container">
+                <div class="form-group">
+                    <label class="form-label">PROJEKTGRÖSSE</label>
+                    <div class="range-container">
+                        <div class="range-value">250 m²</div>
+                        <input type="range" class="range-slider" min="10" max="1000" value="250">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">PROJEKTTYP</label>
+                    <input type="text" class="form-input" placeholder="Einfamilienhaus" />
+                </div>
+            </div>
+        </section>
+        
+        <section class="price-section">
+            <p class="price-label">Geschätzte Investition</p>
+            <div class="price-amount">€6,250</div>
+            <p class="body-text" style="margin-bottom: 48px;">
+                Inklusive 20% Online-Rabatt
+            </p>
+            
+            <div class="button-group">
+                <button class="button primary">Angebot anfordern</button>
+                <button class="button">Termin vereinbaren</button>
+                <button class="button">Hotline: 0800 000 000</button>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-content">
+                <p class="caption">© 2024 RÜCKBAUPRO</p>
+                <p class="caption">SWISS DESIGN × GERMAN ENGINEERING</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Update range value
+        const slider = document.querySelector('.range-slider');
+        const valueDisplay = document.querySelector('.range-value');
+        const priceDisplay = document.querySelector('.price-amount');
+        
+        slider.addEventListener('input', (e) => {
+            const value = e.target.value;
+            valueDisplay.textContent = `${value} m²`;
+            const price = value * 25;
+            priceDisplay.textContent = `€${price.toLocaleString('de-DE')}`;
+        });
+    </script>
+</body>
+</html>

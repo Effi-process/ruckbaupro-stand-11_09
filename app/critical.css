@@ -1,0 +1,284 @@
+/* Critical CSS - Inline for optimal LCP */
+/* Only styles needed for above-the-fold content */
+
+/* Reset and base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-display: swap;
+  background: #f9fafb;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container utility */
+.container-custom {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding: 0 2rem;
+  }
+}
+
+/* Hero section critical styles */
+.hero-section {
+  height: 100vh;
+  position: relative;
+}
+
+.hero-placeholder {
+  background: linear-gradient(135deg, #2C4F5E 0%, #1E3A47 50%, #0F2A36 100%);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Critical typography */
+h1 {
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Critical buttons */
+.cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 3rem;
+  background: linear-gradient(to right, #ef4444, #dc2626);
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-radius: 9999px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.cta-primary:hover {
+  transform: scale(1.1);
+}
+
+/* Contact button - critical for conversions */
+.contact-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: #0066CC;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+  transition: transform 0.2s;
+  will-change: transform;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.contact-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .container-custom {
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 2.25rem;
+  }
+  
+  .cta-primary {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  h1 {
+    font-size: 6rem;
+  }
+}
+
+/* Critical animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Grid layout for hero */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+}
+
+/* Text colors */
+.text-white {
+  color: white;
+}
+
+.text-red-400 {
+  color: #f87171;
+}
+
+.text-blue-400 {
+  color: #60a5fa;
+}
+
+/* Critical spacing */
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
+/* Text alignment */
+.text-left {
+  text-align: left;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* Font weights */
+.font-black {
+  font-weight: 900;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* Opacity utilities */
+.opacity-90 {
+  opacity: 0.9;
+}
+
+/* Layout utilities */
+.max-w-6xl {
+  max-width: 72rem;
+}
+
+.leading-tight {
+  line-height: 1.25;
+}
+
+/* Preload hint styles */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: auto;
+}
+
+/* Critical responsive text */
+@media (max-width: 640px) {
+  .text-5xl {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .md\:text-6xl {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-7xl {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:text-8xl {
+    font-size: 6rem;
+  }
+}

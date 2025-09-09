@@ -1,0 +1,181 @@
+{
+  "name": "Asbestsanierung Premium - Professionelle Schadstoffsanierung",
+  "short_name": "Asbest Premium",
+  "description": "Zertifizierte Asbestsanierung und Schadstoffbeseitigung. 24/7 Notdienst, kostenlose Beratung, bundesweiter Service.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0066CC",
+  "background_color": "#f9fafb",
+  
+  "icons": [
+    {
+      "src": "/images/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-96.png", 
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-128.png",
+      "sizes": "128x128", 
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png", 
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  
+  "shortcuts": [
+    {
+      "name": "Notfall anrufen",
+      "short_name": "Notfall",
+      "description": "Sofortiger Zugang zur 24/7 Notfall-Hotline",
+      "url": "tel:08000060970",
+      "icons": [
+        {
+          "src": "/images/shortcut-emergency.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Kostenrechner",
+      "short_name": "Rechner", 
+      "description": "Sofort-Kalkulation für Ihr Asbestsanierungs-Projekt",
+      "url": "/preise",
+      "icons": [
+        {
+          "src": "/images/shortcut-calculator.png",
+          "sizes": "96x96", 
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Kontakt",
+      "short_name": "Kontakt",
+      "description": "Direkt zur Kontaktseite für Beratungsanfragen",
+      "url": "/kontakt",
+      "icons": [
+        {
+          "src": "/images/shortcut-contact.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Bielefeld Service",
+      "short_name": "Bielefeld",
+      "description": "Lokaler Service für Bielefeld und OWL",
+      "url": "/bielefeld", 
+      "icons": [
+        {
+          "src": "/images/shortcut-location.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  
+  "categories": [
+    "business",
+    "utilities", 
+    "productivity"
+  ],
+  
+  "screenshots": [
+    {
+      "src": "/images/screenshot-mobile-home.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Startseite mit Sofort-Kontakt"
+    },
+    {
+      "src": "/images/screenshot-mobile-calculator.png", 
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Kostenrechner für schnelle Kalkulation"
+    },
+    {
+      "src": "/images/screenshot-desktop-home.png",
+      "sizes": "1280x720", 
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop-Ansicht mit Video-Hintergrund"
+    }
+  ],
+  
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://www.asbestsanierung-premium.de"
+    }
+  ],
+  
+  "prefer_related_applications": false,
+  
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  
+  "protocol_handlers": [
+    {
+      "protocol": "tel",
+      "url": "tel:%s"
+    },
+    {
+      "protocol": "mailto", 
+      "url": "mailto:%s"
+    }
+  ],
+  
+  "handle_links": "preferred",
+  
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  
+  "id": "asbestsanierung-premium-app",
+  "lang": "de-DE",
+  "dir": "ltr"
+}

@@ -1,0 +1,435 @@
+RÜCKBAUPRO - MENÜ SCROLL IMPLEMENTIERUNG
+==========================================
+Datum: 2025-01-09
+Zweck: Code für scrollendes Menü-Block System
+
+ÜBERSICHT DER BETEILIGTEN DATEIEN:
+==================================
+
+1. app/layout.tsx - Hauptlayout (FloatingMenuButton entfernt)
+2. app/page.tsx - Homepage mit sticky Menü-Container  
+3. app/components/FloatingMenuButton.tsx - Hauptmenü-Komponente
+4. public/critical.css - Critical CSS Styles
+
+==========================================
+DATEI 1: app/layout.tsx
+==========================================
+
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import { PerformanceMonitor } from './components/PerformanceMonitor'
+import PerformanceOptimizer from './components/PerformanceOptimizer'
+import EmergencyHotline from './components/EmergencyHotline'
+import MobileOptimizer from './components/MobileOptimizer'
+import Script from 'next/script'
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
+  adjustFontFallback: true,
+  variable: '--font-inter'
+})
+
+import { generateHomepageMetadata } from './lib/metadata-utils';
+
+export const metadata: Metadata = generateHomepageMetadata();
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="de">
+      <head>
+        {/* Icons und Meta-Tags */}
+        <link rel="icon" href="/favicon-new.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="theme-color" content="#1282a2" />
+        
+        {/* Critical CSS moved to external file */}
+        <link rel="stylesheet" href="/critical.css" />
+        
+        {/* Preconnect to critical domains */}
+        <link rel="preconnect" href="https://asbestsanierung-cdn.b-cdn.net" />
+      </head>
+      <body className={`${inter.variable} font-sans antialiased bg-off-white`} suppressHydrationWarning={true}>
+        <PerformanceMonitor />
+        <PerformanceOptimizer />
+        <MobileOptimizer />
+        <main className="min-h-screen">
+          {children}
+        </main>
+      </body>
+    </html>
+  )
+}
+
+==========================================
+DATEI 2: app/page.tsx
+==========================================
+
+'use client'
+import VideoHeroSection from './components/VideoHeroSection';
+import InkScrollSection from './components/InkScrollSection';
+import ProjectCarousel from './components/ProjectCarousel';
+import FooterWithMarquee from './components/FooterWithMarquee';
+import LazyCalculator from './components/LazyCalculator';
+import MultiStepWizard from './components/MultiStepWizard';
+import FloatingMenuButton from './components/FloatingMenuButton';
+import Link from 'next/link';
+import Image from 'next/image';
+import Icon from './components/Icon';
+import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+
+const ProjectGallery = dynamic(() => import('./components/ProjectGallery'), {
+  ssr: false,
+  loading: () => <div className="h-96 bg-off-white" />
+});
+
+export default function Home() {
+  return (
+    <main className="overflow-hidden relative">
+      {/* Sticky Menu Container - WICHTIG FÜR SCROLL-FUNKTION */}
+      <div className="absolute top-4 right-4 z-50">
+        <div className="sticky top-4">
+          <FloatingMenuButton />
+        </div>
+      </div>
+      
+      {/* Video Hero Section */}
+      <div id="hero">
+        <VideoHeroSection />
+      </div>
+      
+      {/* Rest der Seite... */}
+      <div className="bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white">
+        <section id="services-grid">
+          <InkScrollSection />
+        </section>
+        
+        <section id="process">
+          <ProjectCarousel />
+        </section>
+        
+        {/* Weitere Sektionen... */}
+      </div>
+      
+      <FooterWithMarquee />
+    </main>
+  );
+}
+
+==========================================
+DATEI 3: app/components/FloatingMenuButton.tsx
+==========================================
+
+'use client';
+import { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
+import Icon from './Icon';
+
+interface MenuSection {
+  title: string;
+  icon: string;
+  expanded: boolean;
+  items: MenuItem[];
+}
+
+interface MenuItem {
+  name: string;
+  href: string;
+  icon: string;
+  description?: string;
+}
+
+export default function FloatingMenuButton() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [expandedSections, setExpandedSections] = useState<string[]>(['Startseite']);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const menuSections: MenuSection[] = [
+    {
+      title: "Startseite",
+      icon: "home",
+      expanded: false,
+      items: []
+    },
+    {
+      title: "Unsere Leistungen",
+      icon: "bulldozer",
+      expanded: false,
+      items: [
+        { name: "Alle Leistungen", href: "/leistungen", icon: "list", description: "Komplette Übersicht" },
+        { name: "Asbest-Sanierung", href: "/leistungen/asbest-sanierung", icon: "shield", description: "Sichere Asbestentfernung" },
+        { name: "Entkernung", href: "/leistungen/entkernung", icon: "drill", description: "Innenraumdemontage" },
+      ]
+    },
+    {
+      title: "Service & Business",
+      icon: "briefcase",
+      expanded: false,
+      items: [
+        { name: "Standorte", href: "/standorte", icon: "map", description: "Deutschlandweit tätig" },
+        { name: "Franchise", href: "/franchise", icon: "share", description: "Partner werden" },
+      ]
+    }
+  ];
+
+  const toggleSection = (sectionTitle: string) => {
+    setExpandedSections(prev => 
+      prev.includes(sectionTitle) 
+        ? prev.filter(title => title !== sectionTitle)
+        : [...prev, sectionTitle]
+    );
+  };
+
+  return (
+    <div className="transition-all duration-300 ease-in-out">
+      <button
+        ref={buttonRef}
+        onClick={() => setIsOpen(!isOpen)}
+        className="group flex items-center gap-2 px-4 py-2.5 bg-white/20 backdrop-blur-md border border-white/30 hover:border-cerulean/50 text-cerulean hover:bg-white/30 transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl"
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+      >
+        <Icon name="grid" size={18} />
+        <span className="font-semibold text-sm">MENÜ</span>
+        <Icon 
+          name="chevron-down" 
+          size={14} 
+          className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
+        />
+      </button>
+
+      {isOpen && (
+        <>
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-20 z-[9998]"
+            onClick={() => setIsOpen(false)}
+          />
+          
+          <div
+            ref={dropdownRef}
+            className="fixed top-20 right-4 w-80 bg-white/90 backdrop-blur-xl shadow-2xl border border-white/20 rounded-xl z-[9999] overflow-hidden max-h-[80vh] overflow-y-auto"
+          >
+            <div className="px-4 py-3 bg-gradient-to-r from-cerulean/90 to-indigo-dye/90 backdrop-blur-sm text-white">
+              <div className="flex items-center justify-between">
+                <h3 className="font-bold text-lg">RückbauPRO Navigation</h3>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="p-1 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors"
+                >
+                  <Icon name="x" size={18} />
+                </button>
+              </div>
+              <p className="text-sm opacity-90 mt-1">Alle Seiten & Services</p>
+            </div>
+
+            <div className="py-2">
+              {menuSections.map((section) => {
+                const isExpanded = expandedSections.includes(section.title);
+                
+                return (
+                  <div key={section.title} className="px-2">
+                    {section.title === "Startseite" ? (
+                      <Link
+                        href="/"
+                        onClick={() => setIsOpen(false)}
+                        className="w-full flex items-center justify-between px-3 py-2.5 text-left hover:bg-gray-50 rounded-lg transition-colors duration-200 group"
+                      >
+                        <div className="flex items-center gap-3">
+                          <Icon 
+                            name={section.icon} 
+                            size={16} 
+                            className="text-cerulean group-hover:text-indigo-dye transition-colors" 
+                          />
+                          <span className="font-bold text-oxford-blue text-base">
+                            {section.title}
+                          </span>
+                        </div>
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => section.items.length > 0 ? toggleSection(section.title) : null}
+                        className="w-full flex items-center justify-between px-3 py-2.5 text-left hover:bg-gray-50 rounded-lg transition-colors duration-200 group"
+                      >
+                      <div className="flex items-center gap-3">
+                        <Icon 
+                          name={section.icon} 
+                          size={16} 
+                          className="text-cerulean group-hover:text-indigo-dye transition-colors" 
+                        />
+                        <span className="font-semibold text-oxford-blue text-sm">
+                          {section.title}
+                        </span>
+                      </div>
+                      {section.items.length > 0 && (
+                        <Icon 
+                          name="chevron-down" 
+                          size={14} 
+                          className={`text-gray-400 transition-transform duration-200 ${
+                            isExpanded ? 'rotate-180' : ''
+                          }`}
+                        />
+                        )}
+                      </button>
+                    )}
+
+                    {isExpanded && section.title !== "Startseite" && (
+                      <div className="ml-6 pl-3 border-l-2 border-gray-100 space-y-0.5 pb-2">
+                        {section.items.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            onClick={() => setIsOpen(false)}
+                            className="flex items-start gap-3 px-3 py-2 text-gray-600 hover:text-cerulean hover:bg-gray-50 rounded-md transition-all duration-200 group"
+                          >
+                            <Icon 
+                              name={item.icon} 
+                              size={14} 
+                              className="text-cerulean/60 group-hover:text-cerulean transition-colors mt-0.5" 
+                            />
+                            <div className="flex-1">
+                              <div className="font-medium text-sm text-oxford-blue group-hover:text-cerulean">
+                                {item.name}
+                              </div>
+                              {item.description && (
+                                <div className="text-xs text-gray-500 mt-0.5">
+                                  {item.description}
+                                </div>
+                              )}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="px-4 py-3 bg-gray-50/80 backdrop-blur-sm border-t border-gray-200/50">
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">
+                    24/7 Notfall-Hotline
+                  </div>
+                  <Link
+                    href="tel:08000060970"
+                    onClick={() => setIsOpen(false)}
+                    className="text-cerulean hover:text-indigo-dye font-bold text-lg transition-colors"
+                  >
+                    0800 0060970
+                  </Link>
+                </div>
+                <Link
+                  href="/kontakt"
+                  onClick={() => setIsOpen(false)}
+                  className="px-4 py-2 bg-cerulean hover:bg-indigo-dye text-white text-sm font-semibold rounded-lg transition-colors"
+                >
+                  Kontakt
+                </Link>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+==========================================
+WICHTIGE CSS KLASSEN (public/critical.css)
+==========================================
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
+.right-4 {
+  right: 1rem;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+==========================================
+FUNKTIONSWEISE:
+==========================================
+
+1. LAYOUT: FloatingMenuButton aus Layout entfernt (war fixed)
+
+2. HOMEPAGE: Menü in page.tsx eingebaut mit:
+   - main className="overflow-hidden relative"
+   - Menü-Container: "absolute top-4 right-4 z-50"  
+   - Sticky-Wrapper: "sticky top-4"
+   - FloatingMenuButton als Child
+
+3. KOMPONENTE: FloatingMenuButton vereinfacht
+   - Keine fixed Position mehr
+   - Nur transition-Klassen für smooth Animation
+
+4. ERGEBNIS: Menü scrollt mit der Seite mit, bleibt aber
+   immer 16px vom oberen Rand entfernt sichtbar
+
+TESTEN:
+- Server starten: npm run dev -- -p 8000
+- Aufrufen: http://localhost:8000  
+- Scrollen und Menü-Verhalten beobachten
+
+==========================================
+ENDE DES DOKUMENTS
+==========================================

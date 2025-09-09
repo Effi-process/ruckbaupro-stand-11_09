@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RückbauPRO - Professioneller Rückbau & Abbruch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-gray-900">RückbauPRO</a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-700 hover:text-gray-900 transition">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-gray-900 transition">About</a>
+                    <a href="#locations" class="text-gray-700 hover:text-gray-900 transition">Locations</a>
+                    <a href="#blog" class="text-gray-700 hover:text-gray-900 transition">Blog</a>
+                    <a href="#contact" class="text-gray-700 hover:text-gray-900 transition">Contact</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="flex items-center">
+                    <a href="#contact" class="bg-gray-900 text-white px-6 py-2.5 rounded-full hover:bg-gray-800 transition font-medium">
+                        Get in Touch →
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Video Background -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Video Background -->
+        <div class="absolute inset-0 z-0">
+            <video autoplay loop muted playsinline class="hero-video">
+                <source src="public/videos/praezision-sicherheit.mp4" type="video/mp4">
+                <!-- Fallback background -->
+                <div class="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700"></div>
+            </video>
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-6 text-center text-white">
+            <!-- Award badges -->
+            <div class="flex justify-center items-center gap-6 mb-8">
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full text-sm">
+                    ⭐ 5.0 Rating
+                </span>
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full text-sm">
+                    🏆 100+ Projekte
+                </span>
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full text-sm">
+                    ✓ Zertifiziert
+                </span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+                Wir schaffen<br>
+                Branchen <span class="text-yellow-400">⚡</span> Führer
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-xl md:text-2xl mb-12 opacity-90 max-w-3xl mx-auto">
+                Professioneller Rückbau & Abbruch deutschlandweit
+            </p>
+
+            <!-- Service Icons -->
+            <div class="flex justify-center items-center gap-8 mb-12">
+                <div class="text-white/80 hover:text-white transition">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                </div>
+                <div class="text-white/80 hover:text-white transition">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                    </svg>
+                </div>
+                <div class="text-white/80 hover:text-white transition">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                </div>
+                <div class="text-white/80 hover:text-white transition">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                    </svg>
+                </div>
+                <div class="text-white/80 hover:text-white transition">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Client Logos Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-center space-x-12 opacity-60">
+                <div class="text-2xl font-bold text-gray-400">Berlin</div>
+                <div class="text-2xl font-bold text-gray-400">Hamburg</div>
+                <div class="text-2xl font-bold text-gray-400">München</div>
+                <div class="text-2xl font-bold text-gray-400">Köln</div>
+                <div class="text-2xl font-bold text-gray-400">Frankfurt</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Driving Demand Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content -->
+                <div>
+                    <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                        Professionell &<br>
+                        Zuverlässig <span class="text-gray-400">🏗️</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Ein Team von Experten für professionellen Rückbau und Abbruch. 
+                        Wir verbinden modernste Technik mit höchsten Sicherheitsstandards 
+                        für Ihr Projekt.
+                    </p>
+                    
+                    <!-- Buttons -->
+                    <div class="flex gap-4 mb-12">
+                        <a href="#about" class="text-gray-900 font-medium hover:underline">
+                            Über uns →
+                        </a>
+                        <a href="#contact" class="text-gray-900 font-medium hover:underline">
+                            Projekt starten →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Content - Services Grid -->
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Gebäudeabbruch</h3>
+                        <p class="text-gray-600 text-sm">Professioneller Abbruch von Gebäuden aller Art</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l-5.5 9h11z M12 2l5.5 9H6.5z M17.5 11L12 22l-5.5-11z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Rückbau</h3>
+                        <p class="text-gray-600 text-sm">Sorgfältiger Rückbau mit maximaler Materialverwertung</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition">
+                        <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-lg mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Asbestsanierung</h3>
+                        <p class="text-gray-600 text-sm">Zertifizierte Asbestentfernung und Entsorgung</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg mb-4 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Entkernung</h3>
+                        <p class="text-gray-600 text-sm">Komplette Entkernung für Neugestaltung</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-24 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <p class="text-5xl font-bold mb-2">500+</p>
+                    <p class="text-gray-400">Projekte abgeschlossen</p>
+                </div>
+                <div>
+                    <p class="text-5xl font-bold mb-2">15+</p>
+                    <p class="text-gray-400">Städte abgedeckt</p>
+                </div>
+                <div>
+                    <p class="text-5xl font-bold mb-2">100%</p>
+                    <p class="text-gray-400">Sicherheitsbilanz</p>
+                </div>
+                <div>
+                    <p class="text-5xl font-bold mb-2">24/7</p>
+                    <p class="text-gray-400">Notdienst</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Sofort-Kalkulation
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Berechnen Sie Ihre Rückbaukosten in Sekunden mit unserem Preisrechner
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-50 rounded-3xl p-8 md:p-12">
+                    <!-- Calculator Placeholder -->
+                    <div class="bg-white rounded-xl p-8 shadow-sm">
+                        <h3 class="text-2xl font-bold mb-6">Kostenrechner</h3>
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Projekttyp</label>
+                                <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option>Gebäudeabbruch</option>
+                                    <option>Entkernung</option>
+                                    <option>Asbestsanierung</option>
+                                    <option>Rückbau</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Fläche (m²)</label>
+                                <input type="number" placeholder="z.B. 150" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Standort</label>
+                                <input type="text" placeholder="PLZ oder Stadt" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <button type="button" class="w-full bg-gray-900 text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition">
+                                Kostenschätzung erhalten →
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-24 bg-gray-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                Bereit für Ihr Projekt?
+            </h2>
+            <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+                Vertrauen Sie auf unsere Expertise für Ihren professionellen Rückbau
+            </p>
+            <a href="tel:+4912345678" class="inline-block bg-white text-gray-900 px-8 py-4 rounded-full font-bold hover:shadow-lg transition">
+                Jetzt anrufen: +49 123 456 78 →
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">RückbauPRO</h3>
+                    <p class="text-gray-400">Professioneller Rückbau deutschlandweit</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Leistungen</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Abbruch</a></li>
+                        <li><a href="#" class="hover:text-white">Rückbau</a></li>
+                        <li><a href="#" class="hover:text-white">Asbestsanierung</a></li>
+                        <li><a href="#" class="hover:text-white">Entkernung</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Unternehmen</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Über uns</a></li>
+                        <li><a href="#" class="hover:text-white">Karriere</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Rechtliches</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Impressum</a></li>
+                        <li><a href="#" class="hover:text-white">Datenschutz</a></li>
+                        <li><a href="#" class="hover:text-white">AGB</a></li>
+                        <li><a href="#" class="hover:text-white">Zertifikate</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 RückbauPRO. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

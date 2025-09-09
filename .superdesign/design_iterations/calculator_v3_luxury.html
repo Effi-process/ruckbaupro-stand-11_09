@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RückbauPRO - Luxury Gold Edition</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #0f0f1e);
+            min-height: 100vh;
+            color: #f4e4c1;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Golden Particles */
+        .golden-particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #ffd700, #ffed4e);
+            border-radius: 50%;
+            animation: float 15s infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+            }
+        }
+        
+        /* Luxury Container */
+        .luxury-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .gold-card {
+            background: linear-gradient(135deg, rgba(30, 30, 50, 0.95), rgba(20, 20, 40, 0.95));
+            border: 3px solid;
+            border-image: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700) 1;
+            box-shadow: 
+                0 20px 60px rgba(255, 215, 0, 0.3),
+                inset 0 0 40px rgba(255, 215, 0, 0.1);
+            position: relative;
+        }
+        
+        /* Luxury Header */
+        .luxury-header {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), transparent);
+            position: relative;
+        }
+        
+        .luxury-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ffd700, #ffed4e, #fff, #ffed4e, #ffd700);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldShine 3s ease infinite;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        @keyframes goldShine {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .luxury-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #ffd700;
+            margin-top: 1rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        /* Crown Icon */
+        .crown {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+        
+        .crown::before {
+            content: '♛';
+            font-size: 60px;
+            color: #ffd700;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+            animation: crownFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes crownFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Service Cards */
+        .luxury-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 3rem;
+        }
+        
+        .luxury-service-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(255, 237, 78, 0.05));
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .luxury-service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.3), transparent);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        
+        .luxury-service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #ffd700;
+            box-shadow: 
+                0 15px 40px rgba(255, 215, 0, 0.4),
+                inset 0 0 30px rgba(255, 215, 0, 0.1);
+        }
+        
+        .luxury-service-card:hover::before {
+            opacity: 1;
+            animation: shimmer 1s ease;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .service-premium-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+        }
+        
+        .service-premium-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-premium-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffed4e;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        /* Luxury Input */
+        .luxury-input-group {
+            padding: 2rem 3rem;
+        }
+        
+        .luxury-label {
+            font-family: 'Playfair Display', serif;
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .luxury-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 215, 0, 0.05);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            color: #f4e4c1;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        .luxury-input:focus {
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        /* Luxury Slider */
+        .luxury-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            outline: none;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            border-radius: 5px;
+        }
+        
+        .luxury-slider:hover {
+            opacity: 1;
+        }
+        
+        .luxury-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, #ffd700, #ffed4e);
+            cursor: pointer;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        }
+        
+        /* Price Display */
+        .luxury-price-section {
+            text-align: center;
+            padding: 3rem;
+            background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.1), transparent);
+        }
+        
+        .luxury-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ffd700, #fff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+            position: relative;
+        }
+        
+        .vip-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #1a1a2e;
+            padding: 0.5rem 2rem;
+            font-weight: 700;
+            transform: rotate(-5deg);
+            margin-top: 1rem;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            animation: vipPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes vipPulse {
+            0%, 100% { transform: rotate(-5deg) scale(1); }
+            50% { transform: rotate(-5deg) scale(1.05); }
+        }
+        
+        /* Luxury Buttons */
+        .luxury-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .luxury-btn {
+            padding: 1.5rem 3rem;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #1a1a2e;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        .luxury-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .luxury-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
+        }
+        
+        .luxury-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .luxury-title {
+                font-size: 2.5rem;
+            }
+            
+            .luxury-price {
+                font-size: 3rem;
+            }
+            
+            .luxury-services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="golden-particles" id="particles"></div>
+    
+    <div class="luxury-container">
+        <div class="gold-card">
+            <div class="luxury-header">
+                <div class="crown"></div>
+                <h1 class="luxury-title">Premium Calculator</h1>
+                <p class="luxury-subtitle">Exklusive Preiskalkulation für anspruchsvolle Projekte</p>
+            </div>
+            
+            <div class="luxury-services">
+                <div class="luxury-service-card">
+                    <div class="service-premium-icon">🏛️</div>
+                    <h3 class="service-premium-title">Premium Rückbau</h3>
+                    <p style="color: #f4e4c1; margin: 1rem 0;">Höchste Präzision</p>
+                    <p class="service-premium-price">ab 25€/m²</p>
+                </div>
+                
+                <div class="luxury-service-card">
+                    <div class="service-premium-icon">💎</div>
+                    <h3 class="service-premium-title">Luxury Abbruch</h3>
+                    <p style="color: #f4e4c1; margin: 1rem 0;">VIP Service</p>
+                    <p class="service-premium-price">ab 80€/m³</p>
+                </div>
+                
+                <div class="luxury-service-card">
+                    <div class="service-premium-icon">✨</div>
+                    <h3 class="service-premium-title">Elite Sanierung</h3>
+                    <p style="color: #f4e4c1; margin: 1rem 0;">Perfektion garantiert</p>
+                    <p class="service-premium-price">ab 35€/m²</p>
+                </div>
+            </div>
+            
+            <div class="luxury-input-group">
+                <label class="luxury-label">Projektgröße auswählen</label>
+                <input type="range" class="luxury-slider" min="0" max="1000" value="250">
+                <p style="text-align: center; color: #ffd700; font-size: 1.5rem; margin-top: 1rem;">250 m²</p>
+            </div>
+            
+            <div class="luxury-price-section">
+                <p style="color: #f4e4c1; margin-bottom: 1rem;">Ihre Investition</p>
+                <div class="luxury-price">€12,500</div>
+                <div class="vip-badge">VIP RABATT -25%</div>
+            </div>
+            
+            <div class="luxury-buttons">
+                <button class="luxury-btn">Exklusiv Anfragen</button>
+                <button class="luxury-btn">VIP Hotline</button>
+                <button class="luxury-btn">Premium Termin</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Create golden particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+    </script>
+</body>
+</html>

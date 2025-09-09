@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RückbauPRO - Premium Kostenrechner</title>
+    
+    <!-- Flowbite CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Professional RückbauPRO Colors */
+            --oxford-blue: #0a1128;
+            --penn-blue: #001f54;
+            --indigo-dye: #034078;
+            --cerulean: #1282a2;
+            --off-white: #fefcfb;
+            
+            /* Neo-Brutalism Colors */
+            --brutal-black: #000000;
+            --brutal-white: #ffffff;
+            --brutal-yellow: #ffeb3b;
+            --brutal-pink: #ff1744;
+            --brutal-green: #00e676;
+            --brutal-blue: #2979ff;
+            --brutal-purple: #d500f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--oxford-blue) 0%, var(--penn-blue) 50%, var(--indigo-dye) 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            opacity: 0.1;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(18,130,162,.1) 35px, rgba(18,130,162,.1) 70px);
+            animation: backgroundMove 20s linear infinite;
+        }
+        
+        @keyframes backgroundMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        /* Glass Morphism Container */
+        .glass-container {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        
+        .glass-card {
+            background: rgba(254, 252, 251, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid rgba(254, 252, 251, 0.2);
+            border-radius: 24px;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Neo-Brutalist Card Hover */
+        .brutal-card {
+            background: var(--off-white);
+            border: 4px solid var(--oxford-blue);
+            border-radius: 0;
+            box-shadow: 8px 8px 0 var(--oxford-blue);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .brutal-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0 var(--cerulean);
+        }
+        
+        .brutal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(18, 130, 162, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .brutal-card:hover::before {
+            left: 100%;
+        }
+        
+        /* Header Styles */
+        .header-section {
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(18, 130, 162, 0.1), rgba(3, 64, 120, 0.1));
+            border-bottom: 2px solid rgba(254, 252, 251, 0.1);
+            position: relative;
+        }
+        
+        .header-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--off-white);
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header-title::after {
+            content: 'PREMIUM';
+            position: absolute;
+            top: -20px;
+            right: -40px;
+            background: var(--brutal-yellow);
+            color: var(--oxford-blue);
+            padding: 4px 12px;
+            font-size: 0.8rem;
+            font-weight: 900;
+            transform: rotate(12deg);
+            box-shadow: 4px 4px 0 var(--oxford-blue);
+        }
+        
+        .header-subtitle {
+            color: var(--cerulean);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            background: rgba(0, 0, 0, 0.3);
+            height: 8px;
+            border-radius: 100px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--cerulean), var(--brutal-green));
+            border-radius: 100px;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 20px rgba(0, 230, 118, 0.5);
+        }
+        
+        /* Form Sections */
+        .form-section {
+            padding: 2rem;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--off-white);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .section-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--cerulean), var(--indigo-dye));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--off-white);
+            box-shadow: 0 4px 12px rgba(18, 130, 162, 0.3);
+        }
+        
+        /* Neo-Brutalist Input Styles */
+        .brutal-input-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .brutal-label {
+            display: block;
+            color: var(--off-white);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .brutal-input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(254, 252, 251, 0.1);
+            border: 3px solid var(--cerulean);
+            color: var(--off-white);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            outline: none;
+        }
+        
+        .brutal-input:focus {
+            background: rgba(254, 252, 251, 0.15);
+            border-color: var(--brutal-green);
+            box-shadow: 0 0 0 4px rgba(0, 230, 118, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .brutal-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fefcfb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.5rem;
+            padding-right: 3rem;
+        }
+        
+        /* Service Cards Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .service-card {
+            background: rgba(254, 252, 251, 0.05);
+            border: 2px solid var(--cerulean);
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            background: rgba(18, 130, 162, 0.2);
+            border-color: var(--brutal-green);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 230, 118, 0.3);
+        }
+        
+        .service-card.selected {
+            background: rgba(0, 230, 118, 0.2);
+            border-color: var(--brutal-green);
+            box-shadow: 0 0 0 4px rgba(0, 230, 118, 0.2);
+        }
+        
+        .service-card.selected::after {
+            content: '✓';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background: var(--brutal-green);
+            color: var(--oxford-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            animation: scaleIn 0.3s ease-out;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--cerulean);
+        }
+        
+        .service-name {
+            color: var(--off-white);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-price {
+            color: var(--brutal-green);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        
+        /* Range Slider Custom */
+        .range-container {
+            margin: 2rem 0;
+        }
+        
+        .range-value {
+            background: linear-gradient(135deg, var(--cerulean), var(--brutal-green));
+            color: var(--off-white);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 230, 118, 0.3);
+        }
+        
+        .brutal-range {
+            width: 100%;
+            height: 8px;
+            background: rgba(254, 252, 251, 0.1);
+            outline: none;
+            border-radius: 100px;
+            -webkit-appearance: none;
+        }
+        
+        .brutal-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 28px;
+            height: 28px;
+            background: var(--brutal-green);
+            cursor: pointer;
+            border-radius: 50%;
+            border: 4px solid var(--off-white);
+            box-shadow: 0 4px 12px rgba(0, 230, 118, 0.5);
+            transition: all 0.3s;
+        }
+        
+        .brutal-range::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 6px 20px rgba(0, 230, 118, 0.7);
+        }
+        
+        /* Results Section */
+        .results-section {
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(0, 230, 118, 0.1), rgba(18, 130, 162, 0.1));
+            border-top: 2px solid rgba(254, 252, 251, 0.1);
+        }
+        
+        .price-display {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .price-label {
+            color: var(--cerulean);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--brutal-green);
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .price-value::before {
+            content: '€';
+            font-size: 2rem;
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            color: var(--cerulean);
+        }
+        
+        .discount-badge {
+            display: inline-block;
+            background: var(--brutal-pink);
+            color: var(--off-white);
+            padding: 0.5rem 1.5rem;
+            font-weight: 700;
+            transform: rotate(-5deg);
+            margin-left: 1rem;
+            box-shadow: 4px 4px 0 var(--oxford-blue);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: rotate(-5deg) scale(1);
+            }
+            50% {
+                transform: rotate(-5deg) scale(1.1);
+            }
+        }
+        
+        /* CTA Buttons */
+        .cta-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .brutal-cta {
+            padding: 1.5rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .cta-primary {
+            background: var(--brutal-green);
+            color: var(--oxford-blue);
+            box-shadow: 6px 6px 0 var(--oxford-blue);
+        }
+        
+        .cta-primary:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 9px 9px 0 var(--oxford-blue);
+        }
+        
+        .cta-secondary {
+            background: var(--cerulean);
+            color: var(--off-white);
+            box-shadow: 6px 6px 0 var(--oxford-blue);
+        }
+        
+        .cta-secondary:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 9px 9px 0 var(--penn-blue);
+        }
+        
+        .cta-urgent {
+            background: var(--brutal-pink);
+            color: var(--off-white);
+            box-shadow: 6px 6px 0 var(--oxford-blue);
+            animation: urgentPulse 1.5s infinite;
+        }
+        
+        @keyframes urgentPulse {
+            0%, 100% {
+                box-shadow: 6px 6px 0 var(--oxford-blue);
+            }
+            50% {
+                box-shadow: 6px 6px 20px rgba(255, 23, 68, 0.5);
+            }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2rem;
+            }
+            
+            .glass-container {
+                padding: 1rem;
+                margin: 1rem;
+            }
+            
+            .form-section {
+                padding: 1.5rem;
+            }
+            
+            .price-value {
+                font-size: 3rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+        
+        .loader.active {
+            display: block;
+        }
+        
+        .loader-circle {
+            width: 60px;
+            height: 60px;
+            border: 4px solid var(--cerulean);
+            border-top-color: var(--brutal-green);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <div class="glass-container">
+        <div class="glass-card">
+            <!-- Header -->
+            <div class="header-section">
+                <h1 class="header-title">Kostenrechner</h1>
+                <p class="header-subtitle">Transparente Preiskalkulation für Ihr Rückbau-Projekt</p>
+                
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar" style="width: 25%;"></div>
+                </div>
+            </div>
+            
+            <!-- Form Section -->
+            <div class="form-section">
+                <!-- Step 1: Project Type -->
+                <div id="step1" class="step-content">
+                    <div class="section-title">
+                        <div class="section-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <span>Projektart auswählen</span>
+                    </div>
+                    
+                    <div class="services-grid">
+                        <div class="service-card" data-service="rueckbau" onclick="selectService(this, 'rueckbau')">
+                            <div class="service-icon">🏗️</div>
+                            <div class="service-name">Rückbau</div>
+                            <div class="service-price">ab 25€/m²</div>
+                        </div>
+                        
+                        <div class="service-card" data-service="abbruch" onclick="selectService(this, 'abbruch')">
+                            <div class="service-icon">🏢</div>
+                            <div class="service-name">Abbruch</div>
+                            <div class="service-price">ab 80€/m³</div>
+                        </div>
+                        
+                        <div class="service-card" data-service="sanierung" onclick="selectService(this, 'sanierung')">
+                            <div class="service-icon">⚠️</div>
+                            <div class="service-name">Schadstoffsanierung</div>
+                            <div class="service-price">ab 35€/m²</div>
+                        </div>
+                        
+                        <div class="service-card" data-service="entsorgung" onclick="selectService(this, 'entsorgung')">
+                            <div class="service-icon">♻️</div>
+                            <div class="service-name">Entsorgung</div>
+                            <div class="service-price">ab 180€</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Project Details -->
+                <div id="step2" class="step-content" style="display: none;">
+                    <div class="section-title">
+                        <div class="section-icon">
+                            <i class="fas fa-ruler-combined"></i>
+                        </div>
+                        <span>Projektdetails</span>
+                    </div>
+                    
+                    <div class="brutal-input-group">
+                        <label class="brutal-label">Fläche/Volumen</label>
+                        <div class="range-container">
+                            <div class="range-value" id="rangeValue">100 m²</div>
+                            <input type="range" class="brutal-range" id="areaRange" min="10" max="1000" value="100" oninput="updateRange(this)">
+                        </div>
+                    </div>
+                    
+                    <div class="brutal-input-group">
+                        <label class="brutal-label">Gebäudetyp</label>
+                        <select class="brutal-input brutal-select">
+                            <option>Einfamilienhaus</option>
+                            <option>Mehrfamilienhaus</option>
+                            <option>Gewerbegebäude</option>
+                            <option>Industriegebäude</option>
+                            <option>Sonstige</option>
+                        </select>
+                    </div>
+                    
+                    <div class="brutal-input-group">
+                        <label class="brutal-label">Zugänglichkeit</label>
+                        <select class="brutal-input brutal-select">
+                            <option>Sehr gut (breite Zufahrt)</option>
+                            <option>Gut (normale Zufahrt)</option>
+                            <option>Eingeschränkt (enge Zufahrt)</option>
+                            <option>Schwierig (Innenstadt/Hanglage)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Additional Services -->
+                <div id="step3" class="step-content" style="display: none;">
+                    <div class="section-title">
+                        <div class="section-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <span>Zusatzleistungen</span>
+                    </div>
+                    
+                    <div class="services-grid">
+                        <div class="service-card" onclick="toggleAdditional(this)">
+                            <div class="service-icon">📋</div>
+                            <div class="service-name">Gutachten</div>
+                            <div class="service-price">+500€</div>
+                        </div>
+                        
+                        <div class="service-card" onclick="toggleAdditional(this)">
+                            <div class="service-icon">🚛</div>
+                            <div class="service-name">Express-Service</div>
+                            <div class="service-price">+20%</div>
+                        </div>
+                        
+                        <div class="service-card" onclick="toggleAdditional(this)">
+                            <div class="service-icon">📊</div>
+                            <div class="service-name">Freimessung</div>
+                            <div class="service-price">+800€</div>
+                        </div>
+                        
+                        <div class="service-card" onclick="toggleAdditional(this)">
+                            <div class="service-icon">🔧</div>
+                            <div class="service-name">Komplettservice</div>
+                            <div class="service-price">+15%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Section -->
+            <div class="results-section">
+                <div class="price-display">
+                    <div class="price-label">Geschätzte Kosten</div>
+                    <div class="price-value" id="totalPrice">2.500</div>
+                    <span class="discount-badge">-20% ONLINE RABATT</span>
+                </div>
+                
+                <div class="cta-container">
+                    <button class="brutal-cta cta-urgent">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>NOTFALL HOTLINE</span>
+                    </button>
+                    
+                    <button class="brutal-cta cta-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Termin Buchen</span>
+                    </button>
+                    
+                    <button class="brutal-cta cta-secondary">
+                        <i class="fas fa-envelope"></i>
+                        <span>Angebot Anfordern</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="loader-circle"></div>
+    </div>
+    
+    <!-- Flowbite JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+    
+    <script>
+        let selectedService = null;
+        let currentStep = 1;
+        let totalPrice = 2500;
+        
+        function selectService(element, service) {
+            // Remove previous selection
+            document.querySelectorAll('.service-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // Add selection to clicked element
+            element.classList.add('selected');
+            selectedService = service;
+            
+            // Update progress and show next step
+            setTimeout(() => {
+                showStep(2);
+                updateProgress(50);
+            }, 300);
+        }
+        
+        function showStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.step-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Show selected step
+            document.getElementById(`step${step}`).style.display = 'block';
+            currentStep = step;
+            
+            // Auto progress to step 3 after step 2
+            if (step === 2) {
+                setTimeout(() => {
+                    showStep(3);
+                    updateProgress(75);
+                }, 5000);
+            }
+            
+            // Calculate final price after step 3
+            if (step === 3) {
+                setTimeout(() => {
+                    calculateFinalPrice();
+                    updateProgress(100);
+                }, 3000);
+            }
+        }
+        
+        function updateProgress(percentage) {
+            document.getElementById('progressBar').style.width = percentage + '%';
+        }
+        
+        function updateRange(slider) {
+            const value = slider.value;
+            document.getElementById('rangeValue').textContent = value + ' m²';
+            
+            // Update price based on area
+            totalPrice = value * 25;
+            updatePriceDisplay();
+        }
+        
+        function toggleAdditional(element) {
+            element.classList.toggle('selected');
+            
+            // Add or remove price
+            if (element.classList.contains('selected')) {
+                totalPrice += 500;
+            } else {
+                totalPrice -= 500;
+            }
+            
+            updatePriceDisplay();
+        }
+        
+        function updatePriceDisplay() {
+            const priceElement = document.getElementById('totalPrice');
+            const currentValue = parseInt(priceElement.textContent.replace('.', ''));
+            const newValue = totalPrice;
+            
+            // Animate price change
+            animateValue(priceElement, currentValue, newValue, 500);
+        }
+        
+        function animateValue(element, start, end, duration) {
+            const range = end - start;
+            const increment = range / (duration / 10);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+                    current = end;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.round(current).toLocaleString('de-DE');
+            }, 10);
+        }
+        
+        function calculateFinalPrice() {
+            // Show loader
+            document.getElementById('loader').classList.add('active');
+            
+            setTimeout(() => {
+                // Hide loader
+                document.getElementById('loader').classList.remove('active');
+                
+                // Apply discount
+                totalPrice = Math.round(totalPrice * 0.8);
+                updatePriceDisplay();
+                
+                // Show success animation
+                showSuccessAnimation();
+            }, 1500);
+        }
+        
+        function showSuccessAnimation() {
+            const priceValue = document.querySelector('.price-value');
+            priceValue.style.animation = 'scaleIn 0.5s ease-out';
+            
+            // Add confetti effect
+            createConfetti();
+        }
+        
+        function createConfetti() {
+            const colors = ['#00e676', '#1282a2', '#ffeb3b', '#ff1744'];
+            const container = document.querySelector('.results-section');
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'absolute';
+                confetti.style.width = '10px';
+                confetti.style.height = '10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-10px';
+                confetti.style.opacity = '0.8';
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                confetti.style.animation = `fall ${2 + Math.random() * 2}s linear`;
+                container.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 4000);
+            }
+        }
+        
+        // CSS for confetti animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize
+        updateProgress(25);
+    </script>
+</body>
+</html>

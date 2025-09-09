@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RückbauPRO - 90s Retro Terminal</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><rect x="8" y="8" width="16" height="16" fill="%2300ff00"/></svg>'), auto;
+        }
+        
+        body {
+            font-family: 'VT323', monospace;
+            background: #000;
+            color: #00ff00;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* CRT Screen Effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        /* Screen Flicker */
+        @keyframes flicker {
+            0% { opacity: 0.97; }
+            50% { opacity: 1; }
+            100% { opacity: 0.98; }
+        }
+        
+        .terminal-container {
+            animation: flicker 0.1s infinite;
+            padding: 40px;
+            min-height: 100vh;
+            background: radial-gradient(ellipse at center, #001100, #000);
+        }
+        
+        /* Terminal Window */
+        .terminal-window {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #0a0a0a;
+            border: 3px solid #00ff00;
+            box-shadow: 
+                0 0 20px #00ff00,
+                inset 0 0 20px rgba(0, 255, 0, 0.1);
+            position: relative;
+        }
+        
+        /* Window Title Bar */
+        .title-bar {
+            background: #00ff00;
+            color: #000;
+            padding: 8px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .window-controls {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .window-btn {
+            width: 16px;
+            height: 16px;
+            background: #000;
+            border: 2px solid #000;
+        }
+        
+        /* Terminal Content */
+        .terminal-content {
+            padding: 30px;
+            font-size: 20px;
+            line-height: 1.4;
+        }
+        
+        /* ASCII Art Header */
+        .ascii-art {
+            font-size: 14px;
+            line-height: 1;
+            color: #00ff00;
+            margin-bottom: 30px;
+            white-space: pre;
+            text-align: center;
+        }
+        
+        /* Blinking Cursor */
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background: #00ff00;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+        
+        /* Menu Items */
+        .menu-item {
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #00ff00;
+            background: rgba(0, 255, 0, 0.05);
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-item::before {
+            content: '>';
+            position: absolute;
+            left: -20px;
+            transition: left 0.2s;
+        }
+        
+        .menu-item:hover {
+            background: rgba(0, 255, 0, 0.2);
+            padding-left: 30px;
+            box-shadow: 0 0 10px #00ff00;
+            transform: translateX(5px);
+        }
+        
+        .menu-item:hover::before {
+            left: 10px;
+        }
+        
+        .menu-item.selected {
+            background: #00ff00;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        /* Input Fields */
+        .retro-input {
+            background: #000;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            padding: 10px;
+            font-family: 'VT323', monospace;
+            font-size: 20px;
+            width: 100%;
+            margin: 10px 0;
+            outline: none;
+        }
+        
+        .retro-input:focus {
+            box-shadow: 0 0 10px #00ff00;
+            background: rgba(0, 255, 0, 0.05);
+        }
+        
+        /* Progress Bar */
+        .progress-bar {
+            height: 30px;
+            border: 2px solid #00ff00;
+            margin: 20px 0;
+            position: relative;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 10px,
+                rgba(0, 255, 0, 0.1) 10px,
+                rgba(0, 255, 0, 0.1) 20px
+            );
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: #00ff00;
+            width: 0%;
+            transition: width 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 5px,
+                rgba(0, 0, 0, 0.3) 5px,
+                rgba(0, 0, 0, 0.3) 10px
+            );
+            animation: progressMove 1s linear infinite;
+        }
+        
+        @keyframes progressMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(10px); }
+        }
+        
+        /* Price Display */
+        .price-display {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            border: 3px solid #00ff00;
+            background: rgba(0, 255, 0, 0.05);
+            position: relative;
+        }
+        
+        .price-display::before,
+        .price-display::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #00ff00;
+        }
+        
+        .price-display::before {
+            top: -5px;
+            left: -5px;
+        }
+        
+        .price-display::after {
+            bottom: -5px;
+            right: -5px;
+        }
+        
+        .price-label {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #00ff00;
+        }
+        
+        .price-value {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 48px;
+            color: #00ff00;
+            text-shadow: 0 0 20px #00ff00;
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px #00ff00; }
+            50% { text-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00; }
+        }
+        
+        /* Buttons */
+        .retro-btn {
+            background: #000;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            padding: 15px 30px;
+            font-family: 'VT323', monospace;
+            font-size: 24px;
+            cursor: pointer;
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        
+        .retro-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #00ff00;
+            transition: left 0.3s;
+            z-index: -1;
+        }
+        
+        .retro-btn:hover {
+            color: #000;
+            box-shadow: 0 0 20px #00ff00;
+            transform: scale(1.05);
+        }
+        
+        .retro-btn:hover::before {
+            left: 0;
+        }
+        
+        /* Loading Animation */
+        .loading {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .loading-text {
+            font-size: 24px;
+            animation: loadingBlink 0.5s infinite;
+        }
+        
+        @keyframes loadingBlink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0.3; }
+        }
+        
+        /* Matrix Rain Background */
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .matrix-column {
+            position: absolute;
+            top: -100%;
+            font-size: 20px;
+            animation: matrixFall linear infinite;
+        }
+        
+        @keyframes matrixFall {
+            to {
+                transform: translateY(200vh);
+            }
+        }
+        
+        /* Sound Wave Visualizer */
+        .visualizer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2px;
+            margin: 20px 0;
+        }
+        
+        .bar {
+            width: 4px;
+            background: #00ff00;
+            animation: wave 1s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { height: 10px; }
+            50% { height: 30px; }
+        }
+        
+        .bar:nth-child(2) { animation-delay: 0.1s; }
+        .bar:nth-child(3) { animation-delay: 0.2s; }
+        .bar:nth-child(4) { animation-delay: 0.3s; }
+        .bar:nth-child(5) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <div class="matrix-rain" id="matrix"></div>
+    
+    <div class="terminal-container">
+        <div class="terminal-window">
+            <div class="title-bar">
+                <span>RÜCKBAU.EXE - MS-DOS 6.22</span>
+                <div class="window-controls">
+                    <div class="window-btn"></div>
+                    <div class="window-btn"></div>
+                    <div class="window-btn"></div>
+                </div>
+            </div>
+            
+            <div class="terminal-content">
+                <pre class="ascii-art">
+╔═══════════════════════════════════════════════════════╗
+║  ____  _   _  ____ _  ______    _    _   _ ____  ____  ║
+║ |  _ \| | | |/ ___| |/ / __ )  / \  | | | |  _ \|  _ \ ║
+║ | |_) | | | | |   | ' /|  _ \ / _ \ | | | | |_) | |_) |║
+║ |  _ <| |_| | |___| . \| |_) / ___ \| |_| |  __/|  _ < ║
+║ |_| \_\\___/ \____|_|\_\____/_/   \_\\___/|_|   |_| \_\║
+╚═══════════════════════════════════════════════════════╝
+                </pre>
+                
+                <p>C:\RUCKBAU> LOADING SYSTEM...</p>
+                <div class="loading">
+                    <span class="loading-text">████████████████████ 100% COMPLETE</span>
+                </div>
+                
+                <p>C:\RUCKBAU> SELECT SERVICE TYPE:<span class="cursor"></span></p>
+                
+                <div class="menu-item" onclick="selectService(this)">
+                    [1] RÜCKBAU.BAT - Professional Building Deconstruction - 25€/m²
+                </div>
+                
+                <div class="menu-item" onclick="selectService(this)">
+                    [2] ABBRUCH.COM - Complete Demolition Service - 80€/m³
+                </div>
+                
+                <div class="menu-item" onclick="selectService(this)">
+                    [3] SANIERUNG.SYS - Hazardous Material Removal - 35€/m²
+                </div>
+                
+                <div class="menu-item" onclick="selectService(this)">
+                    [4] ENTSORG.DLL - Waste Disposal Management - 180€/unit
+                </div>
+                
+                <p style="margin-top: 30px;">C:\RUCKBAU> ENTER PROJECT SIZE:</p>
+                <input type="text" class="retro-input" placeholder="TYPE HERE... (e.g., 250)" />
+                
+                <p style="margin-top: 20px;">C:\RUCKBAU> CALCULATING...</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress" style="width: 75%;"></div>
+                </div>
+                
+                <div class="visualizer">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                
+                <div class="price-display">
+                    <div class="price-label">TOTAL_COST.TXT</div>
+                    <div class="price-value">DM 12,500</div>
+                    <p style="margin-top: 10px; color: #00ff00;">* SPECIAL_OFFER: 20% DISCOUNT APPLIED *</p>
+                </div>
+                
+                <div style="text-align: center;">
+                    <button class="retro-btn" onclick="alert('DIALING... PLEASE WAIT...')">
+                        [F1] HOTLINE
+                    </button>
+                    <button class="retro-btn" onclick="alert('PRINTING QUOTE...')">
+                        [F2] PRINT
+                    </button>
+                    <button class="retro-btn" onclick="alert('BOOKING CONFIRMED!')">
+                        [F3] BOOK NOW
+                    </button>
+                </div>
+                
+                <p style="margin-top: 30px; text-align: center;">
+                    ═══════════════════════════════════════<br>
+                    (C) 1995 RÜCKBAUPRO GMBH - ALL RIGHTS RESERVED<br>
+                    SYSTEM: 486DX2-66 | RAM: 8MB | HDD: 420MB<br>
+                    ═══════════════════════════════════════
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Matrix rain effect
+        const matrix = document.getElementById('matrix');
+        for (let i = 0; i < 20; i++) {
+            const column = document.createElement('div');
+            column.className = 'matrix-column';
+            column.style.left = Math.random() * 100 + '%';
+            column.style.animationDuration = (5 + Math.random() * 10) + 's';
+            column.innerHTML = '10110101<br>01001110<br>11010011<br>00111001';
+            matrix.appendChild(column);
+        }
+        
+        // Service selection
+        function selectService(element) {
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            
+            // Animate progress bar
+            const progress = document.getElementById('progress');
+            progress.style.width = '0%';
+            setTimeout(() => {
+                progress.style.width = '100%';
+            }, 100);
+        }
+        
+        // Terminal typing effect
+        const input = document.querySelector('.retro-input');
+        input.addEventListener('input', (e) => {
+            const value = e.target.value;
+            if (value) {
+                const price = parseInt(value) * 25;
+                document.querySelector('.price-value').textContent = `DM ${price.toLocaleString('de-DE')}`;
+            }
+        });
+    </script>
+</body>
+</html>

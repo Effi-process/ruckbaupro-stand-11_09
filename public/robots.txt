@@ -1,0 +1,10 @@
+# Robots.txt for Wertvoll Dienstleistungen GmbH - Asbestsanierung
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://abriss-schmiede.de/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

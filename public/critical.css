@@ -1,0 +1,25 @@
+/* Critical above-the-fold styles */
+html{font-family:system-ui,-apple-system,sans-serif;font-display:swap;background:#f9fafb;scroll-behavior:smooth;line-height:1.5}
+body{margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;contain:layout style paint}
+.container-custom{max-width:80rem;margin:0 auto;padding:0 1rem}
+.hero-section{height:100vh;position:relative;overflow:hidden;contain:layout style paint}
+.hero-placeholder{background:linear-gradient(135deg,#2C4F5E 0%,#1E3A47 50%,#0F2A36 100%);position:absolute;inset:0;z-index:1}
+.hero-content{position:relative;z-index:10;height:100%;display:flex;align-items:center}
+h1{font-weight:900;letter-spacing:-0.025em;line-height:1.1;margin:0 0 1.5rem 0}
+.cta-primary{display:inline-flex;align-items:center;justify-content:center;padding:1.5rem 3rem;background:linear-gradient(to right,#ef4444,#dc2626);color:white;font-weight:700;font-size:1.5rem;border-radius:9999px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.25);text-decoration:none;transition:transform 0.3s ease;will-change:transform}
+.cta-primary:hover{transform:scale(1.1)}
+.contact-btn{position:fixed;bottom:20px;right:20px;z-index:1000;background:#0066CC;color:white;border:none;border-radius:50px;padding:12px 24px;font-weight:600;cursor:pointer;box-shadow:0 4px 12px rgba(0,102,204,0.3);transition:transform 0.2s;will-change:transform;text-decoration:none;font-size:0.875rem}
+.contact-btn:hover{transform:scale(1.05)}
+@media (max-width:768px){.container-custom{padding:0 1rem}h1{font-size:2.25rem}.cta-primary{padding:1rem 2rem;font-size:1.125rem}}
+@media (min-width:768px){h1{font-size:3.75rem}}
+@media (min-width:1024px){h1{font-size:4.5rem}}
+@media (min-width:1280px){h1{font-size:6rem}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+.animate-pulse{animation:pulse 2s cubic-bezier(0.4,0,0.6,1) infinite}
+.flex{display:flex}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}
+@media (min-width:1024px){.lg\:flex-row{flex-direction:row}}
+.text-white{color:white}.text-red-400{color:#f87171}.text-blue-400{color:#60a5fa}
+.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-4{margin-left:1rem}
+.text-left{text-align:left}.uppercase{text-transform:uppercase}
+.font-black{font-weight:900}.font-bold{font-weight:700}
+.opacity-90{opacity:0.9}.max-w-6xl{max-width:72rem}.leading-tight{line-height:1.25}
