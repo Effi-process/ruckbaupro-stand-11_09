@@ -103,7 +103,7 @@ export default function B2B() {
       </section>
 
       {/* Vorteile Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-b from-gray-800 to-oxford-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
             Ihre Vorteile als Geschäftskunde
@@ -181,7 +181,7 @@ export default function B2B() {
       </section>
 
       {/* Referenzen Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-b from-gray-800 to-oxford-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
             Aktuelle Referenzprojekte

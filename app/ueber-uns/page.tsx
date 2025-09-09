@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../components/Icon';
-import PageHeader from '../components/PageHeader';
 import FloatingMenuButton from '../components/FloatingMenuButton';
+import LogoComponent from '../components/LogoComponent';
 
 export default function UeberUns() {
   const milestones = [
@@ -57,36 +57,60 @@ export default function UeberUns() {
 
   return (
     <main className="relative">
-      {/* Floating Menu Container */}
-      <div className="sticky top-4 z-50 flex justify-end pr-4">
-        <FloatingMenuButton />
-      </div>
-      <PageHeader 
-        title="Über uns"
-        subtitle="Ihr neuer, hochmotivierter Partner für professionellen Rückbau und Schadstoffsanierung in Deutschland."
-      />
+      {/* Hero Section */}
+      <section className="relative py-8 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">
+        {/* Logo fixed in top-left corner */}
+        <div className="fixed top-4 left-4 z-40">
+          <div className="bg-gradient-to-br from-cerulean to-indigo-dye p-1 rounded-2xl shadow-2xl">
+            <div className="bg-white rounded-xl p-3">
+              <LogoComponent width={150} height={60} />
+            </div>
+          </div>
+        </div>
+
+        {/* Floating Menu Container */}
+        <div className="absolute top-4 right-4 z-50">
+          <FloatingMenuButton />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center text-white">
+            <div className="text-center pt-8">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-wide leading-tight">
+                ÜBER UNS
+              </h1>
+              <div className="flex justify-center mt-4">
+                <div className="w-32 h-1 bg-cerulean rounded-full"></div>
+              </div>
+            </div>
+            <p className="text-xl max-w-3xl mx-auto text-white/90 mt-8">
+              Ihr neuer, hochmotivierter Partner für professionellen Rückbau und Schadstoffsanierung in Deutschland.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Company Introduction */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-oxford-blue to-gray-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-[#2C4F5E] mb-6">
+              <h2 className="text-3xl font-bold text-white mb-6">
                 Ihr neuer Partner für sichere Schadstoffsanierung
               </h2>
-              <p className="text-lg text-gray-600 mb-4">
+              <p className="text-lg text-gray-300 mb-4">
                 RückbauPRO wurde mit dem klaren Ziel gegründet, höchste Standards 
                 in der Schadstoffsanierung zu bieten. Als TRGS 519 zertifizierter 
                 Fachbetrieb spezialisieren wir uns auf die sichere und umweltgerechte 
                 Beseitigung von Asbest und anderen Gebäudeschadstoffen.
               </p>
-              <p className="text-lg text-gray-600 mb-4">
+              <p className="text-lg text-gray-300 mb-4">
                 Mit einem hochmotivierten Team aus qualifizierten Fachkräften und 
                 modernster Ausrüstung sind wir bereit für Ihren Einsatz. Unser 
                 Leistungsspektrum umfasst Analyse, Beratung, Sanierung und 
                 Dokumentation – alles aus einer Hand.
               </p>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-300">
                 Als neues Unternehmen setzen wir auf faire Preise, transparente 
                 Kommunikation und höchste Qualität. Ihr Projekt ist unser erstes 
                 und wichtigstes Anliegen.
@@ -106,9 +130,9 @@ export default function UeberUns() {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-b from-gray-800 to-oxford-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
             Unsere Werte
           </h2>
           
@@ -118,8 +142,8 @@ export default function UeberUns() {
                 <div className="w-20 h-20 bg-[#0066CC] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name={value.icon} size={40} color="white" />
                 </div>
-                <h3 className="font-bold text-xl mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <h3 className="font-bold text-xl mb-2 text-white">{value.title}</h3>
+                <p className="text-gray-300">{value.description}</p>
               </div>
             ))}
           </div>
@@ -127,9 +151,9 @@ export default function UeberUns() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-oxford-blue to-gray-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
             Unser Weg zu Ihrem neuen Partner
           </h2>
           
@@ -152,12 +176,12 @@ export default function UeberUns() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-b from-gray-800 to-oxford-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-4">
+          <h2 className="text-3xl font-bold text-white text-center mb-4">
             Unser Führungsteam
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
             Hochmotivierte Fachkräfte mit allen erforderlichen Qualifikationen und modernstem Equipment
           </p>
           
@@ -175,9 +199,9 @@ export default function UeberUns() {
       </section>
 
       {/* Certifications Section */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-oxford-blue to-gray-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
             Zertifizierungen & Mitgliedschaften
           </h2>
           

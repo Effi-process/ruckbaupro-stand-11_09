@@ -2,7 +2,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Icon from '../components/Icon';
-import PageHeader from '../components/PageHeader';
+import FloatingMenuButton from '../components/FloatingMenuButton';
+import LogoComponent from '../components/LogoComponent';
 
 export default function Karriere() {
   const [selectedJob, setSelectedJob] = useState<number | null>(null);
@@ -128,20 +129,48 @@ export default function Karriere() {
   ];
 
   return (
-    <main>
-      <PageHeader 
-        title="Karriere"
-        subtitle="Werden Sie Teil unseres Teams und gestalten Sie mit uns die Zukunft der Schadstoffsanierung"
-      />
+    <main className="relative">
+      {/* Hero Section */}
+      <section className="relative py-8 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">
+        {/* Logo fixed in top-left corner */}
+        <div className="fixed top-4 left-4 z-40">
+          <div className="bg-gradient-to-br from-cerulean to-indigo-dye p-1 rounded-2xl shadow-2xl">
+            <div className="bg-white rounded-xl p-3">
+              <LogoComponent width={150} height={60} />
+            </div>
+          </div>
+        </div>
+
+        {/* Floating Menu Container */}
+        <div className="absolute top-4 right-4 z-50">
+          <FloatingMenuButton />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center text-white">
+            <div className="text-center pt-8">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-wide leading-tight">
+                KARRIERE
+              </h1>
+              <div className="flex justify-center mt-4">
+                <div className="w-32 h-1 bg-cerulean rounded-full"></div>
+              </div>
+            </div>
+            <p className="text-xl max-w-3xl mx-auto text-white/90 mt-8">
+              Werden Sie Teil unseres Teams und gestalten Sie mit uns die Zukunft der Schadstoffsanierung
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Intro Section */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-oxford-blue to-gray-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-[#2C4F5E] mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6">
               Arbeiten mit Sinn und Perspektive
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-300">
               Bei uns arbeiten Sie nicht nur für ein Gehalt, sondern für die Sicherheit 
               und Gesundheit von Menschen. Als führendes Unternehmen in der Schadstoffsanierung 
               bieten wir Ihnen einen sicheren Arbeitsplatz mit hervorragenden Entwicklungsmöglichkeiten.
@@ -151,9 +180,9 @@ export default function Karriere() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-b from-gray-800 to-oxford-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
             Was wir Ihnen bieten
           </h2>
           
@@ -172,9 +201,9 @@ export default function Karriere() {
       </section>
 
       {/* Job Listings Section */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-oxford-blue to-gray-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
             Aktuelle Stellenangebote
           </h2>
           
@@ -273,9 +302,9 @@ export default function Karriere() {
       </section>
 
       {/* Application Process Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-b from-gray-800 to-oxford-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
             Ihr Weg zu uns
           </h2>
           

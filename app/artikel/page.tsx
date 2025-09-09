@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Icon from '../components/Icon';
+import FloatingMenuButton from '../components/FloatingMenuButton';
+import LogoComponent from '../components/LogoComponent';
 
 export default function Artikel() {
   const [selectedCategory, setSelectedCategory] = useState('alle');
@@ -88,9 +90,22 @@ export default function Artikel() {
     : articles.filter(article => article.category === selectedCategory);
 
   return (
-    <main>
+    <main className="relative">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-[#2C4F5E] to-[#1E3A47]">
+      <section className="relative py-20 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">
+        {/* Logo fixed in top-left corner */}
+        <div className="fixed top-4 left-4 z-40">
+          <div className="bg-gradient-to-br from-cerulean to-indigo-dye p-1 rounded-2xl shadow-2xl">
+            <div className="bg-white rounded-xl p-3">
+              <LogoComponent width={150} height={60} />
+            </div>
+          </div>
+        </div>
+
+        {/* Floating Menu Container */}
+        <div className="fixed top-4 right-4 z-50">
+          <FloatingMenuButton />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -196,7 +211,7 @@ export default function Artikel() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-b from-gray-800 to-oxford-blue text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-off-white rounded-xl shadow-lg p-8 text-center">
             <Icon name="document" size={64} className="mx-auto mb-4 text-[#0066CC]" />

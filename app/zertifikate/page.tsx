@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Icon from '../components/Icon';
 import Link from 'next/link';
+import FloatingMenuButton from '../components/FloatingMenuButton';
+import LogoComponent from '../components/LogoComponent';
 
 export default function Zertifikate() {
   const zertifikate = [
@@ -88,7 +90,20 @@ export default function Zertifikate() {
   ];
 
   return (
-    <main>
+    <main className="relative">
+      {/* Logo fixed in top-left corner */}
+      <div className="fixed top-4 left-4 z-40">
+        <div className="bg-gradient-to-br from-cerulean to-indigo-dye p-1 rounded-2xl shadow-2xl">
+          <div className="bg-white rounded-xl p-3">
+            <LogoComponent width={150} height={60} />
+          </div>
+        </div>
+      </div>
+
+      {/* Floating Menu Container */}
+      <div className="fixed top-4 right-4 z-50">
+        <FloatingMenuButton />
+      </div>
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-[#2C4F5E] to-[#1E3A47]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -104,7 +119,7 @@ export default function Zertifikate() {
       </section>
 
       {/* Intro Section */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-oxford-blue to-gray-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-[#2C4F5E] mb-6">
@@ -121,7 +136,7 @@ export default function Zertifikate() {
       </section>
 
       {/* Zertifikate Grid */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-b from-gray-800 to-oxford-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
             Unsere Zertifizierungen im Detail
@@ -162,7 +177,7 @@ export default function Zertifikate() {
       </section>
 
       {/* Mitgliedschaften Section */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-oxford-blue to-gray-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
             Mitgliedschaften & Verbände
@@ -180,7 +195,7 @@ export default function Zertifikate() {
       </section>
 
       {/* Qualitätspolitik Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gradient-to-b from-gray-800 to-oxford-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
@@ -247,7 +262,7 @@ export default function Zertifikate() {
       </section>
 
       {/* Downloads Section */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-oxford-blue to-gray-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
             Zertifikate zum Download

@@ -1,10 +1,26 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../../components/Icon';
+import FloatingMenuButton from '../../components/FloatingMenuButton';
+import LogoComponent from '../../components/LogoComponent';
 
 export default function EntkernungPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
+    <main className="min-h-screen relative bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
+      {/* Logo fixed in top-left corner */}
+      <div className="fixed top-4 left-4 z-40">
+        <div className="bg-gradient-to-br from-cerulean to-indigo-dye p-1 rounded-2xl shadow-2xl">
+          <div className="bg-white rounded-xl p-3">
+            <LogoComponent width={150} height={60} />
+          </div>
+        </div>
+      </div>
+
+      {/* Floating Menu Container */}
+      <div className="fixed top-4 right-4 z-50">
+        <FloatingMenuButton />
+      </div>
+
       {/* Hero Section */}
       <section className="relative py-20 px-6">
         <div className="container mx-auto max-w-6xl">
