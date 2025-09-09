@@ -64,7 +64,7 @@ export default function CanvasShooterGame() {
 
     function resize() {
       const wrap = wrapRef.current;
-      if (!wrap) return;
+      if (!wrap || !canvas) return;
       const w = Math.min(wrap.clientWidth, 800);
       const ratio = w / 800;
       W = Math.round(800 * ratio);
