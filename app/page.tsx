@@ -21,14 +21,13 @@ const ProjectGallery = dynamic(() => import('./components/ProjectGallery'), {
 export default function Home() {
   return (
     <main className="relative">
-      {/* Sticky Menu Container - Now working! */}
-      <div className="sticky top-4 z-50 flex justify-end pr-4">
-        <FloatingMenuButton />
-      </div>
-      
       {/* Video Hero Section - New modern design */}
-      <div id="hero">
+      <div id="hero" className="relative">
         <VideoHeroSection />
+        {/* Sticky Menu Container - Now working! */}
+        <div className="absolute top-4 right-4 z-50">
+          <FloatingMenuButton />
+        </div>
       </div>
       
       {/* Container für durchgehenden Gradient ab dem Video */}

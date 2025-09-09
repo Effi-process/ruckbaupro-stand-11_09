@@ -7,10 +7,14 @@ html {
   overflow-x: hidden;
   scrollbar-width: thin; /* Firefox - thin scrollbar */
   scrollbar-color: #1282A2 #f8fafc; /* cerulean thumb and light track for Firefox */
+  margin: 0;
+  padding: 0;
 }
 
 body {
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 /* Custom scrollbar for webkit browsers (Chrome, Safari, Edge) */
@@ -228,8 +232,10 @@ body {
   font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
   font-variant: all-small-caps;
   letter-spacing: -0.025em;
-  background-color: #fefcfb;
-  color: #0a1128;
+  background-color: #0a1128;
+  color: #fefcfb;
+  margin: 0;
+  padding: 0;
 }
 
 /* Premium Headings */
