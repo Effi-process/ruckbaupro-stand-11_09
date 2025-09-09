@@ -146,6 +146,7 @@ export default function CanvasShooterGame() {
 
     /** --- Eingaben --- */
     function onMouseMove(e: MouseEvent) {
+      if (!canvas) return;
       const rect = canvas.getBoundingClientRect();
       const mx = e.clientX - rect.left;
       player.x = Math.max(10, Math.min(W - player.w - 10, mx - player.w / 2));
@@ -154,6 +155,7 @@ export default function CanvasShooterGame() {
     
     // Touch-Steuerung für Mobile
     function onTouchMove(e: TouchEvent) {
+      if (!canvas) return;
       e.preventDefault();
       const rect = canvas.getBoundingClientRect();
       const touch = e.touches[0];
@@ -167,6 +169,7 @@ export default function CanvasShooterGame() {
     
     if (isMobile) {
       // Mobile: Touch Events
+      // @ts-ignore - canvas is already checked above
       canvas.addEventListener("touchmove", onTouchMove, { passive: false });
       canvas.addEventListener("touchstart", onTouchStart, { passive: false });
       canvas.addEventListener("touchend", (e) => e.preventDefault(), { passive: false });
@@ -466,15 +469,17 @@ export default function CanvasShooterGame() {
     return () => {
       cancelAnimationFrame(raf);
       
-      if (isMobile) {
-        canvas.removeEventListener("touchmove", onTouchMove);
-        canvas.removeEventListener("touchstart", onTouchStart);
-        canvas.removeEventListener("touchend", (e) => e.preventDefault());
-      } else {
-        canvas.removeEventListener("mousemove", onMouseMove);
-        canvas.removeEventListener("click", onClick);
-        window.removeEventListener("keydown", onKey);
-        window.removeEventListener("keyup", onKey);
+      if (canvas) {
+        if (isMobile) {
+          canvas.removeEventListener("touchmove", onTouchMove);
+          canvas.removeEventListener("touchstart", onTouchStart);
+          canvas.removeEventListener("touchend", (e) => e.preventDefault());
+        } else {
+          canvas.removeEventListener("mousemove", onMouseMove);
+          canvas.removeEventListener("click", onClick);
+          window.removeEventListener("keydown", onKey);
+          window.removeEventListener("keyup", onKey);
+        }
       }
       
       ro.disconnect();
