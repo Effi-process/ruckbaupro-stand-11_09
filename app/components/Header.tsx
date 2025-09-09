@@ -27,25 +27,25 @@ export default function Header() {
       name: 'Leistungen', 
       href: '/leistungen',
       dropdown: false,
-      items: undefined
+      items: [] as any[]
     },
     { 
       name: 'Über uns', 
       href: '/ueber-uns',
       dropdown: false,
-      items: undefined
+      items: [] as any[]
     },
     { 
       name: 'Standorte', 
       href: '/standorte',
       dropdown: false,
-      items: undefined
+      items: [] as any[]
     },
     { 
       name: 'Kontakt', 
       href: '/kontakt',
       dropdown: false,
-      items: undefined
+      items: [] as any[]
     },
   ];
 
