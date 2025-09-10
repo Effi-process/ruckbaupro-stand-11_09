@@ -161,10 +161,12 @@ export default function LeistungenPage() {
                   <div className="relative bg-white/10 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 flex flex-col w-full">
                     {/* Service Image */}
                     <div className="relative h-56 overflow-hidden">
-                      <img
+                      <Image
                         src={service.image}
                         alt={service.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                       

@@ -87,10 +87,13 @@ export default function RueckbauPage() {
               </div>
               
               <div className="relative">
-                <img
+                <Image
                   src="/images/rueckbau-professional.png"
                   alt="Professioneller Rückbau"
                   className="rounded-2xl w-full"
+                  width={600}
+                  height={400}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl"></div>
               </div>
