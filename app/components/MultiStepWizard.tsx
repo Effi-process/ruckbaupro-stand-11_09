@@ -33,10 +33,6 @@ export default function MultiStepWizard({ purpose, onComplete }: MultiStepWizard
   });
   const [isValid, setIsValid] = useState(false);
 
-  useEffect(() => {
-    validateForm();
-  }, [formData, validateForm]);
-
   const validateForm = useCallback(() => {
     const nameValid = formData.name.trim().length > 0;
     const contactValid = formData.contactMethod === 'email' 
@@ -47,7 +43,11 @@ export default function MultiStepWizard({ purpose, onComplete }: MultiStepWizard
     const privacyValid = formData.datenschutz;
 
     setIsValid(nameValid && contactValid && cityValid && serviceValid && privacyValid);
-  }, [formData]);
+  }, [formData.name, formData.email, formData.phone, formData.contactMethod, formData.city, formData.services, formData.datenschutz]);
+
+  useEffect(() => {
+    validateForm();
+  }, [validateForm]);
 
   const generateEmailText = () => {
     const contactInfo = formData.contactMethod === 'email' 
