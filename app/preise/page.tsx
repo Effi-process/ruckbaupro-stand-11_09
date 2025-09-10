@@ -18,7 +18,7 @@ export default function Preise() {
     }
   });
 
-  const preise = {
+  const preise: Record<string, { base: number; name: string }> = {
     asbestdach: { base: 35, name: 'Asbestdachsanierung' },
     asbestfassade: { base: 45, name: 'Asbestfassadensanierung' },
     asbestboden: { base: 55, name: 'Asbestbodensanierung' },
@@ -27,14 +27,14 @@ export default function Preise() {
     pcb: { base: 65, name: 'PCB-Sanierung' }
   };
 
-  const schwierigkeitsFaktoren = {
+  const schwierigkeitsFaktoren: Record<string, number> = {
     einfach: 0.8,
     normal: 1.0,
     schwer: 1.3,
     sehrschwer: 1.6
   };
 
-  const zusatzPreise = {
+  const zusatzPreise: Record<string, number> = {
     analyse: 500,
     freimessung: 800,
     dokumentation: 300,

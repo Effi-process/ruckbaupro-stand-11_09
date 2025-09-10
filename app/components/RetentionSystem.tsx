@@ -270,7 +270,7 @@ const RetentionSystem: React.FC = () => {
   };
 
   const getPriorityColor = (priority: string): string => {
-    const colors = {
+    const colors: Record<string, string> = {
       'low': 'bg-gray-100 text-gray-800',
       'medium': 'bg-yellow-100 text-yellow-800',
       'high': 'bg-orange-100 text-orange-800',
@@ -280,7 +280,7 @@ const RetentionSystem: React.FC = () => {
   };
 
   const getTierColor = (tier: string): string => {
-    const colors = {
+    const colors: Record<string, string> = {
       'Bronze': 'bg-amber-100 text-amber-800',
       'Silver': 'bg-gray-100 text-gray-800',
       'Gold': 'bg-yellow-100 text-yellow-800',
@@ -290,7 +290,7 @@ const RetentionSystem: React.FC = () => {
   };
 
   const getTierIcon = (tier: string): string => {
-    const icons = {
+    const icons: Record<string, string> = {
       'Bronze': '🥉',
       'Silver': '🥈',
       'Gold': '🥇',
@@ -300,7 +300,7 @@ const RetentionSystem: React.FC = () => {
   };
 
   const getChannelIcon = (channel: string): string => {
-    const icons = {
+    const icons: Record<string, string> = {
       'email': '📧',
       'sms': '📱',
       'call': '📞',
