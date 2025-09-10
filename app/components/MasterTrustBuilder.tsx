@@ -30,12 +30,14 @@ interface TrustBuilderAgent {
 
 const TRUST_BUILDER_PRESETS = {
   MAXIMUM_TRUST: 'maximum_trust',
-  QUICK_CONVERSION: 'quick_conversion',
-  ENTERPRISE: 'enterprise'
-};
+  STANDARD_TRUST: 'standard_trust', 
+  BASIC_TRUST: 'basic_trust'
+} as const;
+
+type TrustPreset = keyof typeof TRUST_BUILDER_PRESETS;
 
 interface MasterTrustBuilderProps {
-  preset?: 'MAXIMUM_TRUST' | 'STANDARD_TRUST' | 'BASIC_TRUST';
+  preset?: TrustPreset;
   customConfig?: Partial<TrustBuilderConfig>;
   layout?: 'full-page' | 'section' | 'sidebar' | 'widget';
   autoRotate?: boolean;
@@ -66,7 +68,7 @@ export default function MasterTrustBuilder({
   // Trust Builder Agent initialisieren
   useEffect(() => {
     const config: TrustBuilderConfig = {
-      preset: TRUST_BUILDER_PRESETS[preset] || 'maximum_trust',
+      preset: TRUST_BUILDER_PRESETS[preset] ?? 'maximum_trust',
       certificates: [
         {
           id: 'cert-001',
