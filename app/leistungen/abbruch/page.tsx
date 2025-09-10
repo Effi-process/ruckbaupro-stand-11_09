@@ -4,10 +4,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../../components/FooterWithMarquee';
 import StickyServiceMenu from '../../components/StickyServiceMenu';
+import FloatingMenuButton from '../../components/FloatingMenuButton';
 
 export default function AbbruchPage() {
   return (
     <main className="overflow-hidden">
+      {/* Floating Menu Button - Fixed position */}
+      <div className="fixed top-4 right-4 z-50">
+        <FloatingMenuButton />
+      </div>
+      
       <StickyServiceMenu />
       
       {/* Hero Section */}
