@@ -75,9 +75,35 @@ export default function PremiumCalculator() {
     { id: 'replacement', name: 'Ersatzmaterial', price: 0 }
   ];
 
+  const calculatePrice = useCallback(() => {
+    if (!formData.projectType || !formData.area || !formData.material || !formData.urgency) return;
+
+    const project = projectTypes.find(p => p.id === formData.projectType);
+    const material = materials.find(m => m.id === formData.material);
+    const urgency = urgencyOptions.find(u => u.id === formData.urgency);
+
+    if (!project || !material || !urgency) return;
+
+    let price = project.basePrice * formData.area * material.factor * urgency.factor;
+
+    formData.additionalServices.forEach(serviceId => {
+      const service = additionalServices.find(s => s.id === serviceId);
+      if (service) {
+        if (service.id === 'replacement') {
+          price += formData.area * 25; // Ersatzmaterial pro m²
+        } else {
+          price += service.price;
+        }
+      }
+    });
+
+    setCalculatedPrice(Math.round(price));
+    setDiscountPrice(Math.round(price * 0.85)); // 15% discount
+  }, [formData.projectType, formData.area, formData.material, formData.urgency, formData.additionalServices, projectTypes, materials, urgencyOptions, additionalServices]);
+
   useEffect(() => {
     calculatePrice();
-  }, [formData, calculatePrice]);
+  }, [calculatePrice]);
 
   useEffect(() => {
     // Show urgency after 10 seconds
@@ -114,32 +140,6 @@ export default function PremiumCalculator() {
       clearInterval(countdownInterval);
     };
   }, [formData.area, formData.projectType]);
-
-  const calculatePrice = useCallback(() => {
-    if (!formData.projectType || !formData.area || !formData.material || !formData.urgency) return;
-
-    const project = projectTypes.find(p => p.id === formData.projectType);
-    const material = materials.find(m => m.id === formData.material);
-    const urgency = urgencyOptions.find(u => u.id === formData.urgency);
-
-    if (!project || !material || !urgency) return;
-
-    let price = project.basePrice * formData.area * material.factor * urgency.factor;
-
-    formData.additionalServices.forEach(serviceId => {
-      const service = additionalServices.find(s => s.id === serviceId);
-      if (service) {
-        if (service.id === 'replacement') {
-          price += formData.area * 25; // Ersatzmaterial pro m²
-        } else {
-          price += service.price;
-        }
-      }
-    });
-
-    setCalculatedPrice(Math.round(price));
-    setDiscountPrice(Math.round(price * 0.85)); // 15% discount
-  }, [formData.projectType, formData.area, formData.material, formData.urgency, formData.additionalServices]);
 
   const handleNext = () => {
     if (currentStep < steps.length - 1) {
