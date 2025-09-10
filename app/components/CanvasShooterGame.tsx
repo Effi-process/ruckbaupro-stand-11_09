@@ -484,7 +484,7 @@ export default function CanvasShooterGame() {
       
       ro.disconnect();
     };
-  }, [isVisible]);
+  }, [isVisible, CONFIG]);
 
   return (
     <div ref={wrapRef} className="w-full h-full">

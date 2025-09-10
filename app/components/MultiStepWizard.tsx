@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Icon from './Icon';
 
 interface MultiStepWizardProps {
@@ -35,9 +35,9 @@ export default function MultiStepWizard({ purpose, onComplete }: MultiStepWizard
 
   useEffect(() => {
     validateForm();
-  }, [formData]);
+  }, [formData, validateForm]);
 
-  const validateForm = () => {
+  const validateForm = useCallback(() => {
     const nameValid = formData.name.trim().length > 0;
     const contactValid = formData.contactMethod === 'email' 
       ? formData.email.trim().length > 0 && formData.email.includes('@')
@@ -47,7 +47,7 @@ export default function MultiStepWizard({ purpose, onComplete }: MultiStepWizard
     const privacyValid = formData.datenschutz;
 
     setIsValid(nameValid && contactValid && cityValid && serviceValid && privacyValid);
-  };
+  }, [formData]);
 
   const generateEmailText = () => {
     const contactInfo = formData.contactMethod === 'email' 

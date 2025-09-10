@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Icon from './Icon';
 import PremiumButton from './PremiumButton';
 import Link from 'next/link';
@@ -77,7 +77,7 @@ export default function PremiumCalculator() {
 
   useEffect(() => {
     calculatePrice();
-  }, [formData]);
+  }, [formData, calculatePrice]);
 
   useEffect(() => {
     // Show urgency after 10 seconds
@@ -113,9 +113,9 @@ export default function PremiumCalculator() {
       clearInterval(calcInterval);
       clearInterval(countdownInterval);
     };
-  }, []);
+  }, [formData.area, formData.projectType]);
 
-  const calculatePrice = () => {
+  const calculatePrice = useCallback(() => {
     if (!formData.projectType || !formData.area || !formData.material || !formData.urgency) return;
 
     const project = projectTypes.find(p => p.id === formData.projectType);
@@ -139,7 +139,7 @@ export default function PremiumCalculator() {
 
     setCalculatedPrice(Math.round(price));
     setDiscountPrice(Math.round(price * 0.85)); // 15% discount
-  };
+  }, [formData.projectType, formData.area, formData.material, formData.urgency, formData.additionalServices]);
 
   const handleNext = () => {
     if (currentStep < steps.length - 1) {

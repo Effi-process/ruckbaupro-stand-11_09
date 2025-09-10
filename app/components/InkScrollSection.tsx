@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 export default function InkScrollSection() {
   const headlineRef = React.useRef<HTMLHeadingElement>(null);
@@ -37,11 +38,15 @@ export default function InkScrollSection() {
     const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
     function updateInk() {
-      if (!headlineEl || !subtextEl) return;
+      const currentHeadlineEl = headlineRef.current;
+      const currentSubtextEl = subtextRef.current;
+      
+      if (!currentHeadlineEl || !currentSubtextEl) return;
+      
       const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
       
       // Headline effect
-      const headlineRect = headlineEl.getBoundingClientRect();
+      const headlineRect = currentHeadlineEl.getBoundingClientRect();
       const headlineStart = vh * 0.95;
       const headlineEnd = vh * 0.25;
       const headlineProgress = clamp01((headlineStart - headlineRect.top) / (headlineStart - headlineEnd || 1));
@@ -60,7 +65,7 @@ export default function InkScrollSection() {
       }
 
       // Subtext effect (starts when subtext enters viewport)
-      const subtextRect = subtextEl.getBoundingClientRect();
+      const subtextRect = currentSubtextEl.getBoundingClientRect();
       const subtextStart = vh * 0.9;
       const subtextEnd = vh * 0.1;
       const subtextProgress = clamp01((subtextStart - subtextRect.top) / (subtextStart - subtextEnd || 1));
@@ -124,10 +129,12 @@ export default function InkScrollSection() {
 
         {/* Professionelles Baustellen-Bild */}
         <div className="mt-12 sm:mt-16 md:mt-20 w-[min(1100px,92vw)] aspect-video rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,.3)] relative group hover:scale-105 transition-transform duration-500 mx-auto">
-          <img 
+          <Image 
             src="/images/team-photo.jpeg" 
             alt="Professioneller Rückbau mit Container-Entsorgung"
             className="absolute inset-0 w-full h-full object-cover"
+            fill
+            sizes="(max-width: 1100px) 92vw, 1100px"
           />
           <div className="absolute inset-0 bg-black/20" />
           

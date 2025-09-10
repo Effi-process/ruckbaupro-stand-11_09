@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 import Icon from './Icon';
 
 export default function ProjectGallery() {
@@ -188,7 +189,7 @@ export default function ProjectGallery() {
             >
               {service.image && (
                 <div className="absolute inset-0 opacity-10">
-                  <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+                  <Image src={service.image} alt={service.title} className="w-full h-full object-cover" fill sizes="100%" />
                 </div>
               )}
               <div className="relative z-10">

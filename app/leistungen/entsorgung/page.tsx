@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import FooterWithMarquee from '../../components/FooterWithMarquee';
 import StickyServiceMenu from '../../components/StickyServiceMenu';
 
@@ -86,10 +87,13 @@ export default function EntsorgungPage() {
               </div>
               
               <div className="relative">
-                <img
+                <Image
                   src="/images/entsorgung-recycling.png"
                   alt="Umweltgerechte Entsorgung"
                   className="rounded-2xl w-full"
+                  width={600}
+                  height={400}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl"></div>
               </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import FooterWithMarquee from '../../components/FooterWithMarquee';
 import StickyServiceMenu from '../../components/StickyServiceMenu';
 
@@ -89,10 +90,13 @@ export default function AbbruchPage() {
               </div>
               
               <div className="relative">
-                <img
+                <Image
                   src="/images/demolition-action.png"
                   alt="Professioneller Abbruch"
                   className="rounded-2xl w-full"
+                  width={600}
+                  height={400}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl"></div>
               </div>

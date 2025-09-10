@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Icon from './Icon';
 
@@ -75,12 +75,12 @@ export default function CitySearch() {
     city.region.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const handleCitySelect = (cityId: string) => {
+  const handleCitySelect = useCallback((cityId: string) => {
     // Navigiere zur Stadt-Seite
     router.push(`/standorte/${cityId}`);
     setSearchQuery('');
     setIsOpen(false);
-  };
+  }, [router]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -115,7 +115,7 @@ export default function CitySearch() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, highlightedIndex, filteredCities]);
+  }, [isOpen, highlightedIndex, filteredCities, handleCitySelect]);
 
   // Click outside to close
   useEffect(() => {

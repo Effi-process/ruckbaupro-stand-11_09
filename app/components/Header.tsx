@@ -84,12 +84,13 @@ export default function Header() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center py-4">
-              <img 
+              <Image 
                 src="/logo-new.svg"
                 alt="RückbauPRO"
                 className="h-14 md:h-16 w-auto"
                 width={220}
                 height={66}
+                priority
               />
             </Link>
 

@@ -141,8 +141,6 @@ export default function RootLayout({
             })
           }}
         />
-        {/* Critical CSS moved to external file */}
-        <link rel="stylesheet" href="/critical.css" />
         {/* Preconnect to critical domains */}
         <link rel="preconnect" href="https://asbestsanierung-cdn.b-cdn.net" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
