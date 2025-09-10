@@ -25,7 +25,9 @@ export default function PerformanceMonitor() {
         const entries = list.getEntries();
         const lastEntry = entries[entries.length - 1] as any;
         
-        metricsRef.current.lcp = lastEntry.startTime;
+        if (metricsRef.current) {
+          metricsRef.current.lcp = lastEntry.startTime;
+        }
         
         // Alert if LCP is too slow (impacts conversions)
         if (lastEntry.startTime > 2500) {
@@ -39,7 +41,9 @@ export default function PerformanceMonitor() {
       // First Input Delay (FID) - Critical for interaction
       new PerformanceObserver((list) => {
         list.getEntries().forEach((entry: any) => {
-          metricsRef.current.fid = entry.processingStart - entry.startTime;
+          if (metricsRef.current) {
+            metricsRef.current.fid = entry.processingStart - entry.startTime;
+          }
           
           if (entry.processingStart - entry.startTime > 100) {
             console.warn('🐌 FID too slow:', entry.processingStart - entry.startTime, 'ms');
@@ -59,7 +63,9 @@ export default function PerformanceMonitor() {
           }
         });
         
-        metricsRef.current.cls = clsValue;
+        if (metricsRef.current) {
+          metricsRef.current.cls = clsValue;
+        }
         
         if (clsValue > 0.1) {
           console.warn('🐌 CLS too high:', clsValue);
@@ -74,7 +80,9 @@ export default function PerformanceMonitor() {
         list.getEntries().forEach((entry: any) => {
           if (entry.name === location.href) {
             const ttfb = entry.responseStart - entry.requestStart;
-            metricsRef.current.ttfb = ttfb;
+            if (metricsRef.current) {
+              metricsRef.current.ttfb = ttfb;
+            }
             
             if (ttfb > 800) {
               console.warn('🐌 TTFB too slow:', ttfb, 'ms');
@@ -89,7 +97,9 @@ export default function PerformanceMonitor() {
       // First Contentful Paint (FCP)
       new PerformanceObserver((list) => {
         list.getEntries().forEach((entry: any) => {
-          metricsRef.current.fcp = entry.startTime;
+          if (metricsRef.current) {
+            metricsRef.current.fcp = entry.startTime;
+          }
           
           if (entry.startTime > 1800) {
             console.warn('🐌 FCP too slow:', entry.startTime, 'ms');

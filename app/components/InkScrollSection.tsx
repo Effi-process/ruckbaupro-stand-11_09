@@ -37,6 +37,7 @@ export default function InkScrollSection() {
     const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
     function updateInk() {
+      if (!headlineEl || !subtextEl) return;
       const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
       
       // Headline effect
