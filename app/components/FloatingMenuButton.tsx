@@ -107,7 +107,7 @@ export default function FloatingMenuButton() {
       <button
         ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
-        className="group flex items-center gap-2 px-4 py-2.5 bg-white/20 backdrop-blur-md border border-white/30 hover:border-cerulean/50 text-cerulean hover:bg-white/30 transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl"
+        className="group flex items-center gap-2 px-4 py-3 bg-white/15 backdrop-blur-xl border border-white/25 hover:border-cerulean/50 text-cerulean hover:bg-white/25 transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
@@ -129,40 +129,40 @@ export default function FloatingMenuButton() {
           
           <div
             ref={dropdownRef}
-            className="fixed top-20 right-4 w-80 bg-white/90 backdrop-blur-xl shadow-2xl border border-white/20 rounded-xl z-[9999] overflow-hidden max-h-[80vh] overflow-y-auto"
+            className="fixed top-20 right-4 w-[420px] bg-gray-900/95 backdrop-blur-2xl shadow-3xl border border-white/20 rounded-2xl z-[9999] overflow-hidden max-h-[85vh] overflow-y-auto"
           >
-            <div className="px-4 py-3 bg-gradient-to-r from-cerulean/90 to-indigo-dye/90 backdrop-blur-sm text-white">
+            <div className="px-6 py-4 bg-gradient-to-r from-cerulean/80 to-indigo-dye/80 backdrop-blur-xl text-white">
               <div className="flex items-center justify-between">
-                <h3 className="font-bold text-lg">RückbauPRO Navigation</h3>
+                <h3 className="font-bold text-xl">RÜCKBAUPRO NAVIGATION</h3>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-1 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors"
+                  className="p-2 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors"
                 >
-                  <Icon name="x" size={18} />
+                  <Icon name="x" size={20} />
                 </button>
               </div>
-              <p className="text-sm opacity-90 mt-1">Alle Seiten & Services</p>
+              <p className="text-base opacity-90 mt-2">ALLE SEITEN & SERVICES</p>
             </div>
 
-            <div className="py-2">
+            <div className="py-3">
               {menuSections.map((section) => {
                 const isExpanded = expandedSections.includes(section.title);
                 
                 return (
-                  <div key={section.title} className="px-2">
+                  <div key={section.title} className="px-3">
                     {section.title === "Startseite" ? (
                       <Link
                         href="/"
                         onClick={() => setIsOpen(false)}
-                        className="w-full flex items-center justify-between px-3 py-2.5 text-left hover:bg-gray-50 rounded-lg transition-colors duration-200 group"
+                        className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/15 rounded-xl transition-colors duration-200 group"
                       >
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-4">
                           <Icon 
                             name={section.icon} 
-                            size={16} 
+                            size={22} 
                             className="text-cerulean group-hover:text-indigo-dye transition-colors" 
                           />
-                          <span className="font-bold text-oxford-blue text-base">
+                          <span className="font-bold text-white text-xl">
                             {section.title}
                           </span>
                         </div>
@@ -170,23 +170,23 @@ export default function FloatingMenuButton() {
                     ) : (
                       <button
                         onClick={() => section.items.length > 0 ? toggleSection(section.title) : null}
-                        className="w-full flex items-center justify-between px-3 py-2.5 text-left hover:bg-gray-50 rounded-lg transition-colors duration-200 group"
+                        className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-white/15 rounded-xl transition-colors duration-200 group"
                       >
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-4">
                         <Icon 
                           name={section.icon} 
-                          size={16} 
+                          size={22} 
                           className="text-cerulean group-hover:text-indigo-dye transition-colors" 
                         />
-                        <span className="font-semibold text-oxford-blue text-sm">
+                        <span className="font-semibold text-white text-lg">
                           {section.title}
                         </span>
                       </div>
                       {section.items.length > 0 && (
                         <Icon 
                           name="chevron-down" 
-                          size={14} 
-                          className={`text-gray-400 transition-transform duration-200 ${
+                          size={18} 
+                          className={`text-white/70 transition-transform duration-200 ${
                             isExpanded ? 'rotate-180' : ''
                           }`}
                         />
@@ -195,33 +195,33 @@ export default function FloatingMenuButton() {
                     )}
 
                     {isExpanded && section.title !== "Startseite" && (
-                      <div className="ml-6 pl-3 border-l-2 border-gray-100 space-y-0.5 pb-2">
+                      <div className="ml-10 pl-5 border-l-2 border-white/25 space-y-2 pb-4 mt-3">
                         {section.items.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
                             onClick={() => setIsOpen(false)}
-                            className="flex items-start gap-3 px-3 py-2 text-gray-600 hover:text-cerulean hover:bg-gray-50 rounded-md transition-all duration-200 group"
+                            className="flex items-start gap-4 px-4 py-3 text-white/90 hover:text-white hover:bg-white/15 rounded-lg transition-all duration-200 group"
                           >
                             <Icon 
                               name={item.icon} 
-                              size={14} 
-                              className="text-cerulean/60 group-hover:text-cerulean transition-colors mt-0.5" 
+                              size={18} 
+                              className="text-cerulean/80 group-hover:text-cerulean transition-colors mt-0.5" 
                             />
                             <div className="flex-1">
-                              <div className="font-medium text-sm text-oxford-blue group-hover:text-cerulean">
+                              <div className="font-medium text-base text-white group-hover:text-cerulean">
                                 {item.name}
                               </div>
                               {item.description && (
-                                <div className="text-xs text-gray-500 mt-0.5">
+                                <div className="text-sm text-white/70 mt-1">
                                   {item.description}
                                 </div>
                               )}
                             </div>
                             <Icon 
                               name="external-link" 
-                              size={12} 
-                              className="text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity mt-1" 
+                              size={14} 
+                              className="text-white/50 opacity-0 group-hover:opacity-100 transition-opacity mt-1" 
                             />
                           </Link>
                         ))}
@@ -232,16 +232,16 @@ export default function FloatingMenuButton() {
               })}
             </div>
 
-            <div className="px-4 py-3 bg-gray-50/80 backdrop-blur-sm border-t border-gray-200/50">
+            <div className="px-6 py-4 bg-white/15 backdrop-blur-xl border-t border-white/20">
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">
-                    24/7 Notfall-Hotline
+                  <div className="text-xs text-white/70 uppercase tracking-wide font-medium">
+                    24/7 NOTFALL-HOTLINE
                   </div>
                   <Link
                     href="tel:08000060970"
                     onClick={() => setIsOpen(false)}
-                    className="text-cerulean hover:text-indigo-dye font-bold text-lg transition-colors"
+                    className="text-cerulean hover:text-white font-bold text-xl transition-colors"
                   >
                     0800 0060970
                   </Link>
@@ -249,9 +249,9 @@ export default function FloatingMenuButton() {
                 <Link
                   href="/kontakt"
                   onClick={() => setIsOpen(false)}
-                  className="px-4 py-2 bg-cerulean hover:bg-indigo-dye text-white text-sm font-semibold rounded-lg transition-colors"
+                  className="px-6 py-3 bg-cerulean hover:bg-indigo-dye text-white text-base font-bold rounded-xl transition-colors shadow-lg"
                 >
-                  Kontakt
+                  KONTAKT
                 </Link>
               </div>
             </div>

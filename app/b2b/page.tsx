@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Icon from '../components/Icon';
+import FloatingElements from '../components/FloatingElements';
 
 export default function B2B() {
   const vorteile = [
@@ -71,6 +72,8 @@ export default function B2B() {
 
   return (
     <main>
+      {/* Floating Logo and Menu */}
+      <FloatingElements />
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-[#2C4F5E] to-[#1E3A47]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

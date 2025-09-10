@@ -1,51 +1,62 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../../components/Icon';
+import FloatingElements from '../../components/FloatingElements';
+import MenuFooter from '../../components/MenuFooter';
 
 export default function KmfSanierungPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
-      {/* Hero Section */}
-      <section className="relative py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+    <main className="min-h-screen">
+      {/* Floating Elements */}
+      <FloatingElements />
+      
+      {/* Full-Width Hero Section with Background Image */}
+      <section className="relative h-screen w-full overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/kmf-sanierung-hero.png"
+            alt="Professionelle KMF-Sanierung Team bei der Arbeit"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Gradient Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+        </div>
+        
+        {/* Content positioned on the left side */}
+        <div className="relative z-10 flex items-center h-full px-6">
+          <div className="container mx-auto max-w-6xl">
+            <div className="max-w-2xl">
               <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Zertifizierte Sanierung</span>
-              <h1 className="text-5xl md:text-6xl font-black text-white mt-4 mb-6">
-                KMF-Sanierung
+              <h1 className="text-6xl md:text-7xl font-black text-white mt-6 mb-8 leading-tight">
+                KMF-SANIERUNG
               </h1>
-              <p className="text-xl text-white/90 mb-8">
+              <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed">
                 Zertifizierte Sanierung von künstlichen Mineralfasern. Fachgerechter Abbau und Entsorgung nach TRGS 521.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link 
                   href="/kontakt" 
-                  className="bg-cerulean text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-dye transition-colors"
+                  className="bg-cerulean text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-dye transition-all transform hover:scale-105"
                 >
-                  Kostenlose Beratung
+                  KOSTENLOSE BERATUNG
                 </Link>
                 <Link 
                   href="/leistungen" 
-                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-colors"
+                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105"
                 >
-                  Alle Leistungen
+                  ALLE LEISTUNGEN
                 </Link>
               </div>
-            </div>
-            <div className="relative h-96">
-              <Image
-                src="/images/kmf-sanierung.png"
-                alt="Professionelle KMF-Sanierung"
-                fill
-                className="object-cover rounded-2xl"
-              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Unsere Leistungen im Detail</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -66,7 +77,7 @@ export default function KmfSanierungPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 px-6 bg-black/20">
+      <section className="py-16 px-6 bg-oxford-blue">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Unser Prozess</h2>
           <div className="space-y-8">
@@ -91,7 +102,7 @@ export default function KmfSanierungPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-oxford-blue">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Benötigen Sie professionelle KMF-Sanierung?</h2>
           <p className="text-xl text-white/80 mb-8">
@@ -106,6 +117,9 @@ export default function KmfSanierungPage() {
           </Link>
         </div>
       </section>
+
+      {/* Footer */}
+      <MenuFooter />
     </main>
   );
 }

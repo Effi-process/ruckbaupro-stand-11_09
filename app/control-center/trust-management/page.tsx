@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Icon from '../../components/Icon';
+import FloatingElements from '../../components/FloatingElements';
 
 interface Review {
   id: string;
@@ -90,6 +91,8 @@ export default function TrustManagement() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Floating Logo and Menu */}
+      <FloatingElements />
       {/* Header */}
       <header className="bg-white shadow-sm border-b sticky top-0 z-50">
         <div className="px-6 py-4">

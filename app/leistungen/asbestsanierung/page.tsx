@@ -1,75 +1,82 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../../components/Icon';
-import FloatingMenuButton from '../../components/FloatingMenuButton';
-import LogoComponent from '../../components/LogoComponent';
+import FloatingElements from '../../components/FloatingElements';
+import MenuFooter from '../../components/MenuFooter';
 
 export default function AsbestsanierungPage() {
   return (
-    <main className="min-h-screen relative bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
-      {/* Logo fixed in top-left corner */}
-      <div className="fixed top-4 left-4 z-40">
-        <div className="bg-gradient-to-br from-cerulean to-indigo-dye p-1 rounded-2xl shadow-2xl">
-          <div className="bg-white rounded-xl p-3">
-            <LogoComponent width={150} height={60} />
-          </div>
+    <main className="min-h-screen bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
+      {/* Floating Logo and Menu */}
+      <FloatingElements />
+      
+      {/* Full-Width Hero Section with Background Image */}
+      <section className="relative h-screen w-full overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/asbest-team-hero.png"
+            alt="Professionelle Asbestsanierung Team bei der Arbeit"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Gradient Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
         </div>
-      </div>
-
-      {/* Floating Menu Container */}
-      <div className="fixed top-4 right-4 z-50">
-        <FloatingMenuButton />
-      </div>
-
-      {/* Hero Section */}
-      <section className="relative py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Spezialisierte Sanierung</span>
-              <h1 className="text-5xl md:text-6xl font-black text-white mt-4 mb-6">
-                Asbest-Sanierung
+        
+        {/* Content positioned on the left side */}
+        <div className="relative z-10 flex items-center h-full px-6">
+          <div className="container mx-auto max-w-6xl">
+            <div className="max-w-2xl">
+              <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Zertifizierte Spezialisten</span>
+              <h1 className="text-6xl md:text-7xl font-black text-white mt-6 mb-8 leading-tight">
+                ASBEST-SANIERUNG
               </h1>
-              <p className="text-xl text-white/90 mb-8">
-                Professionelle und sichere Entfernung von Asbest nach TRGS 519. Zertifizierte Fachkräfte garantieren höchste Sicherheitsstandards für Ihre Gesundheit und Sicherheit.
+              <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed">
+                Sichere Asbestentfernung von zertifizierten Experten. Modernste Technik, lückenlose Dokumentation und 100% normgerecht nach TRGS 519.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link 
                   href="/kontakt" 
-                  className="bg-cerulean text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-dye transition-colors"
+                  className="bg-cerulean text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-dye transition-all transform hover:scale-105"
                 >
-                  Kostenlose Beratung
+                  KOSTENLOSE BERATUNG
                 </Link>
                 <Link 
                   href="/leistungen" 
-                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-colors"
+                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105"
                 >
-                  Alle Leistungen
+                  ALLE LEISTUNGEN
                 </Link>
               </div>
             </div>
-            <div className="relative h-96">
-              <Image
-                src="/images/asbestos-professional.png"
-                alt="Professionelle Asbestsanierung"
-                fill
-                className="object-cover rounded-2xl"
-              />
-            </div>
+          </div>
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
           </div>
         </div>
       </section>
+      
+      {/* Transition section - creates smooth flow into content */}
+      <section className="relative -mt-20 z-20">
+        <div className="bg-gradient-to-b from-transparent via-gray-800/80 to-gray-800 h-40"></div>
+      </section>
 
       {/* Features Section */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Unsere Leistungen im Detail</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: "certificate", title: "TRGS 519 zertifiziert", description: "Alle Arbeiten nach aktuellen Vorschriften" },
-              { icon: "shield", title: "Luftmessungen inklusive", description: "Kontinuierliche Überwachung der Luftqualität" },
-              { icon: "truck", title: "Fachgerechte Entsorgung", description: "Sichere Entsorgung über zugelassene Deponien" },
-              { icon: "document", title: "Komplette Dokumentation", description: "Vollständige Dokumentation aller Arbeitsschritte" }
+              { icon: "shield", title: "TRGS 519 Zertifiziert", description: "Höchste Sicherheitsstandards" },
+              { icon: "eye", title: "Luftmessungen", description: "Kontinuierliche Überwachung" },
+              { icon: "recycle", title: "Fachgerechte Entsorgung", description: "Umweltgerechte Beseitigung" },
+              { icon: "file-text", title: "Dokumentation", description: "Lückenlose Nachweise" }
             ].map((feature, index) => (
               <div key={index} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 text-center">
                 <Icon name={feature.icon} size={48} className="text-cerulean mx-auto mb-4" />
@@ -84,13 +91,13 @@ export default function AsbestsanierungPage() {
       {/* Process Section */}
       <section className="py-16 px-6 bg-black/20">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Unser Prozess</h2>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Der Sanierungsprozess</h2>
           <div className="space-y-8">
             {[
-              { step: "1", title: "Erstbegehung & Analyse", description: "Kostenlose Begehung vor Ort und Analyse der Asbestbelastung" },
-              { step: "2", title: "Angebotserstellung", description: "Detailliertes Angebot mit transparenten Kosten" },
-              { step: "3", title: "Fachgerechte Sanierung", description: "Durchführung nach TRGS 519 mit zertifizierten Fachkräften" },
-              { step: "4", title: "Abnahme & Dokumentation", description: "Offizielle Abnahme und vollständige Dokumentation" }
+              { step: "1", title: "Erstanalyse", description: "Bestandsaufnahme & Bewertung" },
+              { step: "2", title: "Konzeption", description: "Planung & Genehmigung" },
+              { step: "3", title: "Sanierung", description: "Professionelle Durchführung" },
+              { step: "4", title: "Qualitätssicherung", description: "Abnahme & Freigabe" }
             ].map((step, index) => (
               <div key={index} className="flex gap-6 items-start">
                 <div className="w-12 h-12 bg-cerulean rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
@@ -109,7 +116,7 @@ export default function AsbestsanierungPage() {
       {/* CTA Section */}
       <section className="py-20 px-6">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Benötigen Sie professionelle Asbestsanierung?</h2>
+          <h2 className="text-4xl font-bold text-white mb-6">Benötigen Sie professionelle Asbest-Sanierung?</h2>
           <p className="text-xl text-white/80 mb-8">
             Kontaktieren Sie uns für eine kostenlose Erstberatung und ein unverbindliches Angebot.
           </p>
@@ -122,6 +129,8 @@ export default function AsbestsanierungPage() {
           </Link>
         </div>
       </section>
+
+      <MenuFooter />
     </main>
   );
 }

@@ -1,18 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../../components/Icon';
-import FloatingMenuButton from '../../components/FloatingMenuButton';
+import FloatingElements from '../../components/FloatingElements';
 
 export default function BetonarbeitenPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
-      {/* Floating Menu Button - Fixed position */}
-      <div className="fixed top-4 right-4 z-50">
-        <FloatingMenuButton />
-      </div>
+      {/* Transparent Header */}
+      <FloatingElements />
       
       {/* Hero Section */}
-      <section className="relative py-20 px-6">
+      <section className="relative pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>

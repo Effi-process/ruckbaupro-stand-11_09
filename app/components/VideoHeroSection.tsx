@@ -1,7 +1,6 @@
 'use client';
 
 import VideoBackground from './VideoBackground';
-import FloatingGameCard from './FloatingGameCard';
 import Link from 'next/link';
 
 export default function VideoHeroSection() {
@@ -44,9 +43,6 @@ export default function VideoHeroSection() {
           </div>
         </div>
       </div>
-      
-      {/* Floating Game Card */}
-      <FloatingGameCard />
     </section>
   );
 }

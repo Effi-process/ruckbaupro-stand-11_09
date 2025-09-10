@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import FloatingMenuButton from '../components/FloatingMenuButton';
+import FloatingElements from '../components/FloatingElements';
 
 export default function LeistungenPage() {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
@@ -80,10 +80,8 @@ export default function LeistungenPage() {
 
   return (
     <main className="overflow-hidden relative">
-      {/* Floating Menu Container */}
-      <div className="sticky top-4 z-50 flex justify-end pr-4">
-        <FloatingMenuButton />
-      </div>
+      {/* Floating Logo and Menu */}
+      <FloatingElements />
       
       {/* Hero Section - mit Video wie auf der Hauptseite */}
       <section id="hero" className="relative h-screen w-full overflow-hidden">

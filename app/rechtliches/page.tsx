@@ -1,12 +1,13 @@
 'use client';
 
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import StickyServiceMenu from '../components/StickyServiceMenu';
+import FloatingElements from '../components/FloatingElements';
 
 export default function RechtlichesPage() {
   return (
     <main className="overflow-hidden">
-      <StickyServiceMenu />
+      {/* Floating Logo and Menu */}
+      <FloatingElements />
       
       {/* Hero Section */}
       <section id="hero" className="relative py-20 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">

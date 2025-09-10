@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../components/Icon';
-import FloatingMenuButton from '../components/FloatingMenuButton';
-import LogoComponent from '../components/LogoComponent';
+import FloatingElements from '../components/FloatingElements';
 
 export default function UeberUns() {
   const milestones = [
@@ -57,25 +56,14 @@ export default function UeberUns() {
 
   return (
     <main className="relative">
+      {/* Floating Logo and Menu */}
+      <FloatingElements />
+      
       {/* Hero Section */}
-      <section className="relative py-8 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">
-        {/* Logo fixed in top-left corner */}
-        <div className="fixed top-4 left-4 z-40">
-          <div className="bg-gradient-to-br from-cerulean to-indigo-dye p-1 rounded-2xl shadow-2xl">
-            <div className="bg-white rounded-xl p-3">
-              <LogoComponent width={150} height={60} />
-            </div>
-          </div>
-        </div>
-
-        {/* Floating Menu Container */}
-        <div className="absolute top-4 right-4 z-50">
-          <FloatingMenuButton />
-        </div>
-
+      <section className="relative pt-32 pb-8 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
-            <div className="text-center pt-8">
+            <div className="text-center">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-wide leading-tight">
                 ÜBER UNS
               </h1>

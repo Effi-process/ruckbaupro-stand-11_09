@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Icon from '../components/Icon';
 import Link from 'next/link';
-import FloatingMenuButton from '../components/FloatingMenuButton';
-import LogoComponent from '../components/LogoComponent';
+import FloatingElements from '../components/FloatingElements';
 
 export default function Zertifikate() {
   const zertifikate = [
@@ -91,21 +90,11 @@ export default function Zertifikate() {
 
   return (
     <main className="relative">
-      {/* Logo fixed in top-left corner */}
-      <div className="fixed top-4 left-4 z-40">
-        <div className="bg-gradient-to-br from-cerulean to-indigo-dye p-1 rounded-2xl shadow-2xl">
-          <div className="bg-white rounded-xl p-3">
-            <LogoComponent width={150} height={60} />
-          </div>
-        </div>
-      </div>
-
-      {/* Floating Menu Container */}
-      <div className="fixed top-4 right-4 z-50">
-        <FloatingMenuButton />
-      </div>
+      {/* Transparent Header */}
+      <FloatingElements />
+      
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-[#2C4F5E] to-[#1E3A47]">
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#2C4F5E] to-[#1E3A47]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">

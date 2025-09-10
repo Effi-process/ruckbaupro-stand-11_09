@@ -3,9 +3,8 @@ import { useState, Suspense, lazy } from 'react';
 import Icon from '../components/Icon';
 import EmergencyHotline from '../components/EmergencyHotline';
 import TrustBadges from '../components/TrustBadges';
-import FooterWithMarquee from '../components/FooterWithMarquee';
-import LogoComponent from '../components/LogoComponent';
-import FloatingMenuButton from '../components/FloatingMenuButton';
+import MenuFooter from '../components/MenuFooter';
+import FloatingElements from '../components/FloatingElements';
 
 const MultiStepWizard = lazy(() => import('../components/MultiStepWizard'));
 
@@ -37,42 +36,33 @@ export default function Kontakt() {
 
   return (
     <main className="overflow-hidden relative min-h-screen">
-      {/* Fixed Logo - bleibt oben links stehen */}
-      <div className="fixed top-4 left-4 z-40">
-        <div className="bg-white rounded-xl p-2 shadow-lg">
-          <LogoComponent width={120} height={48} />
-        </div>
-      </div>
+      {/* Floating Logo and Menu */}
+      <FloatingElements />
       
-      {/* Floating Menu Container - Fixed position */}
-      <div className="fixed top-4 right-4 z-50">
-        <FloatingMenuButton />
-      </div>
-      
-      <section className="relative py-16 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">
+      <section className="relative pt-24 pb-8 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
             <div className="text-center">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-wide leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-wide leading-tight">
                 KONTAKT
               </h1>
-              <div className="flex justify-center mt-4">
-                <div className="w-32 h-1 bg-cerulean rounded-full"></div>
+              <div className="flex justify-center mt-3">
+                <div className="w-24 h-1 bg-cerulean rounded-full"></div>
               </div>
             </div>
-            <p className="text-xl max-w-3xl mx-auto text-white/90 mt-8">
+            <p className="text-lg max-w-2xl mx-auto text-white/90 mt-6">
               Professioneller Rückbau, Abbruch und Sanierung. Kostenlose Beratung für Ihr Projekt.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white">
+      <section className="py-12 bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Contact Info Row */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-off-white rounded-xl shadow-lg p-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-off-white rounded-xl shadow-lg p-4">
               <div className="flex items-center mb-4">
                 <Icon name="phone" size={24} className="mr-3 text-cerulean" />
                 <h3 className="text-lg font-bold text-indigo-dye">
@@ -87,7 +77,7 @@ export default function Kontakt() {
               </div>
             </div>
 
-            <div className="bg-off-white rounded-xl shadow-lg p-6">
+            <div className="bg-off-white rounded-xl shadow-lg p-4">
               <div className="flex items-center mb-4">
                 <Icon name="mail" size={24} className="mr-3 text-cerulean" />
                 <h3 className="text-lg font-bold text-indigo-dye">
@@ -102,7 +92,7 @@ export default function Kontakt() {
               </div>
             </div>
 
-            <div className="bg-off-white rounded-xl shadow-lg p-6">
+            <div className="bg-off-white rounded-xl shadow-lg p-4">
               <div className="flex items-center mb-4">
                 <Icon name="clock" size={24} className="mr-3 text-cerulean" />
                 <h3 className="text-lg font-bold text-indigo-dye">
@@ -137,7 +127,7 @@ export default function Kontakt() {
 
       
       
-      <FooterWithMarquee />
+      <MenuFooter />
     </main>
   );
 }

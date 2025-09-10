@@ -1,67 +1,74 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../../components/Icon';
-import FloatingMenuButton from '../../components/FloatingMenuButton';
-import LogoComponent from '../../components/LogoComponent';
+import FloatingElements from '../../components/FloatingElements';
+import MenuFooter from '../../components/MenuFooter';
 
 export default function EntkernungPage() {
   return (
-    <main className="min-h-screen relative bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
-      {/* Logo fixed in top-left corner */}
-      <div className="fixed top-4 left-4 z-40">
-        <div className="bg-gradient-to-br from-cerulean to-indigo-dye p-1 rounded-2xl shadow-2xl">
-          <div className="bg-white rounded-xl p-3">
-            <LogoComponent width={150} height={60} />
-          </div>
+    <main className="min-h-screen">
+      {/* Floating Elements */}
+      <FloatingElements />
+      
+      {/* Full-Width Hero Section with Background Image */}
+      <section className="relative h-screen w-full overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/entkernung-team-hero.png"
+            alt="Professionelles Entkernung-Team bei der Arbeit"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Gradient Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
         </div>
-      </div>
-
-      {/* Floating Menu Container */}
-      <div className="fixed top-4 right-4 z-50">
-        <FloatingMenuButton />
-      </div>
-
-      {/* Hero Section */}
-      <section className="relative py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+        
+        {/* Content positioned on the left side */}
+        <div className="relative z-10 flex items-center h-full px-6">
+          <div className="container mx-auto max-w-6xl">
+            <div className="max-w-2xl">
               <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Professionelle Entkernung</span>
-              <h1 className="text-5xl md:text-6xl font-black text-white mt-4 mb-6">
-                Entkernung
+              <h1 className="text-6xl md:text-7xl font-black text-white mt-6 mb-8 leading-tight">
+                ENTKERNUNG
               </h1>
-              <p className="text-xl text-white/90 mb-8">
+              <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed">
                 Komplette Entkernung von Gebäuden für Sanierung oder Abriss. Sauber, schnell und zuverlässig mit modernster Technik.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link 
                   href="/kontakt" 
-                  className="bg-cerulean text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-dye transition-colors"
+                  className="bg-cerulean text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-dye transition-all transform hover:scale-105"
                 >
-                  Kostenlose Beratung
+                  KOSTENLOSE BERATUNG
                 </Link>
                 <Link 
                   href="/leistungen" 
-                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-colors"
+                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105"
                 >
-                  Alle Leistungen
+                  ALLE LEISTUNGEN
                 </Link>
               </div>
             </div>
-            <div className="relative h-96">
-              <Image
-                src="/images/entkernung-professional.png"
-                alt="Professionelle Entkernung"
-                fill
-                className="object-cover rounded-2xl"
-              />
-            </div>
+          </div>
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
           </div>
         </div>
       </section>
+      
+      {/* Transition section - creates smooth flow into content */}
+      <section className="relative -mt-20 z-20">
+        <div className="bg-gradient-to-b from-transparent via-gray-800/80 to-gray-800 h-40"></div>
+      </section>
 
       {/* Features Section */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Unsere Leistungen im Detail</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -122,6 +129,8 @@ export default function EntkernungPage() {
           </Link>
         </div>
       </section>
+
+      <MenuFooter />
     </main>
   );
 }

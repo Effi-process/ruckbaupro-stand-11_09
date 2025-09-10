@@ -8,7 +8,7 @@ export default function FooterWithMarquee() {
   const CTA_TEXT = "BERATUNG STARTEN";
 
   return (
-    <div className="bg-oxford-blue text-white">
+    <div className="bg-indigo-dye text-white">
       {/* Footer-Block */}
       <footer className="px-[5vw] pt-16 pb-12">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
@@ -26,43 +26,41 @@ export default function FooterWithMarquee() {
             </Link>
           </div>
 
-          {/* Leistungen - wie im Menü */}
+          {/* Unsere Leistungen - alle Unterkategorien wie im Menü */}
           <nav className="text-sm">
             <div className="text-white/50 text-[11px] tracking-[.25em] uppercase mb-4">Unsere Leistungen</div>
             <ul className="space-y-3 text-white/90">
               <li><Link href="/leistungen" className="hover:text-cerulean transition-colors">Alle Leistungen</Link></li>
-              <li><Link href="/leistungen/rueckbau" className="hover:text-cerulean transition-colors">Rückbau</Link></li>
-              <li><Link href="/leistungen/abbruch" className="hover:text-cerulean transition-colors">Abbruch</Link></li>
+              <li><Link href="/leistungen/asbestsanierung" className="hover:text-cerulean transition-colors">Asbest-Sanierung</Link></li>
               <li><Link href="/leistungen/entkernung" className="hover:text-cerulean transition-colors">Entkernung</Link></li>
-              <li><Link href="/leistungen/entsorgung" className="hover:text-cerulean transition-colors">Entsorgung</Link></li>
+              <li><Link href="/leistungen/beratung---planung" className="hover:text-cerulean transition-colors">Beratung & Planung</Link></li>
+              <li><Link href="/leistungen/kmf-sanierung" className="hover:text-cerulean transition-colors">KMF-Sanierung</Link></li>
+              <li><Link href="/leistungen/schimmelsanierung" className="hover:text-cerulean transition-colors">Schimmelsanierung</Link></li>
+              <li><Link href="/leistungen/betonarbeiten" className="hover:text-cerulean transition-colors">Betonarbeiten</Link></li>
             </ul>
           </nav>
 
-          {/* Standorte - wie im Menü */}
-          <nav className="text-sm">
-            <div className="text-white/50 text-[11px] tracking-[.25em] uppercase mb-4">Standorte</div>
-            <ul className="space-y-3 text-white/90">
-              <li><Link href="/standorte" className="hover:text-cerulean transition-colors">Alle Standorte</Link></li>
-              <li><Link href="/standorte/berlin" className="hover:text-cerulean transition-colors">Berlin</Link></li>
-              <li><Link href="/standorte/hamburg" className="hover:text-cerulean transition-colors">Hamburg</Link></li>
-              <li><Link href="/standorte/muenchen" className="hover:text-cerulean transition-colors">München</Link></li>
-              <li><Link href="/standorte/koeln" className="hover:text-cerulean transition-colors">Köln</Link></li>
-              <li><Link href="/standorte/frankfurt" className="hover:text-cerulean transition-colors">Frankfurt</Link></li>
-            </ul>
-          </nav>
-
-          {/* Service & Business - wie im Menü */}
+          {/* Service & Business - alle Unterkategorien wie im Menü */}
           <nav className="text-sm">
             <div className="text-white/50 text-[11px] tracking-[.25em] uppercase mb-4">Service & Business</div>
             <ul className="space-y-3 text-white/90">
-              <li><Link href="/b2b" className="hover:text-cerulean transition-colors">B2B Portal</Link></li>
+              <li><Link href="/standorte" className="hover:text-cerulean transition-colors">Standorte</Link></li>
+              <li><Link href="/preise" className="hover:text-cerulean transition-colors">Preise</Link></li>
               <li><Link href="/franchise" className="hover:text-cerulean transition-colors">Franchise</Link></li>
-              <li><Link href="/karriere" className="hover:text-cerulean transition-colors">Karriere</Link></li>
-              <li><Link href="/kontakt" className="hover:text-cerulean transition-colors">Kontakt</Link></li>
             </ul>
           </nav>
 
-          {/* Rechtliches - wie im Menü */}
+          {/* Information - alle Unterkategorien wie im Menü */}
+          <nav className="text-sm">
+            <div className="text-white/50 text-[11px] tracking-[.25em] uppercase mb-4">Information</div>
+            <ul className="space-y-3 text-white/90">
+              <li><Link href="/ueber-uns" className="hover:text-cerulean transition-colors">Über uns</Link></li>
+              <li><Link href="/zertifikate" className="hover:text-cerulean transition-colors">Zertifikate</Link></li>
+              <li><Link href="/gesetzliche-vorschriften" className="hover:text-cerulean transition-colors">Gesetzliche Vorschriften</Link></li>
+            </ul>
+          </nav>
+
+          {/* Rechtliches - alle Unterkategorien wie im Menü */}
           <nav className="text-sm">
             <div className="text-white/50 text-[11px] tracking-[.25em] uppercase mb-4">Rechtliches</div>
             <ul className="space-y-3 text-white/90">

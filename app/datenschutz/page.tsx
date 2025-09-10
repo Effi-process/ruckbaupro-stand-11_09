@@ -1,18 +1,16 @@
 'use client';
 
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import FloatingMenuButton from '../components/FloatingMenuButton';
+import FloatingElements from '../components/FloatingElements';
 
 export default function Datenschutz() {
   return (
     <>
-      {/* Floating Menu Button - Fixed position */}
-      <div className="fixed top-4 right-4 z-50">
-        <FloatingMenuButton />
-      </div>
+      {/* Floating Logo and Menu */}
+      <FloatingElements />
       
       <main className="overflow-hidden bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white min-h-screen">
-        <div className="px-[5vw] py-24">
+        <div className="px-[5vw] pt-32 pb-24">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Rechtliches</span>
