@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Icon from '../../components/Icon';
 import FloatingElements from '../../components/FloatingElements';
+import FooterWithMarquee from '../../components/FooterWithMarquee';
 
 interface Review {
   id: string;
@@ -363,6 +364,8 @@ export default function TrustManagement() {
           )}
         </div>
       </div>
+      
+      <FooterWithMarquee />
     </div>
   );
 }

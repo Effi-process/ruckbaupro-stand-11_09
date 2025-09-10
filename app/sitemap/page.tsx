@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import FloatingElements from '../components/FloatingElements';
+import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function Sitemap() {
   const pages = [
@@ -42,6 +43,8 @@ export default function Sitemap() {
           </div>
         </div>
       </div>
+      
+      <FooterWithMarquee />
     </main>
   );
 }

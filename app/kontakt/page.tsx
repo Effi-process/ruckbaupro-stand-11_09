@@ -3,7 +3,7 @@ import { useState, Suspense, lazy } from 'react';
 import Icon from '../components/Icon';
 import EmergencyHotline from '../components/EmergencyHotline';
 import TrustBadges from '../components/TrustBadges';
-import MenuFooter from '../components/MenuFooter';
+import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
 
 const MultiStepWizard = lazy(() => import('../components/MultiStepWizard'));
@@ -127,7 +127,7 @@ export default function Kontakt() {
 
       
       
-      <MenuFooter />
+      <FooterWithMarquee />
     </main>
   );
 }

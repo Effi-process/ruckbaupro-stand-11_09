@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Icon from '../components/Icon';
 import Link from 'next/link';
 import FloatingElements from '../components/FloatingElements';
-import MenuFooter from '../components/MenuFooter';
+import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function Preise() {
   const [calculator, setCalculator] = useState({
@@ -358,7 +358,7 @@ export default function Preise() {
         </div>
       </section>
 
-      <MenuFooter />
+      <FooterWithMarquee />
     </main>
   );
 }

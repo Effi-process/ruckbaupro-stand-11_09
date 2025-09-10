@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Icon from '../components/Icon';
 import Link from 'next/link';
 import FloatingElements from '../components/FloatingElements';
+import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function Nachhaltigkeit() {
   const umweltziele = [
@@ -300,6 +301,8 @@ export default function Nachhaltigkeit() {
           </div>
         </div>
       </section>
+      
+      <FooterWithMarquee />
     </main>
   );
 }

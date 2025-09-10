@@ -2,7 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../../components/Icon';
 import FloatingElements from '../../components/FloatingElements';
-import MenuFooter from '../../components/MenuFooter';
+import FooterWithMarquee from '../../components/FooterWithMarquee';
+import { Suspense, lazy } from 'react';
+
+const MultiStepWizard = lazy(() => import('../../components/MultiStepWizard'));
 
 export default function KmfSanierungPage() {
   return (
@@ -118,8 +121,24 @@ export default function KmfSanierungPage() {
         </div>
       </section>
 
+      {/* Contact Form Section */}
+      <section className="py-16 bg-oxford-blue">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Suspense fallback={
+            <div className="bg-off-white rounded-3xl shadow-2xl p-12 text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cerulean mx-auto mb-4"></div>
+              <p className="text-indigo-dye">Lade Anfrage-Formular...</p>
+            </div>
+          }>
+            <MultiStepWizard 
+              purpose="quote"
+            />
+          </Suspense>
+        </div>
+      </section>
+
       {/* Footer */}
-      <MenuFooter />
+      <FooterWithMarquee />
     </main>
   );
 }

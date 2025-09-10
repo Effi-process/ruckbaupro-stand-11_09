@@ -3,15 +3,21 @@ import VideoHeroSection from './components/VideoHeroSection';
 import InkScrollSection from './components/InkScrollSection';
 import ProjectCarousel from './components/ProjectCarousel';
 import FooterWithMarquee from './components/FooterWithMarquee';
-import MenuFooter from './components/MenuFooter';
 import LazyCalculator from './components/LazyCalculator';
-import MultiStepWizard from './components/MultiStepWizard';
 import FloatingElements from './components/FloatingElements';
 import Link from 'next/link';
 import Image from 'next/image';
 import Icon from './components/Icon';
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
+
+const MultiStepWizard = dynamic(() => import('./components/MultiStepWizard'), {
+  ssr: false,
+  loading: () => <div className="bg-off-white rounded-3xl shadow-2xl p-12 text-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cerulean mx-auto mb-4"></div>
+    <p className="text-indigo-dye">Lade Anfrage-Formular...</p>
+  </div>
+});
 
 // Use Next.js dynamic imports instead of React.lazy for SSR compatibility
 const ProjectGallery = dynamic(() => import('./components/ProjectGallery'), {
@@ -44,9 +50,15 @@ export default function Home() {
 
       </div>
 
+      {/* Contact Form Section */}
+      <section className="py-16 bg-oxford-blue">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MultiStepWizard purpose="quote" />
+        </div>
+      </section>
       
       {/* Footer with Marquee */}
-      <MenuFooter />
+      <FooterWithMarquee />
     </main>
   );
 }

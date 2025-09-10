@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../components/Icon';
 import FloatingElements from '../components/FloatingElements';
+import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function UeberUns() {
   const milestones = [
@@ -251,6 +252,8 @@ export default function UeberUns() {
           </div>
         </div>
       </section>
+      
+      <FooterWithMarquee />
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import Icon from '../components/Icon';
 import Link from 'next/link';
 import FloatingElements from '../components/FloatingElements';
+import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function GesetzlicheVorschriften() {
   const vorschriften = [
@@ -335,6 +336,8 @@ export default function GesetzlicheVorschriften() {
           </div>
         </div>
       </section>
+      
+      <FooterWithMarquee />
     </main>
   );
 }

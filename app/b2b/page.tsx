@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Icon from '../components/Icon';
 import FloatingElements from '../components/FloatingElements';
+import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function B2B() {
   const vorteile = [
@@ -282,6 +283,8 @@ export default function B2B() {
           </div>
         </div>
       </section>
+      
+      <FooterWithMarquee />
     </main>
   );
 }

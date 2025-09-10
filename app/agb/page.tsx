@@ -1,4 +1,5 @@
 import FloatingElements from '../components/FloatingElements';
+import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function AGB() {
   return (
@@ -82,6 +83,8 @@ export default function AGB() {
           </div>
         </div>
       </div>
+      
+      <FooterWithMarquee />
     </main>
   );
 }

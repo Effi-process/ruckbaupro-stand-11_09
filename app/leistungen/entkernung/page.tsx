@@ -2,7 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../../components/Icon';
 import FloatingElements from '../../components/FloatingElements';
-import MenuFooter from '../../components/MenuFooter';
+import FooterWithMarquee from '../../components/FooterWithMarquee';
+import { Suspense, lazy } from 'react';
+
+const MultiStepWizard = lazy(() => import('../../components/MultiStepWizard'));
 
 export default function EntkernungPage() {
   return (
@@ -51,13 +54,6 @@ export default function EntkernungPage() {
                 </Link>
               </div>
             </div>
-          </div>
-        </div>
-        
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
           </div>
         </div>
       </section>
@@ -130,7 +126,23 @@ export default function EntkernungPage() {
         </div>
       </section>
 
-      <MenuFooter />
+      {/* Contact Form Section */}
+      <section className="py-16 bg-oxford-blue">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Suspense fallback={
+            <div className="bg-off-white rounded-3xl shadow-2xl p-12 text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cerulean mx-auto mb-4"></div>
+              <p className="text-indigo-dye">Lade Anfrage-Formular...</p>
+            </div>
+          }>
+            <MultiStepWizard 
+              purpose="quote"
+            />
+          </Suspense>
+        </div>
+      </section>
+
+      <FooterWithMarquee />
     </main>
   );
 }

@@ -6,6 +6,7 @@ import LoginForm from '../components/LoginForm';
 import Link from 'next/link';
 import Image from 'next/image';
 import FloatingElements from '../components/FloatingElements';
+import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function ControlCenter() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -453,6 +454,8 @@ export default function ControlCenter() {
           )}
         </div>
       </div>
+      
+      <FooterWithMarquee />
     </main>
   );
 }

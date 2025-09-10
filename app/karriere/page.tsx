@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Icon from '../components/Icon';
 import FloatingElements from '../components/FloatingElements';
+import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function Karriere() {
   const [selectedJob, setSelectedJob] = useState<number | null>(null);
@@ -350,6 +351,8 @@ export default function Karriere() {
           </div>
         </div>
       </section>
+      
+      <FooterWithMarquee />
     </main>
   );
 }

@@ -7,6 +7,7 @@ import GoogleMap from '../../components/GoogleMap';
 import GoogleReviews from '../../components/GoogleReviews';
 import { CityData } from '../../lib/cities-data';
 import { getButtonClass, getCardClass } from '../../lib/design-system';
+import FooterWithMarquee from '../../components/FooterWithMarquee';
 
 export default function StadtDetail({ city }: { city: CityData }) {
   const [selectedBezirk, setSelectedBezirk] = useState('');
@@ -581,6 +582,8 @@ export default function StadtDetail({ city }: { city: CityData }) {
       </section>
 
       {/* Note: Schema.org markup is handled in the parent page component */}
+      
+      <FooterWithMarquee />
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Icon from '../components/Icon';
 import FloatingElements from '../components/FloatingElements';
+import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function Franchise() {
   const vorteile = [
@@ -305,6 +306,8 @@ export default function Franchise() {
           </div>
         </div>
       </section>
+      
+      <FooterWithMarquee />
     </main>
   );
 }

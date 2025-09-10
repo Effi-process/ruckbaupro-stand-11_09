@@ -7,6 +7,7 @@ import FloatingElements from '../components/FloatingElements';
 import RetentionSystem from '../components/RetentionSystem';
 import TrustBadges from '../components/TrustBadges';
 import Icon from '../components/Icon';
+import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function TrustDemo() {
   const [activeDemo, setActiveDemo] = useState('all');
@@ -212,6 +213,8 @@ export default function TrustDemo() {
           </div>
         </div>
       </div>
+      
+      <FooterWithMarquee />
     </div>
   );
 }

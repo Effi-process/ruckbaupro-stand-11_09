@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Icon from '../components/Icon';
 import Link from 'next/link';
 import FloatingElements from '../components/FloatingElements';
+import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function Zertifikate() {
   const zertifikate = [
@@ -317,6 +318,8 @@ export default function Zertifikate() {
           </Link>
         </div>
       </section>
+      
+      <FooterWithMarquee />
     </main>
   );
 }
