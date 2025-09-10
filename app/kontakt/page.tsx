@@ -37,13 +37,19 @@ export default function Kontakt() {
 
   return (
     <main className="overflow-hidden relative min-h-screen">
+      {/* Fixed Logo - bleibt oben links stehen */}
+      <div className="fixed top-4 left-4 z-40">
+        <div className="bg-white rounded-xl p-2 shadow-lg">
+          <LogoComponent width={120} height={48} />
+        </div>
+      </div>
+      
       {/* Floating Menu Container - Fixed position */}
       <div className="fixed top-4 right-4 z-50">
         <FloatingMenuButton />
       </div>
       
       <section className="relative py-16 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">
-        {/* Logo entfernt da störend beim Scrollen */}
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">

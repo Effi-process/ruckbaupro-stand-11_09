@@ -24,8 +24,8 @@ export default function Home() {
       {/* Video Hero Section - New modern design */}
       <div id="hero" className="relative">
         <VideoHeroSection />
-        {/* Sticky Menu Container - Now working! */}
-        <div className="absolute top-4 right-4 z-50">
+        {/* Fixed Menu Container - Scrolls with page */}
+        <div className="fixed top-4 right-4 z-50">
           <FloatingMenuButton />
         </div>
       </div>
