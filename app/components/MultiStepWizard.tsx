@@ -287,45 +287,103 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
           <label className="block font-semibold text-white mb-4">
             Welche Dienstleistungen benötigen Sie? * (Mehrfachauswahl möglich)
           </label>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
-            {[
-              { id: 'asbest-sanierung', label: 'Asbest-Sanierung', icon: 'shield' },
-              { id: 'entkernung', label: 'Entkernung', icon: 'drill' },
-              { id: 'beratung-planung', label: 'Beratung & Planung', icon: 'lightbulb' },
-              { id: 'kmf-sanierung', label: 'KMF-Sanierung', icon: 'warning' },
-              { id: 'schimmelsanierung', label: 'Schimmelsanierung', icon: 'alert' },
-              { id: 'betonarbeiten', label: 'Betonarbeiten', icon: 'cube' }
-            ].map((service) => (
-              <button
-                key={service.id}
-                type="button"
-                onClick={() => {
-                  const isSelected = formData.services.includes(service.id);
-                  const newServices = isSelected
-                    ? formData.services.filter(s => s !== service.id)
-                    : [...formData.services, service.id];
-                  setFormData({ ...formData, services: newServices });
-                }}
-                className={`
-                  p-4 rounded-xl border-2 transition-all text-center
-                  ${formData.services.includes(service.id)
-                    ? 'border-cerulean bg-cerulean/10 scale-105'
-                    : 'border-gray-600 hover:border-cerulean/50 hover:shadow-md bg-gray-800/30'
-                  }
-                `}
-              >
-                <div className="flex flex-col items-center gap-2">
-                  <Icon 
-                    name={service.icon} 
-                    size={24} 
-                    className="text-white" 
-                  />
-                  <span className="font-semibold text-sm text-white">
-                    {service.label}
-                  </span>
-                </div>
-              </button>
-            ))}
+          <div className="space-y-6">
+            {/* Sanierungsleistungen */}
+            <div>
+              <h4 className="text-white/80 font-semibold mb-3 text-sm uppercase tracking-wide">Sanierungsleistungen</h4>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {[
+                  { id: 'asbest-sanierung', label: 'Asbest-Sanierung', icon: 'shield' },
+                  { id: 'kmf-sanierung', label: 'KMF-Sanierung', icon: 'warning' },
+                  { id: 'schimmelsanierung', label: 'Schimmelsanierung', icon: 'alert' }
+                ].map((service) => (
+                  <button
+                    key={service.id}
+                    type="button"
+                    onClick={() => {
+                      const isSelected = formData.services.includes(service.id);
+                      const newServices = isSelected
+                        ? formData.services.filter(s => s !== service.id)
+                        : [...formData.services, service.id];
+                      setFormData({ ...formData, services: newServices });
+                    }}
+                    className={`
+                      p-4 rounded-xl border-2 transition-all text-center
+                      ${formData.services.includes(service.id)
+                        ? 'border-cerulean bg-cerulean/20 text-white'
+                        : 'border-gray-600 bg-gray-800/50 text-white hover:border-cerulean/50 hover:bg-gray-800'}
+                    `}
+                  >
+                    <Icon name={service.icon} size={24} className="mx-auto mb-2" />
+                    <p className="text-sm font-medium">{service.label}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+            
+            {/* Bauarbeiten */}
+            <div>
+              <h4 className="text-white/80 font-semibold mb-3 text-sm uppercase tracking-wide">Bauarbeiten</h4>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {[
+                  { id: 'entkernung', label: 'Entkernung', icon: 'home' },
+                  { id: 'betonarbeiten', label: 'Betonarbeiten', icon: 'cube' },
+                  { id: 'beratung-planung', label: 'Beratung & Planung', icon: 'users' }
+                ].map((service) => (
+                  <button
+                    key={service.id}
+                    type="button"
+                    onClick={() => {
+                      const isSelected = formData.services.includes(service.id);
+                      const newServices = isSelected
+                        ? formData.services.filter(s => s !== service.id)
+                        : [...formData.services, service.id];
+                      setFormData({ ...formData, services: newServices });
+                    }}
+                    className={`
+                      p-4 rounded-xl border-2 transition-all text-center
+                      ${formData.services.includes(service.id)
+                        ? 'border-cerulean bg-cerulean/20 text-white'
+                        : 'border-gray-600 bg-gray-800/50 text-white hover:border-cerulean/50 hover:bg-gray-800'}
+                    `}
+                  >
+                    <Icon name={service.icon} size={24} className="mx-auto mb-2" />
+                    <p className="text-sm font-medium">{service.label}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+            
+            {/* Geschäftsmöglichkeiten */}
+            <div>
+              <h4 className="text-white/80 font-semibold mb-3 text-sm uppercase tracking-wide">Geschäftsmöglichkeiten</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {[
+                  { id: 'franchise', label: 'Franchise-Partnerschaft', icon: 'euro' }
+                ].map((service) => (
+                  <button
+                    key={service.id}
+                    type="button"
+                    onClick={() => {
+                      const isSelected = formData.services.includes(service.id);
+                      const newServices = isSelected
+                        ? formData.services.filter(s => s !== service.id)
+                        : [...formData.services, service.id];
+                      setFormData({ ...formData, services: newServices });
+                    }}
+                    className={`
+                      p-4 rounded-xl border-2 transition-all text-center
+                      ${formData.services.includes(service.id)
+                        ? 'border-green-500 bg-green-500/20 text-white'
+                        : 'border-gray-600 bg-gray-800/50 text-white hover:border-green-500/50 hover:bg-gray-800'}
+                    `}
+                  >
+                    <Icon name={service.icon} size={24} className="mx-auto mb-2" />
+                    <p className="text-sm font-medium">{service.label}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 

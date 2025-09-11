@@ -12,7 +12,7 @@ export default function Nachhaltigkeit() {
       description: 'Maximale Wiederverwertung der entsorgten Materialien'
     },
     {
-      icon: 'leaf',
+      icon: 'document',
       title: 'CO₂-Reduktion',
       description: 'Kurze Transportwege und effiziente Logistik'
     },

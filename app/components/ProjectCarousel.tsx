@@ -42,38 +42,38 @@ export default function ProjectCarousel() {
     {
       badge: "ASBEST-SANIERUNG",
       title: "Professionelle und sichere Entfernung von Asbest nach TRGS 519",
-      image: "/images/demolition-action.png",
+      image: "/images/asbest-team-hero.png",
       alt: "Professionelle Asbest-Sanierung mit Schutzausrüstung"
     },
     {
       badge: "ENTKERNUNG", 
       title: "Komplette Entkernung von Gebäuden für Sanierung oder Abriss",
-      image: "/images/construction-worker.png",
+      image: "/images/entkernung-team-hero.png",
       alt: "Professionelle Entkernung von Innenräumen"
     },
     {
       badge: "BERATUNG & PLANUNG",
       title: "Professionelle Beratung und detaillierte Projektplanung", 
-      image: "/images/demolition-site.png",
+      image: "/images/beratung-planung-hero.png",
       alt: "Professionelle Beratung und Projektplanung"
     },
     {
       badge: "KMF-SANIERUNG",
       title: "Fachgerechte Sanierung künstlicher Mineralfasern",
-      image: "/images/professional-demolition-bg.png",
+      image: "/images/kmf-sanierung-hero.png",
       alt: "KMF-Sanierung mit Schutzausrüstung"
     },
     {
       badge: "SCHIMMELSANIERUNG",
       title: "Professionelle Schimmelentfernung und -sanierung",
-      image: "/images/demolition-action.png",
+      image: "/images/schimmelsanierung-hero.png",
       alt: "Professionelle Schimmelsanierung"
     },
     {
       badge: "BETONARBEITEN",
       title: "Betonschneiden, -bohren und -bearbeitung",
-      image: "/images/construction-worker.png",
-      alt: "Professionelle Betonarbeiten"
+      image: "/images/demolition-action.png",
+      alt: "Professionelle Betonarbeiten mit Diamanttechnik"
     }
   ];
 

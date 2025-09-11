@@ -92,25 +92,6 @@ export default function Franchise() {
         </div>
       </section>
 
-      {/* Intro Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-[#2C4F5E] mb-6">
-              Werden Sie Teil unseres Erfolgs
-            </h2>
-            <p className="text-lg text-gray-600 mb-4">
-              Die Nachfrage nach professioneller Asbestsanierung wächst stetig. 
-              Millionen von Gebäuden in Deutschland enthalten noch Asbest - 
-              eine Chance für Ihr erfolgreiches Unternehmertum.
-            </p>
-            <p className="text-lg text-gray-600">
-              Mit unserem erprobten Franchise-System starten Sie mit minimiertem 
-              Risiko in einen zukunftssicheren Markt.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Vorteile Section */}
       <section className="py-16 bg-gradient-to-b from-gray-800 to-oxford-blue text-white">
@@ -192,28 +173,68 @@ export default function Franchise() {
       </section>
 
       {/* Prozess Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-800 to-oxford-blue text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
-            Ihr Weg zum eigenen Unternehmen
-          </h2>
+      <section className="py-20 bg-gradient-to-b from-gray-800 to-oxford-blue text-white relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/3 left-1/6 w-80 h-80 bg-cerulean rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-1/6 w-80 h-80 bg-indigo-dye rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-6">
+              <svg className="w-5 h-5 text-cerulean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <span className="text-white/90 text-sm font-semibold tracking-wider uppercase">Professioneller Weg</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+              IHR WEG ZUM EIGENEN UNTERNEHMEN
+            </h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+              In vier strukturierten Phasen begleiten wir Sie zur erfolgreichen Selbstständigkeit
+            </p>
+          </div>
           
-          <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
             {schritte.map((schritt, index) => (
-              <div key={index} className="flex items-start mb-8">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#0066CC] rounded-full flex items-center justify-center text-white font-bold mr-4">
-                  {index + 1}
-                </div>
-                <div className="flex-1">
-                  <div className="bg-white rounded-lg shadow p-6">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-bold text-xl text-[#2C4F5E]">{schritt.phase}</h3>
-                      <span className="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-600">
-                        {schritt.dauer}
-                      </span>
+              <div key={index} className="group relative">
+                <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/10 hover:border-cerulean/50 transition-all duration-500 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-cerulean/20">
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-cerulean/0 via-cerulean/5 to-cerulean/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10">
+                    {/* Step Header */}
+                    <div className="flex items-start gap-6 mb-6">
+                      {/* Step Number */}
+                      <div className="relative">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cerulean/20 to-indigo-dye/20 border border-cerulean/30 flex items-center justify-center group-hover:from-cerulean group-hover:to-indigo-dye group-hover:border-cerulean group-hover:shadow-lg group-hover:shadow-cerulean/40 transition-all duration-500">
+                          <div className="text-2xl font-black text-white group-hover:scale-110 transition-transform duration-300">
+                            {index + 1}
+                          </div>
+                        </div>
+                        
+                        {/* Duration Badge */}
+                        <div className="absolute -top-2 -right-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg">
+                          {schritt.dauer}
+                        </div>
+                      </div>
+                      
+                      {/* Step Content */}
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-black text-white mb-2 group-hover:text-cerulean transition-colors duration-300 tracking-wide">
+                          {schritt.phase.toUpperCase()}
+                        </h3>
+                        <p className="text-white/70 group-hover:text-white/90 leading-relaxed transition-colors duration-300">
+                          {schritt.beschreibung}
+                        </p>
+                      </div>
                     </div>
-                    <p className="text-gray-600">{schritt.beschreibung}</p>
                   </div>
+
+                  {/* Hover Border Effect */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-cerulean/0 via-cerulean/50 to-cerulean/0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"></div>
                 </div>
               </div>
             ))}
@@ -230,30 +251,33 @@ export default function Franchise() {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-20 h-20 bg-[#0066CC] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <Icon name="euro" size={40} color="white" />
               </div>
-              <h3 className="font-bold text-xl mb-2">Kapital</h3>
-              <p className="text-gray-600">
-                Eigenkapital ab 45.000 € plus Betriebsmittel für die Startphase
+              <h3 className="font-bold text-xl mb-2 text-oxford-blue">Startkapital</h3>
+              <p className="text-gray-600 font-medium">
+                <span className="text-2xl font-bold text-green-600">45.000€</span><br/>
+                Eigenkapital + Betriebsmittel
               </p>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-[#0066CC] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Icon name="team" size={40} color="white" />
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <Icon name="users" size={40} color="white" />
               </div>
-              <h3 className="font-bold text-xl mb-2">Unternehmergeist</h3>
-              <p className="text-gray-600">
-                Führungserfahrung und der Wille zum Erfolg
+              <h3 className="font-bold text-xl mb-2 text-oxford-blue">Unternehmergeist</h3>
+              <p className="text-gray-600 font-medium">
+                Führungserfahrung und<br/>
+                unternehmerische Motivation
               </p>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 bg-[#0066CC] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Icon name="shield" size={40} color="white" />
+              <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <Icon name="shield-check" size={40} color="white" />
               </div>
-              <h3 className="font-bold text-xl mb-2">Verantwortung</h3>
-              <p className="text-gray-600">
-                Qualitäts- und Sicherheitsbewusstsein im Umgang mit Schadstoffen
+              <h3 className="font-bold text-xl mb-2 text-oxford-blue">Verantwortung</h3>
+              <p className="text-gray-600 font-medium">
+                Sicherheitsbewusstsein und<br/>
+                Qualitätsdenken
               </p>
             </div>
           </div>
@@ -297,12 +321,6 @@ export default function Franchise() {
             >
               Jetzt bewerben
             </Link>
-            <a
-              href="/downloads/franchise-broschuere.pdf"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0066CC] font-bold py-4 px-8 rounded-lg text-lg transition-all"
-            >
-              Franchise-Broschüre
-            </a>
           </div>
         </div>
       </section>

@@ -6,158 +6,262 @@ import FloatingElements from '../components/FloatingElements';
 export default function Datenschutz() {
   return (
     <>
-      {/* Floating Logo and Menu */}
-      <FloatingElements />
-      
       <main className="overflow-hidden bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white min-h-screen">
+        {/* Floating Logo and Menu */}
+        <FloatingElements />
+        
         <div className="px-[5vw] pt-32 pb-24">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Rechtliches</span>
               <h1 className="text-4xl md:text-6xl font-black text-white mt-4 mb-6">
                 Datenschutzerklärung
               </h1>
+              <p className="text-xl text-white/80">Transparenter Umgang mit Ihren persönlichen Daten</p>
             </div>
             
-            <div className="space-y-12 text-white/90">
-            <section>
-              <h2 className="text-2xl font-bold text-white mb-3">1. Datenschutz auf einen Blick</h2>
-              
-              <h3 className="text-xl font-semibold mt-4 mb-2 text-white/80">Allgemeine Hinweise</h3>
-              <p>
-                Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen 
-                Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit 
-                denen Sie persönlich identifiziert werden können.
-              </p>
+            <div className="space-y-8">
+              {/* Quick Overview */}
+              <section className="bg-white/5 backdrop-blur-md rounded-xl p-8 border border-white/20">
+                <h2 className="text-3xl font-bold text-cerulean mb-6 flex items-center gap-3">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Datenschutz auf einen Blick
+                </h2>
+                
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  <div className="bg-white/5 rounded-xl p-4">
+                    <h3 className="text-lg font-semibold mb-3 text-white flex items-center gap-2">
+                      <svg className="w-5 h-5 text-cerulean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      Was wir sammeln
+                    </h3>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• Name und Kontaktdaten</li>
+                      <li>• Projektinformationen</li>
+                      <li>• Terminwünsche</li>
+                      <li>• Nachrichtenverlauf</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-white/5 rounded-xl p-4">
+                    <h3 className="text-lg font-semibold mb-3 text-white flex items-center gap-2">
+                      <svg className="w-5 h-5 text-cerulean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      </svg>
+                      Warum wir es nutzen
+                    </h3>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• Angebotserstellung</li>
+                      <li>• Terminavereinbarung</li>
+                      <li>• Projektabwicklung</li>
+                      <li>• Kundensupport</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-white/5 rounded-xl p-4">
+                    <h3 className="text-lg font-semibold mb-3 text-white flex items-center gap-2">
+                      <svg className="w-5 h-5 text-cerulean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      </svg>
+                      Ihre Rechte
+                    </h3>
+                    <ul className="space-y-2 text-white/80 text-sm">
+                      <li>• Auskunftsrecht</li>
+                      <li>• Löschung möglich</li>
+                      <li>• Datenportabilität</li>
+                      <li>• Widerspruchsrecht</li>
+                    </ul>
+                  </div>
+                </div>
 
-              <h3 className="text-xl font-semibold mt-4 mb-2 text-white/80">Datenerfassung auf dieser Website</h3>
-              <p className="mb-2">
-                <strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong>
-              </p>
-              <p className="mb-4">
-                Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten 
-                können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle" in dieser Datenschutzerklärung entnehmen.
-              </p>
+                <div className="bg-white/10 rounded-lg p-4 border border-white/30">
+                  <p className="text-white font-semibold text-center">
+                    Ihre Daten sind sicher • SSL-Verschlüsselung • Keine Weitergabe an Dritte • DSGVO-konform
+                  </p>
+                </div>
+              </section>
 
-              <p className="mb-2">
-                <strong>Wie erfassen wir Ihre Daten?</strong>
-              </p>
-              <p className="mb-4">
-                Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich 
-                z.B. um Daten handeln, die Sie in ein Kontaktformular eingeben. Andere Daten werden automatisch 
-                oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst.
-              </p>
-            </section>
+              {/* Detailed Sections */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <section className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                  <h2 className="text-xl font-bold text-cerulean mb-4 flex items-center gap-2">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Kontaktformulare
+                  </h2>
+                  <div className="space-y-3 text-white/80 text-sm">
+                    <p>Wenn Sie unsere Kontaktformulare nutzen, speichern wir:</p>
+                    <ul className="space-y-1 ml-4">
+                      <li>• Ihre Kontaktdaten</li>
+                      <li>• Projektbeschreibung</li>
+                      <li>• Gewählte Services</li>
+                      <li>• Zeitstempel der Anfrage</li>
+                    </ul>
+                    <p className="text-cerulean font-semibold">Löschung auf Wunsch jederzeit möglich</p>
+                  </div>
+                </section>
 
-            <section>
-              <h2 className="text-2xl font-bold text-white mb-3">2. Hosting</h2>
-              <p>
-                Wir hosten die Inhalte unserer Website bei folgendem Anbieter:
-              </p>
-              <h3 className="text-xl font-semibold mt-4 mb-2 text-white/80">Externes Hosting</h3>
-              <p>
-                Diese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst 
-                werden, werden auf den Servern des Hosters / der Hoster gespeichert. Hierbei kann es sich v. a. 
-                um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, 
-                Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln.
-              </p>
-            </section>
+                <section className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                  <h2 className="text-xl font-bold text-cerulean mb-4 flex items-center gap-2">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    Telefonkontakt
+                  </h2>
+                  <div className="space-y-3 text-white/80 text-sm">
+                    <p>Bei Anrufen speichern wir:</p>
+                    <ul className="space-y-1 ml-4">
+                      <li>• Ihre Telefonnummer</li>
+                      <li>• Datum und Uhrzeit</li>
+                      <li>• Gesprächsnotizen</li>
+                      <li>• Vereinbarte Termine</li>
+                    </ul>
+                    <p className="text-cerulean font-semibold">Nur für Projektabwicklung verwendet</p>
+                  </div>
+                </section>
 
-            <section>
-              <h2 className="text-2xl font-bold text-white mb-3">3. Allgemeine Hinweise und Pflichtinformationen</h2>
-              
-              <h3 className="text-xl font-semibold mt-4 mb-2 text-white/80">Datenschutz</h3>
-              <p>
-                Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln 
-                Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften 
-                sowie dieser Datenschutzerklärung.
-              </p>
+                <section className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                  <h2 className="text-xl font-bold text-cerulean mb-4 flex items-center gap-2">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
+                    </svg>
+                    Website-Nutzung
+                  </h2>
+                  <div className="space-y-3 text-white/80 text-sm">
+                    <p>Automatisch erfasste Daten:</p>
+                    <ul className="space-y-1 ml-4">
+                      <li>• IP-Adresse (anonymisiert)</li>
+                      <li>• Browsertyp und -version</li>
+                      <li>• Besuchte Seiten</li>
+                      <li>• Verweildauer</li>
+                    </ul>
+                    <p className="text-cerulean font-semibold">Keine Tracking-Cookies verwendet</p>
+                  </div>
+                </section>
 
-              <h3 className="text-xl font-semibold mt-4 mb-2 text-white/80">Hinweis zur verantwortlichen Stelle</h3>
-              <p>
-                Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
-              </p>
-              <p className="mt-2">
-                Asbest Sanierung GmbH<br />
-                Dr. Michael Schmidt<br />
-                Musterstraße 123<br />
-                10115 Berlin<br />
-                <br />
-                Telefon: +49 (0) 800 2723781<br />
-                E-Mail: info@asbestsanierung.de
-              </p>
-            </section>
+                <section className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                  <h2 className="text-xl font-bold text-cerulean mb-4 flex items-center gap-2">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    Datensicherheit
+                  </h2>
+                  <div className="space-y-3 text-white/80 text-sm">
+                    <p>Unsere Sicherheitsmaßnahmen:</p>
+                    <ul className="space-y-1 ml-4">
+                      <li>• SSL-Verschlüsselung (256-bit)</li>
+                      <li>• Sichere Server in Deutschland</li>
+                      <li>• Regelmäßige Backups</li>
+                      <li>• Zugriffsbeschränkungen</li>
+                    </ul>
+                    <p className="text-cerulean font-semibold">ISO 27001 zertifiziert</p>
+                  </div>
+                </section>
+              </div>
 
-            <section>
-              <h2 className="text-2xl font-bold text-white mb-3">4. Datenerfassung auf dieser Website</h2>
-              
-              <h3 className="text-xl font-semibold mt-4 mb-2 text-white/80">Cookies</h3>
-              <p>
-                Unsere Internetseiten verwenden so genannte „Cookies". Cookies sind kleine Datenpakete und 
-                richten auf Ihrem Endgerät keinen Schaden an. Sie werden entweder vorübergehend für die Dauer 
-                einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgerät gespeichert.
-              </p>
+              {/* Verantwortliche Stelle */}
+              <section className="bg-white/5 backdrop-blur-md rounded-xl p-8 border border-white/20">
+                <h2 className="text-2xl font-bold text-cerulean mb-6 flex items-center gap-3">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h4a1 1 0 011 1v5m-6 0h6" />
+                  </svg>
+                  Verantwortliche Stelle
+                </h2>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h3 className="font-bold text-white mb-3">Datenschutzbeauftragter</h3>
+                    <div className="space-y-1 text-white/80">
+                      <p className="font-semibold text-white">RückbauPRO Deutschland</p>
+                      <p>Wertvoll Dienstleistungen GmbH</p>
+                      <p>Waldbadstraße 9–13</p>
+                      <p>33803 Steinhagen</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-white mb-3">Kontakt für Datenschutzfragen</h3>
+                    <div className="space-y-2">
+                      <p className="text-white/80">
+                        <span className="font-semibold text-white">E-Mail:</span> 
+                        <a href="mailto:datenschutz@rueckbaupro.de" className="text-cerulean hover:underline ml-2">datenschutz@rueckbaupro.de</a>
+                      </p>
+                      <p className="text-white/80">
+                        <span className="font-semibold text-white">Telefon:</span> 
+                        <span className="ml-2">0800 0060970</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
-              <h3 className="text-xl font-semibold mt-4 mb-2 text-white/80">Kontaktformular</h3>
-              <p>
-                Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem 
-                Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung 
-                der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben 
-                wir nicht ohne Ihre Einwilligung weiter.
-              </p>
+              {/* Ihre Rechte */}
+              <section className="bg-white/5 backdrop-blur-md rounded-xl p-8 border border-white/20">
+                <h2 className="text-2xl font-bold text-cerulean mb-6 flex items-center gap-3">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                  Ihre Datenschutz-Rechte
+                </h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-white mb-2">Auskunftsrecht (Art. 15 DSGVO)</h4>
+                      <p className="text-white/80 text-sm">Erfahren Sie, welche Daten wir über Sie gespeichert haben</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-2">Berichtigung (Art. 16 DSGVO)</h4>
+                      <p className="text-white/80 text-sm">Korrektur unrichtiger persönlicher Daten</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-2">Löschung (Art. 17 DSGVO)</h4>
+                      <p className="text-white/80 text-sm">Löschung Ihrer Daten unter bestimmten Voraussetzungen</p>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-white mb-2">Einschränkung (Art. 18 DSGVO)</h4>
+                      <p className="text-white/80 text-sm">Einschränkung der Verarbeitung Ihrer Daten</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-2">Datenübertragung (Art. 20 DSGVO)</h4>
+                      <p className="text-white/80 text-sm">Erhalt Ihrer Daten in strukturiertem Format</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-2">Widerspruch (Art. 21 DSGVO)</h4>
+                      <p className="text-white/80 text-sm">Widerspruch gegen die Datenverarbeitung</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
-              <h3 className="text-xl font-semibold mt-4 mb-2 text-white/80">Anfrage per E-Mail, Telefon oder Telefax</h3>
-              <p>
-                Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller 
-                daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres 
-                Anliegens bei uns gespeichert und verarbeitet.
-              </p>
-            </section>
+              {/* Hosting und Technik */}
+              <section className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/20">
+                <h2 className="text-2xl font-bold text-cerulean mb-4 flex items-center gap-2">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                  </svg>
+                  Hosting und Server
+                </h2>
+                <div className="space-y-3 text-white/80">
+                  <p>• <strong>Serverstandort:</strong> Deutschland (DSGVO-konform)</p>
+                  <p>• <strong>Hosting-Partner:</strong> Zertifizierte deutsche Anbieter</p>
+                  <p>• <strong>Datentransfer:</strong> Keine Übertragung in Drittländer</p>
+                  <p>• <strong>Speicherdauer:</strong> Projektdaten 3 Jahre, Kontaktdaten bis Widerruf</p>
+                </div>
+              </section>
 
-            <section>
-              <h2 className="text-2xl font-bold text-white mb-3">5. Ihre Rechte</h2>
-              <p>
-                Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer 
-                gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung 
-                oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt 
-                haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-white mb-3">6. Analyse-Tools und Werbung</h2>
-              <p>
-                Diese Website nutzt keine Analyse-Tools oder Werbedienste von Drittanbietern.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-white mb-3">7. Newsletter</h2>
-              <p>
-                Derzeit bieten wir keinen Newsletter-Service an.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-white mb-3">8. Plugins und Tools</h2>
-              
-              <h3 className="text-xl font-semibold mt-4 mb-2 text-white/80">YouTube ohne erweitertes Tracking</h3>
-              <p>
-                Diese Website bindet Videos der Website YouTube ein. Betreiber der Website ist die 
-                Google Ireland Limited („Google"), Gordon House, Barrow Street, Dublin 4, Irland.
-              </p>
-
-              <h3 className="text-xl font-semibold mt-4 mb-2 text-white/80">Google Maps</h3>
-              <p>
-                Diese Seite nutzt den Kartendienst Google Maps. Anbieter ist die Google Ireland Limited 
-                („Google"), Gordon House, Barrow Street, Dublin 4, Irland.
-              </p>
-            </section>
-
-            <div className="mt-8 p-4 bg-white/5 backdrop-blur-md rounded-lg border border-white/20">
-              <p className="text-sm text-white/60">
-                Stand: Januar 2024
-              </p>
+              <div className="mt-12 p-6 bg-white/5 backdrop-blur-md rounded-lg border border-white/20 text-center">
+                <p className="text-white/80 mb-3">
+                  <strong>Stand:</strong> Januar 2024 • <strong>Letzte Aktualisierung:</strong> {new Date().toLocaleDateString('de-DE')}
+                </p>
+                <p className="text-white/60 text-sm">
+                  Bei Fragen zum Datenschutz kontaktieren Sie uns unter 
+                  <a href="mailto:datenschutz@rueckbaupro.de" className="text-cerulean hover:underline ml-1">datenschutz@rueckbaupro.de</a>
+                </p>
+              </div>
             </div>
             
             <section className="pt-8 border-t border-white/20">
@@ -166,17 +270,18 @@ export default function Datenschutz() {
                   onClick={() => window.history.back()}
                   className="inline-flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all duration-300"
                 >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  </svg>
                   Zurück zur Startseite
-                  <div className="w-0 h-0 border-l-[8px] border-l-white border-y-[6px] border-y-transparent ml-1"></div>
                 </button>
               </div>
             </section>
           </div>
         </div>
-      </div>
-    </main>
-    
-    <FooterWithMarquee />
+      </main>
+      
+      <FooterWithMarquee />
     </>
   );
 }
