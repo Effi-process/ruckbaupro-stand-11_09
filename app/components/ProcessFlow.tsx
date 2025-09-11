@@ -71,16 +71,16 @@ export default function ProcessFlow() {
             <span className="text-white/90 text-sm font-semibold tracking-wider uppercase">Professioneller Ablauf</span>
           </div>
           
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-6 leading-tight">
             UNSER ABLAUF
           </h2>
-          <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
             Von der ersten Beratung bis zur finalen Abnahme - wir begleiten Sie durch jeden Schritt Ihres Projekts
           </p>
         </div>
 
         {/* Process Steps */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6">
           {steps.map((step, index) => (
             <div key={index} className="group relative">
               {/* Connecting Line */}
@@ -93,7 +93,7 @@ export default function ProcessFlow() {
               )}
               
               {/* Step Card */}
-              <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-center hover:bg-white/10 hover:border-cerulean/50 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-cerulean/20 group">
+              <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-4 sm:p-6 lg:p-8 text-center hover:bg-white/10 hover:border-cerulean/50 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-cerulean/20 group min-h-[280px] sm:min-h-[320px]">
                 {/* Glow Effect */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-cerulean/0 via-cerulean/5 to-cerulean/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
@@ -118,13 +118,13 @@ export default function ProcessFlow() {
                     {step.duration}
                   </div>
                   
-                  <h3 className="text-2xl md:text-3xl font-black text-white mb-3 group-hover:text-cerulean transition-colors duration-300 tracking-wide">
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-white mb-2 sm:mb-3 group-hover:text-cerulean transition-colors duration-300 tracking-wide">
                     {step.title}
                   </h3>
-                  <p className="text-cerulean/90 font-bold text-sm tracking-wider mb-4 uppercase">
+                  <p className="text-cerulean/90 font-bold text-xs sm:text-sm tracking-wider mb-3 sm:mb-4 uppercase">
                     {step.description}
                   </p>
-                  <p className="text-white/70 group-hover:text-white/90 leading-relaxed text-sm transition-colors duration-300">
+                  <p className="text-white/70 group-hover:text-white/90 leading-relaxed text-xs sm:text-sm transition-colors duration-300">
                     {step.details}
                   </p>
                 </div>

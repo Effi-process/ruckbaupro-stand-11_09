@@ -114,14 +114,14 @@ export default function Standorte() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
             <div className="text-center">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-wide leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white tracking-wide leading-tight">
                 RückbauPRO Standorte
               </h1>
               <div className="flex justify-center mt-4">
                 <div className="w-32 h-1 bg-cerulean rounded-full"></div>
               </div>
             </div>
-            <p className="text-xl max-w-3xl mx-auto text-white/90 mt-8">
+            <p className="text-lg sm:text-xl max-w-3xl mx-auto text-white/90 mt-8">
               Deutschlandweit für Sie da - professioneller Rückbau, Abbruch und Sanierung.
             </p>
             
@@ -133,10 +133,10 @@ export default function Standorte() {
                   placeholder="Stadt oder PLZ eingeben..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-6 py-4 pl-14 bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-full text-white placeholder:text-white/60 focus:bg-white/20 focus:border-white/40 transition-all duration-300"
+                  className="w-full px-4 py-3 pl-12 sm:px-6 sm:py-4 sm:pl-14 bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-full text-white placeholder:text-white/60 focus:bg-white/20 focus:border-white/40 transition-all duration-300 min-h-[44px] text-base"
                 />
                 <Icon name="search" size={24} className="absolute left-5 top-1/2 transform -translate-y-1/2 text-white/60" />
-                <button className="absolute right-2 top-1/2 transform -translate-y-1/2 px-6 py-2 bg-gradient-to-r from-[#0066CC] to-[#0052A3] text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300">
+                <button className="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 sm:px-6 sm:py-2 bg-gradient-to-r from-[#0066CC] to-[#0052A3] text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300 min-h-[40px] text-sm sm:text-base">
                   Suchen
                 </button>
               </div>

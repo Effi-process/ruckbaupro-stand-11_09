@@ -41,22 +41,22 @@ export default function BetonarbeitenPage() {
           <div className="container mx-auto max-w-6xl">
             <div className="max-w-2xl">
               <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Präzise Betonbearbeitung</span>
-              <h1 className="text-6xl md:text-7xl font-black text-white mt-6 mb-8 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mt-6 mb-8 leading-tight">
                 BETONARBEITEN
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-10 leading-relaxed">
                 Spezialisiert auf Betonschneiden, Bohren und Abbruch von Betonkonstruktionen mit Diamanttechnik.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link 
                   href="/kontakt" 
-                  className="bg-cerulean text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-dye transition-all transform hover:scale-105"
+                  className="bg-cerulean text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold hover:bg-indigo-dye transition-all transform hover:scale-105 min-h-[44px] text-center"
                 >
                   KOSTENLOSE BERATUNG
                 </Link>
                 <Link 
                   href="/leistungen" 
-                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105"
+                  className="border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 min-h-[44px] text-center"
                 >
                   ALLE LEISTUNGEN
                 </Link>
@@ -70,7 +70,7 @@ export default function BetonarbeitenPage() {
       <section className="py-16 px-6 bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Unsere Leistungen im Detail</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
               { icon: "scissors", title: "Betonschneiden", description: "Präzise Schnitte mit Diamanttrennscheiben" },
               { icon: "circle", title: "Kernbohrungen", description: "Millimetergenaue Bohrungen in Stahlbeton" },
@@ -114,7 +114,7 @@ export default function BetonarbeitenPage() {
           </div>
 
           {/* Process Steps - Card Layout */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {[
               { 
                 title: "STATISCHE ANALYSE", 

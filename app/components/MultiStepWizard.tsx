@@ -228,7 +228,7 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
             </div>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div>
               {formData.contactMethod === 'email' && (
                 <>
@@ -241,7 +241,7 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800/50 border-2 border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400"
+                    className="w-full px-4 py-4 bg-gray-800/50 border-2 border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 min-h-[44px] text-base"
                     placeholder="ihre@email.de"
                   />
                 </>
@@ -258,7 +258,7 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800/50 border-2 border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400"
+                    className="w-full px-4 py-4 bg-gray-800/50 border-2 border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 min-h-[44px] text-base"
                     placeholder="Ihre Telefonnummer"
                   />
                 </>

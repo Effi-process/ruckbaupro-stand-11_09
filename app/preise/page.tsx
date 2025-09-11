@@ -14,17 +14,17 @@ export default function Preise() {
       <section className="relative pt-24 pb-8 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-wide leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white tracking-wide leading-tight">
               KOSTENRECHNER
             </h1>
             <div className="flex justify-center mt-4">
               <div className="w-32 h-1 bg-cerulean rounded-full"></div>
             </div>
-            <p className="text-xl max-w-3xl mx-auto text-white/90 mt-8">
+            <p className="text-lg sm:text-xl max-w-3xl mx-auto text-white/90 mt-8">
               Erhalten Sie eine präzise Kostenschätzung für Ihr Sanierungsprojekt mit unserem intelligenten Service-Rechner
             </p>
             
-            <div className="flex justify-center gap-4 text-sm text-white/70 mt-6">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs sm:text-sm text-white/70 mt-6">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                 <span>Service-abhängige Fragen</span>

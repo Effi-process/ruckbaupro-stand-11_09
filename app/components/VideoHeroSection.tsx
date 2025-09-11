@@ -20,14 +20,14 @@ export default function VideoHeroSection() {
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           <div className="max-w-3xl">
             {/* Hero Headline */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight mb-6">
               <div>Professioneller</div>
               <div>Rückbau.</div>
               <div>Sicher.</div>
             </h1>
             
             {/* Subtext */}
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed">
               Deutschlandweiter Service für Asbest-Sanierung, Entkernung und Gebäudeabbruch. 
               Moderne Ausrüstung, faire Preise und höchste Sicherheitsstandards.
             </p>
@@ -35,7 +35,7 @@ export default function VideoHeroSection() {
             {/* CTA Button - Glasmorphismus Style wie Announcement Bar */}
             <Link 
               href="/kontakt"
-              className="inline-flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-bold hover:bg-white/20 transition-all duration-300 min-h-[44px]"
             >
               Kostenlos beraten lassen
               <div className="w-0 h-0 border-l-[8px] border-l-white border-y-[6px] border-y-transparent ml-1"></div>

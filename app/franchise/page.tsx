@@ -82,10 +82,10 @@ export default function Franchise() {
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               Franchise-Partner werden
             </h1>
-            <p className="text-xl max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl max-w-3xl mx-auto">
               Starten Sie Ihr eigenes Asbestsanierungs-Unternehmen mit starkem Partner
             </p>
           </div>
@@ -100,7 +100,7 @@ export default function Franchise() {
             Ihre Vorteile als Franchise-Partner
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {vorteile.map((vorteil, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-6">
                 <div className="w-14 h-14 bg-[#0066CC] rounded-lg flex items-center justify-center mb-4">

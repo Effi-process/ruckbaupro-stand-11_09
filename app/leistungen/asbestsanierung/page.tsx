@@ -41,22 +41,22 @@ export default function AsbestsanierungPage() {
           <div className="container mx-auto max-w-6xl">
             <div className="max-w-2xl">
               <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Zertifizierte Spezialisten</span>
-              <h1 className="text-6xl md:text-7xl font-black text-white mt-6 mb-8 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mt-6 mb-8 leading-tight">
                 ASBEST-SANIERUNG
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-10 leading-relaxed">
                 Sichere Asbestentfernung von zertifizierten Experten. Modernste Technik, lückenlose Dokumentation und 100% normgerecht nach TRGS 519.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link 
                   href="/kontakt" 
-                  className="bg-cerulean text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-dye transition-all transform hover:scale-105"
+                  className="bg-cerulean text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold hover:bg-indigo-dye transition-all transform hover:scale-105 min-h-[44px] text-center"
                 >
                   KOSTENLOSE BERATUNG
                 </Link>
                 <Link 
                   href="/leistungen" 
-                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105"
+                  className="border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 min-h-[44px] text-center"
                 >
                   ALLE LEISTUNGEN
                 </Link>
@@ -75,7 +75,7 @@ export default function AsbestsanierungPage() {
       <section className="py-16 px-6 bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Unsere Leistungen im Detail</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
               { icon: "shield", title: "TRGS 519 Zertifiziert", description: "Höchste Sicherheitsstandards" },
               { icon: "eye", title: "Luftmessungen", description: "Kontinuierliche Überwachung" },
@@ -119,7 +119,7 @@ export default function AsbestsanierungPage() {
           </div>
 
           {/* Process Steps - Card Layout */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {[
               { 
                 title: "ARBEITSPLATZ VORBEREITUNG", 
@@ -170,26 +170,25 @@ export default function AsbestsanierungPage() {
                   
                   <div className="relative z-10">
                     {/* Step Header */}
-                    <div className="flex items-start gap-6 mb-6">
+                    <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
                       {/* Step Number & Icon */}
-                      <div className="relative">
-                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cerulean/20 to-indigo-dye/20 border border-cerulean/30 flex items-center justify-center group-hover:from-cerulean group-hover:to-indigo-dye group-hover:border-cerulean group-hover:shadow-lg group-hover:shadow-cerulean/40 transition-all duration-500">
+                      <div className="relative flex-shrink-0">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-cerulean/20 to-indigo-dye/20 border border-cerulean/30 flex items-center justify-center group-hover:from-cerulean group-hover:to-indigo-dye group-hover:border-cerulean group-hover:shadow-lg group-hover:shadow-cerulean/40 transition-all duration-500">
                           <div className="relative z-10 text-white group-hover:scale-110 transition-transform duration-300">
                             {step.icon}
                           </div>
                         </div>
-                        
                       </div>
                       
                       {/* Step Content */}
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-black text-white mb-2 group-hover:text-cerulean transition-colors duration-300 tracking-wide">
+                      <div className="flex-1 w-full text-cutoff-fix">
+                        <h3 className="text-lg sm:text-xl lg:text-2xl font-black text-white mb-2 group-hover:text-cerulean transition-colors duration-300 tracking-wide">
                           {step.title}
                         </h3>
-                        <p className="text-cerulean/90 font-bold text-sm tracking-wider mb-3">
+                        <p className="text-cerulean/90 font-bold text-xs sm:text-sm tracking-wider mb-3">
                           {step.description}
                         </p>
-                        <p className="text-white/70 group-hover:text-white/90 leading-relaxed transition-colors duration-300">
+                        <p className="text-white/70 group-hover:text-white/90 leading-relaxed text-sm sm:text-base transition-colors duration-300">
                           {step.details}
                         </p>
                       </div>

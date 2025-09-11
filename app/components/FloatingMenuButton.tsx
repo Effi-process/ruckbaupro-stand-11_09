@@ -129,24 +129,24 @@ export default function FloatingMenuButton() {
           
           <div
             ref={dropdownRef}
-            className="fixed top-20 right-4 w-[420px] bg-white/10 backdrop-blur-3xl shadow-3xl border border-white/25 rounded-2xl z-[9999] overflow-hidden max-h-[85vh] overflow-y-auto"
+            className="fixed top-20 right-2 sm:right-4 w-[calc(100vw-1rem)] sm:w-[380px] md:w-[420px] max-w-[420px] bg-white/10 backdrop-blur-3xl shadow-3xl border border-white/25 rounded-2xl z-[9999] overflow-hidden max-h-[85vh] overflow-y-auto"
             style={{
               backdropFilter: 'blur(40px) saturate(150%)',
               WebkitBackdropFilter: 'blur(40px) saturate(150%)',
               background: 'rgba(255, 255, 255, 0.08)'
             }}
           >
-            <div className="px-6 py-4 bg-gradient-to-r from-cerulean/60 to-indigo-dye/60 backdrop-blur-2xl text-white border-b border-white/15">
+            <div className="px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-cerulean/60 to-indigo-dye/60 backdrop-blur-2xl text-white border-b border-white/15">
               <div className="flex items-center justify-between">
-                <h3 className="font-bold text-xl">RÜCKBAUPRO NAVIGATION</h3>
+                <h3 className="font-bold text-lg sm:text-xl">RÜCKBAUPRO NAVIGATION</h3>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors"
+                  className="p-2 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors min-h-[44px] min-w-[44px]"
                 >
                   <Icon name="x" size={20} />
                 </button>
               </div>
-              <p className="text-base opacity-90 mt-2">ALLE SEITEN & SERVICES</p>
+              <p className="text-sm sm:text-base opacity-90 mt-2">ALLE SEITEN & SERVICES</p>
             </div>
 
             <div className="py-3">

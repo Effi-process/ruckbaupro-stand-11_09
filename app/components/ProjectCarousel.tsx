@@ -34,7 +34,7 @@ export default function ProjectCarousel() {
     const el = trackRef.current;
     if (!el) return;
     // Scroll genau eine Karte weiter (420px + 24px gap)
-    const amount = 444; // 420px Karte + 24px Gap
+    const amount = window.innerWidth < 640 ? 324 : window.innerWidth < 768 ? 404 : 444; // Responsive scroll amount
     el.scrollBy({ left: dir * amount, behavior: "smooth" });
   };
 
@@ -78,13 +78,13 @@ export default function ProjectCarousel() {
   ];
 
   return (
-    <section className="px-[5vw] py-20">
+    <section className="px-4 sm:px-[5vw] py-16 sm:py-20 overflow-hidden">
       <div className="text-center mb-12">
         <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Unsere Projekte</span>
-        <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mt-4 mb-6">
           Professioneller Rückbau & Abbruch
         </h2>
-        <p className="text-xl text-white/90 max-w-3xl mx-auto">
+        <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">
           Sehen Sie selbst: Unsere Experten führen Rückbau- und Abbrucharbeiten mit höchsten Standards durch
         </p>
       </div>
@@ -136,7 +136,7 @@ export default function ProjectCarousel() {
           className="no-scrollbar overflow-x-auto scroll-smooth snap-x snap-mandatory flex gap-6 pb-6"
         >
           {projects.map((project, i) => (
-            <article key={i} className="snap-start shrink-0 w-[420px] max-w-[86vw] group">
+            <article key={i} className="snap-start shrink-0 w-[300px] sm:w-[380px] md:w-[420px] max-w-[90vw] group">
               <div className="relative">
                 <div className="relative h-[280px] rounded-3xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.3)] group-hover:scale-105 transition-transform duration-300">
                   <Image

@@ -118,10 +118,10 @@ export default function InkScrollSection() {
 
       {/* Section mit Typing-Reveal pro Buchstabe */}
       <section className="py-4 sm:py-8 md:py-16 lg:py-20">
-        <div className="flex justify-center px-[5vw]">
+        <div className="flex justify-center px-4 sm:px-[5vw]">
           <h1
             ref={headlineRef}
-            className="max-w-[900px] text-center font-extrabold leading-[1.05] tracking-tight text-[clamp(26px,6.2vw,64px)] whitespace-pre-wrap"
+            className="max-w-[900px] text-center font-extrabold leading-[1.05] tracking-tight text-2xl sm:text-[clamp(26px,6.2vw,64px)] whitespace-pre-wrap"
           >
             {`Professioneller Rückbau.\nModerne Technik. Faire Preise.`}
           </h1>
@@ -145,7 +145,7 @@ export default function InkScrollSection() {
         </div>
 
         {/* Text mittig unter dem Video mit Ink-Effect */}
-        <div className="mt-12 text-center max-w-2xl mx-auto px-[5vw]">
+        <div className="mt-12 text-center max-w-2xl mx-auto px-4 sm:px-[5vw]">
           <p 
             ref={subtextRef}
             className="text-lg sm:text-xl leading-relaxed font-medium"
