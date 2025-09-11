@@ -24,7 +24,7 @@ export default function LeistungenPage() {
     {
       title: 'Asbestsanierung',
       description: 'Professionelle und sichere Entfernung von Asbest nach TRGS 519. Zertifizierte Fachkräfte garantieren höchste Sicherheitsstandards.',
-      image: '/images/asbestos-professional.png',
+      image: '/images/asbest-team-hero.png',
       features: [
         'TRGS 519 zertifiziert',
         'Luftmessungen inklusive',
@@ -35,7 +35,7 @@ export default function LeistungenPage() {
     {
       title: 'Entkernung',
       description: 'Komplette Entkernung von Gebäuden für Sanierung oder Abriss. Sauber, schnell und zuverlässig mit modernster Technik.',
-      image: '/images/entkernung-professional.png',
+      image: '/images/entkernung-team-hero.png',
       features: [
         'Komplettentkernung',
         'Teilentkernung möglich',
@@ -46,7 +46,7 @@ export default function LeistungenPage() {
     {
       title: 'Beratung & Planung',
       description: 'Professionelle Beratung und detaillierte Projektplanung. Von der ersten Begehung bis zur finalen Umsetzung.',
-      image: '/images/beratung-professional.png',
+      image: '/images/beratung-planung-hero.png',
       features: [
         'Kostenlose Erstberatung',
         'Detaillierte Projektplanung',
@@ -57,7 +57,7 @@ export default function LeistungenPage() {
     {
       title: 'KMF-Sanierung',
       description: 'Zertifizierte Sanierung von künstlichen Mineralfasern. Fachgerechter Abbau und Entsorgung nach TRGS 521.',
-      image: '/images/kmf-sanierung.png',
+      image: '/images/kmf-sanierung-hero.png',
       features: [
         'TRGS 521 zertifiziert',
         'Vollschutz-Ausrüstung',
@@ -68,7 +68,7 @@ export default function LeistungenPage() {
     {
       title: 'Schimmelsanierung',
       description: 'Wir befreien Ihr Zuhause von gesundheitsschädlichem Schimmel. Für ein gesundes Wohnklima und Ihre Sicherheit - professionell und nachhaltig.',
-      image: '/images/schimmel-sanierung.png',
+      image: '/images/schimmelsanierung-hero.png',
       features: [
         'Gesundheitsschutz garantiert',
         'Ursachenbekämpfung inklusive',

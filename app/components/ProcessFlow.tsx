@@ -120,30 +120,6 @@ export default function ProcessFlow() {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-20">
-          <div className="inline-flex flex-col items-center gap-6">
-            <div className="w-px h-16 bg-gradient-to-b from-transparent via-cerulean/60 to-transparent"></div>
-            
-            <a
-              href="/kontakt"
-              className="group relative inline-flex items-center gap-4 bg-gradient-to-r from-cerulean to-indigo-dye hover:from-cerulean/90 hover:to-indigo-dye/90 text-white px-12 py-6 rounded-2xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-cerulean/30 border border-white/20 hover:border-white/40"
-            >
-              {/* Background glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cerulean to-indigo-dye opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300"></div>
-              
-              <div className="relative z-10 flex items-center gap-4">
-                <svg className="w-7 h-7 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span className="tracking-wide">KOSTENLOSES BERATUNGSGESPRÄCH</span>
-                <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </div>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -4,6 +4,16 @@ import Icon from '../../components/Icon';
 import FloatingElements from '../../components/FloatingElements';
 import FooterWithMarquee from '../../components/FooterWithMarquee';
 import ProcessFlow from '../../components/ProcessFlow';
+import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+
+const MultiStepWizard = dynamic(() => import('../../components/MultiStepWizard'), {
+  ssr: false,
+  loading: () => <div className="bg-off-white rounded-3xl shadow-2xl p-12 text-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cerulean mx-auto mb-4"></div>
+    <p className="text-indigo-dye">Lade Anfrage-Formular...</p>
+  </div>
+});
 
 export default function KmfSanierungPage() {
   return (
@@ -64,8 +74,8 @@ export default function KmfSanierungPage() {
             {[
               { icon: "certificate", title: "TRGS 521 zertifiziert", description: "Alle Arbeiten nach aktuellen Vorschriften" },
               { icon: "shield", title: "Vollschutz-Ausrüstung", description: "Maximaler Schutz für Arbeiter und Bewohner" },
-              { icon: "clean", title: "Staubfreie Arbeitsweise", description: "Moderne Techniken für saubere Arbeiten" },
-              { icon: "document", title: "Entsorgungsnachweis inklusive", description: "Vollständige Dokumentation der Entsorgung" }
+              { icon: "zap", title: "Staubfreie Arbeitsweise", description: "Moderne Techniken für saubere Arbeiten" },
+              { icon: "file-text", title: "Entsorgungsnachweis inklusive", description: "Vollständige Dokumentation der Entsorgung" }
             ].map((feature, index) => (
               <div key={index} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 text-center">
                 <Icon name={feature.icon} size={48} className="text-cerulean mx-auto mb-4" />
@@ -77,24 +87,111 @@ export default function KmfSanierungPage() {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-16 px-6 bg-oxford-blue">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Unser Prozess</h2>
-          <div className="space-y-8">
+      {/* Process Section - Modern Glassmorphism Design */}
+      <section className="py-20 px-6 bg-gradient-to-b from-black/30 via-gray-800/50 to-oxford-blue/30 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/3 left-1/6 w-80 h-80 bg-cerulean rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-1/6 w-80 h-80 bg-indigo-dye rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto max-w-5xl relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-6">
+              <svg className="w-5 h-5 text-cerulean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-white/90 text-sm font-semibold tracking-wider uppercase">KMF Sanierung TRGS 521</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+              KMF-SANIERUNGSPROZESS
+            </h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+              Fachgerechte Entfernung künstlicher Mineralfasern nach TRGS 521 mit Vollschutzausrüstung
+            </p>
+          </div>
+
+          {/* Process Steps - Card Layout */}
+          <div className="grid md:grid-cols-2 gap-8">
             {[
-              { step: "1", title: "Material-Analyse & Bewertung", description: "Genaue Bestimmung der KMF-Art und Gefährdungspotential" },
-              { step: "2", title: "Arbeitsplatz-Vorbereitung", description: "Einrichtung von Schutzmaßnahmen und Absaugung" },
-              { step: "3", title: "Fachgerechter Abbau", description: "Kontrollierter Abbau nach TRGS 521 mit Vollschutz" },
-              { step: "4", title: "Entsorgung & Freimessung", description: "Fachgerechte Entsorgung und Kontrolle der Arbeitsplätze" }
+              { 
+                title: "MATERIALIDENTIFIKATION", 
+                description: "KMF-ART BESTIMMEN",
+                details: "Genaue Identifikation der Mineralfaser-Art durch Laboranalyse. Bestimmung der Gefährdungsklasse und Festlegung der erforderlichen Schutzmaßnahmen nach TRGS 521. Bewertung der Fasergeometrie und Biopersistenz der Materialien.",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                )
+              },
+              { 
+                title: "SCHUTZAUSRÜSTUNG ANLEGEN", 
+                description: "VOLLSCHUTZ EINRICHTEN",
+                details: "Anlegen der kompletten Vollschutzausrüstung mit Atemschutzgerät, Schutzanzug und Handschuhen. Einrichtung von Absauganlagen direkt an der Bearbeitungsstelle. Kontinuierliche Überwachung der Schutzausrüstung während der Arbeiten.",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                )
+              },
+              { 
+                title: "STAUBFREIER ABBAU", 
+                description: "NASSABBAU DURCHFÜHRUNG",
+                details: "Kontrollierte Demontage der KMF-Materialien durch Nassabbau-Verfahren zur Minimierung der Staubentwicklung. Verwendung von Handwerkzeugen und direkter Absaugung an der Entstehungsstelle. Kontinuierliche Befeuchtung aller Arbeitsbereiche.",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                )
+              },
+              { 
+                title: "LUFTKONTROLLE & ENTSORGUNG", 
+                description: "QUALITÄTSSICHERUNG",
+                details: "Kontinuierliche Luftüberwachung während der Arbeiten mit Partikelmessgeräten. Fachgerechte Verpackung und Kennzeichnung der KMF-Abfälle für die Entsorgung. Abschlussreinigung mit HEPA-gefilterten Saugern und Dokumentation der Arbeiten.",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                )
+              }
             ].map((step, index) => (
-              <div key={index} className="flex gap-6 items-start">
-                <div className="w-12 h-12 bg-cerulean rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
-                  {step.step}
-                </div>
-                <div>
-                  <h3 className="text-white font-bold text-xl mb-2">{step.title}</h3>
-                  <p className="text-white/80">{step.description}</p>
+              <div key={index} className="group relative">
+                {/* Step Card */}
+                <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/10 hover:border-cerulean/50 transition-all duration-500 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-cerulean/20">
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-cerulean/0 via-cerulean/5 to-cerulean/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10">
+                    {/* Step Header */}
+                    <div className="flex items-start gap-6 mb-6">
+                      {/* Step Icon */}
+                      <div className="relative">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cerulean/20 to-indigo-dye/20 border border-cerulean/30 flex items-center justify-center group-hover:from-cerulean group-hover:to-indigo-dye group-hover:border-cerulean group-hover:shadow-lg group-hover:shadow-cerulean/40 transition-all duration-500">
+                          <div className="relative z-10 text-white group-hover:scale-110 transition-transform duration-300">
+                            {step.icon}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Step Content */}
+                      <div className="flex-1">
+                        <h3 className="text-2xl font-black text-white mb-2 group-hover:text-cerulean transition-colors duration-300 tracking-wide">
+                          {step.title}
+                        </h3>
+                        <p className="text-cerulean/90 font-bold text-sm tracking-wider mb-3">
+                          {step.description}
+                        </p>
+                        <p className="text-white/70 group-hover:text-white/90 leading-relaxed transition-colors duration-300">
+                          {step.details}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Hover Border Effect */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-cerulean/0 via-cerulean/50 to-cerulean/0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"></div>
                 </div>
               </div>
             ))}
@@ -102,28 +199,18 @@ export default function KmfSanierungPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-oxford-blue">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Benötigen Sie professionelle KMF-Sanierung?</h2>
-          <p className="text-xl text-white/80 mb-8">
-            Kontaktieren Sie uns für eine kostenlose Erstberatung und ein unverbindliches Angebot.
-          </p>
-          <Link 
-            href="/kontakt" 
-            className="inline-flex items-center gap-2 bg-cerulean text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-dye transition-colors"
-          >
-            <Icon name="phone" size={20} />
-            Jetzt kostenlos beraten lassen
-          </Link>
-        </div>
-      </section>
 
 
-      {/* Footer */}
       {/* Process Flow Section */}
       <ProcessFlow />
       
+      {/* Contact Form Section */}
+      <section className="py-16 bg-oxford-blue">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MultiStepWizard purpose="quote" />
+        </div>
+      </section>
+
       <FooterWithMarquee />
     </main>
   );

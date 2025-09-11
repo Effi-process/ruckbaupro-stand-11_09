@@ -740,6 +740,30 @@ const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'currentColor', cl
         <path d="M16 11c0 2.5-1.5 4.5-4 4.5s-4-2-4-4.5 1.5-4.5 4-4.5 4 2 4 4.5z" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M12 2v4M2 12l3.5-2M22 12l-3.5-2M12 18v4M6.34 7.34L4.93 5.93M17.66 7.34l1.41-1.41M6.34 16.66L4.93 18.07M17.66 16.66l1.41 1.41" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
+    ),
+    circle: (
+      <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <circle cx="12" cy="12" r="10" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="12" cy="12" r="6" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="12" cy="12" r="2" fill={color}/>
+      </svg>
+    ),
+    scissors: (
+      <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <circle cx="6" cy="6" r="3" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="6" cy="18" r="3" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <line x1="20" y1="4" x2="8.12" y2="15.88" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <line x1="14.47" y1="14.48" x2="20" y2="20" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <line x1="8.12" y1="8.12" x2="12" y2="12" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    saw: (
+      <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <path d="M2 20h20" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M7 16l1-1 1 1 1-1 1 1 1-1 1 1 1-1 1 1" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M6 16V6a2 2 0 012-2h8a2 2 0 012 2v10" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="12" cy="9" r="2" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
     )
   };
 

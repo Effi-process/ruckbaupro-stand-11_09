@@ -40,6 +40,50 @@ export default function Standorte() {
     { id: 'thueringen', name: 'Thüringen', count: 18 }
   ];
 
+  // Helper function to find nearest location based on city or PLZ
+  const findNearestLocation = (searchQuery: string) => {
+    const normalizedSearch = searchQuery.toLowerCase().trim();
+    
+    // Check if search query is a PLZ (postal code) - German PLZ are 5 digits
+    const isPlz = /^\d{5}$/.test(normalizedSearch) || /^\d{1,5}$/.test(normalizedSearch);
+    
+    if (isPlz) {
+      // PLZ search
+      const exactPlzMatch = locations.find(loc => loc.zip === normalizedSearch);
+      if (exactPlzMatch) return [exactPlzMatch];
+      
+      // Partial PLZ match (for typing in progress)
+      const partialPlzMatches = locations.filter(loc => 
+        loc.zip.startsWith(normalizedSearch)
+      );
+      if (partialPlzMatches.length > 0) return partialPlzMatches;
+    } else {
+      // City search
+      // First try exact city match
+      const exactMatch = locations.find(loc => 
+        loc.city.toLowerCase() === normalizedSearch
+      );
+      if (exactMatch) return [exactMatch];
+      
+      // Then try partial city match
+      const partialMatches = locations.filter(loc => 
+        loc.city.toLowerCase().includes(normalizedSearch)
+      );
+      if (partialMatches.length > 0) return partialMatches;
+      
+      // Finally, check coverage areas for nearest service
+      const coverageMatches = locations.filter(loc => 
+        loc.coverage.some(city => 
+          city.toLowerCase().includes(normalizedSearch)
+        )
+      );
+      
+      if (coverageMatches.length > 0) return coverageMatches;
+    }
+    
+    return [];
+  };
+
   // Use filtered locations based on search and region
   const filteredLocations = React.useMemo(() => {
     let result = locations;
@@ -49,12 +93,11 @@ export default function Standorte() {
       result = getLocationsByRegion(selectedRegion);
     }
     
-    // Filter by search query
+    // Filter by search query - only search cities
     if (searchQuery.trim() !== '') {
-      result = result.filter(loc => 
-        loc.city.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        loc.district.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        loc.zip.includes(searchQuery)
+      const nearestLocations = findNearestLocation(searchQuery);
+      result = nearestLocations.length > 0 ? nearestLocations : result.filter(loc => 
+        loc.city.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
     
@@ -87,7 +130,7 @@ export default function Standorte() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Stadt, PLZ oder Bezirk eingeben..."
+                  placeholder="Stadt oder PLZ eingeben..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full px-6 py-4 pl-14 bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-full text-white placeholder:text-white/60 focus:bg-white/20 focus:border-white/40 transition-all duration-300"
@@ -152,8 +195,29 @@ export default function Standorte() {
         <div className="container-custom">
           <div className="mb-8 text-center">
             <h2 className="text-3xl font-bold text-gray-900">
-              {filteredLocations.length} {filteredLocations.length === 1 ? 'Standort' : 'Standorte'} gefunden
+              {searchQuery.trim() !== '' && filteredLocations.length > 0 
+                ? `Nächstgelegener Standort für "${searchQuery}"`
+                : `${filteredLocations.length} ${filteredLocations.length === 1 ? 'Standort' : 'Standorte'} gefunden`
+              }
             </h2>
+            {searchQuery.trim() !== '' && filteredLocations.length > 0 && (
+              <p className="text-gray-600 mt-2">
+                {(() => {
+                  const isPlz = /^\d{1,5}$/.test(searchQuery.trim());
+                  if (isPlz) {
+                    return filteredLocations.some(loc => loc.zip === searchQuery.trim()) 
+                      ? 'Direkter Standort für diese PLZ gefunden'
+                      : 'Standorte in diesem PLZ-Bereich';
+                  } else {
+                    return filteredLocations.some(loc => loc.city.toLowerCase() === searchQuery.toLowerCase()) 
+                      ? 'Direkter Standort gefunden'
+                      : filteredLocations.some(loc => loc.coverage.some(city => city.toLowerCase().includes(searchQuery.toLowerCase())))
+                        ? 'Standort mit Abdeckung in diesem Gebiet'
+                        : 'Standorte in der Nähe';
+                  }
+                })()}
+              </p>
+            )}
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
