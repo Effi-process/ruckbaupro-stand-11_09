@@ -39,19 +39,19 @@ export default function UeberUns() {
 
   const team = [
     {
-      name: 'Gründerteam',
-      position: 'Geschäftsführung',
-      qualification: 'Zertifizierte Fachkräfte mit hoher Motivation und modernstem Equipment'
+      name: 'Gründer 1',
+      position: 'Technische Leitung',
+      qualification: 'TRGS 519 zertifiziert • Experte für komplexe Sanierungsprojekte und Qualitätssicherung'
     },
     {
-      name: 'Fachteam',
-      position: 'Projektleitung',
-      qualification: 'Speziell geschulte Experten für alle Arten von Rückbau- und Sanierungsprojekten'
+      name: 'Gründer 2', 
+      position: 'Projektmanagement',
+      qualification: 'Spezialist für Projektplanung • Koordination und termingerechte Ausführung aller Arbeiten'
     },
     {
-      name: 'Service-Team',
+      name: 'Gründer 3',
       position: 'Kundenbetreuung',
-      qualification: 'Persönliche Betreuung und transparente Kommunikation während des gesamten Projekts'
+      qualification: 'Verantwortlich für Beratung • Persönliche Betreuung und transparente Kommunikation'
     }
   ];
 
@@ -85,30 +85,31 @@ export default function UeberUns() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">
-                Ihr neuer Partner für sichere Schadstoffsanierung
+                Das motivierte RückbauPRO Dreier-Gespann
               </h2>
               <p className="text-lg text-gray-300 mb-4">
-                RückbauPRO wurde mit dem klaren Ziel gegründet, höchste Standards 
-                in der Schadstoffsanierung zu bieten. Als TRGS 519 zertifizierter 
-                Fachbetrieb spezialisieren wir uns auf die sichere und umweltgerechte 
-                Beseitigung von Asbest und anderen Gebäudeschadstoffen.
+                Unser Gründerteam besteht aus drei hochmotivierten Experten, die 
+                gemeinsam RückbauPRO ins Leben gerufen haben. Mit unterschiedlichen 
+                Spezialisierungen und jahrelanger Erfahrung im Rückbau- und 
+                Sanierungsbereich bilden sie das perfekte Team für Ihre Projekte.
               </p>
               <p className="text-lg text-gray-300 mb-4">
-                Mit einem hochmotivierten Team aus qualifizierten Fachkräften und 
-                modernster Ausrüstung sind wir bereit für Ihren Einsatz. Unser 
-                Leistungsspektrum umfasst Analyse, Beratung, Sanierung und 
-                Dokumentation – alles aus einer Hand.
+                Jeder der drei Gründer bringt seine eigene Expertise mit: Von der 
+                technischen Projektleitung über die Qualitätssicherung bis hin zur 
+                Kundenbetreuung. Gemeinsam haben sie alle erforderlichen TRGS 519 
+                Zertifizierungen erworben und modernste Ausrüstung angeschafft.
               </p>
               <p className="text-lg text-gray-300">
-                Als neues Unternehmen setzen wir auf faire Preise, transparente 
-                Kommunikation und höchste Qualität. Ihr Projekt ist unser erstes 
-                und wichtigstes Anliegen.
+                Diese einzigartige Kombination aus Motivation, Fachwissen und 
+                Teamgeist macht RückbauPRO zu Ihrem idealen Partner. Das Dreier-Gespann 
+                steht für Zuverlässigkeit, Qualität und persönliche Betreuung auf 
+                höchstem Niveau.
               </p>
             </div>
             <div className="relative h-[500px] rounded-xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/deteriorated-basement.jpg"
-                alt="Asbest Sanierung Team"
+                src="/images/team-photo.jpeg"
+                alt="Das motivierte RückbauPRO Dreier-Gespann"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -168,10 +169,10 @@ export default function UeberUns() {
       <section className="py-16 bg-gradient-to-b from-gray-800 to-oxford-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-white text-center mb-4">
-            Unser Führungsteam
+            Das motivierte Dreier-Gespann im Detail
           </h2>
           <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
-            Hochmotivierte Fachkräfte mit allen erforderlichen Qualifikationen und modernstem Equipment
+            Drei Experten, eine Vision: Professioneller Rückbau und Schadstoffsanierung auf höchstem Niveau
           </p>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">

@@ -136,12 +136,21 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
       {/* Header */}
       <div className="bg-gradient-to-r from-cerulean to-indigo-dye p-6 text-white">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-2">
-            Kostenlose Beratung anfragen
+          <h1 className="text-3xl md:text-4xl font-bold mb-3">
+            KOSTENLOSE BERATUNG ANFRAGEN
           </h1>
-          <p className="text-white/90">
-            Einfach und schnell zu Ihrem persönlichen Angebot
+          <p className="text-xl md:text-2xl text-white/90 mb-4">
+            EINFACH UND SCHNELL ZU IHREM PERSÖNLICHEN ANGEBOT
           </p>
+          <div className="bg-white/20 backdrop-blur-md rounded-xl p-6 text-base">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <Icon name="shield" size={20} className="text-green-300" />
+              <span className="font-bold text-lg">100% UNVERBINDLICH</span>
+            </div>
+            <p className="text-white/90 text-sm font-medium">
+              KOSTENLOSE BERATUNG • KEINE VERSTECKTEN KOSTEN • UNVERBINDLICHES ANGEBOT
+            </p>
+          </div>
         </div>
       </div>
 

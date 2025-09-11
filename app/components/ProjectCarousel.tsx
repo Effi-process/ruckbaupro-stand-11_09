@@ -146,7 +146,7 @@ export default function ProjectCarousel() {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-black/20" />
-                  <span className="absolute top-4 left-4 text-xs px-3 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 tracking-wide uppercase text-white font-semibold">
+                  <span className="absolute top-6 left-6 text-sm px-4 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 tracking-wide uppercase text-white font-bold shadow-lg">
                     {project.badge}
                   </span>
                 </div>

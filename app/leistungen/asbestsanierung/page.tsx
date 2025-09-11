@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Icon from '../../components/Icon';
 import FloatingElements from '../../components/FloatingElements';
 import FooterWithMarquee from '../../components/FooterWithMarquee';
+import ProcessFlow from '../../components/ProcessFlow';
 
 export default function AsbestsanierungPage() {
   return (
@@ -105,6 +106,9 @@ export default function AsbestsanierungPage() {
           </div>
         </div>
       </section>
+
+      {/* Process Flow Section */}
+      <ProcessFlow />
 
       {/* CTA Section */}
       <section className="py-20 px-6">

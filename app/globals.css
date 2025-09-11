@@ -893,3 +893,10 @@ html {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
 }
+
+/* Remove gray background from logo image */
+.logo-remove-gray {
+  background-color: transparent !important;
+  mix-blend-mode: multiply;
+  filter: contrast(1.2) brightness(1.1) !important;
+}

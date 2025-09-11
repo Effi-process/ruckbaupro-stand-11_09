@@ -2,9 +2,20 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
+import ProcessFlow from '../components/ProcessFlow';
+import dynamic from 'next/dynamic';
+
+const MultiStepWizard = dynamic(() => import('../components/MultiStepWizard'), {
+  ssr: false,
+  loading: () => <div className="bg-off-white rounded-3xl shadow-2xl p-12 text-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cerulean mx-auto mb-4"></div>
+    <p className="text-indigo-dye">Lade Anfrage-Formular...</p>
+  </div>
+});
+
 
 export default function LeistungenPage() {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
@@ -189,7 +200,7 @@ export default function LeistungenPage() {
                             <svg className="w-5 h-5 mr-3 text-cerulean flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
-                            <span className="text-sm">{feature}</span>
+                            <span className="text-lg font-medium">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -212,147 +223,18 @@ export default function LeistungenPage() {
           </div>
         </section>
 
-        {/* Process Section */}
-        <section id="process" className="py-24 px-4 border-t border-white/10">
-          <div className="container-custom">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-                Unser Ablauf
-              </h2>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto">
-                Von der ersten Beratung bis zur finalen Abnahme - 
-                wir begleiten Sie durch jeden Schritt Ihres Projekts
-              </p>
-            </div>
 
-            <div className="grid md:grid-cols-4 gap-8">
-              {[
-                { step: '01', title: 'Beratung', desc: 'Kostenlose Erstberatung und Begehung vor Ort' },
-                { step: '02', title: 'Angebot', desc: 'Transparentes und detailliertes Festpreisangebot' },
-                { step: '03', title: 'Durchführung', desc: 'Professionelle Umsetzung mit modernster Technik' },
-                { step: '04', title: 'Abnahme', desc: 'Dokumentation und ordnungsgemäße Übergabe' }
-              ].map((item, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20">
-                    <span className="text-2xl font-bold text-white">{item.step}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-white/70">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Kontakt Section - genau wie auf der Hauptseite */}
-        <section id="kontakt" className="py-24">
-          <div className="container-custom">
-            <div className="text-center mb-16">
-              <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Kontakt</span>
-              <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-6">
-                Kostenlose Beratung
-              </h2>
-              <p className="text-xl text-white/90 max-w-3xl mx-auto">
-                Lassen Sie sich unverbindlich beraten. Wir erstellen Ihnen ein maßgeschneidertes Angebot für Ihr Rückbau-Projekt.
-              </p>
-            </div>
-
-            <div className="max-w-4xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12">
-                {/* Kontaktinformationen */}
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-4">Sofort erreichbar</h3>
-                    <div className="space-y-4">
-                      <a href="tel:+491748083023" className="flex items-center gap-4 text-white/80 hover:text-white transition-colors">
-                        <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <p className="font-semibold text-white">+49 174 8083023</p>
-                          <p className="text-sm text-white/60">24/7 erreichbar</p>
-                        </div>
-                      </a>
-                      
-                      <a href="mailto:info@rueckbaupro.de" className="flex items-center gap-4 text-white/80 hover:text-white transition-colors">
-                        <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <p className="font-semibold text-white">info@rueckbaupro.de</p>
-                          <p className="text-sm text-white/60">Antwort innerhalb 24h</p>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-3">Unsere Vorteile</h3>
-                    <ul className="space-y-2 text-white/80">
-                      <li className="flex items-center gap-2">
-                        <svg className="w-5 h-5 text-cerulean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        Kostenlose Erstberatung
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="w-5 h-5 text-cerulean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        Festpreisgarantie
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="w-5 h-5 text-cerulean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        Deutschlandweiter Service
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                
-                {/* Kontaktformular */}
-                <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-                  <h3 className="text-xl font-bold text-white mb-6">Schnellanfrage</h3>
-                  <div className="space-y-4">
-                    <div>
-                      <label className="block text-white/80 text-sm font-medium mb-2">Name</label>
-                      <input 
-                        type="text" 
-                        className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50"
-                        placeholder="Ihr Name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-white/80 text-sm font-medium mb-2">Telefon</label>
-                      <input 
-                        type="tel" 
-                        className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50"
-                        placeholder="Ihre Telefonnummer"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-white/80 text-sm font-medium mb-2">Nachricht</label>
-                      <textarea 
-                        rows={4}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50"
-                        placeholder="Beschreiben Sie Ihr Projekt..."
-                      ></textarea>
-                    </div>
-                    <button className="w-full bg-gradient-to-r from-cerulean to-indigo-dye text-white py-3 rounded-lg font-bold hover:shadow-lg transition-all duration-300">
-                      Nachricht senden
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
+      
+      {/* Process Flow Section - Beautiful Modern Design */}
+      <ProcessFlow />
+      
+      {/* Contact Form Section */}
+      <section className="py-16 bg-oxford-blue">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MultiStepWizard purpose="quote" />
+        </div>
+      </section>
       
       {/* Footer with Marquee - genau wie auf der Hauptseite */}
       <FooterWithMarquee />

@@ -129,9 +129,14 @@ export default function FloatingMenuButton() {
           
           <div
             ref={dropdownRef}
-            className="fixed top-20 right-4 w-[420px] bg-gray-900/95 backdrop-blur-2xl shadow-3xl border border-white/20 rounded-2xl z-[9999] overflow-hidden max-h-[85vh] overflow-y-auto"
+            className="fixed top-20 right-4 w-[420px] bg-white/10 backdrop-blur-3xl shadow-3xl border border-white/25 rounded-2xl z-[9999] overflow-hidden max-h-[85vh] overflow-y-auto"
+            style={{
+              backdropFilter: 'blur(40px) saturate(150%)',
+              WebkitBackdropFilter: 'blur(40px) saturate(150%)',
+              background: 'rgba(255, 255, 255, 0.08)'
+            }}
           >
-            <div className="px-6 py-4 bg-gradient-to-r from-cerulean/80 to-indigo-dye/80 backdrop-blur-xl text-white">
+            <div className="px-6 py-4 bg-gradient-to-r from-cerulean/60 to-indigo-dye/60 backdrop-blur-2xl text-white border-b border-white/15">
               <div className="flex items-center justify-between">
                 <h3 className="font-bold text-xl">RÜCKBAUPRO NAVIGATION</h3>
                 <button
@@ -232,7 +237,7 @@ export default function FloatingMenuButton() {
               })}
             </div>
 
-            <div className="px-6 py-4 bg-white/15 backdrop-blur-xl border-t border-white/20">
+            <div className="px-6 py-4 bg-white/10 backdrop-blur-2xl border-t border-white/20">
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-xs text-white/70 uppercase tracking-wide font-medium">

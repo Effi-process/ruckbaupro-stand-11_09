@@ -1,38 +1,12 @@
 'use client'
-import { useState, Suspense, lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import Icon from '../components/Icon';
-import EmergencyHotline from '../components/EmergencyHotline';
-import TrustBadges from '../components/TrustBadges';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
 
 const MultiStepWizard = lazy(() => import('../components/MultiStepWizard'));
 
 export default function Kontakt() {
-  const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    contactMethod: 'email',
-    email: '',
-    telefon: '',
-    service: '',
-    nachricht: '',
-    datenschutz: false
-  });
-  const [showClassicForm, setShowClassicForm] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Formular gesendet:', formData);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
-    }));
-  };
 
   return (
     <main className="overflow-hidden relative min-h-screen">
@@ -104,6 +78,14 @@ export default function Kontakt() {
                   24 Stunden täglich
                 </p>
                 <p className="text-sm text-gray-600 mt-1">365 Tage im Jahr</p>
+                <div className="mt-3 pt-3 border-t border-gray-200">
+                  <p className="text-xs text-green-600 font-semibold">
+                    ✓ Unverbindlich anrufen
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    Kostenlose Beratung ohne Verpflichtung
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -117,8 +99,7 @@ export default function Kontakt() {
               </div>
             }>
               <MultiStepWizard 
-                purpose="quote" 
-                onComplete={(data) => console.log('Form completed:', data)}
+                purpose="quote"
               />
             </Suspense>
           </div>
