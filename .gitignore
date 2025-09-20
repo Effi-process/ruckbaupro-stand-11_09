@@ -37,4 +37,4 @@ next-env.d.ts
 
 # IDE
 .vscode/
-.idea/
+.idea/.env.local
