@@ -1,19 +1,27 @@
 import nodemailer from 'nodemailer';
 
 // Erstelle den E-Mail-Transporter mit Strato-Einstellungen
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || 'smtp.strato.de',
-  port: parseInt(process.env.SMTP_PORT || '465'),
-  secure: process.env.SMTP_SECURE === 'true', // true für 465, false für andere
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-  tls: {
-    // Wichtig für manche Strato-Server
-    rejectUnauthorized: false
+let transporter: nodemailer.Transporter | null = null;
+
+try {
+  if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+    transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST || 'smtp.strato.de',
+      port: parseInt(process.env.SMTP_PORT || '465'),
+      secure: process.env.SMTP_SECURE === 'true', // true für 465, false für andere
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+      tls: {
+        // Wichtig für manche Strato-Server
+        rejectUnauthorized: false
+      }
+    });
   }
-});
+} catch (error) {
+  console.error('Failed to create email transporter:', error);
+}
 
 export interface ContactFormData {
   name?: string;
@@ -116,36 +124,45 @@ Zeitstempel: ${new Date().toLocaleString('de-DE')}
   };
 
   try {
+    if (!transporter) {
+      throw new Error('E-Mail-Dienst nicht konfiguriert');
+    }
+
     const info = await transporter.sendMail(mailOptions);
     console.log('E-Mail erfolgreich gesendet:', info.messageId);
-    
+
     // Optional: Bestätigungs-E-Mail an den Kunden
     if (data.email) {
-      const confirmationMail = {
-        from: `"RückbauPRO" <${process.env.SMTP_USER}>`,
-        to: data.email,
-        subject: 'Ihre Anfrage bei RückbauPRO - Wir haben sie erhalten!',
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <div style="background-color: #0066CC; color: white; padding: 20px; text-align: center;">
-              <h1>Vielen Dank für Ihre Anfrage!</h1>
+      try {
+        const confirmationMail = {
+          from: `"RückbauPRO" <${process.env.SMTP_USER}>`,
+          to: data.email,
+          subject: 'Ihre Anfrage bei RückbauPRO - Wir haben sie erhalten!',
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+              <div style="background-color: #0066CC; color: white; padding: 20px; text-align: center;">
+                <h1>Vielen Dank für Ihre Anfrage!</h1>
+              </div>
+              <div style="padding: 20px;">
+                <p>Guten Tag ${data.name || ''},</p>
+                <p>wir haben Ihre Anfrage erhalten und werden uns innerhalb von 24 Stunden bei Ihnen melden.</p>
+                <p><strong>Bei dringenden Fällen erreichen Sie uns sofort unter:</strong></p>
+                <p style="font-size: 24px; color: #0066CC; text-align: center;">
+                  <strong>+49 174 8083023</strong>
+                </p>
+                <hr style="margin: 30px 0; border: 1px solid #eee;">
+                <p>Mit freundlichen Grüßen<br>
+                Ihr RückbauPRO Team</p>
+              </div>
             </div>
-            <div style="padding: 20px;">
-              <p>Guten Tag ${data.name || ''},</p>
-              <p>wir haben Ihre Anfrage erhalten und werden uns innerhalb von 24 Stunden bei Ihnen melden.</p>
-              <p><strong>Bei dringenden Fällen erreichen Sie uns sofort unter:</strong></p>
-              <p style="font-size: 24px; color: #0066CC; text-align: center;">
-                <strong>+49 174 8083023</strong>
-              </p>
-              <hr style="margin: 30px 0; border: 1px solid #eee;">
-              <p>Mit freundlichen Grüßen<br>
-              Ihr RückbauPRO Team</p>
-            </div>
-          </div>
-        `
-      };
-      
-      await transporter.sendMail(confirmationMail);
+          `
+        };
+
+        await transporter.sendMail(confirmationMail);
+      } catch (confirmError) {
+        console.error('Bestätigungs-E-Mail konnte nicht gesendet werden:', confirmError);
+        // Nicht als Fehler werfen - Hauptanfrage war erfolgreich
+      }
     }
     
     return { success: true, messageId: info.messageId };
@@ -307,12 +324,17 @@ Datenschutz bestätigt: ${data.datenschutz ? 'Ja' : 'Nein'}
   };
 
   try {
+    if (!transporter) {
+      throw new Error('E-Mail-Dienst nicht konfiguriert');
+    }
+
     const info = await transporter.sendMail(mailOptions);
     console.log('Angebots-E-Mail erfolgreich gesendet:', info.messageId);
-    
+
     // Bestätigungs-E-Mail an Kunden (nur bei E-Mail-Kontakt)
     if (data.contactMethod === 'email' && data.email) {
-      const confirmationMail = {
+      try {
+        const confirmationMail = {
         from: `"RückbauPRO" <${process.env.SMTP_USER}>`,
         to: data.email,
         subject: 'Ihre Anfrage bei RückbauPRO - Bestätigung erhalten!',
@@ -343,9 +365,13 @@ Datenschutz bestätigt: ${data.datenschutz ? 'Ja' : 'Nein'}
             </div>
           </div>
         `
-      };
-      
-      await transporter.sendMail(confirmationMail);
+        };
+
+        await transporter.sendMail(confirmationMail);
+      } catch (confirmError) {
+        console.error('Bestätigungs-E-Mail konnte nicht gesendet werden:', confirmError);
+        // Nicht als Fehler werfen - Hauptanfrage war erfolgreich
+      }
     }
     
     return { success: true, messageId: info.messageId };
