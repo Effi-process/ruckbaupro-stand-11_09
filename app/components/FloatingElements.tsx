@@ -6,13 +6,8 @@ import FloatingMenuButton from './FloatingMenuButton';
 export default function FloatingElements() {
   return (
     <>
-      {/* Menu - Top Left */}
+      {/* Logo - Top Left */}
       <div className="fixed top-6 left-6 z-40">
-        <FloatingMenuButton />
-      </div>
-
-      {/* Logo - Top Right */}
-      <div className="fixed top-6 right-6 z-40">
         <div className="relative group">
           {/* Glasmorphism Background mit Glow Effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-cerulean/20 to-indigo-dye/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
@@ -29,6 +24,11 @@ export default function FloatingElements() {
           {/* Subtle Glow Ring */}
           <div className="absolute -inset-1 bg-gradient-to-r from-cerulean/30 to-indigo-dye/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10 blur-sm"></div>
         </div>
+      </div>
+
+      {/* Menu - Top Right */}
+      <div className="fixed top-6 right-6 z-40">
+        <FloatingMenuButton />
       </div>
     </>
   );
