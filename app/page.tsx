@@ -6,6 +6,7 @@ import FooterWithMarquee from './components/FooterWithMarquee';
 import LazyCalculator from './components/LazyCalculator';
 import FloatingElements from './components/FloatingElements';
 import SchadstoffsanierungContent from './components/SchadstoffsanierungContent';
+import ServiceCategoriesOverview from './components/ServiceCategoriesOverview';
 import Link from 'next/link';
 import Image from 'next/image';
 import Icon from './components/Icon';
@@ -46,6 +47,9 @@ export default function Home() {
 
       {/* Schadstoffsanierung Content Section */}
       <SchadstoffsanierungContent />
+
+      {/* Service Categories Overview - SEO friendly */}
+      <ServiceCategoriesOverview />
 
       {/* Contact Form Section */}
       <section id="contact-form" className="py-16 bg-oxford-blue">
