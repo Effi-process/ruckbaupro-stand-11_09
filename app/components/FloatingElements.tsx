@@ -11,12 +11,12 @@ export default function FloatingElements() {
         <div className="relative group">
           {/* Glasmorphism Background mit Glow Effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-cerulean/20 to-indigo-dye/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-          <div className="relative bg-white/10 backdrop-blur-xl border border-white/30 rounded-2xl p-4 hover:bg-white/15 transition-all duration-300 shadow-2xl">
+          <div className="relative bg-white/10 backdrop-blur-xl border border-white/30 rounded-2xl p-2 hover:bg-white/15 transition-all duration-300 shadow-2xl">
             <Image
               src="/logo-new-white.svg"
               alt="RückbauPRO Logo"
-              width={140}
-              height={70}
+              width={160}
+              height={80}
               priority
               style={{ objectFit: 'contain' }}
             />
