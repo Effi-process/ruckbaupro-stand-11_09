@@ -103,20 +103,23 @@ export default function FloatingMenuButton() {
   };
 
   return (
-    <div className="transition-all duration-300 ease-in-out">
+    <div className="relative z-50">
       <button
         ref={buttonRef}
-        onClick={() => setIsOpen(!isOpen)}
-        className="group flex items-center gap-2 px-4 py-3 bg-white/15 backdrop-blur-xl border border-white/25 hover:border-cerulean/50 text-cerulean hover:bg-white/25 transition-all duration-300 rounded-lg shadow-lg hover:shadow-xl"
+        onClick={() => {
+          console.log('Menu button clicked, current state:', isOpen);
+          setIsOpen(!isOpen);
+        }}
+        className="group flex items-center gap-2 px-4 py-3 bg-white/20 backdrop-blur-xl border-2 border-white/30 hover:border-white/50 text-white hover:bg-white/30 transition-all duration-300 rounded-xl shadow-xl hover:shadow-2xl"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
         <Icon name="grid" size={18} />
         <span className="font-semibold text-sm">MENÜ</span>
-        <Icon 
-          name="chevron-down" 
-          size={14} 
-          className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
+        <Icon
+          name="chevron-down"
+          size={14}
+          className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
 
