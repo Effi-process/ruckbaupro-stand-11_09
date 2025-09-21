@@ -9,13 +9,13 @@ export default function FloatingElements() {
       {/* Logo - Top Left */}
       <div className="fixed top-6 left-6 z-40">
         <Image
-          src="/Gemini_Generated_Image_307lsf307lsf307l.png"
+          src="/logo-rueckbaupro-final.png"
           alt="RückbauPRO Logo"
-          width={140}
-          height={70}
+          width={160}
+          height={80}
           priority
           style={{ objectFit: 'contain' }}
-          className="drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300"
+          className="drop-shadow-xl hover:drop-shadow-2xl transition-all duration-300"
         />
       </div>
 
