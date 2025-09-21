@@ -27,7 +27,7 @@ export default function FloatingElements() {
       </div>
 
       {/* Menu - Top Right */}
-      <div className="fixed top-6 right-6 z-40">
+      <div className="fixed top-6 right-6 z-50">
         <FloatingMenuButton />
       </div>
     </>

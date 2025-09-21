@@ -100,17 +100,19 @@ export default function FloatingMenuButton() {
     );
   };
 
-  const handleButtonClick = () => {
+  const handleButtonClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     console.log('Menu button clicked, toggling from:', isOpen, 'to:', !isOpen);
     setIsOpen(prev => !prev);
   };
 
   return (
-    <div className="relative z-50">
+    <>
       <button
         ref={buttonRef}
         onClick={handleButtonClick}
-        className="group flex items-center gap-2 px-4 py-3 bg-white/20 backdrop-blur-xl border-2 border-white/30 hover:border-cerulean/50 text-cerulean hover:bg-white/30 transition-all duration-300 rounded-xl shadow-xl hover:shadow-2xl cursor-pointer"
+        className="relative z-50 group flex items-center gap-2 px-4 py-3 bg-white/20 backdrop-blur-xl border-2 border-white/30 hover:border-cerulean/50 text-cerulean hover:bg-white/30 transition-all duration-300 rounded-xl shadow-xl hover:shadow-2xl cursor-pointer"
         type="button"
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -267,6 +269,6 @@ export default function FloatingMenuButton() {
           </div>
         </>
       )}
-    </div>
+    </>
   );
 }
