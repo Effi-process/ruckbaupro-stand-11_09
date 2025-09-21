@@ -25,19 +25,17 @@ export default function FloatingMenuButton() {
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target as Node)
-      ) {
+      const target = event.target as Node;
+      if (!dropdownRef.current?.contains(target) && !buttonRef.current?.contains(target)) {
         setIsOpen(false);
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [isOpen]);
 
   const menuSections: MenuSection[] = [
     {
@@ -102,17 +100,18 @@ export default function FloatingMenuButton() {
     );
   };
 
+  const handleButtonClick = () => {
+    console.log('Menu button clicked, toggling from:', isOpen, 'to:', !isOpen);
+    setIsOpen(prev => !prev);
+  };
+
   return (
     <div className="relative z-50">
       <button
         ref={buttonRef}
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          console.log('Menu button clicked, current state:', isOpen);
-          setIsOpen(!isOpen);
-        }}
-        className="group flex items-center gap-2 px-4 py-3 bg-white/20 backdrop-blur-xl border-2 border-white/30 hover:border-white/50 text-white hover:bg-white/30 transition-all duration-300 rounded-xl shadow-xl hover:shadow-2xl"
+        onClick={handleButtonClick}
+        className="group flex items-center gap-2 px-4 py-3 bg-white/20 backdrop-blur-xl border-2 border-white/30 hover:border-white/50 text-white hover:bg-white/30 transition-all duration-300 rounded-xl shadow-xl hover:shadow-2xl cursor-pointer"
+        type="button"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >

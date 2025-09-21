@@ -11,14 +11,7 @@ import Image from 'next/image';
 import Icon from './components/Icon';
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-
-const MultiStepWizard = dynamic(() => import('./components/MultiStepWizard'), {
-  ssr: false,
-  loading: () => <div className="bg-off-white rounded-3xl shadow-2xl p-12 text-center">
-    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cerulean mx-auto mb-4"></div>
-    <p className="text-indigo-dye">Lade Anfrage-Formular...</p>
-  </div>
-});
+import MultiStepWizard from './components/MultiStepWizard';
 
 // Use Next.js dynamic imports instead of React.lazy for SSR compatibility
 const ProjectGallery = dynamic(() => import('./components/ProjectGallery'), {
