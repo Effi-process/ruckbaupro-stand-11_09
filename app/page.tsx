@@ -5,6 +5,7 @@ import ProjectCarousel from './components/ProjectCarousel';
 import FooterWithMarquee from './components/FooterWithMarquee';
 import LazyCalculator from './components/LazyCalculator';
 import FloatingElements from './components/FloatingElements';
+import SchadstoffsanierungContent from './components/SchadstoffsanierungContent';
 import Link from 'next/link';
 import Image from 'next/image';
 import Icon from './components/Icon';
@@ -50,8 +51,11 @@ export default function Home() {
 
       </div>
 
+      {/* Schadstoffsanierung Content Section */}
+      <SchadstoffsanierungContent />
+
       {/* Contact Form Section */}
-      <section className="py-16 bg-oxford-blue">
+      <section id="contact-form" className="py-16 bg-oxford-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MultiStepWizard purpose="quote" />
         </div>
