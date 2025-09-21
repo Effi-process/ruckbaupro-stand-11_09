@@ -106,7 +106,9 @@ export default function FloatingMenuButton() {
     <div className="relative z-50">
       <button
         ref={buttonRef}
-        onClick={() => {
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
           console.log('Menu button clicked, current state:', isOpen);
           setIsOpen(!isOpen);
         }}
