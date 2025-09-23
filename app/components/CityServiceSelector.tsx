@@ -72,7 +72,9 @@ export default function CityServiceSelector() {
         title: "Entkernung",
         subtitle: "Innenraumdemontage",
         icon: "home",
-        services: []
+        services: [
+          { name: "Gebäudeabbruch mehrstöckig", link: "/standorte/bielefeld/gebaeudeabbruch" }
+        ]
       },
       {
         title: "Beratung & Planung",
