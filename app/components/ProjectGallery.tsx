@@ -197,9 +197,9 @@ export default function ProjectGallery() {
                   <div className={`w-12 h-12 ${activeTab === index ? 'bg-cerulean' : 'bg-gray-200'} rounded flex items-center justify-center`}>
                     <Icon name={service.icon} size={24} className={activeTab === index ? 'text-white' : 'text-gray-600'} />
                   </div>
-                  <h3 className="font-bold text-lg">{service.title}</h3>
+                  <h3 className="font-bold text-lg line-clamp-1 overflow-hidden">{service.title}</h3>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{service.description}</p>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2 overflow-hidden">{service.description}</p>
                 {activeTab === index && (
                   <ul className="space-y-2">
                     {service.details.map((detail, i) => (

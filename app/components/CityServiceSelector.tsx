@@ -283,7 +283,7 @@ export default function CityServiceSelector() {
               `}>
                 <div className="text-4xl mb-3">{city.icon}</div>
                 <h3 className="text-2xl font-bold text-white mb-2">{city.name}</h3>
-                <p className="text-sm text-white/70 mb-3">{city.description}</p>
+                <p className="text-sm text-white/70 mb-3 line-clamp-2 overflow-hidden">{city.description}</p>
 
                 {selectedCity === city.id && (
                   <div className="mt-4 pt-4 border-t border-white/20 space-y-2 animate-fadeIn">
@@ -341,8 +341,8 @@ export default function CityServiceSelector() {
                       <Icon name={category.icon} size={24} className="text-white" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-2xl font-bold text-white mb-1">{category.title}</h4>
-                      <p className="text-white/60 text-sm mb-4">{category.subtitle}</p>
+                      <h4 className="text-2xl font-bold text-white mb-1 line-clamp-1 overflow-hidden">{category.title}</h4>
+                      <p className="text-white/60 text-sm mb-4 line-clamp-2 overflow-hidden">{category.subtitle}</p>
 
                       {/* Service Links - Placeholder for future links */}
                       {category.services.length > 0 ? (
@@ -354,7 +354,7 @@ export default function CityServiceSelector() {
                               className="flex items-center p-3 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:border-cerulean/50 transition-all group/item"
                             >
                               <Icon name="check-circle" size={16} className="text-green-400 mr-3 flex-shrink-0" />
-                              <span className="text-white/90 group-hover/item:text-cerulean transition-colors">
+                              <span className="text-white/90 group-hover/item:text-cerulean transition-colors line-clamp-2 overflow-hidden">
                                 {service.name}
                               </span>
                             </Link>

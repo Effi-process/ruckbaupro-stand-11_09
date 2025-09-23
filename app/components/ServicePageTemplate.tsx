@@ -275,8 +275,8 @@ export default function ServicePageTemplate({ data, children }: ServicePageTempl
                   </div>
                 </div>
 
-                <h3 className="text-white font-bold text-xl mb-3">{feature.title}</h3>
-                <p className="text-white/70">{feature.description}</p>
+                <h3 className="text-white font-bold text-xl mb-3 line-clamp-2 overflow-hidden">{feature.title}</h3>
+                <p className="text-white/70 line-clamp-3 overflow-hidden">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -327,7 +327,7 @@ export default function ServicePageTemplate({ data, children }: ServicePageTempl
                       <h3 className={`font-bold text-lg mb-1 ${activeTab === index ? 'text-white' : 'text-white/80'}`}>
                         {step.title}
                       </h3>
-                      <p className={`text-sm ${activeTab === index ? 'text-white/90' : 'text-white/60'}`}>
+                      <p className={`text-sm line-clamp-2 overflow-hidden ${activeTab === index ? 'text-white/90' : 'text-white/60'}`}>
                         {step.description}
                       </p>
                     </div>
@@ -351,7 +351,7 @@ export default function ServicePageTemplate({ data, children }: ServicePageTempl
                 <h3 className="text-2xl font-bold text-white mb-4">
                   {data.processSteps[activeTab].title}
                 </h3>
-                <p className="text-white/80 mb-6">
+                <p className="text-white/80 mb-6 line-clamp-3 overflow-hidden">
                   {data.processSteps[activeTab].description}
                 </p>
               </div>
@@ -404,8 +404,8 @@ export default function ServicePageTemplate({ data, children }: ServicePageTempl
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-2xl font-bold text-white mb-1">{cert.name}</div>
-                <div className="text-xs text-white/60">{cert.description}</div>
+                <div className="text-2xl font-bold text-white mb-1 line-clamp-1 overflow-hidden">{cert.name}</div>
+                <div className="text-xs text-white/60 line-clamp-2 overflow-hidden">{cert.description}</div>
               </motion.div>
             ))}
           </div>

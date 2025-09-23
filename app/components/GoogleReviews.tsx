@@ -197,7 +197,7 @@ export default function GoogleReviews({ stadtKey, stadtName, averageRating = 4.9
                   <Icon name="google" size={20} className="text-gray-400" />
                 </div>
                 
-                <p className="text-gray-700 leading-relaxed">{review.text}</p>
+                <p className="text-gray-700 leading-relaxed line-clamp-4 overflow-hidden">{review.text}</p>
               </div>
             ))}
 

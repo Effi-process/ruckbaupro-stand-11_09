@@ -117,7 +117,7 @@ export default function InkScrollSection() {
       </section>
 
       {/* Section mit Typing-Reveal pro Buchstabe */}
-      <section className="py-4 sm:py-8 md:py-16 lg:py-20">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20">
         <div className="flex justify-center px-4 sm:px-[5vw]">
           <h1
             ref={headlineRef}
@@ -128,7 +128,7 @@ export default function InkScrollSection() {
         </div>
 
         {/* Professionelles Baustellen-Bild */}
-        <div className="mt-12 sm:mt-16 md:mt-20 w-[min(1100px,92vw)] aspect-video rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,.3)] relative group hover:scale-105 transition-transform duration-500 mx-auto">
+        <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-20 w-[min(1100px,95vw)] aspect-video rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,.3)] relative group hover:scale-105 transition-transform duration-500 mx-auto">
           <Image 
             src="/images/team-photo.jpeg" 
             alt="Professioneller Rückbau mit Container-Entsorgung"
@@ -139,16 +139,16 @@ export default function InkScrollSection() {
           <div className="absolute inset-0 bg-black/20" />
           
           {/* Floating Element */}
-          <div className="absolute bottom-6 right-6 bg-white/10 backdrop-blur-md rounded-lg px-4 py-2 text-sm font-semibold">
+          <div className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 bg-white/10 backdrop-blur-md rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold">
             Deutschlandweit
           </div>
         </div>
 
         {/* Text mittig unter dem Video mit Ink-Effect */}
-        <div className="mt-12 text-center max-w-2xl mx-auto px-4 sm:px-[5vw]">
+        <div className="mt-8 sm:mt-10 md:mt-12 text-center max-w-2xl mx-auto px-4 sm:px-[5vw]">
           <p 
             ref={subtextRef}
-            className="text-lg sm:text-xl leading-relaxed font-medium"
+            className="text-base sm:text-lg md:text-xl leading-relaxed font-medium"
           >
             Modernste Technik trifft auf jahrelange 
             <br />

@@ -11,7 +11,6 @@ import Icon from './components/Icon';
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import MultiStepWizard from './components/MultiStepWizard';
-import CityServiceSelector from './components/CityServiceSelector';
 
 // Use Next.js dynamic imports instead of React.lazy for SSR compatibility
 const ProjectGallery = dynamic(() => import('./components/ProjectGallery'), {
@@ -44,8 +43,6 @@ export default function Home() {
 
       </div>
 
-      {/* City Service Selector */}
-      <CityServiceSelector />
 
       {/* Contact Form Section */}
       <section id="contact-form" className="py-16 bg-oxford-blue">

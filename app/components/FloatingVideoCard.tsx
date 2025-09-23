@@ -26,7 +26,7 @@ export default function FloatingVideoCard() {
             </div>
           </div>
           <div className="absolute bottom-3 left-3 right-3">
-            <p className="text-white text-xs font-medium">Professioneller Rückbau</p>
+            <p className="text-white text-xs font-medium truncate overflow-hidden">Professioneller Rückbau</p>
           </div>
         </div>
       </div>

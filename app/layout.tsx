@@ -199,6 +199,13 @@ export default function RootLayout({
             `,
           }}
         />
+
+        {/* Ahrefs Analytics */}
+        <script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="qoHY8SypHGzZ1H8AvF0K6Q"
+          async
+        />
       </head>
       <body className={`${inter.variable} font-sans antialiased bg-oxford-blue`} suppressHydrationWarning={true}>
         <PerformanceMonitor />

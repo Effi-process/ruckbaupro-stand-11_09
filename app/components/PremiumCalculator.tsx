@@ -666,8 +666,8 @@ export default function PremiumCalculator() {
           ))}
         </div>
         <div className="text-center">
-          <h3 className="font-semibold text-lg text-[#2C4F5E]">{steps[currentStep].title}</h3>
-          <p className="text-sm text-gray-600">{steps[currentStep].subtitle}</p>
+          <h3 className="font-semibold text-lg text-[#2C4F5E] line-clamp-1 overflow-hidden">{steps[currentStep].title}</h3>
+          <p className="text-sm text-gray-600 line-clamp-2 overflow-hidden">{steps[currentStep].subtitle}</p>
         </div>
       </div>
 

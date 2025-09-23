@@ -764,37 +764,23 @@ const Icon: React.FC<IconProps> = ({ name, size = 24, color = 'currentColor', cl
         <path d="M6 16V6a2 2 0 012-2h8a2 2 0 012 2v10" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         <circle cx="12" cy="9" r="2" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
+    ),
+    'chevron-right': (
+      <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <polyline points="9 18 15 12 9 6" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    train: (
+      <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <rect x="4" y="6" width="16" height="10" rx="2" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="8" cy="16" r="1" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="16" cy="16" r="1" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M4 6h16M4 10h16" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
     )
   };
 
-  // Add missing icons
-  if (!icons[name]) {
-    if (name === 'trending-up') {
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <polyline points="17 6 23 6 23 12" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      );
-    }
-    if (name === 'cpu') {
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-          <rect x="4" y="4" width="16" height="16" rx="2" stroke={color} strokeWidth="2"/>
-          <rect x="9" y="9" width="6" height="6" stroke={color} strokeWidth="2"/>
-        </svg>
-      );
-    }
-    if (name === 'brain') {
-      return (
-        <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-          <path d="M9.5 2C7.5 2 6 3.5 6 5.5c0 .3 0 .6.1.9C4.8 6.8 4 8.1 4 9.5c0 1.6 1 3 2.5 3.5-.1.3-.1.7-.1 1 0 2 1.5 3.5 3.5 3.5.4 0 .8-.1 1.1-.2V19c0 1.7 1.3 3 3 3s3-1.3 3-3v-1.7c.3.1.7.2 1.1.2 2 0 3.5-1.5 3.5-3.5 0-.3 0-.7-.1-1 1.5-.5 2.5-1.9 2.5-3.5 0-1.4-.8-2.7-2.1-3.1.1-.3.1-.6.1-.9C20 3.5 18.5 2 16.5 2c-1 0-1.9.4-2.5 1.1C13.4 2.4 12.5 2 11.5 2h-2z" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      );
-    }
-  }
-
-  return icons[name] || <span className="hidden md:inline text-xs text-red-500 bg-red-100 px-2 py-1 rounded">Icon not found</span>;
+  return icons[name] || <span className="hidden md:inline text-xs text-red-500 bg-red-100 px-2 py-1 rounded">Icon not found: {name}</span>;
 };
 
 export default Icon;

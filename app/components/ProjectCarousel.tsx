@@ -84,13 +84,13 @@ export default function ProjectCarousel() {
   ];
 
   return (
-    <section className="px-4 sm:px-[5vw] py-16 sm:py-20 overflow-hidden">
-      <div className="text-center mb-12">
+    <section className="px-3 sm:px-4 md:px-[5vw] py-12 sm:py-16 md:py-20 overflow-hidden">
+      <div className="text-center mb-8 sm:mb-10 md:mb-12">
         <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Unsere Projekte</span>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mt-4 mb-6">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mt-3 sm:mt-4 mb-4 sm:mb-6">
           Professioneller Rückbau & Abbruch
         </h2>
-        <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
           Sehen Sie selbst: Unsere Experten führen Rückbau- und Abbrucharbeiten mit höchsten Standards durch
         </p>
       </div>
@@ -142,10 +142,10 @@ export default function ProjectCarousel() {
           className="no-scrollbar overflow-x-auto scroll-smooth snap-x snap-mandatory flex gap-6 pb-6"
         >
           {projects.map((project, i) => (
-            <Link key={i} href={project.link} className="snap-start shrink-0 w-[300px] sm:w-[380px] md:w-[420px] max-w-[90vw] group cursor-pointer">
+            <Link key={i} href={project.link} className="snap-start shrink-0 w-[280px] sm:w-[320px] md:w-[380px] lg:w-[420px] max-w-[85vw] sm:max-w-[90vw] group cursor-pointer">
               <article>
                 <div className="relative">
-                  <div className="relative h-[280px] rounded-3xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.3)] group-hover:scale-105 transition-transform duration-300">
+                  <div className="relative h-[240px] sm:h-[260px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.3)] group-hover:scale-105 transition-transform duration-300">
                     <Image
                       src={project.image}
                       alt={project.alt}
@@ -153,13 +153,13 @@ export default function ProjectCarousel() {
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-black/20" />
-                    <span className="absolute top-6 left-6 text-sm px-4 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 tracking-wide uppercase text-white font-bold shadow-lg">
+                    <span className="absolute top-4 left-4 sm:top-6 sm:left-6 text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 tracking-wide uppercase text-white font-bold shadow-lg">
                       {project.badge}
                     </span>
                   </div>
                 </div>
-                <div className="mt-4">
-                  <div className="text-lg leading-snug text-white font-semibold group-hover:text-cerulean transition-colors">{project.title}</div>
+                <div className="mt-3 sm:mt-4">
+                  <div className="text-sm sm:text-base md:text-lg leading-snug text-white font-semibold group-hover:text-cerulean transition-colors line-clamp-2 overflow-hidden">{project.title}</div>
                 </div>
               </article>
             </Link>
@@ -168,10 +168,10 @@ export default function ProjectCarousel() {
       </div>
 
       {/* CTA Button */}
-      <div className="text-center mt-12">
+      <div className="text-center mt-8 sm:mt-10 md:mt-12">
         <Link
           href="/leistungen"
-          className="inline-flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all duration-300"
+          className="inline-flex items-center gap-3 sm:gap-4 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold hover:bg-white/20 transition-all duration-300 text-sm sm:text-base"
         >
           Alle Leistungen ansehen
           <div className="w-0 h-0 border-l-[8px] border-l-white border-y-[6px] border-y-transparent ml-1"></div>

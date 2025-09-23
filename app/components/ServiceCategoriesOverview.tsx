@@ -121,7 +121,7 @@ export default function ServiceCategoriesOverview() {
               {/* Category Header - Kompakt */}
               <div className="flex items-start mb-2">
                 <Icon name={category.icon} size={18} className={`text-${category.color} mr-1.5 mt-0.5`} />
-                <h3 className="text-base font-bold text-white leading-tight">
+                <h3 className="text-base font-bold text-white leading-tight truncate overflow-hidden">
                   {category.title}
                 </h3>
               </div>
@@ -135,7 +135,7 @@ export default function ServiceCategoriesOverview() {
                     className="flex items-start py-1 px-1.5 bg-white/5 rounded hover:bg-white/10 transition-colors group"
                   >
                     <Icon name="check" size={10} className="text-green-400 mr-1.5 mt-0.5 flex-shrink-0" />
-                    <span className="text-xs text-white/85 leading-tight group-hover:text-cerulean">
+                    <span className="text-xs text-white/85 leading-tight group-hover:text-cerulean line-clamp-2 overflow-hidden">
                       {service.name}
                     </span>
                   </Link>

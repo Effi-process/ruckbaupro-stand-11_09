@@ -76,7 +76,6 @@ export default function FloatingMenuButton() {
       expanded: false,
       items: [
         { name: "Über uns", href: "/ueber-uns", icon: "users", description: "Unser Unternehmen" },
-        { name: "Zertifikate", href: "/zertifikate", icon: "shield", description: "Unsere Qualifikationen" },
         { name: "Schadstoffschulungen", href: "/schadstoffschulungen", icon: "award", description: "Fortbildungen & Seminare" },
         { name: "Gesetzliche Vorschriften", href: "/gesetzliche-vorschriften", icon: "file-text", description: "Rechtliche Grundlagen" },
       ]
@@ -113,16 +112,16 @@ export default function FloatingMenuButton() {
       <button
         ref={buttonRef}
         onClick={handleButtonClick}
-        className="relative z-50 group flex items-center gap-2 px-4 py-3 bg-white/20 backdrop-blur-xl border-2 border-white/30 hover:border-cerulean/50 text-cerulean hover:bg-white/30 transition-all duration-300 rounded-xl shadow-xl hover:shadow-2xl cursor-pointer"
+        className="relative z-50 group flex items-center gap-2.5 px-5 py-3.5 bg-white/20 backdrop-blur-xl border-2 border-white/30 hover:border-cerulean/50 text-white hover:bg-white/30 transition-all duration-300 rounded-xl shadow-xl hover:shadow-2xl cursor-pointer"
         type="button"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <Icon name="grid" size={18} />
-        <span className="font-semibold text-sm">MENÜ</span>
+        <Icon name="grid" size={20} />
+        <span className="font-semibold text-base">MENÜ</span>
         <Icon
           name="chevron-down"
-          size={14}
+          size={16}
           className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
@@ -136,7 +135,7 @@ export default function FloatingMenuButton() {
           
           <div
             ref={dropdownRef}
-            className="fixed top-20 right-2 sm:right-4 w-[calc(100vw-1rem)] sm:w-[380px] md:w-[420px] max-w-[420px] bg-white/10 backdrop-blur-3xl shadow-3xl border border-white/25 rounded-2xl z-[9999] overflow-hidden max-h-[85vh] overflow-y-auto"
+            className="fixed top-16 right-2 sm:right-4 w-[calc(100vw-1rem)] sm:w-[380px] md:w-[420px] max-w-[420px] bg-white/10 backdrop-blur-3xl shadow-3xl border border-white/25 rounded-2xl z-[9999] overflow-hidden max-h-[85vh] overflow-y-auto"
             style={{
               backdropFilter: 'blur(40px) saturate(150%)',
               WebkitBackdropFilter: 'blur(40px) saturate(150%)',

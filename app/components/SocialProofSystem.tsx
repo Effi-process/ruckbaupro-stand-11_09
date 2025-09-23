@@ -334,7 +334,7 @@ export default function SocialProofSystem({
                 </div>
               )}
             </div>
-            <p className="text-gray-700 text-sm leading-relaxed">{review.text}</p>
+            <p className="text-gray-700 text-sm leading-relaxed line-clamp-3 overflow-hidden">{review.text}</p>
             {review.projectType && (
               <div className="mt-2 inline-block bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs">
                 {review.projectType}
@@ -570,8 +570,8 @@ export default function SocialProofSystem({
       {successStories.filter(s => s.featured).map((story) => (
         <div key={story.id}>
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold mb-2">{story.headline}</h3>
-            <p className="text-blue-100 text-lg">{story.summary}</p>
+            <h3 className="text-3xl font-bold mb-2 line-clamp-2 overflow-hidden">{story.headline}</h3>
+            <p className="text-blue-100 text-lg line-clamp-3 overflow-hidden">{story.summary}</p>
           </div>
           
           <div className="grid md:grid-cols-4 gap-6 mb-8">
