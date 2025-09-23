@@ -5,7 +5,6 @@ import ProjectCarousel from './components/ProjectCarousel';
 import FooterWithMarquee from './components/FooterWithMarquee';
 import LazyCalculator from './components/LazyCalculator';
 import FloatingElements from './components/FloatingElements';
-import SchadstoffsanierungContent from './components/SchadstoffsanierungContent';
 import ServiceCategoriesOverview from './components/ServiceCategoriesOverview';
 import SchadstoffsanierungBielefeld from './components/SchadstoffsanierungBielefeld';
 import Link from 'next/link';
@@ -45,9 +44,6 @@ export default function Home() {
         </section>
 
       </div>
-
-      {/* Schadstoffsanierung Content Section */}
-      <SchadstoffsanierungContent />
 
       {/* Service Categories Overview - SEO friendly */}
       <ServiceCategoriesOverview />
