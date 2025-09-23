@@ -40,20 +40,6 @@ export default function ProjectCarousel() {
 
   const projects = [
     {
-      badge: "HOCHBAU-ABRISS",
-      title: "Professioneller Abriss von Hochhäusern und Bürokomplexen",
-      image: "/images/demolition-hero.png",
-      alt: "Hochbau-Abriss mit schwerem Gerät",
-      link: "/hochbau-abriss-bielefeld"
-    },
-    {
-      badge: "GEBÄUDEABBRUCH",
-      title: "Komplettabriss mehrstöckiger Gebäude",
-      image: "/images/demolition-action.png",
-      alt: "Gebäudeabbruch in Aktion",
-      link: "/gebaeudeabbruch-bielefeld"
-    },
-    {
       badge: "ASBEST-SANIERUNG",
       title: "Professionelle und sichere Entfernung von Asbest nach TRGS 519",
       image: "/images/asbest-team-hero.png",
