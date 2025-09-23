@@ -51,26 +51,6 @@ export default function GebaeudeabbruchBielefeld() {
               </p>
             </div>
 
-            {/* Quick Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-              <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
-                <div className="text-3xl font-bold text-cerulean">500+</div>
-                <div className="text-sm text-white/70">Gebäude abgerissen</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
-                <div className="text-3xl font-bold text-green-400">24h</div>
-                <div className="text-sm text-white/70">Notdienst</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
-                <div className="text-3xl font-bold text-orange">100%</div>
-                <div className="text-sm text-white/70">Recycling-Quote</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
-                <div className="text-3xl font-bold text-yellow-400">25+</div>
-                <div className="text-sm text-white/70">Jahre Erfahrung</div>
-              </div>
-            </div>
-
             {/* Main Content */}
             <div className="prose prose-invert max-w-none">
               <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
