@@ -73,8 +73,7 @@ export default function CityServiceSelector() {
         subtitle: "Innenraumdemontage",
         icon: "home",
         services: [
-          { name: "Gebäudeabbruch mehrstöckig", link: "/gebaeudeabbruch-bielefeld" },
-          { name: "Haushaltsauflösung", link: "/haushaltsaufloesung-bielefeld" }
+          { name: "Gebäudeabbruch mehrstöckig", link: "/gebaeudeabbruch-bielefeld" }
         ]
       },
       {
