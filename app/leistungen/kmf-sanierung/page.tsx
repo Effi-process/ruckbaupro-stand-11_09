@@ -201,6 +201,95 @@ export default function KmfSanierungPage() {
 
 
 
+      {/* Schulungen & Zertifikate Section */}
+      <section className="py-16 px-6 bg-gradient-to-b from-oxford-blue to-gray-800">
+        <div className="container mx-auto max-w-6xl">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 lg:p-12 shadow-2xl">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center px-4 py-2 bg-cerulean/20 backdrop-blur-lg rounded-full mb-4">
+                <Icon name="award" size={16} className="text-cerulean mr-2" />
+                <span className="text-sm font-semibold text-cerulean uppercase tracking-wider">
+                  Schulungen & Qualifikationen
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+                KMF-FACHKUNDE NACH TRGS 521
+              </h2>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                Unsere Mitarbeiter verfügen über alle erforderlichen Qualifikationen für den sicheren Umgang mit künstlichen Mineralfasern
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Schulungsinhalte */}
+              <div className="bg-white/10 backdrop-blur rounded-2xl p-6">
+                <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                  <Icon name="book" size={24} className="text-cerulean mr-3" />
+                  Schulungsinhalte TRGS 521
+                </h3>
+                <ul className="space-y-3 text-white/80">
+                  <li className="flex items-start">
+                    <Icon name="check" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Fachkunde für Arbeiten an KMF vermittelt nach TRGS 521, oft kombiniert mit Asbestschulungen</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="check" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Schulungsdauer: ca. 5 Stunden intensives Training</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="check" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Theoretische Grundlagen zu Fasergeometrie und Gesundheitsgefahren</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="check" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Praktische Übungen zur Schutzausrüstung und Arbeitstechniken</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Zertifikate & Nachweise */}
+              <div className="bg-white/10 backdrop-blur rounded-2xl p-6">
+                <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                  <Icon name="shield" size={24} className="text-cerulean mr-3" />
+                  Zertifikate & Nachweise
+                </h3>
+                <ul className="space-y-3 text-white/80">
+                  <li className="flex items-start">
+                    <Icon name="certificate" size={20} className="text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Urkunde als Nachweis der Fachkunde nach erfolgreicher Teilnahme</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="certificate" size={20} className="text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Regelmäßige Auffrischungsschulungen alle 2 Jahre</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="certificate" size={20} className="text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Zusätzliche Qualifikationen für Arbeiten mit erhöhtem Gefährdungspotenzial</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="certificate" size={20} className="text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Dokumentation aller Schulungen im Qualitätsmanagementsystem</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Info Box */}
+            <div className="mt-8 bg-cerulean/10 border border-cerulean/30 rounded-xl p-6">
+              <div className="flex items-center mb-3">
+                <Icon name="info" size={24} className="text-cerulean mr-3" />
+                <h4 className="text-xl font-bold text-white">Wichtiger Hinweis</h4>
+              </div>
+              <p className="text-white/80">
+                Alle unsere Mitarbeiter werden regelmäßig nach den neuesten Vorschriften geschult. Die Kombination aus
+                KMF- und Asbestschulungen ermöglicht uns die sichere Sanierung aller mineralischen Faserstoffe.
+                Wir garantieren die Einhaltung aller gesetzlichen Vorgaben und Sicherheitsstandards.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Process Flow Section */}
       <ProcessFlow />
       

@@ -204,6 +204,115 @@ export default function AsbestsanierungPage() {
         </div>
       </section>
 
+      {/* Schulungen & Zertifikate Section */}
+      <section className="py-16 px-6 bg-gradient-to-b from-oxford-blue to-gray-800">
+        <div className="container mx-auto max-w-6xl">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 lg:p-12 shadow-2xl">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center px-4 py-2 bg-cerulean/20 backdrop-blur-lg rounded-full mb-4">
+                <Icon name="award" size={16} className="text-cerulean mr-2" />
+                <span className="text-sm font-semibold text-cerulean uppercase tracking-wider">
+                  Schulungen & Qualifikationen
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+                ASBEST-SACHKUNDE NACH TRGS 519
+              </h2>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                Unsere Experten verfügen über alle erforderlichen Qualifikationen für den sicheren Umgang mit Asbest
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Schulungsinhalte */}
+              <div className="bg-white/10 backdrop-blur rounded-2xl p-6">
+                <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                  <Icon name="book" size={24} className="text-cerulean mr-3" />
+                  Schulungsinhalte TRGS 519
+                </h3>
+                <ul className="space-y-3 text-white/80">
+                  <li className="flex items-start">
+                    <Icon name="check" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Sachkunde für Arbeiten mit Asbest nach TRGS 519 vermittelt</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="check" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Verschiedene Sachkundestufen: ASI-Arbeiten für einfache Tätigkeiten</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="check" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Erweiterte Sachkunde für Abbruch-, Sanierungs- und Instandhaltungsarbeiten</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="check" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Spezialschulungen für Tätigkeiten mit höherem Gefährdungspotenzial</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Zertifizierungen */}
+              <div className="bg-white/10 backdrop-blur rounded-2xl p-6">
+                <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                  <Icon name="shield" size={24} className="text-cerulean mr-3" />
+                  Zertifizierungen & Standards
+                </h3>
+                <ul className="space-y-3 text-white/80">
+                  <li className="flex items-start">
+                    <Icon name="certificate" size={20} className="text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Eintägige Seminare mit Pflichtschulung gemäß §11a GefStoffV</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="certificate" size={20} className="text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Schulungen nach neuestem TRGS 517 Standard</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="certificate" size={20} className="text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Versicherungsvalides Zertifikat vom Umweltinstitut Offenbach</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="certificate" size={20} className="text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Regelmäßige Fortbildungen und Auffrischungsschulungen</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Zusätzliche Informationen */}
+            <div className="mt-8 grid md:grid-cols-3 gap-6">
+              <div className="bg-cerulean/10 border border-cerulean/30 rounded-xl p-4 text-center">
+                <Icon name="clock" size={32} className="text-cerulean mx-auto mb-2" />
+                <h4 className="font-bold text-white mb-1">Schulungsdauer</h4>
+                <p className="text-white/70 text-sm">1-3 Tage je nach Sachkundestufe</p>
+              </div>
+              <div className="bg-cerulean/10 border border-cerulean/30 rounded-xl p-4 text-center">
+                <Icon name="users" size={32} className="text-cerulean mx-auto mb-2" />
+                <h4 className="font-bold text-white mb-1">Praxisübungen</h4>
+                <p className="text-white/70 text-sm">Praktische Übungen mit Schutzausrüstung</p>
+              </div>
+              <div className="bg-cerulean/10 border border-cerulean/30 rounded-xl p-4 text-center">
+                <Icon name="shield-check" size={32} className="text-cerulean mx-auto mb-2" />
+                <h4 className="font-bold text-white mb-1">Arbeitsschutz</h4>
+                <p className="text-white/70 text-sm">Vollständige Einhaltung aller Sicherheitsvorschriften</p>
+              </div>
+            </div>
+
+            {/* Wichtiger Hinweis */}
+            <div className="mt-8 bg-orange/10 border border-orange/30 rounded-xl p-6">
+              <div className="flex items-center mb-3">
+                <Icon name="alert" size={24} className="text-orange mr-3" />
+                <h4 className="text-xl font-bold text-white">Gesetzliche Anforderungen</h4>
+              </div>
+              <p className="text-white/80">
+                Die Sachkunde nach TRGS 519 ist gesetzlich vorgeschrieben für alle Arbeiten mit asbesthaltigen Materialien.
+                Unsere Mitarbeiter werden kontinuierlich geschult und verfügen über alle notwendigen Zertifikate.
+                Dies garantiert nicht nur die Sicherheit während der Arbeiten, sondern auch die rechtliche Absicherung
+                für unsere Auftraggeber.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Process Flow Section */}
       <ProcessFlow />
       

@@ -199,7 +199,92 @@ export default function SchimmelsanierungPage() {
         </div>
       </section>
 
-
+      {/* Schulungen & Zertifikate Section */}
+      <section className="py-16 px-6 bg-gradient-to-b from-oxford-blue to-gray-800">
+        <div className="container mx-auto max-w-6xl">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 lg:p-12 shadow-2xl">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center px-4 py-2 bg-cerulean/20 backdrop-blur-lg rounded-full mb-4">
+                <Icon name="award" size={16} className="text-cerulean mr-2" />
+                <span className="text-sm font-semibold text-cerulean uppercase tracking-wider">
+                  Schulungen & Qualifikationen
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+                SCHIMMEL-FACHKUNDE & SCHULUNGEN
+              </h2>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                Unsere Experten verfügen über spezialisierte Qualifikationen für den professionellen Umgang mit Schimmelbefall
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Schulungsinhalte */}
+              <div className="bg-white/10 backdrop-blur rounded-2xl p-6">
+                <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                  <Icon name="book" size={24} className="text-cerulean mr-3" />
+                  Schulungsinhalte Schimmelsanierung
+                </h3>
+                <ul className="space-y-3 text-white/80">
+                  <li className="flex items-start">
+                    <Icon name="check" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Schulungen zu Schimmel behandeln die Themen Erkennung, Bewertung, Sanierung und Vorbeugung von Schimmelbefall</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="check" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Einige Seminare vermitteln auch Kenntnisse über weitere Gebäudeschadstoffe wie PAK, PCB, PCP und Holzschutzmittel</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="check" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Praktische Übungen zu Messverfahren und Probenentnahme</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="check" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Sanierungsstrategien und Präventionsmaßnahmen</span>
+                  </li>
+                </ul>
+              </div>
+              {/* Zertifikate & Nachweise */}
+              <div className="bg-white/10 backdrop-blur rounded-2xl p-6">
+                <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                  <Icon name="shield" size={24} className="text-cerulean mr-3" />
+                  Zertifikate & Nachweise
+                </h3>
+                <ul className="space-y-3 text-white/80">
+                  <li className="flex items-start">
+                    <Icon name="certificate" size={20} className="text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Zertifizierte Schimmelpilzsachverständige nach anerkannten Standards</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="certificate" size={20} className="text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Regelmäßige Fortbildungen zur aktuellen Technik und Rechtslage</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="certificate" size={20} className="text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Qualifikationen für gesundheitsgefährdende Schimmelpilzarten</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Icon name="certificate" size={20} className="text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                    <span>Dokumentation aller Schulungen im Qualitätsmanagementsystem</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            {/* Info Box */}
+            <div className="mt-8 bg-cerulean/10 border border-cerulean/30 rounded-xl p-6">
+              <div className="flex items-center mb-3">
+                <Icon name="info" size={24} className="text-cerulean mr-3" />
+                <h4 className="text-xl font-bold text-white">Wichtiger Hinweis</h4>
+              </div>
+              <p className="text-white/80">
+                Alle unsere Mitarbeiter werden kontinuierlich nach den neuesten wissenschaftlichen Erkenntnissen geschult.
+                Die umfassende Ausbildung in Schimmelerkennung und -sanierung sowie Kenntnisse über weitere Gebäudeschadstoffe
+                ermöglichen uns eine ganzheitliche Bewertung und sichere Sanierung. Wir garantieren fachgerechte Durchführung
+                nach aktuellen Richtlinien und Standards.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Process Flow Section */}
       <ProcessFlow />
