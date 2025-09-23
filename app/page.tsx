@@ -5,8 +5,6 @@ import ProjectCarousel from './components/ProjectCarousel';
 import FooterWithMarquee from './components/FooterWithMarquee';
 import LazyCalculator from './components/LazyCalculator';
 import FloatingElements from './components/FloatingElements';
-import ServiceCategoriesOverview from './components/ServiceCategoriesOverview';
-import SchadstoffsanierungBielefeld from './components/SchadstoffsanierungBielefeld';
 import Link from 'next/link';
 import Image from 'next/image';
 import Icon from './components/Icon';
@@ -44,12 +42,6 @@ export default function Home() {
         </section>
 
       </div>
-
-      {/* Service Categories Overview - SEO friendly */}
-      <ServiceCategoriesOverview />
-
-      {/* Schadstoffsanierung Bielefeld - SEO Content */}
-      <SchadstoffsanierungBielefeld />
 
       {/* Contact Form Section */}
       <section id="contact-form" className="py-16 bg-oxford-blue">
