@@ -43,37 +43,43 @@ export default function ProjectCarousel() {
       badge: "ASBEST-SANIERUNG",
       title: "Professionelle und sichere Entfernung von Asbest nach TRGS 519",
       image: "/images/asbest-team-hero.png",
-      alt: "Professionelle Asbest-Sanierung mit Schutzausrüstung"
+      alt: "Professionelle Asbest-Sanierung mit Schutzausrüstung",
+      link: "/leistungen/asbestsanierung"
     },
     {
-      badge: "ENTKERNUNG", 
+      badge: "ENTKERNUNG",
       title: "Komplette Entkernung von Gebäuden für Sanierung oder Abriss",
       image: "/images/entkernung-team-hero.png",
-      alt: "Professionelle Entkernung von Innenräumen"
+      alt: "Professionelle Entkernung von Innenräumen",
+      link: "/leistungen/entkernung"
     },
     {
       badge: "BERATUNG & PLANUNG",
-      title: "Professionelle Beratung und detaillierte Projektplanung", 
+      title: "Professionelle Beratung und detaillierte Projektplanung",
       image: "/images/beratung-planung-hero.png",
-      alt: "Professionelle Beratung und Projektplanung"
+      alt: "Professionelle Beratung und Projektplanung",
+      link: "/leistungen/beratung---planung"
     },
     {
       badge: "KMF-SANIERUNG",
       title: "Fachgerechte Sanierung künstlicher Mineralfasern",
       image: "/images/kmf-sanierung-hero.png",
-      alt: "KMF-Sanierung mit Schutzausrüstung"
+      alt: "KMF-Sanierung mit Schutzausrüstung",
+      link: "/leistungen/kmf-sanierung"
     },
     {
       badge: "SCHIMMELSANIERUNG",
       title: "Professionelle Schimmelentfernung und -sanierung",
       image: "/images/schimmelsanierung-hero.png",
-      alt: "Professionelle Schimmelsanierung"
+      alt: "Professionelle Schimmelsanierung",
+      link: "/leistungen/schimmelsanierung"
     },
     {
       badge: "BETONARBEITEN",
       title: "Betonschneiden, -bohren und -bearbeitung",
       image: "/images/demolition-action.png",
-      alt: "Professionelle Betonarbeiten mit Diamanttechnik"
+      alt: "Professionelle Betonarbeiten mit Diamanttechnik",
+      link: "/leistungen/betonarbeiten"
     }
   ];
 
@@ -136,25 +142,27 @@ export default function ProjectCarousel() {
           className="no-scrollbar overflow-x-auto scroll-smooth snap-x snap-mandatory flex gap-6 pb-6"
         >
           {projects.map((project, i) => (
-            <article key={i} className="snap-start shrink-0 w-[300px] sm:w-[380px] md:w-[420px] max-w-[90vw] group">
-              <div className="relative">
-                <div className="relative h-[280px] rounded-3xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.3)] group-hover:scale-105 transition-transform duration-300">
-                  <Image
-                    src={project.image}
-                    alt={project.alt}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/20" />
-                  <span className="absolute top-6 left-6 text-sm px-4 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 tracking-wide uppercase text-white font-bold shadow-lg">
-                    {project.badge}
-                  </span>
+            <Link key={i} href={project.link} className="snap-start shrink-0 w-[300px] sm:w-[380px] md:w-[420px] max-w-[90vw] group cursor-pointer">
+              <article>
+                <div className="relative">
+                  <div className="relative h-[280px] rounded-3xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.3)] group-hover:scale-105 transition-transform duration-300">
+                    <Image
+                      src={project.image}
+                      alt={project.alt}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/20" />
+                    <span className="absolute top-6 left-6 text-sm px-4 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 tracking-wide uppercase text-white font-bold shadow-lg">
+                      {project.badge}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="mt-4">
-                <div className="text-lg leading-snug text-white font-semibold">{project.title}</div>
-              </div>
-            </article>
+                <div className="mt-4">
+                  <div className="text-lg leading-snug text-white font-semibold group-hover:text-cerulean transition-colors">{project.title}</div>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
       </div>
