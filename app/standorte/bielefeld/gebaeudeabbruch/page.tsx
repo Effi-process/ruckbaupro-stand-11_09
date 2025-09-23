@@ -146,7 +146,7 @@ export default function GebaeudeabbruchBielefeld() {
               </p>
 
               <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
-                <Icon name="trash-2" size={28} className="text-cerulean mr-3" />
+                <Icon name="trash" size={28} className="text-cerulean mr-3" />
                 Entsorgung
               </h2>
 
