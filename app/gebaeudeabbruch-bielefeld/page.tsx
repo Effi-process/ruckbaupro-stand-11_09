@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     locale: 'de_DE',
   },
   alternates: {
-    canonical: 'https://www.rueckbaupro.de/standorte/bielefeld/gebaeudeabbruch',
+    canonical: 'https://www.rueckbaupro.de/gebaeudeabbruch-bielefeld',
   },
 };
 
