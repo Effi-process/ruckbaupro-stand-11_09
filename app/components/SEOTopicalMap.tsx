@@ -5,365 +5,354 @@ import Link from 'next/link';
 import Icon from './Icon';
 
 export default function SEOTopicalMap() {
-  const [expandedTopic, setExpandedTopic] = useState<number | null>(null);
+  const [selectedCity, setSelectedCity] = useState<string>('bielefeld');
+  const [expandedTopic, setExpandedTopic] = useState<number | null>(0);
+
+  const cities = [
+    { id: 'bielefeld', name: 'Bielefeld', icon: '🏢' },
+    { id: 'guetersloh', name: 'Gütersloh', icon: '🏛️' },
+    { id: 'paderborn', name: 'Paderborn', icon: '⛪' },
+    { id: 'osnabrueck', name: 'Osnabrück', icon: '🏰' }
+  ];
 
   const topicalMap = [
     {
       category: "Asbestsanierung",
       icon: "shield",
-      color: "from-cerulean to-indigo-dye",
-      description: "Professionelle und sichere Asbestentfernung nach TRGS 519",
-      keywords: [
-        {
-          keyword: "Asbestsanierung Bielefeld",
-          title: "Asbestsanierung Bielefeld ⚡ 24h Notdienst | RückbauPRO",
-          headlines: [
-            "Warum professionelle Asbestsanierung in Bielefeld lebenswichtig ist",
-            "Die versteckten Gefahren von Asbest in Bielefelder Altbauten",
-            "Kostenübersicht: Was kostet Asbestsanierung in Bielefeld 2024?"
-          ]
-        },
-        {
-          keyword: "Asbestentsorgung Kosten",
-          title: "Asbestentsorgung Kosten 2024 💰 Transparent & Fair | RückbauPRO",
-          headlines: [
-            "Alle Kostenfaktoren bei der Asbestentsorgung erklärt",
-            "Sparen bei der Asbestentsorgung - ohne Sicherheitsrisiko",
-            "Förderungen und Zuschüsse für Asbestentsorgung nutzen"
-          ]
-        },
-        {
-          keyword: "TRGS 519 Zertifizierung",
-          title: "TRGS 519 Zertifiziert ✓ Sichere Asbestsanierung | RückbauPRO",
-          headlines: [
-            "Was bedeutet TRGS 519 für Ihre Sicherheit?",
-            "Der Ablauf einer TRGS 519 konformen Sanierung",
-            "Checkliste: So erkennen Sie zertifizierte Fachbetriebe"
-          ]
-        }
+      color: "from-cerulean to-blue-600",
+      bgGradient: "bg-gradient-to-br from-cerulean/20 to-blue-600/20",
+      description: "TRGS 519 zertifizierte Asbestentfernung",
+      services: [
+        "Asbestmaterialentfernung",
+        "TRGS519-konform",
+        "Freimessung",
+        "Fachgerechte Entsorgung",
+        "Asbestentfernung",
+        "Oberflächenreinigung"
+      ],
+      seoKeywords: [
+        { primary: "Asbestsanierung", secondary: ["Kosten", "Ablauf", "Dauer", "Förderung"] },
+        { primary: "Asbestentsorgung", secondary: ["Container", "Preise", "Big Bags", "TRGS 519"] },
+        { primary: "Asbesttest", secondary: ["Labor", "Schnelltest", "Gutachten", "Analyse"] }
       ]
     },
     {
       category: "Gebäudeabbruch",
       icon: "cube",
-      color: "from-orange to-red-500",
-      description: "Kontrollierter Abbruch mit modernster Technik",
-      keywords: [
-        {
-          keyword: "Gebäudeabbruch Bielefeld",
-          title: "Gebäudeabbruch Bielefeld 🏗️ Schnell & Sicher | RückbauPRO",
-          headlines: [
-            "In 5 Schritten zum erfolgreichen Gebäudeabbruch",
-            "Abbruchgenehmigung in Bielefeld: Was Sie wissen müssen",
-            "Nachhaltig abreißen: Recycling beim Gebäudeabbruch"
-          ]
-        },
-        {
-          keyword: "Abrisskosten Einfamilienhaus",
-          title: "Abrisskosten Einfamilienhaus 📊 Kalkulator 2024 | RückbauPRO",
-          headlines: [
-            "Komplette Kostenaufstellung für Hausabriss",
-            "Versteckte Kosten beim Hausabriss vermeiden",
-            "Abriss vs. Sanierung: Die Kostenrechnung"
-          ]
-        },
-        {
-          keyword: "Selektiver Rückbau",
-          title: "Selektiver Rückbau ♻️ Nachhaltig & Wirtschaftlich | RückbauPRO",
-          headlines: [
-            "Warum selektiver Rückbau Geld spart",
-            "Wertvolle Materialien beim Rückbau gewinnen",
-            "Die Zukunft des nachhaltigen Bauens"
-          ]
-        }
+      color: "from-orange to-red-600",
+      bgGradient: "bg-gradient-to-br from-orange/20 to-red-600/20",
+      description: "Komplettabriss & selektiver Rückbau",
+      services: [
+        "Komplettabriss",
+        "Selektiver Abbruch",
+        "Entkernung",
+        "Betonabbruch",
+        "Industrieabbruch",
+        "Innenabbruch"
+      ],
+      seoKeywords: [
+        { primary: "Gebäudeabbruch", secondary: ["Kosten", "Genehmigung", "Ablauf", "Recycling"] },
+        { primary: "Hausabriss", secondary: ["Einfamilienhaus", "Altbau", "Scheune", "Garage"] },
+        { primary: "Abbruchunternehmen", secondary: ["Preise", "Referenzen", "Zertifiziert", "24h"] }
       ]
     },
     {
       category: "Schadstoffsanierung",
       icon: "warning",
-      color: "from-yellow-500 to-orange",
-      description: "Sichere Entfernung aller Gebäudeschadstoffe",
-      keywords: [
-        {
-          keyword: "PCB Sanierung",
-          title: "PCB Sanierung 🔬 Fachgerecht & Sicher | RückbauPRO",
-          headlines: [
-            "PCB in Fugenmassen: Die unterschätzte Gefahr",
-            "PCB-Sanierung in Schulen und öffentlichen Gebäuden",
-            "Gesundheitsrisiken durch PCB richtig einschätzen"
-          ]
-        },
-        {
-          keyword: "KMF Entsorgung",
-          title: "KMF Entsorgung ⚠️ Mineralwolle sicher entsorgen | RückbauPRO",
-          headlines: [
-            "Alte Mineralwolle: Wann wird sie gefährlich?",
-            "KMF erkennen und richtig bewerten",
-            "Arbeitsschutz bei der KMF-Sanierung"
-          ]
-        },
-        {
-          keyword: "Schimmelsanierung Kosten",
-          title: "Schimmelsanierung Kosten 💶 Festpreis-Garantie | RückbauPRO",
-          headlines: [
-            "Schimmel nachhaltig beseitigen - so geht's richtig",
-            "Die häufigsten Fehler bei der Schimmelsanierung",
-            "Versicherung und Schimmelschäden: Ihre Rechte"
-          ]
-        }
+      color: "from-yellow-500 to-orange-600",
+      bgGradient: "bg-gradient-to-br from-yellow-500/20 to-orange-600/20",
+      description: "PCB, KMF & Schimmelpilz-Sanierung",
+      services: [
+        "PCB-Sanierung",
+        "KMF-Entfernung",
+        "Schimmelpilzsanierung",
+        "Gefahrstoff-Entsorgung",
+        "Schadstoffsanierung",
+        "Entstaubung"
+      ],
+      seoKeywords: [
+        { primary: "PCB Sanierung", secondary: ["Fugenmassen", "Kosten", "Gesundheit", "Messung"] },
+        { primary: "KMF Sanierung", secondary: ["Mineralwolle", "Glaswolle", "Steinwolle", "Entsorgung"] },
+        { primary: "Schimmelsanierung", secondary: ["Kosten", "Versicherung", "Gutachten", "Ursachen"] }
       ]
     },
     {
       category: "Entkernung",
       icon: "home",
-      color: "from-indigo-dye to-oxford-blue",
-      description: "Professionelle Gebäudeentkernung für Sanierung",
-      keywords: [
-        {
-          keyword: "Entkernung Altbau",
-          title: "Entkernung Altbau 🏚️ Substanz erhalten | RückbauPRO",
-          headlines: [
-            "Altbau entkernen ohne Bauschäden",
-            "Denkmalschutz und Entkernung vereinen",
-            "Moderne Technik in alten Mauern"
-          ]
-        },
-        {
-          keyword: "Komplettentkernung Kosten",
-          title: "Komplettentkernung Kosten 📋 Transparent kalkuliert | RückbauPRO",
-          headlines: [
-            "Kostenfallen bei der Entkernung vermeiden",
-            "Teil- vs. Komplettentkernung: Kostenvergleich",
-            "Entkernung als Investition in die Zukunft"
-          ]
-        },
-        {
-          keyword: "Industrieentkernung",
-          title: "Industrieentkernung 🏭 Großprojekte meistern | RückbauPRO",
-          headlines: [
-            "Produktionsausfall minimieren bei Industrieentkernung",
-            "Sicherheit bei laufendem Betrieb gewährleisten",
-            "Vom Industriegebäude zum modernen Workspace"
-          ]
-        }
+      color: "from-indigo-500 to-purple-600",
+      bgGradient: "bg-gradient-to-br from-indigo-500/20 to-purple-600/20",
+      description: "Teil- & Komplettentkernung",
+      services: [
+        "Komplettentkernung",
+        "Teilentkernung",
+        "Industrieentkernung",
+        "Altbau-Entkernung",
+        "Demontage",
+        "Rückbau"
+      ],
+      seoKeywords: [
+        { primary: "Entkernung", secondary: ["Kosten qm", "Denkmalschutz", "Altbau", "Industriegebäude"] },
+        { primary: "Gebäudeentkernung", secondary: ["Ablauf", "Dauer", "Preis", "Förderung"] },
+        { primary: "Rückbau", secondary: ["Innenausbau", "Haustechnik", "Sanitär", "Elektrik"] }
       ]
     },
     {
       category: "Betonarbeiten",
       icon: "bulldozer",
-      color: "from-gray-600 to-gray-800",
-      description: "Präzise Betonbearbeitung mit Diamanttechnik",
-      keywords: [
-        {
-          keyword: "Betonschneiden Bielefeld",
-          title: "Betonschneiden Bielefeld 💎 Präzise & Staubfrei | RückbauPRO",
-          headlines: [
-            "Diamantsägen: Die saubere Lösung für Betonarbeiten",
-            "Wanddurchbrüche ohne Erschütterungen",
-            "Kernbohrungen für moderne Haustechnik"
-          ]
-        },
-        {
-          keyword: "Betonabbruch Kosten",
-          title: "Betonabbruch Kosten 🔨 Faire Preise garantiert | RückbauPRO",
-          headlines: [
-            "Betonabbruch: Alle Kostenfaktoren im Überblick",
-            "Sprengen vs. Sägen: Der Kostenvergleich",
-            "Betonrecycling senkt Entsorgungskosten"
-          ]
-        },
-        {
-          keyword: "Betonsanierung Verfahren",
-          title: "Betonsanierung Verfahren 🔧 Modern & Effizient | RückbauPRO",
-          headlines: [
-            "Innovative Methoden der Betonsanierung",
-            "Betonschäden frühzeitig erkennen",
-            "Nachhaltige Betoninstandsetzung"
-          ]
-        }
+      color: "from-gray-600 to-slate-800",
+      bgGradient: "bg-gradient-to-br from-gray-600/20 to-slate-800/20",
+      description: "Betonschneiden & Kernbohrungen",
+      services: [
+        "Betonschneiden",
+        "Kernbohrungen",
+        "Wanddurchbrüche",
+        "Betonsägen",
+        "Betonabbruch",
+        "Betonfräsen"
+      ],
+      seoKeywords: [
+        { primary: "Betonschneiden", secondary: ["Diamantsäge", "Wandsäge", "Seilsäge", "Preise"] },
+        { primary: "Kernbohrung", secondary: ["Durchmesser", "Kosten", "Statik", "Bewehrung"] },
+        { primary: "Wanddurchbruch", secondary: ["Tragende Wand", "Kosten", "Statiker", "Genehmigung"] }
       ]
     }
   ];
 
+  const getCurrentCityName = () => {
+    return cities.find(c => c.id === selectedCity)?.name || 'Bielefeld';
+  };
+
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-800 to-oxford-blue">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-gradient-to-b from-oxford-blue via-gray-800 to-oxford-blue relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-cerulean rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-dye rounded-full filter blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            Unsere Expertise im Detail
+          <div className="inline-flex items-center justify-center px-4 py-2 bg-cerulean/20 backdrop-blur-lg rounded-full mb-4">
+            <Icon name="trending-up" size={16} className="text-cerulean mr-2" />
+            <span className="text-sm font-semibold text-cerulean uppercase tracking-wider">
+              SEO-Optimierte Leistungen
+            </span>
+          </div>
+
+          <h2 className="text-5xl md:text-6xl font-black text-white mb-4 bg-gradient-to-r from-white to-cerulean bg-clip-text text-transparent">
+            Unsere Expertise
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            25 Jahre Erfahrung in über 500 spezialisierten Bereichen des Rückbaus und der Sanierung
+            Professionelle Abbruch- und Sanierungsdienstleistungen in {getCurrentCityName()} und Umgebung
           </p>
         </div>
 
-        {/* SEO Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          <div className="bg-white/10 backdrop-blur-lg rounded-xl p-4 text-center border border-white/20">
-            <div className="text-3xl font-bold text-cerulean mb-1">15+</div>
-            <div className="text-sm text-white/70">Hauptkategorien</div>
-          </div>
-          <div className="bg-white/10 backdrop-blur-lg rounded-xl p-4 text-center border border-white/20">
-            <div className="text-3xl font-bold text-green-400 mb-1">75+</div>
-            <div className="text-sm text-white/70">Spezialdienste</div>
-          </div>
-          <div className="bg-white/10 backdrop-blur-lg rounded-xl p-4 text-center border border-white/20">
-            <div className="text-3xl font-bold text-orange mb-1">500+</div>
-            <div className="text-sm text-white/70">Projekte 2024</div>
-          </div>
-          <div className="bg-white/10 backdrop-blur-lg rounded-xl p-4 text-center border border-white/20">
-            <div className="text-3xl font-bold text-yellow-400 mb-1">24/7</div>
-            <div className="text-sm text-white/70">Notdienst</div>
+        {/* City Selector - Beautiful Pills */}
+        <div className="flex justify-center mb-12">
+          <div className="inline-flex bg-white/10 backdrop-blur-xl rounded-2xl p-1.5 border border-white/20">
+            {cities.map(city => (
+              <button
+                key={city.id}
+                onClick={() => setSelectedCity(city.id)}
+                className={`
+                  px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300
+                  ${selectedCity === city.id
+                    ? 'bg-gradient-to-r from-cerulean to-indigo-dye text-white shadow-lg shadow-cerulean/30'
+                    : 'text-white/70 hover:text-white hover:bg-white/10'
+                  }
+                `}
+              >
+                <span className="mr-2">{city.icon}</span>
+                {city.name}
+              </button>
+            ))}
           </div>
         </div>
 
-        {/* Topical Map Categories */}
-        <div className="space-y-6">
-          {topicalMap.map((topic, index) => (
-            <div
-              key={index}
-              className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 overflow-hidden"
-            >
-              {/* Category Header */}
-              <button
-                onClick={() => setExpandedTopic(expandedTopic === index ? null : index)}
-                className="w-full p-6 flex items-center justify-between hover:bg-white/5 transition-colors"
-              >
-                <div className="flex items-center gap-4">
-                  <div className={`p-3 bg-gradient-to-r ${topic.color} rounded-xl`}>
-                    <Icon name={topic.icon} size={24} className="text-white" />
-                  </div>
-                  <div className="text-left">
-                    <h3 className="text-2xl font-bold text-white">{topic.category}</h3>
-                    <p className="text-white/70 text-sm mt-1">{topic.description}</p>
-                  </div>
-                </div>
-                <Icon
-                  name="chevron-down"
-                  size={24}
-                  className={`text-white/60 transition-transform ${
-                    expandedTopic === index ? 'rotate-180' : ''
-                  }`}
-                />
-              </button>
-
-              {/* Expanded Content */}
-              {expandedTopic === index && (
-                <div className="px-6 pb-6 border-t border-white/10">
-                  <div className="grid md:grid-cols-3 gap-6 mt-6">
-                    {topic.keywords.map((kw, kwIndex) => (
-                      <div key={kwIndex} className="bg-white/5 rounded-xl p-4">
-                        {/* Keyword */}
-                        <div className="mb-3">
-                          <span className="text-xs text-cerulean font-semibold uppercase tracking-wide">
-                            Target Keyword
-                          </span>
-                          <h4 className="text-white font-bold text-lg mt-1">
-                            {kw.keyword}
-                          </h4>
-                        </div>
-
-                        {/* SEO Title */}
-                        <div className="mb-4 p-3 bg-white/5 rounded-lg">
-                          <span className="text-xs text-green-400 font-semibold">SEO Title</span>
-                          <p className="text-white/90 text-sm mt-1">{kw.title}</p>
-                        </div>
-
-                        {/* Headlines */}
-                        <div>
-                          <span className="text-xs text-orange font-semibold uppercase tracking-wide">
-                            Content Headlines
-                          </span>
-                          <ul className="mt-2 space-y-2">
-                            {kw.headlines.map((headline, hIndex) => (
-                              <li key={hIndex} className="flex items-start">
-                                <Icon name="check" size={14} className="text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                                <span className="text-white/80 text-sm leading-tight">
-                                  {headline}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* CTA Button */}
-                        <Link
-                          href={`/leistungen/${kw.keyword.toLowerCase().replace(/ /g, '-')}`}
-                          className="mt-4 w-full flex items-center justify-center px-4 py-2 bg-gradient-to-r from-cerulean to-indigo-dye text-white rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
-                        >
-                          Mehr erfahren
-                          <Icon name="external-link" size={14} className="ml-2" />
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
+        {/* Statistics Bar */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+          {[
+            { value: '25+', label: 'Jahre Erfahrung', color: 'text-cerulean' },
+            { value: '500+', label: 'Projekte 2024', color: 'text-green-400' },
+            { value: '100%', label: 'Zertifiziert', color: 'text-orange' },
+            { value: '24/7', label: 'Notdienst', color: 'text-yellow-400' }
+          ].map((stat, index) => (
+            <div key={index} className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-cerulean/20 to-indigo-dye/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+              <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center border border-white/20 hover:border-cerulean/50 transition-all">
+                <div className={`text-4xl font-black ${stat.color} mb-2`}>{stat.value}</div>
+                <div className="text-sm text-white/70">{stat.label}</div>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* SEO Footer */}
-        <div className="mt-12 p-8 bg-gradient-to-r from-cerulean/20 to-indigo-dye/20 rounded-2xl backdrop-blur-lg border border-white/20">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Ihre Fragen - Unsere Expertise
-            </h3>
-            <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-              Mit über 25 Jahren Erfahrung und Tausenden erfolgreich abgeschlossenen Projekten
-              sind wir Ihr zuverlässiger Partner für alle Abbruch- und Sanierungsarbeiten in
-              Bielefeld und ganz OWL.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/kontakt"
-                className="inline-flex items-center justify-center px-6 py-3 bg-white text-oxford-blue rounded-xl font-bold hover:bg-gray-100 transition-colors"
-              >
-                <Icon name="mail" size={20} className="mr-2" />
-                Kostenlose Beratung
-              </Link>
-              <Link
-                href="tel:+491748083023"
-                className="inline-flex items-center justify-center px-6 py-3 bg-cerulean text-white rounded-xl font-bold hover:bg-cerulean/90 transition-colors"
-              >
-                <Icon name="phone" size={20} className="mr-2" />
-                24h Notdienst
-              </Link>
+        {/* Service Categories - Beautiful Cards */}
+        <div className="space-y-6">
+          {topicalMap.map((topic, index) => (
+            <div
+              key={index}
+              className={`
+                relative overflow-hidden rounded-3xl transition-all duration-500
+                ${expandedTopic === index ? 'shadow-2xl shadow-cerulean/20' : 'shadow-xl'}
+              `}
+            >
+              {/* Card Background */}
+              <div className={`absolute inset-0 ${topic.bgGradient} opacity-50`}></div>
+
+              {/* Card Content */}
+              <div className="relative bg-white/10 backdrop-blur-xl border border-white/20">
+                {/* Category Header */}
+                <button
+                  onClick={() => setExpandedTopic(expandedTopic === index ? null : index)}
+                  className="w-full p-8 flex items-center justify-between hover:bg-white/5 transition-all group"
+                >
+                  <div className="flex items-center gap-6">
+                    <div className={`p-4 bg-gradient-to-br ${topic.color} rounded-2xl shadow-lg group-hover:shadow-xl transition-all`}>
+                      <Icon name={topic.icon} size={32} className="text-white" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="text-3xl font-bold text-white mb-2">
+                        {topic.category} {getCurrentCityName()}
+                      </h3>
+                      <p className="text-white/70">{topic.description}</p>
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        {topic.services.slice(0, 3).map((service, idx) => (
+                          <span key={idx} className="px-3 py-1 bg-white/10 rounded-full text-xs text-white/80">
+                            {service}
+                          </span>
+                        ))}
+                        {topic.services.length > 3 && (
+                          <span className="px-3 py-1 bg-cerulean/20 rounded-full text-xs text-cerulean">
+                            +{topic.services.length - 3} weitere
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="text-right hidden md:block">
+                      <div className="text-sm text-white/60">SEO Keywords</div>
+                      <div className="text-2xl font-bold text-cerulean">
+                        {topic.seoKeywords.length * 5}+
+                      </div>
+                    </div>
+                    <Icon
+                      name="chevron-down"
+                      size={28}
+                      className={`text-white/60 transition-transform duration-300 ${
+                        expandedTopic === index ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </div>
+                </button>
+
+                {/* Expanded Content */}
+                {expandedTopic === index && (
+                  <div className="px-8 pb-8 border-t border-white/10">
+                    {/* Services Grid */}
+                    <div className="mt-8">
+                      <h4 className="text-lg font-bold text-white mb-4 flex items-center">
+                        <Icon name="check-circle" size={20} className="text-green-400 mr-2" />
+                        Unsere Services in {getCurrentCityName()}
+                      </h4>
+                      <div className="grid md:grid-cols-3 gap-3">
+                        {topic.services.map((service, sIndex) => (
+                          <Link
+                            key={sIndex}
+                            href={`/standorte/${selectedCity}/${service.toLowerCase().replace(/ /g, '-')}`}
+                            className="flex items-center p-3 bg-white/5 hover:bg-white/10 rounded-xl transition-all group"
+                          >
+                            <Icon name="check" size={16} className="text-green-400 mr-3" />
+                            <span className="text-white/90 group-hover:text-cerulean transition-colors">
+                              {service}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* SEO Keywords */}
+                    <div className="mt-8">
+                      <h4 className="text-lg font-bold text-white mb-4 flex items-center">
+                        <Icon name="trending-up" size={20} className="text-cerulean mr-2" />
+                        Top SEO Keywords für {getCurrentCityName()}
+                      </h4>
+                      <div className="grid md:grid-cols-3 gap-6">
+                        {topic.seoKeywords.map((keyword, kIndex) => (
+                          <div key={kIndex} className="bg-white/5 rounded-xl p-4">
+                            <div className="font-bold text-cerulean mb-3">
+                              {keyword.primary} {getCurrentCityName()}
+                            </div>
+                            <div className="space-y-2">
+                              {keyword.secondary.map((sec, sIndex) => (
+                                <div key={sIndex} className="flex items-start">
+                                  <Icon name="search" size={12} className="text-white/40 mr-2 mt-0.5" />
+                                  <span className="text-sm text-white/70">
+                                    {keyword.primary} {sec} {getCurrentCityName()}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* CTA Section */}
+                    <div className="mt-8 p-6 bg-gradient-to-r from-cerulean/20 to-indigo-dye/20 rounded-2xl">
+                      <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div>
+                          <h5 className="text-lg font-bold text-white mb-1">
+                            Interesse an {topic.category} in {getCurrentCityName()}?
+                          </h5>
+                          <p className="text-sm text-white/70">
+                            Kostenlose Beratung und transparente Preise garantiert
+                          </p>
+                        </div>
+                        <div className="flex gap-3">
+                          <Link
+                            href={`/standorte/${selectedCity}/${topic.category.toLowerCase()}`}
+                            className="px-6 py-3 bg-white text-oxford-blue rounded-xl font-semibold hover:bg-gray-100 transition-all"
+                          >
+                            Mehr erfahren
+                          </Link>
+                          <Link
+                            href="/kontakt"
+                            className="px-6 py-3 bg-gradient-to-r from-cerulean to-indigo-dye text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-cerulean/30 transition-all"
+                          >
+                            Anfrage stellen
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
 
-        {/* Schema.org für SEO */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Service",
-              "serviceType": "Abbruch und Sanierung",
-              "provider": {
-                "@type": "LocalBusiness",
-                "name": "RückbauPRO",
-                "description": "Professionelle Abbruch- und Sanierungsdienstleistungen"
-              },
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Abbruch- und Sanierungsleistungen",
-                "itemListElement": topicalMap.flatMap(topic =>
-                  topic.keywords.map(kw => ({
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": kw.keyword,
-                      "description": kw.title
-                    }
-                  }))
-                )
-              }
-            })
-          }}
-        />
+        {/* Bottom CTA */}
+        <div className="mt-16 text-center">
+          <div className="inline-flex flex-col sm:flex-row gap-4">
+            <Link
+              href="tel:+491748083023"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-cerulean to-indigo-dye text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-cerulean/30 transition-all"
+            >
+              <Icon name="phone" size={24} className="mr-3" />
+              24/7 Notdienst: 0174 8083023
+            </Link>
+            <Link
+              href="/kontakt"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 text-white rounded-2xl font-bold text-lg hover:bg-white/20 transition-all"
+            >
+              <Icon name="mail" size={24} className="mr-3" />
+              Kostenvoranschlag anfordern
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );
