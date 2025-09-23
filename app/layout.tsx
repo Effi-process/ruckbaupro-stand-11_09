@@ -38,7 +38,10 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#1282a2" />
-        
+
+        {/* Google Site Verification */}
+        <meta name="google-site-verification" content="google9e533183d0f335db" />
+
         {/* Structured Data */}
         <script
           type="application/ld+json"
