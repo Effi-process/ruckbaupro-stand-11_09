@@ -37,75 +37,190 @@ const cities: CityData[] = [
   },
 ];
 
-const services = [
-  {
-    title: 'Asbest-Sanierung',
-    link: '/leistungen/asbestsanierung',
-    description: 'Professionelle Asbestentfernung nach TRGS 519',
-  },
-  {
-    title: 'Entkernung',
-    link: '/leistungen/entkernung',
-    description: 'Komplette oder teilweise Gebäudeentkernung',
-  },
-  {
-    title: 'Beratung & Planung',
-    link: '/leistungen/beratung---planung',
-    description: 'Umfassende Projektberatung und Genehmigungsmanagement',
-  },
-  {
-    title: 'KMF-Sanierung',
-    link: '/leistungen/kmf-sanierung',
-    description: 'Fachgerechte Entsorgung künstlicher Mineralfasern',
-  },
-  {
-    title: 'Schimmelsanierung',
-    link: '/leistungen/schimmelsanierung',
-    description: 'Nachhaltige Schimmelbeseitigung und Prävention',
-  },
-  {
-    title: 'Betonarbeiten',
-    link: '/leistungen/betonarbeiten',
-    description: 'Präzise Betonschnitt- und Bohrarbeiten',
-  },
-];
+const servicesData = {
+  BIELEFELD: [
+    {
+      title: 'Asbest-Sanierung',
+      description: 'Professionelle Asbestentfernung nach TRGS 519',
+      seoPages: []
+    },
+    {
+      title: 'Entkernung',
+      description: 'Komplette oder teilweise Gebäudeentkernung',
+      seoPages: [
+        { name: 'Hochbau-Abriss Bielefeld', link: '/hochbau-abriss-bielefeld' },
+        { name: 'Gebäudeabbruch Bielefeld', link: '/gebaeudeabbruch-bielefeld' }
+      ]
+    },
+    {
+      title: 'Beratung & Planung',
+      description: 'Umfassende Projektberatung und Genehmigungsmanagement',
+      seoPages: []
+    },
+    {
+      title: 'KMF-Sanierung',
+      description: 'Fachgerechte Entsorgung künstlicher Mineralfasern',
+      seoPages: []
+    },
+    {
+      title: 'Schimmelsanierung',
+      description: 'Nachhaltige Schimmelbeseitigung und Prävention',
+      seoPages: []
+    },
+    {
+      title: 'Betonarbeiten',
+      description: 'Präzise Betonschnitt- und Bohrarbeiten',
+      seoPages: []
+    },
+  ],
+  GÜTERSLOH: [
+    {
+      title: 'Asbest-Sanierung',
+      description: 'Professionelle Asbestentfernung nach TRGS 519',
+      seoPages: []
+    },
+    {
+      title: 'Entkernung',
+      description: 'Komplette oder teilweise Gebäudeentkernung',
+      seoPages: []
+    },
+    {
+      title: 'Beratung & Planung',
+      description: 'Umfassende Projektberatung und Genehmigungsmanagement',
+      seoPages: []
+    },
+    {
+      title: 'KMF-Sanierung',
+      description: 'Fachgerechte Entsorgung künstlicher Mineralfasern',
+      seoPages: []
+    },
+    {
+      title: 'Schimmelsanierung',
+      description: 'Nachhaltige Schimmelbeseitigung und Prävention',
+      seoPages: []
+    },
+    {
+      title: 'Betonarbeiten',
+      description: 'Präzise Betonschnitt- und Bohrarbeiten',
+      seoPages: []
+    },
+  ],
+  PADERBORN: [
+    {
+      title: 'Asbest-Sanierung',
+      description: 'Professionelle Asbestentfernung nach TRGS 519',
+      seoPages: []
+    },
+    {
+      title: 'Entkernung',
+      description: 'Komplette oder teilweise Gebäudeentkernung',
+      seoPages: []
+    },
+    {
+      title: 'Beratung & Planung',
+      description: 'Umfassende Projektberatung und Genehmigungsmanagement',
+      seoPages: []
+    },
+    {
+      title: 'KMF-Sanierung',
+      description: 'Fachgerechte Entsorgung künstlicher Mineralfasern',
+      seoPages: []
+    },
+    {
+      title: 'Schimmelsanierung',
+      description: 'Nachhaltige Schimmelbeseitigung und Prävention',
+      seoPages: []
+    },
+    {
+      title: 'Betonarbeiten',
+      description: 'Präzise Betonschnitt- und Bohrarbeiten',
+      seoPages: []
+    },
+  ],
+  OSNABRÜCK: [
+    {
+      title: 'Asbest-Sanierung',
+      description: 'Professionelle Asbestentfernung nach TRGS 519',
+      seoPages: []
+    },
+    {
+      title: 'Entkernung',
+      description: 'Komplette oder teilweise Gebäudeentkernung',
+      seoPages: []
+    },
+    {
+      title: 'Beratung & Planung',
+      description: 'Umfassende Projektberatung und Genehmigungsmanagement',
+      seoPages: []
+    },
+    {
+      title: 'KMF-Sanierung',
+      description: 'Fachgerechte Entsorgung künstlicher Mineralfasern',
+      seoPages: []
+    },
+    {
+      title: 'Schimmelsanierung',
+      description: 'Nachhaltige Schimmelbeseitigung und Prävention',
+      seoPages: []
+    },
+    {
+      title: 'Betonarbeiten',
+      description: 'Präzise Betonschnitt- und Bohrarbeiten',
+      seoPages: []
+    },
+  ],
+};
 
 export default function CityServicesSection() {
   const [activeCity, setActiveCity] = useState(0);
 
-  // Add services to each city
-  const citiesWithServices = cities.map(city => ({
-    ...city,
-    services: services,
-  }));
+  // Get current city services
+  const currentCityName = cities[activeCity].name;
+  const currentServices = servicesData[currentCityName as keyof typeof servicesData] || [];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Professionelle Abbrucharbeiten in Ihrer Region
+    <section className="relative py-24 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cerulean/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-dye/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Enhanced Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-2 mb-6">
+            <span className="w-2 h-2 bg-cerulean rounded-full animate-pulse"></span>
+            <span className="text-sm font-semibold text-cerulean uppercase tracking-wide">Zertifizierter Fachbetrieb</span>
+          </div>
+
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Von <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-400">Schadstoffsanierung</span>
+            <br />bis <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-400">Abbruch</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Zertifizierte Fachkompetenz für Abbruch, Entkernung und Schadstoffsanierung
-            in Ostwestfalen-Lippe und Niedersachsen
+
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Ihr zertifizierter Partner für Asbest-, KMF- und Schimmelsanierung,
+            Entkernung, Betonarbeiten und professionelle Abbrucharbeiten in Ostwestfalen-Lippe
           </p>
         </div>
 
         {/* City Tabs */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {citiesWithServices.map((city, index) => (
+          {cities.map((city, index) => (
             <button
               key={city.name}
               onClick={() => setActiveCity(index)}
-              className={`px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
+              className={`group relative px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-500 transform hover:scale-105 ${
                 activeCity === index
-                  ? 'bg-white/20 backdrop-blur-xl text-white border-2 border-white/30 shadow-xl'
-                  : 'bg-white/5 backdrop-blur text-gray-400 border-2 border-white/10 hover:bg-white/10 hover:text-white'
+                  ? 'bg-gradient-to-r from-cerulean/20 to-indigo-dye/20 backdrop-blur-xl text-white border border-cerulean/50 shadow-xl shadow-cerulean/20'
+                  : 'bg-white/5 backdrop-blur-md text-gray-400 border border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20'
               }`}
             >
-              <div className="flex flex-col items-center">
+              {activeCity === index && (
+                <div className="absolute inset-0 bg-gradient-to-r from-cerulean/20 to-indigo-dye/20 rounded-xl blur-xl"></div>
+              )}
+              <div className="relative flex flex-col items-center">
                 <span className="text-xl font-bold">{city.name}</span>
                 <span className="text-xs opacity-70 mt-1">{city.population} Einwohner</span>
               </div>
@@ -114,53 +229,92 @@ export default function CityServicesSection() {
         </div>
 
         {/* Active City Content */}
-        <div className="relative">
-          {/* Subtle glow effect */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-gray-700/30 to-gray-600/30 rounded-3xl blur-3xl opacity-50"></div>
+        <div className="relative mt-8">
+          <div className="relative bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-10 md:p-14 shadow-2xl overflow-hidden">
 
-          <div className="relative bg-gray-800/50 backdrop-blur-xl border border-gray-700 rounded-2xl p-8 md:p-12">
+            {/* Background pattern */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-0 left-0 w-full h-full"
+                style={{
+                  backgroundImage: 'radial-gradient(circle at 20% 50%, cerulean 1px, transparent 1px), radial-gradient(circle at 80% 80%, indigo-dye 1px, transparent 1px)',
+                  backgroundSize: '50px 50px'
+                }}
+              />
+            </div>
+
             {/* City Header */}
-            <div className="mb-8 pb-8 border-b border-gray-700">
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                {citiesWithServices[activeCity].name}
-              </h3>
-              <p className="text-gray-300 leading-relaxed text-lg">
-                {citiesWithServices[activeCity].description}
+            <div className="relative mb-12 pb-12 border-b border-gradient-to-r from-transparent via-white/20 to-transparent">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-2 h-12 bg-gradient-to-b from-cerulean to-indigo-dye rounded-full"></div>
+                <h3 className="text-4xl md:text-5xl font-bold text-white">
+                  {cities[activeCity].name}
+                </h3>
+              </div>
+              <p className="text-gray-200 leading-relaxed text-lg md:text-xl max-w-5xl">
+                {cities[activeCity].description}
               </p>
             </div>
 
             {/* Services Grid */}
-            <div className="space-y-6">
-              <h4 className="text-2xl font-bold text-white mb-6">
-                Unsere Leistungen in {citiesWithServices[activeCity].name}
-              </h4>
+            <div className="relative space-y-8">
+              <div className="flex items-center justify-between mb-8">
+                <h4 className="text-2xl md:text-3xl font-bold text-white">
+                  Unsere Leistungen in {cities[activeCity].name}
+                </h4>
+                <div className="hidden md:flex items-center gap-2 text-sm text-gray-400">
+                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                  <span>Verfügbar 24/7</span>
+                </div>
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {citiesWithServices[activeCity].services.map((service) => (
-                  <Link
+                {currentServices.map((service, index) => (
+                  <div
                     key={service.title}
-                    href={service.link}
-                    className="group relative overflow-hidden"
+                    className="group relative h-full"
                   >
-                    <div className="bg-gray-700/30 backdrop-blur border border-gray-600/50 rounded-xl p-6 hover:bg-gray-700/50 transition-all duration-300 hover:scale-105 hover:border-gray-500">
-                      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/5 to-transparent rounded-bl-full"></div>
+                    <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-7 h-full flex flex-col hover:from-white/15 hover:to-white/10 hover:border-cerulean/30 transition-all duration-500 shadow-2xl group-hover:shadow-cerulean/10 overflow-hidden">
 
-                      <h5 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                        {service.title}
-                      </h5>
+                      {/* Decorative gradient orb */}
+                      <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-cerulean/20 to-transparent rounded-full blur-3xl group-hover:from-cerulean/30 transition-colors duration-700"></div>
 
-                      <p className="text-gray-400 text-sm leading-relaxed">
-                        {service.description}
-                      </p>
+                      <div className="relative z-10">
+                        <h5 className="text-2xl font-bold text-white mb-4 group-hover:text-cerulean transition-colors duration-300">
+                          {service.title}
+                        </h5>
 
-                      <div className="flex items-center mt-4 text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span className="text-sm font-semibold">Mehr erfahren</span>
-                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
+                        <p className="text-gray-200 text-base leading-relaxed mb-6 flex-grow">
+                          {service.description}
+                        </p>
+
+                        {/* SEO Pages with enhanced styling */}
+                        {service.seoPages && service.seoPages.length > 0 && (
+                          <div className="mt-auto pt-5 border-t border-gradient-to-r from-transparent via-white/20 to-transparent">
+                            <p className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-cerulean to-indigo-dye uppercase tracking-wider mb-4">
+                              Spezialisierungen
+                            </p>
+                            <div className="space-y-3">
+                              {service.seoPages.map((page) => (
+                                <Link
+                                  key={page.link}
+                                  href={page.link}
+                                  className="group/link flex items-center gap-3 text-base text-cerulean hover:text-white transition-all duration-300 pl-2"
+                                >
+                                  <span className="w-1.5 h-1.5 bg-cerulean rounded-full group-hover/link:scale-150 transition-transform duration-300"></span>
+                                  <span className="group-hover/link:translate-x-2 transition-transform duration-300 font-medium">
+                                    {page.name}
+                                  </span>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
+
+                      {/* Bottom accent line */}
+                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cerulean/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>
