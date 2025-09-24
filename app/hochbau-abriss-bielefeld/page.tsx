@@ -7,15 +7,15 @@ import FloatingElements from '../components/FloatingElements';
 
 export default function HochbauAbrissBielefeld() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-oxford-blue">
+    <main className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-slate-900">
       <FloatingElements />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cerulean/20 to-indigo-dye/20 backdrop-blur-xl rounded-full mb-6">
-              <span className="text-sm font-bold text-cerulean uppercase tracking-wider">
+            <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-xl rounded-full mb-6">
+              <span className="text-sm font-bold text-white/90 uppercase tracking-wider">
                 Professioneller Hochbau Abriss
               </span>
             </div>
@@ -42,7 +42,7 @@ export default function HochbauAbrissBielefeld() {
               { number: '100%', label: 'Zufriedene Kunden' }
             ].map((stat, index) => (
               <div key={index} className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 text-center hover:bg-white/15 transition-all duration-300">
-                <div className="text-3xl font-black text-cerulean mb-2">{stat.number}</div>
+                <div className="text-3xl font-black text-white mb-2">{stat.number}</div>
                 <div className="text-sm text-white/80">{stat.label}</div>
               </div>
             ))}
@@ -88,8 +88,8 @@ export default function HochbauAbrissBielefeld() {
               }
             ].map((service, index) => (
               <div key={index} className="group">
-                <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 h-full hover:bg-white/15 hover:border-cerulean/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cerulean/20">
-                  <div className="h-2 bg-gradient-to-r from-cerulean to-indigo-dye rounded-full mb-6 group-hover:shadow-lg group-hover:shadow-cerulean/30 transition-all duration-300"></div>
+                <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 h-full hover:bg-white/15 hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-white/10">
+                  <div className="h-2 bg-white/30 rounded-full mb-6 group-hover:bg-white/40 transition-all duration-300"></div>
                   <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
                   <p className="text-white/80 leading-relaxed">{service.description}</p>
                 </div>
@@ -117,13 +117,13 @@ export default function HochbauAbrissBielefeld() {
               { step: '04', title: 'Abriss & Entsorgung', desc: 'Fachgerechter Rückbau und Recycling' }
             ].map((item, index) => (
               <div key={index} className="relative">
-                <div className="bg-gradient-to-br from-cerulean/20 to-indigo-dye/20 backdrop-blur-xl border border-white/20 rounded-2xl p-6 h-full">
-                  <div className="text-4xl font-black text-cerulean mb-4">{item.step}</div>
+                <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 h-full">
+                  <div className="text-4xl font-black text-white mb-4">{item.step}</div>
                   <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
                   <p className="text-white/70 text-sm">{item.desc}</p>
                 </div>
                 {index < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 text-cerulean text-2xl">
+                  <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 text-white/60 text-2xl">
                     →
                   </div>
                 )}
@@ -168,7 +168,7 @@ export default function HochbauAbrissBielefeld() {
                 Oldentrup war so'n Fall - 6 Stockwerke voll mit alten Webmaschinen und überall Schmieröl.
               </p>
 
-              <div className="bg-gradient-to-r from-sky-400/20 to-blue-400/20 backdrop-blur-xl border border-white/20 rounded-2xl p-8 my-12">
+              <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 my-12">
                 <h3 className="text-2xl font-bold text-white mb-4">
                   Warum wir die Richtigen für Ihren Hochbau-Abriss sind
                 </h3>
@@ -236,7 +236,7 @@ export default function HochbauAbrissBielefeld() {
                 a: 'Ein 6-stöckiges Bürogebäude liegt so bei 200.000 bis 500.000 Euro, je nachdem wieviel Schadstoffe drin sind.'
               },
               {
-                q: 'Wie lange dauert so'n Hochbau-Abriss?',
+                q: 'Wie lange dauert so\'n Hochbau-Abriss?',
                 a: 'Ein normales Bürogebäude mit 5-8 Stockwerken braucht 4-8 Wochen. Mit Schadstoffsanierung dauerts länger.'
               },
               {
@@ -260,7 +260,7 @@ export default function HochbauAbrissBielefeld() {
       {/* CTA Section */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-cerulean/20 to-indigo-dye/20 backdrop-blur-xl border border-white/20 rounded-3xl p-12 text-center">
+          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-12 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Hochbau-Abriss in Bielefeld? Jetzt anfragen!
             </h2>
@@ -270,7 +270,7 @@ export default function HochbauAbrissBielefeld() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:08000060970"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-cerulean to-indigo-dye text-white font-bold rounded-full hover:shadow-lg hover:shadow-cerulean/30 transition-all duration-300"
+                className="inline-block px-8 py-4 bg-white/20 backdrop-blur-xl text-white font-bold rounded-full hover:bg-white/30 hover:shadow-lg transition-all duration-300"
               >
                 📞 0800 0060970
               </a>
