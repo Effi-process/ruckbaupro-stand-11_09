@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
@@ -7,18 +7,37 @@ import FloatingElements from '../components/FloatingElements';
 import MultiStepWizard from '../components/MultiStepWizard';
 
 export default function BetonabbruchBielefeld() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-oxford-blue">
+    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-sky-950 relative overflow-hidden">
+      {/* Animated Background Gradients */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -inset-10 opacity-50">
+          <div className="absolute top-0 -left-4 w-72 h-72 bg-sky-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+          <div className="absolute top-0 -right-4 w-72 h-72 bg-sky-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-sky-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        </div>
+      </div>
       <FloatingElements />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
+          <div className="text-center mb-16">
+            <div className={`inline-flex items-center px-6 py-3 bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl rounded-full mb-6 transition-all duration-700 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+              <span className="text-sm font-bold text-white/90 uppercase tracking-wider">
+                Spezialist für Betonabbruch
+              </span>
+            </div>
+            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 transition-all duration-700 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
               Betonabbruch Bielefeld - Präzision trifft Power
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className={`text-xl text-white/80 max-w-4xl mx-auto leading-relaxed transition-all duration-700 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
               Gestern haben wir wieder mal gezeigt, was möglich ist - die alte Betonbrücke am
               Ostwestfalendamm, 40 Zentimeter dicker Stahlbeton, in nur zwei Tagen komplett zerlegt.
               Wenn Sie in Bielefeld Betonabbruch brauchen, dann wissen Sie jetzt, wer die richtigen
@@ -28,10 +47,112 @@ export default function BetonabbruchBielefeld() {
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="pb-20">
+      {/* Statistics Section */}
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 md:p-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { number: '20+', label: 'Jahre Erfahrung' },
+              { number: '500+', label: 'Betonabbruch-Projekte' },
+              { number: '80cm', label: 'Max. Schnitttiefe' },
+              { number: '24/7', label: 'Notdienst' }
+            ].map((stat, index) => (
+              <div key={index} className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/30 rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-slate-700/50 hover:to-sky-800/30 hover:scale-105 hover:shadow-2xl hover:shadow-sky-400/20 transition-all duration-300">
+                <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-2">{stat.number}</div>
+                <div className="text-sm text-white/80">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Showcase Cards */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6">Unsere Betonabbruch-Leistungen</h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              Modernste Technik und erfahrene Spezialisten für jeden Betonabbruch
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Betonschneiden',
+                description: 'Millimetergenauer Schnitt mit Diamantsägen bis 80cm Dicke für Durchbrüche und Öffnungen.'
+              },
+              {
+                title: 'Kernbohrung',
+                description: 'Saubere Bohrungen von 10-100cm Durchmesser für Leitungen und Lüftungsschächte.'
+              },
+              {
+                title: 'Betonsägen',
+                description: 'Wandsägen und Bodenschnitte für nachträgliche Fenster und Türöffnungen.'
+              },
+              {
+                title: 'Seilsägen',
+                description: 'Für unbegrenzt dicke Betonteile - ideal für Brücken und Fundamente.'
+              },
+              {
+                title: 'Betonbrechen',
+                description: 'Hydraulische Betonbrecher für massive Fundamente und Bodenplatten.'
+              },
+              {
+                title: 'Fugenschneiden',
+                description: 'Präzise Dehnungsfugen und Scheinfugen zur Rissvermeidung.'
+              }
+            ].map((service, index) => (
+              <div key={index} className="group">
+                <div className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/30 rounded-3xl p-8 h-full hover:bg-gradient-to-br hover:from-slate-700/50 hover:to-sky-800/30 hover:border-sky-400/50 hover:scale-105 hover:shadow-2xl hover:shadow-sky-400/20 transition-all duration-300">
+                  <div className="h-2 bg-gradient-to-r from-sky-400/50 to-sky-600/50 rounded-full mb-6 group-hover:from-sky-300/70 group-hover:to-sky-500/70 transition-all duration-300"></div>
+                  <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-4">{service.title}</h3>
+                  <p className="text-white/80 leading-relaxed">{service.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Flow Section */}
+      <section className="py-20 bg-gradient-to-b from-transparent via-slate-900/50 to-transparent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6">Unser Betonabbruch-Prozess</h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              Sicher, sauber und termingerecht - so arbeiten wir
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { step: '01', title: 'Analyse', desc: 'Prüfung der Betonstärke und Bewehrung' },
+              { step: '02', title: 'Planung', desc: 'Auswahl der optimalen Abbruchmethode' },
+              { step: '03', title: 'Sicherung', desc: 'Absperrung und Staubschutzmaßnahmen' },
+              { step: '04', title: 'Durchführung', desc: 'Präziser Abbruch und Entsorgung' }
+            ].map((item, index) => (
+              <div key={index} className="relative">
+                <div className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/30 rounded-2xl p-6 h-full hover:scale-105 hover:shadow-2xl hover:shadow-sky-400/20 transition-all duration-300">
+                  <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-4">{item.step}</div>
+                  <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-2">{item.title}</h3>
+                  <p className="text-white/70 text-sm">{item.desc}</p>
+                </div>
+                {index < 3 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 text-white/60 text-2xl">
+                    →
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/30 rounded-3xl p-8 md:p-12 hover:shadow-2xl hover:shadow-sky-400/10 transition-all duration-300">
 
             <div className="prose prose-lg max-w-none text-white/90">
               <p className="text-lg leading-relaxed mb-8">
@@ -42,7 +163,7 @@ export default function BetonabbruchBielefeld() {
                 Altstadt müssen wir leise arbeiten, in Brackwede können wir mit schwerem Gerät ran.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Betonschneiden
               </h2>
               <p className="mb-6">
@@ -60,7 +181,7 @@ export default function BetonabbruchBielefeld() {
                 härter als alles, was heute gebaut wird. Aber wir kriegen auch den klein.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Betonsägen
               </h2>
               <p className="mb-6">
@@ -78,7 +199,7 @@ export default function BetonabbruchBielefeld() {
                 Ortungsgeräten finden wir alles, bevor die Säge Schaden nimmt.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Kernbohrung
               </h2>
               <p className="mb-6">
@@ -95,7 +216,7 @@ export default function BetonabbruchBielefeld() {
                 Material, vom Alter des Gebäudes, von der Zeit, als es gebaut wurde.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Abbrucharbeiten
               </h2>
               <p className="mb-6">
@@ -113,7 +234,7 @@ export default function BetonabbruchBielefeld() {
                 sowas gehört zum Betonabbruch in Bielefeld dazu.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Wandsägen
               </h2>
               <p className="mb-6">
@@ -131,7 +252,7 @@ export default function BetonabbruchBielefeld() {
                 gemacht wird. Sicherheit geht vor, besonders beim Betonabbruch.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Seilsägen
               </h2>
               <p className="mb-6">
@@ -149,7 +270,7 @@ export default function BetonabbruchBielefeld() {
                 Pendler danken es uns!
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Fugenschneiden
               </h2>
               <p className="mb-6">
@@ -167,7 +288,7 @@ export default function BetonabbruchBielefeld() {
                 auch noch gut aus!
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Betonbrechen
               </h2>
               <p className="mb-6">
@@ -186,7 +307,7 @@ export default function BetonabbruchBielefeld() {
                 Bebauung den Beton klein, ohne dass sich die halbe Nachbarschaft beschwert.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Rückbau
               </h2>
               <p className="mb-6">
@@ -204,61 +325,124 @@ export default function BetonabbruchBielefeld() {
                 uns wichtig - auch beim Betonabbruch.
               </p>
 
-              <div className="bg-gradient-to-r from-sky-400/20 to-blue-400/20 backdrop-blur-xl border border-white/20 rounded-2xl p-8 mt-12">
-                <h3 className="text-2xl font-bold text-white mb-4">
+              <div className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/30 rounded-2xl p-8 mt-12 hover:shadow-2xl hover:shadow-sky-400/20 transition-all duration-300">
+                <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-4">
                   Ihr Partner für Betonabbruch in Bielefeld
                 </h3>
                 <p className="text-white/90 mb-4">
                   Mit über 20 Jahren Erfahrung im Betonabbruch kennen wir jeden Trick und jede
                   Herausforderung. Von der kleinen Kernbohrung bis zum kompletten Gebäudeabbruch -
-                  wir haben das richtige Equipment und das Know-how. Unsere Mannschaft ist geschult,
-                  zertifiziert und arbeitet nach allen Sicherheitsvorschriften.
+                  wir haben das richtige Equipment und das Know-how.
                 </p>
-                <p className="text-white/90 mb-4">
-                  In Bielefeld und Umgebung sind wir bekannt für schnelle, saubere Arbeit zu fairen
-                  Preisen. Ob Privatmann oder Großunternehmen - wir behandeln jeden Auftrag mit der
-                  gleichen Sorgfalt und Professionalität. Und wenn's mal richtig eilig ist, sind wir
-                  auch am Wochenende für Sie da.
-                </p>
-                <p className="text-white/90">
-                  Rufen Sie uns an und lassen Sie sich beraten. Wir kommen vorbei, schauen uns die
-                  Sache an und machen Ihnen ein unverbindliches Angebot. Betonabbruch in Bielefeld -
-                  das ist unser Ding!
-                </p>
+                <ul className="text-white/80 space-y-2">
+                  <li>✓ Modernste Diamanttechnik</li>
+                  <li>✓ Staubfreie Arbeitsweise</li>
+                  <li>✓ Erschütterungsarme Verfahren</li>
+                  <li>✓ 90% Recyclingquote</li>
+                  <li>✓ Alle Zertifikate vorhanden</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Local Area Coverage */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6">Betonabbruch in Ihrer Nähe</h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              Schnell vor Ort in ganz Bielefeld und Umgebung
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              'Bielefeld Altstadt',
+              'Brackwede',
+              'Schildesche',
+              'Jöllenbeck',
+              'Heepen',
+              'Stieghorst',
+              'Sennestadt',
+              'Baumheide',
+              'Eckendorfer Straße'
+            ].map((area, index) => (
+              <div key={index} className="bg-gradient-to-br from-slate-800/20 to-sky-900/10 backdrop-blur-xl border border-sky-400/30 rounded-xl p-4 hover:bg-gradient-to-br hover:from-slate-700/30 hover:to-sky-800/20 hover:scale-105 hover:shadow-xl hover:shadow-sky-400/20 transition-all duration-300">
+                <span className="text-white/90">{area}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6">
+              Häufige Fragen zum Betonabbruch
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                q: 'Wie laut ist Betonschneiden?',
+                a: 'Mit unseren modernen Diamantsägen arbeiten wir relativ leise. Ideal für Arbeiten in bewohnten Gebäuden.'
+              },
+              {
+                q: 'Entsteht viel Staub beim Betonabbruch?',
+                a: 'Nein, wir arbeiten mit Wasserkühlung und Staubabsaugung. So bleibt alles sauber.'
+              },
+              {
+                q: 'Wie dick kann Beton geschnitten werden?',
+                a: 'Mit unseren Sägen schneiden wir bis 80cm dicken Beton. Mit der Seilsäge sind sogar 2 Meter möglich.'
+              },
+              {
+                q: 'Was kostet eine Kernbohrung?',
+                a: 'Je nach Durchmesser und Tiefe zwischen 50-300€ pro Bohrung. Mengenrabatt möglich.'
+              }
+            ].map((faq, index) => (
+              <div key={index} className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/30 rounded-2xl p-6 hover:bg-gradient-to-br hover:from-slate-700/50 hover:to-sky-800/30 hover:scale-105 hover:shadow-2xl hover:shadow-sky-400/20 transition-all duration-300">
+                <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-3">{faq.q}</h3>
+                <p className="text-white/70">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="pb-20">
+      <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-sky-400/20 to-blue-400/20 backdrop-blur-xl border border-white/20 rounded-3xl p-12 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
+          <div className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/30 rounded-3xl p-12 text-center hover:shadow-2xl hover:shadow-sky-400/20 transition-all duration-300">
+            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-4">
               Betonabbruch in Bielefeld - Jetzt anfragen!
             </h2>
             <p className="text-white/80 mb-8">
-              Kostenlose Besichtigung und Beratung für Ihr Betonabbruch-Projekt
+              20 Jahre Erfahrung ✓ Modernste Technik ✓ Faire Preise ✓ Schnelle Ausführung
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:08000060970"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-sky-400 to-blue-400 text-white font-bold rounded-full hover:shadow-lg hover:shadow-sky-400/30 transition-all duration-300"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-sky-600 to-sky-700 backdrop-blur-xl text-white font-bold rounded-full hover:from-sky-500 hover:to-sky-600 hover:scale-105 hover:shadow-2xl hover:shadow-sky-400/30 transition-all duration-300"
               >
                 📞 0800 0060970
               </a>
               <Link
                 href="/kontakt"
-                className="inline-block px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300"
+                className="inline-block px-8 py-4 bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/30 text-white font-bold rounded-full hover:bg-gradient-to-br hover:from-slate-700/50 hover:to-sky-800/30 hover:scale-105 hover:shadow-xl hover:shadow-sky-400/20 transition-all duration-300"
               >
-                Online-Anfrage →
+                Kostenloses Angebot →
               </Link>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Footer */}
       <FooterWithMarquee />
     </main>
   );

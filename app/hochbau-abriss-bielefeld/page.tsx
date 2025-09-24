@@ -1,25 +1,36 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
 
 export default function HochbauAbrissBielefeld() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-slate-900">
+    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-sky-950 relative overflow-hidden">
+      {/* Animated background gradients */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-tr from-sky-900/20 via-transparent to-transparent animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-sky-800/10 to-slate-900/50" />
+      </div>
       <FloatingElements />
+      <div className="relative z-10">
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-xl rounded-full mb-6">
-              <span className="text-sm font-bold text-white/90 uppercase tracking-wider">
+            <div className={`inline-flex items-center px-6 py-3 bg-gradient-to-r from-sky-900/30 to-slate-800/30 backdrop-blur-xl rounded-full mb-6 border border-sky-400/20 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
+              <span className="text-sm font-bold text-sky-200 uppercase tracking-wider animate-pulse">
                 Professioneller Hochbau Abriss
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
+            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6 transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
               Hochbau Abriss Bielefeld - Wenn's hoch hinaus geht, kommen wir runter
             </h1>
             <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
@@ -41,9 +52,9 @@ export default function HochbauAbrissBielefeld() {
               { number: '24/7', label: 'Notdienst verfügbar' },
               { number: '100%', label: 'Zufriedene Kunden' }
             ].map((stat, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 text-center hover:bg-white/15 transition-all duration-300">
-                <div className="text-3xl font-black text-white mb-2">{stat.number}</div>
-                <div className="text-sm text-white/80">{stat.label}</div>
+              <div key={index} className="bg-gradient-to-br from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 text-center hover:border-sky-400/40 hover:shadow-lg hover:shadow-sky-400/20 transform hover:-translate-y-1 transition-all duration-300 animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
+                <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-2">{stat.number}</div>
+                <div className="text-sm text-sky-100/80">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -88,10 +99,10 @@ export default function HochbauAbrissBielefeld() {
               }
             ].map((service, index) => (
               <div key={index} className="group">
-                <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 h-full hover:bg-white/15 hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-white/10">
-                  <div className="h-2 bg-white/30 rounded-full mb-6 group-hover:bg-white/40 transition-all duration-300"></div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                  <p className="text-white/80 leading-relaxed">{service.description}</p>
+                <div className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-3xl p-8 h-full hover:border-sky-400/40 hover:shadow-2xl hover:shadow-sky-400/20 transform hover:-translate-y-2 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-sky-900/30 group-hover:to-slate-800/40">
+                  <div className="h-2 bg-gradient-to-r from-sky-400/40 to-sky-300/40 rounded-full mb-6 group-hover:from-sky-400/60 group-hover:to-sky-300/60 transition-all duration-500 group-hover:shadow-md group-hover:shadow-sky-400/30"></div>
+                  <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-4 group-hover:from-white group-hover:to-sky-100 transition-all duration-300">{service.title}</h3>
+                  <p className="text-sky-50/80 leading-relaxed group-hover:text-sky-50/90 transition-all duration-300">{service.description}</p>
                 </div>
               </div>
             ))}
@@ -100,7 +111,8 @@ export default function HochbauAbrissBielefeld() {
       </section>
 
       {/* Process Flow Section */}
-      <section className="py-20 bg-gradient-to-b from-transparent via-gray-900/50 to-transparent">
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-900/10 via-slate-900/30 to-sky-900/10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-black text-white mb-6">Unser Abriss-Prozess</h2>
@@ -117,13 +129,13 @@ export default function HochbauAbrissBielefeld() {
               { step: '04', title: 'Abriss & Entsorgung', desc: 'Fachgerechter Rückbau und Recycling' }
             ].map((item, index) => (
               <div key={index} className="relative">
-                <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 h-full">
-                  <div className="text-4xl font-black text-white mb-4">{item.step}</div>
-                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-white/70 text-sm">{item.desc}</p>
+                <div className="bg-gradient-to-br from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 h-full hover:border-sky-400/40 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300">
+                  <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-white mb-4 animate-pulse">{item.step}</div>
+                  <h3 className="text-xl font-bold text-sky-100 mb-2">{item.title}</h3>
+                  <p className="text-sky-100/70 text-sm">{item.desc}</p>
                 </div>
                 {index < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 text-white/60 text-2xl">
+                  <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 text-sky-300/60 text-2xl animate-pulse">
                     →
                   </div>
                 )}
@@ -136,7 +148,7 @@ export default function HochbauAbrissBielefeld() {
       {/* Main Content */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 md:p-12">
+          <div className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-3xl p-8 md:p-12 shadow-2xl shadow-sky-900/30">
             <div className="prose prose-lg max-w-none text-white/90">
 
               <h2 className="text-3xl font-bold text-white mb-6">
@@ -168,7 +180,7 @@ export default function HochbauAbrissBielefeld() {
                 Oldentrup war so'n Fall - 6 Stockwerke voll mit alten Webmaschinen und überall Schmieröl.
               </p>
 
-              <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 my-12">
+              <div className="bg-gradient-to-r from-sky-900/30 to-slate-800/40 backdrop-blur-xl border border-sky-400/30 rounded-2xl p-8 my-12 hover:border-sky-400/50 hover:shadow-xl hover:shadow-sky-400/20 transition-all duration-500">
                 <h3 className="text-2xl font-bold text-white mb-4">
                   Warum wir die Richtigen für Ihren Hochbau-Abriss sind
                 </h3>
@@ -177,12 +189,12 @@ export default function HochbauAbrissBielefeld() {
                   kleinen Verwaltungsetage bis zum kompletten Hochhaus - wir haben das richtige Equipment
                   und das Know-how.
                 </p>
-                <ul className="text-white/80 space-y-2">
-                  <li>✓ Modernste Hochreach-Bagger bis 35 Meter</li>
-                  <li>✓ Zertifizierte Schadstoffsanierung</li>
-                  <li>✓ Erschütterungsarme Abbruchverfahren</li>
-                  <li>✓ 90% Recyclingquote beim Bauschutt</li>
-                  <li>✓ Alle Genehmigungen aus einer Hand</li>
+                <ul className="text-sky-100/80 space-y-2">
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Modernste Hochreach-Bagger bis 35 Meter</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Zertifizierte Schadstoffsanierung</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Erschütterungsarme Abbruchverfahren</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ 90% Recyclingquote beim Bauschutt</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Alle Genehmigungen aus einer Hand</li>
                 </ul>
               </div>
             </div>
@@ -212,8 +224,8 @@ export default function HochbauAbrissBielefeld() {
               'Sennestadt Zentrum',
               'Ravensberger Park'
             ].map((area, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-xl border border-white/20 rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
-                <span className="text-white/90">{area}</span>
+              <div key={index} className="bg-gradient-to-r from-slate-800/30 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-xl p-4 hover:border-sky-400/40 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300">
+                <span className="text-sky-100/90 hover:text-sky-200 transition-colors duration-300">{area}</span>
               </div>
             ))}
           </div>
@@ -248,9 +260,9 @@ export default function HochbauAbrissBielefeld() {
                 a: '90% wird recycelt. Beton wird zu Schotter, Metall eingeschmolzen, Holz verheizt. Nur Sondermüll muss auf spezielle Deponien.'
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300">
-                <h3 className="text-xl font-bold text-white mb-3">{faq.q}</h3>
-                <p className="text-white/70">{faq.a}</p>
+              <div key={index} className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 hover:border-sky-400/40 hover:shadow-lg hover:shadow-sky-400/20 transform hover:-translate-y-1 transition-all duration-300">
+                <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-3">{faq.q}</h3>
+                <p className="text-sky-100/70">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -260,7 +272,7 @@ export default function HochbauAbrissBielefeld() {
       {/* CTA Section */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-12 text-center">
+          <div className="bg-gradient-to-r from-sky-900/30 to-slate-800/30 backdrop-blur-xl border border-sky-400/30 rounded-3xl p-12 text-center hover:border-sky-400/50 hover:shadow-2xl hover:shadow-sky-400/20 transition-all duration-500">
             <h2 className="text-3xl font-bold text-white mb-4">
               Hochbau-Abriss in Bielefeld? Jetzt anfragen!
             </h2>
@@ -270,13 +282,13 @@ export default function HochbauAbrissBielefeld() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:08000060970"
-                className="inline-block px-8 py-4 bg-white/20 backdrop-blur-xl text-white font-bold rounded-full hover:bg-white/30 hover:shadow-lg transition-all duration-300"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-sky-600/40 to-sky-700/40 backdrop-blur-xl text-white font-bold rounded-full hover:from-sky-600/60 hover:to-sky-700/60 hover:shadow-lg hover:shadow-sky-400/30 transform hover:scale-105 transition-all duration-300"
               >
                 📞 0800 0060970
               </a>
               <Link
                 href="/kontakt"
-                className="inline-block px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/30 text-sky-100 font-bold rounded-full hover:border-sky-400/50 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300"
               >
                 Kostenloses Angebot →
               </Link>
@@ -287,6 +299,7 @@ export default function HochbauAbrissBielefeld() {
 
       {/* Footer */}
       <FooterWithMarquee />
+      </div>
     </main>
   );
 }

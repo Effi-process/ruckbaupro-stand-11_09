@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
@@ -7,18 +7,34 @@ import FloatingElements from '../components/FloatingElements';
 import MultiStepWizard from '../components/MultiStepWizard';
 
 export default function AufraeumarbeitenBielefeld() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-oxford-blue">
+    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-sky-950 relative overflow-hidden">
+      {/* Animated background gradients */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-tr from-sky-900/20 via-transparent to-transparent animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-sky-800/10 to-slate-900/50" />
+      </div>
       <FloatingElements />
+      <div className="relative z-10">
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
+          <div className="text-center mb-16">
+            <div className={`inline-flex items-center px-6 py-3 bg-gradient-to-r from-sky-900/30 to-slate-800/30 backdrop-blur-xl rounded-full mb-6 border border-sky-400/20 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
+              <span className="text-sm font-bold text-sky-200 uppercase tracking-wider animate-pulse">
+                Professionelle Aufräumarbeiten
+              </span>
+            </div>
+            <h1 className={`text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6 transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
               Aufräumarbeiten Bielefeld - Ihr Partner für saubere Lösungen
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
               Letzte Woche ham wir wieder bei drei Haushalten in Sennestadt ausgeholfen, nachdem die
               Renovierungsarbeiten abgeschlosen waren. Die Leute wussten einfach nicht wohin mit dem ganzen
               Bauschutt und alten Möbeln. Das ist typisch für Aufräumarbeiten in Bielefeld - die meisten
@@ -28,10 +44,113 @@ export default function AufraeumarbeitenBielefeld() {
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="pb-20">
+      {/* Statistics Section */}
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 md:p-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { number: '15+', label: 'Jahre Erfahrung' },
+              { number: '3000+', label: 'Aufräumarbeiten' },
+              { number: '48h', label: 'Schnellservice' },
+              { number: '100%', label: 'Entsorgungsnachweis' }
+            ].map((stat, index) => (
+              <div key={index} className="bg-gradient-to-br from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 text-center hover:border-sky-400/40 hover:shadow-lg hover:shadow-sky-400/20 transform hover:-translate-y-1 transition-all duration-300 animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
+                <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-2">{stat.number}</div>
+                <div className="text-sm text-sky-100/80">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Showcase Cards */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unsere Aufräum-Services</h2>
+            <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
+              Von der kleinen Kellerecke bis zur kompletten Firmenauflösung - wir räumen alles auf.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Haushaltsauflösung',
+                description: 'Komplette Räumung von Wohnungen und Häusern mit Wertanrechnung und fachgerechter Entsorgung.'
+              },
+              {
+                title: 'Entrümpelung',
+                description: 'Professionelle Entrümpelung von Kellern, Dachböden und Garagen zum Festpreis.'
+              },
+              {
+                title: 'Nachlassräumung',
+                description: 'Sensible und respektvolle Räumung von Nachlässen mit Dokumentensicherung.'
+              },
+              {
+                title: 'Messie-Wohnungen',
+                description: 'Diskrete und gründliche Räumung auch bei extremen Verschmutzungen.'
+              },
+              {
+                title: 'Gewerbliche Räumung',
+                description: 'Büroauflösungen und Geschäftsräumungen mit Datenschutz-konformer Aktenvernichtung.'
+              },
+              {
+                title: 'Express-Service',
+                description: 'Notfallräumungen innerhalb von 24-48 Stunden bei Räumungsklagen oder Termindruck.'
+              }
+            ].map((service, index) => (
+              <div key={index} className="group">
+                <div className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-3xl p-8 h-full hover:border-sky-400/40 hover:shadow-2xl hover:shadow-sky-400/20 transform hover:-translate-y-2 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-sky-900/30 group-hover:to-slate-800/40">
+                  <div className="h-2 bg-gradient-to-r from-sky-400/40 to-sky-300/40 rounded-full mb-6 group-hover:from-sky-400/60 group-hover:to-sky-300/60 transition-all duration-500 group-hover:shadow-md group-hover:shadow-sky-400/30"></div>
+                  <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-4 group-hover:from-white group-hover:to-sky-100 transition-all duration-300">{service.title}</h3>
+                  <p className="text-sky-50/80 leading-relaxed group-hover:text-sky-50/90 transition-all duration-300">{service.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Flow Section */}
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-900/10 via-slate-900/30 to-sky-900/10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unser Ablauf</h2>
+            <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
+              Strukturiert, transparent und zuverlässig - so arbeiten wir
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { step: '01', title: 'Kostenlose Besichtigung', desc: 'Vor-Ort-Termin zur Einschätzung' },
+              { step: '02', title: 'Festpreisangebot', desc: 'Transparente Kosten ohne Überraschungen' },
+              { step: '03', title: 'Terminvereinbarung', desc: 'Flexibel nach Ihrem Zeitplan' },
+              { step: '04', title: 'Durchführung', desc: 'Professionelle Räumung und Entsorgung' }
+            ].map((item, index) => (
+              <div key={index} className="relative">
+                <div className="bg-gradient-to-br from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 h-full hover:border-sky-400/40 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300">
+                  <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-white mb-4 animate-pulse">{item.step}</div>
+                  <h3 className="text-xl font-bold text-sky-100 mb-2">{item.title}</h3>
+                  <p className="text-sky-100/70 text-sm">{item.desc}</p>
+                </div>
+                {index < 3 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 text-sky-300/60 text-2xl animate-pulse">
+                    →
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-3xl p-8 md:p-12 shadow-2xl shadow-sky-900/30">
 
             <div className="prose prose-lg max-w-none text-white/90">
               <p className="text-lg leading-relaxed mb-8">
@@ -43,7 +162,7 @@ export default function AufraeumarbeitenBielefeld() {
                 mit sich bringen.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Haushaltsauflösung
               </h2>
               <p className="mb-6">
@@ -63,7 +182,7 @@ export default function AufraeumarbeitenBielefeld() {
                 sich um nichts sorgen.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Entrümpelung
               </h2>
               <p className="mb-6">
@@ -82,7 +201,7 @@ export default function AufraeumarbeitenBielefeld() {
                 Schrotthandel nach Oldentrup. So wird aus Ihrer Entrümpelung auch noch was Gutes für andere.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Gebäudereinigung
               </h2>
               <p className="mb-6">
@@ -101,7 +220,7 @@ export default function AufraeumarbeitenBielefeld() {
                 wieder zum Glänzen - egal ob Altbau oder Neubau.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Wohnungsauflösung
               </h2>
               <p className="mb-6">
@@ -118,7 +237,7 @@ export default function AufraeumarbeitenBielefeld() {
                 entsorgen wir fachgerecht - immer nach den aktuellen Vorschriften der Stadt Bielefeld.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Nachlassräumung
               </h2>
               <p className="mb-6">
@@ -136,7 +255,7 @@ export default function AufraeumarbeitenBielefeld() {
                 - wir kennen die ehrlichen von den Abzockern.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Kellerentrümpelung
               </h2>
               <p className="mb-6">
@@ -154,7 +273,7 @@ export default function AufraeumarbeitenBielefeld() {
                 wie vollgestopft oder verdreckt er ist.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Besenreine Übergabe
               </h2>
               <p className="mb-6">
@@ -172,7 +291,7 @@ export default function AufraeumarbeitenBielefeld() {
                 einfach sauber übergeben und fertig.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Müllentsorgung
               </h2>
               <p className="mb-6">
@@ -189,7 +308,7 @@ export default function AufraeumarbeitenBielefeld() {
                 Bußgelder - alles sauber und nachweisbar.
               </p>
 
-              <h2 className="text-3xl font-bold text-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
                 Sperrmüllabholung
               </h2>
               <p className="mb-6">
@@ -206,8 +325,8 @@ export default function AufraeumarbeitenBielefeld() {
                 alles mit und Sie haben Ihre Ruhe.
               </p>
 
-              <div className="bg-gradient-to-r from-sky-400/20 to-blue-400/20 backdrop-blur-xl border border-white/20 rounded-2xl p-8 mt-12">
-                <h3 className="text-2xl font-bold text-white mb-4">
+              <div className="bg-gradient-to-r from-sky-900/30 to-slate-800/40 backdrop-blur-xl border border-sky-400/30 rounded-2xl p-8 mt-12 hover:border-sky-400/50 hover:shadow-xl hover:shadow-sky-400/20 transition-all duration-500">
+                <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-4">
                   Warum wir in Bielefeld die Richtigen sind
                 </h3>
                 <p className="text-white/90 mb-4">
@@ -216,50 +335,117 @@ export default function AufraeumarbeitenBielefeld() {
                   Kellerecke bis zur kompletten Firmenauflösung - kein Auftrag ist uns zu klein oder
                   zu groß.
                 </p>
-                <p className="text-white/90 mb-4">
-                  Unsere Kunden schätzen besonders unsere Zuverlässigkeit und Transparenz. Festpreise
-                  ohne versteckte Kosten, pünktliche Termine und saubere Arbeit - das ist unser
-                  Versprechen. Und wenn mal was nicht passt, sind wir sofort da und lösen das Problem.
-                </p>
-                <p className="text-white/90">
-                  Rufen Sie uns an - wir machen Ihnen ein faires Angebot und räumen schnell und
-                  gründlich auf. In Bielefeld und Umgebung sind wir immer für Sie da!
-                </p>
+                <ul className="text-sky-100/80 space-y-2">
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Festpreise ohne versteckte Kosten</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Kostenlose Wertanrechnung</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Besenreine Übergabe garantiert</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Alle Entsorgungsnachweise inklusive</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Versichert und zertifiziert</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="pb-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-sky-400/20 to-blue-400/20 backdrop-blur-xl border border-white/20 rounded-3xl p-12 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Jetzt Aufräumarbeiten in Bielefeld anfragen
+      {/* Local Area Coverage */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unsere Einsatzgebiete</h2>
+            <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
+              Schnell vor Ort in allen Bielefelder Stadtteilen
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              'Bielefeld Mitte',
+              'Sennestadt',
+              'Brackwede',
+              'Schildesche',
+              'Jöllenbeck',
+              'Heepen',
+              'Gadderbaum',
+              'Stieghorst',
+              'Oldentrup'
+            ].map((area, index) => (
+              <div key={index} className="bg-gradient-to-r from-slate-800/30 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-xl p-4 hover:border-sky-400/40 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300">
+                <span className="text-sky-100/90 hover:text-sky-200 transition-colors duration-300">{area}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">
+              Häufige Fragen zu Aufräumarbeiten
             </h2>
-            <p className="text-white/80 mb-8">
-              Kostenlose Besichtigung, faire Preise, schnelle Ausführung
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                q: 'Was kostet eine Haushaltsauflösung?',
+                a: 'Eine 3-Zimmer-Wohnung kostet durchschnittlich 1.500-3.000€. Nach der kostenlosen Besichtigung gibts einen Festpreis.'
+              },
+              {
+                q: 'Wie schnell können Sie räumen?',
+                a: 'Im Normalfall innerhalb von 3-5 Tagen. Bei Notfällen bieten wir auch 24-Stunden-Service.'
+              },
+              {
+                q: 'Kaufen Sie auch Gegenstände an?',
+                a: 'Ja, wertvolle Gegenstände rechnen wir direkt mit dem Räumungspreis gegen. Das spart Ihnen bares Geld.'
+              },
+              {
+                q: 'Ist die Entsorgung im Preis enthalten?',
+                a: 'Ja, alle Entsorgungskosten sind im Festpreis enthalten. Sie bekommen auch alle Nachweise.'
+              }
+            ].map((faq, index) => (
+              <div key={index} className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 hover:border-sky-400/40 hover:shadow-lg hover:shadow-sky-400/20 transform hover:-translate-y-1 transition-all duration-300">
+                <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-3">{faq.q}</h3>
+                <p className="text-sky-100/70">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-sky-900/30 to-slate-800/30 backdrop-blur-xl border border-sky-400/30 rounded-3xl p-12 text-center hover:border-sky-400/50 hover:shadow-2xl hover:shadow-sky-400/20 transition-all duration-500">
+            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-4">
+              Jetzt Aufräumarbeiten in Bielefeld anfragen!
+            </h2>
+            <p className="text-sky-100/80 mb-8">
+              15 Jahre Erfahrung ✓ Festpreise ✓ Versichert ✓ Schnelle Ausführung
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:08000060970"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-sky-400 to-blue-400 text-white font-bold rounded-full hover:shadow-lg hover:shadow-sky-400/30 transition-all duration-300"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-sky-600/40 to-sky-700/40 backdrop-blur-xl text-white font-bold rounded-full hover:from-sky-600/60 hover:to-sky-700/60 hover:shadow-lg hover:shadow-sky-400/30 transform hover:scale-105 transition-all duration-300"
               >
                 📞 0800 0060970
               </a>
               <Link
                 href="/kontakt"
-                className="inline-block px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/30 text-sky-100 font-bold rounded-full hover:border-sky-400/50 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300"
               >
-                Kontaktformular →
+                Kostenloses Angebot →
               </Link>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Footer */}
       <FooterWithMarquee />
+      </div>
     </main>
   );
 }
