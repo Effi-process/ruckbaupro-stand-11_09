@@ -64,37 +64,31 @@ export default function GebaeudeabbruchBielefeld() {
             {[
               {
                 title: 'Mehrstöckiger Gebäudeabbruch',
-                description: 'Professioneller Abriss von Bürogebäuden, Wohnkomplexen und Industrieanlagen bis 12 Stockwerke.',
-                gradient: 'from-blue-400/20 to-cyan-400/20'
+                description: 'Professioneller Abriss von Bürogebäuden, Wohnkomplexen und Industrieanlagen bis 12 Stockwerke.'
               },
               {
                 title: 'Industrieabbruch',
-                description: 'Spezialisiert auf Fabrikhallen, Produktionsanlagen und komplexe Industriebauten in Bielefeld.',
-                gradient: 'from-purple-400/20 to-pink-400/20'
+                description: 'Spezialisiert auf Fabrikhallen, Produktionsanlagen und komplexe Industriebauten in Bielefeld.'
               },
               {
                 title: 'Entkernung & Sanierung',
-                description: 'Selective Entkernung für Renovierungen und denkmalgeschützte Gebäude in der Altstadt.',
-                gradient: 'from-green-400/20 to-emerald-400/20'
+                description: 'Selective Entkernung für Renovierungen und denkmalgeschützte Gebäude in der Altstadt.'
               },
               {
                 title: 'Erdarbeiten & Fundamente',
-                description: 'Komplette Erdarbeiten nach dem Abriss, Fundamentaushub und Bodenvorbereitung.',
-                gradient: 'from-orange-400/20 to-red-400/20'
+                description: 'Komplette Erdarbeiten nach dem Abriss, Fundamentaushub und Bodenvorbereitung.'
               },
               {
                 title: 'Schadstoffsanierung',
-                description: 'TRGS 519 zertifizierte Asbestsanierung und PCB-Entfernung nach allen Vorschriften.',
-                gradient: 'from-yellow-400/20 to-orange-400/20'
+                description: 'TRGS 519 zertifizierte Asbestsanierung und PCB-Entfernung nach allen Vorschriften.'
               },
               {
                 title: 'Recycling & Entsorgung',
-                description: 'Umweltgerechte Sortierung und Entsorgung aller Materialien mit 90% Recyclingquote.',
-                gradient: 'from-teal-400/20 to-blue-400/20'
+                description: 'Umweltgerechte Sortierung und Entsorgung aller Materialien mit 90% Recyclingquote.'
               }
             ].map((service, index) => (
               <div key={index} className="group">
-                <div className={`bg-gradient-to-br ${service.gradient} backdrop-blur-xl border border-white/20 rounded-3xl p-8 h-full hover:border-cerulean/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cerulean/10`}>
+                <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 h-full hover:bg-white/15 hover:border-cerulean/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cerulean/20">
                   <div className="h-1 bg-gradient-to-r from-cerulean to-indigo-dye rounded-full mb-6 group-hover:shadow-lg group-hover:shadow-cerulean/30 transition-all duration-300"></div>
                   <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
                   <p className="text-white/80 leading-relaxed">{service.description}</p>
