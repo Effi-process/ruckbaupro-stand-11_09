@@ -7,11 +7,6 @@ interface CityData {
   name: string;
   population: string;
   description: string;
-  services: {
-    title: string;
-    link: string;
-    description: string;
-  }[];
 }
 
 const cities: CityData[] = [
