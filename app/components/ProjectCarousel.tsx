@@ -33,153 +33,157 @@ export default function ProjectCarousel() {
   const scrollBy = (dir: number) => {
     const el = trackRef.current;
     if (!el) return;
-    // Scroll genau eine Karte weiter (420px + 24px gap)
-    const amount = window.innerWidth < 640 ? 324 : window.innerWidth < 768 ? 404 : 444; // Responsive scroll amount
+    const amount = window.innerWidth < 640 ? 324 : window.innerWidth < 768 ? 404 : 444;
     el.scrollBy({ left: dir * amount, behavior: "smooth" });
   };
 
   const projects = [
     {
-      badge: "ASBEST-SANIERUNG",
-      title: "Professionelle und sichere Entfernung von Asbest nach TRGS 519",
+      category: "Asbestsanierung",
+      title: "Sichere Entfernung von Gefahrstoffen",
+      description: "Zertifizierte Fachkräfte. TRGS 519 konform.",
       image: "/images/asbest-team-hero.png",
-      alt: "Professionelle Asbest-Sanierung mit Schutzausrüstung",
+      alt: "Asbestsanierung",
       link: "/leistungen/asbestsanierung"
     },
     {
-      badge: "ENTKERNUNG",
-      title: "Komplette Entkernung von Gebäuden für Sanierung oder Abriss",
-      image: "/images/entkernung-team-hero.png",
-      alt: "Professionelle Entkernung von Innenräumen",
+      category: "Entkernung",
+      title: "Präzise Rückführung auf Rohbau",
+      description: "Effizient. Sauber. Termingerecht.",
+      image: "/images/entkernung-hero.png",
+      alt: "Entkernung",
       link: "/leistungen/entkernung"
     },
     {
-      badge: "BERATUNG & PLANUNG",
-      title: "Professionelle Beratung und detaillierte Projektplanung",
-      image: "/images/beratung-planung-hero.png",
-      alt: "Professionelle Beratung und Projektplanung",
-      link: "/leistungen/beratung---planung"
+      category: "Komplettabbruch",
+      title: "Professioneller Gebäuderückbau",
+      description: "Von der Planung bis zur Entsorgung.",
+      image: "/images/abbruch-hero.png",
+      alt: "Komplettabbruch",
+      link: "/leistungen/abbruch"
     },
     {
-      badge: "KMF-SANIERUNG",
-      title: "Fachgerechte Sanierung künstlicher Mineralfasern",
-      image: "/images/kmf-sanierung-hero.png",
-      alt: "KMF-Sanierung mit Schutzausrüstung",
-      link: "/leistungen/kmf-sanierung"
+      category: "Schadstoffsanierung",
+      title: "Umfassende Gebäudereinigung",
+      description: "PAK, PCB, KMF fachgerecht entfernt.",
+      image: "/images/schadstoff-hero.png",
+      alt: "Schadstoffsanierung",
+      link: "/leistungen/schadstoffsanierung"
     },
     {
-      badge: "SCHIMMELSANIERUNG",
-      title: "Professionelle Schimmelentfernung und -sanierung",
-      image: "/images/schimmelsanierung-hero.png",
-      alt: "Professionelle Schimmelsanierung",
-      link: "/leistungen/schimmelsanierung"
-    },
-    {
-      badge: "BETONARBEITEN",
-      title: "Betonschneiden, -bohren und -bearbeitung",
-      image: "/images/demolition-action.png",
-      alt: "Professionelle Betonarbeiten mit Diamanttechnik",
+      category: "Betonarbeiten",
+      title: "Präzise Betonsanierung",
+      description: "Bohren. Sägen. Fräsen.",
+      image: "/images/beton-hero.png",
+      alt: "Betonarbeiten",
       link: "/leistungen/betonarbeiten"
     }
   ];
 
   return (
-    <section className="px-3 sm:px-4 md:px-[5vw] py-12 sm:py-16 md:py-20 overflow-hidden">
-      <div className="text-center mb-8 sm:mb-10 md:mb-12">
-        <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Unsere Projekte</span>
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mt-3 sm:mt-4 mb-4 sm:mb-6">
-          Professioneller Rückbau & Abbruch
-        </h2>
-        <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
-          Sehen Sie selbst: Unsere Experten führen Rückbau- und Abbrucharbeiten mit höchsten Standards durch
-        </p>
-      </div>
+    <section className="relative py-24 overflow-hidden">
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/50 to-transparent" />
 
-      {/* Controls */}
-      <div className="relative">
-        <div className="absolute -top-6 right-0 z-10 flex gap-3">
-          <button
-            aria-label="Nach links scrollen"
-            onClick={() => scrollBy(-1)}
-            disabled={!canLeft}
-            className={`h-12 w-12 rounded-full border border-white/20 bg-white/10 backdrop-blur-md grid place-items-center transition-opacity hover:bg-white/20 ${
-              canLeft ? "opacity-100" : "opacity-40"
-            }`}
-          >
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-              <path
-                d="M15 5l-7 7 7 7"
-                stroke="white"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-          <button
-            aria-label="Nach rechts scrollen"
-            onClick={() => scrollBy(1)}
-            disabled={!canRight}
-            className={`h-12 w-12 rounded-full border border-white/20 bg-white/10 backdrop-blur-md grid place-items-center transition-opacity hover:bg-white/20 ${
-              canRight ? "opacity-100" : "opacity-40"
-            }`}
-          >
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-              <path
-                d="M9 5l7 7-7 7"
-                stroke="white"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 max-w-7xl">
+        {/* Refined header */}
+        <div className="mb-16 max-w-3xl">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 tracking-tight">
+            Unsere Expertise
+          </h2>
+          <p className="text-lg text-white/70 font-light leading-relaxed">
+            Spezialisierte Lösungen für komplexe Herausforderungen im Rückbau.
+          </p>
         </div>
 
-        {/* Track */}
-        <div
-          ref={trackRef}
-          className="no-scrollbar overflow-x-auto scroll-smooth snap-x snap-mandatory flex gap-6 pb-6"
-        >
-          {projects.map((project, i) => (
-            <Link key={i} href={project.link} className="snap-start shrink-0 w-[280px] sm:w-[320px] md:w-[380px] lg:w-[420px] max-w-[85vw] sm:max-w-[90vw] group cursor-pointer">
-              <article>
-                <div className="relative">
-                  <div className="relative h-[240px] sm:h-[260px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.3)] group-hover:scale-105 transition-transform duration-300">
+        {/* Carousel container */}
+        <div className="relative">
+          {/* Navigation buttons - refined design */}
+          <button
+            onClick={() => scrollBy(-1)}
+            disabled={!canLeft}
+            className={`absolute -left-12 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center transition-all duration-300 ${
+              canLeft
+                ? 'text-white/60 hover:text-white'
+                : 'text-white/20 cursor-not-allowed'
+            }`}
+            aria-label="Previous"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <button
+            onClick={() => scrollBy(1)}
+            disabled={!canRight}
+            className={`absolute -right-12 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center transition-all duration-300 ${
+              canRight
+                ? 'text-white/60 hover:text-white'
+                : 'text-white/20 cursor-not-allowed'
+            }`}
+            aria-label="Next"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Project cards */}
+          <div
+            ref={trackRef}
+            className="flex gap-6 overflow-x-auto scroll-smooth pb-4"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              WebkitOverflowScrolling: "touch"
+            }}
+          >
+            {projects.map((project, index) => (
+              <Link
+                key={index}
+                href={project.link}
+                className="group flex-none w-[300px] sm:w-[380px] md:w-[420px]"
+              >
+                <div className="relative h-[500px] overflow-hidden bg-neutral-900">
+                  {/* Image with refined overlay */}
+                  <div className="relative h-3/5 overflow-hidden">
                     <Image
                       src={project.image}
                       alt={project.alt}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      sizes="(max-width: 640px) 300px, (max-width: 768px) 380px, 420px"
                     />
-                    <div className="absolute inset-0 bg-black/20" />
-                    <span className="absolute top-4 left-4 sm:top-6 sm:left-6 text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 tracking-wide uppercase text-white font-bold shadow-lg">
-                      {project.badge}
-                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  </div>
+
+                  {/* Content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="mb-4">
+                      <span className="text-xs font-light text-white/60 tracking-wider uppercase">
+                        {project.category}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-light text-white mb-3 leading-tight">
+                      {project.title}
+                    </h3>
+                    <p className="text-white/70 font-light mb-6">
+                      {project.description}
+                    </p>
+                    <div className="flex items-center text-white/60 group-hover:text-white transition-colors">
+                      <span className="text-sm font-light">Details ansehen</span>
+                      <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
-                <div className="mt-3 sm:mt-4">
-                  <div className="text-sm sm:text-base md:text-lg leading-snug text-white font-semibold group-hover:text-cerulean transition-colors line-clamp-2 overflow-hidden">{project.title}</div>
-                </div>
-              </article>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
-
-      {/* CTA Button */}
-      <div className="text-center mt-8 sm:mt-10 md:mt-12">
-        <Link
-          href="/leistungen"
-          className="inline-flex items-center gap-3 sm:gap-4 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold hover:bg-white/20 transition-all duration-300 text-sm sm:text-base"
-        >
-          Alle Leistungen ansehen
-          <div className="w-0 h-0 border-l-[8px] border-l-white border-y-[6px] border-y-transparent ml-1"></div>
-        </Link>
-      </div>
-
-      {/* Hilfsstyles: Scrollbar ausblenden */}
-      <style jsx>{`.no-scrollbar::-webkit-scrollbar{display:none}.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}`}</style>
     </section>
   );
 }

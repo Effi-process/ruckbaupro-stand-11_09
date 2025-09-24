@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { AnimatedSection } from './RefinedAnimations';
 
 export default function InkScrollSection() {
   const headlineRef = React.useRef<HTMLHeadingElement>(null);
@@ -16,7 +17,8 @@ export default function InkScrollSection() {
         const s = document.createElement("span");
         s.textContent = ch;
         s.style.whiteSpace = "pre";
-        s.style.color = "rgba(255,255,255,0.3)";
+        s.style.color = "rgba(255,255,255,0.1)";
+        s.style.transition = "color 0.4s cubic-bezier(0.4, 0, 0.2, 1)";
         element.appendChild(s);
         return s;
       });
@@ -30,9 +32,9 @@ export default function InkScrollSection() {
     const headlineSpans = setupInkEffect(headlineEl);
     const subtextSpans = setupInkEffect(subtextEl);
 
-    const INK_MIN = 0.3;
-    const INK_MAX = 1.0;
-    const SOFT_WINDOW = 2.0;
+    const INK_MIN = 0.1;
+    const INK_MAX = 0.95;
+    const SOFT_WINDOW = 3.0;
 
     const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
     const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
@@ -40,11 +42,11 @@ export default function InkScrollSection() {
     function updateInk() {
       const currentHeadlineEl = headlineRef.current;
       const currentSubtextEl = subtextRef.current;
-      
+
       if (!currentHeadlineEl || !currentSubtextEl) return;
-      
+
       const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-      
+
       // Headline effect
       const headlineRect = currentHeadlineEl.getBoundingClientRect();
       const headlineStart = vh * 0.95;
@@ -59,12 +61,12 @@ export default function InkScrollSection() {
           alpha = INK_MAX;
         } else if (d > 0 && d < SOFT_WINDOW) {
           const t = clamp01(d / SOFT_WINDOW);
-          alpha = lerp(INK_MIN, INK_MAX, t);
+          alpha = lerp(INK_MIN, INK_MAX, t * t); // Eased transition
         }
         headlineSpans[i].style.color = `rgba(255,255,255,${alpha})`;
       }
 
-      // Subtext effect (starts when subtext enters viewport)
+      // Subtext effect
       const subtextRect = currentSubtextEl.getBoundingClientRect();
       const subtextStart = vh * 0.9;
       const subtextEnd = vh * 0.1;
@@ -75,10 +77,10 @@ export default function InkScrollSection() {
         const d = subtextCursor - i;
         let alpha = INK_MIN;
         if (d >= SOFT_WINDOW) {
-          alpha = INK_MAX;
+          alpha = INK_MAX * 0.8; // Slightly dimmer for hierarchy
         } else if (d > 0 && d < SOFT_WINDOW) {
           const t = clamp01(d / SOFT_WINDOW);
-          alpha = lerp(INK_MIN, INK_MAX, t);
+          alpha = lerp(INK_MIN, INK_MAX * 0.8, t * t);
         }
         subtextSpans[i].style.color = `rgba(255,255,255,${alpha})`;
       }
@@ -98,6 +100,7 @@ export default function InkScrollSection() {
     updateInk();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", updateInk);
+
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", updateInk);
@@ -105,61 +108,80 @@ export default function InkScrollSection() {
   }, []);
 
   return (
-    <div className="min-h-screen text-white">
-      {/* Hero mit Chip */}
-      <section className="relative min-h-[30vh] grid place-items-center overflow-hidden">
-        <div className="absolute top-8 left-1/2 -translate-x-1/2 text-[12px] tracking-[.08em] uppercase px-6 py-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-md inline-flex items-center gap-2 select-none">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M13 3l-2 7h5l-5 11 2-8H8l5-10z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          Professioneller Service
-        </div>
-      </section>
+    <section className="relative min-h-screen flex items-center justify-center py-32 overflow-hidden">
+      {/* Subtle background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 via-neutral-950 to-neutral-900" />
 
-      {/* Section mit Typing-Reveal pro Buchstabe */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20">
-        <div className="flex justify-center px-4 sm:px-[5vw]">
-          <h1
+      {/* Refined content */}
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 max-w-6xl">
+        <div className="text-center space-y-12">
+          <h2
             ref={headlineRef}
-            className="max-w-[900px] text-center font-extrabold leading-[1.05] tracking-tight text-2xl sm:text-[clamp(26px,6.2vw,64px)] whitespace-pre-wrap"
+            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight leading-[1.1]"
           >
-            {`Professioneller Rückbau.\nModerne Technik. Faire Preise.`}
-          </h1>
-        </div>
+            Kompetenz trifft Innovation
+          </h2>
 
-        {/* Professionelles Baustellen-Bild */}
-        <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-20 w-[min(1100px,95vw)] aspect-video rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,.3)] relative group hover:scale-105 transition-transform duration-500 mx-auto">
-          <Image 
-            src="/images/team-photo.jpeg" 
-            alt="Professioneller Rückbau mit Container-Entsorgung"
-            className="absolute inset-0 w-full h-full object-cover"
-            fill
-            sizes="(max-width: 1100px) 92vw, 1100px"
-          />
-          <div className="absolute inset-0 bg-black/20" />
-          
-          {/* Floating Element */}
-          <div className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 bg-white/10 backdrop-blur-md rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold">
-            Deutschlandweit
-          </div>
-        </div>
-
-        {/* Text mittig unter dem Video mit Ink-Effect */}
-        <div className="mt-8 sm:mt-10 md:mt-12 text-center max-w-2xl mx-auto px-4 sm:px-[5vw]">
-          <p 
+          <p
             ref={subtextRef}
-            className="text-base sm:text-lg md:text-xl leading-relaxed font-medium"
+            className="text-lg md:text-xl lg:text-2xl font-light leading-relaxed max-w-4xl mx-auto"
           >
-            Modernste Technik trifft auf jahrelange 
-            <br />
-            Erfahrung. 
-            <br /><br />
-            Sehen Sie selbst, wie wir aus jedem Rückbau-Projekt ein Meisterwerk der Präzision 
-            <br />
-            und Sicherheit machen.
+            Zwei Jahrzehnte Erfahrung in der präzisen Durchführung komplexer Rückbauprojekte.
+            Modernste Technologie vereint mit bewährter Handwerkskunst.
           </p>
         </div>
-      </section>
-    </div>
+
+        {/* Service grid with refined design */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
+          <AnimatedSection delay={200} className="group">
+            <div className="relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-none hover:bg-white/10 transition-all duration-500">
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              <h3 className="text-xl font-light text-white mb-4">Asbestsanierung</h3>
+              <p className="text-white/60 font-light leading-relaxed">
+                Fachgerechte Entfernung nach TRGS 519. Zertifiziert und sicher.
+              </p>
+              <div className="mt-6 flex items-center text-white/40 group-hover:text-white/60 transition-colors">
+                <span className="text-sm">Mehr erfahren</span>
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={400} className="group">
+            <div className="relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-none hover:bg-white/10 transition-all duration-500">
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              <h3 className="text-xl font-light text-white mb-4">Entkernung</h3>
+              <p className="text-white/60 font-light leading-relaxed">
+                Präzise Rückführung auf die Rohbausubstanz. Effizient und gründlich.
+              </p>
+              <div className="mt-6 flex items-center text-white/40 group-hover:text-white/60 transition-colors">
+                <span className="text-sm">Mehr erfahren</span>
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={600} className="group">
+            <div className="relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-none hover:bg-white/10 transition-all duration-500">
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              <h3 className="text-xl font-light text-white mb-4">Komplettabbruch</h3>
+              <p className="text-white/60 font-light leading-relaxed">
+                Vollständiger Rückbau mit Recyclingkonzept. Nachhaltig und verantwortungsvoll.
+              </p>
+              <div className="mt-6 flex items-center text-white/40 group-hover:text-white/60 transition-colors">
+                <span className="text-sm">Mehr erfahren</span>
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </div>
+    </section>
   );
 }

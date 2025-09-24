@@ -5,6 +5,9 @@
 /* Import mobile-specific optimizations */
 @import './globals-mobile.css';
 
+/* Import refined design system */
+@import './globals-refined.css';
+
 /* Custom Colors */
 :root {
   --cerulean: #007ACC;
