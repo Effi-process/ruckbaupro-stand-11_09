@@ -1,0 +1,517 @@
+/* Mobile-First Optimizations for RückbauPRO */
+
+/* ============================== */
+/* BASE MOBILE STYLES */
+/* ============================== */
+
+/* Ensure proper viewport behavior */
+@media (max-width: 768px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-size: 16px; /* Prevent zoom on input focus */
+  }
+
+  body {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* Prevent horizontal scroll */
+  body,
+  html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Container adjustments */
+  .container-custom,
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-5xl,
+  .max-w-4xl,
+  .max-w-3xl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* ============================== */
+  /* TYPOGRAPHY MOBILE OPTIMIZATIONS */
+  /* ============================== */
+
+  /* Hero Title Adjustments */
+  h1,
+  .text-6xl,
+  .text-5xl {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .md\:text-6xl,
+  .lg\:text-7xl,
+  .lg\:text-6xl {
+    font-size: 2rem !important;
+  }
+
+  /* Subheadings */
+  h2,
+  .text-4xl,
+  .text-3xl {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Body Text */
+  .text-xl,
+  .text-lg {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Small Text */
+  .text-sm {
+    font-size: 0.875rem !important;
+  }
+
+  /* ============================== */
+  /* SPACING ADJUSTMENTS */
+  /* ============================== */
+
+  /* Reduce excessive padding on mobile */
+  .pt-32 {
+    padding-top: 4rem !important;
+  }
+
+  .pb-32,
+  .py-32 {
+    padding-bottom: 4rem !important;
+  }
+
+  .pt-24,
+  .py-24 {
+    padding-top: 3rem !important;
+  }
+
+  .pb-24 {
+    padding-bottom: 3rem !important;
+  }
+
+  .pt-20,
+  .py-20 {
+    padding-top: 2.5rem !important;
+  }
+
+  .pb-20 {
+    padding-bottom: 2.5rem !important;
+  }
+
+  .pt-16,
+  .py-16 {
+    padding-top: 2rem !important;
+  }
+
+  .pb-16 {
+    padding-bottom: 2rem !important;
+  }
+
+  /* Margin adjustments */
+  .mb-16 {
+    margin-bottom: 2rem !important;
+  }
+
+  .mb-12 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .mb-8 {
+    margin-bottom: 1rem !important;
+  }
+
+  /* ============================== */
+  /* BUTTON & TOUCH TARGET OPTIMIZATIONS */
+  /* ============================== */
+
+  /* Ensure minimum touch target size (44x44px) */
+  button,
+  a,
+  .btn,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* CTA Button improvements */
+  .px-8.py-4 {
+    padding: 0.875rem 1.5rem !important;
+  }
+
+  /* Phone number button */
+  a[href^="tel"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 48px !important;
+    padding: 0.875rem 1.25rem !important;
+    font-size: 1rem !important;
+    font-weight: bold !important;
+  }
+
+  /* ============================== */
+  /* HEADER MOBILE OPTIMIZATIONS */
+  /* ============================== */
+
+  /* Fixed header adjustments */
+  header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 50 !important;
+  }
+
+  /* Mobile menu improvements */
+  .mobile-menu,
+  [class*="mobile-menu"] {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Header logo sizing */
+  .header-logo img,
+  header img {
+    max-height: 40px !important;
+    width: auto !important;
+  }
+
+  /* ============================== */
+  /* NAVIGATION MOBILE FIXES */
+  /* ============================== */
+
+  /* Mobile nav items */
+  nav a,
+  .nav-link {
+    padding: 1rem !important;
+    font-size: 1.125rem !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* ============================== */
+  /* GRID & CARD OPTIMIZATIONS */
+  /* ============================== */
+
+  /* Force single column on mobile */
+  .grid,
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Statistics grid - allow 2 columns */
+  .stats-grid,
+  section:has(.text-3xl.font-black) .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Card padding reduction */
+  .rounded-2xl.p-6,
+  .rounded-3xl.p-8 {
+    padding: 1rem !important;
+  }
+
+  /* Service cards */
+  .rounded-3xl.p-8.h-full {
+    padding: 1.25rem !important;
+  }
+
+  /* ============================== */
+  /* HERO SECTION MOBILE FIXES */
+  /* ============================== */
+
+  /* Hero video/image container */
+  .relative.w-full.h-screen,
+  .relative.h-\[100vh\] {
+    height: 60vh !important;
+    min-height: 400px !important;
+  }
+
+  /* Hero content positioning */
+  .absolute.inset-0.flex.items-center {
+    padding: 1rem !important;
+    align-items: flex-start !important;
+    padding-top: 4rem !important;
+  }
+
+  /* Hero badge */
+  .inline-flex.items-center.px-6.py-3 {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* ============================== */
+  /* FORM & INPUT OPTIMIZATIONS */
+  /* ============================== */
+
+  input,
+  select,
+  textarea {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    padding: 0.75rem !important;
+    min-height: 48px !important;
+  }
+
+  /* ============================== */
+  /* FOOTER MOBILE OPTIMIZATIONS */
+  /* ============================== */
+
+  footer {
+    padding: 2rem 1rem !important;
+  }
+
+  footer .grid {
+    gap: 2rem !important;
+  }
+
+  /* Footer links */
+  footer a {
+    padding: 0.5rem 0 !important;
+    display: inline-block !important;
+  }
+
+  /* ============================== */
+  /* FLOATING ELEMENTS */
+  /* ============================== */
+
+  /* Floating menu button */
+  .fixed.bottom-6.right-6,
+  .fixed.bottom-8.right-8 {
+    bottom: 1rem !important;
+    right: 1rem !important;
+  }
+
+  /* Floating button size */
+  .w-14.h-14,
+  .w-16.h-16 {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+
+  /* ============================== */
+  /* MODAL & OVERLAY IMPROVEMENTS */
+  /* ============================== */
+
+  .fixed.inset-0 {
+    padding: 1rem !important;
+  }
+
+  /* Modal content */
+  .max-w-md,
+  .max-w-lg,
+  .max-w-xl {
+    max-width: calc(100% - 2rem) !important;
+    margin: 1rem !important;
+  }
+
+  /* ============================== */
+  /* SEO PAGES MOBILE FIXES */
+  /* ============================== */
+
+  /* Process flow cards */
+  .lg\:grid-cols-4.gap-6 {
+    gap: 1rem !important;
+  }
+
+  /* FAQ section */
+  .md\:grid-cols-2.gap-8 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Local area grid */
+  .lg\:grid-cols-3.gap-6 > div {
+    padding: 0.75rem !important;
+  }
+
+  /* ============================== */
+  /* ANIMATION ADJUSTMENTS */
+  /* ============================== */
+
+  /* Reduce or disable heavy animations on mobile */
+  .animate-float,
+  .animate-pulse,
+  .animate-bounce {
+    animation-duration: 3s !important;
+  }
+
+  /* Disable parallax on mobile */
+  .parallax,
+  [data-parallax] {
+    transform: none !important;
+  }
+
+  /* ============================== */
+  /* OVERFLOW & SCROLL FIXES */
+  /* ============================== */
+
+  .overflow-hidden {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ============================== */
+  /* SPECIFIC COMPONENT FIXES */
+  /* ============================== */
+
+  /* City services section */
+  .bg-gradient-to-br.from-white\/10.to-white\/5.backdrop-blur-xl {
+    padding: 1.5rem !important;
+  }
+
+  /* Stats cards */
+  .bg-gradient-to-br.from-slate-800\/50.to-sky-900\/30 {
+    padding: 0.75rem !important;
+  }
+
+  /* Trust badges */
+  .flex.items-center.gap-8 {
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  /* Video section */
+  video {
+    object-fit: cover !important;
+    height: 100% !important;
+  }
+
+  /* Logo sizing in content */
+  img[alt*="Logo"],
+  img[alt*="logo"] {
+    max-width: 120px !important;
+    height: auto !important;
+  }
+
+  /* ============================== */
+  /* TEXT READABILITY */
+  /* ============================== */
+
+  /* Ensure proper line height for readability */
+  p {
+    line-height: 1.6 !important;
+  }
+
+  /* List items spacing */
+  li {
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* ============================== */
+  /* BREAKPOINT SPECIFIC ADJUSTMENTS */
+  /* ============================== */
+}
+
+/* Extra small devices (phones, less than 375px) */
+@media (max-width: 374px) {
+  h1,
+  .text-6xl,
+  .text-5xl {
+    font-size: 1.75rem !important;
+  }
+
+  .text-4xl,
+  .text-3xl {
+    font-size: 1.25rem !important;
+  }
+
+  .px-8,
+  .px-6 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Even smaller touch targets for tiny screens */
+  .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Medium mobile devices (375px to 640px) */
+@media (min-width: 375px) and (max-width: 640px) {
+  /* Statistics can stay in 2 columns */
+  .grid-cols-2:has(.text-3xl) {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Tablet optimizations (640px to 1024px) */
+@media (min-width: 640px) and (max-width: 1024px) {
+  /* Allow some 2-column layouts on tablets */
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Slightly larger text on tablets */
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  /* Better spacing on tablets */
+  .container-custom {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* ============================== */
+/* ACCESSIBILITY IMPROVEMENTS */
+/* ============================== */
+
+@media (max-width: 768px) {
+  /* Improve focus states on mobile */
+  a:focus,
+  button:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 3px solid #0066CC !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Ensure sufficient color contrast */
+  .text-white\/80 {
+    opacity: 0.95 !important;
+  }
+
+  .text-gray-500 {
+    color: #4B5563 !important;
+  }
+}
+
+/* ============================== */
+/* PERFORMANCE OPTIMIZATIONS */
+/* ============================== */
+
+@media (max-width: 768px) {
+  /* Disable backdrop filters on low-end devices */
+  @supports not (backdrop-filter: blur(1px)) {
+    .backdrop-blur-xl,
+    .backdrop-blur-lg,
+    .backdrop-blur-md,
+    .backdrop-blur-sm,
+    .backdrop-blur {
+      backdrop-filter: none !important;
+      background-color: rgba(0, 0, 0, 0.9) !important;
+    }
+  }
+}

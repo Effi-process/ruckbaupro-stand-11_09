@@ -6,6 +6,8 @@ import { PerformanceMonitor } from './components/PerformanceMonitor'
 import PerformanceOptimizer from './components/PerformanceOptimizer'
 import EmergencyHotline from './components/EmergencyHotline'
 import MobileOptimizer from './components/MobileOptimizer'
+import MobileOptimizationWrapper from './components/MobileOptimizationWrapper'
+import MobileHeader from './components/MobileHeader'
 import FloatingMenuButton from './components/FloatingMenuButton'
 import Script from 'next/script'
 
@@ -211,6 +213,8 @@ export default function RootLayout({
         <PerformanceMonitor />
         <PerformanceOptimizer />
         <MobileOptimizer />
+        <MobileOptimizationWrapper />
+        <MobileHeader />
         {children}
         
         {/* Performance monitoring and analytics */}
