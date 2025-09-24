@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import Icon from './Icon';
 import PremiumButton from './PremiumButton';
 import Link from 'next/link';
@@ -104,7 +104,7 @@ export default function AdvancedCalculator() {
   const [priceBreakdown, setPriceBreakdown] = useState<any>({});
   const [showResult, setShowResult] = useState(false);
 
-  const services: Service[] = [
+  const services: Service[] = useMemo(() => [
     {
       id: 'asbestsanierung',
       name: 'Asbestsanierung',
@@ -153,85 +153,85 @@ export default function AdvancedCalculator() {
       basePrice: 120,
       category: 'beratung'
     }
-  ];
+  ], []);
 
-  const buildingTypes = [
+  const buildingTypes = useMemo(() => [
     { id: 'residential', name: 'Wohngebäude', factor: 1.0 },
     { id: 'commercial', name: 'Büro/Gewerbe', factor: 1.1 },
     { id: 'industrial', name: 'Industriegebäude', factor: 1.25 },
     { id: 'public', name: 'Öffentliches Gebäude', factor: 1.15 },
     { id: 'hospital', name: 'Krankenhaus/Pflege', factor: 1.4 }
-  ];
+  ], []);
 
-  const buildingAges = [
+  const buildingAges = useMemo(() => [
     { id: 'before1950', name: 'Vor 1950', factor: 1.3 },
     { id: '1950-1970', name: '1950 - 1970', factor: 1.4 },
     { id: '1970-1990', name: '1970 - 1990', factor: 1.2 },
     { id: '1990-2010', name: '1990 - 2010', factor: 1.05 },
     { id: 'after2010', name: 'Nach 2010', factor: 1.0 }
-  ];
+  ], []);
 
-  const urgencyOptions = [
+  const urgencyOptions = useMemo(() => [
     { id: 'normal', name: 'Standard (4-6 Wochen)', factor: 1.0 },
     { id: 'fast', name: 'Priorität (2-3 Wochen)', factor: 1.15 },
     { id: 'express', name: 'Express (1 Woche)', factor: 1.35 },
     { id: 'emergency', name: 'Notfall (48-72h)', factor: 1.75 }
-  ];
+  ], []);
 
-  const accessibilityOptions = [
+  const accessibilityOptions = useMemo(() => [
     { id: 'easy', name: 'Einfach zugänglich', factor: 0.95 },
     { id: 'normal', name: 'Normal zugänglich', factor: 1.0 },
     { id: 'difficult', name: 'Schwer zugänglich', factor: 1.2 },
     { id: 'very-difficult', name: 'Sehr schwer zugänglich', factor: 1.45 }
-  ];
+  ], []);
 
   // Service-spezifische Optionen
-  const asbestMaterials = [
+  const asbestMaterials = useMemo(() => [
     { id: 'eternit', name: 'Eternitplatten (schwach gebunden)', factor: 1.0 },
     { id: 'spray', name: 'Spritzasbest (stark gebunden)', factor: 2.2 },
     { id: 'floor-tiles', name: 'Bodenbelag (Vinyl-Asbest)', factor: 1.1 },
     { id: 'cement-pipes', name: 'Asbestzement-Rohre', factor: 1.3 },
     { id: 'insulation', name: 'Isolierung/Dämmung', factor: 1.8 },
     { id: 'mixed', name: 'Verschiedene Materialien', factor: 1.5 }
-  ];
+  ], []);
 
-  const contaminationLevels = [
+  const contaminationLevels = useMemo(() => [
     { id: 'low', name: 'Gering (< 100 Fasern/m³)', factor: 1.0 },
     { id: 'medium', name: 'Mittel (100-1000 Fasern/m³)', factor: 1.25 },
     { id: 'high', name: 'Hoch (> 1000 Fasern/m³)', factor: 1.55 },
     { id: 'critical', name: 'Kritisch (> 10.000 Fasern/m³)', factor: 1.9 }
-  ];
+  ], []);
 
-  const roomTypes = [
+  const roomTypes = useMemo(() => [
     { id: 'office', name: 'Büroräume', factor: 1.0 },
     { id: 'basement', name: 'Keller/Technikräume', factor: 1.1 },
     { id: 'residential', name: 'Wohnräume', factor: 1.05 },
     { id: 'bathroom', name: 'Feuchträume', factor: 1.15 },
     { id: 'industrial', name: 'Produktionshallen', factor: 1.25 }
-  ];
+  ], []);
 
-  const kmfTypes = [
+  const kmfTypes = useMemo(() => [
     { id: 'glass-wool', name: 'Glaswolle', factor: 1.0 },
     { id: 'rock-wool', name: 'Steinwolle', factor: 1.05 },
     { id: 'ceramic-fiber', name: 'Keramikfaser', factor: 1.4 },
     { id: 'mixed-kmf', name: 'Verschiedene KMF', factor: 1.2 }
-  ];
+  ], []);
 
-  const moldTypes = [
+  const moldTypes = useMemo(() => [
     { id: 'surface', name: 'Oberflächenschimmel', factor: 1.0 },
     { id: 'wall-penetrating', name: 'Wanddurchdringend', factor: 1.3 },
     { id: 'structural', name: 'Konstruktionsschäden', factor: 1.6 },
     { id: 'black-mold', name: 'Schwarzschimmel', factor: 1.4 }
-  ];
+  ], []);
 
-  const concreteWorks = [
+  const concreteWorks = useMemo(() => [
     { id: 'cutting', name: 'Betonschneiden', factor: 1.0 },
     { id: 'drilling', name: 'Kernbohrungen', factor: 1.15 },
     { id: 'demolition', name: 'Teilabbruch', factor: 1.3 },
     { id: 'surface-treatment', name: 'Oberflächenbearbeitung', factor: 0.85 }
-  ];
+  ], []);
 
-  const additionalServicesOptions = [
+  const additionalServicesOptions = useMemo(() => [
     { id: 'disposal', name: 'Fachgerechte Entsorgung', price: 8 }, // pro m²
     { id: 'analysis', name: 'Schadstoffanalyse', price: 450 },
     { id: 'monitoring', name: 'Luftüberwachung', price: 320 },
@@ -240,7 +240,7 @@ export default function AdvancedCalculator() {
     { id: 'measurement', name: 'Freimessung', price: 380 },
     { id: 'coordination', name: 'Behördenkoordination', price: 350 },
     { id: 'emergency', name: '24/7 Notdienst', price: 500 }
-  ];
+  ], []);
 
   const calculateDetailedPrice = useCallback(() => {
     if (calculatorData.selectedServices.length === 0 || !calculatorData.area) return;

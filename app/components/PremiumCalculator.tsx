@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import Icon from './Icon';
 import PremiumButton from './PremiumButton';
 import Link from 'next/link';
@@ -44,36 +44,36 @@ export default function PremiumCalculator() {
     { id: 'contact', title: 'Kontakt', subtitle: 'Für Ihr Angebot', icon: 'mail' }
   ];
 
-  const projectTypes = [
+  const projectTypes = useMemo(() => [
     { id: 'roof', name: 'Dachsanierung', icon: 'shield', basePrice: 35 },
     { id: 'facade', name: 'Fassadensanierung', icon: 'layers', basePrice: 40 },
     { id: 'floor', name: 'Bodensanierung', icon: 'box', basePrice: 25 },
     { id: 'pipe', name: 'Rohrisolierung', icon: 'settings', basePrice: 45 },
     { id: 'complete', name: 'Komplettsanierung', icon: 'shield-check', basePrice: 55 }
-  ];
+  ], []);
 
-  const materials = [
+  const materials = useMemo(() => [
     { id: 'eternit', name: 'Eternitplatten', factor: 1.0 },
     { id: 'spray', name: 'Spritzasbest', factor: 2.5 },
     { id: 'vinyl', name: 'Vinyl-Asbest', factor: 0.8 },
     { id: 'cement', name: 'Asbestzement', factor: 1.2 },
     { id: 'mixed', name: 'Verschiedene', factor: 1.5 }
-  ];
+  ], []);
 
-  const urgencyOptions = [
+  const urgencyOptions = useMemo(() => [
     { id: 'normal', name: 'Normal (4-6 Wochen)', factor: 1.0 },
     { id: 'fast', name: 'Schnell (2-3 Wochen)', factor: 1.15 },
     { id: 'express', name: 'Express (1 Woche)', factor: 1.35 },
     { id: 'emergency', name: 'Notfall (48h)', factor: 1.75 }
-  ];
+  ], []);
 
-  const additionalServices = [
+  const additionalServices = useMemo(() => [
     { id: 'disposal', name: 'Entsorgung inkl.', price: 180 },
     { id: 'analysis', name: 'Vorab-Analyse', price: 450 },
     { id: 'monitoring', name: 'Luftüberwachung', price: 350 },
     { id: 'documentation', name: 'Erweiterte Doku', price: 250 },
     { id: 'replacement', name: 'Ersatzmaterial', price: 0 }
-  ];
+  ], []);
 
   const calculatePrice = useCallback(() => {
     if (!formData.projectType || !formData.area || !formData.material || !formData.urgency) return;

@@ -7,7 +7,7 @@ export default function CanvasShooterGame() {
   const wrapRef = React.useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = React.useState(false);
 
-  const CONFIG = {
+  const CONFIG = React.useMemo(() => ({
     text: "RÜCKBAUPRO",            // <- Zieltext
     bg: "#1a1a2e",                // Dunkler Hintergrund
     player: {                     // Schutzanzug-Figur (Hazmat)
@@ -22,7 +22,7 @@ export default function CanvasShooterGame() {
     blockSize: 12,                // Größe der Text-Blöcke
     fireRateMs: 120,              // Schuss-Rate
     bulletSpeed: 8,
-  };
+  }), []);
 
   // Intersection Observer für Lazy Loading
   React.useEffect(() => {
