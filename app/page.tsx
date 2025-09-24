@@ -5,6 +5,7 @@ import ProjectCarousel from './components/ProjectCarousel';
 import FooterWithMarquee from './components/FooterWithMarquee';
 import LazyCalculator from './components/LazyCalculator';
 import FloatingElements from './components/FloatingElements';
+import CityServicesSection from './components/CityServicesSection';
 import Link from 'next/link';
 import Image from 'next/image';
 import Icon from './components/Icon';
@@ -43,6 +44,8 @@ export default function Home() {
 
       </div>
 
+      {/* City Services Section with Tab Navigation */}
+      <CityServicesSection />
 
       {/* Contact Form Section */}
       <section id="contact-form" className="py-16 bg-oxford-blue">

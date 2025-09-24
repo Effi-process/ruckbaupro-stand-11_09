@@ -112,7 +112,7 @@ export default function FloatingMenuButton() {
       <button
         ref={buttonRef}
         onClick={handleButtonClick}
-        className="relative z-50 group flex items-center gap-2.5 px-5 py-3.5 bg-white/20 backdrop-blur-xl border-2 border-white/30 hover:border-cerulean/50 text-white hover:bg-white/30 transition-all duration-300 rounded-xl shadow-xl hover:shadow-2xl cursor-pointer"
+        className="relative z-50 group flex items-center gap-2.5 px-5 py-3.5 backdrop-blur-xl border border-white/20 hover:backdrop-blur-2xl text-white transition-all duration-300 rounded-xl shadow-2xl cursor-pointer"
         type="button"
         aria-expanded={isOpen}
         aria-haspopup="true"
