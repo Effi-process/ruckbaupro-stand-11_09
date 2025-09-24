@@ -207,11 +207,11 @@ export default function LocationDominance({
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="tel:08000060970"
+              href="tel:+49 174 8083023"
               className="bg-white text-red-600 px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform inline-flex items-center justify-center gap-2"
             >
               <Icon name="phone" size={20} />
-              0800 0060970
+              +49 174 8083023
             </a>
             <a 
               href="https://wa.me/4917612345678"

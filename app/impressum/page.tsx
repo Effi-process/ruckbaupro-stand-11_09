@@ -71,7 +71,7 @@ export default function Impressum() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <p className="text-white/80 text-sm mb-1">24/7 Hotline</p>
-                    <p className="text-xl font-bold text-white">0800 0060970</p>
+                    <p className="text-xl font-bold text-white">+49 174 8083023</p>
                     <p className="text-white/60 text-sm">Kostenlos aus dem deutschen Festnetz</p>
                   </div>
                   <div>

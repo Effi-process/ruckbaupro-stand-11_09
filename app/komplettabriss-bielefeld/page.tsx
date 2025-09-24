@@ -5,7 +5,7 @@ import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
 
-export default function IndustrieabbruchBielefeld() {
+export default function KomplettabrissBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -28,18 +28,18 @@ export default function IndustrieabbruchBielefeld() {
           <div className="text-center mb-16">
             <div className={`inline-flex items-center px-6 py-3 bg-gradient-to-r from-sky-900/30 to-slate-800/30 backdrop-blur-xl rounded-full mb-6 border border-sky-400/20 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
               <span className="text-sm font-bold text-sky-200 uppercase tracking-wider animate-pulse">
-                Professioneller Industrieabbruch
+                Professioneller Komplettabriss
               </span>
             </div>
             <h1 className={`text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6 transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-              Industrieabbruch Bielefeld - Große Projekte sicher gemeistert
+              Komplettabriss Bielefeld - Vom Keller bis zum Dach alles weg
             </h1>
             <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-              Letzte Woche haben wir die alte Textilfabrik in Brackwede plattgemacht - 12.000 Quadratmeter in nur
-              drei Wochen! Wer sagt, <strong>Industrieabbruch in Bielefeld</strong> wär kompliziert, hat noch nie mit
-              uns gearbeitet. Nach 25 Jahren kennen wir jeden Trick: von der Asbestsanierung bis zur tonnenschweren
-              Maschinendemontage. Egal ob Fabrikhalle, Kraftwerk oder Lagerkomplex - wir kriegen alles klein, sauber
-              und termingerecht.
+              Vorgestern hat uns Frau Müller aus Brackwede angerufen - das alte Elternhaus musste weg,
+              komplett mit allem drum und dran. "Kriegt ihr das bis Ende des Monats hin?" Klar kriegen wir!
+              <strong> Komplettabriss in Bielefeld</strong> is unser täglich Brot. Nach 25 Jahren wissen wir
+              genau, wie man ein ganzes Haus verschwinden lässt - vom ersten Hammerschlag bis zur sauberen
+              Baugrube. Egal ob Einfamilienhaus oder Mehrfamilienblock - wir machen Platz für Neues!
             </p>
           </div>
         </div>
@@ -50,10 +50,10 @@ export default function IndustrieabbruchBielefeld() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { number: '250+', label: 'Industrieprojekte' },
-              { number: '500t', label: 'Größte Einzelmaschine' },
+              { number: '2.500+', label: 'Komplettabrisse' },
+              { number: '7-14', label: 'Tage Durchschnitt' },
               { number: '100%', label: 'Recyclingquote' },
-              { number: '24/7', label: 'Verfügbarkeit' }
+              { number: '0€', label: 'Versteckte Kosten' }
             ].map((stat, index) => (
               <div key={index} className="bg-gradient-to-br from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 text-center hover:border-sky-400/40 hover:shadow-lg hover:shadow-sky-400/20 transform hover:-translate-y-1 transition-all duration-300 animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
                 <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-2">{stat.number}</div>
@@ -68,37 +68,37 @@ export default function IndustrieabbruchBielefeld() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unsere Industrieabbruch-Services</h2>
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unsere Komplettabriss-Leistungen</h2>
             <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
-              Speziallösungen für komplexe Industrieprojekte
+              Alles aus einer Hand - von der Planung bis zur sauberen Baugrube
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'Fabrikabbruch',
-                description: 'Komplettabbruch von Produktionshallen und Fabrikgebäuden inklusive Fundamententfernung.'
+                title: 'Einfamilienhausabriss',
+                description: 'Kompletter Rückbau von Einfamilienhäusern inklusive Keller und Fundament.'
               },
               {
-                title: 'Maschinendemontage',
-                description: 'Fachgerechte Demontage und Entsorgung von Industrieanlagen und Produktionsmaschinen.'
+                title: 'Mehrfamilienhausabriss',
+                description: 'Professioneller Abriss von Mehrfamilienhäusern und Wohnblöcken.'
               },
               {
-                title: 'Kraftwerksrückbau',
-                description: 'Spezialisierter Rückbau von Kraftwerksanlagen mit höchsten Sicherheitsstandards.'
+                title: 'Schadstoffsanierung',
+                description: 'Fachgerechte Entfernung von Asbest, KMF und anderen Schadstoffen.'
               },
               {
-                title: 'Tanklagerabbruch',
-                description: 'Sichere Demontage von Tanklagern und chemischen Anlagen mit Schadstoffsanierung.'
+                title: 'Kellerabriss',
+                description: 'Komplette Entfernung von Kellern inklusive Bodenplatte.'
               },
               {
-                title: 'Hallenentkernung',
-                description: 'Selektive Entkernung von Industriehallen bei Erhalt der Gebäudehülle.'
+                title: 'Entsorgung & Recycling',
+                description: 'Umweltgerechte Entsorgung und maximale Wiederverwertung.'
               },
               {
-                title: 'Betonsägen & Bohren',
-                description: 'Präzise Betonschnitte für kontrollierte Teilabbrüche in laufenden Betrieben.'
+                title: 'Baugrubenvorbereitung',
+                description: 'Herstellung baureifer Grundstücke für Neubauvorhaben.'
               }
             ].map((service, index) => (
               <div key={index} className="group">
@@ -118,18 +118,18 @@ export default function IndustrieabbruchBielefeld() {
         <div className="absolute inset-0 bg-gradient-to-r from-sky-900/10 via-slate-900/30 to-sky-900/10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unser Ablauf</h2>
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">In 4 Schritten zum Erfolg</h2>
             <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
-              Strukturiert und sicher zum erfolgreichen Projektabschluss
+              Strukturiert und planvoll zum sauberen Grundstück
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { step: '01', title: 'Bestandsaufnahme', desc: 'Detaillierte Analyse vor Ort' },
-              { step: '02', title: 'Konzepterstellung', desc: 'Maßgeschneiderter Abbruchplan' },
-              { step: '03', title: 'Durchführung', desc: 'Professionelle Umsetzung' },
-              { step: '04', title: 'Dokumentation', desc: 'Lückenlose Nachweise' }
+              { step: '01', title: 'Besichtigung', desc: 'Kostenlose Vor-Ort-Begehung' },
+              { step: '02', title: 'Angebot', desc: 'Transparentes Festpreisangebot' },
+              { step: '03', title: 'Abriss', desc: 'Professionelle Durchführung' },
+              { step: '04', title: 'Übergabe', desc: 'Saubere Baugrube' }
             ].map((item, index) => (
               <div key={index} className="relative">
                 <div className="bg-gradient-to-br from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 h-full hover:border-sky-400/40 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300">
@@ -155,135 +155,139 @@ export default function IndustrieabbruchBielefeld() {
 
             <div className="prose prose-lg max-w-none text-white/90">
               <p className="text-lg leading-relaxed mb-8">
-                Gestern Morgen um 6 klingelte das Telefon - Notfall in Sennestadt. Die alte Druckerei musste
-                raus, und zwar schnell! Der neue Eigentümer wollte schon nächsten Monat mit dem Neubau anfangen.
-                "Kein Problem", haben wir gesagt. Mit unseren Großgeräten und 15 Mann waren wir in drei Stunden
-                vor Ort. Sowas is <strong>Industrieabbruch in Bielefeld</strong> - schnell, professionell und
-                ohne Überraschungen.
+                Gestern stand ich mit Herrn Schmidt vor seinem Elternhaus in Schildesche. 1958 gebaut,
+                jetzt muss es weg für nen Neubau. "Is schon komisch", sagte er, "hier bin ich
+                aufgewachsen". Ich versteh das - bei jedem <strong>Komplettabriss in Bielefeld</strong>
+                verschwindet auch ein Stück Geschichte. Aber wir machen das respektvoll und sauber,
+                und am Ende entsteht was Neues. Nach drei Tagen war nur noch ne saubere Grube da,
+                bereit für die Zukunft.
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Fabrikabbruch
+                Einfamilienhausabriss
               </h2>
               <p className="mb-6">
-                Fabrikabbruch is unser täglich Brot. Die ganzen alten Textilfabriken in Bielefeld - wir haben
-                schon mindestens 20 davon plattgemacht. Das Schwierige dabei? Die Dinger sind oft viel stabiler
-                gebaut als man denkt. Stahlbeton aus den 50ern, der hält ewig! Letzte Woche in der Ravensberger
-                Spinnerei, da haben wir mit dem 50-Tonnen-Bagger angefangen - der erste Schlag, und der Beton
-                hat nur gelacht. Da mussten die schweren Geschütze ran: Abbruchzange mit 120 Tonnen Beißkraft.
+                Einfamilienhäuser abreißen is unser Kerngeschäft. Jede Woche machen wir zwei bis drei
+                Stück platt. Das klingt brutal, is aber ne Wissenschaft für sich. Erstmal muss alles
+                raus was noch verwertbar is - alte Heizkörper, Kupferrohre, manchmal sogar noch gute
+                Dachziegel. Dann kommt die Schadstoffprüfung. In nem Haus von 1965 findest du garantiert
+                Asbest - im Dach, in den Fassadenplatten, manchmal sogar im Fliesenkleber!
               </p>
               <p className="mb-6">
-                Bei jedem Fabrikabbruch gibts Überraschungen. Alte Öltanks im Boden, von denen keiner mehr wusste.
-                Asbestplatten hinter der Wandverkleidung. Oder wie neulich in Heepen - da war noch ne komplette
-                Druckmaschine einbetoniert im Keller! 40 Tonnen schwer, keiner wusste mehr davon. Aber das macht
-                nix, wir haben für alles das richtige Werkzeug. Plasmaschneidbrenner, Seilsägen, hydraulische
-                Scheren - damit kriegen wir alles klein.
+                Letzte Woche in Jöllenbeck, typisches 70er-Jahre-Haus, eineinhalb Geschosse. Der Bagger
+                hat zwei Tage gebraucht. Erst das Dach runter, dann Stockwerk für Stockwerk. Der Keller
+                war der härteste Teil - 40cm dicke Betonwände, da musste der große Abbruchhammer ran.
+                Am Ende waren es 450 Tonnen Schutt! Aber alles säuberlich sortiert: Ziegel zu Ziegel,
+                Beton zu Beton, Holz zu Holz. So kriegen wir ne Recyclingquote von über 90 Prozent hin.
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Maschinendemontage
+                Mehrfamilienhausabriss
               </h2>
               <p className="mb-6">
-                Maschinendemontage is wie Operation am offenen Herzen - nur in groß und dreckig. Letztens bei
-                Gildemeister, die wollten ihre alte Transferstraße raus haben. 200 Meter lang, 500 Tonnen schwer,
-                und alles voller Öl und Späne. Erstmal mussten wir das Ding entölen - 8.000 Liter Hydrauliköl
-                und Kühlschmiermittel! Alles fachgerecht abgesaugt und entsorgt, sonst gibts richtig Ärger vom
-                Umweltamt.
+                Mehrfamilienhäuser sind ne ganz andere Liga. Da reden wir von 3-4 Wochen Arbeit, mehreren
+                tausend Tonnen Schutt und jeder Menge Logistik. Vor zwei Monaten hatten wir son Projekt
+                in der Oldentruper Straße - ein Sechsfamilienhaus aus den 50ern, vier Stockwerke plus Keller.
+                Erstmal mussten alle Mieter raus sein, dann die ganzen Versorgungsleitungen gekappt werden.
+                Gas, Wasser, Strom, Telefon - alles muss fachgerecht stillgelegt werden.
               </p>
               <p className="mb-6">
-                Die Zerlegung selbst is dann Millimeterarbeit. Manche Teile kann man noch verkaufen - die
-                Chinesen kaufen gerne gebrauchte deutsche Maschinen. Also vorsichtig zerlegen, dokumentieren,
-                verpacken. Andere Teile sind nur noch Schrott - ab in den Container und zur Schmelze. Bei der
-                Gildemeister-Anlage haben wir drei Wochen gebraucht, aber am Ende war die Halle leer und der
-                Kunde zufrieden. 80% der Maschine konnten wir sogar noch verwerten!
+                Bei sowas großen Projekten arbeiten wir mit zwei Baggern gleichzeitig. Einer reißt ab,
+                der andere sortiert und lädt auf. Die LKWs fahren im Akkord - 40 Fuhren am Tag, jede
+                25 Tonnen. Die Nachbarn haben wir vorher alle informiert, Staubschutznetze aufgehängt
+                und die Straße zweimal täglich gewässert. Nach drei Wochen war der ganze Block weg,
+                nur noch ne saubere Fläche. Der Investor war begeistert - zwei Wochen schneller als geplant!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Kraftwerksrückbau
+                Schadstoffsanierung
               </h2>
               <p className="mb-6">
-                Kraftwerksrückbau is die Königsklasse vom Industrieabbruch. Das alte Heizkraftwerk in Bielefeld-Mitte,
-                das haben wir vor zwei Jahren zurückgebaut. 80 Meter hoher Schornstein, dicke Kesselanlagen,
-                kilometerweise Rohrleitungen. Sowas macht man nicht mal eben. Erstmal monatelange Planung mit
-                Statikern, Umweltgutachtern und Sicherheitsexperten. Der Schornstein allein - 3.000 Tonnen Beton
-                und Ziegel. Den sprengen geht nicht mitten in der Stadt, also Stück für Stück von oben.
+                Schadstoffsanierung is bei fast jedem Komplettabriss dabei. Besonders Asbest macht immer
+                wieder Probleme. Letztens in Heepen, schönes altes Fachwerkhaus, aber die komplette
+                Fassade war mit Asbestplatten verkleidet. 300 Quadratmeter! Da kannst du nicht einfach
+                mit dem Bagger ranfahren. Alles muss in Schutzanzügen abgebaut, doppelt verpackt und
+                als Sondermüll entsorgt werden. Kostet extra, aber Sicherheit geht vor!
               </p>
               <p className="mb-6">
-                Das Verrückteste war die Turbinenhalle. Die alte Dampfturbine von Siemens, Baujahr 1962, die
-                wog allein 120 Tonnen. Die musste raus, aber die Halle hatte nur ein 10-Tonnen-Kran. Also haben
-                wir einen 500-Tonnen-Mobilkran kommen lassen, Dach aufgeschnitten und das Monster rausgehoben.
-                Der Verkehr musste gesperrt werden, die Anwohner waren alle am gucken. Sowas vergisst man nicht!
+                Auch alte Nachtspeicheröfen sind so ne Sache - da is oft Asbest drin und manchmal sogar
+                noch PCB im Kondensator. Oder die alten Teerkleber unter dem Parkett - auch krebserregend!
+                Wir arbeiten da nur mit zertifizierten Fachfirmen zusammen. Die kommen mit Spezialausrüstung,
+                machen alles dicht und saugen mit Unterdruckanlagen ab. Erst wenn die Messung sagt "sauber",
+                dürfen wir mit dem eigentlichen Abriss anfangen. Sicherheit für unsere Jungs und die Nachbarn
+                hat oberste Priorität!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Tanklagerabbruch
+                Kellerabriss
               </h2>
               <p className="mb-6">
-                Tanklager sind immer heikel - da war mal was drin, und keiner weiß mehr genau was. Bei der alten
-                Tankstelle an der Herforder Straße, da standen noch fünf unterirdische Tanks. Benzin, Diesel,
-                Heizöl - alles durcheinander. Erstmal musste ein Gutachter ran, Bodenproben nehmen. Klar,
-                kontaminiert bis zum geht nicht mehr. Also erst sanieren, dann abbrechen. Die Tanks mussten
-                ausgepumpt, gereinigt und entgast werden. Eine falsche Bewegung und es knallt!
+                Der Keller is immer der härteste Part beim Komplettabriss. Die alten Keller hier in
+                Bielefeld sind oft aus Bruchstein gemauert, manchmal sogar noch mit Lehm verfugt. Oder
+                die Nachkriegskeller - massiver Beton, teilweise 50cm dick, weil die Leute damals noch
+                an Bunker gedacht haben. Da brauchst du schweres Gerät!
               </p>
               <p className="mb-6">
-                Wir arbeiten da nur mit zertifizierten Fachfirmen zusammen. Die kommen mit Spezialsaugwagen,
-                Ex-geschützten Pumpen und Gasmeßgeräten. Erst wenn die ihr OK geben, fangen wir mit dem Abbruch
-                an. Die Tanks werden dann aufgeschnitten und als Sondermüll entsorgt. Der kontaminierte Boden
-                muss auch raus - manchmal bis 5 Meter tief. Am Ende kommt sauberer Boden rein und alles wird
-                dokumentiert. Das Umweltamt prüft das genau!
+                Neulich in Sennestadt mussten wir nen Keller rausreißen, der war tiefer als das Nachbarhaus
+                gegründet. Da kannst du nicht einfach losbrechen, sonst sackt nebenan alles ab! Erstmal
+                Spundwände setzen, dann schichtweise abtragen. Die Bodenplatte war 60cm dick - da hat
+                selbst unser großer Abbruchhammer kapituliert. Am Ende mussten wir sprengen - natürlich
+                mit allen Genehmigungen und Sicherheitsmaßnahmen. Hat geklappt, der Nachbar hat nix
+                gemerkt außer nem kleinen Rums!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Hallenentkernung
+                Entsorgung & Recycling
               </h2>
               <p className="mb-6">
-                Hallenentkernung is was für Spezialisten. Die Hülle bleibt stehen, aber innen muss alles raus.
-                Neulich bei ThyssenKrupp in Brackwede - die wollten ihre alte Montagehalle modernisieren.
-                Stahlkonstruktion von 1965, noch top in Schuss, aber innen total veraltet. Alte Kranbahnen,
-                Zwischendecken, Büroeinbauten - alles musste raus. Aber vorsichtig! Ein falscher Schnitt und
-                die Statik is im Eimer.
+                Entsorgung und Recycling sind heute das A und O beim Komplettabriss. Früher hat man
+                alles auf die Kippe gefahren, fertig. Heute wird alles getrennt und wiederverwertet.
+                Bei nem normalen Einfamilienhaus kommen da schnell 400-500 Tonnen Material zusammen.
+                Davon sind 200 Tonnen Ziegel - die werden geschreddert und als Recycling-Schotter im
+                Straßenbau verwendet. 150 Tonnen Beton - wird auch zu Schotter. 50 Tonnen Holz - geht
+                in die Spanplattenproduktion oder ins Biomassekraftwerk.
               </p>
               <p className="mb-6">
-                Wir haben erstmal alles vermessen und mit dem Statiker einen Plan gemacht. Was is tragend, was
-                kann weg? Dann systematisch von oben nach unten. Die alten Asbestplatten in der Decke waren
-                die größte Überraschung - 2.000 Quadratmeter! Da kam die Sanierungsfirma, alles abgeschottet,
-                Unterdruck, Schutzanzüge. Drei Wochen nur für den Asbest. Danach konnten wir mit schwerem Gerät
-                ran. Am Ende war die Halle leer wie ne Kathedrale - bereit für den Neuaufbau.
+                Metall is Gold wert - Kupfer, Messing, Edelstahl, alles wird raussortiert und verkauft.
+                Bei nem alten Haus kommen da schnell 5.000 Euro zusammen, die wir direkt vom Preis
+                abziehen. Selbst der alte Dachschiefer wird wiederverwendet - gibt Firmen die machen
+                daraus Gartensplitt. Nur 5-10% landet wirklich auf der Deponie, meist Mischabfälle
+                und kontaminiertes Material. Das is gut für die Umwelt und spart unseren Kunden Geld!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Betonsägen & Bohren
+                Baugrubenvorbereitung
               </h2>
               <p className="mb-6">
-                Betonsägen und Bohren klingt einfach, is aber hohe Kunst. Wenn in ner laufenden Fabrik ne neue
-                Maschine rein soll, können wir nicht mit dem Abbruchbagger anrücken. Da muss millimetergenau
-                gearbeitet werden. Letzte Woche bei Schüco - neue Produktionslinie, aber die Tür war zu klein.
-                Also: Wanddurchbruch, 6 Meter breit, 4 Meter hoch, 80 Zentimeter dicker Stahlbeton. Mit unserer
-                Seilsäge haben wir das in einem Tag geschafft, sauber und ohne Erschütterungen.
+                Nach dem Abriss kommt die Baugrubenvorbereitung - oft unterschätzt, aber super wichtig!
+                Der Baugrund muss perfekt vorbereitet sein für den Neubau. Letzte Woche in Brackwede,
+                da sollte nach unserem Abriss direkt ein Mehrfamilienhaus hin. Problem: Der alte Öltank
+                war undicht, der ganze Boden kontaminiert. 500 Kubikmeter Erde mussten raus und als
+                Sondermüll entsorgt werden. Dann frische Erde rein und verdichten.
               </p>
               <p className="mb-6">
-                Das Geheimnis is die richtige Technik. Diamantseilsägen für große Schnitte, Wandsägen für präzise
-                Arbeiten, Kernbohrungen für Durchführungen. Alles wassergekühlt, damit kein Staub entsteht. Bei
-                Schüco lief die Produktion nebenan weiter - die haben nix gemerkt! Der ausgesägte Block wurde
-                dann mit dem Kran rausgehoben - 45 Tonnen am Stück. Sowas macht nicht jeder, aber wir haben
-                das Equipment und die Erfahrung dafür.
+                Manchmal findest du auch Überraschungen - alte Bunkerreste, vergessene Zisternen oder
+                wie neulich in Gadderbaum nen kompletten Luftschutzkeller, von dem keiner mehr wusste!
+                Alles muss raus, sonst gibts später Probleme beim Neubau. Am Ende prüfen wir mit dem
+                Bodengutachter die Tragfähigkeit, machen Verdichtungsmessungen und übergeben ne saubere,
+                baureife Grube. Der Neubau kann direkt starten - keine bösen Überraschungen, keine Verzögerungen!
               </p>
 
               <div className="bg-gradient-to-r from-sky-900/30 to-slate-800/40 backdrop-blur-xl border border-sky-400/30 rounded-2xl p-8 mt-12 hover:border-sky-400/50 hover:shadow-xl hover:shadow-sky-400/20 transition-all duration-500">
                 <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-4">
-                  Warum RückbauPRO für Ihren Industrieabbruch?
+                  Warum RückbauPRO für Ihren Komplettabriss?
                 </h3>
                 <p className="text-white/90 mb-4">
-                  25 Jahre Erfahrung mit Großprojekten in ganz OWL. Wir haben die Maschinen,
-                  das Know-how und die richtigen Leute für jeden Industrieabbruch. Von der
-                  kleinen Werkshalle bis zum kompletten Fabrikgelände.
+                  25 Jahre Erfahrung, über 2.500 erfolgreiche Komplettabrisse in ganz OWL.
+                  Wir übernehmen alles - von der Planung über die Genehmigungen bis zur
+                  baureifen Übergabe. Ein Ansprechpartner, ein Preis, eine Garantie!
                 </p>
                 <ul className="text-sky-100/80 space-y-2">
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Modernster Maschinenpark bis 120 Tonnen</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Zertifizierte Schadstoffsanierung</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ 24/7 Notfallservice</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Komplette Entsorgungsdokumentation</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Festpreisgarantie bei Großprojekten</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Festpreis-Garantie ohne versteckte Kosten</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Komplette Schadstoffsanierung inklusive</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ 95% Recyclingquote</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Termingarantie mit Vertragsstrafe</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Baureife Übergabe garantiert</li>
                 </ul>
               </div>
             </div>
@@ -295,23 +299,23 @@ export default function IndustrieabbruchBielefeld() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Industriegebiete Bielefeld</h2>
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Komplettabriss in allen Stadtteilen</h2>
             <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
-              Wir kennen jedes Industriegebiet und jeden Gewerbehof
+              Überall in Bielefeld schnell vor Ort
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              'Industriegebiet Ost',
-              'Gewerbepark Oldentrup',
-              'Brackwede Süd',
-              'Sennestadt Industrie',
-              'Jöllenbeck Nord',
-              'Heepen Gewerbegebiet',
-              'Altenhagen Industriepark',
-              'Quelle Gewerbegebiet',
-              'Sieker Industriegebiet'
+              'Bielefeld Mitte',
+              'Brackwede',
+              'Schildesche',
+              'Jöllenbeck',
+              'Heepen',
+              'Stieghorst',
+              'Sennestadt',
+              'Gadderbaum',
+              'Dornberg'
             ].map((area, index) => (
               <div key={index} className="bg-gradient-to-r from-slate-800/30 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-xl p-4 hover:border-sky-400/40 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300">
                 <span className="text-sky-100/90 hover:text-sky-200 transition-colors duration-300">{area}</span>
@@ -326,27 +330,27 @@ export default function IndustrieabbruchBielefeld() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">
-              Häufige Fragen zum Industrieabbruch
+              Häufige Fragen zum Komplettabriss
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               {
-                q: 'Was kostet ein Industrieabbruch?',
-                a: 'Das hängt von der Größe ab. Ne kleine Halle gibts ab 50.000€, große Fabriken können Millionen kosten. Wir machen immer ne kostenlose Besichtigung und ein Festpreisangebot.'
+                q: 'Was kostet ein Komplettabriss?',
+                a: 'Ein normales Einfamilienhaus kostet zwischen 15.000 und 30.000 Euro, je nach Größe und Schadstoffen. Festpreis gibts nach kostenloser Besichtigung.'
               },
               {
-                q: 'Wie lange dauert so ein Projekt?',
-                a: 'Von 2 Wochen bis 6 Monate, je nach Größe. Ne normale Fabrikhalle is in 4-6 Wochen weg, inklusive Entsorgung und Dokumentation.'
+                q: 'Wie lange dauert ein Komplettabriss?',
+                a: 'Ein Einfamilienhaus is in 3-5 Tagen weg, Mehrfamilienhäuser brauchen 2-4 Wochen. Kommt auf die Größe und eventuelle Schadstoffe an.'
               },
               {
-                q: 'Was ist mit Schadstoffen?',
-                a: 'Wir haben alle Zertifikate für Asbestsanierung und Schadstoffentsorgung. Erstmal Gutachten, dann fachgerechte Sanierung, alles dokumentiert.'
+                q: 'Was ist mit Asbest und anderen Schadstoffen?',
+                a: 'Wir machen erstmal ne Schadstoffprüfung. Falls was gefunden wird, sanieren unsere zertifizierten Partner das fachgerecht. Alles aus einer Hand!'
               },
               {
-                q: 'Können Maschinen verkauft werden?',
-                a: 'Klar! Wir haben Kontakte zu Maschinenhändlern weltweit. Oft lässt sich noch gutes Geld mit alten Anlagen machen. Das rechnen wir direkt gegen.'
+                q: 'Kümmert ihr euch um die Genehmigungen?',
+                a: 'Ja, komplett! Abbruchgenehmigung, Straßensperrung wenn nötig, Entsorgungsnachweise - wir regeln alles mit den Behörden.'
               }
             ].map((faq, index) => (
               <div key={index} className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 hover:border-sky-400/40 hover:shadow-lg hover:shadow-sky-400/20 transform hover:-translate-y-1 transition-all duration-300">
@@ -363,10 +367,10 @@ export default function IndustrieabbruchBielefeld() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-sky-900/30 to-slate-800/30 backdrop-blur-xl border border-sky-400/30 rounded-3xl p-12 text-center hover:border-sky-400/50 hover:shadow-2xl hover:shadow-sky-400/20 transition-all duration-500">
             <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-4">
-              Industrieabbruch in Bielefeld? Wir packen's an!
+              Komplettabriss in Bielefeld? Wir machen das!
             </h2>
             <p className="text-sky-100/80 mb-8">
-              Große Maschinen ✓ Erfahrene Profis ✓ Festpreise ✓ Termingarantie
+              Festpreis ✓ Termingarantie ✓ Alles aus einer Hand ✓ 25 Jahre Erfahrung
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

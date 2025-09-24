@@ -18,7 +18,7 @@ export default function SchemaMarkup({
     "name": "Wertvoll Dienstleistungen GmbH - Professionelle Asbestsanierung",
     "image": "https://asbestsanierung.de/images/logo.png",
     "url": "https://abriss-schmiede.de",
-    "telephone": "+4908000060970",
+    "telephone": "+49+49 174 8083023",
     "priceRange": priceRange,
     "address": {
       "@type": "PostalAddress",

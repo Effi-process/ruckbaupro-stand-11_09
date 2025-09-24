@@ -190,7 +190,7 @@ export default function Datenschutz() {
                       </p>
                       <p className="text-white/80">
                         <span className="font-semibold text-white">Telefon:</span> 
-                        <span className="ml-2">0800 0060970</span>
+                        <span className="ml-2">+49 174 8083023</span>
                       </p>
                     </div>
                   </div>

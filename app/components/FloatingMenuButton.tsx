@@ -250,11 +250,11 @@ export default function FloatingMenuButton() {
                     24/7 NOTFALL-HOTLINE
                   </div>
                   <Link
-                    href="tel:08000060970"
+                    href="tel:+49 174 8083023"
                     onClick={() => setIsOpen(false)}
                     className="text-cerulean hover:text-white font-bold text-xl transition-colors"
                   >
-                    0800 0060970
+                    +49 174 8083023
                   </Link>
                 </div>
                 <Link

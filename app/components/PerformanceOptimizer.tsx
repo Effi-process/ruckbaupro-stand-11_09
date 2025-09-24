@@ -224,7 +224,7 @@ export default function PerformanceOptimizer() {
       
       // Track critical conversion elements
       trackElement('.contact-btn', 'contact_button_visible');
-      trackElement('[href="tel:08000060970"]', 'phone_link_visible');
+      trackElement('[href="tel:+49 174 8083023"]', 'phone_link_visible');
       trackElement('#calculator-section', 'calculator_visible');
     };
     

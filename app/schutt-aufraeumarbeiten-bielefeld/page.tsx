@@ -5,7 +5,7 @@ import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
 
-export default function IndustrieabbruchBielefeld() {
+export default function SchuttAufraeumarbeitenBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -28,18 +28,19 @@ export default function IndustrieabbruchBielefeld() {
           <div className="text-center mb-16">
             <div className={`inline-flex items-center px-6 py-3 bg-gradient-to-r from-sky-900/30 to-slate-800/30 backdrop-blur-xl rounded-full mb-6 border border-sky-400/20 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
               <span className="text-sm font-bold text-sky-200 uppercase tracking-wider animate-pulse">
-                Professioneller Industrieabbruch
+                Professionelle Schutt-Aufräumarbeiten
               </span>
             </div>
             <h1 className={`text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6 transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-              Industrieabbruch Bielefeld - Große Projekte sicher gemeistert
+              Schutt-Aufräumarbeiten Bielefeld - Wenn der Dreck weg muss
             </h1>
             <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-              Letzte Woche haben wir die alte Textilfabrik in Brackwede plattgemacht - 12.000 Quadratmeter in nur
-              drei Wochen! Wer sagt, <strong>Industrieabbruch in Bielefeld</strong> wär kompliziert, hat noch nie mit
-              uns gearbeitet. Nach 25 Jahren kennen wir jeden Trick: von der Asbestsanierung bis zur tonnenschweren
-              Maschinendemontage. Egal ob Fabrikhalle, Kraftwerk oder Lagerkomplex - wir kriegen alles klein, sauber
-              und termingerecht.
+              Vorgestern wars mal wieder soweit - Baustelle in Sennestadt, überall Schutt und keiner
+              weiß wohin damit. Der Polier ruft panisch an: "Morgen kommt die Bauabnahme, aber hier
+              siehts aus wie Sau!" Kein Problem für uns! Mit drei LKW und zehn Mann waren wir in vier
+              Stunden da. <strong>Schutt-Aufräumarbeiten in Bielefeld</strong> machen wir jeden Tag -
+              schnell, gründlich und immer zum Festpreis. Wenn bei Ihnen der Schutt bis zum Himmel
+              liegt, räumen wir auf!
             </p>
           </div>
         </div>
@@ -50,10 +51,10 @@ export default function IndustrieabbruchBielefeld() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { number: '250+', label: 'Industrieprojekte' },
-              { number: '500t', label: 'Größte Einzelmaschine' },
-              { number: '100%', label: 'Recyclingquote' },
-              { number: '24/7', label: 'Verfügbarkeit' }
+              { number: '100.000m³', label: 'Schutt pro Jahr' },
+              { number: '24h', label: 'Notdienst' },
+              { number: '50+', label: 'Container' },
+              { number: '99%', label: 'Recyclingquote' }
             ].map((stat, index) => (
               <div key={index} className="bg-gradient-to-br from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 text-center hover:border-sky-400/40 hover:shadow-lg hover:shadow-sky-400/20 transform hover:-translate-y-1 transition-all duration-300 animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
                 <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-2">{stat.number}</div>
@@ -68,37 +69,37 @@ export default function IndustrieabbruchBielefeld() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unsere Industrieabbruch-Services</h2>
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unsere Schutt-Services</h2>
             <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
-              Speziallösungen für komplexe Industrieprojekte
+              Von der Baustelle bis zur Deponie - alles aus einer Hand
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'Fabrikabbruch',
-                description: 'Komplettabbruch von Produktionshallen und Fabrikgebäuden inklusive Fundamententfernung.'
+                title: 'Bauschuttentsorgung',
+                description: 'Professionelle Entsorgung von Beton, Ziegel und mineralischem Bauschutt.'
               },
               {
-                title: 'Maschinendemontage',
-                description: 'Fachgerechte Demontage und Entsorgung von Industrieanlagen und Produktionsmaschinen.'
+                title: 'Containerservice',
+                description: 'Container in allen Größen mit schneller Lieferung und Abholung.'
               },
               {
-                title: 'Kraftwerksrückbau',
-                description: 'Spezialisierter Rückbau von Kraftwerksanlagen mit höchsten Sicherheitsstandards.'
+                title: 'Baustellenräumung',
+                description: 'Komplette Räumung und Reinigung von Baustellen.'
               },
               {
-                title: 'Tanklagerabbruch',
-                description: 'Sichere Demontage von Tanklagern und chemischen Anlagen mit Schadstoffsanierung.'
+                title: 'Erdaushub',
+                description: 'Abfuhr und Entsorgung von Erdaushub und Bodenmaterial.'
               },
               {
-                title: 'Hallenentkernung',
-                description: 'Selektive Entkernung von Industriehallen bei Erhalt der Gebäudehülle.'
+                title: 'Mischabfallentsorgung',
+                description: 'Trennung und fachgerechte Entsorgung gemischter Bauabfälle.'
               },
               {
-                title: 'Betonsägen & Bohren',
-                description: 'Präzise Betonschnitte für kontrollierte Teilabbrüche in laufenden Betrieben.'
+                title: 'Notfallräumung',
+                description: '24-Stunden-Service für dringende Aufräumarbeiten.'
               }
             ].map((service, index) => (
               <div key={index} className="group">
@@ -118,18 +119,18 @@ export default function IndustrieabbruchBielefeld() {
         <div className="absolute inset-0 bg-gradient-to-r from-sky-900/10 via-slate-900/30 to-sky-900/10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unser Ablauf</h2>
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Schnell zum sauberen Grundstück</h2>
             <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
-              Strukturiert und sicher zum erfolgreichen Projektabschluss
+              Von der Anfrage bis zur besenreinen Übergabe
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { step: '01', title: 'Bestandsaufnahme', desc: 'Detaillierte Analyse vor Ort' },
-              { step: '02', title: 'Konzepterstellung', desc: 'Maßgeschneiderter Abbruchplan' },
-              { step: '03', title: 'Durchführung', desc: 'Professionelle Umsetzung' },
-              { step: '04', title: 'Dokumentation', desc: 'Lückenlose Nachweise' }
+              { step: '01', title: 'Anruf', desc: 'Schnelle Aufnahme' },
+              { step: '02', title: 'Besichtigung', desc: 'Mengenermittlung vor Ort' },
+              { step: '03', title: 'Räumung', desc: 'Professionelle Durchführung' },
+              { step: '04', title: 'Reinigung', desc: 'Besenreine Übergabe' }
             ].map((item, index) => (
               <div key={index} className="relative">
                 <div className="bg-gradient-to-br from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 h-full hover:border-sky-400/40 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300">
@@ -155,135 +156,131 @@ export default function IndustrieabbruchBielefeld() {
 
             <div className="prose prose-lg max-w-none text-white/90">
               <p className="text-lg leading-relaxed mb-8">
-                Gestern Morgen um 6 klingelte das Telefon - Notfall in Sennestadt. Die alte Druckerei musste
-                raus, und zwar schnell! Der neue Eigentümer wollte schon nächsten Monat mit dem Neubau anfangen.
-                "Kein Problem", haben wir gesagt. Mit unseren Großgeräten und 15 Mann waren wir in drei Stunden
-                vor Ort. Sowas is <strong>Industrieabbruch in Bielefeld</strong> - schnell, professionell und
-                ohne Überraschungen.
+                Montag früh, 6 Uhr - das Telefon klingelt. Der Bauleiter vom Neubaugebiet in Heepen
+                is dran: "Wir haben ein Problem! Übers Wochenende haben die Subunternehmer allen
+                Schutt einfach liegen lassen. In zwei Stunden kommt der Bauherr zur Besichtigung!"
+                Sowas kennen wir. Mit fünf Mann und drei Containern waren wir in 45 Minuten da.
+                <strong> Schutt-Aufräumarbeiten in Bielefeld</strong> heißt für uns: Wir sind da,
+                wenns brennt. Nach drei Stunden war die Baustelle picobello - der Bauherr hat nix gemerkt!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Fabrikabbruch
+                Bauschuttentsorgung
               </h2>
               <p className="mb-6">
-                Fabrikabbruch is unser täglich Brot. Die ganzen alten Textilfabriken in Bielefeld - wir haben
-                schon mindestens 20 davon plattgemacht. Das Schwierige dabei? Die Dinger sind oft viel stabiler
-                gebaut als man denkt. Stahlbeton aus den 50ern, der hält ewig! Letzte Woche in der Ravensberger
-                Spinnerei, da haben wir mit dem 50-Tonnen-Bagger angefangen - der erste Schlag, und der Beton
-                hat nur gelacht. Da mussten die schweren Geschütze ran: Abbruchzange mit 120 Tonnen Beißkraft.
+                Bauschuttentsorgung is unser Hauptgeschäft. Jeden Tag fahren unsere LKW durch Bielefeld
+                und holen tonnenweise Schutt ab. Beton, Ziegel, Fliesen, Estrich - alles was beim Bauen
+                und Abreißen anfällt. Das Wichtige dabei: Trennen! Reiner Bauschutt kostet nur nen
+                Bruchteil von Mischabfall. Deswegen sortieren wir direkt auf der Baustelle.
               </p>
               <p className="mb-6">
-                Bei jedem Fabrikabbruch gibts Überraschungen. Alte Öltanks im Boden, von denen keiner mehr wusste.
-                Asbestplatten hinter der Wandverkleidung. Oder wie neulich in Heepen - da war noch ne komplette
-                Druckmaschine einbetoniert im Keller! 40 Tonnen schwer, keiner wusste mehr davon. Aber das macht
-                nix, wir haben für alles das richtige Werkzeug. Plasmaschneidbrenner, Seilsägen, hydraulische
-                Scheren - damit kriegen wir alles klein.
+                Letzte Woche bei der Sanierung vom alten Finanzamt - da waren 200 Tonnen Bauschutt
+                angefallen. Die Baufirma wollte erst alles als Mischabfall entsorgen - hätte 15.000 Euro
+                gekostet! Wir haben sortiert: 150 Tonnen reiner Bauschutt für 3.000 Euro, 30 Tonnen
+                Holz fürs Biomassekraftwerk, 20 Tonnen Metall haben sogar noch Geld gebracht. Am Ende
+                nur 5.000 Euro statt 15.000 - der Bauleiter war happy!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Maschinendemontage
+                Containerservice
               </h2>
               <p className="mb-6">
-                Maschinendemontage is wie Operation am offenen Herzen - nur in groß und dreckig. Letztens bei
-                Gildemeister, die wollten ihre alte Transferstraße raus haben. 200 Meter lang, 500 Tonnen schwer,
-                und alles voller Öl und Späne. Erstmal mussten wir das Ding entölen - 8.000 Liter Hydrauliköl
-                und Kühlschmiermittel! Alles fachgerecht abgesaugt und entsorgt, sonst gibts richtig Ärger vom
-                Umweltamt.
+                Container stellen wir überall in Bielefeld - meist noch am selben Tag! Von 5 Kubik für
+                die kleine Badsanierung bis 40 Kubik für große Abbruchprojekte. Die meisten nehmen 10er
+                oder 15er Container, die passen gut auf normale Stellplätze. Wichtig: Immer ne
+                Stellgenehmigung beantragen wenn der Container auf öffentlichem Grund steht!
               </p>
               <p className="mb-6">
-                Die Zerlegung selbst is dann Millimeterarbeit. Manche Teile kann man noch verkaufen - die
-                Chinesen kaufen gerne gebrauchte deutsche Maschinen. Also vorsichtig zerlegen, dokumentieren,
-                verpacken. Andere Teile sind nur noch Schrott - ab in den Container und zur Schmelze. Bei der
-                Gildemeister-Anlage haben wir drei Wochen gebraucht, aber am Ende war die Halle leer und der
-                Kunde zufrieden. 80% der Maschine konnten wir sogar noch verwerten!
+                Bei der Kernsanierung in der Altstadt letztens - da musste der Container auf die Straße.
+                Stellgenehmigung vom Ordnungsamt, Halteverbotszone einrichten, Warnbaken aufstellen.
+                Wir machen das alles für unsere Kunden! Kostet zwar 150 Euro extra, aber dafür gibts
+                keinen Ärger. Der Container stand zwei Wochen, wurde dreimal getauscht. Alles lief
+                reibungslos - so muss das sein!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Kraftwerksrückbau
+                Baustellenräumung
               </h2>
               <p className="mb-6">
-                Kraftwerksrückbau is die Königsklasse vom Industrieabbruch. Das alte Heizkraftwerk in Bielefeld-Mitte,
-                das haben wir vor zwei Jahren zurückgebaut. 80 Meter hoher Schornstein, dicke Kesselanlagen,
-                kilometerweise Rohrleitungen. Sowas macht man nicht mal eben. Erstmal monatelange Planung mit
-                Statikern, Umweltgutachtern und Sicherheitsexperten. Der Schornstein allein - 3.000 Tonnen Beton
-                und Ziegel. Den sprengen geht nicht mitten in der Stadt, also Stück für Stück von oben.
+                Baustellenräumung machen wir komplett - vom groben Schutt bis zur Feinreinigung. Viele
+                Baufirmen unterschätzen, wieviel Dreck bei nem Bauprojekt anfällt. Verpackungsmaterial,
+                Paletten, Folien, Styropor, Kabelreste - das sammelt sich! Und am Ende muss alles weg,
+                sonst gibts Ärger bei der Abnahme.
               </p>
               <p className="mb-6">
-                Das Verrückteste war die Turbinenhalle. Die alte Dampfturbine von Siemens, Baujahr 1962, die
-                wog allein 120 Tonnen. Die musste raus, aber die Halle hatte nur ein 10-Tonnen-Kran. Also haben
-                wir einen 500-Tonnen-Mobilkran kommen lassen, Dach aufgeschnitten und das Monster rausgehoben.
-                Der Verkehr musste gesperrt werden, die Anwohner waren alle am gucken. Sowas vergisst man nicht!
+                Beim Neubau der Sparkassenfiliale in Brackwede wars extrem. Die Handwerker hatten
+                wochenlang gearbeitet, jeder hat seinen Müll liegen lassen. Zwei Tage vor Eröffnung
+                sah's aus wie nach nem Bombenangriff! Wir sind mit 15 Mann angerückt: sortieren,
+                aufladen, wegfahren, saubermachen. 18 Container Müll in zwei Tagen! Die Filiale
+                konnte pünktlich eröffnen - der Filialleiter hat uns Blumen geschickt.
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Tanklagerabbruch
+                Erdaushub
               </h2>
               <p className="mb-6">
-                Tanklager sind immer heikel - da war mal was drin, und keiner weiß mehr genau was. Bei der alten
-                Tankstelle an der Herforder Straße, da standen noch fünf unterirdische Tanks. Benzin, Diesel,
-                Heizöl - alles durcheinander. Erstmal musste ein Gutachter ran, Bodenproben nehmen. Klar,
-                kontaminiert bis zum geht nicht mehr. Also erst sanieren, dann abbrechen. Die Tanks mussten
-                ausgepumpt, gereinigt und entgast werden. Eine falsche Bewegung und es knallt!
+                Erdaushub is so ne Sache - sieht nach nix aus, aber die Mengen! Bei nem normalen
+                Einfamilienhaus-Keller kommen schnell 500 Kubikmeter zusammen. Das sind 20 LKW-Ladungen!
+                Und wohin damit? Nicht jede Deponie nimmt Erdaushub, und die Preise schwanken stark.
+                Wir haben Verträge mit allen Deponien in der Region und finden immer die günstigste Lösung.
               </p>
               <p className="mb-6">
-                Wir arbeiten da nur mit zertifizierten Fachfirmen zusammen. Die kommen mit Spezialsaugwagen,
-                Ex-geschützten Pumpen und Gasmeßgeräten. Erst wenn die ihr OK geben, fangen wir mit dem Abbruch
-                an. Die Tanks werden dann aufgeschnitten und als Sondermüll entsorgt. Der kontaminierte Boden
-                muss auch raus - manchmal bis 5 Meter tief. Am Ende kommt sauberer Boden rein und alles wird
-                dokumentiert. Das Umweltamt prüft das genau!
+                Bei der Tiefgarage am Kesselbrink letzten Sommer - 8.000 Kubikmeter Erdaushub! Der
+                Bauträger wollte das erst auf die Deponie fahren lassen - 200.000 Euro hätte das
+                gekostet. Wir haben nen Abnehmer gefunden: Ein Landwirt in Gütersloh brauchte Erde
+                für die Geländemodellierung. Der hat sogar noch was bezahlt! Statt 200.000 Euro
+                Kosten gabs 30.000 Euro Erlös. Manchmal muss man nur die richtigen Leute kennen.
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Hallenentkernung
+                Mischabfallentsorgung
               </h2>
               <p className="mb-6">
-                Hallenentkernung is was für Spezialisten. Die Hülle bleibt stehen, aber innen muss alles raus.
-                Neulich bei ThyssenKrupp in Brackwede - die wollten ihre alte Montagehalle modernisieren.
-                Stahlkonstruktion von 1965, noch top in Schuss, aber innen total veraltet. Alte Kranbahnen,
-                Zwischendecken, Büroeinbauten - alles musste raus. Aber vorsichtig! Ein falscher Schnitt und
-                die Statik is im Eimer.
+                Mischabfall is der teuerste Posten bei der Entsorgung. Da is alles drin durcheinander -
+                Holz, Metall, Kunststoff, Gips, Dämmung. Das muss auf der Deponie von Hand sortiert
+                werden, deswegen die hohen Preise. Aber manchmal lässt sichs nicht vermeiden, besonders
+                bei Sanierungen wo alles kreuz und quer liegt.
               </p>
               <p className="mb-6">
-                Wir haben erstmal alles vermessen und mit dem Statiker einen Plan gemacht. Was is tragend, was
-                kann weg? Dann systematisch von oben nach unten. Die alten Asbestplatten in der Decke waren
-                die größte Überraschung - 2.000 Quadratmeter! Da kam die Sanierungsfirma, alles abgeschottet,
-                Unterdruck, Schutzanzüge. Drei Wochen nur für den Asbest. Danach konnten wir mit schwerem Gerät
-                ran. Am Ende war die Halle leer wie ne Kathedrale - bereit für den Neuaufbau.
+                Die Komplettsanierung vom alten Krankenhaus in Bethel - da war soviel verschiedenes
+                Material, das hätte Wochen gedauert alles zu sortieren. Abgehängte Decken mit Metallträgern
+                und Mineralwolle, PVC-Böden auf Estrich geklebt, Rigipswände mit Elektrokabeln drin.
+                Da haben wir gesagt: Mischabfall, aber dafür schnell! 50 Container in einer Woche.
+                Hat zwar 40.000 Euro gekostet, aber die Zeit wars wert. Der Neubau konnte pünktlich starten.
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Betonsägen & Bohren
+                Notfallräumung
               </h2>
               <p className="mb-6">
-                Betonsägen und Bohren klingt einfach, is aber hohe Kunst. Wenn in ner laufenden Fabrik ne neue
-                Maschine rein soll, können wir nicht mit dem Abbruchbagger anrücken. Da muss millimetergenau
-                gearbeitet werden. Letzte Woche bei Schüco - neue Produktionslinie, aber die Tür war zu klein.
-                Also: Wanddurchbruch, 6 Meter breit, 4 Meter hoch, 80 Zentimeter dicker Stahlbeton. Mit unserer
-                Seilsäge haben wir das in einem Tag geschafft, sauber und ohne Erschütterungen.
+                Notfallräumungen sind unser Spezialgebiet - 24/7 erreichbar! Wasserrohrbruch und der
+                ganze Schutt muss sofort raus? Sturmschaden und das Dach liegt auf der Straße?
+                Baustellenunfall und alles muss schnell aufgeräumt werden? Wir sind da! Mit unserer
+                Notfallnummer erreichen Sie immer jemanden, auch nachts und am Wochenende.
               </p>
               <p className="mb-6">
-                Das Geheimnis is die richtige Technik. Diamantseilsägen für große Schnitte, Wandsägen für präzise
-                Arbeiten, Kernbohrungen für Durchführungen. Alles wassergekühlt, damit kein Staub entsteht. Bei
-                Schüco lief die Produktion nebenan weiter - die haben nix gemerkt! Der ausgesägte Block wurde
-                dann mit dem Kran rausgehoben - 45 Tonnen am Stück. Sowas macht nicht jeder, aber wir haben
-                das Equipment und die Erfahrung dafür.
+                Letzten Winter, Silvesterabend, 22 Uhr - Anruf von der Feuerwehr. Ein Carport in
+                Schildesche war unter der Schneelast zusammengebrochen, blockierte die Hauptstraße.
+                Wir sind sofort los, mit Kran und Container. Um Mitternacht war die Straße wieder
+                frei! Die Feuerwehr war beeindruckt, die Anwohner konnten Silvester feiern. Sowas
+                vergisst keiner - deswegen rufen die immer wieder uns an wenn's brennt.
               </p>
 
               <div className="bg-gradient-to-r from-sky-900/30 to-slate-800/40 backdrop-blur-xl border border-sky-400/30 rounded-2xl p-8 mt-12 hover:border-sky-400/50 hover:shadow-xl hover:shadow-sky-400/20 transition-all duration-500">
                 <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-4">
-                  Warum RückbauPRO für Ihren Industrieabbruch?
+                  Warum RückbauPRO für Ihre Schutt-Aufräumarbeiten?
                 </h3>
                 <p className="text-white/90 mb-4">
-                  25 Jahre Erfahrung mit Großprojekten in ganz OWL. Wir haben die Maschinen,
-                  das Know-how und die richtigen Leute für jeden Industrieabbruch. Von der
-                  kleinen Werkshalle bis zum kompletten Fabrikgelände.
+                  25 Jahre Erfahrung, modernste Technik und ein Team das anpackt. Wir räumen
+                  auf wo andere kapitulieren - schnell, sauber und zu fairen Preisen. Von der
+                  kleinen Renovierung bis zur Großbaustelle!
                 </p>
                 <ul className="text-sky-100/80 space-y-2">
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Modernster Maschinenpark bis 120 Tonnen</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Zertifizierte Schadstoffsanierung</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ 24/7 Notfallservice</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Komplette Entsorgungsdokumentation</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Festpreisgarantie bei Großprojekten</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ 24-Stunden-Notdienst</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Festpreisgarantie</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Container in allen Größen</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ 99% Recyclingquote</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Entsorgungsnachweise inklusive</li>
                 </ul>
               </div>
             </div>
@@ -295,23 +292,23 @@ export default function IndustrieabbruchBielefeld() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Industriegebiete Bielefeld</h2>
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Schuttentsorgung in ganz Bielefeld</h2>
             <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
-              Wir kennen jedes Industriegebiet und jeden Gewerbehof
+              Container und Abholung in allen Stadtteilen
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              'Industriegebiet Ost',
-              'Gewerbepark Oldentrup',
-              'Brackwede Süd',
-              'Sennestadt Industrie',
-              'Jöllenbeck Nord',
-              'Heepen Gewerbegebiet',
-              'Altenhagen Industriepark',
-              'Quelle Gewerbegebiet',
-              'Sieker Industriegebiet'
+              'Bielefeld Mitte',
+              'Brackwede',
+              'Schildesche',
+              'Jöllenbeck',
+              'Heepen',
+              'Stieghorst',
+              'Sennestadt',
+              'Gadderbaum',
+              'Dornberg'
             ].map((area, index) => (
               <div key={index} className="bg-gradient-to-r from-slate-800/30 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-xl p-4 hover:border-sky-400/40 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300">
                 <span className="text-sky-100/90 hover:text-sky-200 transition-colors duration-300">{area}</span>
@@ -326,27 +323,27 @@ export default function IndustrieabbruchBielefeld() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">
-              Häufige Fragen zum Industrieabbruch
+              Häufige Fragen zu Schutt-Aufräumarbeiten
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               {
-                q: 'Was kostet ein Industrieabbruch?',
-                a: 'Das hängt von der Größe ab. Ne kleine Halle gibts ab 50.000€, große Fabriken können Millionen kosten. Wir machen immer ne kostenlose Besichtigung und ein Festpreisangebot.'
+                q: 'Was kostet die Schuttentsorgung?',
+                a: 'Reiner Bauschutt kostet 20-30 Euro pro Tonne. Mischabfall 150-200 Euro. Container gibts ab 150 Euro plus Entsorgung. Festpreis nach Besichtigung!'
               },
               {
-                q: 'Wie lange dauert so ein Projekt?',
-                a: 'Von 2 Wochen bis 6 Monate, je nach Größe. Ne normale Fabrikhalle is in 4-6 Wochen weg, inklusive Entsorgung und Dokumentation.'
+                q: 'Wie schnell könnt ihr Container stellen?',
+                a: 'Normal innerhalb von 24 Stunden. Bei Notfällen auch sofort! Abholung meist am nächsten Werktag nach Anruf.'
               },
               {
-                q: 'Was ist mit Schadstoffen?',
-                a: 'Wir haben alle Zertifikate für Asbestsanierung und Schadstoffentsorgung. Erstmal Gutachten, dann fachgerechte Sanierung, alles dokumentiert.'
+                q: 'Brauche ich eine Stellgenehmigung?',
+                a: 'Auf Privatgrund nicht. Auf öffentlichen Straßen ja - kostet 100-200 Euro. Wir kümmern uns drum wenn gewünscht!'
               },
               {
-                q: 'Können Maschinen verkauft werden?',
-                a: 'Klar! Wir haben Kontakte zu Maschinenhändlern weltweit. Oft lässt sich noch gutes Geld mit alten Anlagen machen. Das rechnen wir direkt gegen.'
+                q: 'Was darf nicht in den Bauschutt?',
+                a: 'Kein Holz, Kunststoff, Gips oder Dämmmaterial! Das macht aus Bauschutt teuren Mischabfall. Asbest und Sondermüll brauchen spezielle Entsorgung.'
               }
             ].map((faq, index) => (
               <div key={index} className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 hover:border-sky-400/40 hover:shadow-lg hover:shadow-sky-400/20 transform hover:-translate-y-1 transition-all duration-300">
@@ -363,10 +360,10 @@ export default function IndustrieabbruchBielefeld() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-sky-900/30 to-slate-800/30 backdrop-blur-xl border border-sky-400/30 rounded-3xl p-12 text-center hover:border-sky-400/50 hover:shadow-2xl hover:shadow-sky-400/20 transition-all duration-500">
             <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-4">
-              Industrieabbruch in Bielefeld? Wir packen's an!
+              Schutt-Aufräumarbeiten in Bielefeld? Wir packens an!
             </h2>
             <p className="text-sky-100/80 mb-8">
-              Große Maschinen ✓ Erfahrene Profis ✓ Festpreise ✓ Termingarantie
+              24h-Service ✓ Festpreise ✓ Container ✓ Saubere Arbeit
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -379,7 +376,7 @@ export default function IndustrieabbruchBielefeld() {
                 href="/kontakt"
                 className="inline-block px-8 py-4 bg-gradient-to-r from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/30 text-sky-100 font-bold rounded-full hover:border-sky-400/50 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300"
               >
-                Kostenlose Besichtigung →
+                Container bestellen →
               </Link>
             </div>
           </div>

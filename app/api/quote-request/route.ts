@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
       nextSteps: [
         'Ihr Angebot wird innerhalb von 15 Minuten per E-Mail versendet',
         'Ein Experte wird Sie heute noch kontaktieren',
-        'Bei Notfällen rufen Sie sofort an: 0800 0060970'
+        'Bei Notfällen rufen Sie sofort an: +49 174 8083023'
       ],
       processingTime: Date.now() - startTime,
       trackingId: `AQ-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
@@ -85,7 +85,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { 
         error: 'Internal server error',
-        fallback: 'Bitte rufen Sie uns direkt an: 0800 0060970',
+        fallback: 'Bitte rufen Sie uns direkt an: +49 174 8083023',
         processingTime: Date.now() - (request as any).startTime || 0
       },
       { status: 500 }
@@ -197,7 +197,7 @@ async function sendEmailConfirmation(data: any): Promise<void> {
       nextSteps: [
         'Detaillierte Kostenaufstellung folgt in 15 Minuten',
         'Persönliche Beratung wird heute vereinbart',
-        'Bei Notfällen: 0800 0060970'
+        'Bei Notfällen: +49 174 8083023'
       ]
     }
   };

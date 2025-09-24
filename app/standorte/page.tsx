@@ -13,7 +13,7 @@ export default function Standorte() {
       name: 'Bielefeld',
       region: 'Ostwestfalen-Lippe',
       services: ['Schadstoffsanierung', 'Entkernung', 'Betonarbeiten'],
-      phone: '0800 0060970',
+      phone: '+49 174 8083023',
       address: 'Hauptstraße 12',
       zip: '33602'
     },
@@ -22,7 +22,7 @@ export default function Standorte() {
       name: 'Gütersloh',
       region: 'Ostwestfalen-Lippe',
       services: ['Asbestsanierung', 'KMF-Sanierung', 'Schimmelsanierung'],
-      phone: '0800 0060970',
+      phone: '+49 174 8083023',
       address: 'Berliner Straße 45',
       zip: '33330'
     },
@@ -31,7 +31,7 @@ export default function Standorte() {
       name: 'Paderborn',
       region: 'Ostwestfalen-Lippe',
       services: ['Schadstoffsanierung', 'Abbrucharbeiten', 'Entkernung'],
-      phone: '0800 0060970',
+      phone: '+49 174 8083023',
       address: 'Marienplatz 8',
       zip: '33098'
     },
@@ -40,7 +40,7 @@ export default function Standorte() {
       name: 'Osnabrück',
       region: 'Niedersachsen',
       services: ['Komplettabbruch', 'Schadstoffsanierung', 'Beratung'],
-      phone: '0800 0060970',
+      phone: '+49 174 8083023',
       address: 'Große Straße 28',
       zip: '49074'
     }

@@ -245,11 +245,11 @@ export default function Artikel() {
               Kostenlose Beratung
             </Link>
             <a
-              href="tel:0800ASBEST1"
+              href="tel:+491748083023"
               className="bg-transparent border-2 border-white text-white hover:bg-off-white hover:text-[#0066CC] font-bold py-4 px-8 rounded-lg text-lg transition-all inline-flex items-center justify-center"
             >
               <Icon name="telefon" size={24} className="mr-2" />
-              0800 ASBEST1
+              +49 174 8083023
             </a>
           </div>
         </div>

@@ -41,7 +41,7 @@ export default function NotFound() {
         
         <div className="mt-12">
           <p className="text-white/60 text-sm">
-            24/7 Notdienst: <a href="tel:08000060970" className="text-white underline hover:no-underline">0800 0060970</a>
+            24/7 Notdienst: <a href="tel:+49 174 8083023" className="text-white underline hover:no-underline">+49 174 8083023</a>
           </p>
         </div>
       </div>

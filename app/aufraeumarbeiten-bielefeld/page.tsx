@@ -162,7 +162,7 @@ export default function AufraeumarbeitenBielefeld() {
                 mit sich bringen.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Haushaltsauflösung
               </h2>
               <p className="mb-6">
@@ -182,7 +182,7 @@ export default function AufraeumarbeitenBielefeld() {
                 sich um nichts sorgen.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Entrümpelung
               </h2>
               <p className="mb-6">
@@ -201,7 +201,7 @@ export default function AufraeumarbeitenBielefeld() {
                 Schrotthandel nach Oldentrup. So wird aus Ihrer Entrümpelung auch noch was Gutes für andere.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Gebäudereinigung
               </h2>
               <p className="mb-6">
@@ -220,7 +220,7 @@ export default function AufraeumarbeitenBielefeld() {
                 wieder zum Glänzen - egal ob Altbau oder Neubau.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Wohnungsauflösung
               </h2>
               <p className="mb-6">
@@ -237,7 +237,7 @@ export default function AufraeumarbeitenBielefeld() {
                 entsorgen wir fachgerecht - immer nach den aktuellen Vorschriften der Stadt Bielefeld.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Nachlassräumung
               </h2>
               <p className="mb-6">
@@ -255,7 +255,7 @@ export default function AufraeumarbeitenBielefeld() {
                 - wir kennen die ehrlichen von den Abzockern.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Kellerentrümpelung
               </h2>
               <p className="mb-6">
@@ -273,7 +273,7 @@ export default function AufraeumarbeitenBielefeld() {
                 wie vollgestopft oder verdreckt er ist.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Besenreine Übergabe
               </h2>
               <p className="mb-6">
@@ -291,7 +291,7 @@ export default function AufraeumarbeitenBielefeld() {
                 einfach sauber übergeben und fertig.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Müllentsorgung
               </h2>
               <p className="mb-6">
@@ -308,7 +308,7 @@ export default function AufraeumarbeitenBielefeld() {
                 Bußgelder - alles sauber und nachweisbar.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Sperrmüllabholung
               </h2>
               <p className="mb-6">
@@ -427,10 +427,10 @@ export default function AufraeumarbeitenBielefeld() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:08000060970"
+                href="tel:+49 174 8083023"
                 className="inline-block px-8 py-4 bg-gradient-to-r from-sky-600/40 to-sky-700/40 backdrop-blur-xl text-white font-bold rounded-full hover:from-sky-600/60 hover:to-sky-700/60 hover:shadow-lg hover:shadow-sky-400/30 transform hover:scale-105 transition-all duration-300"
               >
-                📞 0800 0060970
+                📞 +49 174 8083023
               </a>
               <Link
                 href="/kontakt"

@@ -163,7 +163,7 @@ export default function BetonabbruchBielefeld() {
                 Altstadt müssen wir leise arbeiten, in Brackwede können wir mit schwerem Gerät ran.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Betonschneiden
               </h2>
               <p className="mb-6">
@@ -181,7 +181,7 @@ export default function BetonabbruchBielefeld() {
                 härter als alles, was heute gebaut wird. Aber wir kriegen auch den klein.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Betonsägen
               </h2>
               <p className="mb-6">
@@ -199,7 +199,7 @@ export default function BetonabbruchBielefeld() {
                 Ortungsgeräten finden wir alles, bevor die Säge Schaden nimmt.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Kernbohrung
               </h2>
               <p className="mb-6">
@@ -216,7 +216,7 @@ export default function BetonabbruchBielefeld() {
                 Material, vom Alter des Gebäudes, von der Zeit, als es gebaut wurde.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Abbrucharbeiten
               </h2>
               <p className="mb-6">
@@ -234,7 +234,7 @@ export default function BetonabbruchBielefeld() {
                 sowas gehört zum Betonabbruch in Bielefeld dazu.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Wandsägen
               </h2>
               <p className="mb-6">
@@ -252,7 +252,7 @@ export default function BetonabbruchBielefeld() {
                 gemacht wird. Sicherheit geht vor, besonders beim Betonabbruch.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Seilsägen
               </h2>
               <p className="mb-6">
@@ -270,7 +270,7 @@ export default function BetonabbruchBielefeld() {
                 Pendler danken es uns!
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Fugenschneiden
               </h2>
               <p className="mb-6">
@@ -288,7 +288,7 @@ export default function BetonabbruchBielefeld() {
                 auch noch gut aus!
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Betonbrechen
               </h2>
               <p className="mb-6">
@@ -307,7 +307,7 @@ export default function BetonabbruchBielefeld() {
                 Bebauung den Beton klein, ohne dass sich die halbe Nachbarschaft beschwert.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Rückbau
               </h2>
               <p className="mb-6">
@@ -426,10 +426,10 @@ export default function BetonabbruchBielefeld() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:08000060970"
+                href="tel:+49 174 8083023"
                 className="inline-block px-8 py-4 bg-gradient-to-r from-sky-600 to-sky-700 backdrop-blur-xl text-white font-bold rounded-full hover:from-sky-500 hover:to-sky-600 hover:scale-105 hover:shadow-2xl hover:shadow-sky-400/30 transition-all duration-300"
               >
-                📞 0800 0060970
+                📞 +49 174 8083023
               </a>
               <Link
                 href="/kontakt"

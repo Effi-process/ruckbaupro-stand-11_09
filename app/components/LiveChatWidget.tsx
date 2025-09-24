@@ -30,7 +30,7 @@ export default function LiveChatWidget() {
     },
     {
       keywords: ['notfall', 'dringend', 'sofort'],
-      response: '🚨 NOTFALL verstanden! Wir haben einen 24/7-Service. Rufen Sie sofort an: 0800 0060970 oder ich verbinde Sie direkt mit unserem Notfall-Team. Wo befindet sich das Problem?'
+      response: '🚨 NOTFALL verstanden! Wir haben einen 24/7-Service. Rufen Sie sofort an: +49 174 8083023 oder ich verbinde Sie direkt mit unserem Notfall-Team. Wo befindet sich das Problem?'
     },
     {
       keywords: ['asbest', 'gefährlich', 'gesundheit'],
@@ -69,7 +69,7 @@ export default function LiveChatWidget() {
         return response.response;
       }
     }
-    return 'Vielen Dank für Ihre Nachricht! Ein Experte wird Ihnen in Kürze antworten. Für sofortige Hilfe rufen Sie gerne an: 0800 0060970 📞';
+    return 'Vielen Dank für Ihre Nachricht! Ein Experte wird Ihnen in Kürze antworten. Für sofortige Hilfe rufen Sie gerne an: +49 174 8083023 📞';
   };
 
   const handleSendMessage = () => {

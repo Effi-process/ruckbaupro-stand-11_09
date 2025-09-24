@@ -163,7 +163,7 @@ export default function GebaeudeabbruchBielefeld() {
                 Gebäudeabbruch ist unser täglich Brot und wir wissen genau, worauf es ankommt.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Mehrstöckiger Gebäudeabbruch in Bielefeld
               </h2>
               <p className="mb-6">
@@ -173,7 +173,7 @@ export default function GebaeudeabbruchBielefeld() {
                 hoch, und wir arbeiten immer von oben nach unten.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Industrieabbruch in Bielefeld
               </h2>
               <p className="mb-6">

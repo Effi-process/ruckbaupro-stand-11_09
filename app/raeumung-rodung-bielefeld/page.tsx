@@ -5,7 +5,7 @@ import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
 
-export default function IndustrieabbruchBielefeld() {
+export default function RaeumungRodungBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -28,18 +28,18 @@ export default function IndustrieabbruchBielefeld() {
           <div className="text-center mb-16">
             <div className={`inline-flex items-center px-6 py-3 bg-gradient-to-r from-sky-900/30 to-slate-800/30 backdrop-blur-xl rounded-full mb-6 border border-sky-400/20 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
               <span className="text-sm font-bold text-sky-200 uppercase tracking-wider animate-pulse">
-                Professioneller Industrieabbruch
+                Professionelle Räumung & Rodung
               </span>
             </div>
             <h1 className={`text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6 transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-              Industrieabbruch Bielefeld - Große Projekte sicher gemeistert
+              Räumung und Rodung Bielefeld - Alles muss raus, schnell und gründlich
             </h1>
             <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-              Letzte Woche haben wir die alte Textilfabrik in Brackwede plattgemacht - 12.000 Quadratmeter in nur
-              drei Wochen! Wer sagt, <strong>Industrieabbruch in Bielefeld</strong> wär kompliziert, hat noch nie mit
-              uns gearbeitet. Nach 25 Jahren kennen wir jeden Trick: von der Asbestsanierung bis zur tonnenschweren
-              Maschinendemontage. Egal ob Fabrikhalle, Kraftwerk oder Lagerkomplex - wir kriegen alles klein, sauber
-              und termingerecht.
+              Gestern kam der Anruf vom Insolvenzverwalter - 5.000 Quadratmeter Gewerbefläche in Oldentrup
+              mussten bis Monatsende geräumt werden. "Schaffen wir!", haben wir gesagt. Mit 20 Mann und
+              15 Containern war nach vier Tagen alles leer. <strong>Räumung und Rodung in Bielefeld</strong>
+              machen wir seit 25 Jahren - von der Wohnungsräumung bis zur kompletten Fabrikauflösung. Wenn's
+              schnell gehen muss und nichts liegen bleiben darf, sind wir die Richtigen!
             </p>
           </div>
         </div>
@@ -50,10 +50,10 @@ export default function IndustrieabbruchBielefeld() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { number: '250+', label: 'Industrieprojekte' },
-              { number: '500t', label: 'Größte Einzelmaschine' },
-              { number: '100%', label: 'Recyclingquote' },
-              { number: '24/7', label: 'Verfügbarkeit' }
+              { number: '10.000+', label: 'Räumungen' },
+              { number: '48h', label: 'Expressräumung' },
+              { number: '100%', label: 'Besenrein' },
+              { number: '365', label: 'Tage verfügbar' }
             ].map((stat, index) => (
               <div key={index} className="bg-gradient-to-br from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 text-center hover:border-sky-400/40 hover:shadow-lg hover:shadow-sky-400/20 transform hover:-translate-y-1 transition-all duration-300 animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
                 <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-2">{stat.number}</div>
@@ -68,37 +68,37 @@ export default function IndustrieabbruchBielefeld() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unsere Industrieabbruch-Services</h2>
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unsere Räumungs- und Rodungsleistungen</h2>
             <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
-              Speziallösungen für komplexe Industrieprojekte
+              Von der Entrümpelung bis zur Grundstücksrodung
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'Fabrikabbruch',
-                description: 'Komplettabbruch von Produktionshallen und Fabrikgebäuden inklusive Fundamententfernung.'
+                title: 'Wohnungsräumung',
+                description: 'Komplette Räumung von Wohnungen und Häusern inklusive Entsorgung.'
               },
               {
-                title: 'Maschinendemontage',
-                description: 'Fachgerechte Demontage und Entsorgung von Industrieanlagen und Produktionsmaschinen.'
+                title: 'Gewerberäumung',
+                description: 'Professionelle Räumung von Büros, Läden und Gewerbeflächen.'
               },
               {
-                title: 'Kraftwerksrückbau',
-                description: 'Spezialisierter Rückbau von Kraftwerksanlagen mit höchsten Sicherheitsstandards.'
+                title: 'Messieräumung',
+                description: 'Sensible und diskrete Räumung bei Vermüllung und Verwahrlosung.'
               },
               {
-                title: 'Tanklagerabbruch',
-                description: 'Sichere Demontage von Tanklagern und chemischen Anlagen mit Schadstoffsanierung.'
+                title: 'Grundstücksrodung',
+                description: 'Entfernung von Bewuchs, Bäumen und Sträuchern für Bauprojekte.'
               },
               {
-                title: 'Hallenentkernung',
-                description: 'Selektive Entkernung von Industriehallen bei Erhalt der Gebäudehülle.'
+                title: 'Kellerräumung',
+                description: 'Entrümpelung von Kellern, Dachböden und Garagen.'
               },
               {
-                title: 'Betonsägen & Bohren',
-                description: 'Präzise Betonschnitte für kontrollierte Teilabbrüche in laufenden Betrieben.'
+                title: 'Industrieräumung',
+                description: 'Komplettauflösung von Fabriken und Industrieanlagen.'
               }
             ].map((service, index) => (
               <div key={index} className="group">
@@ -120,16 +120,16 @@ export default function IndustrieabbruchBielefeld() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unser Ablauf</h2>
             <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
-              Strukturiert und sicher zum erfolgreichen Projektabschluss
+              Schnell, sauber und zuverlässig zum leeren Objekt
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { step: '01', title: 'Bestandsaufnahme', desc: 'Detaillierte Analyse vor Ort' },
-              { step: '02', title: 'Konzepterstellung', desc: 'Maßgeschneiderter Abbruchplan' },
-              { step: '03', title: 'Durchführung', desc: 'Professionelle Umsetzung' },
-              { step: '04', title: 'Dokumentation', desc: 'Lückenlose Nachweise' }
+              { step: '01', title: 'Besichtigung', desc: 'Kostenlose Vor-Ort-Bewertung' },
+              { step: '02', title: 'Angebot', desc: 'Transparenter Festpreis' },
+              { step: '03', title: 'Räumung', desc: 'Schnelle Durchführung' },
+              { step: '04', title: 'Übergabe', desc: 'Besenreine Endreinigung' }
             ].map((item, index) => (
               <div key={index} className="relative">
                 <div className="bg-gradient-to-br from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 h-full hover:border-sky-400/40 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300">
@@ -155,135 +155,132 @@ export default function IndustrieabbruchBielefeld() {
 
             <div className="prose prose-lg max-w-none text-white/90">
               <p className="text-lg leading-relaxed mb-8">
-                Gestern Morgen um 6 klingelte das Telefon - Notfall in Sennestadt. Die alte Druckerei musste
-                raus, und zwar schnell! Der neue Eigentümer wollte schon nächsten Monat mit dem Neubau anfangen.
-                "Kein Problem", haben wir gesagt. Mit unseren Großgeräten und 15 Mann waren wir in drei Stunden
-                vor Ort. Sowas is <strong>Industrieabbruch in Bielefeld</strong> - schnell, professionell und
-                ohne Überraschungen.
+                Letzte Woche standen wir vor nem dreistöckigen Mietshaus in Sennestadt. Der Eigentümer
+                war verzweifelt: "Die letzten Mieter sind abgehauen, haben alles stehen lassen!" Drei
+                Wohnungen voller Müll, der Keller zugestellt, der Garten verwildert. Für uns kein Problem!
+                Mit unserem Team war das Haus in zwei Tagen komplett leer und der Garten wieder vorzeigbar.
+                <strong> Räumung und Rodung in Bielefeld</strong> heißt für uns: Wir machen aus Chaos wieder
+                Ordnung, egal wie schlimm es aussieht!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Fabrikabbruch
+                Wohnungsräumung
               </h2>
               <p className="mb-6">
-                Fabrikabbruch is unser täglich Brot. Die ganzen alten Textilfabriken in Bielefeld - wir haben
-                schon mindestens 20 davon plattgemacht. Das Schwierige dabei? Die Dinger sind oft viel stabiler
-                gebaut als man denkt. Stahlbeton aus den 50ern, der hält ewig! Letzte Woche in der Ravensberger
-                Spinnerei, da haben wir mit dem 50-Tonnen-Bagger angefangen - der erste Schlag, und der Beton
-                hat nur gelacht. Da mussten die schweren Geschütze ran: Abbruchzange mit 120 Tonnen Beißkraft.
+                Wohnungsräumungen sind unser täglich Brot. Manchmal sinds Nachlässe, wo die Erben nicht
+                wissen wohin mit dem ganzen Zeug. Manchmal Zwangsräumungen, wo der Gerichtsvollzieher
+                schon wartet. Oder einfach Leute die umziehen und nicht alles mitnehmen wollen. Egal was -
+                wir räumen alles raus, sortieren was noch brauchbar is und entsorgen den Rest fachgerecht.
               </p>
               <p className="mb-6">
-                Bei jedem Fabrikabbruch gibts Überraschungen. Alte Öltanks im Boden, von denen keiner mehr wusste.
-                Asbestplatten hinter der Wandverkleidung. Oder wie neulich in Heepen - da war noch ne komplette
-                Druckmaschine einbetoniert im Keller! 40 Tonnen schwer, keiner wusste mehr davon. Aber das macht
-                nix, wir haben für alles das richtige Werkzeug. Plasmaschneidbrenner, Seilsägen, hydraulische
-                Scheren - damit kriegen wir alles klein.
+                Neulich in Brackwede, da war ne 4-Zimmer-Wohnung vom Opa. 50 Jahre hatte der da gewohnt,
+                alles voll bis unters Dach! Alte Möbel, tausende Bücher, der komplette Keller voller
+                Werkzeug. Die Familie war überfordert. Wir haben alles sortiert - die wertvollen Sachen
+                für die Erben beiseite, Bücher zum Antiquariat, Werkzeug zum Flohmarkt. Am Ende waren
+                alle zufrieden und die Wohnung war besenrein für den Verkauf.
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Maschinendemontage
+                Gewerberäumung
               </h2>
               <p className="mb-6">
-                Maschinendemontage is wie Operation am offenen Herzen - nur in groß und dreckig. Letztens bei
-                Gildemeister, die wollten ihre alte Transferstraße raus haben. 200 Meter lang, 500 Tonnen schwer,
-                und alles voller Öl und Späne. Erstmal mussten wir das Ding entölen - 8.000 Liter Hydrauliköl
-                und Kühlschmiermittel! Alles fachgerecht abgesaugt und entsorgt, sonst gibts richtig Ärger vom
-                Umweltamt.
+                Gewerberäumungen sind immer Zeitdruck. Der Mietvertrag läuft aus, der neue Mieter steht
+                schon vor der Tür, und dazwischen müssen wir ran. Letzte Woche wars ein Callcenter am
+                Kesselbrink - 800 Quadratmeter, 50 Arbeitsplätze, alles musste raus. Computer, Möbel,
+                kilometerweise Kabel, die komplette Küche. In drei Tagen!
               </p>
               <p className="mb-6">
-                Die Zerlegung selbst is dann Millimeterarbeit. Manche Teile kann man noch verkaufen - die
-                Chinesen kaufen gerne gebrauchte deutsche Maschinen. Also vorsichtig zerlegen, dokumentieren,
-                verpacken. Andere Teile sind nur noch Schrott - ab in den Container und zur Schmelze. Bei der
-                Gildemeister-Anlage haben wir drei Wochen gebraucht, aber am Ende war die Halle leer und der
-                Kunde zufrieden. 80% der Maschine konnten wir sogar noch verwerten!
+                Mit System gehts: Erst die Technik - Computer und Server vorsichtig verpacken, die kann
+                man oft noch verkaufen. Dann die Möbel - Schreibtische, Stühle, Schränke. Vieles geht
+                an soziale Einrichtungen, die freuen sich über gut erhaltene Büromöbel. Der Rest wird
+                zerlegt und recycelt. Nach drei Tagen war alles weg, die Räume besenrein. Der Vermieter
+                war begeistert - keine Verzögerung, keine Probleme mit dem neuen Mieter.
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Kraftwerksrückbau
+                Messieräumung
               </h2>
               <p className="mb-6">
-                Kraftwerksrückbau is die Königsklasse vom Industrieabbruch. Das alte Heizkraftwerk in Bielefeld-Mitte,
-                das haben wir vor zwei Jahren zurückgebaut. 80 Meter hoher Schornstein, dicke Kesselanlagen,
-                kilometerweise Rohrleitungen. Sowas macht man nicht mal eben. Erstmal monatelange Planung mit
-                Statikern, Umweltgutachtern und Sicherheitsexperten. Der Schornstein allein - 3.000 Tonnen Beton
-                und Ziegel. Den sprengen geht nicht mitten in der Stadt, also Stück für Stück von oben.
+                Messieräumungen sind die härtesten Einsätze. Da gehts nicht nur um Müll wegräumen, da
+                brauchst du Fingerspitzengefühl. Die Menschen schämen sich oft, wollen keine Hilfe annehmen.
+                Wir arbeiten diskret, ohne Aufsehen. Keine großen LKWs vor der Tür, keine neugierigen Blicke
+                der Nachbarn.
               </p>
               <p className="mb-6">
-                Das Verrückteste war die Turbinenhalle. Die alte Dampfturbine von Siemens, Baujahr 1962, die
-                wog allein 120 Tonnen. Die musste raus, aber die Halle hatte nur ein 10-Tonnen-Kran. Also haben
-                wir einen 500-Tonnen-Mobilkran kommen lassen, Dach aufgeschnitten und das Monster rausgehoben.
-                Der Verkehr musste gesperrt werden, die Anwohner waren alle am gucken. Sowas vergisst man nicht!
+                Vor zwei Monaten hatten wir so einen Fall in Heepen. Die Sozialarbeiterin hatte uns gerufen,
+                die Wohnung war seit Jahren nicht mehr richtig bewohnbar. Müll bis zur Decke, verschimmelte
+                Lebensmittel, der Gestank war unbeschreiblich. Mit Schutzanzügen und Atemmasken sind wir
+                ran. Drei Tage harte Arbeit, 12 Container Müll. Aber am Ende war die Wohnung wieder bewohnbar.
+                Der Mieter konnte nach der Therapie zurückkommen - ein Neuanfang. Sowas macht einen stolz!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Tanklagerabbruch
+                Grundstücksrodung
               </h2>
               <p className="mb-6">
-                Tanklager sind immer heikel - da war mal was drin, und keiner weiß mehr genau was. Bei der alten
-                Tankstelle an der Herforder Straße, da standen noch fünf unterirdische Tanks. Benzin, Diesel,
-                Heizöl - alles durcheinander. Erstmal musste ein Gutachter ran, Bodenproben nehmen. Klar,
-                kontaminiert bis zum geht nicht mehr. Also erst sanieren, dann abbrechen. Die Tanks mussten
-                ausgepumpt, gereinigt und entgast werden. Eine falsche Bewegung und es knallt!
+                Grundstücksrodung is mehr als nur Bäume fällen. Wenn ein Grundstück bebaut werden soll,
+                muss alles weg - Bäume, Sträucher, Hecken, alte Zäune, manchmal sogar alte Fundamente
+                die keiner mehr kennt. Neulich in Jöllenbeck, 2.000 Quadratmeter verwildertes Grundstück.
+                20 Jahre hatte sich keiner drum gekümmert, ein richtiger Dschungel!
               </p>
               <p className="mb-6">
-                Wir arbeiten da nur mit zertifizierten Fachfirmen zusammen. Die kommen mit Spezialsaugwagen,
-                Ex-geschützten Pumpen und Gasmeßgeräten. Erst wenn die ihr OK geben, fangen wir mit dem Abbruch
-                an. Die Tanks werden dann aufgeschnitten und als Sondermüll entsorgt. Der kontaminierte Boden
-                muss auch raus - manchmal bis 5 Meter tief. Am Ende kommt sauberer Boden rein und alles wird
-                dokumentiert. Das Umweltamt prüft das genau!
+                Mit schwerem Gerät sind wir angerückt. Erst die großen Bäume - zwei Eichen, 80 Jahre alt,
+                die mussten mit Seilwinde und Kran gefällt werden. Dann das Unterholz mit dem Forstmulcher.
+                Die Wurzeln mit dem Bagger raus, sonst wachsen die wieder. Am Schluss alles eingeebnet und
+                planiert. Nach einer Woche war aus dem Urwald ein baureifes Grundstück geworden. Der Bauträger
+                konnte direkt mit den Fundamenten anfangen.
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Hallenentkernung
+                Kellerräumung
               </h2>
               <p className="mb-6">
-                Hallenentkernung is was für Spezialisten. Die Hülle bleibt stehen, aber innen muss alles raus.
-                Neulich bei ThyssenKrupp in Brackwede - die wollten ihre alte Montagehalle modernisieren.
-                Stahlkonstruktion von 1965, noch top in Schuss, aber innen total veraltet. Alte Kranbahnen,
-                Zwischendecken, Büroeinbauten - alles musste raus. Aber vorsichtig! Ein falscher Schnitt und
-                die Statik is im Eimer.
+                Kellerräumungen unterschätzt man leicht. "Ist ja nur der Keller", denken viele. Aber wenn
+                du dann vor 50 Jahren Familiengeschichte stehst, wirds kompliziert. Alte Kohlen, Konserven
+                aus den 70ern, Farbreste, Chemikalien - alles muss fachgerecht entsorgt werden. Und die
+                Treppen! Alles muss hoch geschleppt werden, oft durch enge Treppenhäuser.
               </p>
               <p className="mb-6">
-                Wir haben erstmal alles vermessen und mit dem Statiker einen Plan gemacht. Was is tragend, was
-                kann weg? Dann systematisch von oben nach unten. Die alten Asbestplatten in der Decke waren
-                die größte Überraschung - 2.000 Quadratmeter! Da kam die Sanierungsfirma, alles abgeschottet,
-                Unterdruck, Schutzanzüge. Drei Wochen nur für den Asbest. Danach konnten wir mit schwerem Gerät
-                ran. Am Ende war die Halle leer wie ne Kathedrale - bereit für den Neuaufbau.
+                In nem Mehrfamilienhaus in Schildesche mussten wir letztens 12 Kellerabteile räumen. Die
+                Hausverwaltung wollte Platz für Fahrradstellplätze schaffen. Jedes Abteil ne andere Geschichte -
+                alte Weihnachtsdeko, kaputte Waschmaschinen, Berge von alten Zeitungen. Zwei Mann, drei Tage,
+                40 Kubikmeter Müll. Aber jetzt haben die Mieter endlich vernünftige Fahrradstellplätze. Manchmal
+                muss man halt Platz für Neues schaffen!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Betonsägen & Bohren
+                Industrieräumung
               </h2>
               <p className="mb-6">
-                Betonsägen und Bohren klingt einfach, is aber hohe Kunst. Wenn in ner laufenden Fabrik ne neue
-                Maschine rein soll, können wir nicht mit dem Abbruchbagger anrücken. Da muss millimetergenau
-                gearbeitet werden. Letzte Woche bei Schüco - neue Produktionslinie, aber die Tür war zu klein.
-                Also: Wanddurchbruch, 6 Meter breit, 4 Meter hoch, 80 Zentimeter dicker Stahlbeton. Mit unserer
-                Seilsäge haben wir das in einem Tag geschafft, sauber und ohne Erschütterungen.
+                Industrieräumungen sind die Königsklasse. Da reden wir nicht von ein paar Möbeln, sondern
+                von ganzen Fabrikhallen voller Maschinen, Material und Müll. Letzten Monat wars ne alte
+                Druckerei in Oldentrup. 5.000 Quadratmeter, drei Hallen voll. Druckmaschinen, Papierberge,
+                Farbreste, Chemikalien - alles musste raus.
               </p>
               <p className="mb-6">
-                Das Geheimnis is die richtige Technik. Diamantseilsägen für große Schnitte, Wandsägen für präzise
-                Arbeiten, Kernbohrungen für Durchführungen. Alles wassergekühlt, damit kein Staub entsteht. Bei
-                Schüco lief die Produktion nebenan weiter - die haben nix gemerkt! Der ausgesägte Block wurde
-                dann mit dem Kran rausgehoben - 45 Tonnen am Stück. Sowas macht nicht jeder, aber wir haben
-                das Equipment und die Erfahrung dafür.
+                Sowas plant man wie ne Militäroperation. Erst die verwertbaren Maschinen - manche sind
+                noch was wert, gehen nach Osteuropa oder Afrika. Dann die Rohstoffe - Metall, Papier,
+                Kunststoff, alles wird getrennt und recycelt. Die Chemikalien und Farbreste müssen als
+                Sondermüll entsorgt werden, mit allen Papieren und Nachweisen. Nach zwei Wochen waren
+                die Hallen leer, bereit für den neuen Eigentümer. 500 Tonnen Material hatten wir bewegt -
+                davon 80% recycelt!
               </p>
 
               <div className="bg-gradient-to-r from-sky-900/30 to-slate-800/40 backdrop-blur-xl border border-sky-400/30 rounded-2xl p-8 mt-12 hover:border-sky-400/50 hover:shadow-xl hover:shadow-sky-400/20 transition-all duration-500">
                 <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-4">
-                  Warum RückbauPRO für Ihren Industrieabbruch?
+                  Warum RückbauPRO für Ihre Räumung und Rodung?
                 </h3>
                 <p className="text-white/90 mb-4">
-                  25 Jahre Erfahrung mit Großprojekten in ganz OWL. Wir haben die Maschinen,
-                  das Know-how und die richtigen Leute für jeden Industrieabbruch. Von der
-                  kleinen Werkshalle bis zum kompletten Fabrikgelände.
+                  25 Jahre Erfahrung mit über 10.000 Räumungen in ganz OWL. Von der kleinen
+                  Kellerräumung bis zur kompletten Fabrikauflösung - wir machen alles leer,
+                  schnell und gründlich. Diskret, zuverlässig und immer zum Festpreis!
                 </p>
                 <ul className="text-sky-100/80 space-y-2">
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Modernster Maschinenpark bis 120 Tonnen</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Zertifizierte Schadstoffsanierung</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ 24/7 Notfallservice</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Komplette Entsorgungsdokumentation</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Festpreisgarantie bei Großprojekten</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ 48-Stunden-Express-Service</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Diskrete Messieräumungen</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Kostenlose Wertanrechnung</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Besenreine Übergabe garantiert</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Alle Entsorgungsnachweise inklusive</li>
                 </ul>
               </div>
             </div>
@@ -295,23 +292,23 @@ export default function IndustrieabbruchBielefeld() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Industriegebiete Bielefeld</h2>
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Räumung in allen Stadtteilen</h2>
             <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
-              Wir kennen jedes Industriegebiet und jeden Gewerbehof
+              Schnell vor Ort in ganz Bielefeld und Umgebung
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              'Industriegebiet Ost',
-              'Gewerbepark Oldentrup',
-              'Brackwede Süd',
-              'Sennestadt Industrie',
-              'Jöllenbeck Nord',
-              'Heepen Gewerbegebiet',
-              'Altenhagen Industriepark',
-              'Quelle Gewerbegebiet',
-              'Sieker Industriegebiet'
+              'Bielefeld Mitte',
+              'Brackwede',
+              'Schildesche',
+              'Jöllenbeck',
+              'Heepen',
+              'Stieghorst',
+              'Sennestadt',
+              'Gadderbaum',
+              'Dornberg'
             ].map((area, index) => (
               <div key={index} className="bg-gradient-to-r from-slate-800/30 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-xl p-4 hover:border-sky-400/40 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300">
                 <span className="text-sky-100/90 hover:text-sky-200 transition-colors duration-300">{area}</span>
@@ -326,27 +323,27 @@ export default function IndustrieabbruchBielefeld() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">
-              Häufige Fragen zum Industrieabbruch
+              Häufige Fragen zu Räumung und Rodung
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               {
-                q: 'Was kostet ein Industrieabbruch?',
-                a: 'Das hängt von der Größe ab. Ne kleine Halle gibts ab 50.000€, große Fabriken können Millionen kosten. Wir machen immer ne kostenlose Besichtigung und ein Festpreisangebot.'
+                q: 'Was kostet eine Räumung?',
+                a: 'Das hängt von der Größe ab. Ne normale 3-Zimmer-Wohnung kostet zwischen 800 und 1.500 Euro. Bei verwertbaren Sachen ziehen wir das vom Preis ab. Kostenlose Besichtigung!'
               },
               {
-                q: 'Wie lange dauert so ein Projekt?',
-                a: 'Von 2 Wochen bis 6 Monate, je nach Größe. Ne normale Fabrikhalle is in 4-6 Wochen weg, inklusive Entsorgung und Dokumentation.'
+                q: 'Wie schnell könnt ihr räumen?',
+                a: 'Im Notfall innerhalb von 48 Stunden! Normal planen wir 3-5 Tage im Voraus. Bei großen Objekten wie Fabriken brauchen wir 1-2 Wochen Vorlauf.'
               },
               {
-                q: 'Was ist mit Schadstoffen?',
-                a: 'Wir haben alle Zertifikate für Asbestsanierung und Schadstoffentsorgung. Erstmal Gutachten, dann fachgerechte Sanierung, alles dokumentiert.'
+                q: 'Was macht ihr mit den Sachen?',
+                a: 'Verwertbares wird verkauft oder gespendet, der Erlös wird angerechnet. Müll wird fachgerecht entsorgt und recycelt. Alle Entsorgungsnachweise gibts dazu.'
               },
               {
-                q: 'Können Maschinen verkauft werden?',
-                a: 'Klar! Wir haben Kontakte zu Maschinenhändlern weltweit. Oft lässt sich noch gutes Geld mit alten Anlagen machen. Das rechnen wir direkt gegen.'
+                q: 'Macht ihr auch Messieräumungen?',
+                a: 'Ja, diskret und professionell. Unsere Leute sind geschult im Umgang mit solchen Situationen. Wir arbeiten respektvoll und ohne Vorurteile.'
               }
             ].map((faq, index) => (
               <div key={index} className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 hover:border-sky-400/40 hover:shadow-lg hover:shadow-sky-400/20 transform hover:-translate-y-1 transition-all duration-300">
@@ -363,10 +360,10 @@ export default function IndustrieabbruchBielefeld() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-sky-900/30 to-slate-800/30 backdrop-blur-xl border border-sky-400/30 rounded-3xl p-12 text-center hover:border-sky-400/50 hover:shadow-2xl hover:shadow-sky-400/20 transition-all duration-500">
             <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-4">
-              Industrieabbruch in Bielefeld? Wir packen's an!
+              Räumung und Rodung in Bielefeld? Wir machen das!
             </h2>
             <p className="text-sky-100/80 mb-8">
-              Große Maschinen ✓ Erfahrene Profis ✓ Festpreise ✓ Termingarantie
+              Express-Service ✓ Festpreis ✓ Besenrein ✓ Diskret & zuverlässig
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

@@ -91,7 +91,7 @@ export default function MobileOptimizer({ enabled = true }: MobileOptimizerProps
       recognition.onresult = (event: any) => {
         const result = event.results[0][0].transcript;
         if (result.toLowerCase().includes('notfall') || result.toLowerCase().includes('hilfe')) {
-          window.location.href = 'tel:08000060970';
+          window.location.href = 'tel:+49 174 8083023';
         } else if (result.toLowerCase().includes('preis') || result.toLowerCase().includes('kosten')) {
           window.location.href = '#calculator-section';
         } else if (result.toLowerCase().includes('kontakt')) {
@@ -182,7 +182,7 @@ export default function MobileOptimizer({ enabled = true }: MobileOptimizerProps
             <div className="grid grid-cols-2 gap-3">
               {/* Emergency Call */}
               <a
-                href="tel:08000060970"
+                href="tel:+49 174 8083023"
                 className="flex flex-col items-center p-4 bg-red-50 rounded-xl hover:bg-red-100 transition-colors touch-optimized"
               >
                 <Icon name="phone" size={24} className="text-red-600 mb-2" />

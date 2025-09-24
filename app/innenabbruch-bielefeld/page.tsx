@@ -5,7 +5,7 @@ import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
 
-export default function IndustrieabbruchBielefeld() {
+export default function InnenabbruchBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -28,18 +28,18 @@ export default function IndustrieabbruchBielefeld() {
           <div className="text-center mb-16">
             <div className={`inline-flex items-center px-6 py-3 bg-gradient-to-r from-sky-900/30 to-slate-800/30 backdrop-blur-xl rounded-full mb-6 border border-sky-400/20 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
               <span className="text-sm font-bold text-sky-200 uppercase tracking-wider animate-pulse">
-                Professioneller Industrieabbruch
+                Professioneller Innenabbruch
               </span>
             </div>
             <h1 className={`text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6 transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-              Industrieabbruch Bielefeld - Große Projekte sicher gemeistert
+              Innenabbruch Bielefeld - Präzise Entkernung im laufenden Betrieb
             </h1>
             <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-              Letzte Woche haben wir die alte Textilfabrik in Brackwede plattgemacht - 12.000 Quadratmeter in nur
-              drei Wochen! Wer sagt, <strong>Industrieabbruch in Bielefeld</strong> wär kompliziert, hat noch nie mit
-              uns gearbeitet. Nach 25 Jahren kennen wir jeden Trick: von der Asbestsanierung bis zur tonnenschweren
-              Maschinendemontage. Egal ob Fabrikhalle, Kraftwerk oder Lagerkomplex - wir kriegen alles klein, sauber
-              und termingerecht.
+              Gestern mussten wir im Stadttheater arbeiten - während der Proben! Die Schauspieler haben
+              oben geprobt, wir haben unten die Garderobe entkernt. <strong>Innenabbruch in Bielefeld</strong>
+              heißt für uns: leise, sauber und ohne den Betrieb zu stören. Nach 25 Jahren können wir
+              das im Schlaf - von der Büroetage bis zum Krankenhaus-OP. Wenn Wände fallen müssen, ohne
+              dass die Nachbarn was merken, dann sind wir die Richtigen!
             </p>
           </div>
         </div>
@@ -50,10 +50,10 @@ export default function IndustrieabbruchBielefeld() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { number: '250+', label: 'Industrieprojekte' },
-              { number: '500t', label: 'Größte Einzelmaschine' },
-              { number: '100%', label: 'Recyclingquote' },
-              { number: '24/7', label: 'Verfügbarkeit' }
+              { number: '3.000+', label: 'Innenprojekte' },
+              { number: '< 65 dB', label: 'Lärmpegel' },
+              { number: '99%', label: 'Staubfrei' },
+              { number: '24/7', label: 'Nachtarbeit möglich' }
             ].map((stat, index) => (
               <div key={index} className="bg-gradient-to-br from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 text-center hover:border-sky-400/40 hover:shadow-lg hover:shadow-sky-400/20 transform hover:-translate-y-1 transition-all duration-300 animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
                 <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-2">{stat.number}</div>
@@ -68,37 +68,37 @@ export default function IndustrieabbruchBielefeld() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unsere Industrieabbruch-Services</h2>
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unsere Innenabbruch-Services</h2>
             <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
-              Speziallösungen für komplexe Industrieprojekte
+              Speziallösungen für präzise Arbeiten im Gebäudeinneren
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'Fabrikabbruch',
-                description: 'Komplettabbruch von Produktionshallen und Fabrikgebäuden inklusive Fundamententfernung.'
+                title: 'Wanddurchbrüche',
+                description: 'Präzise Öffnungen für Türen, Fenster und Durchgänge mit minimalem Schmutz.'
               },
               {
-                title: 'Maschinendemontage',
-                description: 'Fachgerechte Demontage und Entsorgung von Industrieanlagen und Produktionsmaschinen.'
+                title: 'Deckendurchbrüche',
+                description: 'Saubere Durchbrüche für Treppen, Aufzüge und Installationsschächte.'
               },
               {
-                title: 'Kraftwerksrückbau',
-                description: 'Spezialisierter Rückbau von Kraftwerksanlagen mit höchsten Sicherheitsstandards.'
+                title: 'Trennwandabbau',
+                description: 'Rückbau von Leichtbauwänden und nichttragenden Elementen.'
               },
               {
-                title: 'Tanklagerabbruch',
-                description: 'Sichere Demontage von Tanklagern und chemischen Anlagen mit Schadstoffsanierung.'
+                title: 'Büroentkernung',
+                description: 'Komplette Entfernung von Büroausstattung und Zwischenwänden.'
               },
               {
-                title: 'Hallenentkernung',
-                description: 'Selektive Entkernung von Industriehallen bei Erhalt der Gebäudehülle.'
+                title: 'Ladenbauabbau',
+                description: 'Professioneller Rückbau von Ladeneinrichtungen und Verkaufsflächen.'
               },
               {
-                title: 'Betonsägen & Bohren',
-                description: 'Präzise Betonschnitte für kontrollierte Teilabbrüche in laufenden Betrieben.'
+                title: 'Staubschutzwände',
+                description: 'Installation temporärer Schutzwände für sauberes Arbeiten.'
               }
             ].map((service, index) => (
               <div key={index} className="group">
@@ -118,18 +118,18 @@ export default function IndustrieabbruchBielefeld() {
         <div className="absolute inset-0 bg-gradient-to-r from-sky-900/10 via-slate-900/30 to-sky-900/10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unser Ablauf</h2>
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Unser Vorgehen</h2>
             <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
-              Strukturiert und sicher zum erfolgreichen Projektabschluss
+              Sauber und leise zum perfekten Ergebnis
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { step: '01', title: 'Bestandsaufnahme', desc: 'Detaillierte Analyse vor Ort' },
-              { step: '02', title: 'Konzepterstellung', desc: 'Maßgeschneiderter Abbruchplan' },
-              { step: '03', title: 'Durchführung', desc: 'Professionelle Umsetzung' },
-              { step: '04', title: 'Dokumentation', desc: 'Lückenlose Nachweise' }
+              { step: '01', title: 'Begehung', desc: 'Analyse der Räumlichkeiten' },
+              { step: '02', title: 'Schutzmaßnahmen', desc: 'Abschottung und Staubschutz' },
+              { step: '03', title: 'Rückbau', desc: 'Präzise Demontage' },
+              { step: '04', title: 'Endreinigung', desc: 'Besenreine Übergabe' }
             ].map((item, index) => (
               <div key={index} className="relative">
                 <div className="bg-gradient-to-br from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 h-full hover:border-sky-400/40 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300">
@@ -155,135 +155,134 @@ export default function IndustrieabbruchBielefeld() {
 
             <div className="prose prose-lg max-w-none text-white/90">
               <p className="text-lg leading-relaxed mb-8">
-                Gestern Morgen um 6 klingelte das Telefon - Notfall in Sennestadt. Die alte Druckerei musste
-                raus, und zwar schnell! Der neue Eigentümer wollte schon nächsten Monat mit dem Neubau anfangen.
-                "Kein Problem", haben wir gesagt. Mit unseren Großgeräten und 15 Mann waren wir in drei Stunden
-                vor Ort. Sowas is <strong>Industrieabbruch in Bielefeld</strong> - schnell, professionell und
-                ohne Überraschungen.
+                Letzte Woche kam der Anruf vom Universitätsklinikum - die Station 3B musste renoviert werden,
+                aber die Patienten konnten nicht verlegt werden. "Geht das überhaupt?", fragte die
+                Stationsleiterin. Klar geht das! Mit unserer Staubschutzwand, leisem Werkzeug und Nachtarbeit
+                haben wir die halbe Station entkernt, während nebenan die Patienten geschlafen haben. Das is
+                <strong> Innenabbruch in Bielefeld</strong> - wir arbeiten so leise, dass selbst die Nachtschwester
+                nix gemerkt hat!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Fabrikabbruch
+                Wanddurchbrüche
               </h2>
               <p className="mb-6">
-                Fabrikabbruch is unser täglich Brot. Die ganzen alten Textilfabriken in Bielefeld - wir haben
-                schon mindestens 20 davon plattgemacht. Das Schwierige dabei? Die Dinger sind oft viel stabiler
-                gebaut als man denkt. Stahlbeton aus den 50ern, der hält ewig! Letzte Woche in der Ravensberger
-                Spinnerei, da haben wir mit dem 50-Tonnen-Bagger angefangen - der erste Schlag, und der Beton
-                hat nur gelacht. Da mussten die schweren Geschütze ran: Abbruchzange mit 120 Tonnen Beißkraft.
+                Wanddurchbrüche sind unsere Spezialität. Egal ob für ne neue Tür, ein Fenster oder gleich
+                nen ganzen Durchgang - wir machen das millimetergenau. Neulich im Rathaus, da wollten die
+                zwei Büros verbinden. Problem: 50cm dicker Stahlbeton aus den 60ern, und rundherum sitzen
+                Kollegen die arbeiten müssen. Mit unserer Diamantsäge haben wir das in drei Stunden geschafft -
+                fast ohne Lärm und definitiv ohne Staub!
               </p>
               <p className="mb-6">
-                Bei jedem Fabrikabbruch gibts Überraschungen. Alte Öltanks im Boden, von denen keiner mehr wusste.
-                Asbestplatten hinter der Wandverkleidung. Oder wie neulich in Heepen - da war noch ne komplette
-                Druckmaschine einbetoniert im Keller! 40 Tonnen schwer, keiner wusste mehr davon. Aber das macht
-                nix, wir haben für alles das richtige Werkzeug. Plasmaschneidbrenner, Seilsägen, hydraulische
-                Scheren - damit kriegen wir alles klein.
+                Das Geheimnis is die richtige Technik. Erstmal mit dem Scanner prüfen wo Leitungen und
+                Bewehrung liegen. Dann Schutzfolie an die Wand, Staubsauger direkt an die Säge, und los gehts.
+                Der Schnitt is so sauber, dass man danach kaum verputzen muss. Und das Beste: Die Sekretärin
+                im Nebenbüro hat weiter telefoniert, als wär nix gewesen. So muss Innenabbruch sein - professionell
+                und rücksichtsvoll!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Maschinendemontage
+                Deckendurchbrüche
               </h2>
               <p className="mb-6">
-                Maschinendemontage is wie Operation am offenen Herzen - nur in groß und dreckig. Letztens bei
-                Gildemeister, die wollten ihre alte Transferstraße raus haben. 200 Meter lang, 500 Tonnen schwer,
-                und alles voller Öl und Späne. Erstmal mussten wir das Ding entölen - 8.000 Liter Hydrauliköl
-                und Kühlschmiermittel! Alles fachgerecht abgesaugt und entsorgt, sonst gibts richtig Ärger vom
-                Umweltamt.
+                Deckendurchbrüche sind noch kniffliger als Wände. Da hängt die Statik dran, und von oben
+                rieselt der Dreck. Letzten Monat in der Sparkasse am Jahnplatz - die wollten ne neue Treppe
+                zwischen den Etagen. Über uns die Schalterhalle mit Kundenverkehr, unter uns das Archiv. Da
+                kannst du nicht einfach mit dem Presslufthammer anrücken!
               </p>
               <p className="mb-6">
-                Die Zerlegung selbst is dann Millimeterarbeit. Manche Teile kann man noch verkaufen - die
-                Chinesen kaufen gerne gebrauchte deutsche Maschinen. Also vorsichtig zerlegen, dokumentieren,
-                verpacken. Andere Teile sind nur noch Schrott - ab in den Container und zur Schmelze. Bei der
-                Gildemeister-Anlage haben wir drei Wochen gebraucht, aber am Ende war die Halle leer und der
-                Kunde zufrieden. 80% der Maschine konnten wir sogar noch verwerten!
+                Wir haben das nachts gemacht, mit Seilsäge und Wasserkühlung. Erstmal Träger einziehen zur
+                Absicherung, dann Schnitt für Schnitt die Decke rausschneiden. Jedes Stück einzeln mit dem
+                Kran rausgehoben - 2 Tonnen schwer waren die Betonplatten! Am nächsten Morgen war alles fertig,
+                nur das Loch in der Decke hat gezeigt dass wir da waren. Die Kunden haben nix mitbekommen,
+                und das Archiv war staubfrei. Perfekt!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Kraftwerksrückbau
+                Trennwandabbau
               </h2>
               <p className="mb-6">
-                Kraftwerksrückbau is die Königsklasse vom Industrieabbruch. Das alte Heizkraftwerk in Bielefeld-Mitte,
-                das haben wir vor zwei Jahren zurückgebaut. 80 Meter hoher Schornstein, dicke Kesselanlagen,
-                kilometerweise Rohrleitungen. Sowas macht man nicht mal eben. Erstmal monatelange Planung mit
-                Statikern, Umweltgutachtern und Sicherheitsexperten. Der Schornstein allein - 3.000 Tonnen Beton
-                und Ziegel. Den sprengen geht nicht mitten in der Stadt, also Stück für Stück von oben.
+                Trennwände abreißen klingt einfach, is es aber nicht immer. Die modernen Glaswände im
+                Büro sind noch okay, aber die alten Gipskartonwände aus den 80ern? Da is oft Asbest drin,
+                oder die Elektrik is wild verlegt. Neulich bei Bertelsmann in Gütersloh, da sollten 20
+                Büros zu nem Großraumbüro werden. 300 Meter Trennwände mussten weg - aber die Mitarbeiter
+                sollten weiterarbeiten können.
               </p>
               <p className="mb-6">
-                Das Verrückteste war die Turbinenhalle. Die alte Dampfturbine von Siemens, Baujahr 1962, die
-                wog allein 120 Tonnen. Die musste raus, aber die Halle hatte nur ein 10-Tonnen-Kran. Also haben
-                wir einen 500-Tonnen-Mobilkran kommen lassen, Dach aufgeschnitten und das Monster rausgehoben.
-                Der Verkehr musste gesperrt werden, die Anwohner waren alle am gucken. Sowas vergisst man nicht!
+                Wir haben Abschnitt für Abschnitt gearbeitet. Morgens um 6 angefangen, bevor die ersten
+                Mitarbeiter kommen. Staubschutzwand aufgebaut, Wände rausgeschnitten, Müll direkt in
+                Container. Um 8 war alles sauber und die Kollegen konnten normal arbeiten - nur halt mit
+                mehr Platz! Nach zwei Wochen waren alle Wände weg und keiner hat sich beschwert. Das is
+                wichtig bei sowas - die Leute müssen ja weiter ihrer Arbeit nachgehen können.
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Tanklagerabbruch
+                Büroentkernung
               </h2>
               <p className="mb-6">
-                Tanklager sind immer heikel - da war mal was drin, und keiner weiß mehr genau was. Bei der alten
-                Tankstelle an der Herforder Straße, da standen noch fünf unterirdische Tanks. Benzin, Diesel,
-                Heizöl - alles durcheinander. Erstmal musste ein Gutachter ran, Bodenproben nehmen. Klar,
-                kontaminiert bis zum geht nicht mehr. Also erst sanieren, dann abbrechen. Die Tanks mussten
-                ausgepumpt, gereinigt und entgast werden. Eine falsche Bewegung und es knallt!
+                Büroentkernung is mehr als nur Wände rausreißen. Da hängen Kilometer von Kabeln, Klimarohre,
+                Wasseranschlüsse - alles muss ordentlich zurückgebaut werden. Vor zwei Monaten hatten wir nen
+                großen Auftrag: 3.000 Quadratmeter Bürofläche im Loom-Quartier sollten komplett entkernt werden.
+                Der Investor wollte moderne Open-Space-Büros draus machen.
               </p>
               <p className="mb-6">
-                Wir arbeiten da nur mit zertifizierten Fachfirmen zusammen. Die kommen mit Spezialsaugwagen,
-                Ex-geschützten Pumpen und Gasmeßgeräten. Erst wenn die ihr OK geben, fangen wir mit dem Abbruch
-                an. Die Tanks werden dann aufgeschnitten und als Sondermüll entsorgt. Der kontaminierte Boden
-                muss auch raus - manchmal bis 5 Meter tief. Am Ende kommt sauberer Boden rein und alles wird
-                dokumentiert. Das Umweltamt prüft das genau!
+                Systematisch sind wir vorgegangen: Erst die Möbel raus, dann die Bodenbeläge, dann die
+                Zwischenwände. Die ganzen Kabel haben wir säuberlich aufgerollt - kann man noch gebrauchen!
+                Die Klimaanlage musste Stück für Stück demontiert werden, das Kühlmittel fachgerecht abgesaugt.
+                Nach vier Wochen war aus den verwinkelten Büros eine riesige leere Halle geworden. Der
+                Architekt war begeistert - endlich konnte er seine Vision umsetzen!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Hallenentkernung
+                Ladenbauabbau
               </h2>
               <p className="mb-6">
-                Hallenentkernung is was für Spezialisten. Die Hülle bleibt stehen, aber innen muss alles raus.
-                Neulich bei ThyssenKrupp in Brackwede - die wollten ihre alte Montagehalle modernisieren.
-                Stahlkonstruktion von 1965, noch top in Schuss, aber innen total veraltet. Alte Kranbahnen,
-                Zwischendecken, Büroeinbauten - alles musste raus. Aber vorsichtig! Ein falscher Schnitt und
-                die Statik is im Eimer.
+                Ladenbau abreißen is immer Zeitdruck. Die Miete läuft, der neue Mieter will rein, und
+                dazwischen müssen wir ran. Letzte Woche in der Altstadt - die alte Boutique musste raus,
+                ein Handyladen sollte rein. Freitag Ladenschluss, Montag Neueröffnung. Dazwischen: wir!
               </p>
               <p className="mb-6">
-                Wir haben erstmal alles vermessen und mit dem Statiker einen Plan gemacht. Was is tragend, was
-                kann weg? Dann systematisch von oben nach unten. Die alten Asbestplatten in der Decke waren
-                die größte Überraschung - 2.000 Quadratmeter! Da kam die Sanierungsfirma, alles abgeschottet,
-                Unterdruck, Schutzanzüge. Drei Wochen nur für den Asbest. Danach konnten wir mit schwerem Gerät
-                ran. Am Ende war die Halle leer wie ne Kathedrale - bereit für den Neuaufbau.
+                Samstag früh um 6 gings los. Die ganzen Einbauten raus - Regale, Umkleiden, Kasse, Beleuchtung.
+                Die Holzverkleidung an den Wänden war noch gut, die haben wir vorsichtig abgebaut zum
+                Wiederverwenden. Der alte Fliesenboden musste auch raus, aber leise - die Nachbarn schlafen
+                ja noch! Mit speziellen Dämmmatten unter den Maschinen haben wir den Lärm gedämpft. Sonntag
+                abend war alles fertig, besenrein übergeben. Der neue Mieter konnte Montag früh direkt mit
+                dem Einrichten anfangen. So schnell kann Ladenbauabbau sein!
               </p>
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Betonsägen & Bohren
+                Staubschutzwände
               </h2>
               <p className="mb-6">
-                Betonsägen und Bohren klingt einfach, is aber hohe Kunst. Wenn in ner laufenden Fabrik ne neue
-                Maschine rein soll, können wir nicht mit dem Abbruchbagger anrücken. Da muss millimetergenau
-                gearbeitet werden. Letzte Woche bei Schüco - neue Produktionslinie, aber die Tür war zu klein.
-                Also: Wanddurchbruch, 6 Meter breit, 4 Meter hoch, 80 Zentimeter dicker Stahlbeton. Mit unserer
-                Seilsäge haben wir das in einem Tag geschafft, sauber und ohne Erschütterungen.
+                Staubschutzwände sind das A und O beim Innenabbruch. Ohne die geht gar nix, besonders wenn
+                nebenan weitergearbeitet wird. Wir haben ein ausgeklügeltes System: Metallrahmen mit
+                Spezialfolie, dazu Unterdruck-Anlagen die den Staub absaugen. Das Zeug kostet, aber es
+                lohnt sich! Keine Beschwerden, keine Reinigungskosten, alle sind zufrieden.
               </p>
               <p className="mb-6">
-                Das Geheimnis is die richtige Technik. Diamantseilsägen für große Schnitte, Wandsägen für präzise
-                Arbeiten, Kernbohrungen für Durchführungen. Alles wassergekühlt, damit kein Staub entsteht. Bei
-                Schüco lief die Produktion nebenan weiter - die haben nix gemerkt! Der ausgesägte Block wurde
-                dann mit dem Kran rausgehoben - 45 Tonnen am Stück. Sowas macht nicht jeder, aber wir haben
-                das Equipment und die Erfahrung dafür.
+                Im Franziskus Hospital haben wir mal ne ganze Station saniert, während drumherum der
+                normale Krankenhausbetrieb lief. Unsere Staubschutzwände waren so dicht, dass selbst die
+                empfindlichen Beatmungsgeräte keine erhöhten Staubwerte angezeigt haben. Die Hygiene-
+                beauftrage war erst skeptisch, aber nach den Messungen war sie begeistert. "Sauberer als
+                bei normalem Betrieb", hat sie gesagt. Das is unser Anspruch - Innenabbruch ohne dass es
+                jemand merkt!
               </p>
 
               <div className="bg-gradient-to-r from-sky-900/30 to-slate-800/40 backdrop-blur-xl border border-sky-400/30 rounded-2xl p-8 mt-12 hover:border-sky-400/50 hover:shadow-xl hover:shadow-sky-400/20 transition-all duration-500">
                 <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-4">
-                  Warum RückbauPRO für Ihren Industrieabbruch?
+                  Warum RückbauPRO für Ihren Innenabbruch?
                 </h3>
                 <p className="text-white/90 mb-4">
-                  25 Jahre Erfahrung mit Großprojekten in ganz OWL. Wir haben die Maschinen,
-                  das Know-how und die richtigen Leute für jeden Industrieabbruch. Von der
-                  kleinen Werkshalle bis zum kompletten Fabrikgelände.
+                  25 Jahre Erfahrung mit sensiblen Innenprojekten. Wir arbeiten leise, sauber
+                  und störungsfrei - auch während Ihr Betrieb weiterläuft. Von der kleinen
+                  Wandöffnung bis zur kompletten Entkernung.
                 </p>
                 <ul className="text-sky-100/80 space-y-2">
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Modernster Maschinenpark bis 120 Tonnen</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Zertifizierte Schadstoffsanierung</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ 24/7 Notfallservice</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Komplette Entsorgungsdokumentation</li>
-                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Festpreisgarantie bei Großprojekten</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Lärmreduzierte Arbeitsmethoden unter 65 dB</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Zertifizierte Staubschutzssysteme</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Nacht- und Wochenendarbeit möglich</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Arbeiten im laufenden Betrieb</li>
+                  <li className="hover:text-sky-200 transition-colors duration-300">✓ Besenreine Übergabe garantiert</li>
                 </ul>
               </div>
             </div>
@@ -295,23 +294,23 @@ export default function IndustrieabbruchBielefeld() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Industriegebiete Bielefeld</h2>
+            <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">Innenabbruch in ganz Bielefeld</h2>
             <p className="text-xl text-sky-100/80 max-w-3xl mx-auto">
-              Wir kennen jedes Industriegebiet und jeden Gewerbehof
+              Schnell vor Ort in allen Stadtteilen und Gewerbegebieten
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              'Industriegebiet Ost',
-              'Gewerbepark Oldentrup',
-              'Brackwede Süd',
-              'Sennestadt Industrie',
-              'Jöllenbeck Nord',
-              'Heepen Gewerbegebiet',
-              'Altenhagen Industriepark',
-              'Quelle Gewerbegebiet',
-              'Sieker Industriegebiet'
+              'Bielefeld Mitte',
+              'Brackwede',
+              'Schildesche',
+              'Jöllenbeck',
+              'Heepen',
+              'Stieghorst',
+              'Sennestadt',
+              'Gadderbaum',
+              'Dornberg'
             ].map((area, index) => (
               <div key={index} className="bg-gradient-to-r from-slate-800/30 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-xl p-4 hover:border-sky-400/40 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300">
                 <span className="text-sky-100/90 hover:text-sky-200 transition-colors duration-300">{area}</span>
@@ -326,27 +325,27 @@ export default function IndustrieabbruchBielefeld() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-6">
-              Häufige Fragen zum Industrieabbruch
+              Häufige Fragen zum Innenabbruch
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               {
-                q: 'Was kostet ein Industrieabbruch?',
-                a: 'Das hängt von der Größe ab. Ne kleine Halle gibts ab 50.000€, große Fabriken können Millionen kosten. Wir machen immer ne kostenlose Besichtigung und ein Festpreisangebot.'
+                q: 'Wie laut wird der Innenabbruch?',
+                a: 'Mit unseren schallgedämpften Werkzeugen bleiben wir meist unter 65 dB - das is leiser als ne normale Unterhaltung. Für besonders sensible Bereiche haben wir Spezialwerkzeuge.'
               },
               {
-                q: 'Wie lange dauert so ein Projekt?',
-                a: 'Von 2 Wochen bis 6 Monate, je nach Größe. Ne normale Fabrikhalle is in 4-6 Wochen weg, inklusive Entsorgung und Dokumentation.'
+                q: 'Kann während der Arbeiten weitergearbeitet werden?',
+                a: 'Ja! Mit Staubschutzwänden und leisem Werkzeug stören wir den Betrieb kaum. Viele Kunden merken gar nicht, dass wir da sind.'
               },
               {
-                q: 'Was ist mit Schadstoffen?',
-                a: 'Wir haben alle Zertifikate für Asbestsanierung und Schadstoffentsorgung. Erstmal Gutachten, dann fachgerechte Sanierung, alles dokumentiert.'
+                q: 'Wie vermeidet ihr Staub?',
+                a: 'Professionelle Staubschutzwände, Unterdruck-Anlagen und direkte Absaugung an den Werkzeugen. 99% staubfrei is unser Standard.'
               },
               {
-                q: 'Können Maschinen verkauft werden?',
-                a: 'Klar! Wir haben Kontakte zu Maschinenhändlern weltweit. Oft lässt sich noch gutes Geld mit alten Anlagen machen. Das rechnen wir direkt gegen.'
+                q: 'Arbeitet ihr auch nachts oder am Wochenende?',
+                a: 'Klar! Gerade in Läden, Praxen oder Büros arbeiten wir oft außerhalb der Geschäftszeiten. Kostet nen kleinen Aufschlag, aber dafür läuft der Betrieb normal weiter.'
               }
             ].map((faq, index) => (
               <div key={index} className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 hover:border-sky-400/40 hover:shadow-lg hover:shadow-sky-400/20 transform hover:-translate-y-1 transition-all duration-300">
@@ -363,10 +362,10 @@ export default function IndustrieabbruchBielefeld() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-sky-900/30 to-slate-800/30 backdrop-blur-xl border border-sky-400/30 rounded-3xl p-12 text-center hover:border-sky-400/50 hover:shadow-2xl hover:shadow-sky-400/20 transition-all duration-500">
             <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-sky-200 to-white mb-4">
-              Industrieabbruch in Bielefeld? Wir packen's an!
+              Innenabbruch in Bielefeld? Leise, sauber, professionell!
             </h2>
             <p className="text-sky-100/80 mb-8">
-              Große Maschinen ✓ Erfahrene Profis ✓ Festpreise ✓ Termingarantie
+              Staubfrei ✓ Lärmreduziert ✓ Im laufenden Betrieb ✓ Termingenau
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -379,7 +378,7 @@ export default function IndustrieabbruchBielefeld() {
                 href="/kontakt"
                 className="inline-block px-8 py-4 bg-gradient-to-r from-slate-800/50 to-sky-900/30 backdrop-blur-xl border border-sky-400/30 text-sky-100 font-bold rounded-full hover:border-sky-400/50 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300"
               >
-                Kostenlose Besichtigung →
+                Kostenlose Beratung →
               </Link>
             </div>
           </div>

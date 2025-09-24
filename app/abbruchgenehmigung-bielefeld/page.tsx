@@ -162,7 +162,7 @@ export default function AbbruchgenehmigungBielefeld() {
                 war alles durch.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Bauantragstellung
               </h2>
               <p className="mb-6">
@@ -179,7 +179,7 @@ export default function AbbruchgenehmigungBielefeld() {
                 nicht per Post. So können wir direkt nachfragen wenn was unklar is.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Statikprüfung
               </h2>
               <p className="mb-6">
@@ -195,7 +195,7 @@ export default function AbbruchgenehmigungBielefeld() {
                 was abgerissen werden konnte. Sowas muss alles in den Antrag rein, mit Zeichnungen und Berechnungen.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Nachbarschaftsrecht
               </h2>
               <p className="mb-6">
@@ -211,7 +211,7 @@ export default function AbbruchgenehmigungBielefeld() {
                 gehts um solche Kleinigkeiten, aber ohne die Unterschrift läuft nix.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Schadstoffgutachten
               </h2>
               <p className="mb-6">
@@ -227,7 +227,7 @@ export default function AbbruchgenehmigungBielefeld() {
                 sich ne Sanierung mehr als Abriss. Aber das entscheidet am Ende der Kunde.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Entsorgungsnachweis
               </h2>
               <p className="mb-6">
@@ -243,7 +243,7 @@ export default function AbbruchgenehmigungBielefeld() {
                 Nachweise. Der Abriss wurde gestoppt und es gab ne saftige Strafe. Mit uns passiert sowas nicht.
               </p>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-6 mt-12">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Express-Service
               </h2>
               <p className="mb-6">
@@ -355,10 +355,10 @@ export default function AbbruchgenehmigungBielefeld() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:08000060970"
+                href="tel:+49 174 8083023"
                 className="inline-block px-8 py-4 bg-gradient-to-r from-sky-600/40 to-sky-700/40 backdrop-blur-xl text-white font-bold rounded-full hover:from-sky-600/60 hover:to-sky-700/60 hover:shadow-lg hover:shadow-sky-400/30 transform hover:scale-105 transition-all duration-300"
               >
-                📞 0800 0060970
+                📞 +49 174 8083023
               </a>
               <Link
                 href="/kontakt"

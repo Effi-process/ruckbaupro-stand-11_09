@@ -46,7 +46,12 @@ const servicesData = {
         { name: 'Hochbau-Abriss Bielefeld', link: '/hochbau-abriss-bielefeld' },
         { name: 'Gebäudeabbruch Bielefeld', link: '/gebaeudeabbruch-bielefeld' },
         { name: 'Aufräumarbeiten Bielefeld', link: '/aufraeumarbeiten-bielefeld' },
-        { name: 'Industrieabbruch Bielefeld', link: '/industrieabbruch-bielefeld' }
+        { name: 'Industrieabbruch Bielefeld', link: '/industrieabbruch-bielefeld' },
+        { name: 'Innenabbruch Bielefeld', link: '/innenabbruch-bielefeld' },
+        { name: 'Komplettabriss Bielefeld', link: '/komplettabriss-bielefeld' },
+        { name: 'Räumung & Rodung Bielefeld', link: '/raeumung-rodung-bielefeld' },
+        { name: 'Schrottumschlag Bielefeld', link: '/schrottumschlag-bielefeld' },
+        { name: 'Schutt-Aufräumarbeiten Bielefeld', link: '/schutt-aufraeumarbeiten-bielefeld' }
       ]
     },
     {

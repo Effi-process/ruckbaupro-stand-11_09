@@ -145,11 +145,11 @@ export default function Header() {
               
               {/* Phone Number - Clean Style */}
               <a
-                href="tel:08000060970"
+                href="tel:+49 174 8083023"
                 className="hidden lg:flex flex-col items-end mr-2"
               >
                 <span className="text-xs text-gray-500 uppercase tracking-wider font-light">24/7 NOTFALL</span>
-                <span className="text-lg font-bold text-gray-900">0800 0060970</span>
+                <span className="text-lg font-bold text-gray-900">+49 174 8083023</span>
               </a>
               
               {/* Modern CTA Button */}
