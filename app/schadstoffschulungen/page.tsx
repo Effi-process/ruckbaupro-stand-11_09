@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Icon from '@/app/components/Icon';
 import FloatingElements from '@/app/components/FloatingElements';
 import FooterWithMarquee from '@/app/components/FooterWithMarquee';
 import dynamic from 'next/dynamic';
@@ -35,23 +34,34 @@ export default function SchadstoffschulungenPage() {
       <FloatingElements />
 
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 mt-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/20 p-8 lg:p-12 shadow-2xl">
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 mt-20 overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-sky-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto">
+          <div className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl rounded-3xl border border-white/20 p-10 lg:p-16 shadow-2xl">
+
             {/* Header */}
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center px-4 py-2 bg-cerulean/20 backdrop-blur-lg rounded-full mb-6">
-                <Icon name="award" size={16} className="text-cerulean mr-2" />
-                <span className="text-sm font-semibold text-cerulean uppercase tracking-wider">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-sky-400/20 to-blue-400/20 backdrop-blur-lg rounded-full px-8 py-3 mb-8">
+                <span className="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></span>
+                <span className="text-sm font-bold text-sky-400 uppercase tracking-wider">
                   Zertifizierte Fortbildung
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
-                ALLGEMEINE SCHADSTOFFSCHULUNGEN
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
+                ALLGEMEINE
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-400">
+                  SCHADSTOFFSCHULUNGEN
+                </span>
               </h1>
 
-              <p className="text-xl text-white/80 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-4xl mx-auto">
                 Umfassende Schulungen zu allen Gebäudeschadstoffen - von Asbest über KMF bis zu Schimmel.
                 Unsere zertifizierten Seminare vermitteln fundiertes Wissen für den sicheren Umgang mit
                 Gefahrstoffen im Bau- und Sanierungsbereich.
@@ -59,289 +69,290 @@ export default function SchadstoffschulungenPage() {
             </div>
 
             {/* Main Grid */}
-            <div className="grid lg:grid-cols-2 gap-8 mb-12">
-              {/* Überblick */}
-              <div className="bg-white/10 backdrop-blur rounded-2xl p-8">
-                <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
-                  <Icon name="book-open" size={28} className="text-cerulean mr-3" />
+            <div className="grid lg:grid-cols-2 gap-10 mb-16">
+              {/* Seminarübersicht */}
+              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-10 border border-white/20 overflow-hidden group hover:border-sky-400/30 transition-all duration-500">
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-sky-400/20 to-transparent rounded-full blur-3xl"></div>
+
+                <h2 className="text-3xl font-bold text-white mb-2">
                   Seminarübersicht
                 </h2>
-                <p className="text-white/80 mb-6">
+                <div className="w-20 h-1 bg-gradient-to-r from-sky-400 to-blue-400 mb-8"></div>
+
+                <p className="text-gray-200 text-lg mb-8 leading-relaxed">
                   Unsere Seminare bieten eine umfassende Einführung in die Thematik der Gebäudeschadstoffe
                   und vermitteln praxisnahes Wissen für den sicheren Umgang.
                 </p>
-                <ul className="space-y-3 text-white/80">
-                  <li className="flex items-start">
-                    <Icon name="check-circle" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Grundlagen zu allen relevanten Schadstoffen im Gebäudebestand</span>
+
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-4">
+                    <span className="inline-block w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="text-gray-200">Grundlagen zu allen relevanten Schadstoffen im Gebäudebestand</span>
                   </li>
-                  <li className="flex items-start">
-                    <Icon name="check-circle" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Erkennung und Bewertung verschiedener Gefahrstoffe</span>
+                  <li className="flex items-start gap-4">
+                    <span className="inline-block w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="text-gray-200">Erkennung und Bewertung verschiedener Gefahrstoffe</span>
                   </li>
-                  <li className="flex items-start">
-                    <Icon name="check-circle" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Praktische Übungen zur Probenahme und Messung</span>
+                  <li className="flex items-start gap-4">
+                    <span className="inline-block w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="text-gray-200">Praktische Übungen zur Probenahme und Messung</span>
                   </li>
-                  <li className="flex items-start">
-                    <Icon name="check-circle" size={20} className="text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Rechtliche Grundlagen und Arbeitsschutzvorschriften</span>
+                  <li className="flex items-start gap-4">
+                    <span className="inline-block w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="text-gray-200">Rechtliche Grundlagen und Arbeitsschutzvorschriften</span>
                   </li>
                 </ul>
               </div>
 
               {/* Zielgruppe */}
-              <div className="bg-white/10 backdrop-blur rounded-2xl p-8">
-                <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
-                  <Icon name="users" size={28} className="text-cerulean mr-3" />
+              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-10 border border-white/20 overflow-hidden group hover:border-sky-400/30 transition-all duration-500">
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-blue-400/20 to-transparent rounded-full blur-3xl"></div>
+
+                <h2 className="text-3xl font-bold text-white mb-2">
                   Zielgruppe
                 </h2>
-                <p className="text-white/80 mb-6">
+                <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-sky-400 mb-8"></div>
+
+                <p className="text-gray-200 text-lg mb-8 leading-relaxed">
                   Unsere Schulungen richten sich an alle, die im Bau- und Sanierungsbereich
                   mit Schadstoffen in Kontakt kommen können.
                 </p>
-                <ul className="space-y-3 text-white/80">
-                  <li className="flex items-start">
-                    <Icon name="user" size={20} className="text-cerulean mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Bauleiter und Projektverantwortliche</span>
+
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-4">
+                    <span className="inline-block w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="text-gray-200">Bauleiter und Projektverantwortliche</span>
                   </li>
-                  <li className="flex items-start">
-                    <Icon name="user" size={20} className="text-cerulean mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Handwerker und Sanierungsfachkräfte</span>
+                  <li className="flex items-start gap-4">
+                    <span className="inline-block w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="text-gray-200">Handwerker und Sanierungsfachkräfte</span>
                   </li>
-                  <li className="flex items-start">
-                    <Icon name="user" size={20} className="text-cerulean mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Gebäudemanager und Facility Manager</span>
+                  <li className="flex items-start gap-4">
+                    <span className="inline-block w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="text-gray-200">Gebäudemanager und Facility Manager</span>
                   </li>
-                  <li className="flex items-start">
-                    <Icon name="user" size={20} className="text-cerulean mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Sicherheitsbeauftragte und Arbeitsschutzexperten</span>
+                  <li className="flex items-start gap-4">
+                    <span className="inline-block w-2 h-2 bg-sky-400 rounded-full mt-2 flex-shrink-0"></span>
+                    <span className="text-gray-200">Sicherheitsbeauftragte und Arbeitsschutzexperten</span>
                   </li>
                 </ul>
               </div>
             </div>
 
             {/* Schadstoff-Übersicht */}
-            <div className="bg-gradient-to-r from-cerulean/10 to-indigo-dye/10 rounded-2xl p-8 mb-12">
-              <h2 className="text-3xl font-bold text-white mb-8 text-center">
+            <div className="bg-gradient-to-r from-sky-400/10 to-blue-400/10 backdrop-blur-lg rounded-3xl p-12 mb-16 border border-white/10">
+              <h2 className="text-4xl font-bold text-white mb-12 text-center">
                 Behandelte Schadstoffe im Detail
               </h2>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
                   {
                     title: "Asbest",
-                    icon: "alert-triangle",
                     description: "Erkennung, Bewertung und fachgerechter Umgang mit asbesthaltigen Materialien",
-                    color: "text-red-400"
+                    color: "from-red-500/20 to-red-600/20",
+                    borderColor: "border-red-500/30"
                   },
                   {
                     title: "KMF",
-                    icon: "layers",
                     description: "Künstliche Mineralfasern - Identifikation und sichere Handhabung",
-                    color: "text-yellow-400"
+                    color: "from-yellow-500/20 to-yellow-600/20",
+                    borderColor: "border-yellow-500/30"
                   },
                   {
                     title: "PAK",
-                    icon: "droplet",
                     description: "Polyzyklische aromatische Kohlenwasserstoffe in Teer und Bitumen",
-                    color: "text-purple-400"
+                    color: "from-purple-500/20 to-purple-600/20",
+                    borderColor: "border-purple-500/30"
                   },
                   {
                     title: "PCB",
-                    icon: "zap",
                     description: "Polychlorierte Biphenyle in Fugenmassen und Kondensatoren",
-                    color: "text-blue-400"
+                    color: "from-blue-500/20 to-blue-600/20",
+                    borderColor: "border-blue-500/30"
                   },
                   {
                     title: "PCP",
-                    icon: "shield",
                     description: "Pentachlorphenol und andere Holzschutzmittel",
-                    color: "text-green-400"
+                    color: "from-green-500/20 to-green-600/20",
+                    borderColor: "border-green-500/30"
                   },
                   {
                     title: "Schimmel",
-                    icon: "cloud",
                     description: "Schimmelpilze - Erkennung, Bewertung und Sanierung",
-                    color: "text-teal-400"
+                    color: "from-teal-500/20 to-teal-600/20",
+                    borderColor: "border-teal-500/30"
                   }
                 ].map((item, index) => (
-                  <div key={index} className="bg-white/5 backdrop-blur rounded-xl p-6 border border-white/10 hover:border-cerulean/50 transition-all">
-                    <Icon name={item.icon} size={32} className={`${item.color} mb-3`} />
-                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-white/70 text-sm">{item.description}</p>
+                  <div key={index} className={`relative bg-gradient-to-br ${item.color} backdrop-blur rounded-2xl p-8 border ${item.borderColor} hover:scale-105 transition-all duration-300 overflow-hidden group`}>
+                    <div className="absolute -top-10 -right-10 w-20 h-20 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+                    <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
+                    <p className="text-gray-200">{item.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Schulungsinhalte Detail */}
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white/5 backdrop-blur rounded-2xl p-6 border border-white/10">
-                <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                  <Icon name="clipboard" size={24} className="text-cerulean mr-3" />
+            <div className="grid md:grid-cols-2 gap-10 mb-16">
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur rounded-3xl p-10 border border-white/20">
+                <h3 className="text-2xl font-bold text-white mb-2">
                   Theoretische Grundlagen
                 </h3>
-                <ul className="space-y-2 text-white/80">
-                  <li className="flex items-start">
-                    <Icon name="chevron-right" size={16} className="text-cerulean mr-2 mt-1 flex-shrink-0" />
-                    <span>Vorkommen und Eigenschaften der Schadstoffe</span>
+                <div className="w-16 h-1 bg-gradient-to-r from-sky-400 to-blue-400 mb-8"></div>
+
+                <ul className="space-y-4">
+                  <li className="text-gray-200 pl-6 border-l-2 border-sky-400/30">
+                    Vorkommen und Eigenschaften der Schadstoffe
                   </li>
-                  <li className="flex items-start">
-                    <Icon name="chevron-right" size={16} className="text-cerulean mr-2 mt-1 flex-shrink-0" />
-                    <span>Gesundheitsgefahren und Risikobewertung</span>
+                  <li className="text-gray-200 pl-6 border-l-2 border-sky-400/30">
+                    Gesundheitsgefahren und Risikobewertung
                   </li>
-                  <li className="flex items-start">
-                    <Icon name="chevron-right" size={16} className="text-cerulean mr-2 mt-1 flex-shrink-0" />
-                    <span>Rechtliche Grundlagen und Vorschriften</span>
+                  <li className="text-gray-200 pl-6 border-l-2 border-sky-400/30">
+                    Rechtliche Grundlagen und Vorschriften
                   </li>
-                  <li className="flex items-start">
-                    <Icon name="chevron-right" size={16} className="text-cerulean mr-2 mt-1 flex-shrink-0" />
-                    <span>Probenahme und Analytik</span>
+                  <li className="text-gray-200 pl-6 border-l-2 border-sky-400/30">
+                    Probenahme und Analytik
                   </li>
-                  <li className="flex items-start">
-                    <Icon name="chevron-right" size={16} className="text-cerulean mr-2 mt-1 flex-shrink-0" />
-                    <span>Dokumentation und Nachweisführung</span>
+                  <li className="text-gray-200 pl-6 border-l-2 border-sky-400/30">
+                    Dokumentation und Nachweisführung
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-white/5 backdrop-blur rounded-2xl p-6 border border-white/10">
-                <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                  <Icon name="tool" size={24} className="text-cerulean mr-3" />
+              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur rounded-3xl p-10 border border-white/20">
+                <h3 className="text-2xl font-bold text-white mb-2">
                   Praktische Anwendung
                 </h3>
-                <ul className="space-y-2 text-white/80">
-                  <li className="flex items-start">
-                    <Icon name="chevron-right" size={16} className="text-cerulean mr-2 mt-1 flex-shrink-0" />
-                    <span>Erkundung und Bewertung vor Ort</span>
+                <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-sky-400 mb-8"></div>
+
+                <ul className="space-y-4">
+                  <li className="text-gray-200 pl-6 border-l-2 border-blue-400/30">
+                    Erkundung und Bewertung vor Ort
                   </li>
-                  <li className="flex items-start">
-                    <Icon name="chevron-right" size={16} className="text-cerulean mr-2 mt-1 flex-shrink-0" />
-                    <span>Schutzmaßnahmen und Arbeitsverfahren</span>
+                  <li className="text-gray-200 pl-6 border-l-2 border-blue-400/30">
+                    Schutzmaßnahmen und Arbeitsverfahren
                   </li>
-                  <li className="flex items-start">
-                    <Icon name="chevron-right" size={16} className="text-cerulean mr-2 mt-1 flex-shrink-0" />
-                    <span>Sanierungskonzepte und -strategien</span>
+                  <li className="text-gray-200 pl-6 border-l-2 border-blue-400/30">
+                    Sanierungskonzepte und -strategien
                   </li>
-                  <li className="flex items-start">
-                    <Icon name="chevron-right" size={16} className="text-cerulean mr-2 mt-1 flex-shrink-0" />
-                    <span>Entsorgung und Verwertung</span>
+                  <li className="text-gray-200 pl-6 border-l-2 border-blue-400/30">
+                    Entsorgung und Verwertung
                   </li>
-                  <li className="flex items-start">
-                    <Icon name="chevron-right" size={16} className="text-cerulean mr-2 mt-1 flex-shrink-0" />
-                    <span>Qualitätssicherung und Freimessung</span>
+                  <li className="text-gray-200 pl-6 border-l-2 border-blue-400/30">
+                    Qualitätssicherung und Freimessung
                   </li>
                 </ul>
               </div>
             </div>
 
             {/* Zertifizierung */}
-            <div className="bg-cerulean/10 border border-cerulean/30 rounded-2xl p-8 mb-12">
+            <div className="relative bg-gradient-to-r from-sky-400/20 to-blue-400/20 backdrop-blur-lg border border-sky-400/30 rounded-3xl p-12 mb-16 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sky-400 to-blue-400"></div>
+
               <div className="text-center">
-                <Icon name="award" size={48} className="text-cerulean mx-auto mb-4" />
-                <h2 className="text-3xl font-bold text-white mb-4">
+                <h2 className="text-4xl font-bold text-white mb-6">
                   Zertifizierung & Anerkennung
                 </h2>
-                <p className="text-white/80 mb-6 max-w-3xl mx-auto">
+                <p className="text-gray-200 text-lg mb-10 max-w-3xl mx-auto leading-relaxed">
                   Nach erfolgreicher Teilnahme erhalten Sie ein anerkanntes Zertifikat, das Ihre
                   Qualifikation im Umgang mit Gebäudeschadstoffen dokumentiert.
                 </p>
 
-                <div className="grid md:grid-cols-3 gap-6 mt-8">
-                  <div className="bg-white/5 backdrop-blur rounded-xl p-4">
-                    <Icon name="check-circle" size={32} className="text-green-400 mx-auto mb-2" />
-                    <h4 className="font-bold text-white mb-1">Anerkanntes Zertifikat</h4>
-                    <p className="text-white/70 text-sm">Bundesweit gültige Qualifikation</p>
+                <div className="grid md:grid-cols-3 gap-8">
+                  <div className="bg-white/10 backdrop-blur rounded-2xl p-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-500 rounded-full mx-auto mb-4"></div>
+                    <h4 className="font-bold text-white text-xl mb-2">Anerkanntes Zertifikat</h4>
+                    <p className="text-gray-300">Bundesweit gültige Qualifikation</p>
                   </div>
-                  <div className="bg-white/5 backdrop-blur rounded-xl p-4">
-                    <Icon name="refresh" size={32} className="text-blue-400 mx-auto mb-2" />
-                    <h4 className="font-bold text-white mb-1">Regelmäßige Updates</h4>
-                    <p className="text-white/70 text-sm">Aktuelle Vorschriften & Standards</p>
+                  <div className="bg-white/10 backdrop-blur rounded-2xl p-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full mx-auto mb-4"></div>
+                    <h4 className="font-bold text-white text-xl mb-2">Regelmäßige Updates</h4>
+                    <p className="text-gray-300">Aktuelle Vorschriften & Standards</p>
                   </div>
-                  <div className="bg-white/5 backdrop-blur rounded-xl p-4">
-                    <Icon name="star" size={32} className="text-yellow-400 mx-auto mb-2" />
-                    <h4 className="font-bold text-white mb-1">Praxisorientiert</h4>
-                    <p className="text-white/70 text-sm">Direkt anwendbares Wissen</p>
+                  <div className="bg-white/10 backdrop-blur rounded-2xl p-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full mx-auto mb-4"></div>
+                    <h4 className="font-bold text-white text-xl mb-2">Praxisorientiert</h4>
+                    <p className="text-gray-300">Direkt anwendbares Wissen</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Seminarformate */}
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-white mb-8 text-center">
+            <div className="mb-16">
+              <h2 className="text-4xl font-bold text-white mb-12 text-center">
                 Unsere Seminarformate
               </h2>
 
-              <div className="grid lg:grid-cols-3 gap-6">
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur rounded-2xl p-6 border border-white/20 hover:border-cerulean/50 transition-all">
-                  <div className="flex items-center mb-4">
-                    <Icon name="calendar" size={24} className="text-cerulean mr-3" />
-                    <h3 className="text-xl font-bold text-white">Tagesseminar</h3>
-                  </div>
-                  <p className="text-white/70 mb-4">
+              <div className="grid lg:grid-cols-3 gap-8">
+                <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur rounded-3xl p-8 border border-white/20 hover:border-sky-400/50 transition-all duration-300 group">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                  <h3 className="text-2xl font-bold text-white mb-4">Tagesseminar</h3>
+                  <p className="text-gray-200 mb-6">
                     Kompakte Einführung in alle relevanten Schadstoffe an einem Tag.
                   </p>
-                  <ul className="space-y-2 text-sm text-white/60">
-                    <li className="flex items-center">
-                      <Icon name="clock" size={14} className="mr-2" />
+                  <ul className="space-y-3 text-gray-300">
+                    <li className="flex items-center gap-3">
+                      <span className="text-sky-400">•</span>
                       8 Stunden intensiv
                     </li>
-                    <li className="flex items-center">
-                      <Icon name="users" size={14} className="mr-2" />
+                    <li className="flex items-center gap-3">
+                      <span className="text-sky-400">•</span>
                       Max. 15 Teilnehmer
                     </li>
-                    <li className="flex items-center">
-                      <Icon name="certificate" size={14} className="mr-2" />
+                    <li className="flex items-center gap-3">
+                      <span className="text-sky-400">•</span>
                       Zertifikat inklusive
                     </li>
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-br from-cerulean/20 to-cerulean/10 backdrop-blur rounded-2xl p-6 border border-cerulean/30 hover:border-cerulean/50 transition-all">
-                  <div className="flex items-center mb-4">
-                    <Icon name="star" size={24} className="text-cerulean mr-3" />
-                    <h3 className="text-xl font-bold text-white">Intensivkurs</h3>
+                <div className="relative bg-gradient-to-br from-sky-400/20 to-blue-400/10 backdrop-blur rounded-3xl p-8 border border-sky-400/30 hover:border-sky-400/50 transition-all duration-300 group">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sky-400 to-blue-400"></div>
+                  <div className="absolute -top-1 -right-1 bg-gradient-to-r from-sky-400 to-blue-400 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-3xl">
+                    BELIEBT
                   </div>
-                  <p className="text-white/70 mb-4">
+
+                  <h3 className="text-2xl font-bold text-white mb-4">Intensivkurs</h3>
+                  <p className="text-gray-200 mb-6">
                     Umfassende Schulung über 2-3 Tage mit vertieften Praxisübungen.
                   </p>
-                  <ul className="space-y-2 text-sm text-white/60">
-                    <li className="flex items-center">
-                      <Icon name="clock" size={14} className="mr-2" />
+                  <ul className="space-y-3 text-gray-300">
+                    <li className="flex items-center gap-3">
+                      <span className="text-sky-400">•</span>
                       16-24 Stunden
                     </li>
-                    <li className="flex items-center">
-                      <Icon name="users" size={14} className="mr-2" />
+                    <li className="flex items-center gap-3">
+                      <span className="text-sky-400">•</span>
                       Max. 12 Teilnehmer
                     </li>
-                    <li className="flex items-center">
-                      <Icon name="certificate" size={14} className="mr-2" />
+                    <li className="flex items-center gap-3">
+                      <span className="text-sky-400">•</span>
                       Erweiterte Zertifizierung
                     </li>
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur rounded-2xl p-6 border border-white/20 hover:border-cerulean/50 transition-all">
-                  <div className="flex items-center mb-4">
-                    <Icon name="building" size={24} className="text-cerulean mr-3" />
-                    <h3 className="text-xl font-bold text-white">Inhouse-Schulung</h3>
-                  </div>
-                  <p className="text-white/70 mb-4">
+                <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur rounded-3xl p-8 border border-white/20 hover:border-sky-400/50 transition-all duration-300 group">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                  <h3 className="text-2xl font-bold text-white mb-4">Inhouse-Schulung</h3>
+                  <p className="text-gray-200 mb-6">
                     Maßgeschneiderte Schulung direkt in Ihrem Unternehmen.
                   </p>
-                  <ul className="space-y-2 text-sm text-white/60">
-                    <li className="flex items-center">
-                      <Icon name="clock" size={14} className="mr-2" />
+                  <ul className="space-y-3 text-gray-300">
+                    <li className="flex items-center gap-3">
+                      <span className="text-sky-400">•</span>
                       Flexible Dauer
                     </li>
-                    <li className="flex items-center">
-                      <Icon name="users" size={14} className="mr-2" />
+                    <li className="flex items-center gap-3">
+                      <span className="text-sky-400">•</span>
                       Unbegrenzte Teilnehmer
                     </li>
-                    <li className="flex items-center">
-                      <Icon name="certificate" size={14} className="mr-2" />
+                    <li className="flex items-center gap-3">
+                      <span className="text-sky-400">•</span>
                       Firmenzertifikate
                     </li>
                   </ul>
@@ -350,30 +361,32 @@ export default function SchadstoffschulungenPage() {
             </div>
 
             {/* CTA Section */}
-            <div className="bg-gradient-to-r from-cerulean/20 to-indigo-dye/20 rounded-2xl p-8 text-center">
-              <h2 className="text-3xl font-bold text-white mb-4">
-                Jetzt für Schadstoffschulung anmelden
-              </h2>
-              <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-                Investieren Sie in die Sicherheit und Kompetenz Ihrer Mitarbeiter.
-                Unsere zertifizierten Schulungen bieten fundiertes Wissen für den
-                professionellen Umgang mit Gebäudeschadstoffen.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="tel:+491748083023"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-cerulean to-indigo-dye text-white rounded-xl font-bold hover:shadow-2xl hover:shadow-cerulean/30 transition-all"
-                >
-                  <Icon name="phone" size={20} className="mr-3" />
-                  Beratung: 0174 8083023
-                </Link>
-                <Link
-                  href="/kontakt"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-xl border-2 border-white/20 text-white rounded-xl font-bold hover:bg-white/20 transition-all"
-                >
-                  <Icon name="mail" size={20} className="mr-3" />
-                  Schulungsanfrage
-                </Link>
+            <div className="relative bg-gradient-to-r from-sky-400/20 to-blue-400/20 backdrop-blur-lg rounded-3xl p-12 text-center overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-sky-400/10 to-blue-400/10 animate-pulse"></div>
+
+              <div className="relative z-10">
+                <h2 className="text-4xl font-bold text-white mb-6">
+                  Jetzt für Schadstoffschulung anmelden
+                </h2>
+                <p className="text-gray-200 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+                  Investieren Sie in die Sicherheit und Kompetenz Ihrer Mitarbeiter.
+                  Unsere zertifizierten Schulungen bieten fundiertes Wissen für den
+                  professionellen Umgang mit Gebäudeschadstoffen.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                  <Link
+                    href="tel:+491748083023"
+                    className="inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-sky-400 to-blue-400 text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-sky-400/30 transition-all duration-300 hover:scale-105"
+                  >
+                    Beratung: 0174 8083023
+                  </Link>
+                  <Link
+                    href="/kontakt"
+                    className="inline-flex items-center justify-center px-10 py-5 bg-white/10 backdrop-blur-xl border-2 border-white/20 text-white rounded-2xl font-bold text-lg hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                  >
+                    Schulungsanfrage stellen
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

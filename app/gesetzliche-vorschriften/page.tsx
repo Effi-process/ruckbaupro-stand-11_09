@@ -1,4 +1,3 @@
-import Icon from '../components/Icon';
 import Link from 'next/link';
 import FloatingElements from '../components/FloatingElements';
 import FooterWithMarquee from '../components/FooterWithMarquee';
@@ -103,17 +102,17 @@ export default function GesetzlicheVorschriften() {
   const strafen = [
     {
       vergehen: 'Arbeiten ohne Sachkundenachweis',
-      strafe: 'Bis zu 50.000 € Bußgeld',
+      strafe: 'Bis zu 50.000 €',
       zusatz: 'Strafverfahren bei Personenschäden'
     },
     {
       vergehen: 'Fehlende Anzeige bei Behörde',
-      strafe: 'Bis zu 25.000 € Bußgeld',
+      strafe: 'Bis zu 25.000 €',
       zusatz: 'Stilllegung der Baustelle'
     },
     {
       vergehen: 'Unsachgemäße Entsorgung',
-      strafe: 'Bis zu 100.000 € Strafe',
+      strafe: 'Bis zu 100.000 €',
       zusatz: 'Freiheitsstrafe bis 5 Jahre möglich'
     },
     {
@@ -124,70 +123,96 @@ export default function GesetzlicheVorschriften() {
   ];
 
   return (
-    <main>
+    <main className="min-h-screen bg-gradient-to-b from-oxford-blue via-gray-800 to-oxford-blue">
       {/* Floating Logo and Menu */}
       <FloatingElements />
+
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-[#2C4F5E] to-[#1E3A47]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Gesetzliche Vorschriften
+      <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/3 w-96 h-96 bg-sky-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-sky-400/20 to-blue-400/20 backdrop-blur-lg rounded-full px-8 py-3 mb-8">
+              <span className="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></span>
+              <span className="text-sm font-bold text-sky-400 uppercase tracking-wider">
+                Rechtssicherheit garantiert
+              </span>
+            </div>
+
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
+              Gesetzliche
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-400">
+                Vorschriften
+              </span>
             </h1>
-            <p className="text-xl max-w-3xl mx-auto">
+
+            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
               Alle relevanten Gesetze und Verordnungen für die Asbestsanierung
+              - vollständig, aktuell und rechtssicher
             </p>
           </div>
         </div>
       </section>
 
       {/* Intro Section */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-[#2C4F5E] mb-6">
-              Rechtssicherheit durch Expertise
-            </h2>
-            <p className="text-lg text-gray-600">
-              Die Asbestsanierung unterliegt strengen gesetzlichen Vorgaben. 
-              Als zertifizierter Fachbetrieb kennen wir alle relevanten Vorschriften 
-              und garantieren deren Einhaltung. So schützen wir Sie vor rechtlichen 
-              Konsequenzen und Haftungsrisiken.
-            </p>
+          <div className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl rounded-3xl border border-white/20 p-12 shadow-2xl">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl font-bold text-white mb-2">
+                Rechtssicherheit durch Expertise
+              </h2>
+              <div className="w-32 h-1 bg-gradient-to-r from-sky-400 to-blue-400 mx-auto mb-8"></div>
+
+              <p className="text-xl text-gray-200 leading-relaxed">
+                Die Asbestsanierung unterliegt strengen gesetzlichen Vorgaben.
+                Als zertifizierter Fachbetrieb kennen wir alle relevanten Vorschriften
+                und garantieren deren Einhaltung. So schützen wir Sie vor rechtlichen
+                Konsequenzen und Haftungsrisiken.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Vorschriften Grid */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
+          <h2 className="text-4xl font-bold text-white text-center mb-16">
             Die wichtigsten Vorschriften im Überblick
           </h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {vorschriften.map((vorschrift, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-[#2C4F5E]">{vorschrift.titel}</h3>
-                  <span className="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-600">
-                    {vorschrift.kategorie}
-                  </span>
+              <div key={index} className="group relative">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-sky-400/20 to-blue-400/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+                <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 h-full hover:border-sky-400/30 transition-all duration-300">
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-bold text-white">{vorschrift.titel}</h3>
+                    <span className="bg-gradient-to-r from-sky-400/20 to-blue-400/20 px-4 py-2 rounded-full text-sm font-semibold text-sky-400">
+                      {vorschrift.kategorie}
+                    </span>
+                  </div>
+
+                  <p className="text-sm text-sky-300 mb-4">{vorschrift.vollname}</p>
+                  <p className="text-gray-300 mb-6">{vorschrift.beschreibung}</p>
+
+                  <ul className="space-y-3">
+                    {vorschrift.inhalte.map((inhalt, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className="inline-block w-1.5 h-1.5 bg-sky-400 rounded-full mt-2 flex-shrink-0"></span>
+                        <span className="text-sm text-gray-300">{inhalt}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                
-                <p className="text-sm text-gray-500 mb-3">{vorschrift.vollname}</p>
-                <p className="text-gray-600 mb-4">{vorschrift.beschreibung}</p>
-                
-                <ul className="space-y-2">
-                  {vorschrift.inhalte.map((inhalt, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <svg className="w-4 h-4 text-[#0066CC] mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                      <span className="text-sm text-gray-700">{inhalt}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
@@ -195,148 +220,152 @@ export default function GesetzlicheVorschriften() {
       </section>
 
       {/* Ablauf Section */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
-            Gesetzeskonforme Sanierung - Der Ablauf
-          </h2>
-          
-          <div className="max-w-4xl mx-auto">
-            {ablauf.map((phase, index) => (
-              <div key={index} className="flex items-start mb-8">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#0066CC] rounded-full flex items-center justify-center text-white font-bold mr-4">
-                  {index + 1}
-                </div>
-                <div className="flex-1 bg-white rounded-lg shadow p-6">
-                  <h3 className="font-bold text-xl text-[#2C4F5E] mb-2">{phase.schritt}</h3>
-                  <p className="text-gray-600 mb-3">{phase.beschreibung}</p>
-                  <div className="bg-gray-50 rounded p-4">
-                    <p className="text-sm font-semibold text-gray-700 mb-2">Gesetzliche Pflichten:</p>
-                    <ul className="space-y-1">
-                      {phase.pflichten.map((pflicht, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-gray-600">
-                          <svg className="w-4 h-4 text-[#0066CC] mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          {pflicht}
-                        </li>
-                      ))}
-                    </ul>
+          <div className="bg-gradient-to-r from-sky-400/10 to-blue-400/10 backdrop-blur-xl rounded-3xl border border-white/10 p-12">
+            <h2 className="text-4xl font-bold text-white text-center mb-16">
+              Gesetzeskonforme Sanierung - Der Ablauf
+            </h2>
+
+            <div className="max-w-4xl mx-auto space-y-8">
+              {ablauf.map((phase, index) => (
+                <div key={index} className="flex items-start gap-6">
+                  <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-sky-400 to-blue-400 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                    {index + 1}
+                  </div>
+                  <div className="flex-1 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur rounded-2xl p-8 border border-white/20">
+                    <h3 className="font-bold text-2xl text-white mb-3">{phase.schritt}</h3>
+                    <p className="text-gray-300 mb-6 text-lg">{phase.beschreibung}</p>
+                    <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                      <p className="text-sm font-bold text-sky-400 mb-4 uppercase tracking-wide">
+                        Gesetzliche Pflichten:
+                      </p>
+                      <ul className="space-y-2">
+                        {phase.pflichten.map((pflicht, idx) => (
+                          <li key={idx} className="flex items-center gap-3 text-gray-300">
+                            <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                            {pflicht}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Strafen Section */}
-      <section className="py-16 bg-red-50">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-4">
-            Konsequenzen bei Verstößen
-          </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-            Die unsachgemäße Durchführung von Asbestarbeiten kann schwerwiegende 
-            rechtliche und finanzielle Folgen haben:
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {strafen.map((strafe, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-500">
-                <h3 className="font-bold text-lg text-red-700 mb-2">{strafe.vergehen}</h3>
-                <p className="text-2xl font-bold text-gray-800 mb-2">{strafe.strafe}</p>
-                <p className="text-sm text-gray-600">{strafe.zusatz}</p>
+          <div className="relative bg-gradient-to-r from-red-500/20 to-orange-500/20 backdrop-blur-xl rounded-3xl border border-red-500/30 p-12 overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 to-orange-500"></div>
+
+            <h2 className="text-4xl font-bold text-white text-center mb-6">
+              ⚠️ Konsequenzen bei Verstößen
+            </h2>
+            <p className="text-center text-gray-200 mb-12 max-w-3xl mx-auto text-lg">
+              Die unsachgemäße Durchführung von Asbestarbeiten kann schwerwiegende
+              rechtliche und finanzielle Folgen haben:
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {strafen.map((strafe, index) => (
+                <div key={index} className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur rounded-2xl p-8 border-l-4 border-red-500">
+                  <h3 className="font-bold text-xl text-red-400 mb-3">{strafe.vergehen}</h3>
+                  <p className="text-3xl font-black text-white mb-3">{strafe.strafe}</p>
+                  <p className="text-gray-300">{strafe.zusatz}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 max-w-3xl mx-auto">
+              <div className="bg-white/10 backdrop-blur rounded-2xl p-10 text-center border border-white/20">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <span className="text-3xl font-bold text-white">!</span>
+                </div>
+                <h3 className="font-bold text-2xl text-white mb-4">Wichtiger Hinweis</h3>
+                <p className="text-gray-200 text-lg leading-relaxed">
+                  Beauftragen Sie ausschließlich zertifizierte Fachbetriebe!
+                  Als Auftraggeber haften Sie mit, wenn Sie wissentlich einen
+                  nicht qualifizierten Betrieb beauftragen.
+                </p>
               </div>
-            ))}
-          </div>
-          
-          <div className="mt-12 max-w-3xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-              <Icon name="warning" size={48} className="mx-auto mb-4 text-red-600" />
-              <h3 className="font-bold text-xl mb-3">Wichtiger Hinweis</h3>
-              <p className="text-gray-700">
-                Beauftragen Sie ausschließlich zertifizierte Fachbetriebe! 
-                Als Auftraggeber haften Sie mit, wenn Sie wissentlich einen 
-                nicht qualifizierten Betrieb beauftragen.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Downloads Section */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#2C4F5E] text-center mb-12">
+      <section className="py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-white text-center mb-12">
             Gesetzestexte und Merkblätter
           </h2>
-          
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <div className="grid md:grid-cols-2 gap-4">
-              <a href="/downloads/TRGS-519.pdf" className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <Icon name="document" size={24} className="mr-3 text-[#0066CC]" />
-                <div>
-                  <p className="font-semibold">TRGS 519 Volltext</p>
-                  <p className="text-sm text-gray-500">PDF, 3.2 MB</p>
-                </div>
-              </a>
-              
-              <a href="/downloads/GefStoffV-Auszug.pdf" className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <Icon name="document" size={24} className="mr-3 text-[#0066CC]" />
-                <div>
-                  <p className="font-semibold">GefStoffV - Relevante Paragraphen</p>
-                  <p className="text-sm text-gray-500">PDF, 1.5 MB</p>
-                </div>
-              </a>
-              
-              <a href="/downloads/Merkblatt-Auftraggeber.pdf" className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <Icon name="document" size={24} className="mr-3 text-[#0066CC]" />
-                <div>
-                  <p className="font-semibold">Merkblatt für Auftraggeber</p>
-                  <p className="text-sm text-gray-500">PDF, 800 KB</p>
-                </div>
-              </a>
-              
-              <a href="/downloads/Checkliste-Sanierung.pdf" className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <Icon name="document" size={24} className="mr-3 text-[#0066CC]" />
-                <div>
-                  <p className="font-semibold">Checkliste Asbestsanierung</p>
-                  <p className="text-sm text-gray-500">PDF, 500 KB</p>
-                </div>
-              </a>
+
+          <div className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl rounded-3xl border border-white/20 p-10 shadow-2xl">
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { title: 'TRGS 519 Volltext', size: 'PDF, 3.2 MB', accent: 'from-sky-400 to-blue-400' },
+                { title: 'GefStoffV - Relevante Paragraphen', size: 'PDF, 1.5 MB', accent: 'from-blue-400 to-indigo-400' },
+                { title: 'Merkblatt für Auftraggeber', size: 'PDF, 800 KB', accent: 'from-indigo-400 to-purple-400' },
+                { title: 'Checkliste Asbestsanierung', size: 'PDF, 500 KB', accent: 'from-purple-400 to-pink-400' }
+              ].map((doc, index) => (
+                <a key={index} href="#" className="group relative overflow-hidden bg-white/5 backdrop-blur rounded-2xl p-6 border border-white/10 hover:border-sky-400/30 transition-all duration-300 hover:scale-105">
+                  <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${doc.accent}`}></div>
+                  <div className="flex items-center gap-4">
+                    <div className={`w-12 h-12 bg-gradient-to-br ${doc.accent} rounded-xl flex items-center justify-center text-white font-bold`}>
+                      PDF
+                    </div>
+                    <div>
+                      <p className="font-bold text-white group-hover:text-sky-400 transition-colors">
+                        {doc.title}
+                      </p>
+                      <p className="text-sm text-gray-400">{doc.size}</p>
+                    </div>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0066CC] to-[#0052A3]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Rechtssicher sanieren mit Experten
-          </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Wir übernehmen die volle Verantwortung für die gesetzeskonforme 
-            Durchführung Ihrer Asbestsanierung.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/kontakt"
-              className="bg-white text-[#0066CC] hover:bg-gray-100 font-bold py-4 px-8 rounded-lg text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
-            >
-              Beratungsgespräch vereinbaren
-            </Link>
-            <Link
-              href="/zertifikate"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0066CC] font-bold py-4 px-8 rounded-lg text-lg transition-all"
-            >
-              Unsere Qualifikationen
-            </Link>
+      <section className="py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-gradient-to-r from-sky-400/20 to-blue-400/20 backdrop-blur-xl rounded-3xl p-16 text-center overflow-hidden border border-sky-400/30">
+            <div className="absolute inset-0 bg-gradient-to-r from-sky-400/10 to-blue-400/10 animate-pulse"></div>
+
+            <div className="relative z-10">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Rechtssicher sanieren mit Experten
+              </h2>
+              <p className="text-xl text-gray-200 mb-10 max-w-3xl mx-auto">
+                Wir übernehmen die volle Verantwortung für die gesetzeskonforme
+                Durchführung Ihrer Asbestsanierung.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link
+                  href="/kontakt"
+                  className="inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-sky-400 to-blue-400 text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-sky-400/30 transition-all duration-300 hover:scale-105"
+                >
+                  Beratungsgespräch vereinbaren
+                </Link>
+                <Link
+                  href="/schadstoffschulungen"
+                  className="inline-flex items-center justify-center px-10 py-5 bg-white/10 backdrop-blur-xl border-2 border-white/20 text-white rounded-2xl font-bold text-lg hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                >
+                  Unsere Qualifikationen
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      
+
       <FooterWithMarquee />
     </main>
   );
