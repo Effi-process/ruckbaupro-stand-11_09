@@ -51,7 +51,9 @@ const servicesData = {
     {
       title: 'Beratung & Planung',
       description: 'Umfassende Projektberatung und Genehmigungsmanagement',
-      seoPages: []
+      seoPages: [
+        { name: 'Abbruchgenehmigung Bielefeld', link: '/abbruchgenehmigung-bielefeld' }
+      ]
     },
     {
       title: 'KMF-Sanierung',
