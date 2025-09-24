@@ -87,4 +87,4 @@ Email: info@abriss-schmiede.de
 
 ## Lizenz
 
-© 2024 Wertvoll Dienstleistungen GmbH. Alle Rechte vorbehalten.
+© 2024 Wertvoll Dienstleistungen GmbH. Alle Rechte vorbehalten.# Trigger Vercel Deploy
