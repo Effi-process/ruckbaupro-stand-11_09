@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import FloatingElements from '../components/FloatingElements'
 import FooterWithMarquee from '../components/FooterWithMarquee'
-import CityServicesSection from '../components/CityServicesSection'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -280,9 +279,6 @@ export default function SelektiverAbbruchBielefeldPage() {
       </section>
 
       </div>
-
-      {/* City Services Integration */}
-      <CityServicesSection />
 
       <FooterWithMarquee />
     </main>
