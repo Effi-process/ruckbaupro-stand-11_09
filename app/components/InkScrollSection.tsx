@@ -141,17 +141,25 @@ export default function InkScrollSection() {
         {/* Text removed for mobile */}
       </section>
 
-      {/* UNSERE PROJEKTE Section - Direkt hier eingebaut */}
-      <div className="px-3 sm:px-4 md:px-[5vw] mt-8 sm:mt-12 pb-8">
-        <div className="text-center mb-8 sm:mb-10 md:mb-12 px-4">
-          <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Unsere Projekte</span>
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mt-3 sm:mt-4 mb-4 sm:mb-6 tracking-wider">
-            Professioneller Rückbau & Schadstoffsanierung
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
-            Sehen Sie selbst: Unsere Experten führen Rückbau- und Schadstoffsanierung mit höchsten Standards durch
-          </p>
+      {/* UNSERE PROJEKTE Section - Mit Verlauf nach unten */}
+      <div className="relative">
+        {/* Gradient overlay at top */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent via-gray-800/50 to-transparent pointer-events-none z-10" />
+
+        <div className="px-3 sm:px-4 md:px-[5vw] pt-16 pb-8 relative">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12 px-4">
+            <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Unsere Projekte</span>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mt-3 sm:mt-4 mb-4 sm:mb-6 tracking-wider">
+              Professioneller Rückbau & Schadstoffsanierung
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+              Sehen Sie selbst: Unsere Experten führen Rückbau- und Schadstoffsanierung mit höchsten Standards durch
+            </p>
+          </div>
         </div>
+
+        {/* Gradient overlay at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-700/80 via-transparent to-transparent pointer-events-none z-10" />
       </div>
     </div>
   );

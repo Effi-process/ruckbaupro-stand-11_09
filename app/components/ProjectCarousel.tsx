@@ -100,20 +100,36 @@ export default function ProjectCarousel() {
         >
           {projects.map((project, i) => (
             <Link key={i} href={project.link} className="snap-center shrink-0 w-[90vw] sm:w-[85vw] md:w-[380px] lg:w-[420px] group cursor-pointer">
-              <article>
+              <article className="flex flex-col">
+                {/* Badge above image on mobile */}
+                <div className="md:hidden mb-3 px-2">
+                  <span className="inline-block text-xs px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 tracking-wide uppercase text-white font-bold">
+                    {project.badge}
+                  </span>
+                </div>
+
                 <div className="relative">
-                  <div className="relative h-[300px] sm:h-[340px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.3)] group-hover:scale-105 transition-transform duration-300">
+                  <div className="relative h-[280px] sm:h-[320px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.3)] group-hover:scale-105 transition-transform duration-300">
                     <Image
                       src={project.image}
                       alt={project.alt}
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/20" />
-                    <span className="absolute top-4 left-4 sm:top-6 sm:left-6 text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 tracking-wide uppercase text-white font-bold shadow-lg">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:bg-black/20" />
+
+                    {/* Badge inside image for desktop only */}
+                    <span className="hidden md:block absolute top-6 left-6 text-sm px-4 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 tracking-wide uppercase text-white font-bold shadow-lg">
                       {project.badge}
                     </span>
                   </div>
+                </div>
+
+                {/* Title below image on mobile */}
+                <div className="md:hidden mt-3 px-2">
+                  <p className="text-sm text-white/80 line-clamp-2">
+                    {project.title}
+                  </p>
                 </div>
               </article>
             </Link>

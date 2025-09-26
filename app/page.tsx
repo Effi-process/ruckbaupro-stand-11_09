@@ -13,6 +13,7 @@ import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import SimpleContactForm from './components/SimpleContactForm';
 import { ScrollAnimation, ParallaxSection, RevealOnScroll } from './components/ScrollAnimations';
+import { GradientDivider, WaveTransition, MobileGradientSection } from './components/MobileGradientTransitions';
 
 // Use Next.js dynamic imports instead of React.lazy for SSR compatibility
 const ProjectGallery = dynamic(() => import('./components/ProjectGallery'), {
@@ -34,27 +35,48 @@ export default function Home() {
       {/* Container für durchgehenden Gradient ab dem Video */}
       <div className="bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white">
         {/* Ink Scroll Text Effect Section */}
-        <ScrollAnimation animation="slideUp" duration={1000}>
-          <div id="services-grid" className="section-divider">
-            <InkScrollSection />
-          </div>
-        </ScrollAnimation>
+        <MobileGradientSection variant="default">
+          <ScrollAnimation animation="slideUp" duration={1000}>
+            <div id="services-grid" className="section-divider">
+              <InkScrollSection />
+            </div>
+          </ScrollAnimation>
+        </MobileGradientSection>
+
+        {/* Gradient Divider for Mobile */}
+        <div className="md:hidden">
+          <GradientDivider />
+        </div>
 
         {/* Project Carousel Section */}
-        <ScrollAnimation animation="fadeIn" duration={1200} delay={200}>
-          <div id="process" className="gradient-transition">
-            <ProjectCarousel />
-          </div>
-        </ScrollAnimation>
+        <MobileGradientSection variant="reverse">
+          <ScrollAnimation animation="fadeIn" duration={1200} delay={200}>
+            <div id="process" className="gradient-transition">
+              <ProjectCarousel />
+            </div>
+          </ScrollAnimation>
+        </MobileGradientSection>
 
       </div>
 
+      {/* Wave Transition for Mobile */}
+      <div className="md:hidden">
+        <WaveTransition />
+      </div>
+
       {/* City Services Section with Tab Navigation */}
-      <RevealOnScroll>
-        <div className="section-divider">
-          <CityServicesSection />
-        </div>
-      </RevealOnScroll>
+      <MobileGradientSection variant="strong">
+        <RevealOnScroll>
+          <div className="section-divider">
+            <CityServicesSection />
+          </div>
+        </RevealOnScroll>
+      </MobileGradientSection>
+
+      {/* Gradient Divider for Mobile */}
+      <div className="md:hidden">
+        <GradientDivider />
+      </div>
 
       {/* Contact Form Section - Full Width */}
       <ScrollAnimation animation="slideUp" duration={1000}>
