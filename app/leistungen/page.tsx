@@ -6,15 +6,7 @@ import { useState, Suspense } from 'react';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
 import ProcessFlow from '../components/ProcessFlow';
-import dynamic from 'next/dynamic';
-
-const MultiStepWizard = dynamic(() => import('../components/MultiStepWizard'), {
-  ssr: false,
-  loading: () => <div className="bg-off-white rounded-3xl shadow-2xl p-12 text-center">
-    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cerulean mx-auto mb-4"></div>
-    <p className="text-indigo-dye">Lade Anfrage-Formular...</p>
-  </div>
-});
+import SimpleContactForm from '../components/SimpleContactForm';
 
 
 export default function LeistungenPage() {

@@ -160,17 +160,10 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
       </div>
 
       {/* Form overlay positioned on the right */}
-      <div className="relative z-10 min-h-screen flex items-center justify-end px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-2xl lg:mr-[5%] bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
+      <div className="relative z-10 min-h-screen flex items-center justify-end">
+        <div className="w-full max-w-xl lg:max-w-2xl mr-4 sm:mr-8 lg:mr-16 xl:mr-24 bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
       {/* Header */}
       <div className="relative bg-gradient-to-r from-cerulean/90 to-indigo-dye/90 px-6 py-8 text-center overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 1px)',
-            backgroundSize: '24px 24px'
-          }}></div>
-        </div>
 
         <h2 className="relative text-2xl md:text-3xl font-black text-white mb-2">
           KOSTENLOSE BERATUNG

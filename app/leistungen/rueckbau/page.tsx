@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../../components/FooterWithMarquee';
+import SimpleContactForm from '../../components/SimpleContactForm';
 import StickyServiceMenu from '../../components/StickyServiceMenu';
 import FloatingElements from '../../components/FloatingElements';
 
