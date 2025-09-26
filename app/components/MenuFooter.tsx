@@ -66,7 +66,7 @@ export default function MenuFooter() {
                   {section.button && (
                     <Link
                       href={section.button.href}
-                      className="inline-block bg-cerulean hover:bg-indigo-dye text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                      className="inline-block bg-cerulean hover:bg-indigo-dye text-white px-6 py-3 rounded-lg font-semibold transition-colors text-center"
                     >
                       {section.button.text}
                     </Link>

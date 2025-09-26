@@ -23,27 +23,31 @@ export default function Header() {
   }, []);
 
   const navigation = [
-    { 
-      name: 'Leistungen', 
+    {
+      name: 'Leistungen',
       href: '/leistungen',
+      icon: 'wrench',
       dropdown: false,
       items: [] as any[]
     },
-    { 
-      name: 'Über uns', 
+    {
+      name: 'Über uns',
       href: '/ueber-uns',
+      icon: 'users',
       dropdown: false,
       items: [] as any[]
     },
-    { 
-      name: 'Standorte', 
+    {
+      name: 'Standorte',
       href: '/standorte',
+      icon: 'map',
       dropdown: false,
       items: [] as any[]
     },
-    { 
-      name: 'Kontakt', 
+    {
+      name: 'Kontakt',
       href: '/kontakt',
+      icon: 'phone',
       dropdown: false,
       items: [] as any[]
     },
@@ -221,9 +225,10 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="block px-4 py-3 text-oxford-blue font-semibold hover:text-cerulean"
+                      className="flex items-center gap-3 px-4 py-3 text-oxford-blue font-semibold hover:text-cerulean"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
+                      <Icon name={item.icon} size={18} className="text-gray-400" />
                       {item.name}
                     </Link>
                   )}

@@ -21,14 +21,15 @@ export default function VideoHeroSection() {
           <div className="max-w-3xl">
             {/* Hero Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight mb-6">
-              <div>Professioneller</div>
-              <div>Rückbau.</div>
-              <div>Sicher.</div>
+              <div className="break-words">Professioneller Rückbau.</div>
+              <div className="break-words">Moderne Technik. Faire Preise.</div>
             </h1>
             
-            {/* Subtext */}
+            {/* Subtext - Removed Deutschlandweit on mobile */}
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed">
-              Deutschlandweiter Service für Asbest-Sanierung, Entkernung und Gebäudeabbruch. 
+              <span className="hidden sm:inline">Deutschlandweiter Service für </span>
+              <span className="sm:hidden">Service für </span>
+              Asbest-Sanierung, Entkernung und Gebäudeabbruch.
               Moderne Ausrüstung, faire Preise und höchste Sicherheitsstandards.
             </p>
             
