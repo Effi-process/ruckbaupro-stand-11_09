@@ -27,6 +27,9 @@ export function ScrollAnimation({
             setTimeout(() => {
               entry.target.classList.add('animate-in');
             }, delay);
+          } else {
+            // Reset animation when element leaves viewport
+            entry.target.classList.remove('animate-in');
           }
         });
       },
@@ -110,6 +113,9 @@ export function RevealOnScroll({ children, className = '' }: RevealOnScrollProps
       ([entry]) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('reveal-active');
+        } else {
+          // Reset animation when element leaves viewport
+          entry.target.classList.remove('reveal-active');
         }
       },
       { threshold: 0.15 }
@@ -222,6 +228,12 @@ export function StaggerChildren({ children, className = '', staggerDelay = 100 }
             setTimeout(() => {
               child.classList.add('stagger-active');
             }, index * staggerDelay);
+          });
+        } else {
+          // Reset animation when element leaves viewport
+          const children = entry.target.children;
+          Array.from(children).forEach((child) => {
+            child.classList.remove('stagger-active');
           });
         }
       },

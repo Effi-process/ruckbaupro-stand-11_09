@@ -91,45 +91,6 @@ export default function ProjectCarousel() {
 
       {/* Carousel Container */}
       <div className="relative">
-        {/* Desktop Controls - Top Right */}
-        <div className="hidden md:flex absolute -top-6 right-0 z-10 gap-3">
-          <button
-            aria-label="Nach links scrollen"
-            onClick={() => scrollBy(-1)}
-            disabled={!canLeft}
-            className={`h-12 w-12 rounded-full border border-white/20 bg-white/10 backdrop-blur-md grid place-items-center transition-opacity hover:bg-white/20 ${
-              canLeft ? "opacity-100" : "opacity-40"
-            }`}
-          >
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-              <path
-                d="M15 5l-7 7 7 7"
-                stroke="white"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-          <button
-            aria-label="Nach rechts scrollen"
-            onClick={() => scrollBy(1)}
-            disabled={!canRight}
-            className={`h-12 w-12 rounded-full border border-white/20 bg-white/10 backdrop-blur-md grid place-items-center transition-opacity hover:bg-white/20 ${
-              canRight ? "opacity-100" : "opacity-40"
-            }`}
-          >
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-              <path
-                d="M9 5l7 7-7 7"
-                stroke="white"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
 
         {/* Track */}
         <div
@@ -159,21 +120,21 @@ export default function ProjectCarousel() {
           ))}
         </div>
 
-        {/* Mobile Controls - Below Carousel */}
-        <div className="flex md:hidden justify-center gap-3 mt-4">
+        {/* Navigation Controls - Below Carousel, Centered */}
+        <div className="flex justify-center gap-4 mt-6">
           <button
             aria-label="Nach links scrollen"
             onClick={() => scrollBy(-1)}
             disabled={!canLeft}
-            className={`h-10 w-10 rounded-full border border-white/20 bg-white/10 backdrop-blur-md grid place-items-center transition-opacity ${
-              canLeft ? "opacity-100" : "opacity-40"
+            className={`h-12 w-12 rounded-full border border-white/20 bg-white/10 backdrop-blur-md grid place-items-center transition-all duration-300 hover:bg-white/20 hover:scale-110 ${
+              canLeft ? "opacity-100" : "opacity-40 cursor-not-allowed"
             }`}
           >
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
               <path
                 d="M15 5l-7 7 7 7"
                 stroke="white"
-                strokeWidth="1.8"
+                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
@@ -183,15 +144,15 @@ export default function ProjectCarousel() {
             aria-label="Nach rechts scrollen"
             onClick={() => scrollBy(1)}
             disabled={!canRight}
-            className={`h-10 w-10 rounded-full border border-white/20 bg-white/10 backdrop-blur-md grid place-items-center transition-opacity ${
-              canRight ? "opacity-100" : "opacity-40"
+            className={`h-12 w-12 rounded-full border border-white/20 bg-white/10 backdrop-blur-md grid place-items-center transition-all duration-300 hover:bg-white/20 hover:scale-110 ${
+              canRight ? "opacity-100" : "opacity-40 cursor-not-allowed"
             }`}
           >
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
               <path
                 d="M9 5l7 7-7 7"
                 stroke="white"
-                strokeWidth="1.8"
+                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
