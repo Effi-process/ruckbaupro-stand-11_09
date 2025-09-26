@@ -206,37 +206,61 @@ export default function FloatingMenuButton() {
                     )}
 
                     {isExpanded && section.title !== "Startseite" && (
-                      <div className="ml-10 pl-5 border-l-2 border-white/25 space-y-2 pb-4 mt-3">
-                        {section.items.map((item) => (
-                          <Link
-                            key={item.href}
-                            href={item.href}
-                            onClick={() => setIsOpen(false)}
-                            className="flex items-start gap-4 px-4 py-3 text-white/90 hover:text-white hover:bg-white/15 rounded-lg transition-all duration-200 group"
-                          >
-                            <Icon 
-                              name={item.icon} 
-                              size={18} 
-                              className="text-cerulean/80 group-hover:text-cerulean transition-colors mt-0.5" 
-                            />
-                            <div className="flex-1">
-                              <div className="font-medium text-base text-white group-hover:text-cerulean">
+                      <>
+                        {/* Mobile: List layout with icons */}
+                        <div className="md:hidden space-y-2 px-2 pb-4 mt-3">
+                          {section.items.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              onClick={() => setIsOpen(false)}
+                              className="flex items-center gap-3 px-3 py-2.5 text-white/90 hover:text-white hover:bg-white/15 rounded-lg transition-all duration-200 group"
+                            >
+                              <Icon
+                                name={item.icon}
+                                size={16}
+                                className="text-cerulean/80 group-hover:text-cerulean transition-colors shrink-0"
+                              />
+                              <div className="text-xs font-medium text-white group-hover:text-cerulean">
                                 {item.name}
                               </div>
-                              {item.description && (
-                                <div className="text-sm text-white/70 mt-1">
-                                  {item.description}
+                            </Link>
+                          ))}
+                        </div>
+
+                        {/* Desktop: Original list layout */}
+                        <div className="hidden md:block ml-10 pl-5 border-l-2 border-white/25 space-y-2 pb-4 mt-3">
+                          {section.items.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              onClick={() => setIsOpen(false)}
+                              className="flex items-start gap-4 px-4 py-3 text-white/90 hover:text-white hover:bg-white/15 rounded-lg transition-all duration-200 group"
+                            >
+                              <Icon
+                                name={item.icon}
+                                size={18}
+                                className="text-cerulean/80 group-hover:text-cerulean transition-colors mt-0.5"
+                              />
+                              <div className="flex-1">
+                                <div className="font-medium text-base text-white group-hover:text-cerulean">
+                                  {item.name}
                                 </div>
-                              )}
-                            </div>
-                            <Icon 
-                              name="external-link" 
-                              size={14} 
-                              className="text-white/50 opacity-0 group-hover:opacity-100 transition-opacity mt-1" 
-                            />
-                          </Link>
-                        ))}
-                      </div>
+                                {item.description && (
+                                  <div className="text-sm text-white/70 mt-1">
+                                    {item.description}
+                                  </div>
+                                )}
+                              </div>
+                              <Icon
+                                name="external-link"
+                                size={14}
+                                className="text-white/50 opacity-0 group-hover:opacity-100 transition-opacity mt-1"
+                              />
+                            </Link>
+                          ))}
+                        </div>
+                      </>
                     )}
                   </div>
                 );

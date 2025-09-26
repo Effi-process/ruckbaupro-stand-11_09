@@ -114,27 +114,10 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Global background image */
+/* Global background - removed background image */
 body {
   position: relative;
   min-height: 100vh;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background-image: url('/images/background-main.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  opacity: 0.4;
-  filter: brightness(0.7);
 }
 
 /* Remove focus outline for mouse users */

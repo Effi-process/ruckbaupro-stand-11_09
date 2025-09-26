@@ -5,6 +5,8 @@ import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
 import MultiStepWizard from '../components/MultiStepWizard';
+import MobileCollapsibleContent, { CollapsibleTextSection, MobileFAQSection } from '../components/MobileCollapsibleContent'
+import MobileOptimizedContent, { MobileParagraph, MobileHeading, MobileSection } from '../components/MobileOptimizedContent'
 
 export default function BetonabbruchBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -150,36 +152,40 @@ export default function BetonabbruchBielefeld() {
       </section>
 
       {/* Main Content */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/30 rounded-3xl p-8 md:p-12 hover:shadow-2xl hover:shadow-sky-400/10 transition-all duration-300">
+      <MobileOptimizedContent>
+        <MobileSection padding="large" className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/30 rounded-3xl p-6 lg:p-8 xl:p-12 hover:shadow-2xl hover:shadow-sky-400/10 transition-all duration-300">
 
             <div className="prose prose-lg max-w-none text-white/90">
-              <p className="text-lg leading-relaxed mb-8">
+              <MobileParagraph className="mb-6 lg:mb-8">
                 Als Abrissunternehmen in Bielefeld haben wir schon einiges an Beton klein gemacht -
                 vom Einfamilienhaus-Fundament in Heepen bis zur kompletten Industriehalle bei Dr. Oetker.
                 Betonabbruch ist unser täglich Brot und wir wissen genau, worauf es ankommt. Jeder
                 Beton ist anders, jedes Gebäude hat seine eigenen Herausforderungen. In der Bielefelder
                 Altstadt müssen wir leise arbeiten, in Brackwede können wir mit schwerem Gerät ran.
-              </p>
+              </MobileParagraph>
 
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
-                Betonschneiden
-              </h2>
-              <p className="mb-6">
-                Beim Betonschneiden in Bielefeld kommt es auf Millimeter an. Letzte Woche waren wir
-                im Uni-Hauptgebäude und mussten eine neue Türöffnung durch 30 Zentimeter Stahlbeton
-                schneiden - während der Vorlesungsbetrieb lief! Mit unseren Diamantsägen geht das
-                fast staubfrei und relativ leise. Die Studenten haben kaum was gemerkt, nur das
-                leichte Surren der Säge war zu hören.
-              </p>
-              <p className="mb-6">
-                Wir schneiden Beton bis zu einer Dicke von 80 Zentimetern - das schaffen nicht viele
-                in Bielefeld. Ob für neue Fensteröffnungen, Treppen oder Durchbrüche für Leitungen -
-                unsere Schnitte sind präzise und sauber. Besonders in den alten Bunkern aus dem 2.
-                Weltkrieg, die es überall in Bielefeld noch gibt, ist das wichtig. Der Beton dort ist
-                härter als alles, was heute gebaut wird. Aber wir kriegen auch den klein.
-              </p>
+              <CollapsibleTextSection
+                title="Betonschneiden"
+                content={
+                  <>
+                    <MobileParagraph>
+                      Beim Betonschneiden in Bielefeld kommt es auf Millimeter an. Letzte Woche waren wir
+                      im Uni-Hauptgebäude und mussten eine neue Türöffnung durch 30 Zentimeter Stahlbeton
+                      schneiden - während der Vorlesungsbetrieb lief! Mit unseren Diamantsägen geht das
+                      fast staubfrei und relativ leise. Die Studenten haben kaum was gemerkt, nur das
+                      leichte Surren der Säge war zu hören.
+                    </MobileParagraph>
+                    <MobileParagraph>
+                      Wir schneiden Beton bis zu einer Dicke von 80 Zentimetern - das schaffen nicht viele
+                      in Bielefeld. Ob für neue Fensteröffnungen, Treppen oder Durchbrüche für Leitungen -
+                      unsere Schnitte sind präzise und sauber. Besonders in den alten Bunkern aus dem 2.
+                      Weltkrieg, die es überall in Bielefeld noch gibt, ist das wichtig. Der Beton dort ist
+                      härter als alles, was heute gebaut wird. Aber wir kriegen auch den klein.
+                    </MobileParagraph>
+                  </>
+                }
+              />
 
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white mb-8 mt-12">
                 Betonsägen
@@ -344,8 +350,8 @@ export default function BetonabbruchBielefeld() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </MobileSection>
+      </MobileOptimizedContent>
 
       {/* Local Area Coverage */}
       <section className="py-20">

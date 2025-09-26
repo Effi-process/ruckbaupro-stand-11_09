@@ -24,12 +24,12 @@ export default function Home() {
     <main className="relative">
       {/* Floating Logo and Menu */}
       <FloatingElements />
-      
+
       {/* Video Hero Section - New modern design */}
       <div id="hero" className="relative">
         <VideoHeroSection />
       </div>
-      
+
       {/* Container für durchgehenden Gradient ab dem Video */}
       <div className="bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white">
         {/* Ink Scroll Text Effect Section */}
@@ -53,7 +53,7 @@ export default function Home() {
           <MultiStepWizard purpose="quote" />
         </div>
       </section>
-      
+
       {/* Footer with Marquee */}
       <FooterWithMarquee />
     </main>

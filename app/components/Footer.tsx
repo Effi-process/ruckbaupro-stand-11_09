@@ -30,9 +30,58 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-oxford-blue text-white overflow-hidden">
-        <div className="container-custom py-16">
-          
-          {/* LOGO BEREICH - GROSS UND ZENTRIERT */}
+        {/* MOBILE VERSION - Alles nebeneinander */}
+        <div className="md:hidden py-3 px-2">
+          {/* Erste Zeile: Logo und Haupttext */}
+          <div className="flex items-center justify-between mb-2">
+            <img
+              src="/logo-new.svg"
+              alt="RückbauPRO"
+              className="w-20 h-auto"
+            />
+            <div className="text-right">
+              <p className="text-[10px] font-bold">{HAUPTTEXT}</p>
+              <p className="text-[9px] text-secondary-400">Abbruch • Entkernung • Sanierung</p>
+            </div>
+          </div>
+
+          {/* Zweite Zeile: Leistungen und Kontakt */}
+          <div className="grid grid-cols-2 gap-2 mb-2 text-[9px]">
+            <div>
+              <p className="font-bold text-white/70 mb-1">Leistungen</p>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5">
+                <Link href="/leistungen#rueckbau" className="text-secondary-400">Rückbau</Link>
+                <Link href="/leistungen#abbruch" className="text-secondary-400">Abbruch</Link>
+                <Link href="/leistungen#entkernung" className="text-secondary-400">Entkernung</Link>
+                <Link href="/leistungen#asbestsanierung" className="text-secondary-400">Asbest</Link>
+              </div>
+            </div>
+            <div className="text-right">
+              <p className="font-bold text-white/70 mb-1">Kontakt</p>
+              <a href={`tel:${TELEFON.replace(/\s/g, '')}`} className="text-cerulean block font-bold text-[10px]">
+                {TELEFON}
+              </a>
+              <a href={`mailto:${EMAIL}`} className="text-secondary-400 block">
+                {EMAIL}
+              </a>
+            </div>
+          </div>
+
+          {/* Dritte Zeile: Copyright und Links */}
+          <div className="flex justify-between items-center text-[8px] text-secondary-400 border-t border-penn-blue pt-1">
+            <span>© 2024 RückbauPRO</span>
+            <div className="flex gap-2">
+              <Link href="/impressum">Impressum</Link>
+              <Link href="/datenschutz">Datenschutz</Link>
+              <Link href="/agb">AGB</Link>
+            </div>
+          </div>
+        </div>
+
+        {/* DESKTOP VERSION - Original Layout */}
+        <div className="hidden md:block container-custom py-16">
+
+          {/* LOGO BEREICH - FÜR DESKTOP */}
           <div className="text-center mb-16">
             {/* LOGO */}
             <div className="mb-8">
@@ -40,43 +89,37 @@ export default function Footer() {
               <img
                 src="/logo-new.svg"
                 alt="RückbauPRO - Professioneller Rückbau & Abbruch"
-                style={{ 
-                  width: `${LOGO_WIDTH}px`,
-                  height: 'auto',
-                  maxWidth: '90vw',
-                  margin: '0 auto',
-                  display: 'block'
-                }}
+                className="w-96 h-auto mx-auto"
               />
             </div>
-            
+
             {/* TEXTE UNTER DEM LOGO */}
             <h3 className="text-3xl font-bold text-white mb-4">
               {HAUPTTEXT}
             </h3>
-            <p className="text-secondary-400 text-xl mb-8 max-w-3xl mx-auto">
+            <p className="text-secondary-400 text-xl mb-8 max-w-3xl mx-auto px-4">
               {BESCHREIBUNG}
             </p>
-            
+
             {/* FEATURES */}
-            <div className="flex flex-wrap justify-center gap-8 mb-8">
+            <div className="flex flex-wrap justify-center gap-8 mb-8 px-2 text-lg">
               <div className="flex items-center gap-3 text-secondary-300">
                 <Icon name="check-circle" size={24} className="text-cerulean" />
-                <span className="text-lg">Zertifizierter Fachbetrieb</span>
+                <span>Zertifizierter Fachbetrieb</span>
               </div>
               <div className="flex items-center gap-3 text-secondary-300">
                 <Icon name="shield-check" size={24} className="text-cerulean" />
-                <span className="text-lg">Vollversichert & Garantiert</span>
+                <span>Vollversichert & Garantiert</span>
               </div>
               <div className="flex items-center gap-3 text-secondary-300">
                 <Icon name="clock" size={24} className="text-cerulean" />
-                <span className="text-lg">24/7 Notfall-Service</span>
+                <span>24/7 Notfall-Service</span>
               </div>
             </div>
           </div>
-          
-          {/* Links Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-3xl mx-auto">
+
+          {/* Links Grid - FÜR DESKTOP */}
+          <div className="grid grid-cols-2 gap-8 mb-12 max-w-3xl mx-auto px-4">
             {/* Services */}
             <div className="text-center">
               <h4 className="font-bold text-lg mb-4 text-white">Leistungen</h4>
@@ -108,33 +151,33 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Bottom Bar */}
+          {/* Bottom Bar - FÜR DESKTOP */}
           <div className="border-t border-penn-blue pt-8 mt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="flex flex-wrap items-center gap-4 text-sm text-secondary-400">
-                <span>© 2024 RückbauPRO GmbH</span>
-                <span className="hidden md:inline">•</span>
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-4 text-sm text-secondary-400">
+                <span>© 2024 RückbauPRO</span>
+                <span>•</span>
                 <Link href="/impressum" className="hover:text-cerulean transition-colors">Impressum</Link>
                 <Link href="/datenschutz" className="hover:text-cerulean transition-colors">Datenschutz</Link>
                 <Link href="/agb" className="hover:text-cerulean transition-colors">AGB</Link>
               </div>
-              
+
               {/* Social Links */}
               <div className="flex gap-3">
-                <a 
-                  href="https://facebook.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-cerulean transition-all"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                   </svg>
                 </a>
-                <a 
-                  href="https://instagram.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-cerulean transition-all"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

@@ -7,10 +7,10 @@ import FloatingMenuButton from './FloatingMenuButton';
 export default function FloatingElements() {
   return (
     <>
-      {/* Logo - Top Left Corner - Hidden on mobile as MobileHeader handles it */}
+      {/* Logo - Top Left Corner - Only visible on desktop */}
       <div className="hidden lg:block fixed top-2 left-8 z-40">
         <Link href="/" className="block relative group cursor-pointer">
-          <div className="relative backdrop-blur-xl border border-white/20 rounded-xl p-2 hover:backdrop-blur-2xl transition-all duration-300 shadow-2xl -rotate-90">
+          <div className="relative bg-black/50 backdrop-blur-xl border border-white/20 rounded-xl p-2 hover:backdrop-blur-2xl transition-all duration-300 shadow-2xl -rotate-90">
             <Image
               src="/Design ohne Titel 2.svg.svg"
               alt="RückbauPRO Logo"

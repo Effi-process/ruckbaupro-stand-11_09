@@ -33,8 +33,10 @@ export default function ProjectCarousel() {
   const scrollBy = (dir: number) => {
     const el = trackRef.current;
     if (!el) return;
-    // Scroll genau eine Karte weiter (420px + 24px gap)
-    const amount = window.innerWidth < 640 ? 324 : window.innerWidth < 768 ? 404 : 444; // Responsive scroll amount
+    // Scroll genau eine Karte weiter - Breite der Karte plus Gap
+    const cardWidth = window.innerWidth * 0.90; // 90vw on mobile
+    const gap = 32; // 8 * 4px from gap-8
+    const amount = window.innerWidth < 768 ? cardWidth + gap : 444;
     el.scrollBy({ left: dir * amount, behavior: "smooth" });
   };
 
@@ -85,7 +87,7 @@ export default function ProjectCarousel() {
 
   return (
     <section className="px-3 sm:px-4 md:px-[5vw] py-12 sm:py-16 md:py-20 overflow-hidden">
-      <div className="text-center mb-8 sm:mb-10 md:mb-12">
+      <div className="text-center mb-8 sm:mb-10 md:mb-12 px-4">
         <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Unsere Projekte</span>
         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mt-3 sm:mt-4 mb-4 sm:mb-6">
           Professioneller Rückbau & Abbruch
@@ -95,9 +97,10 @@ export default function ProjectCarousel() {
         </p>
       </div>
 
-      {/* Controls */}
+      {/* Carousel Container */}
       <div className="relative">
-        <div className="absolute -top-6 right-0 z-10 flex gap-3">
+        {/* Desktop Controls - Top Right */}
+        <div className="hidden md:flex absolute -top-6 right-0 z-10 gap-3">
           <button
             aria-label="Nach links scrollen"
             onClick={() => scrollBy(-1)}
@@ -139,13 +142,14 @@ export default function ProjectCarousel() {
         {/* Track */}
         <div
           ref={trackRef}
-          className="no-scrollbar overflow-x-auto scroll-smooth snap-x snap-mandatory flex gap-6 pb-6"
+          className="no-scrollbar overflow-x-auto scroll-smooth snap-x snap-center snap-mandatory flex gap-8 md:gap-6 pb-2 md:pb-6"
+          style={{ paddingLeft: 'calc(50% - 45vw)', paddingRight: 'calc(50% - 45vw)' }}
         >
           {projects.map((project, i) => (
-            <Link key={i} href={project.link} className="snap-start shrink-0 w-[280px] sm:w-[320px] md:w-[380px] lg:w-[420px] max-w-[85vw] sm:max-w-[90vw] group cursor-pointer">
+            <Link key={i} href={project.link} className="snap-center shrink-0 w-[90vw] sm:w-[85vw] md:w-[380px] lg:w-[420px] group cursor-pointer">
               <article>
                 <div className="relative">
-                  <div className="relative h-[240px] sm:h-[260px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.3)] group-hover:scale-105 transition-transform duration-300">
+                  <div className="relative h-[300px] sm:h-[340px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.3)] group-hover:scale-105 transition-transform duration-300">
                     <Image
                       src={project.image}
                       alt={project.alt}
@@ -158,12 +162,49 @@ export default function ProjectCarousel() {
                     </span>
                   </div>
                 </div>
-                <div className="mt-3 sm:mt-4">
-                  <div className="text-sm sm:text-base md:text-lg leading-snug text-white font-semibold group-hover:text-cerulean transition-colors line-clamp-2 overflow-hidden">{project.title}</div>
-                </div>
               </article>
             </Link>
           ))}
+        </div>
+
+        {/* Mobile Controls - Below Carousel */}
+        <div className="flex md:hidden justify-center gap-3 mt-4">
+          <button
+            aria-label="Nach links scrollen"
+            onClick={() => scrollBy(-1)}
+            disabled={!canLeft}
+            className={`h-10 w-10 rounded-full border border-white/20 bg-white/10 backdrop-blur-md grid place-items-center transition-opacity ${
+              canLeft ? "opacity-100" : "opacity-40"
+            }`}
+          >
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+              <path
+                d="M15 5l-7 7 7 7"
+                stroke="white"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="Nach rechts scrollen"
+            onClick={() => scrollBy(1)}
+            disabled={!canRight}
+            className={`h-10 w-10 rounded-full border border-white/20 bg-white/10 backdrop-blur-md grid place-items-center transition-opacity ${
+              canRight ? "opacity-100" : "opacity-40"
+            }`}
+          >
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+              <path
+                d="M9 5l7 7-7 7"
+                stroke="white"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
         </div>
       </div>
 

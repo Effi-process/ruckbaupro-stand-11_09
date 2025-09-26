@@ -121,7 +121,7 @@ export default function InkScrollSection() {
         <div className="flex justify-center px-4 sm:px-[5vw]">
           <h1
             ref={headlineRef}
-            className="max-w-[900px] text-center font-extrabold leading-[1.05] tracking-tight text-2xl sm:text-[clamp(26px,6.2vw,64px)] whitespace-pre-wrap"
+            className="max-w-[900px] text-center font-extrabold leading-[1.1] sm:leading-[1.05] tracking-tight text-[22px] sm:text-[clamp(26px,6.2vw,64px)] whitespace-pre-wrap"
           >
             {`Professioneller Rückbau.\nModerne Technik. Faire Preise.`}
           </h1>

@@ -134,20 +134,20 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
   return (
     <div className="max-w-6xl mx-auto bg-gray-900/90 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden border border-gray-700/50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-cerulean to-indigo-dye p-6 text-white">
+      <div className="bg-gradient-to-r from-cerulean to-indigo-dye p-3 md:p-6 text-white">
         <div className="text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">
+          <h1 className="text-xl md:text-4xl font-bold mb-2 md:mb-3">
             KOSTENLOSE BERATUNG ANFRAGEN
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-4">
+          <p className="text-sm md:text-2xl text-white/90 mb-2 md:mb-4">
             EINFACH UND SCHNELL ZU IHREM PERSÖNLICHEN ANGEBOT
           </p>
-          <div className="bg-white/20 backdrop-blur-md rounded-xl p-6 text-base">
-            <div className="flex items-center justify-center gap-3 mb-3">
-              <Icon name="shield" size={20} className="text-green-300" />
-              <span className="font-bold text-lg">100% UNVERBINDLICH</span>
+          <div className="bg-white/20 backdrop-blur-md rounded-xl p-3 md:p-6 text-base">
+            <div className="flex items-center justify-center gap-2 md:gap-3 mb-1 md:mb-3">
+              <Icon name="shield" size={16} className="text-green-300 md:w-5 md:h-5" />
+              <span className="font-bold text-sm md:text-lg">100% UNVERBINDLICH</span>
             </div>
-            <p className="text-white/90 text-sm font-medium">
+            <p className="text-white/90 text-xs md:text-sm font-medium">
               KOSTENLOSE BERATUNG • KEINE VERSTECKTEN KOSTEN • UNVERBINDLICHES ANGEBOT
             </p>
           </div>
@@ -155,11 +155,11 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
       </div>
 
       {/* Content */}
-      <form onSubmit={handleSubmit} className="p-8 space-y-6">
-        {/* Name and Company in one row */}
-        <div className="grid md:grid-cols-2 gap-6">
+      <form onSubmit={handleSubmit} className="p-3 md:p-8 space-y-3 md:space-y-6">
+        {/* Name and Company in one row - auch auf Mobile */}
+        <div className="grid grid-cols-2 gap-2 md:gap-6">
           <div>
-            <label className="block text-sm font-semibold text-white mb-2">
+            <label className="block text-[10px] md:text-sm font-semibold text-white mb-0.5 md:mb-2">
               Name *
             </label>
             <input
@@ -168,35 +168,35 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-gray-800/50 border-2 border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400"
-              placeholder="Ihr vollständiger Name"
+              className="w-full px-2 py-1.5 md:px-4 md:py-3 bg-gray-800/50 border border-gray-600 rounded-lg md:rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 text-xs md:text-base"
+              placeholder="Ihr Name"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-white mb-2">
-              Firmenname (optional)
+            <label className="block text-[10px] md:text-sm font-semibold text-white mb-0.5 md:mb-2">
+              Firma
             </label>
             <input
               type="text"
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-gray-800/50 border-2 border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400"
-              placeholder="Ihr Firmenname"
+              className="w-full px-2 py-1.5 md:px-4 md:py-3 bg-gray-800/50 border border-gray-600 rounded-lg md:rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 text-xs md:text-base"
+              placeholder="Optional"
             />
           </div>
         </div>
 
         {/* Contact Method and City in one row */}
         <div>
-          <div className="space-y-3 mb-4">
-            <p className="font-semibold text-white">Wie möchten Sie kontaktiert werden? *</p>
-            <div className="flex gap-4">
+          <div className="mb-2">
+            <p className="text-[10px] md:text-sm font-semibold text-white mb-1">Wie möchten Sie kontaktiert werden? *</p>
+            <div className="flex gap-2 md:gap-3">
               <label className="flex items-center">
-                <div className={`w-5 h-5 rounded-full border-2 mr-3 flex items-center justify-center ${formData.contactMethod === 'email' ? 'border-cerulean bg-cerulean' : 'border-gray-400'}`}>
+                <div className={`w-3 h-3 md:w-5 md:h-5 rounded-full border mr-1.5 md:mr-3 flex items-center justify-center ${formData.contactMethod === 'email' ? 'border-cerulean bg-cerulean' : 'border-gray-400'}`}>
                   {formData.contactMethod === 'email' && (
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <div className="w-1 h-1 md:w-2 md:h-2 bg-white rounded-full"></div>
                   )}
                 </div>
                 <input
@@ -207,12 +207,12 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
                   onChange={handleChange}
                   className="sr-only"
                 />
-                <span className="text-white font-medium">E-MAIL</span>
+                <span className="text-white font-medium text-[10px] md:text-sm">E-MAIL</span>
               </label>
               <label className="flex items-center">
-                <div className={`w-5 h-5 rounded-full border-2 mr-3 flex items-center justify-center ${formData.contactMethod === 'phone' ? 'border-cerulean bg-cerulean' : 'border-gray-400'}`}>
+                <div className={`w-3 h-3 md:w-5 md:h-5 rounded-full border mr-1.5 md:mr-3 flex items-center justify-center ${formData.contactMethod === 'phone' ? 'border-cerulean bg-cerulean' : 'border-gray-400'}`}>
                   {formData.contactMethod === 'phone' && (
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <div className="w-1 h-1 md:w-2 md:h-2 bg-white rounded-full"></div>
                   )}
                 </div>
                 <input
@@ -223,16 +223,16 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
                   onChange={handleChange}
                   className="sr-only"
                 />
-                <span className="text-white font-medium">TELEFON</span>
+                <span className="text-white font-medium text-[10px] md:text-sm">TELEFON</span>
               </label>
             </div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+
+          <div className="grid grid-cols-2 gap-2 md:gap-6">
             <div>
               {formData.contactMethod === 'email' && (
                 <>
-                  <label className="block font-semibold text-white mb-2">
+                  <label className="block text-[10px] md:text-sm font-semibold text-white mb-0.5 md:mb-2">
                     E-Mail *
                   </label>
                   <input
@@ -241,15 +241,15 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-4 bg-gray-800/50 border-2 border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 min-h-[44px] text-base"
+                    className="w-full px-2 py-1.5 md:px-4 md:py-3 bg-gray-800/50 border border-gray-600 rounded-lg md:rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 text-xs md:text-base"
                     placeholder="ihre@email.de"
                   />
                 </>
               )}
-              
+
               {formData.contactMethod === 'phone' && (
                 <>
-                  <label className="block font-semibold text-white mb-2">
+                  <label className="block text-[10px] md:text-sm font-semibold text-white mb-0.5 md:mb-2">
                     Telefon *
                   </label>
                   <input
@@ -258,7 +258,7 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-4 bg-gray-800/50 border-2 border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 min-h-[44px] text-base"
+                    className="w-full px-2 py-1.5 md:px-4 md:py-3 bg-gray-800/50 border border-gray-600 rounded-lg md:rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 text-xs md:text-base"
                     placeholder="Ihre Telefonnummer"
                   />
                 </>
@@ -266,8 +266,8 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
             </div>
 
             <div>
-              <label className="block font-semibold text-white mb-2">
-                Standort / Stadt *
+              <label className="block text-[10px] md:text-sm font-semibold text-white mb-0.5 md:mb-2">
+                Stadt *
               </label>
               <input
                 type="text"
@@ -275,7 +275,7 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
                 required
                 value={formData.city}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-gray-800/50 border-2 border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400"
+                className="w-full px-2 py-1.5 md:px-4 md:py-3 bg-gray-800/50 border border-gray-600 rounded-lg md:rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 text-xs md:text-base"
                 placeholder="Ihre Stadt"
               />
             </div>
@@ -284,133 +284,67 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
 
         {/* Service Selection */}
         <div>
-          <label className="block font-semibold text-white mb-4">
-            Welche Dienstleistungen benötigen Sie? * (Mehrfachauswahl möglich)
+          <label className="block text-[10px] md:text-sm font-semibold text-white mb-1.5 md:mb-4">
+            Dienstleistungen * (Mehrfachauswahl)
           </label>
-          <div className="space-y-6">
-            {/* Sanierungsleistungen */}
-            <div>
-              <h4 className="text-white/80 font-semibold mb-3 text-sm uppercase tracking-wide">Sanierungsleistungen</h4>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {[
-                  { id: 'asbest-sanierung', label: 'Asbest-Sanierung', icon: 'shield' },
-                  { id: 'kmf-sanierung', label: 'KMF-Sanierung', icon: 'warning' },
-                  { id: 'schimmelsanierung', label: 'Schimmelsanierung', icon: 'alert' }
-                ].map((service) => (
-                  <button
-                    key={service.id}
-                    type="button"
-                    onClick={() => {
-                      const isSelected = formData.services.includes(service.id);
-                      const newServices = isSelected
-                        ? formData.services.filter(s => s !== service.id)
-                        : [...formData.services, service.id];
-                      setFormData({ ...formData, services: newServices });
-                    }}
-                    className={`
-                      p-4 rounded-xl border-2 transition-all text-center
-                      ${formData.services.includes(service.id)
-                        ? 'border-cerulean bg-cerulean/20 text-white'
-                        : 'border-gray-600 bg-gray-800/50 text-white hover:border-cerulean/50 hover:bg-gray-800'}
-                    `}
-                  >
-                    <Icon name={service.icon} size={24} className="mx-auto mb-2" />
-                    <p className="text-sm font-medium">{service.label}</p>
-                  </button>
-                ))}
-              </div>
-            </div>
-            
-            {/* Bauarbeiten */}
-            <div>
-              <h4 className="text-white/80 font-semibold mb-3 text-sm uppercase tracking-wide">Bauarbeiten</h4>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {[
-                  { id: 'entkernung', label: 'Entkernung', icon: 'home' },
-                  { id: 'betonarbeiten', label: 'Betonarbeiten', icon: 'cube' },
-                  { id: 'beratung-planung', label: 'Beratung & Planung', icon: 'users' }
-                ].map((service) => (
-                  <button
-                    key={service.id}
-                    type="button"
-                    onClick={() => {
-                      const isSelected = formData.services.includes(service.id);
-                      const newServices = isSelected
-                        ? formData.services.filter(s => s !== service.id)
-                        : [...formData.services, service.id];
-                      setFormData({ ...formData, services: newServices });
-                    }}
-                    className={`
-                      p-4 rounded-xl border-2 transition-all text-center
-                      ${formData.services.includes(service.id)
-                        ? 'border-cerulean bg-cerulean/20 text-white'
-                        : 'border-gray-600 bg-gray-800/50 text-white hover:border-cerulean/50 hover:bg-gray-800'}
-                    `}
-                  >
-                    <Icon name={service.icon} size={24} className="mx-auto mb-2" />
-                    <p className="text-sm font-medium">{service.label}</p>
-                  </button>
-                ))}
-              </div>
-            </div>
-            
-            {/* Geschäftsmöglichkeiten */}
-            <div>
-              <h4 className="text-white/80 font-semibold mb-3 text-sm uppercase tracking-wide">Geschäftsmöglichkeiten</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {[
-                  { id: 'franchise', label: 'Franchise-Partnerschaft', icon: 'euro' }
-                ].map((service) => (
-                  <button
-                    key={service.id}
-                    type="button"
-                    onClick={() => {
-                      const isSelected = formData.services.includes(service.id);
-                      const newServices = isSelected
-                        ? formData.services.filter(s => s !== service.id)
-                        : [...formData.services, service.id];
-                      setFormData({ ...formData, services: newServices });
-                    }}
-                    className={`
-                      p-4 rounded-xl border-2 transition-all text-center
-                      ${formData.services.includes(service.id)
-                        ? 'border-green-500 bg-green-500/20 text-white'
-                        : 'border-gray-600 bg-gray-800/50 text-white hover:border-green-500/50 hover:bg-gray-800'}
-                    `}
-                  >
-                    <Icon name={service.icon} size={24} className="mx-auto mb-2" />
-                    <p className="text-sm font-medium">{service.label}</p>
-                  </button>
-                ))}
-              </div>
-            </div>
+          {/* Alle Services in einem Grid - 3 Spalten auf Mobile */}
+          <div className="grid grid-cols-3 gap-1.5 md:gap-2">
+            {[
+              { id: 'asbest-sanierung', label: 'Asbest-Sanierung', icon: 'shield', category: 'sanierung' },
+              { id: 'kmf-sanierung', label: 'KMF-Sanierung', icon: 'warning', category: 'sanierung' },
+              { id: 'schimmelsanierung', label: 'Schimmelsanierung', icon: 'alert', category: 'sanierung' },
+              { id: 'entkernung', label: 'Entkernung', icon: 'home', category: 'bau' },
+              { id: 'betonarbeiten', label: 'Betonarbeiten', icon: 'cube', category: 'bau' },
+              { id: 'beratung-planung', label: 'Beratung & Planung', icon: 'users', category: 'bau' }
+            ].map((service) => (
+              <button
+                key={service.id}
+                type="button"
+                onClick={() => {
+                  const isSelected = formData.services.includes(service.id);
+                  const newServices = isSelected
+                    ? formData.services.filter(s => s !== service.id)
+                    : [...formData.services, service.id];
+                  setFormData({ ...formData, services: newServices });
+                }}
+                className={`
+                  p-1.5 md:p-2 rounded-lg border transition-all text-center flex flex-col items-center justify-center h-[55px] md:h-[90px]
+                  ${formData.services.includes(service.id)
+                    ? 'border-cerulean bg-cerulean/20 text-white'
+                    : 'border-gray-600 bg-gray-800/50 text-white hover:border-cerulean/50 hover:bg-gray-800'}
+                `}
+              >
+                <Icon name={service.icon} size={14} className="mb-0.5 md:w-4 md:h-4" />
+                <p className="text-[9px] md:text-xs font-medium leading-tight break-words px-0.5">{service.label}</p>
+              </button>
+            ))}
           </div>
         </div>
 
         {/* Message */}
         <div>
-          <label className="block font-semibold text-white mb-2">
+          <label className="block text-[10px] md:text-sm font-semibold text-white mb-1 md:mb-2">
             Ihre Nachricht
           </label>
           <textarea
             name="message"
-            rows={4}
+            rows={3}
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-gray-800/50 border-2 border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 resize-none"
+            className="w-full px-2 py-1.5 md:px-4 md:py-3 bg-gray-800/50 border border-gray-600 rounded-lg md:rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 resize-none text-xs md:text-base"
             placeholder="Beschreiben Sie kurz Ihr Projekt..."
           />
         </div>
 
         {/* Privacy */}
-        <label className="flex items-start text-sm text-white">
+        <label className="flex items-start text-[10px] md:text-sm text-white">
           <input
             type="checkbox"
             name="datenschutz"
             required
             checked={formData.datenschutz}
             onChange={handleChange}
-            className="mr-3 mt-1 text-white"
+            className="mr-2 mt-0.5 md:mr-3 md:mt-1 text-white w-3 h-3 md:w-4 md:h-4"
           />
           <span>
             Ich stimme der <a href="/datenschutz" className="text-white hover:underline">Datenschutzerklärung</a> zu und erlaube die Kontaktaufnahme für die Angebotserstellung. *
@@ -440,7 +374,7 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
           type="submit"
           disabled={!isValid || isSubmitting}
           className={`
-            w-full py-4 rounded-xl font-bold transition-all text-lg
+            w-full py-3 md:py-4 rounded-xl font-bold transition-all text-sm md:text-lg
             ${isValid && !isSubmitting
               ? 'bg-gradient-to-r from-cerulean to-indigo-dye text-white hover:from-indigo-dye hover:to-cerulean hover:scale-105 shadow-xl'
               : 'bg-gray-700 text-gray-500 cursor-not-allowed'
@@ -449,12 +383,12 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
         >
           {isSubmitting ? (
             <>
-              <div className="inline-block animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+              <div className="inline-block animate-spin rounded-full h-4 w-4 md:h-5 md:w-5 border-b-2 border-white mr-2"></div>
               Wird gesendet...
             </>
           ) : (
             <>
-              <Icon name="mail" size={20} className="inline mr-2" />
+              <Icon name="mail" size={16} className="inline mr-2 md:w-5 md:h-5" />
               Kostenlose Beratung anfordern
             </>
           )}
@@ -462,9 +396,9 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
       </form>
 
       {/* Footer */}
-      <div className="bg-gray-800/80 px-8 py-4 text-center">
-        <p className="text-sm text-white">
-          <Icon name="lock" size={16} className="inline mr-1" />
+      <div className="bg-gray-800/80 px-4 py-2 md:px-8 md:py-4 text-center">
+        <p className="text-[10px] md:text-sm text-white">
+          <Icon name="lock" size={12} className="inline mr-1 md:w-4 md:h-4" />
           Ihre Daten werden vertraulich behandelt
         </p>
       </div>
