@@ -1,21 +1,12 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function MobileHeader() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Close menu on route change
   useEffect(() => {
@@ -46,52 +37,34 @@ export default function MobileHeader() {
 
   return (
     <>
-      {/* Mobile Header - Fixed at top */}
-      <header className={`lg:hidden fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white/90 backdrop-blur-md'
-      }`}>
-        <div className="flex items-center justify-between px-4 h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-              RückbauPRO
-            </span>
-          </Link>
+      {/* Logo - Absolute position on video with glass effect */}
+      <Link href="/" className="lg:hidden absolute top-4 left-4 z-[100] block bg-black/20 backdrop-blur-md rounded-2xl p-1 border border-white/10 -rotate-90">
+        <Image
+          src="/Design ohne Titel 2.svg.svg"
+          alt="RückbauPRO"
+          className="h-24 w-auto"
+          width={300}
+          height={100}
+          priority
+        />
+      </Link>
 
-          {/* Right Actions */}
-          <div className="flex items-center gap-2">
-            {/* Call Button */}
-            <a
-              href="tel:+491748083023"
-              className="flex items-center justify-center w-10 h-10 bg-green-500 text-white rounded-full shadow-lg"
-              aria-label="Anrufen"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-              </svg>
-            </a>
-
-            {/* Menu Button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg shadow-lg"
-              aria-label="Menu"
-            >
-              <div className="relative w-5 h-5">
-                <span className={`absolute block w-5 h-0.5 bg-white transform transition-all duration-300 ${
-                  isOpen ? 'rotate-45 translate-y-2' : 'translate-y-0'
-                }`}></span>
-                <span className={`absolute block w-5 h-0.5 bg-white transform transition-all duration-300 translate-y-2 ${
-                  isOpen ? 'opacity-0' : 'opacity-100'
-                }`}></span>
-                <span className={`absolute block w-5 h-0.5 bg-white transform transition-all duration-300 ${
-                  isOpen ? '-rotate-45 translate-y-2' : 'translate-y-4'
-                }`}></span>
-              </div>
-            </button>
-          </div>
-        </div>
-      </header>
+      {/* Menu Button - Fixed position on video with glass effect */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="lg:hidden fixed top-4 right-4 z-[100] flex items-center gap-2 px-4 py-3 rounded-2xl bg-black/20 backdrop-blur-md border border-white/10 text-white hover:bg-black/30 transition-all"
+        aria-label="Menu"
+      >
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <rect x="3" y="3" width="18" height="18" stroke="currentColor" fill="none"/>
+          <line x1="12" y1="3" x2="12" y2="21" stroke="currentColor"/>
+          <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor"/>
+        </svg>
+        <span className="text-sm font-semibold tracking-wider">MENÜ</span>
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
 
       {/* Mobile Menu Overlay */}
       <div className={`lg:hidden fixed inset-0 z-[99] transition-all duration-300 ${
@@ -106,10 +79,29 @@ export default function MobileHeader() {
         ></div>
 
         {/* Menu Panel */}
-        <div className={`absolute right-0 top-16 bottom-0 w-full max-w-sm bg-white shadow-2xl transform transition-transform duration-300 ${
+        <div className={`absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-2xl transform transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
           <div className="h-full overflow-y-auto">
+            {/* Menu Header */}
+            <div className="flex items-center justify-between p-4 border-b">
+              <Image
+                src="/logo-new.svg"
+                alt="RückbauPRO"
+                className="h-10 w-auto"
+                width={120}
+                height={40}
+                priority
+              />
+              <button
+                onClick={() => setIsOpen(false)}
+                className="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors"
+                aria-label="Schließen"
+              >
+                <span className="text-2xl">×</span>
+              </button>
+            </div>
+
             {/* Quick Actions */}
             <div className="p-4 bg-gradient-to-r from-blue-50 to-cyan-50 border-b">
               <h3 className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-3">
@@ -211,9 +203,6 @@ export default function MobileHeader() {
           </div>
         </div>
       </div>
-
-      {/* Spacer for fixed header */}
-      <div className="lg:hidden h-16"></div>
     </>
   );
 }
