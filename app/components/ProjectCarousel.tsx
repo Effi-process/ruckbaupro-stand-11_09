@@ -86,7 +86,7 @@ export default function ProjectCarousel() {
   ];
 
   return (
-    <section className="px-3 sm:px-4 md:px-[5vw] py-6 sm:py-16 md:py-20 overflow-hidden">
+    <section className="px-3 sm:px-4 md:px-[5vw] py-2 sm:py-16 md:py-20 overflow-hidden">
       <div className="text-center mb-8 sm:mb-10 md:mb-12 px-4">
         <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Unsere Projekte</span>
         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mt-3 sm:mt-4 mb-4 sm:mb-6">
