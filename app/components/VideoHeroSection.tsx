@@ -16,13 +16,14 @@ export default function VideoHeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
       
       {/* Hero Content */}
-      <div className="relative z-20 h-full flex items-center md:items-end pb-20 md:pb-24">
+      <div className="relative z-20 h-full flex items-end pb-24">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           <div className="max-w-3xl">
             {/* Hero Headline - Mobile optimized */}
-            <h1 className="text-[24px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.15] mb-3 sm:mb-6">
-              <div className="">Professioneller Rückbau.</div>
-              <div className="">Moderne Technik. Faire Preise.</div>
+            <h1 className="text-[22px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] mb-4 sm:mb-6">
+              <div>Professioneller</div>
+              <div>Rückbau.</div>
+              <div className="text-[18px] sm:text-3xl md:text-4xl lg:text-5xl">Moderne Technik.</div>
             </h1>
             
             {/* Subtext - Mobile optimized without Deutschlandweit */}
