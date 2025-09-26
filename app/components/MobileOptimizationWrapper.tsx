@@ -20,7 +20,7 @@ export default function MobileOptimizationWrapper() {
       document.addEventListener('touchstart', () => {}, { passive: true });
 
       // Add smooth scrolling for iOS
-      document.documentElement.style.webkitOverflowScrolling = 'touch';
+      (document.documentElement.style as any).webkitOverflowScrolling = 'touch';
 
       // Handle orientation changes
       const handleOrientationChange = () => {
