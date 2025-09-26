@@ -10,7 +10,7 @@ export default function FloatingElements() {
       {/* Logo - Top Left Corner - Only visible on desktop */}
       <div className="hidden lg:block fixed top-4 left-8 z-40">
         <Link href="/" className="block relative group cursor-pointer">
-          <div className="relative bg-black/50 backdrop-blur-xl border border-white/20 rounded-xl p-2 hover:backdrop-blur-2xl transition-all duration-300 shadow-2xl -rotate-90">
+          <div className="relative backdrop-blur-xl border border-white/20 hover:backdrop-blur-2xl rounded-xl p-2 transition-all duration-300 shadow-2xl -rotate-90">
             <Image
               src="/Design ohne Titel 2.svg.svg"
               alt="RückbauPRO Logo"
@@ -24,7 +24,7 @@ export default function FloatingElements() {
       </div>
 
       {/* Menu - Top Right - Hidden on mobile as MobileHeader handles it */}
-      <div className="hidden lg:block fixed top-4 right-6 z-50">
+      <div className="hidden lg:block fixed top-8 right-6 z-50">
         <FloatingMenuButton />
       </div>
     </>

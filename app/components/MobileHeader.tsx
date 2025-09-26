@@ -39,7 +39,7 @@ export default function MobileHeader() {
   return (
     <>
       {/* Logo - Absolute position on video with transparent background */}
-      <Link href="/" className="lg:hidden absolute top-4 left-4 z-[100] block bg-black/20 backdrop-blur-md rounded-2xl p-1 border border-white/10 -rotate-90">
+      <Link href="/" className="lg:hidden absolute top-2 left-4 z-[100] block bg-black/20 backdrop-blur-md rounded-2xl p-1 border border-white/10 -rotate-90">
         <Image
           src="/Design ohne Titel 2.svg.svg"
           alt="RückbauPRO"
