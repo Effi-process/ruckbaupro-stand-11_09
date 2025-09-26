@@ -8,7 +8,7 @@ export default function FloatingElements() {
   return (
     <>
       {/* Logo - Top Left Corner - Only visible on desktop */}
-      <div className="hidden lg:block fixed top-0 left-8 z-40">
+      <div className="hidden lg:block fixed top-4 left-8 z-40">
         <Link href="/" className="block relative group cursor-pointer">
           <div className="relative bg-black/50 backdrop-blur-xl border border-white/20 rounded-xl p-2 hover:backdrop-blur-2xl transition-all duration-300 shadow-2xl -rotate-90">
             <Image
@@ -24,7 +24,7 @@ export default function FloatingElements() {
       </div>
 
       {/* Menu - Top Right - Hidden on mobile as MobileHeader handles it */}
-      <div className="hidden lg:block fixed top-2 right-6 z-50">
+      <div className="hidden lg:block fixed top-4 right-6 z-50">
         <FloatingMenuButton />
       </div>
     </>
