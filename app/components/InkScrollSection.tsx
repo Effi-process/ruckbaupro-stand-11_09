@@ -107,14 +107,14 @@ export default function InkScrollSection() {
   return (
     <div className="min-h-screen text-white">
       {/* Hero mit Chip */}
-      <section className="relative min-h-[20vh] sm:min-h-[30vh] grid place-items-center overflow-hidden">
-        <div className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2 text-[11px] sm:text-[12px] tracking-[.1em] uppercase px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-center select-none">
+      <section className="relative min-h-[15vh] sm:min-h-[25vh] grid place-items-center overflow-hidden">
+        <div className="absolute top-3 sm:top-8 left-1/2 -translate-x-1/2 text-[11px] sm:text-[12px] tracking-[.1em] uppercase px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-center select-none">
           Professioneller Service
         </div>
       </section>
 
       {/* Section mit Typing-Reveal pro Buchstabe */}
-      <section className="py-4 sm:py-12 md:py-16 lg:py-20">
+      <section className="py-2 sm:py-12 md:py-16 lg:py-20">
         <div className="flex justify-center px-4 sm:px-[5vw]">
           <h1
             ref={headlineRef}
