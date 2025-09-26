@@ -19,18 +19,17 @@ export default function VideoHeroSection() {
       <div className="relative z-20 h-full flex items-end pb-24">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           <div className="max-w-3xl">
-            {/* Hero Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight mb-6">
-              <div className="break-words">Professioneller Rückbau.</div>
-              <div className="break-words">Moderne Technik. Faire Preise.</div>
+            {/* Hero Headline - Mobile optimized */}
+            <h1 className="text-[28px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] mb-4 sm:mb-6">
+              <div className="break-all sm:break-normal">Professioneller Rückbau.</div>
+              <div className="break-all sm:break-normal">Moderne Technik. Faire Preise.</div>
             </h1>
             
-            {/* Subtext - Removed Deutschlandweit on mobile */}
-            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed">
-              <span className="hidden sm:inline">Deutschlandweiter Service für </span>
-              <span className="sm:hidden">Service für </span>
-              Asbest-Sanierung, Entkernung und Gebäudeabbruch.
-              Moderne Ausrüstung, faire Preise und höchste Sicherheitsstandards.
+            {/* Subtext - Mobile optimized without Deutschlandweit */}
+            <p className="text-base sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 max-w-2xl leading-relaxed">
+              <span className="hidden sm:inline">Deutschlandweiter Service für Asbest-Sanierung, Entkernung und Gebäudeabbruch. </span>
+              <span className="sm:hidden">Asbest-Sanierung, Entkernung und Gebäudeabbruch. </span>
+              <span className="hidden sm:inline">Moderne Ausrüstung, faire Preise und höchste Sicherheitsstandards.</span>
             </p>
             
             {/* CTA Button - Glasmorphismus Style wie Announcement Bar */}

@@ -27,8 +27,16 @@ export default function Header() {
       name: 'Leistungen',
       href: '/leistungen',
       icon: 'wrench',
-      dropdown: false,
-      items: [] as any[]
+      dropdown: true,
+      items: [
+        { name: 'Alle Leistungen', href: '/leistungen', icon: 'list', description: 'Komplette Übersicht' },
+        { name: 'Asbest-Sanierung', href: '/leistungen/asbestsanierung', icon: 'shield', description: 'Sichere Asbestentfernung' },
+        { name: 'Entkernung', href: '/leistungen/entkernung', icon: 'home', description: 'Innenraumdemontage' },
+        { name: 'Beratung & Planung', href: '/leistungen/beratung---planung', icon: 'users', description: 'Professionelle Projektplanung' },
+        { name: 'KMF-Sanierung', href: '/leistungen/kmf-sanierung', icon: 'warning', description: 'Künstliche Mineralfasern' },
+        { name: 'Schimmelsanierung', href: '/leistungen/schimmelsanierung', icon: 'alert', description: 'Professionelle Schimmelentfernung' },
+        { name: 'Betonarbeiten', href: '/leistungen/betonarbeiten', icon: 'cube', description: 'Betonschneiden und -bearbeitung' }
+      ]
     },
     {
       name: 'Über uns',
@@ -179,10 +187,12 @@ export default function Header() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 text-oxford-blue"
+                className="lg:hidden p-2 text-oxford-blue flex items-center justify-center"
               >
                 {isMobileMenuOpen ? (
-                  <Icon name="x" size={28} />
+                  <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+                    <Icon name="x" size={24} />
+                  </div>
                 ) : (
                   <Icon name="menu" size={28} />
                 )}
@@ -212,11 +222,14 @@ export default function Header() {
                             <Link
                               key={subItem.name}
                               href={subItem.href}
-                              className="flex items-center gap-3 px-4 py-3 text-gray-600 hover:text-cerulean"
+                              className="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 rounded-lg"
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
-                              <Icon name={subItem.icon} size={18} />
-                              {subItem.name}
+                              <Icon name={subItem.icon} size={20} className="text-cerulean mt-0.5" />
+                              <div className="flex-1">
+                                <div className="text-gray-900 font-medium">{subItem.name}</div>
+                                <div className="text-sm text-gray-500">{subItem.description}</div>
+                              </div>
                             </Link>
                           ))}
                         </div>
