@@ -63,11 +63,6 @@ export default function Home() {
       {/* Mobile Scrolling Banner */}
       <MobileScrollingBannerCSS />
 
-      {/* Wave Transition for Mobile */}
-      <div className="md:hidden">
-        <WaveTransition />
-      </div>
-
       {/* City Services Section with Tab Navigation */}
       <MobileGradientSection variant="strong">
         <RevealOnScroll>
