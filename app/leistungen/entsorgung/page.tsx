@@ -117,7 +117,7 @@ export default function EntsorgungPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
                   title: 'Bauschutt',
@@ -207,7 +207,7 @@ export default function EntsorgungPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
               {[
                 {
                   size: '5 m³',
@@ -298,7 +298,7 @@ export default function EntsorgungPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { step: '01', title: 'Beratung & Bestellung', desc: 'Kostenlose Beratung und schnelle Container-Bereitstellung', icon: '📞' },
                 { step: '02', title: 'Lieferung & Befüllung', desc: 'Pünktliche Lieferung und fachgerechte Befüllung vor Ort', icon: '🚛' },

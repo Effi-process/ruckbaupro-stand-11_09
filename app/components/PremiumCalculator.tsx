@@ -161,7 +161,7 @@ export default function PremiumCalculator() {
         return (
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-oxford-blue mb-6">Wählen Sie Ihre Projektart</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {projectTypes.map((type) => (
                 <button
                   key={type.id}
@@ -520,7 +520,7 @@ export default function PremiumCalculator() {
             </div>
             {financingOptions && (
               <div className="mt-3 pt-3 border-t border-green-200">
-                <div className="grid grid-cols-3 gap-2 text-xs">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
                   <div className="text-center bg-off-white rounded p-2">
                     <div className="font-bold text-green-700">{Math.round(discountPrice/12)}€</div>
                     <div className="text-green-600">12 Monate</div>
@@ -553,7 +553,7 @@ export default function PremiumCalculator() {
         </div>
 
         {/* Enhanced Multiple CTA Options */}
-        <div className="grid md:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
           <div className="bg-gradient-to-r from-red-500 to-red-600 text-white p-6 rounded-2xl text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-bl">NOTFALL</div>
             <Icon name="phone" size={32} className="mx-auto mb-3" />
@@ -606,7 +606,7 @@ export default function PremiumCalculator() {
         </div>
         
         {/* Guarantee Badges */}
-        <div className="grid grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
           <div className="text-center">
             <Icon name="shield-check" size={24} className="mx-auto mb-2 text-green-500" />
             <p className="text-xs text-gray-600">100% Festpreis-Garantie</p>

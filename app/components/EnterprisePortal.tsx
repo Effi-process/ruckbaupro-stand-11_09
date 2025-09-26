@@ -123,7 +123,7 @@ export default function EnterprisePortal() {
       </div>
 
       {/* Package Grid */}
-      <div className="grid lg:grid-cols-3 gap-6 mb-12">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {packages.map((pkg) => (
           <div
             key={pkg.id}
@@ -192,7 +192,7 @@ export default function EnterprisePortal() {
         <h3 className="text-2xl font-bold text-white mb-6">
           Ihre Ersparnis berechnen
         </h3>
-        <div className="grid md:grid-cols-3 gap-6 items-end">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 items-end">
           <div>
             <label className="block text-sm text-gray-400 mb-2">
               Geschätztes Jahresvolumen (m²)
@@ -234,7 +234,7 @@ export default function EnterprisePortal() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {governmentBenefits.map((benefit, idx) => (
             <div key={idx} className="text-center">
               <div className="bg-blue-600/20 rounded-full p-4 inline-flex mb-4">

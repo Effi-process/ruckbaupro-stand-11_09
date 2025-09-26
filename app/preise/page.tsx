@@ -50,7 +50,7 @@ export default function Preise() {
       {/* Info Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
               <Icon name="document" size={48} className="text-cerulean mb-4" />
               <h3 className="font-bold text-lg mb-2 text-oxford-blue">Transparente Preise</h3>

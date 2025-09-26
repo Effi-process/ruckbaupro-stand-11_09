@@ -188,7 +188,7 @@ export default function ProjectTracker() {
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Project List */}
         <div className="lg:col-span-2 space-y-4">
           {filteredProjects.map((project) => (

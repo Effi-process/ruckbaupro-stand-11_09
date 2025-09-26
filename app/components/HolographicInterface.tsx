@@ -226,7 +226,7 @@ export default function HolographicInterface() {
       </div>
 
       {/* Control Panel */}
-      <div className="relative z-10 mt-8 grid md:grid-cols-4 gap-4">
+      <div className="relative z-10 mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
         <button className="bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 py-4 rounded-xl transition-all flex flex-col items-center gap-2">
           <Icon name="maximize" size={24} />
           <span>Expand View</span>

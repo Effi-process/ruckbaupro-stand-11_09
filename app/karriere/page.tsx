@@ -175,7 +175,7 @@ export default function Karriere() {
             Was wir Ihnen bieten
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-[#0066CC] rounded-full flex items-center justify-center mx-auto mb-4">

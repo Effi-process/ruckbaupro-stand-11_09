@@ -109,7 +109,7 @@ export default function PremiumServiceTiers() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {tiers.map((tier) => (
             <div
               key={tier.id}

@@ -198,7 +198,7 @@ export default function StadtDetail({ city }: { city: CityData }) {
           </div>
 
           {/* Service Areas Grid */}
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
             {city.serviceAreas.map((area, idx) => (
               <button
                 key={idx}
@@ -255,7 +255,7 @@ export default function StadtDetail({ city }: { city: CityData }) {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             {lokaleProjekte.map((projekt, idx) => (
               <div key={idx} className="bg-off-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
                 <div className="aspect-video bg-gradient-to-br from-[#E8F0F7] to-[#D4E2ED] relative overflow-hidden">
@@ -313,7 +313,7 @@ export default function StadtDetail({ city }: { city: CityData }) {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             {teamMitglieder.map((member, idx) => (
               <div key={idx} className="text-center">
                 <div className="w-48 h-48 mx-auto mb-6 bg-gradient-to-br from-[#E8F0F7] to-[#D4E2ED] rounded-full flex items-center justify-center">
@@ -345,7 +345,7 @@ export default function StadtDetail({ city }: { city: CityData }) {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {city.seoKeywords.slice(0, 4).map((keyword, idx) => {
               const serviceType = keyword.split(' ')[0]; // Extract first word as service type
               return (

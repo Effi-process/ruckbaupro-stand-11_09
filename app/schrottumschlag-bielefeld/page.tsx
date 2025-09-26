@@ -74,7 +74,7 @@ export default function SchrottumschlagBielefeld() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 title: 'Metallankauf',
@@ -124,7 +124,7 @@ export default function SchrottumschlagBielefeld() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { step: '01', title: 'Anruf', desc: 'Menge und Art angeben' },
               { step: '02', title: 'Preisangebot', desc: 'Faire Tagespreise' },
@@ -296,7 +296,7 @@ export default function SchrottumschlagBielefeld() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               'Bielefeld Mitte',
               'Brackwede',

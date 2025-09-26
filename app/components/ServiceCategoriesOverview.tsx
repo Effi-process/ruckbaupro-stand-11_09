@@ -112,7 +112,7 @@ export default function ServiceCategoriesOverview() {
         </div>
 
         {/* Service Categories Grid - 4 Spalten nebeneinander */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {serviceCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}

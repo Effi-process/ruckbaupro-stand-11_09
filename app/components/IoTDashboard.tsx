@@ -203,7 +203,7 @@ export default function IoTDashboard() {
         </div>
 
         {/* Sensor Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {sensors.map((sensor) => (
             <div
               key={sensor.id}
@@ -274,7 +274,7 @@ export default function IoTDashboard() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           <div className="bg-black/30 rounded-xl p-6">
             <h4 className="text-white font-semibold mb-3">Vorhersage nächste 24h</h4>
             <div className="space-y-3">

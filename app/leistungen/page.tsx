@@ -159,7 +159,7 @@ export default function LeistungenPage() {
         {/* Services Grid */}
         <section id="services-grid" className="pb-24 px-4">
           <div className="container-custom">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
                 <div
                   key={index}

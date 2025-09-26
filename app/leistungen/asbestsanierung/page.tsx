@@ -75,7 +75,7 @@ export default function AsbestsanierungPage() {
       <section className="py-16 px-6 bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Unsere Leistungen im Detail</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
               { icon: "shield", title: "TRGS 519 Zertifiziert", description: "Höchste Sicherheitsstandards" },
               { icon: "eye", title: "Luftmessungen", description: "Kontinuierliche Überwachung" },
@@ -278,7 +278,7 @@ export default function AsbestsanierungPage() {
             </div>
 
             {/* Zusätzliche Informationen */}
-            <div className="mt-8 grid md:grid-cols-3 gap-6">
+            <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-6">
               <div className="bg-cerulean/10 border border-cerulean/30 rounded-xl p-4 text-center">
                 <Icon name="clock" size={32} className="text-cerulean mx-auto mb-2" />
                 <h4 className="font-bold text-white mb-1">Schulungsdauer</h4>

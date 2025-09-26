@@ -72,7 +72,7 @@ export default function GebaeudeabbruchBielefeld() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 title: 'Mehrstöckiger Gebäudeabbruch',
@@ -124,7 +124,7 @@ export default function GebaeudeabbruchBielefeld() {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 {[
                   {
                     step: '01',
@@ -220,7 +220,7 @@ export default function GebaeudeabbruchBielefeld() {
             <p className="text-xl text-sky-100/80 mb-12 text-center max-w-3xl mx-auto">
               Wir sind in ganz Bielefeld und Umgebung für Sie da. Besonders viele Projekte realisieren wir in:
             </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/20 rounded-2xl p-6 hover:border-sky-400/40 hover:shadow-md hover:shadow-sky-400/20 transform hover:scale-105 transition-all duration-300">
                 <h4 className="font-bold text-sky-300 mb-4 text-xl hover:text-sky-200 transition-colors duration-300">Innenstadt</h4>
                 <ul className="text-sky-100/70 space-y-2 text-sm">
@@ -335,7 +335,7 @@ export default function GebaeudeabbruchBielefeld() {
                 Kostenloses Angebot →
               </Link>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-white mb-2 animate-pulse">Express</div>
                 <div className="text-sky-100/90">Express-Bearbeitung möglich</div>

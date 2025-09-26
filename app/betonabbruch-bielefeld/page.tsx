@@ -78,7 +78,7 @@ export default function BetonabbruchBielefeld() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 title: 'Betonschneiden',
@@ -127,7 +127,7 @@ export default function BetonabbruchBielefeld() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { step: '01', title: 'Analyse', desc: 'Prüfung der Betonstärke und Bewehrung' },
               { step: '02', title: 'Planung', desc: 'Auswahl der optimalen Abbruchmethode' },
@@ -363,7 +363,7 @@ export default function BetonabbruchBielefeld() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               'Bielefeld Altstadt',
               'Brackwede',

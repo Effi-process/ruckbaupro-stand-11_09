@@ -75,7 +75,7 @@ export default function EntkernungPage() {
       <section className="py-16 px-6 bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Unsere Leistungen im Detail</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { icon: "home", title: "Komplettentkernung", description: "Vollständige Entfernung aller Inneneinrichtungen" },
               { icon: "target", title: "Teilentkernung möglich", description: "Selektive Entfernung nach Ihren Anforderungen" },

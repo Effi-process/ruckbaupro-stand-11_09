@@ -108,7 +108,7 @@ export default function TrustBadges({
           <p className="text-gray-600">Zertifiziert, vollversichert und bereit für Ihr Projekt</p>
         </div>
         
-        <div className="grid grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
           {certifications.slice(0, 6).map((cert, index) => (
             <div key={index} className="text-center group hover:scale-105 transition-transform">
               <div className="w-16 h-16 bg-gray-50 rounded-xl flex items-center justify-center mx-auto mb-2 group-hover:bg-blue-50 transition-colors">

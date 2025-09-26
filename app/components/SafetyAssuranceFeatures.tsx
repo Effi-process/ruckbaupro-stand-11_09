@@ -335,7 +335,7 @@ export default function SafetyAssuranceFeatures({
     <div className="bg-white rounded-2xl shadow-lg p-6">
       <h3 className="text-2xl font-bold text-gray-900 mb-6">Prozess-Visualisierung</h3>
       
-      <div className="grid md:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         {['preparation', 'execution', 'cleanup', 'verification'].map((category, index) => (
           <div key={category} className="text-center">
             <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 ${
@@ -442,7 +442,7 @@ export default function SafetyAssuranceFeatures({
                 
                 <p className="text-gray-600 mb-4">{protocol.description}</p>
                 
-                <div className="grid md:grid-cols-3 gap-4 text-sm">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
                   <div>
                     <div className="font-semibold text-gray-700 mb-1">Dauer</div>
                     <div className="text-gray-600">{protocol.duration}</div>
@@ -521,7 +521,7 @@ export default function SafetyAssuranceFeatures({
     <div className="bg-white rounded-2xl shadow-lg p-6">
       <h3 className="text-2xl font-bold text-gray-900 mb-6">Spezialausrüstung</h3>
       
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {equipment.map((item) => (
           <div key={item.id} className="border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-all">
             <div className="relative aspect-square rounded-lg overflow-hidden mb-4 bg-gray-100">
@@ -689,7 +689,7 @@ export default function SafetyAssuranceFeatures({
                 
                 <p className="text-gray-600 mb-4">{doc.description}</p>
                 
-                <div className="grid md:grid-cols-3 gap-4 text-sm">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
                   <div>
                     <span className="text-gray-600">Aussteller:</span>
                     <div className="font-medium text-gray-900">{doc.issuer}</div>

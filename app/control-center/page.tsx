@@ -355,7 +355,7 @@ export default function ControlCenter() {
                         <span className="text-lg font-bold text-[#0066CC]">{project.value}</span>
                       </div>
 
-                      <div className="grid grid-cols-3 gap-4 mb-3 text-sm">
+                      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-3 text-sm">
                         <div>
                           <p className="text-gray-500">Team</p>
                           <p className="font-medium">{project.team}</p>

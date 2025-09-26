@@ -153,7 +153,7 @@ export default function SchadstoffsanierungContent() {
           <h3 className="text-3xl font-bold text-center text-white mb-8">
             Unser Leistungsspektrum in Bielefeld
           </h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <div className="text-center">
               <h4 className="font-bold text-cerulean mb-3">Sanierungsarbeiten</h4>
               <ul className="text-white/80 space-y-1 text-sm">

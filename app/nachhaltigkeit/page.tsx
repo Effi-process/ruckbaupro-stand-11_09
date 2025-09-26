@@ -116,7 +116,7 @@ export default function Nachhaltigkeit() {
             Unsere Umweltziele
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {umweltziele.map((ziel, index) => (
               <div key={index} className="text-center">
                 <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -225,7 +225,7 @@ export default function Nachhaltigkeit() {
             Umweltzertifikate & Standards
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg shadow-lg p-6 text-center">
               <Icon name="certificate" size={64} className="mx-auto mb-4 text-green-500" />
               <h3 className="font-bold text-xl mb-2">ISO 14001</h3>

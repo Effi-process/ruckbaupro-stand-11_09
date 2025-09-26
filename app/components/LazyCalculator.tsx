@@ -16,7 +16,7 @@ function CalculatorSkeleton() {
         <div className="space-y-6">
           <div className="h-8 bg-gray-200 rounded w-3/4 mx-auto"></div>
           <div className="h-4 bg-gray-200 rounded w-1/2 mx-auto"></div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[...Array(6)].map((_, i) => (
               <div key={i} className="h-32 bg-gray-200 rounded-2xl"></div>
             ))}
@@ -69,7 +69,7 @@ function CalculatorTeaser({ onLoadCalculator }: { onLoadCalculator: () => void }
           </div>
           
           {/* Trust badges */}
-          <div className="grid grid-cols-3 gap-4 mt-8">
+          <div className="grid grid-cols-2 gap-4 mt-8">
             <div className="text-center">
               <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
                 <span className="text-green-600">✓</span>

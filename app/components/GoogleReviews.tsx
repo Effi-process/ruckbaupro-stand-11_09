@@ -96,7 +96,7 @@ export default function GoogleReviews({ stadtKey, stadtName, averageRating = 4.9
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Rating Summary */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-2xl shadow-lg p-8 sticky top-24">

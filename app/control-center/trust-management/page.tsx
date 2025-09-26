@@ -318,7 +318,7 @@ export default function TrustManagement() {
             <div className="space-y-6">
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                 <h2 className="text-xl font-bold text-gray-900 mb-6">Zertifikatsverwaltung</h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {[
                     { name: 'ISO 9001:2015', issuer: 'TÜV Rheinland', expires: '2027-01-15', status: 'active' },
                     { name: 'TRGS 519', issuer: 'BGR', expires: '2026-06-30', status: 'active' },

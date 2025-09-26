@@ -197,7 +197,7 @@ export default function TrustDemo() {
             Unser innovatives Trust System kombiniert modernste Technologien zur Vertrauensbildung mit 
             psychologischen Prinzipien, um die Conversion-Rate nachweislich zu steigern.
           </p>
-          <div className="grid md:grid-cols-3 gap-4 text-sm">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
             <div className="bg-white/10 rounded-lg p-3">
               <p className="font-semibold mb-1">Social Proof</p>
               <p className="opacity-80">Echte Kundenbewertungen in Echtzeit</p>

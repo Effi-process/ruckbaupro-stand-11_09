@@ -418,7 +418,7 @@ export default function AdvancedCalculator() {
               <p className="text-gray-600 text-lg">Wählen Sie eine oder mehrere Leistungen aus. Der Rechner passt sich automatisch an Ihre Auswahl an.</p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {services.map((service) => (
                 <div
                   key={service.id}
@@ -517,7 +517,7 @@ export default function AdvancedCalculator() {
                 <label className="block text-sm font-semibold text-gray-700 mb-4">
                   Gebäudetyp
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                   {buildingTypes.map((type) => (
                     <div
                       key={type.id}
@@ -547,7 +547,7 @@ export default function AdvancedCalculator() {
                 <label className="block text-sm font-semibold text-gray-700 mb-4">
                   Baujahr
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                   {buildingAges.map((age) => (
                     <div
                       key={age.id}
@@ -577,7 +577,7 @@ export default function AdvancedCalculator() {
                 <label className="block text-sm font-semibold text-gray-700 mb-4">
                   Zeitrahmen
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                   {urgencyOptions.map((option) => (
                     <div
                       key={option.id}
@@ -624,7 +624,7 @@ export default function AdvancedCalculator() {
                 <label className="block text-sm font-semibold text-gray-700 mb-4">
                   Zugänglichkeit
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                   {accessibilityOptions.map((option) => (
                     <div
                       key={option.id}
@@ -1261,7 +1261,7 @@ export default function AdvancedCalculator() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {/* Haupt-Preisanzeige */}
           <div className="lg:col-span-2">
             <div className="bg-gradient-to-br from-cerulean to-indigo-dye text-white rounded-2xl p-8 mb-8">
@@ -1350,7 +1350,7 @@ export default function AdvancedCalculator() {
             </div>
 
             {/* Garantien */}
-            <div className="grid grid-cols-3 gap-2 text-center">
+            <div className="grid grid-cols-2 gap-2 text-center">
               <div>
                 <Icon name="shield-check" size={24} className="mx-auto mb-1 text-green-500" />
                 <p className="text-xs text-gray-600">Festpreis-Garantie</p>
@@ -1370,7 +1370,7 @@ export default function AdvancedCalculator() {
         {/* Projekt-Zusammenfassung */}
         <div className="bg-gray-50 rounded-2xl p-6">
           <h4 className="text-xl font-bold mb-4">Projekt-Zusammenfassung</h4>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
             <div>
               <p className="font-semibold text-gray-600">Services</p>
               <p>{calculatorData.selectedServices.map(id => services.find(s => s.id === id)?.name).join(', ')}</p>

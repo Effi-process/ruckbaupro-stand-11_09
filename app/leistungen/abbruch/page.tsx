@@ -120,7 +120,7 @@ export default function AbbruchPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
                   title: 'Kontrollierte Sprengung',

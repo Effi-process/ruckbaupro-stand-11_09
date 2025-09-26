@@ -39,7 +39,7 @@ export default function GlassCTASection() {
       {/* Glass Container */}
       <div className="relative max-w-7xl mx-auto">
         {/* Process Steps - Glass Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
           {steps.map((step, index) => (
             <div 
               key={index}

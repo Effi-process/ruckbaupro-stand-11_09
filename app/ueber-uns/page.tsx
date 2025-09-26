@@ -126,7 +126,7 @@ export default function UeberUns() {
             Unsere Werte
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <div key={index} className="text-center">
                 <div className="w-20 h-20 bg-[#0066CC] rounded-full flex items-center justify-center mx-auto mb-4">
@@ -175,7 +175,7 @@ export default function UeberUns() {
             Drei Experten, eine Vision: Professioneller Rückbau und Schadstoffsanierung auf höchstem Niveau
           </p>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {team.map((member, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-6 text-center">
                 <div className="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4"></div>
@@ -195,7 +195,7 @@ export default function UeberUns() {
             Zertifizierungen & Mitgliedschaften
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <Icon name="certificate" size={64} className="mx-auto mb-4 text-[#0066CC]" />

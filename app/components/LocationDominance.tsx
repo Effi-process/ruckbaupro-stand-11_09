@@ -78,7 +78,7 @@ export default function LocationDominance({
         </div>
 
         <div className="bg-white rounded-2xl shadow-lg p-6 mb-12 border border-gray-100">
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
@@ -103,7 +103,7 @@ export default function LocationDominance({
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
           {displayDistricts.map((district, index) => (
             <div 
               key={district.slug}
@@ -166,7 +166,7 @@ export default function LocationDominance({
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {owlCities.map((city, index) => (
               <div key={city.slug} className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center justify-between mb-3">

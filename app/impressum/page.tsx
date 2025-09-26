@@ -45,7 +45,7 @@ export default function Impressum() {
                   </svg>
                   Geschäftsführung
                 </h2>
-                <div className="grid md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   <div className="text-center">
                     <p className="font-semibold text-white">Michael Michailowski</p>
                     <p className="text-white/60 text-sm">Geschäftsführer</p>

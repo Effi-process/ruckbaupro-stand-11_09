@@ -145,7 +145,7 @@ export default function SchadstoffschulungenPage() {
                 Behandelte Schadstoffe im Detail
               </h2>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
                   {
                     title: "Asbest",
@@ -259,7 +259,7 @@ export default function SchadstoffschulungenPage() {
                   Qualifikation im Umgang mit Gebäudeschadstoffen dokumentiert.
                 </p>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
                   <div className="bg-white/10 backdrop-blur rounded-2xl p-8">
                     <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-500 rounded-full mx-auto mb-4"></div>
                     <h4 className="font-bold text-white text-xl mb-2">Anerkanntes Zertifikat</h4>
@@ -285,7 +285,7 @@ export default function SchadstoffschulungenPage() {
                 Unsere Seminarformate
               </h2>
 
-              <div className="grid lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
                 <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur rounded-3xl p-8 border border-white/20 hover:border-sky-400/50 transition-all duration-300 group">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-400/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 

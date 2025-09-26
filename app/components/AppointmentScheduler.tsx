@@ -194,7 +194,7 @@ export default function AppointmentScheduler() {
       {viewMode === 'week' && (
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
           {/* Week Header */}
-          <div className="grid grid-cols-8 bg-gray-50 border-b">
+          <div className="grid grid-cols-2 md:grid-cols-8 bg-gray-50 border-b">
             <div className="p-4 text-sm font-semibold text-gray-700">Zeit</div>
             {weekDates.map((date) => {
               const dateObj = new Date(date);
@@ -225,7 +225,7 @@ export default function AppointmentScheduler() {
             {[...Array(13)].map((_, i) => {
               const hour = 7 + i;
               return (
-                <div key={hour} className="grid grid-cols-8 border-b">
+                <div key={hour} className="grid grid-cols-2 md:grid-cols-8 border-b">
                   <div className="p-4 text-sm text-gray-600 bg-gray-50">
                     {hour}:00
                   </div>
@@ -260,7 +260,7 @@ export default function AppointmentScheduler() {
 
       {/* Day View */}
       {viewMode === 'day' && (
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 space-y-4">
             <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">

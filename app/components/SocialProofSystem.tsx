@@ -281,7 +281,7 @@ export default function SocialProofSystem({
         )}
       </div>
 
-      <div className="grid md:grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
         {[
           { platform: 'Google', rating: 4.9, count: 1247, color: 'bg-blue-500' },
           { platform: 'Trustpilot', rating: 4.8, count: 892, color: 'bg-green-500' },
@@ -574,7 +574,7 @@ export default function SocialProofSystem({
             <p className="text-blue-100 text-lg line-clamp-3 overflow-hidden">{story.summary}</p>
           </div>
           
-          <div className="grid md:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             {story.metrics.map((metric, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-3">

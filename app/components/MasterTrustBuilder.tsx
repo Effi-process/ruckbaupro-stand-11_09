@@ -188,7 +188,7 @@ export default function MasterTrustBuilder({
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 lg:grid-cols-8 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
           <div className="text-center">
             <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-3">
               <Icon name="shield-check" size={28} color="white" />
@@ -263,7 +263,7 @@ export default function MasterTrustBuilder({
       </div>
 
       {/* Quick Trust Indicators */}
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
         <div className="bg-white rounded-2xl shadow-lg p-6">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">

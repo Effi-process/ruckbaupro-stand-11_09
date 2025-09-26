@@ -71,7 +71,7 @@ export default function HochbauAbrissBielefeld() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 title: 'Hochhaus-Abbruch',
@@ -121,7 +121,7 @@ export default function HochbauAbrissBielefeld() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { step: '01', title: 'Besichtigung & Analyse', desc: 'Kostenlose Vor-Ort-Begehung und Zustandsanalyse' },
               { step: '02', title: 'Planung & Genehmigung', desc: 'Alle Behördengänge und Genehmigungen für Sie' },
@@ -212,7 +212,7 @@ export default function HochbauAbrissBielefeld() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               'Niederwall & Oberntorwall',
               'Detmolder Straße Business District',

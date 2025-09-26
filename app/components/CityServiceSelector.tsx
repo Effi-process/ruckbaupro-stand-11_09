@@ -253,7 +253,7 @@ export default function CityServiceSelector() {
         </div>
 
         {/* City Selector Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {cities.map((city) => (
             <button
               key={city.id}
@@ -346,7 +346,7 @@ export default function CityServiceSelector() {
 
                       {/* Service Links - Placeholder for future links */}
                       {category.services.length > 0 ? (
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3">
                           {category.services.map((service, sIndex) => (
                             <Link
                               key={sIndex}
@@ -375,7 +375,7 @@ export default function CityServiceSelector() {
 
             {/* Trust Elements */}
             <div className="mt-12 pt-8 border-t border-white/10">
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cerulean/20 to-indigo-dye/20 rounded-full mb-4">
                     <Icon name="award" size={28} className="text-cerulean" />

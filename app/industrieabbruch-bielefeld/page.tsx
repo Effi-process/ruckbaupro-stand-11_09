@@ -74,7 +74,7 @@ export default function IndustrieabbruchBielefeld() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 title: 'Fabrikabbruch',
@@ -124,7 +124,7 @@ export default function IndustrieabbruchBielefeld() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { step: '01', title: 'Bestandsaufnahme', desc: 'Detaillierte Analyse vor Ort' },
               { step: '02', title: 'Konzepterstellung', desc: 'Maßgeschneiderter Abbruchplan' },
@@ -301,7 +301,7 @@ export default function IndustrieabbruchBielefeld() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               'Industriegebiet Ost',
               'Gewerbepark Oldentrup',

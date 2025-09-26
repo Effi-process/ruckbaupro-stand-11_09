@@ -162,7 +162,7 @@ export default function SecurityOperationsCenter() {
           ))}
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Threat Detection Feed */}
           <div className="lg:col-span-2">
             <h4 className="text-xl font-semibold text-white mb-4">Bedrohungserkennung Live-Feed</h4>
@@ -307,7 +307,7 @@ export default function SecurityOperationsCenter() {
                 Das System ist vollständig geschützt mit mehrschichtiger Verteidigung. Alle kritischen 
                 Systeme sind durch Quantum-Verschlüsselung gesichert und werden kontinuierlich überwacht.
               </p>
-              <div className="grid md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="text-center">
                   <p className="text-3xl font-bold text-green-400">0</p>
                   <p className="text-red-300/60 text-sm">Kritische Bedrohungen</p>

@@ -113,7 +113,7 @@ export default function B2B() {
             Ihre Vorteile als Geschäftskunde
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {vorteile.map((vorteil, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-6">
                 <div className="w-14 h-14 bg-[#0066CC] rounded-lg flex items-center justify-center mb-4">
@@ -191,7 +191,7 @@ export default function B2B() {
             Aktuelle Referenzprojekte
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {referenzen.map((referenz, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-6">
                 <h3 className="font-bold text-lg mb-3">{referenz.projekt}</h3>
@@ -220,7 +220,7 @@ export default function B2B() {
             Spezielle B2B-Services
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-20 h-20 bg-[#0066CC] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Icon name="document" size={40} color="white" />

@@ -142,7 +142,7 @@ export default function DigitalTwinVR() {
         </div>
 
         {/* Stats Overview */}
-        <div className="grid md:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           <div className="bg-black/40 backdrop-blur-sm rounded-xl p-4">
             <p className="text-cyan-300/60 text-sm mb-1">Genauigkeit</p>
             <p className="text-2xl font-bold text-white">{digitalTwinStats.accuracy}%</p>
@@ -197,7 +197,7 @@ export default function DigitalTwinVR() {
                   </select>
                 </div>
                 {currentBuilding && (
-                  <div className="grid grid-cols-4 gap-2 text-xs">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
                     <div className="text-center">
                       <p className="text-cyan-300/60">Stockwerke</p>
                       <p className="text-white font-bold">{currentBuilding.floors}</p>
@@ -424,7 +424,7 @@ export default function DigitalTwinVR() {
         {/* Training Stats */}
         <div className="mt-8 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl p-6 border border-purple-500/30">
           <h4 className="text-white font-semibold mb-4">Trainingsstatistik</h4>
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="text-3xl font-bold text-purple-400 mb-1">3,847</div>
               <p className="text-purple-300/60 text-sm">Trainingseinheiten absolviert</p>

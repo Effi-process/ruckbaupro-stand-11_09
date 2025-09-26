@@ -154,7 +154,7 @@ export default function RoboticsFleet() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Robot Fleet List */}
           <div className="lg:col-span-1 space-y-4">
             <h4 className="text-xl font-semibold text-white mb-4">Roboterflotte Status</h4>
@@ -241,7 +241,7 @@ export default function RoboticsFleet() {
                   </div>
 
                   {/* Control Panel */}
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     <button className="bg-green-500/20 hover:bg-green-500/30 text-green-400 py-3 rounded-lg transition-all flex items-center justify-center gap-2">
                       <Icon name="play" size={20} />
                       <span>Start</span>
@@ -285,7 +285,7 @@ export default function RoboticsFleet() {
                     </div>
                   </div>
 
-                  <div className="mt-6 grid grid-cols-3 gap-4 text-center">
+                  <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
                     <div className="bg-orange-500/10 rounded-lg p-3">
                       <p className="text-orange-400 text-2xl font-bold">0</p>
                       <p className="text-orange-300/60 text-xs">Unfälle</p>
@@ -332,7 +332,7 @@ export default function RoboticsFleet() {
         </div>
 
         {/* Fleet Overview Stats */}
-        <div className="mt-8 grid md:grid-cols-4 gap-6">
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="bg-black/40 backdrop-blur-sm rounded-xl p-6 text-center">
             <div className="w-16 h-16 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
               <Icon name="zap" size={32} className="text-orange-400" />

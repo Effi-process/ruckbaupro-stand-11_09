@@ -82,7 +82,7 @@ export default function SchadstoffsanierungBielefeld() {
               Wir sind mehr als nur ein Abrissunternehmen - wir sind ein komplettes Bauunternehmen mit allem drum
               und dran. Von der ersten Begehung bis zur besenreinen Übergabe. Unsere Jungs kennen sich aus mit:
             </p>
-            <div className="grid md:grid-cols-3 gap-6 mt-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-6">
               <div>
                 <h3 className="font-bold mb-2 text-white">Komplettabriss</h3>
                 <p className="text-sm text-white/80">Ganze Gebäude verschwinden - sauber und termingerecht</p>
@@ -144,7 +144,7 @@ export default function SchadstoffsanierungBielefeld() {
         {/* Umfassende Dienstleistungen */}
         <div className="mb-12">
           <h2 className="text-3xl font-bold text-white mb-6">Unsere Leistungen im Detail</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div>
               <h3 className="font-bold text-cerulean mb-3">Abbrucharbeiten</h3>
               <ul className="text-sm space-y-1 text-white/80">
@@ -190,7 +190,7 @@ export default function SchadstoffsanierungBielefeld() {
               Nachbarschaft. Die Demontage vom alten Kaufhaus am Kesselbrink? In nur 3 Wochen erledigt - ohne
               eine einzige Beschwerde aus der Nachbarschaft.
             </p>
-            <div className="grid md:grid-cols-3 gap-4 mt-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-cerulean">15+</div>
                 <div className="text-sm text-white/80">Jahre Erfahrung in OWL</div>

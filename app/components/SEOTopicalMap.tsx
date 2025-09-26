@@ -149,7 +149,7 @@ export default function SEOTopicalMap() {
         </div>
 
         {/* City Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {cities.map((city) => (
             <div key={city.id} className="group">
               <button
@@ -227,7 +227,7 @@ export default function SEOTopicalMap() {
                         </div>
 
                         {/* Service Items Grid */}
-                        <div className="grid md:grid-cols-3 gap-3">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                           {service.items.map((item, itemIndex) => (
                             <Link
                               key={itemIndex}

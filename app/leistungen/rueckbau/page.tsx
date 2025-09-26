@@ -117,7 +117,7 @@ export default function RueckbauPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
                   title: 'Selektiver Rückbau',
@@ -181,7 +181,7 @@ export default function RueckbauPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { step: '01', title: 'Bestandsaufnahme', desc: 'Detaillierte Analyse der Bausubstanz und Schadstoffe' },
                 { step: '02', title: 'Genehmigungen', desc: 'Beantragung aller erforderlichen Genehmigungen' },

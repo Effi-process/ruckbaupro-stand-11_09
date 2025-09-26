@@ -130,7 +130,7 @@ export default function MetaverseShowroom() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Metaverse Viewer */}
           <div className="lg:col-span-2">
             <div className="bg-black/40 backdrop-blur-sm rounded-2xl overflow-hidden">
@@ -314,7 +314,7 @@ export default function MetaverseShowroom() {
         </div>
 
         {/* Features Grid */}
-        <div className="mt-8 grid md:grid-cols-4 gap-4">
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="bg-black/40 backdrop-blur-sm rounded-xl p-6 text-center">
             <div className="w-16 h-16 bg-violet-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
               <Icon name="globe" size={32} className="text-violet-400" />

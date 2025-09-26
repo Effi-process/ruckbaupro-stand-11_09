@@ -35,7 +35,7 @@ export default function IconExample() {
       {/* Alle verfügbaren Icons */}
       <div>
         <h3 className="text-lg font-semibold mb-2">Alle verfügbaren Icons:</h3>
-        <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 md:grid-cols-8 gap-4">
           <div className="text-center">
             <Icon name="shield" className="mx-auto mb-1" />
             <p className="text-xs">shield</p>

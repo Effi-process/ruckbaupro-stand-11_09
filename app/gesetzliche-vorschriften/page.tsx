@@ -188,7 +188,7 @@ export default function GesetzlicheVorschriften() {
             Die wichtigsten Vorschriften im Überblick
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {vorschriften.map((vorschrift, index) => (
               <div key={index} className="group relative">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-sky-400/20 to-blue-400/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
