@@ -108,10 +108,7 @@ export default function InkScrollSection() {
     <div className="min-h-screen text-white">
       {/* Hero mit Chip */}
       <section className="relative min-h-[30vh] grid place-items-center overflow-hidden">
-        <div className="absolute top-8 left-1/2 -translate-x-1/2 text-[12px] tracking-[.08em] uppercase px-6 py-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-md inline-flex items-center gap-2 select-none">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M13 3l-2 7h5l-5 11 2-8H8l5-10z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+        <div className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2 text-[11px] sm:text-[12px] tracking-[.1em] uppercase px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-center select-none">
           Professioneller Service
         </div>
       </section>
@@ -121,7 +118,7 @@ export default function InkScrollSection() {
         <div className="flex justify-center px-4 sm:px-[5vw]">
           <h1
             ref={headlineRef}
-            className="max-w-[900px] text-center font-extrabold leading-[1.1] sm:leading-[1.05] tracking-tight text-[22px] sm:text-[clamp(26px,6.2vw,64px)] whitespace-pre-wrap"
+            className="max-w-[900px] text-center font-extrabold leading-[1.2] sm:leading-[1.05] tracking-tight text-[20px] sm:text-[clamp(26px,6.2vw,64px)] whitespace-pre-wrap px-2"
           >
             {`Professioneller Rückbau.\nModerne Technik. Faire Preise.`}
           </h1>
