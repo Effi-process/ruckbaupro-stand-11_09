@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import FloatingElements from '@/app/components/FloatingElements';
 import FooterWithMarquee from '@/app/components/FooterWithMarquee';
+import SimpleContactForm from '@/app/components/SimpleContactForm';
 import dynamic from 'next/dynamic';
 
 const MultiStepWizard = dynamic(() => import('../components/MultiStepWizard'), {
