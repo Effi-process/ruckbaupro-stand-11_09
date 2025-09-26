@@ -81,7 +81,7 @@ export default function FooterWithMarquee() {
       </footer>
 
       {/* Mega-MARQUEE */}
-      <MarqueeBand text={`${BRAND} • PROFESSIONELLER RÜCKBAU • ${BRAND} • SICHER • ZUVERLÄSSIG • `} />
+      <MarqueeBand text={`${BRAND} • `} />
     </div>
   );
 }
@@ -119,6 +119,13 @@ function MarqueeBand({ text }: { text: string }) {
         @keyframes marquee-move {
           from { transform: translateX(0); }
           to   { transform: translateX(-50%); }
+        }
+
+        @media (max-width: 768px) {
+          .marquee-seq {
+            font-size: 60px;
+            padding-block: 3vh;
+          }
         }
 
         .marquee:hover .marquee-seq { animation-play-state: paused; }
