@@ -274,7 +274,7 @@ export default function CityServicesSection() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
                 {currentServices.map((service, index) => (
                   <div
                     key={service.title}
@@ -286,7 +286,7 @@ export default function CityServicesSection() {
                       <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-cerulean/20 to-transparent rounded-full blur-3xl group-hover:from-cerulean/30 transition-colors duration-700"></div>
 
                       <div className="relative z-10">
-                        <h5 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4 group-hover:text-cerulean transition-colors duration-300">
+                        <h5 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-4 transition-colors duration-300">
                           {service.title}
                         </h5>
 
@@ -297,7 +297,7 @@ export default function CityServicesSection() {
                         {/* SEO Pages with enhanced styling */}
                         {service.seoPages && service.seoPages.length > 0 && (
                           <div className="mt-auto pt-5 border-t border-white/20">
-                            <p className="text-xs md:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-cerulean to-indigo-dye uppercase tracking-wider mb-3 md:mb-4">
+                            <p className="text-xs md:text-sm font-bold text-white uppercase tracking-wider mb-3 md:mb-4">
                               Spezialisierungen
                             </p>
                             <div className="space-y-3">
@@ -305,9 +305,9 @@ export default function CityServicesSection() {
                                 <Link
                                   key={page.link}
                                   href={page.link}
-                                  className="group/link flex items-center gap-3 text-base text-cerulean hover:text-white transition-all duration-300 pl-2"
+                                  className="group/link flex items-center gap-3 text-base text-white hover:text-gray-200 transition-all duration-300 pl-2"
                                 >
-                                  <span className="w-1.5 h-1.5 bg-cerulean rounded-full group-hover/link:scale-150 transition-transform duration-300"></span>
+                                  <span className="w-1.5 h-1.5 bg-white rounded-full group-hover/link:scale-150 transition-transform duration-300"></span>
                                   <span className="group-hover/link:translate-x-2 transition-transform duration-300 font-medium">
                                     {page.name}
                                   </span>
