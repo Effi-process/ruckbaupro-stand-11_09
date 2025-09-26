@@ -135,7 +135,7 @@ export default function FloatingMenuButton() {
           
           <div
             ref={dropdownRef}
-            className="fixed top-16 right-2 sm:right-4 w-[calc(100vw-1rem)] sm:w-[380px] md:w-[420px] max-w-[420px] bg-white/10 backdrop-blur-3xl shadow-3xl border border-white/25 rounded-2xl z-[9999] overflow-hidden max-h-[85vh] overflow-y-auto"
+            className="fixed top-24 right-2 sm:right-4 w-[calc(100vw-1rem)] sm:w-[380px] md:w-[420px] max-w-[420px] bg-white/10 backdrop-blur-3xl shadow-3xl border border-white/25 rounded-2xl z-[9999] overflow-hidden max-h-[85vh] overflow-y-auto"
             style={{
               backdropFilter: 'blur(40px) saturate(150%)',
               WebkitBackdropFilter: 'blur(40px) saturate(150%)',
@@ -147,7 +147,7 @@ export default function FloatingMenuButton() {
                 <h3 className="font-bold text-lg sm:text-xl">RÜCKBAUPRO NAVIGATION</h3>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors min-h-[44px] min-w-[44px]"
+                  className="flex items-center justify-center w-10 h-10 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors"
                 >
                   <Icon name="x" size={20} />
                 </button>
