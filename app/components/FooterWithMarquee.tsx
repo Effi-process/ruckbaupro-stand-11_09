@@ -11,9 +11,9 @@ export default function FooterWithMarquee() {
     <div className="bg-indigo-dye text-white">
       {/* Footer-Block */}
       <footer className="px-[5vw] pt-16 pb-12">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-10">
           {/* Brand + CTA */}
-          <div>
+          <div className="col-span-2 sm:col-span-1">
             <div className="text-[11px] tracking-[.35em] uppercase text-white/70">{BRAND}</div>
             <p className="mt-5 text-sm text-white/80 max-w-[28ch]">
               Professioneller Rückbau & Abbruch deutschlandweit. Kostenlose Beratung für Ihr Projekt.
@@ -29,7 +29,7 @@ export default function FooterWithMarquee() {
           {/* Unsere Leistungen - alle Unterkategorien wie im Menü */}
           <nav className="text-sm">
             <div className="text-white/50 text-[11px] tracking-[.25em] uppercase mb-4">Unsere Leistungen</div>
-            <ul className="space-y-3 text-white/90">
+            <ul className="space-y-2 text-white/90">
               <li><Link href="/leistungen" className="hover:text-cerulean transition-colors">Alle Leistungen</Link></li>
               <li><Link href="/leistungen/asbestsanierung" className="hover:text-cerulean transition-colors">Asbest-Sanierung</Link></li>
               <li><Link href="/leistungen/entkernung" className="hover:text-cerulean transition-colors">Entkernung</Link></li>
@@ -43,7 +43,7 @@ export default function FooterWithMarquee() {
           {/* Service & Business - alle Unterkategorien wie im Menü */}
           <nav className="text-sm">
             <div className="text-white/50 text-[11px] tracking-[.25em] uppercase mb-4">Service & Business</div>
-            <ul className="space-y-3 text-white/90">
+            <ul className="space-y-2 text-white/90">
               <li><Link href="/standorte" className="hover:text-cerulean transition-colors">Standorte</Link></li>
               <li><Link href="/preise" className="hover:text-cerulean transition-colors">Preise</Link></li>
               <li><Link href="/franchise" className="hover:text-cerulean transition-colors">Franchise</Link></li>
@@ -53,7 +53,7 @@ export default function FooterWithMarquee() {
           {/* Information - alle Unterkategorien wie im Menü */}
           <nav className="text-sm">
             <div className="text-white/50 text-[11px] tracking-[.25em] uppercase mb-4">Information</div>
-            <ul className="space-y-3 text-white/90">
+            <ul className="space-y-2 text-white/90">
               <li><Link href="/ueber-uns" className="hover:text-cerulean transition-colors">Über uns</Link></li>
               <li><Link href="/zertifikate" className="hover:text-cerulean transition-colors">Zertifikate</Link></li>
               <li><Link href="/gesetzliche-vorschriften" className="hover:text-cerulean transition-colors">Gesetzliche Vorschriften</Link></li>
@@ -63,7 +63,7 @@ export default function FooterWithMarquee() {
           {/* Rechtliches - alle Unterkategorien wie im Menü */}
           <nav className="text-sm">
             <div className="text-white/50 text-[11px] tracking-[.25em] uppercase mb-4">Rechtliches</div>
-            <ul className="space-y-3 text-white/90">
+            <ul className="space-y-2 text-white/90">
               <li><Link href="/impressum" className="hover:text-cerulean transition-colors">Impressum</Link></li>
               <li><Link href="/datenschutz" className="hover:text-cerulean transition-colors">Datenschutz</Link></li>
               <li><Link href="/agb" className="hover:text-cerulean transition-colors">AGB</Link></li>
