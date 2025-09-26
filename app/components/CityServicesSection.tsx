@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { ScrollAnimation, StaggerChildren } from '../components/ScrollAnimations';
 
 interface CityData {
   name: string;
@@ -274,11 +275,11 @@ export default function CityServicesSection() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
+              <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6" staggerDelay={150}>
                 {currentServices.map((service, index) => (
                   <div
                     key={service.title}
-                    className="group relative h-full"
+                    className="group relative h-full stagger-child"
                   >
                     <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-xl md:rounded-2xl p-4 md:p-7 h-full flex flex-col hover:from-white/15 hover:to-white/10 hover:border-cerulean/30 transition-all duration-500 shadow-2xl group-hover:shadow-cerulean/10 overflow-hidden">
 
@@ -323,7 +324,7 @@ export default function CityServicesSection() {
                     </div>
                   </div>
                 ))}
-              </div>
+              </StaggerChildren>
             </div>
 
           </div>

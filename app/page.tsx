@@ -12,6 +12,7 @@ import Icon from './components/Icon';
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import SimpleContactForm from './components/SimpleContactForm';
+import { ScrollAnimation, ParallaxSection, RevealOnScroll } from './components/ScrollAnimations';
 
 // Use Next.js dynamic imports instead of React.lazy for SSR compatibility
 const ProjectGallery = dynamic(() => import('./components/ProjectGallery'), {
@@ -33,24 +34,34 @@ export default function Home() {
       {/* Container für durchgehenden Gradient ab dem Video */}
       <div className="bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white">
         {/* Ink Scroll Text Effect Section */}
-        <div id="services-grid">
-          <InkScrollSection />
-        </div>
+        <ScrollAnimation animation="slideUp" duration={1000}>
+          <div id="services-grid" className="section-divider">
+            <InkScrollSection />
+          </div>
+        </ScrollAnimation>
 
         {/* Project Carousel Section */}
-        <div id="process">
-          <ProjectCarousel />
-        </div>
+        <ScrollAnimation animation="fadeIn" duration={1200} delay={200}>
+          <div id="process" className="gradient-transition">
+            <ProjectCarousel />
+          </div>
+        </ScrollAnimation>
 
       </div>
 
       {/* City Services Section with Tab Navigation */}
-      <CityServicesSection />
+      <RevealOnScroll>
+        <div className="section-divider">
+          <CityServicesSection />
+        </div>
+      </RevealOnScroll>
 
       {/* Contact Form Section - Full Width */}
-      <section id="contact-form" className="bg-oxford-blue">
-        <SimpleContactForm purpose="quote" />
-      </section>
+      <ScrollAnimation animation="slideUp" duration={1000}>
+        <section id="contact-form" className="bg-oxford-blue section-divider">
+          <SimpleContactForm purpose="quote" />
+        </section>
+      </ScrollAnimation>
 
       {/* Footer with Marquee */}
       <FooterWithMarquee />
