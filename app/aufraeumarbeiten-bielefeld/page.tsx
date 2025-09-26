@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
-import MultiStepWizard from '../components/MultiStepWizard';
+import SimpleContactForm from '../components/MultiStepWizard';
 
 export default function AufraeumarbeitenBielefeld() {
   const [isVisible, setIsVisible] = useState(false);

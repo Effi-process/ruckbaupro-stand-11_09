@@ -11,7 +11,7 @@ import Image from 'next/image';
 import Icon from './components/Icon';
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import MultiStepWizard from './components/MultiStepWizard';
+import SimpleContactForm from './components/SimpleContactForm';
 
 // Use Next.js dynamic imports instead of React.lazy for SSR compatibility
 const ProjectGallery = dynamic(() => import('./components/ProjectGallery'), {
@@ -47,11 +47,9 @@ export default function Home() {
       {/* City Services Section with Tab Navigation */}
       <CityServicesSection />
 
-      {/* Contact Form Section */}
-      <section id="contact-form" className="py-16 bg-oxford-blue">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <MultiStepWizard purpose="quote" />
-        </div>
+      {/* Contact Form Section - Full Width */}
+      <section id="contact-form" className="bg-oxford-blue">
+        <SimpleContactForm purpose="quote" />
       </section>
 
       {/* Footer with Marquee */}

@@ -2,7 +2,7 @@
 import Icon from '../components/Icon';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
-import MultiStepWizard from '../components/MultiStepWizard';
+import SimpleContactForm from '../components/SimpleContactForm';
 
 export default function Kontakt() {
 
@@ -88,13 +88,12 @@ export default function Kontakt() {
             </div>
           </div>
 
-          {/* Form Section - Full Width */}
-          <div className="w-full">
-            <MultiStepWizard
-              purpose="quote"
-            />
-          </div>
         </div>
+      </section>
+
+      {/* Form Section - Full Width Outside Container */}
+      <section className="bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
+        <SimpleContactForm purpose="quote" />
       </section>
 
       

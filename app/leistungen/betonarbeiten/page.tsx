@@ -208,7 +208,7 @@ export default function BetonarbeitenPage() {
       {/* Contact Form Section */}
       <section className="py-16 bg-oxford-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <MultiStepWizard purpose="quote" />
+          <SimpleContactForm purpose="quote" />
         </div>
       </section>
 

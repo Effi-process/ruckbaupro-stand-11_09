@@ -287,8 +287,8 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
           <label className="block text-[10px] md:text-sm font-semibold text-white mb-1.5 md:mb-4">
             Dienstleistungen * (Mehrfachauswahl)
           </label>
-          {/* Alle Services in einem Grid - 2 Spalten auf Mobile, 3 auf Desktop */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
+          {/* Alle Services in einem Grid - 3 Spalten auf Mobile, 3 auf Desktop */}
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-1.5 md:gap-3">
             {[
               { id: 'asbest-sanierung', label: 'Asbest-Sanierung', icon: 'shield', category: 'sanierung' },
               { id: 'kmf-sanierung', label: 'KMF-Sanierung', icon: 'warning', category: 'sanierung' },
@@ -308,14 +308,14 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
                   setFormData({ ...formData, services: newServices });
                 }}
                 className={`
-                  p-2 md:p-3 rounded-lg border transition-all text-center flex flex-col items-center justify-center h-[70px] md:h-[90px]
+                  p-1.5 md:p-3 rounded-lg border transition-all text-center flex flex-col items-center justify-center h-[60px] md:h-[90px]
                   ${formData.services.includes(service.id)
                     ? 'border-cerulean bg-cerulean/20 text-white'
                     : 'border-gray-600 bg-gray-800/50 text-white hover:border-cerulean/50 hover:bg-gray-800'}
                 `}
               >
-                <Icon name={service.icon} size={18} className="mb-1 md:w-5 md:h-5" />
-                <p className="text-[10px] md:text-xs font-medium leading-tight break-words px-1">{service.label}</p>
+                <Icon name={service.icon} size={16} className="mb-0.5 md:w-5 md:h-5" />
+                <p className="text-[9px] md:text-xs font-medium leading-tight break-words px-0.5">{service.label}</p>
               </button>
             ))}
           </div>
