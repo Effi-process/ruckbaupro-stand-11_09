@@ -141,21 +141,7 @@ export default function InkScrollSection() {
           </div>
         </div>
 
-        {/* Text mittig unter dem Video mit Ink-Effect */}
-        <div className="mt-8 sm:mt-10 md:mt-12 text-center max-w-2xl mx-auto px-4 sm:px-[5vw]">
-          <p 
-            ref={subtextRef}
-            className="text-base sm:text-lg md:text-xl leading-relaxed font-medium"
-          >
-            Modernste Technik trifft auf jahrelange 
-            <br />
-            Erfahrung. 
-            <br /><br />
-            Sehen Sie selbst, wie wir aus jedem Rückbau-Projekt ein Meisterwerk der Präzision 
-            <br />
-            und Sicherheit machen.
-          </p>
-        </div>
+        {/* Text removed for mobile */}
       </section>
     </div>
   );

@@ -20,10 +20,10 @@ export default function VideoHeroSection() {
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           <div className="max-w-3xl">
             {/* Hero Headline - Mobile optimized */}
-            <h1 className="text-[22px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] mb-4 sm:mb-6">
+            <h1 className="text-[20px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] mb-4 sm:mb-6">
               <div>Professioneller</div>
               <div>Rückbau.</div>
-              <div className="text-[18px] sm:text-3xl md:text-4xl lg:text-5xl">Moderne Technik.</div>
+              <div className="text-[16px] sm:text-3xl md:text-4xl lg:text-5xl text-gray-300">Moderne Technik.</div>
             </h1>
             
             {/* Subtext - Mobile optimized without Deutschlandweit */}
