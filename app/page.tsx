@@ -14,6 +14,7 @@ import dynamic from 'next/dynamic';
 import SimpleContactForm from './components/SimpleContactForm';
 import { ScrollAnimation, ParallaxSection, RevealOnScroll } from './components/ScrollAnimations';
 import { GradientDivider, WaveTransition, MobileGradientSection } from './components/MobileGradientTransitions';
+import { MobileScrollingBannerCSS } from './components/MobileScrollingBanner';
 
 // Use Next.js dynamic imports instead of React.lazy for SSR compatibility
 const ProjectGallery = dynamic(() => import('./components/ProjectGallery'), {
@@ -58,6 +59,9 @@ export default function Home() {
         </MobileGradientSection>
 
       </div>
+
+      {/* Mobile Scrolling Banner */}
+      <MobileScrollingBannerCSS />
 
       {/* Wave Transition for Mobile */}
       <div className="md:hidden">
