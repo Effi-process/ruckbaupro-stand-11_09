@@ -106,11 +106,8 @@ export default function InkScrollSection() {
 
   return (
     <div className="min-h-screen text-white">
-      {/* Hero mit Chip */}
-      <section className="relative min-h-[15vh] sm:min-h-[25vh] grid place-items-center overflow-hidden">
-        <div className="absolute top-3 sm:top-8 left-1/2 -translate-x-1/2 text-[11px] sm:text-[12px] tracking-[.1em] uppercase px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-center select-none">
-          Professioneller Service
-        </div>
+      {/* Hero section - reduced height without chip */}
+      <section className="relative min-h-[8vh] sm:min-h-[15vh] overflow-hidden">
       </section>
 
       {/* Section mit Typing-Reveal pro Buchstabe */}
