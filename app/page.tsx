@@ -33,14 +33,14 @@ export default function Home() {
       {/* Container für durchgehenden Gradient ab dem Video */}
       <div className="bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white">
         {/* Ink Scroll Text Effect Section */}
-        <section id="services-grid">
+        <div id="services-grid">
           <InkScrollSection />
-        </section>
+        </div>
 
         {/* Project Carousel Section */}
-        <section id="process">
+        <div id="process">
           <ProjectCarousel />
-        </section>
+        </div>
 
       </div>
 
