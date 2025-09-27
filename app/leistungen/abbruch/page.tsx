@@ -29,10 +29,10 @@ export default function AbbruchPage() {
         
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
         
-        <div className="relative z-20 h-full flex items-end pb-24">
+        <div className="relative z-20 h-full flex items-end pb-12">
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
             <div className="max-w-4xl pt-32 md:pt-0">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
                 <div>Professioneller</div>
                 <div>Abbruch.</div>
               </h1>
@@ -63,12 +63,12 @@ export default function AbbruchPage() {
 
       <div className="bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white">
         {/* Service Details */}
-        <section id="details" className="py-24 px-4">
+        <section id="details" className="py-12 px-4">
           <div className="container-custom">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
               <div>
                 <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Abbruch Expertise</span>
-                <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-6">
+                <h2 className="text-3xl md:text-4xl font-black text-white mt-4 mb-6">
                   Kontrollierter Abbruch mit Präzision
                 </h2>
                 <p className="text-xl text-white/80 mb-8">
@@ -100,7 +100,7 @@ export default function AbbruchPage() {
                   alt="Professioneller Abbruch"
                   className="rounded-2xl w-full"
                   width={600}
-                  height={400}
+                  height={300}
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl"></div>
@@ -110,10 +110,10 @@ export default function AbbruchPage() {
         </section>
 
         {/* Abbruch Methods */}
-        <section id="methods" className="py-24 px-4 border-t border-white/10">
+        <section id="methods" className="py-12 px-4 border-t border-white/10">
           <div className="container-custom">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
                 Unsere Abbruch-Methoden
               </h2>
               <p className="text-xl text-white/80 max-w-3xl mx-auto">
@@ -121,7 +121,7 @@ export default function AbbruchPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
                   title: 'Kontrollierte Sprengung',
@@ -160,7 +160,7 @@ export default function AbbruchPage() {
                   icon: '🚨'
                 }
               ].map((method, index) => (
-                <div key={index} className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/10 transition-all duration-300 group">
+                <div key={index} className="bg-white/5 backdrop-blur-md rounded-2xl p-5 border border-white/20 hover:bg-white/10 transition-all duration-300 group">
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{method.icon}</div>
                   <h3 className="text-xl font-bold text-white mb-4">{method.title}</h3>
                   <p className="text-white/80 mb-6">{method.description}</p>
@@ -181,9 +181,9 @@ export default function AbbruchPage() {
         </section>
 
         {/* Safety Section */}
-        <section id="safety" className="py-24 px-4 border-t border-white/10">
+        <section id="safety" className="py-12 px-4 border-t border-white/10">
           <div className="container-custom">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
               <div className="relative">
                 <div className="bg-gradient-to-r from-cerulean/20 to-indigo-dye/20 rounded-2xl p-8 border border-cerulean/30">
                   <h3 className="text-2xl font-bold text-white mb-6">Sicherheitsstandards</h3>
@@ -206,7 +206,7 @@ export default function AbbruchPage() {
               
               <div>
                 <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Sicherheit</span>
-                <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-6">
+                <h2 className="text-3xl md:text-4xl font-black text-white mt-4 mb-6">
                   Höchste Sicherheitsstandards
                 </h2>
                 <p className="text-xl text-white/80 mb-8">
@@ -236,9 +236,9 @@ export default function AbbruchPage() {
         </section>
 
         {/* Contact Section */}
-        <section id="kontakt" className="py-24">
+        <section id="kontakt" className="py-12">
           <div className="container-custom">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8">
               <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Kontakt</span>
               <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-6">
                 Abbruch-Projekt planen
@@ -279,7 +279,7 @@ export default function AbbruchPage() {
                   </div>
                 </div>
                 
-                <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                <div className="bg-white/5 backdrop-blur-md rounded-2xl p-5 border border-white/20">
                   <h3 className="text-xl font-bold text-white mb-6">Abbruch-Anfrage</h3>
                   <div className="space-y-4">
                     <div>

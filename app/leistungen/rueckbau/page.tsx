@@ -29,10 +29,10 @@ export default function RueckbauPage() {
         
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
         
-        <div className="relative z-20 h-full flex items-end pb-24">
+        <div className="relative z-20 h-full flex items-end pb-12">
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
             <div className="max-w-4xl pt-32 md:pt-0">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
                 <div>Professioneller</div>
                 <div>Rückbau.</div>
               </h1>
@@ -63,12 +63,12 @@ export default function RueckbauPage() {
 
       <div className="bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white">
         {/* Service Details */}
-        <section id="details" className="py-24 px-4">
+        <section id="details" className="py-12 px-4">
           <div className="container-custom">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
               <div>
                 <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Rückbau Expertise</span>
-                <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-6">
+                <h2 className="text-3xl md:text-4xl font-black text-white mt-4 mb-6">
                   Präziser Rückbau mit System
                 </h2>
                 <p className="text-xl text-white/80 mb-8">
@@ -97,7 +97,7 @@ export default function RueckbauPage() {
                   alt="Professioneller Rückbau"
                   className="rounded-2xl w-full"
                   width={600}
-                  height={400}
+                  height={300}
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl"></div>
@@ -107,10 +107,10 @@ export default function RueckbauPage() {
         </section>
 
         {/* Services Overview */}
-        <section id="services" className="py-24 px-4 border-t border-white/10">
+        <section id="services" className="py-12 px-4 border-t border-white/10">
           <div className="container-custom">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
                 Unsere Rückbau-Leistungen
               </h2>
               <p className="text-xl text-white/80 max-w-3xl mx-auto">
@@ -118,7 +118,7 @@ export default function RueckbauPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
                   title: 'Selektiver Rückbau',
@@ -151,7 +151,7 @@ export default function RueckbauPage() {
                   features: ['Soforteinsatz', 'Gefahrenbeseitigung', 'Notabstützung', 'Schadensminimierung']
                 }
               ].map((service, index) => (
-                <div key={index} className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/10 transition-all duration-300">
+                <div key={index} className="bg-white/5 backdrop-blur-md rounded-2xl p-5 border border-white/20 hover:bg-white/10 transition-all duration-300">
                   <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
                   <p className="text-white/80 mb-6">{service.description}</p>
                   <ul className="space-y-2">
@@ -171,10 +171,10 @@ export default function RueckbauPage() {
         </section>
 
         {/* Process */}
-        <section id="process" className="py-24 px-4 border-t border-white/10">
+        <section id="process" className="py-12 px-4 border-t border-white/10">
           <div className="container-custom">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
                 Unser Rückbau-Prozess
               </h2>
               <p className="text-xl text-white/80 max-w-3xl mx-auto">
@@ -182,7 +182,7 @@ export default function RueckbauPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
               {[
                 { step: '01', title: 'Bestandsaufnahme', desc: 'Detaillierte Analyse der Bausubstanz und Schadstoffe' },
                 { step: '02', title: 'Genehmigungen', desc: 'Beantragung aller erforderlichen Genehmigungen' },
@@ -202,9 +202,9 @@ export default function RueckbauPage() {
         </section>
 
         {/* Contact Section */}
-        <section id="kontakt" className="py-24">
+        <section id="kontakt" className="py-12">
           <div className="container-custom">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8">
               <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Kontakt</span>
               <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-6">
                 Rückbau-Projekt planen
@@ -247,7 +247,7 @@ export default function RueckbauPage() {
                   </div>
                 </div>
                 
-                <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                <div className="bg-white/5 backdrop-blur-md rounded-2xl p-5 border border-white/20">
                   <h3 className="text-xl font-bold text-white mb-6">Rückbau-Anfrage</h3>
                   <div className="space-y-4">
                     <div>

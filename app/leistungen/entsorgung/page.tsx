@@ -29,10 +29,10 @@ export default function EntsorgungPage() {
         
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
         
-        <div className="relative z-20 h-full flex items-end pb-24">
+        <div className="relative z-20 h-full flex items-end pb-12">
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
             <div className="max-w-4xl pt-32 md:pt-0">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
                 <div>Umweltgerechte</div>
                 <div>Entsorgung.</div>
               </h1>
@@ -63,12 +63,12 @@ export default function EntsorgungPage() {
 
       <div className="bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white">
         {/* Service Details */}
-        <section id="details" className="py-24 px-4">
+        <section id="details" className="py-12 px-4">
           <div className="container-custom">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
               <div>
                 <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Entsorgung Expertise</span>
-                <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-6">
+                <h2 className="text-3xl md:text-4xl font-black text-white mt-4 mb-6">
                   Nachhaltigkeit durch Recycling
                 </h2>
                 <p className="text-xl text-white/80 mb-8">
@@ -97,7 +97,7 @@ export default function EntsorgungPage() {
                   alt="Umweltgerechte Entsorgung"
                   className="rounded-2xl w-full"
                   width={600}
-                  height={400}
+                  height={300}
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl"></div>
@@ -107,10 +107,10 @@ export default function EntsorgungPage() {
         </section>
 
         {/* Material Types */}
-        <section id="materials" className="py-24 px-4 border-t border-white/10">
+        <section id="materials" className="py-12 px-4 border-t border-white/10">
           <div className="container-custom">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
                 Materialien & Entsorgung
               </h2>
               <p className="text-xl text-white/80 max-w-3xl mx-auto">
@@ -118,7 +118,7 @@ export default function EntsorgungPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 {
                   title: 'Bauschutt',
@@ -177,7 +177,7 @@ export default function EntsorgungPage() {
                   icon: '📦'
                 }
               ].map((material, index) => (
-                <div key={index} className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/10 transition-all duration-300 group">
+                <div key={index} className="bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-white/20 hover:bg-white/10 transition-all duration-300 group">
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-3xl group-hover:scale-110 transition-transform duration-300">{material.icon}</span>
                     <div className={`px-3 py-1 bg-gradient-to-r ${material.color} text-white text-xs font-bold rounded-full`}>
@@ -197,10 +197,10 @@ export default function EntsorgungPage() {
         </section>
 
         {/* Container Services */}
-        <section id="container" className="py-24 px-4 border-t border-white/10">
+        <section id="container" className="py-12 px-4 border-t border-white/10">
           <div className="container-custom">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
                 Container-Service
               </h2>
               <p className="text-xl text-white/80 max-w-3xl mx-auto">
@@ -208,7 +208,7 @@ export default function EntsorgungPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
                   size: '5 m³',
@@ -232,7 +232,7 @@ export default function EntsorgungPage() {
                   popular: false
                 }
               ].map((container, index) => (
-                <div key={index} className={`relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border transition-all duration-300 hover:scale-105 ${
+                <div key={index} className={`relative bg-white/5 backdrop-blur-md rounded-2xl p-5 border transition-all duration-300 hover:scale-105 ${
                   container.popular ? 'border-cerulean bg-cerulean/10' : 'border-white/20 hover:bg-white/10'
                 }`}>
                   {container.popular && (
@@ -288,10 +288,10 @@ export default function EntsorgungPage() {
         </section>
 
         {/* Process */}
-        <section id="process" className="py-24 px-4 border-t border-white/10">
+        <section id="process" className="py-12 px-4 border-t border-white/10">
           <div className="container-custom">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
                 Unser Entsorgung-Prozess
               </h2>
               <p className="text-xl text-white/80 max-w-3xl mx-auto">
@@ -299,7 +299,7 @@ export default function EntsorgungPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
               {[
                 { step: '01', title: 'Beratung & Bestellung', desc: 'Kostenlose Beratung und schnelle Container-Bereitstellung', icon: '📞' },
                 { step: '02', title: 'Lieferung & Befüllung', desc: 'Pünktliche Lieferung und fachgerechte Befüllung vor Ort', icon: '🚛' },
@@ -320,9 +320,9 @@ export default function EntsorgungPage() {
         </section>
 
         {/* Sustainability */}
-        <section id="sustainability" className="py-24 px-4 border-t border-white/10">
+        <section id="sustainability" className="py-12 px-4 border-t border-white/10">
           <div className="container-custom">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
               <div className="relative">
                 <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-2xl p-8 border border-green-500/30">
                   <h3 className="text-2xl font-bold text-white mb-6 text-center">Umwelt-Impact</h3>
@@ -345,7 +345,7 @@ export default function EntsorgungPage() {
               
               <div>
                 <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Nachhaltigkeit</span>
-                <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-6">
+                <h2 className="text-3xl md:text-4xl font-black text-white mt-4 mb-6">
                   Kreislaufwirtschaft leben
                 </h2>
                 <p className="text-xl text-white/80 mb-8">
@@ -374,9 +374,9 @@ export default function EntsorgungPage() {
         </section>
 
         {/* Contact Section */}
-        <section id="kontakt" className="py-24">
+        <section id="kontakt" className="py-12">
           <div className="container-custom">
-            <div className="text-center mb-16">
+            <div className="text-center mb-8">
               <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Kontakt</span>
               <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-6">
                 Container bestellen
@@ -417,7 +417,7 @@ export default function EntsorgungPage() {
                   </div>
                 </div>
                 
-                <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                <div className="bg-white/5 backdrop-blur-md rounded-2xl p-5 border border-white/20">
                   <h3 className="text-xl font-bold text-white mb-6">Container-Anfrage</h3>
                   <div className="space-y-4">
                     <div>
