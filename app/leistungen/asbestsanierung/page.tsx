@@ -5,6 +5,7 @@ import FloatingElements from '../../components/FloatingElements';
 import FooterWithMarquee from '../../components/FooterWithMarquee';
 import ProcessFlow from '../../components/ProcessFlow';
 import SimpleContactForm from '../../components/SimpleContactForm';
+import ServiceHeroSection from '../../components/ServiceHeroSection';
 
 export default function AsbestsanierungPage() {
   return (
@@ -13,49 +14,13 @@ export default function AsbestsanierungPage() {
       <FloatingElements />
       
       {/* Full-Width Hero Section with Background Image */}
-      <section className="relative h-screen w-full overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/asbest-team-hero.png"
-            alt="Professionelle Asbestsanierung Team bei der Arbeit"
-            fill
-            className="object-cover"
-            priority
-          />
-          {/* Gradient Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-        </div>
-        
-        {/* Content positioned on the left side */}
-        <div className="relative z-10 flex items-center h-full px-6">
-          <div className="container mx-auto max-w-6xl">
-            <div className="max-w-2xl">
-              <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Zertifizierte Spezialisten</span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mt-6 mb-8 leading-tight">
-                ASBEST-SANIERUNG
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-10 leading-relaxed">
-                Sichere Asbestentfernung von zertifizierten Experten. Modernste Technik, lückenlose Dokumentation und 100% normgerecht nach TRGS 519.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link 
-                  href="/kontakt" 
-                  className="bg-cerulean text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold hover:bg-indigo-dye transition-all transform hover:scale-105 min-h-[44px] text-center"
-                >
-                  KOSTENLOSE BERATUNG
-                </Link>
-                <Link 
-                  href="/leistungen" 
-                  className="border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 min-h-[44px] text-center"
-                >
-                  ALLE LEISTUNGEN
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHeroSection
+        badge="Zertifizierte Spezialisten"
+        title="ASBEST-SANIERUNG"
+        description="Sichere Asbestentfernung von zertifizierten Experten. Modernste Technik, lückenlose Dokumentation und 100% normgerecht nach TRGS 519."
+        image="/images/asbest-team-hero.png"
+        imageAlt="Professionelle Asbestsanierung Team bei der Arbeit"
+      />
       
       {/* Transition section - creates smooth flow into content */}
       <section className="relative -mt-20 z-20">

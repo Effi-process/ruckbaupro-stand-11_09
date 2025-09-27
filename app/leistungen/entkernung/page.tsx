@@ -30,7 +30,7 @@ export default function EntkernungPage() {
         {/* Content positioned on the left side */}
         <div className="relative z-10 flex items-center h-full px-6">
           <div className="container mx-auto max-w-6xl">
-            <div className="max-w-2xl">
+            <div className="max-w-2xl pt-32 md:pt-0">
               <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Professionelle Entkernung</span>
               <h1 className="text-6xl md:text-7xl font-black text-white mt-6 mb-8 leading-tight">
                 ENTKERNUNG
@@ -38,16 +38,16 @@ export default function EntkernungPage() {
               <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed">
                 Komplette Entkernung von Gebäuden für Sanierung oder Abriss. Sauber, schnell und zuverlässig mit modernster Technik.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Link 
-                  href="/kontakt" 
-                  className="bg-cerulean text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-dye transition-all transform hover:scale-105"
+              <div className="flex flex-wrap gap-3 justify-center">
+                <Link
+                  href="/kontakt"
+                  className="bg-cerulean text-white px-5 py-3 sm:px-8 sm:py-4 rounded-lg font-bold hover:bg-indigo-dye transition-all transform hover:scale-105 text-sm sm:text-base whitespace-nowrap"
                 >
                   KOSTENLOSE BERATUNG
                 </Link>
-                <Link 
-                  href="/leistungen" 
-                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105"
+                <Link
+                  href="/leistungen"
+                  className="border-2 border-white text-white px-5 py-3 sm:px-8 sm:py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 text-sm sm:text-base whitespace-nowrap"
                 >
                   ALLE LEISTUNGEN
                 </Link>

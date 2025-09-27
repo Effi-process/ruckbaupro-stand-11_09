@@ -30,7 +30,7 @@ export default function BetonarbeitenPage() {
         {/* Content positioned on the left side */}
         <div className="relative z-10 flex items-center h-full px-6">
           <div className="container mx-auto max-w-6xl">
-            <div className="max-w-2xl">
+            <div className="max-w-2xl pt-32 md:pt-0">
               <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Präzise Betonbearbeitung</span>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mt-6 mb-8 leading-tight">
                 BETONARBEITEN
@@ -38,16 +38,16 @@ export default function BetonarbeitenPage() {
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-10 leading-relaxed">
                 Spezialisiert auf Betonschneiden, Bohren und Abbruch von Betonkonstruktionen mit Diamanttechnik.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Link 
-                  href="/kontakt" 
-                  className="bg-cerulean text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold hover:bg-indigo-dye transition-all transform hover:scale-105 min-h-[44px] text-center"
+              <div className="flex flex-wrap gap-3 justify-center">
+                <Link
+                  href="/kontakt"
+                  className="bg-cerulean text-white px-5 py-3 sm:px-8 sm:py-4 rounded-lg font-bold hover:bg-indigo-dye transition-all transform hover:scale-105 text-sm sm:text-base whitespace-nowrap"
                 >
                   KOSTENLOSE BERATUNG
                 </Link>
-                <Link 
-                  href="/leistungen" 
-                  className="border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 min-h-[44px] text-center"
+                <Link
+                  href="/leistungen"
+                  className="border-2 border-white text-white px-5 py-3 sm:px-8 sm:py-4 rounded-lg font-bold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 text-sm sm:text-base whitespace-nowrap"
                 >
                   ALLE LEISTUNGEN
                 </Link>

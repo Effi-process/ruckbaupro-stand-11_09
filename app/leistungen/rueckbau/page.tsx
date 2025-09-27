@@ -31,7 +31,7 @@ export default function RueckbauPage() {
         
         <div className="relative z-20 h-full flex items-end pb-24">
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-            <div className="max-w-4xl">
+            <div className="max-w-4xl pt-32 md:pt-0">
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-6">
                 <div>Professioneller</div>
                 <div>Rückbau.</div>
@@ -44,14 +44,14 @@ export default function RueckbauPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/kontakt"
-                  className="inline-flex items-center justify-center gap-4 bg-gradient-to-r from-cerulean to-indigo-dye text-white px-8 py-4 rounded-full text-lg font-bold hover:shadow-lg transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cerulean to-indigo-dye text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-bold hover:shadow-lg transition-all duration-300 whitespace-nowrap"
                 >
                   Kostenlose Beratung
-                  <div className="w-0 h-0 border-l-[8px] border-l-white border-y-[6px] border-y-transparent"></div>
+                  <div className="w-0 h-0 border-l-[6px] sm:border-l-[8px] border-l-white border-y-[4px] sm:border-y-[6px] border-y-transparent"></div>
                 </Link>
                 <Link
                   href="tel:+4917480830230"
-                  className="inline-flex items-center justify-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white/20 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-bold hover:bg-white/20 transition-all duration-300 whitespace-nowrap"
                 >
                   +49 174 8083023
                 </Link>
