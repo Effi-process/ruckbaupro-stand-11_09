@@ -351,46 +351,31 @@ export default function AsbestentfernungBielefeld() {
             </h2>
           </div>
 
-          <MobileFAQSection>
-            <div className="space-y-4">
-              {[
-                {
-                  question: "Wie erkenn ich Asbest in meinem Haus?",
-                  answer: "Asbest wurde vor allem in Häusern vor 1993 verbaut - besonders häufig in den alten Industrievierteln von Brackwede und Heepen. Typische Asbestmaterialen sind wellige Eternitdächer, alte Fassadenplatten, Vinylbodenbeläge mit schwarzem Kleber und alte Rohrisolierungen."
-                },
-                {
-                  question: "Was kostet eine Asbestsanierung?",
-                  answer: "Die Kosten hängen von vielen Faktoren ab - Art des Materials, Menge, Zugänglichkeit. Eine kleine Asbestsanierung wie die Entfernung von 50m² Welleternit kostet ab 2.500€. Größere Projekte wie komplette Dachsanierungen beginnen bei 8.000€."
-                },
-                {
-                  question: "Wie lange dauert eine Asbestentfernung?",
-                  answer: "Kleinere Projekte wie Bodenbeläge können wir meist innerhalb von 1-2 Tagen erledigen. Größere Sanierungen wie komplette Dächer dauern 3-7 Tage. Die genaue Dauer hängt von der Größe und dem Asbesttyp ab."
-                },
-                {
-                  question: "Brauche ich eine Genehmigung?",
-                  answer: "Ja, in Bielefeld müssen alle Asbestarbeiten beim Amt für Umwelt angemeldet werden. Wir übernehmen die komplette Anmeldung für Sie inklusive aller erforderlichen Dokumente und Nachweise."
-                },
-                {
-                  question: "Muss ich während der Sanierung ausziehen?",
-                  answer: "Bei Außenarbeiten wie Dach- oder Fassadensanierungen können Sie meist wohnen bleiben. Bei Innenraumarbeiten empfehlen wir für die Dauer der Arbeiten alternative Unterkünfte."
-                }
-              ].map((faq, index) => (
-                <div key={index} className="bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl border border-sky-400/30 rounded-2xl overflow-hidden">
-                  <details className="group">
-                    <summary className="p-6 cursor-pointer list-none flex justify-between items-center hover:bg-sky-900/10 transition-colors">
-                      <span className="font-bold text-white">{faq.question}</span>
-                      <svg className="w-5 h-5 text-sky-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </summary>
-                    <div className="px-6 pb-6 text-white/80">
-                      {faq.answer}
-                    </div>
-                  </details>
-                </div>
-              ))}
-            </div>
-          </MobileFAQSection>
+          <MobileFAQSection
+            title="Häufige Fragen zur Asbestentfernung"
+            faqs={[
+              {
+                question: "Wie erkenn ich Asbest in meinem Haus?",
+                answer: "Asbest wurde vor allem in Häusern vor 1993 verbaut - besonders häufig in den alten Industrievierteln von Brackwede und Heepen. Typische Asbestmaterialen sind wellige Eternitdächer, alte Fassadenplatten, Vinylbodenbeläge mit schwarzem Kleber und alte Rohrisolierungen."
+              },
+              {
+                question: "Was kostet eine Asbestsanierung?",
+                answer: "Die Kosten hängen von vielen Faktoren ab - Art des Materials, Menge, Zugänglichkeit. Eine kleine Asbestsanierung wie die Entfernung von 50m² Welleternit kostet ab 2.500€. Größere Projekte wie komplette Dachsanierungen beginnen bei 8.000€."
+              },
+              {
+                question: "Wie lange dauert eine Asbestentfernung?",
+                answer: "Kleinere Projekte wie Bodenbeläge können wir meist innerhalb von 1-2 Tagen erledigen. Größere Sanierungen wie komplette Dächer dauern 3-7 Tage. Die genaue Dauer hängt von der Größe und dem Asbesttyp ab."
+              },
+              {
+                question: "Brauche ich eine Genehmigung?",
+                answer: "Ja, in Bielefeld müssen alle Asbestarbeiten beim Amt für Umwelt angemeldet werden. Wir übernehmen die komplette Anmeldung für Sie inklusive aller erforderlichen Dokumente und Nachweise."
+              },
+              {
+                question: "Muss ich während der Sanierung ausziehen?",
+                answer: "Bei Außenarbeiten wie Dach- oder Fassadensanierungen können Sie meist wohnen bleiben. Bei Innenraumarbeiten empfehlen wir für die Dauer der Arbeiten alternative Unterkünfte."
+              }
+            ]}
+          />
         </div>
       </section>
 
