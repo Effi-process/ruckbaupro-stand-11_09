@@ -65,7 +65,7 @@ export default function EntsorgungPage() {
         {/* Service Details */}
         <section id="details" className="py-24 px-4">
           <div className="container-custom">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               <div>
                 <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Entsorgung Expertise</span>
                 <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-6">
@@ -76,7 +76,7 @@ export default function EntsorgungPage() {
                   und größtmöglich recycelt werden. Für eine nachhaltige Zukunft.
                 </p>
                 
-                <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
                   {[
                     { number: '95%', label: 'Recyclingquote' },
                     { number: '24h', label: 'Container-Lieferung' },
@@ -118,7 +118,7 @@ export default function EntsorgungPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {[
                 {
                   title: 'Bauschutt',
@@ -208,7 +208,7 @@ export default function EntsorgungPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
               {[
                 {
                   size: '5 m³',
@@ -299,7 +299,7 @@ export default function EntsorgungPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
               {[
                 { step: '01', title: 'Beratung & Bestellung', desc: 'Kostenlose Beratung und schnelle Container-Bereitstellung', icon: '📞' },
                 { step: '02', title: 'Lieferung & Befüllung', desc: 'Pünktliche Lieferung und fachgerechte Befüllung vor Ort', icon: '🚛' },
@@ -322,11 +322,11 @@ export default function EntsorgungPage() {
         {/* Sustainability */}
         <section id="sustainability" className="py-24 px-4 border-t border-white/10">
           <div className="container-custom">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               <div className="relative">
                 <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-2xl p-8 border border-green-500/30">
                   <h3 className="text-2xl font-bold text-white mb-6 text-center">Umwelt-Impact</h3>
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     {[
                       { label: 'CO2 eingespart', value: '2.4t', desc: 'pro Container durch Recycling' },
                       { label: 'Recycling-Quote', value: '95%', desc: 'aller Baumaterialien' },
@@ -387,7 +387,7 @@ export default function EntsorgungPage() {
             </div>
 
             <div className="max-w-4xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                 <div className="space-y-8">
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-4">24h Container-Service</h3>
@@ -436,7 +436,7 @@ export default function EntsorgungPage() {
                         placeholder="Ihre Telefonnummer"
                       />
                     </div>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-white/80 text-sm font-medium mb-2">Container-Größe</label>
                         <select className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white">

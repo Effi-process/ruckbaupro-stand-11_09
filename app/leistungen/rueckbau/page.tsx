@@ -65,7 +65,7 @@ export default function RueckbauPage() {
         {/* Service Details */}
         <section id="details" className="py-24 px-4">
           <div className="container-custom">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               <div>
                 <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Rückbau Expertise</span>
                 <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-6">
@@ -76,7 +76,7 @@ export default function RueckbauPage() {
                   und umweltschonend, um wertvolle Materialien zu erhalten und Schadstoffe sicher zu entfernen.
                 </p>
                 
-                <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
                   {[
                     { number: '500+', label: 'Projekte erfolgreich abgeschlossen' },
                     { number: '24/7', label: 'Notdienst verfügbar' },
@@ -118,7 +118,7 @@ export default function RueckbauPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {[
                 {
                   title: 'Selektiver Rückbau',
@@ -182,7 +182,7 @@ export default function RueckbauPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
               {[
                 { step: '01', title: 'Bestandsaufnahme', desc: 'Detaillierte Analyse der Bausubstanz und Schadstoffe' },
                 { step: '02', title: 'Genehmigungen', desc: 'Beantragung aller erforderlichen Genehmigungen' },
@@ -215,7 +215,7 @@ export default function RueckbauPage() {
             </div>
 
             <div className="max-w-4xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                 <div className="space-y-8">
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-4">Sofort erreichbar</h3>

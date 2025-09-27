@@ -65,7 +65,7 @@ export default function AbbruchPage() {
         {/* Service Details */}
         <section id="details" className="py-24 px-4">
           <div className="container-custom">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               <div>
                 <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Abbruch Expertise</span>
                 <h2 className="text-4xl md:text-5xl font-black text-white mt-4 mb-6">
@@ -121,7 +121,7 @@ export default function AbbruchPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {[
                 {
                   title: 'Kontrollierte Sprengung',
@@ -183,11 +183,11 @@ export default function AbbruchPage() {
         {/* Safety Section */}
         <section id="safety" className="py-24 px-4 border-t border-white/10">
           <div className="container-custom">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               <div className="relative">
                 <div className="bg-gradient-to-r from-cerulean/20 to-indigo-dye/20 rounded-2xl p-8 border border-cerulean/30">
                   <h3 className="text-2xl font-bold text-white mb-6">Sicherheitsstandards</h3>
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     {[
                       { label: 'Null Unfälle', value: '0', desc: 'in den letzten 5 Jahren' },
                       { label: 'Zertifiziert', value: '100%', desc: 'nach DIN und EU-Normen' },
@@ -249,7 +249,7 @@ export default function AbbruchPage() {
             </div>
 
             <div className="max-w-4xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                 <div className="space-y-8">
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-4">24/7 Notdienst</h3>
