@@ -27,40 +27,8 @@ export default function AsbestentfernungBielefeld() {
       </div>
       <FloatingElements />
 
-      {/* Navigation Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-br from-slate-900/95 to-sky-950/95 backdrop-blur-xl border-b border-sky-400/20">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-sky-400 to-sky-600 rounded-lg flex items-center justify-center font-black text-white text-xl shadow-lg shadow-sky-400/30 group-hover:shadow-sky-400/50 transition-all">
-                RP
-              </div>
-              <span className="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white">
-                RückbauPRO
-              </span>
-            </Link>
-
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-white/80 hover:text-sky-300 transition-colors">Start</Link>
-              <Link href="/leistungen" className="text-white/80 hover:text-sky-300 transition-colors">Leistungen</Link>
-              <Link href="/preise" className="text-white/80 hover:text-sky-300 transition-colors">Preise</Link>
-              <Link href="/kontakt" className="text-white/80 hover:text-sky-300 transition-colors">Kontakt</Link>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <a href="tel:+4952199998480" className="hidden sm:flex items-center space-x-2 bg-gradient-to-r from-sky-500 to-sky-600 text-white px-4 py-2 rounded-lg hover:from-sky-400 hover:to-sky-500 transition-all">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span className="font-bold">0521 9999 8480</span>
-              </a>
-            </div>
-          </div>
-        </nav>
-      </header>
-
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16">
+      <section className="relative pt-16 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className={`inline-flex items-center px-6 py-3 bg-gradient-to-br from-slate-800/40 to-sky-900/20 backdrop-blur-xl rounded-full mb-6 transition-all duration-700 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>

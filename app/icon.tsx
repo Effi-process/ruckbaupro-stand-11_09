@@ -16,18 +16,29 @@ export default function Icon() {
     (
       <div
         style={{
-          fontSize: 24,
-          background: '#14213D',
+          background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)',
           width: '100%',
           height: '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'white',
           borderRadius: '20%',
         }}
       >
-        R
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white',
+            fontWeight: 900,
+            fontSize: 20,
+            lineHeight: 0.8,
+          }}
+        >
+          <div style={{ fontSize: 16 }}>RP</div>
+        </div>
       </div>
     ),
     {
