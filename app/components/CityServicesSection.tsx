@@ -74,7 +74,9 @@ const servicesData = {
     {
       title: 'Schimmelsanierung',
       description: 'Nachhaltige Schimmelbeseitigung und Prävention',
-      seoPages: []
+      seoPages: [
+        { name: 'Oberflächenreinigung Bielefeld', link: '/oberflaechenreinigung-bielefeld' }
+      ]
     },
     {
       title: 'Betonarbeiten',
