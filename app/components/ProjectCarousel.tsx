@@ -102,17 +102,16 @@ export default function ProjectCarousel() {
             <Link key={i} href={project.link} className="snap-center shrink-0 w-[90vw] sm:w-[85vw] md:w-[380px] lg:w-[420px] group cursor-pointer">
               <article className="flex flex-col">
                 <div className="relative">
-                  <div className="relative h-[280px] sm:h-[320px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,.3)] group-hover:scale-105 transition-transform duration-300">
+                  <div className="relative h-[280px] sm:h-[320px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,.3)] group-hover:scale-105 transition-transform duration-300">
                     <Image
                       src={project.image}
                       alt={project.alt}
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:bg-black/20" />
 
                     {/* Badge inside image for both mobile and desktop */}
-                    <span className="absolute top-4 left-4 md:top-6 md:left-6 text-xs md:text-sm px-3 py-2 md:px-4 md:py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 tracking-wide uppercase text-white font-bold shadow-lg">
+                    <span className="absolute top-4 left-4 md:top-6 md:left-6 text-xs md:text-sm px-3 py-2 md:px-4 md:py-3 rounded-full bg-white/20 backdrop-blur-md tracking-wide uppercase text-white font-bold shadow-lg">
                       {project.badge}
                     </span>
                   </div>

@@ -6,6 +6,7 @@ import FooterWithMarquee from '../../components/FooterWithMarquee';
 // import ProcessFlow from '../../components/ProcessFlow';
 import SimpleContactForm from '../../components/SimpleContactForm';
 import ServiceHeroSection from '../../components/ServiceHeroSection';
+import { ScrollAnimation } from '../../components/ScrollAnimations';
 
 export default function AsbestsanierungPage() {
   return (
@@ -263,12 +264,12 @@ export default function AsbestsanierungPage() {
       {/* Process Flow Section */}
       {/* <ProcessFlow /> */}
       
-      {/* Contact Form Section */}
-      <section className="py-10 bg-oxford-blue">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Contact Form Section - Full Width */}
+      <ScrollAnimation animation="slideUp" duration={1000}>
+        <section id="contact-form" className="bg-oxford-blue section-divider">
           <SimpleContactForm purpose="quote" />
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
       <FooterWithMarquee />
     </main>

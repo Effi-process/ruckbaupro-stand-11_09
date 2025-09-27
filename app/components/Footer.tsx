@@ -67,14 +67,15 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Dritte Zeile: Copyright und Links */}
-          <div className="flex justify-between items-center text-[8px] text-secondary-400 border-t border-penn-blue pt-1">
-            <span>© 2024 RückbauPRO</span>
-            <div className="flex gap-2">
-              <Link href="/impressum">Impressum</Link>
-              <Link href="/datenschutz">Datenschutz</Link>
-              <Link href="/agb">AGB</Link>
-            </div>
+          {/* Dritte Zeile: Copyright und Links - alle auf einer Linie ohne Umbruch */}
+          <div className="flex items-center text-[8px] text-secondary-400 border-t border-penn-blue pt-1 whitespace-nowrap overflow-x-auto">
+            <span className="mr-2">© 2024 RückbauPRO</span>
+            <span className="mx-1">•</span>
+            <Link href="/impressum" className="mx-1">Impressum</Link>
+            <span className="mx-1">•</span>
+            <Link href="/datenschutz" className="mx-1">Datenschutz</Link>
+            <span className="mx-1">•</span>
+            <Link href="/agb" className="mx-1">AGB</Link>
           </div>
         </div>
 

@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import FloatingElements from '../components/FloatingElements';
 import FooterWithMarquee from '../components/FooterWithMarquee';
+import SimpleContactForm from '../components/SimpleContactForm';
+import { ScrollAnimation } from '../components/ScrollAnimations';
 
 export default function GesetzlicheVorschriften() {
   const vorschriften = [
@@ -96,29 +98,6 @@ export default function GesetzlicheVorschriften() {
       schritt: 'Freimessung',
       beschreibung: 'Erfolgskontrolle nach Sanierung',
       pflichten: ['Luftmessung', 'Freigabe', 'Abschlussdokumentation']
-    }
-  ];
-
-  const strafen = [
-    {
-      vergehen: 'Arbeiten ohne Sachkundenachweis',
-      strafe: 'Bis zu 50.000 €',
-      zusatz: 'Strafverfahren bei Personenschäden'
-    },
-    {
-      vergehen: 'Fehlende Anzeige bei Behörde',
-      strafe: 'Bis zu 25.000 €',
-      zusatz: 'Stilllegung der Baustelle'
-    },
-    {
-      vergehen: 'Unsachgemäße Entsorgung',
-      strafe: 'Bis zu 100.000 €',
-      zusatz: 'Freiheitsstrafe bis 5 Jahre möglich'
-    },
-    {
-      vergehen: 'Gefährdung von Personen',
-      strafe: 'Strafverfahren',
-      zusatz: 'Persönliche Haftung der Verantwortlichen'
     }
   ];
 
@@ -257,46 +236,12 @@ export default function GesetzlicheVorschriften() {
         </div>
       </section>
 
-      {/* Strafen Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative bg-gradient-to-r from-red-500/20 to-orange-500/20 backdrop-blur-xl rounded-3xl border border-red-500/30 p-12 overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 to-orange-500"></div>
-
-            <h2 className="text-4xl font-bold text-white text-center mb-6">
-              ⚠️ Konsequenzen bei Verstößen
-            </h2>
-            <p className="text-center text-gray-200 mb-12 max-w-3xl mx-auto text-lg">
-              Die unsachgemäße Durchführung von Asbestarbeiten kann schwerwiegende
-              rechtliche und finanzielle Folgen haben:
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {strafen.map((strafe, index) => (
-                <div key={index} className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur rounded-2xl p-8 border-l-4 border-red-500">
-                  <h3 className="font-bold text-xl text-red-400 mb-3">{strafe.vergehen}</h3>
-                  <p className="text-3xl font-black text-white mb-3">{strafe.strafe}</p>
-                  <p className="text-gray-300">{strafe.zusatz}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 max-w-3xl mx-auto">
-              <div className="bg-white/10 backdrop-blur rounded-2xl p-10 text-center border border-white/20">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-3xl font-bold text-white">!</span>
-                </div>
-                <h3 className="font-bold text-2xl text-white mb-4">Wichtiger Hinweis</h3>
-                <p className="text-gray-200 text-lg leading-relaxed">
-                  Beauftragen Sie ausschließlich zertifizierte Fachbetriebe!
-                  Als Auftraggeber haften Sie mit, wenn Sie wissentlich einen
-                  nicht qualifizierten Betrieb beauftragen.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Contact Form Section - Full Width */}
+      <ScrollAnimation animation="slideUp" duration={1000}>
+        <section id="contact-form" className="bg-oxford-blue section-divider">
+          <SimpleContactForm purpose="quote" />
+        </section>
+      </ScrollAnimation>
 
       {/* Downloads Section */}
       <section className="py-20">

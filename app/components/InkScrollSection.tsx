@@ -141,11 +141,8 @@ export default function InkScrollSection() {
         {/* Text removed for mobile */}
       </section>
 
-      {/* UNSERE PROJEKTE Section - Mit Verlauf nach unten */}
+      {/* UNSERE PROJEKTE Section */}
       <div className="relative">
-        {/* Gradient overlay at top */}
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent via-gray-800/50 to-transparent pointer-events-none z-10" />
-
         <div className="px-3 sm:px-4 md:px-[5vw] pt-16 pb-8 relative">
           <div className="text-center mb-8 sm:mb-10 md:mb-12 px-4">
             <span className="text-cerulean font-semibold text-sm uppercase tracking-wider">Unsere Projekte</span>
@@ -157,9 +154,6 @@ export default function InkScrollSection() {
             </p>
           </div>
         </div>
-
-        {/* Gradient overlay at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-700/80 via-transparent to-transparent pointer-events-none z-10" />
       </div>
     </div>
   );
