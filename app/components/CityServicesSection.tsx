@@ -70,7 +70,9 @@ const servicesData = {
     {
       title: 'KMF-Sanierung',
       description: 'Fachgerechte Entsorgung künstlicher Mineralfasern',
-      seoPages: []
+      seoPages: [
+        { name: 'Fachgerechte Entsorgung Bielefeld', link: '/fachgerechte-entsorgung-bielefeld' }
+      ]
     },
     {
       title: 'Schimmelsanierung',
