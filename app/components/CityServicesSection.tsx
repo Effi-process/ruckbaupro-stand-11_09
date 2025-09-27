@@ -39,7 +39,8 @@ const servicesData = {
       title: 'Asbest-Sanierung',
       description: 'Professionelle Asbestentfernung nach TRGS 519',
       seoPages: [
-        { name: 'Asbestmaterialentfernung Bielefeld', link: '/asbestmaterialentfernung-bielefeld' }
+        { name: 'Asbestmaterialentfernung Bielefeld', link: '/asbestmaterialentfernung-bielefeld' },
+        { name: 'Freimessung Bielefeld', link: '/freimessung-bielefeld' }
       ]
     },
     {
