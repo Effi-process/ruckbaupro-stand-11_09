@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
+import SimpleContactForm from '../components/SimpleContactForm';
 
 export default function GebaeudeabbruchBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -351,6 +352,11 @@ export default function GebaeudeabbruchBielefeld() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Contact Form Section with Background Image */}
+      <section className="relative">
+        <SimpleContactForm purpose="quote" />
       </section>
 
       <FooterWithMarquee />

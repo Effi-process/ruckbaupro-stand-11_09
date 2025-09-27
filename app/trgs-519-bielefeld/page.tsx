@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
-import SimpleContactForm from '../components/MultiStepWizard';
+import SimpleContactForm from '../components/SimpleContactForm';
 import MobileCollapsibleContent, { CollapsibleTextSection, MobileFAQSection } from '../components/MobileCollapsibleContent'
 import MobileOptimizedContent, { MobileParagraph, MobileHeading, MobileSection } from '../components/MobileOptimizedContent'
 
@@ -434,9 +434,9 @@ export default function TRGS519Bielefeld() {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900/50 to-sky-950/30 backdrop-blur-xl">
-        <SimpleContactForm />
+      {/* Contact Form Section with Background Image */}
+      <section className="relative">
+        <SimpleContactForm purpose="quote" />
       </section>
 
       {/* Footer */}
