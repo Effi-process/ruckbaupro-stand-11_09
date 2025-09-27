@@ -105,7 +105,8 @@ export default function BeratungPlanungPage() {
           </div>
 
           {/* Process Steps - Card Layout */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="flex justify-center">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
             {[
               { 
                 title: "BESTANDSAUFNAHME & VERMESSUNG", 
@@ -186,6 +187,7 @@ export default function BeratungPlanungPage() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>

@@ -75,7 +75,8 @@ export default function AsbestsanierungPage() {
           </div>
 
           {/* Process Steps - Card Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-4xl">
             {[
               { 
                 title: "ARBEITSPLATZ VORBEREITUNG", 
@@ -156,6 +157,7 @@ export default function AsbestsanierungPage() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>

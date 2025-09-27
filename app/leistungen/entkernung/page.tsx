@@ -110,7 +110,8 @@ export default function EntkernungPage() {
           </div>
 
           {/* Process Steps - Card Layout */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="flex justify-center">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
             {[
               { 
                 title: "SCHADSTOFFPRÜFUNG", 
@@ -191,6 +192,7 @@ export default function EntkernungPage() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>

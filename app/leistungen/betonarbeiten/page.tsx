@@ -105,7 +105,8 @@ export default function BetonarbeitenPage() {
           </div>
 
           {/* Process Steps - Card Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-4xl">
             {[
               { 
                 title: "STATISCHE ANALYSE", 
@@ -187,6 +188,7 @@ export default function BetonarbeitenPage() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>

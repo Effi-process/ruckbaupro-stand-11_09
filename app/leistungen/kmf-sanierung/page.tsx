@@ -105,7 +105,8 @@ export default function KmfSanierungPage() {
           </div>
 
           {/* Process Steps - Card Layout */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="flex justify-center">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
             {[
               { 
                 title: "MATERIALIDENTIFIKATION", 
@@ -186,6 +187,7 @@ export default function KmfSanierungPage() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>
