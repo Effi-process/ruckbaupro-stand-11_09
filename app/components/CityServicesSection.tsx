@@ -49,6 +49,7 @@ const servicesData = {
       title: 'Entkernung',
       description: 'Komplette oder teilweise Gebäudeentkernung',
       seoPages: [
+        { name: 'Entkernung Bielefeld', link: '/entkernung-bielefeld' },
         { name: 'Hochbau-Abriss Bielefeld', link: '/hochbau-abriss-bielefeld' },
         { name: 'Gebäudeabbruch Bielefeld', link: '/gebaeudeabbruch-bielefeld' },
         { name: 'Aufräumarbeiten Bielefeld', link: '/aufraeumarbeiten-bielefeld' },
