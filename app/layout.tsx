@@ -33,13 +33,27 @@ export default function RootLayout({
   return (
     <html lang="de">
       <head>
-        {/* FORCE NEW FAVICON - using different filename to bypass ALL caching */}
-        <link rel="icon" type="image/x-icon" href={`/site-icon.ico?v=${Date.now()}`} />
-        <link rel="shortcut icon" type="image/x-icon" href={`/site-icon.ico?v=${Date.now()}`} />
-        <link rel="icon" type="image/png" sizes="32x32" href={`/icon-32x32.png?v=${Date.now()}`} />
-        <link rel="icon" type="image/png" sizes="16x16" href={`/icon-16x16.png?v=${Date.now()}`} />
-        <link rel="apple-touch-icon" href={`/icon-192x192.png?v=${Date.now()}`} />
+        {/* Complete favicon setup for all browsers including Safari */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+        {/* PNG icons for modern browsers */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png" />
+
+        {/* Apple Touch Icons for Safari and iOS */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/apple-touch-icon-precomposed.png" />
+
+        {/* Additional Safari/Apple meta tags */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="RückbauPRO" />
+
+        {/* Microsoft Tiles */}
         <meta name="msapplication-TileImage" content="/icon-192x192.png" />
+        <meta name="msapplication-TileColor" content="#0a4078" />
+
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#1282a2" />
 
