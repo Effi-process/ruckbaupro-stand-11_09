@@ -62,7 +62,8 @@ const servicesData = {
         { name: 'Schrottumschlag Bielefeld', link: '/schrottumschlag-bielefeld' },
         { name: 'Schutt-Aufräumarbeiten Bielefeld', link: '/schutt-aufraeumarbeiten-bielefeld' },
         { name: 'Selektiver Abbruch Bielefeld', link: '/selektiver-abbruch-bielefeld' },
-        { name: 'Landschaftsbaustellen Vorbereitung', link: '/landschaftsbau-vorbereitung-bielefeld' }
+        { name: 'Landschaftsbaustellen Vorbereitung', link: '/landschaftsbau-vorbereitung-bielefeld' },
+        { name: 'Demontage Bielefeld', link: '/demontage-bielefeld' }
       ]
     },
     {
