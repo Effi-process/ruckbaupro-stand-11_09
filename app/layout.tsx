@@ -33,13 +33,13 @@ export default function RootLayout({
   return (
     <html lang="de">
       <head>
-        {/* Complete favicon setup with multiple formats and cache busting */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=3" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icon-32x32.png?v=3" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icon-16x16.png?v=3" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png?v=3" />
-        <link rel="apple-touch-icon" href="/icon-192x192.png?v=3" />
+        {/* FORCE NEW FAVICON - using different filename to bypass ALL caching */}
+        <link rel="icon" type="image/x-icon" href={`/site-icon.ico?v=${Date.now()}`} />
+        <link rel="shortcut icon" type="image/x-icon" href={`/site-icon.ico?v=${Date.now()}`} />
+        <link rel="icon" type="image/png" sizes="32x32" href={`/icon-32x32.png?v=${Date.now()}`} />
+        <link rel="icon" type="image/png" sizes="16x16" href={`/icon-16x16.png?v=${Date.now()}`} />
+        <link rel="apple-touch-icon" href={`/icon-192x192.png?v=${Date.now()}`} />
+        <meta name="msapplication-TileImage" content="/icon-192x192.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#1282a2" />
 
