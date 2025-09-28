@@ -166,101 +166,136 @@ export default function TRGS519Bielefeld() {
                   </MobileParagraph>
                 </MobileSection>
 
-                <CollapsibleTextSection title="Was bedeutet TRGS 519 Zertifizierung?">
-                  <MobileParagraph>
-                    Die TRGS 519 ist die wichtigste Vorschrift für Asbestarbeiten in Deutschland. Nur
-                    zertifizierte Fachbetriebe dürfen Asbest sanieren - und das aus gutem Grund! Die
-                    Zertifizierung bedeutet, dass alle unsere Mitarbeiter speziell geschult sind, wir
-                    die vorgeschriebene Sicherheitsausrüstung haben und regelmässig kontrolliert werden.
-                  </MobileParagraph>
-                  <MobileParagraph>
-                    In Bielefeld gibt es nur eine Handvoll echter TRGS 519 Betriebe - viele Firmen behaupten
-                    es, aber haben keine gültige Zertifizierung. Wir wurden gerade wieder rezertifiziert und
-                    erfüllen alle Anforderungen der Berufsgenossenschaft BAU und der Gewerbeaufsicht.
-                  </MobileParagraph>
-                </CollapsibleTextSection>
+                <CollapsibleTextSection
+                  title="Was bedeutet TRGS 519 Zertifizierung?"
+                  content={
+                    <>
+                      <MobileParagraph>
+                        Die TRGS 519 ist die wichtigste Vorschrift für Asbestarbeiten in Deutschland. Nur
+                        zertifizierte Fachbetriebe dürfen Asbest sanieren - und das aus gutem Grund! Die
+                        Zertifizierung bedeutet, dass alle unsere Mitarbeiter speziell geschult sind, wir
+                        die vorgeschriebene Sicherheitsausrüstung haben und regelmässig kontrolliert werden.
+                      </MobileParagraph>
+                      <MobileParagraph>
+                        In Bielefeld gibt es nur eine Handvoll echter TRGS 519 Betriebe - viele Firmen behaupten
+                        es, aber haben keine gültige Zertifizierung. Wir wurden gerade wieder rezertifiziert und
+                        erfüllen alle Anforderungen der Berufsgenossenschaft BAU und der Gewerbeaufsicht.
+                      </MobileParagraph>
+                    </>
+                  }
+                />
 
-                <CollapsibleTextSection title="Asbestsanierung nach TRGS 519">
-                  <MobileParagraph>
-                    Bei jeder Asbestsanierung in Bielefeld - egal ob in Brackwede, Sennestadt oder der
-                    Altstadt - folgen wir strikt den TRGS 519 Vorgaben. Das beginnt mit der Gefährdungsbeurteilung,
-                    geht über die Anzeige bei der Bezirksregierung Detmold bis zur finalen Freimessung.
-                    Jeder Schritt wird dokumentiert und kann von den Behörden geprüft werden.
-                  </MobileParagraph>
-                  <MobileParagraph>
-                    Besonders wichtig: Die Einrichtung der Schwarz-Weiß-Anlage mit Personenschleuse und
-                    Unterdruckhaltung. Viele "Billiganbieter" sparen hier - wir nicht! Unsere mobilen
-                    Dekontaminationsanlagen entsprechen genau den TRGS 519 Anforderungen und schützen
-                    Ihre Gesundheit zu 100%.
-                  </MobileParagraph>
-                </CollapsibleTextSection>
+                <CollapsibleTextSection
+                  title="Asbestsanierung nach TRGS 519"
+                  content={
+                    <>
+                      <MobileParagraph>
+                        Bei jeder Asbestsanierung in Bielefeld - egal ob in Brackwede, Sennestadt oder der
+                        Altstadt - folgen wir strikt den TRGS 519 Vorgaben. Das beginnt mit der Gefährdungsbeurteilung,
+                        geht über die Anzeige bei der Bezirksregierung Detmold bis zur finalen Freimessung.
+                        Jeder Schritt wird dokumentiert und kann von den Behörden geprüft werden.
+                      </MobileParagraph>
+                      <MobileParagraph>
+                        Besonders wichtig: Die Einrichtung der Schwarz-Weiß-Anlage mit Personenschleuse und
+                        Unterdruckhaltung. Viele "Billiganbieter" sparen hier - wir nicht! Unsere mobilen
+                        Dekontaminationsanlagen entsprechen genau den TRGS 519 Anforderungen und schützen
+                        Ihre Gesundheit zu 100%.
+                      </MobileParagraph>
+                    </>
+                  }
+                />
 
-                <CollapsibleTextSection title="KMF-Sanierung nach TRGS 521">
-                  <MobileParagraph>
-                    Neben Asbest sanieren wir auch künstliche Mineralfasern (KMF) nach TRGS 521. Diese
-                    alten Dämmstoffe aus Glas- oder Steinwolle sind in vielen Bielefelder Gebäuden verbaut -
-                    besonders in den 70er und 80er Jahre Bauten in Heepen und Jöllenbeck.
-                  </MobileParagraph>
-                  <MobileParagraph>
-                    KMF-Fasern sind krebsverdächtig und müssen genauso sorgfältig entfernt werden wie Asbest.
-                    Wir haben die spezielle TRGS 521 Schulung und die notwendige Ausrüstung wie P3-Filter,
-                    Einwegschutzanzüge und staubarme Arbeitsverfahren.
-                  </MobileParagraph>
-                </CollapsibleTextSection>
+                <CollapsibleTextSection
+                  title="KMF-Sanierung nach TRGS 521"
+                  content={
+                    <>
+                      <MobileParagraph>
+                        Neben Asbest sanieren wir auch künstliche Mineralfasern (KMF) nach TRGS 521. Diese
+                        alten Dämmstoffe aus Glas- oder Steinwolle sind in vielen Bielefelder Gebäuden verbaut -
+                        besonders in den 70er und 80er Jahre Bauten in Heepen und Jöllenbeck.
+                      </MobileParagraph>
+                      <MobileParagraph>
+                        KMF-Fasern sind krebsverdächtig und müssen genauso sorgfältig entfernt werden wie Asbest.
+                        Wir haben die spezielle TRGS 521 Schulung und die notwendige Ausrüstung wie P3-Filter,
+                        Einwegschutzanzüge und staubarme Arbeitsverfahren.
+                      </MobileParagraph>
+                    </>
+                  }
+                />
 
-                <CollapsibleTextSection title="Arbeitsschutz und Sicherheitskonzepte">
-                  <MobileParagraph>
-                    TRGS 519 bedeutet höchste Sicherheitsstandards - für unsere Mitarbeiter und für Sie!
-                    Jeder unserer Sanierungshelfer hat den vorgeschriebenen Sachkundenachweis nach TRGS 519
-                    Anlage 4. Die Bauleiter haben zusätzlich die Anlage 3 Qualifikation.
-                  </MobileParagraph>
-                  <MobileParagraph>
-                    Vor jedem Projekt erstellen wir einen detaillierten Arbeitsplan mit Gefährdungsbeurteilung.
-                    Dieser wird mit dem Sicherheitskoordinator abgestimmt. Während der Arbeiten führen wir
-                    kontinuierliche Fasermessungen durch - bei Überschreitung der Grenzwerte wird sofort
-                    gestoppt.
-                  </MobileParagraph>
-                </CollapsibleTextSection>
+                <CollapsibleTextSection
+                  title="Arbeitsschutz und Sicherheitskonzepte"
+                  content={
+                    <>
+                      <MobileParagraph>
+                        TRGS 519 bedeutet höchste Sicherheitsstandards - für unsere Mitarbeiter und für Sie!
+                        Jeder unserer Sanierungshelfer hat den vorgeschriebenen Sachkundenachweis nach TRGS 519
+                        Anlage 4. Die Bauleiter haben zusätzlich die Anlage 3 Qualifikation.
+                      </MobileParagraph>
+                      <MobileParagraph>
+                        Vor jedem Projekt erstellen wir einen detaillierten Arbeitsplan mit Gefährdungsbeurteilung.
+                        Dieser wird mit dem Sicherheitskoordinator abgestimmt. Während der Arbeiten führen wir
+                        kontinuierliche Fasermessungen durch - bei Überschreitung der Grenzwerte wird sofort
+                        gestoppt.
+                      </MobileParagraph>
+                    </>
+                  }
+                />
 
-                <CollapsibleTextSection title="Behördliche Anzeigen und Genehmigungen">
-                  <MobileParagraph>
-                    Die TRGS 519 schreibt vor: Asbestarbeiten müssen 7 Tage vorher bei der zuständigen
-                    Behörde angezeigt werden. In Bielefeld ist das die Bezirksregierung Detmold, Abteilung
-                    Arbeitsschutz. Wir übernehmen die komplette Anzeige für Sie - mit allen erforderlichen
-                    Unterlagen wie Arbeitsplan, Entsorgungskonzept und Qualifikationsnachweisen.
-                  </MobileParagraph>
-                  <MobileParagraph>
-                    Auch die Anmeldung bei der Berufsgenossenschaft BAU ist Pflicht. Als TRGS 519 Betrieb
-                    sind wir dort registriert und werden regelmäßig überprüft. Die letzte BG-Kontrolle haben
-                    wir ohne Beanstandungen bestanden.
-                  </MobileParagraph>
-                </CollapsibleTextSection>
+                <CollapsibleTextSection
+                  title="Behördliche Anzeigen und Genehmigungen"
+                  content={
+                    <>
+                      <MobileParagraph>
+                        Die TRGS 519 schreibt vor: Asbestarbeiten müssen 7 Tage vorher bei der zuständigen
+                        Behörde angezeigt werden. In Bielefeld ist das die Bezirksregierung Detmold, Abteilung
+                        Arbeitsschutz. Wir übernehmen die komplette Anzeige für Sie - mit allen erforderlichen
+                        Unterlagen wie Arbeitsplan, Entsorgungskonzept und Qualifikationsnachweisen.
+                      </MobileParagraph>
+                      <MobileParagraph>
+                        Auch die Anmeldung bei der Berufsgenossenschaft BAU ist Pflicht. Als TRGS 519 Betrieb
+                        sind wir dort registriert und werden regelmäßig überprüft. Die letzte BG-Kontrolle haben
+                        wir ohne Beanstandungen bestanden.
+                      </MobileParagraph>
+                    </>
+                  }
+                />
 
-                <CollapsibleTextSection title="Freimessung und Erfolgskontrolle">
-                  <MobileParagraph>
-                    Nach TRGS 519 ist eine Freimessung nach VDI 3492 zwingend vorgeschrieben. Erst wenn
-                    die Faserzahl unter 500 Fasern/m³ liegt, darf der Bereich wieder genutzt werden. Unsere
-                    akkreditierte Messstelle führt diese Messungen durch - mit modernsten REM-Verfahren.
-                  </MobileParagraph>
-                  <MobileParagraph>
-                    Sie erhalten ein rechtssicheres Freimessprotokoll, das Sie für Behörden, Versicherungen
-                    oder beim Immobilienverkauf vorlegen können. Viele Kunden aus Bielefeld-Mitte nutzen
-                    dies als Qualitätsnachweis für ihre Mieter.
-                  </MobileParagraph>
-                </CollapsibleTextSection>
+                <CollapsibleTextSection
+                  title="Freimessung und Erfolgskontrolle"
+                  content={
+                    <>
+                      <MobileParagraph>
+                        Nach TRGS 519 ist eine Freimessung nach VDI 3492 zwingend vorgeschrieben. Erst wenn
+                        die Faserzahl unter 500 Fasern/m³ liegt, darf der Bereich wieder genutzt werden. Unsere
+                        akkreditierte Messstelle führt diese Messungen durch - mit modernsten REM-Verfahren.
+                      </MobileParagraph>
+                      <MobileParagraph>
+                        Sie erhalten ein rechtssicheres Freimessprotokoll, das Sie für Behörden, Versicherungen
+                        oder beim Immobilienverkauf vorlegen können. Viele Kunden aus Bielefeld-Mitte nutzen
+                        dies als Qualitätsnachweis für ihre Mieter.
+                      </MobileParagraph>
+                    </>
+                  }
+                />
 
-                <CollapsibleTextSection title="TRGS 519 Schulungen und Fortbildungen">
-                  <MobileParagraph>
-                    Die TRGS 519 fordert regelmäßige Fortbildungen - alle 6 Jahre müssen unsere Mitarbeiter
-                    zur Auffrischung. Wir gehen weiter: Jährliche interne Schulungen zu neuen Verfahren,
-                    monatliche Sicherheitsunterweisungen und Teilnahme an Fachtagungen der BG BAU.
-                  </MobileParagraph>
-                  <MobileParagraph>
-                    Als anerkannter Ausbildungsbetrieb bilden wir auch neue TRGS 519 Sanierer aus. In
-                    Kooperation mit der Handwerkskammer Bielefeld haben wir schon über 50 Fachkräfte
-                    qualifiziert - für mehr Sicherheit bei Asbestarbeiten in ganz OWL.
-                  </MobileParagraph>
-                </CollapsibleTextSection>
+                <CollapsibleTextSection
+                  title="TRGS 519 Schulungen und Fortbildungen"
+                  content={
+                    <>
+                      <MobileParagraph>
+                        Die TRGS 519 fordert regelmäßige Fortbildungen - alle 6 Jahre müssen unsere Mitarbeiter
+                        zur Auffrischung. Wir gehen weiter: Jährliche interne Schulungen zu neuen Verfahren,
+                        monatliche Sicherheitsunterweisungen und Teilnahme an Fachtagungen der BG BAU.
+                      </MobileParagraph>
+                      <MobileParagraph>
+                        Als anerkannter Ausbildungsbetrieb bilden wir auch neue TRGS 519 Sanierer aus. In
+                        Kooperation mit der Handwerkskammer Bielefeld haben wir schon über 50 Fachkräfte
+                        qualifiziert - für mehr Sicherheit bei Asbestarbeiten in ganz OWL.
+                      </MobileParagraph>
+                    </>
+                  }
+                />
               </MobileOptimizedContent>
             </div>
 

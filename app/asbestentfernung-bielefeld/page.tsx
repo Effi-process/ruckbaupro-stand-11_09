@@ -167,7 +167,6 @@ export default function AsbestentfernungBielefeld() {
 
                 <CollapsibleTextSection
                   title="Asbestdachsanierung Bielefeld"
-                  defaultOpen={false}
                   content={
                     <>
                       <MobileParagraph className="">
@@ -186,7 +185,6 @@ export default function AsbestentfernungBielefeld() {
 
                 <CollapsibleTextSection
                   title="Asbestfassadensanierung"
-                  defaultOpen={false}
                   content={
                     <>
                       <MobileParagraph className="">
@@ -205,7 +203,6 @@ export default function AsbestentfernungBielefeld() {
 
                 <CollapsibleTextSection
                   title="Asbestbodenbeläge entfernen"
-                  defaultOpen={false}
                   content={
                     <>
                       <MobileParagraph className="">
@@ -224,7 +221,6 @@ export default function AsbestentfernungBielefeld() {
 
                 <CollapsibleTextSection
                   title="Asbesthaltige Rohrisolierungen"
-                  defaultOpen={false}
                   content={
                     <>
                       <MobileParagraph className="">
@@ -242,7 +238,6 @@ export default function AsbestentfernungBielefeld() {
 
                 <CollapsibleTextSection
                   title="Asbestentsorgung und Dokumentation"
-                  defaultOpen={false}
                   content={
                     <>
                       <MobileParagraph className="">
@@ -260,7 +255,6 @@ export default function AsbestentfernungBielefeld() {
 
                 <CollapsibleTextSection
                   title="Notfall-Asbestsanierung in Bielefeld"
-                  defaultOpen={false}
                   content={
                     <>
                       <MobileParagraph className="">
@@ -278,7 +272,6 @@ export default function AsbestentfernungBielefeld() {
 
                 <CollapsibleTextSection
                   title="Kosten und Förderungen"
-                  defaultOpen={false}
                   content={
                     <>
                       <MobileParagraph className="">
