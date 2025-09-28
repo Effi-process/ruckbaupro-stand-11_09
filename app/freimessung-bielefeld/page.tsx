@@ -457,7 +457,7 @@ export default function FreimessungBielefeld() {
         <SimpleContactForm purpose="quote" />
       </section>
 
-      {/* Footer */>
+      {/* Footer */}
       <FooterWithMarquee />
     </main>
   );

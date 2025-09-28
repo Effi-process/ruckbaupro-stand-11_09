@@ -20,7 +20,8 @@
     "test:location": "jest --testPathPattern=location-based --verbose",
     "test:all": "./__tests__/run-all-tests.sh",
     "typecheck": "tsc --noEmit --skipLibCheck",
-    "deploy": "vercel --prod --confirm"
+    "deploy": "vercel --prod --yes",
+    "deploy:preview": "vercel"
   },
   "dependencies": {
     "@types/nodemailer": "^6.4.17",
