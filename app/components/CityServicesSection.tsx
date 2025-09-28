@@ -86,7 +86,8 @@ const servicesData = {
       seoPages: [
         { name: 'Oberflächenreinigung Bielefeld', link: '/oberflaechenreinigung-bielefeld' },
         { name: 'Schadstoffsanierung Bielefeld', link: '/schadstoffsanierung-bielefeld' },
-        { name: 'Entstaubung Bielefeld', link: '/entstaubung-bielefeld' }
+        { name: 'Entstaubung Bielefeld', link: '/entstaubung-bielefeld' },
+        { name: 'Reinigung Bielefeld', link: '/reinigung-bielefeld' }
       ]
     },
     {
