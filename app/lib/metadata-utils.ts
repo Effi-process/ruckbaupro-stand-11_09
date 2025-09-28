@@ -189,13 +189,16 @@ export function generateServiceMetadata(
 export function generateHomepageMetadata(): Metadata {
   const title = 'RückbauPRO - Professioneller Rückbau & Abbruch | Bundesweit';
   const description = 'Professioneller Rückbau & Abbruch vom zertifizierten Fachbetrieb. ✓ Entkernung ✓ Gebäudeabbruch ✓ Demontage ✓ Schadstoffsanierung ✓ Entsorgung. 24h-Service ☎ Kostenlose Beratung!';
-  
+
   return {
     metadataBase: new URL(SEO_CONSTANTS.BASE_URL),
     title,
     description,
     keywords: SEO_CONSTANTS.DEFAULT_KEYWORDS.join(', '),
     authors: [{ name: SEO_CONSTANTS.COMPANY_NAME }],
+    appleWebApp: {
+      title: 'RückbauPRO',
+    },
     
     openGraph: {
       title,
