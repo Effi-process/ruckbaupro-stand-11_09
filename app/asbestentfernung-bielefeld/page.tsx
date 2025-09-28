@@ -165,92 +165,134 @@ export default function AsbestentfernungBielefeld() {
                   </MobileParagraph>
                 </MobileSection>
 
-                <CollapsibleTextSection title="Asbestdachsanierung Bielefeld" defaultOpen={false}>
-                  <MobileParagraph className="">
-                    Die meisten Eternitdächer in Bielefeld wurden zwischen 1960 und 1990 verbaut - fast alle
-                    enthalten Asbest. Besonders betroffen sind die Stadtteile Heepen, Schildesche und Sennestadt.
-                    Wir entfernen Ihre alte Asbesteindeckung professionel und montieren auf Wunsch direkt eine
-                    neue Eindeckung.
-                  </MobileParagraph>
-                  <MobileParagraph className="">
-                    Unsere Spezialisten kennen die lokalen Bauvorschriften und arbeiten eng mit dem Bauamt
-                    Bielefeld zusammen. Die Entsorgung erfolgt über die zugelassene Deponie in Bielefeld-Herford.
-                  </MobileParagraph>
-                </CollapsibleTextSection>
+                <CollapsibleTextSection
+                  title="Asbestdachsanierung Bielefeld"
+                  defaultOpen={false}
+                  content={
+                    <>
+                      <MobileParagraph className="">
+                        Die meisten Eternitdächer in Bielefeld wurden zwischen 1960 und 1990 verbaut - fast alle
+                        enthalten Asbest. Besonders betroffen sind die Stadtteile Heepen, Schildesche und Sennestadt.
+                        Wir entfernen Ihre alte Asbesteindeckung professionel und montieren auf Wunsch direkt eine
+                        neue Eindeckung.
+                      </MobileParagraph>
+                      <MobileParagraph className="">
+                        Unsere Spezialisten kennen die lokalen Bauvorschriften und arbeiten eng mit dem Bauamt
+                        Bielefeld zusammen. Die Entsorgung erfolgt über die zugelassene Deponie in Bielefeld-Herford.
+                      </MobileParagraph>
+                    </>
+                  }
+                />
 
-                <CollapsibleTextSection title="Asbestfassadensanierung" defaultOpen={false}>
-                  <MobileParagraph className="">
-                    Viele Gewerbegebäude entlang der Eckendorfer Straße und im Industriegebiet Oldentrup haben
-                    noch asbesthaltige Fassadenverkleidungen. Diese Eternitplatten müssen bei Sanierungen oder
-                    Abriss fachgerecht entfernt werden.
-                  </MobileParagraph>
-                  <MobileParagraph className="">
-                    Wir errichten staubdichte Einhausungen und nutzen spezielle Absauganlagen, damit keine
-                    Fasern in die Umgebung gelangen. Nach der Demontage können wir moderne, energieeffiziente
-                    Fassadensysteme montieren.
-                  </MobileParagraph>
-                </CollapsibleTextSection>
+                <CollapsibleTextSection
+                  title="Asbestfassadensanierung"
+                  defaultOpen={false}
+                  content={
+                    <>
+                      <MobileParagraph className="">
+                        Viele Gewerbegebäude entlang der Eckendorfer Straße und im Industriegebiet Oldentrup haben
+                        noch asbesthaltige Fassadenverkleidungen. Diese Eternitplatten müssen bei Sanierungen oder
+                        Abriss fachgerecht entfernt werden.
+                      </MobileParagraph>
+                      <MobileParagraph className="">
+                        Wir errichten staubdichte Einhausungen und nutzen spezielle Absauganlagen, damit keine
+                        Fasern in die Umgebung gelangen. Nach der Demontage können wir moderne, energieeffiziente
+                        Fassadensysteme montieren.
+                      </MobileParagraph>
+                    </>
+                  }
+                />
 
-                <CollapsibleTextSection title="Asbestbodenbeläge entfernen" defaultOpen={false}>
-                  <MobileParagraph className="">
-                    Floor-Flex-Platten und Cushion-Vinyl-Beläge finden sich noch in vielen Bielefelder Altbauten,
-                    besonders rund um den Siegfriedplatz und die Altstadt. Der schwarze Kleber unter diesen Böden
-                    enthält oft bis zu 50% Asbest!
-                  </MobileParagraph>
-                  <MobileParagraph className="">
-                    Wir entfernen diese Beläge staubfrei mit Spezialmaschinen und entsorgen sie ordnungsgemäß.
-                    Viele Kunden sind überrascht, wenn wir in ihrem 70er-Jahre Haus in Quelle oder Ummeln
-                    asbesthaltige Böden finden.
-                  </MobileParagraph>
-                </CollapsibleTextSection>
+                <CollapsibleTextSection
+                  title="Asbestbodenbeläge entfernen"
+                  defaultOpen={false}
+                  content={
+                    <>
+                      <MobileParagraph className="">
+                        Floor-Flex-Platten und Cushion-Vinyl-Beläge finden sich noch in vielen Bielefelder Altbauten,
+                        besonders rund um den Siegfriedplatz und die Altstadt. Der schwarze Kleber unter diesen Böden
+                        enthält oft bis zu 50% Asbest!
+                      </MobileParagraph>
+                      <MobileParagraph className="">
+                        Wir entfernen diese Beläge staubfrei mit Spezialmaschinen und entsorgen sie ordnungsgemäß.
+                        Viele Kunden sind überrascht, wenn wir in ihrem 70er-Jahre Haus in Quelle oder Ummeln
+                        asbesthaltige Böden finden.
+                      </MobileParagraph>
+                    </>
+                  }
+                />
 
-                <CollapsibleTextSection title="Asbesthaltige Rohrisolierungen" defaultOpen={false}>
-                  <MobileParagraph className="">
-                    In den Kellern vieler Mehrfamilienhäuser in Bielefeld-Mitte und am Kesselbrink finden sich
-                    noch alte Heizungsrohre mit asbesthaltiger Isolierung. Diese sogenannte "Spritzasbest" ist
-                    besonders gefährlich, weil sie schwach gebunden ist und leicht Fasern freisetzt.
-                  </MobileParagraph>
-                  <MobileParagraph className="">
-                    Wir sanieren diese Bereiche unter höchsten Sicherheitsvorkehrungen mit Vollschutzanzügen
-                    und Atemschutz. Nach der Sanierung installieren wir moderne, energiesparende Isolierungen.
-                  </MobileParagraph>
-                </CollapsibleTextSection>
+                <CollapsibleTextSection
+                  title="Asbesthaltige Rohrisolierungen"
+                  defaultOpen={false}
+                  content={
+                    <>
+                      <MobileParagraph className="">
+                        In den Kellern vieler Mehrfamilienhäuser in Bielefeld-Mitte und am Kesselbrink finden sich
+                        noch alte Heizungsrohre mit asbesthaltiger Isolierung. Diese sogenannte "Spritzasbest" ist
+                        besonders gefährlich, weil sie schwach gebunden ist und leicht Fasern freisetzt.
+                      </MobileParagraph>
+                      <MobileParagraph className="">
+                        Wir sanieren diese Bereiche unter höchsten Sicherheitsvorkehrungen mit Vollschutzanzügen
+                        und Atemschutz. Nach der Sanierung installieren wir moderne, energiesparende Isolierungen.
+                      </MobileParagraph>
+                    </>
+                  }
+                />
 
-                <CollapsibleTextSection title="Asbestentsorgung und Dokumentation" defaultOpen={false}>
-                  <MobileParagraph className="">
-                    Die fachgerechte Entsorgung ist genauso wichtig wie die sichere Demontage. Wir arbeiten
-                    mit der Deponie Bielefeld-Herford und haben alle erforderlichen Transportgenehmigungen.
-                  </MobileParagraph>
-                  <MobileParagraph className="">
-                    Jede Entsorgung wird lückenlos dokumentiert - Sie erhalten Entsorgungsnachweise,
-                    Wiegescheine und Freimessungsprotokolle. Diese Dokumente sind wichtig für den
-                    Wiederverkauf Ihrer Immobilie oder bei Vermietung.
-                  </MobileParagraph>
-                </CollapsibleTextSection>
+                <CollapsibleTextSection
+                  title="Asbestentsorgung und Dokumentation"
+                  defaultOpen={false}
+                  content={
+                    <>
+                      <MobileParagraph className="">
+                        Die fachgerechte Entsorgung ist genauso wichtig wie die sichere Demontage. Wir arbeiten
+                        mit der Deponie Bielefeld-Herford und haben alle erforderlichen Transportgenehmigungen.
+                      </MobileParagraph>
+                      <MobileParagraph className="">
+                        Jede Entsorgung wird lückenlos dokumentiert - Sie erhalten Entsorgungsnachweise,
+                        Wiegescheine und Freimessungsprotokolle. Diese Dokumente sind wichtig für den
+                        Wiederverkauf Ihrer Immobilie oder bei Vermietung.
+                      </MobileParagraph>
+                    </>
+                  }
+                />
 
-                <CollapsibleTextSection title="Notfall-Asbestsanierung in Bielefeld" defaultOpen={false}>
-                  <MobileParagraph className="">
-                    Manchmal wird Asbest erst während laufender Bauarbeiten entdeckt - dann muss es schnell
-                    gehen. Unser 24-Stunden-Notdienst ist immer erreichbar.
-                  </MobileParagraph>
-                  <MobileParagraph className="">
-                    Wir waren schon bei Wasserschäden in Jöllenbeck, wo die Deckenplatten asbesthaltig waren,
-                    oder bei Bränden in Stieghorst, wo asbesthaltige Materialien beschädigt wurden. In solchen
-                    Fällen sichern wir sofort den Bereich ab und beginnen mit der Sanierung.
-                  </MobileParagraph>
-                </CollapsibleTextSection>
+                <CollapsibleTextSection
+                  title="Notfall-Asbestsanierung in Bielefeld"
+                  defaultOpen={false}
+                  content={
+                    <>
+                      <MobileParagraph className="">
+                        Manchmal wird Asbest erst während laufender Bauarbeiten entdeckt - dann muss es schnell
+                        gehen. Unser 24-Stunden-Notdienst ist immer erreichbar.
+                      </MobileParagraph>
+                      <MobileParagraph className="">
+                        Wir waren schon bei Wasserschäden in Jöllenbeck, wo die Deckenplatten asbesthaltig waren,
+                        oder bei Bränden in Stieghorst, wo asbesthaltige Materialien beschädigt wurden. In solchen
+                        Fällen sichern wir sofort den Bereich ab und beginnen mit der Sanierung.
+                      </MobileParagraph>
+                    </>
+                  }
+                />
 
-                <CollapsibleTextSection title="Kosten und Förderungen" defaultOpen={false}>
-                  <MobileParagraph className="">
-                    Die Stadt Bielefeld und das Land NRW bieten verschiedene Förderprogramme für energetische
-                    Sanierungen, die oft mit Asbestentfernungen kombiniert werden können.
-                  </MobileParagraph>
-                  <MobileParagraph className="">
-                    Eine typische Dachsanierung mit 150m² Welleternit kostet zwischen 8.000 und 12.000 Euro
-                    inklusive Entsorgung. Bei gleichzeitiger Dämmung können Sie bis zu 20% Förderung erhalten.
-                    Kleinere Projekte beginnen schon ab 500 Euro.
-                  </MobileParagraph>
-                </CollapsibleTextSection>
+                <CollapsibleTextSection
+                  title="Kosten und Förderungen"
+                  defaultOpen={false}
+                  content={
+                    <>
+                      <MobileParagraph className="">
+                        Die Stadt Bielefeld und das Land NRW bieten verschiedene Förderprogramme für energetische
+                        Sanierungen, die oft mit Asbestentfernungen kombiniert werden können.
+                      </MobileParagraph>
+                      <MobileParagraph className="">
+                        Eine typische Dachsanierung mit 150m² Welleternit kostet zwischen 8.000 und 12.000 Euro
+                        inklusive Entsorgung. Bei gleichzeitiger Dämmung können Sie bis zu 20% Förderung erhalten.
+                        Kleinere Projekte beginnen schon ab 500 Euro.
+                      </MobileParagraph>
+                    </>
+                  }
+                />
               </MobileOptimizedContent>
             </div>
 
