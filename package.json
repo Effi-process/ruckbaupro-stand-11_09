@@ -19,7 +19,8 @@
     "test:integration": "jest --testPathPattern=integration --verbose",
     "test:location": "jest --testPathPattern=location-based --verbose",
     "test:all": "./__tests__/run-all-tests.sh",
-    "typecheck": "tsc --noEmit --skipLibCheck"
+    "typecheck": "tsc --noEmit --skipLibCheck",
+    "deploy": "vercel --prod --confirm"
   },
   "dependencies": {
     "@types/nodemailer": "^6.4.17",
