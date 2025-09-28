@@ -33,7 +33,9 @@ export default function RootLayout({
   return (
     <html lang="de">
       <head>
-        {/* Favicon - Next.js automatically serves from app/favicon.ico */}
+        {/* Force favicon refresh with cache buster */}
+        <link rel="icon" href="/favicon.ico?v=2" />
+        <link rel="shortcut icon" href="/favicon.ico?v=2" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#1282a2" />
