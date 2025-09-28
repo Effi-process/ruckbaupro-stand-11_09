@@ -62,13 +62,13 @@ export default function EntstaubungBielefeld() {
           <div className="flex flex-wrap">
             {/* Service Cards */}
             <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
-              <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+              <div className="relative flex flex-col min-w-0 break-words backdrop-blur-md bg-gray-800/90 w-full mb-8 shadow-lg rounded-lg border border-white/50">
                 <div className="px-4 py-5 flex-auto">
                   <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
                     <i className="fas fa-award"></i>
                   </div>
-                  <h6 className="text-xl font-semibold">H14-Filter zertifiziert</h6>
-                  <p className="mt-2 mb-4 text-gray-600">
+                  <h6 className="text-xl font-semibold text-white">H14-Filter zertifiziert</h6>
+                  <p className="mt-2 mb-4 text-gray-400">
                     Höchste Filterklasse für gefährliche Stäube
                   </p>
                 </div>
@@ -76,13 +76,13 @@ export default function EntstaubungBielefeld() {
             </div>
 
             <div className="w-full md:w-4/12 px-4 text-center">
-              <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+              <div className="relative flex flex-col min-w-0 break-words backdrop-blur-md bg-gray-800/90 w-full mb-8 shadow-lg rounded-lg border border-white/50">
                 <div className="px-4 py-5 flex-auto">
                   <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
                     <i className="fas fa-retweet"></i>
                   </div>
-                  <h6 className="text-xl font-semibold">24/7 Notdienst</h6>
-                  <p className="mt-2 mb-4 text-gray-600">
+                  <h6 className="text-xl font-semibold text-white">24/7 Notdienst</h6>
+                  <p className="mt-2 mb-4 text-gray-400">
                     Soforteinsatz bei Staubbelastung
                   </p>
                 </div>
@@ -90,13 +90,13 @@ export default function EntstaubungBielefeld() {
             </div>
 
             <div className="pt-6 w-full md:w-4/12 px-4 text-center">
-              <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+              <div className="relative flex flex-col min-w-0 break-words backdrop-blur-md bg-gray-800/90 w-full mb-8 shadow-lg rounded-lg border border-white/50">
                 <div className="px-4 py-5 flex-auto">
                   <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">
                     <i className="fas fa-fingerprint"></i>
                   </div>
-                  <h6 className="text-xl font-semibold">BG BAU geprüft</h6>
-                  <p className="mt-2 mb-4 text-gray-600">
+                  <h6 className="text-xl font-semibold text-white">BG BAU geprüft</h6>
+                  <p className="mt-2 mb-4 text-gray-400">
                     Arbeitsschutz nach höchsten Standards
                   </p>
                 </div>
@@ -295,7 +295,7 @@ export default function EntstaubungBielefeld() {
               </h2>
 
               <div className="space-y-6">
-                <div className="bg-gray-700 p-6 rounded-lg">
+                <div className="backdrop-blur-md bg-gray-800/90 p-6 rounded-lg border border-white/50">
                   <h3 className="text-xl font-semibold text-white mb-2">
                     Was kostet eine professionelle Entstaubung?
                   </h3>
@@ -307,7 +307,7 @@ export default function EntstaubungBielefeld() {
                   </p>
                 </div>
 
-                <div className="bg-gray-700 p-6 rounded-lg">
+                <div className="backdrop-blur-md bg-gray-800/90 p-6 rounded-lg border border-white/50">
                   <h3 className="text-xl font-semibold text-white mb-2">
                     Wie schnell können Sie vor Ort sein?
                   </h3>
@@ -319,7 +319,7 @@ export default function EntstaubungBielefeld() {
                   </p>
                 </div>
 
-                <div className="bg-gray-700 p-6 rounded-lg">
+                <div className="backdrop-blur-md bg-gray-800/90 p-6 rounded-lg border border-white/50">
                   <h3 className="text-xl font-semibold text-white mb-2">
                     Welche Staubarten können Sie filtern?
                   </h3>
@@ -331,7 +331,7 @@ export default function EntstaubungBielefeld() {
                   </p>
                 </div>
 
-                <div className="bg-gray-700 p-6 rounded-lg">
+                <div className="backdrop-blur-md bg-gray-800/90 p-6 rounded-lg border border-white/50">
                   <h3 className="text-xl font-semibold text-white mb-2">
                     Sind Ihre Anlagen lärmarm?
                   </h3>
@@ -342,7 +342,7 @@ export default function EntstaubungBielefeld() {
                   </p>
                 </div>
 
-                <div className="bg-gray-700 p-6 rounded-lg">
+                <div className="backdrop-blur-md bg-gray-800/90 p-6 rounded-lg border border-white/50">
                   <h3 className="text-xl font-semibold text-white mb-2">
                     Bieten Sie auch Luftmessungen an?
                   </h3>
