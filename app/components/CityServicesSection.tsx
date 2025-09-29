@@ -49,6 +49,7 @@ const servicesData = {
       title: 'Entkernung',
       description: 'Komplette oder teilweise Gebäudeentkernung',
       seoPages: [
+        { name: 'Rückbau Bielefeld', link: '/rueckbau-bielefeld' },
         { name: 'Entkernung Bielefeld', link: '/entkernung-bielefeld' },
         { name: 'Komplettentkernung Bielefeld', link: '/komplettentkernung-bielefeld' },
         { name: 'Teilentkernung Bielefeld', link: '/teilentkernung-bielefeld' },
