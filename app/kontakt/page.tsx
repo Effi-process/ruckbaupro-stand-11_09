@@ -2,7 +2,7 @@
 import Icon from '../components/Icon';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
-import ContactSection from '../components/ContactSection';
+import SimpleContactForm from '../components/SimpleContactForm';
 
 export default function Kontakt() {
 
@@ -10,9 +10,8 @@ export default function Kontakt() {
     <main className="overflow-hidden relative min-h-screen">
       {/* Floating Logo and Menu */}
       <FloatingElements />
-      
-      <section className="relative pt-16 md:pt-24 pb-4 md:pb-8 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">
 
+      <section className="relative pt-16 md:pt-24 pb-4 md:pb-8 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
             <div className="text-center">
@@ -30,10 +29,10 @@ export default function Kontakt() {
         </div>
       </section>
 
-      <section className="py-6 md:py-12 bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white">
+      <section className="py-4 md:py-8 bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Contact Info Row - KOMPAKTER AUF MOBILE */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mb-6 md:mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
             <div className="bg-off-white rounded-xl shadow-lg p-3 md:p-4">
               <div className="flex items-center mb-2 md:mb-4">
                 <Icon name="phone" size={20} className="mr-2 md:mr-3 text-cerulean" />
@@ -87,21 +86,12 @@ export default function Kontakt() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
-      {/* Form Section - Full Width Outside Container */}
-      <section className="bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
-        <ContactSection
-          title="Kontakt aufnehmen"
-          subtitle="Wir freuen uns auf Ihr Projekt und beraten Sie gerne kostenlos"
-          className="pt-0"
-        />
-      </section>
+      {/* Contact Form Section - Full Width with Background Image */}
+      <SimpleContactForm />
 
-      
-      
       <FooterWithMarquee />
     </main>
   );

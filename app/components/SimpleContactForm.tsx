@@ -180,30 +180,30 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      {/* Form overlay positioned on the right */}
-      <div className="relative z-10 min-h-screen flex items-center justify-end">
-        <div className="w-full max-w-xl lg:max-w-2xl mr-4 sm:mr-8 lg:mr-16 xl:mr-24 bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
+      {/* Form overlay positioned on the right for desktop, centered for mobile */}
+      <div className="relative z-10 min-h-screen flex items-center justify-center md:justify-end px-4 py-8 md:py-0">
+        <div className="w-full max-w-xl lg:max-w-2xl md:mr-4 lg:mr-8 xl:mr-16 bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-gray-900/95 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
       {/* Header */}
-      <div className="relative bg-gradient-to-r from-cerulean/90 to-indigo-dye/90 px-6 py-8 text-center overflow-hidden">
+      <div className="relative bg-gradient-to-r from-cerulean/90 to-indigo-dye/90 px-4 py-6 md:px-6 md:py-8 text-center overflow-hidden">
 
-        <h2 className="relative text-2xl md:text-3xl font-black text-white mb-2">
+        <h2 className="relative text-xl md:text-2xl lg:text-3xl font-black text-white mb-2">
           KOSTENLOSE BERATUNG
         </h2>
-        <p className="relative text-sm md:text-base text-white/90">
+        <p className="relative text-xs md:text-sm lg:text-base text-white/90">
           Schnell & unverbindlich zu Ihrem Angebot
         </p>
 
         {/* Simple badge */}
-        <div className="relative mt-4 inline-flex items-center gap-2 bg-white/20 backdrop-blur-md rounded-full px-4 py-2">
-          <Icon name="check" size={16} className="text-white" />
-          <span className="text-white text-sm font-semibold">100% UNVERBINDLICH</span>
+        <div className="relative mt-3 md:mt-4 inline-flex items-center gap-1.5 md:gap-2 bg-white/20 backdrop-blur-md rounded-full px-3 py-1.5 md:px-4 md:py-2">
+          <Icon name="check" size={14} className="text-white md:w-4 md:h-4" />
+          <span className="text-white text-xs md:text-sm font-semibold">100% UNVERBINDLICH</span>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="p-6 md:p-8 space-y-5">
+      <form onSubmit={handleSubmit} className="p-4 md:p-6 lg:p-8 space-y-4 md:space-y-5">
         {/* Name (Optional) */}
         <div>
-          <label className="block text-xs md:text-sm font-semibold text-white mb-2">
+          <label className="block text-xs md:text-sm font-semibold text-white mb-1.5 md:mb-2">
             Name (optional)
           </label>
           <input
@@ -211,14 +211,14 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400"
+            className="w-full px-3 py-2.5 md:px-4 md:py-3 bg-gray-800/50 border border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 text-sm md:text-base"
             placeholder="Ihr Name"
           />
         </div>
 
         {/* Company (Optional) */}
         <div>
-          <label className="block text-xs md:text-sm font-semibold text-white mb-2">
+          <label className="block text-xs md:text-sm font-semibold text-white mb-1.5 md:mb-2">
             Firma (optional)
           </label>
           <input
@@ -226,17 +226,17 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
             name="company"
             value={formData.company}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400"
+            className="w-full px-3 py-2.5 md:px-4 md:py-3 bg-gray-800/50 border border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 text-sm md:text-base"
             placeholder="Ihre Firma"
           />
         </div>
 
         {/* Contact Method Selection */}
         <div>
-          <label className="block text-xs md:text-sm font-semibold text-white mb-3">
+          <label className="block text-xs md:text-sm font-semibold text-white mb-2 md:mb-3">
             Kontaktmethode *
           </label>
-          <div className="flex gap-4">
+          <div className="flex gap-3 md:gap-4">
             <label className="flex items-center cursor-pointer">
               <input
                 type="radio"
@@ -246,14 +246,14 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
                 onChange={handleChange}
                 className="sr-only"
               />
-              <div className={`w-5 h-5 rounded-full border-2 mr-2 flex items-center justify-center transition-colors ${
+              <div className={`w-4 h-4 md:w-5 md:h-5 rounded-full border-2 mr-1.5 md:mr-2 flex items-center justify-center transition-colors ${
                 formData.contactMethod === 'email' ? 'border-cerulean bg-cerulean' : 'border-gray-400'
               }`}>
                 {formData.contactMethod === 'email' && (
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-white rounded-full"></div>
                 )}
               </div>
-              <span className="text-white font-medium">E-Mail</span>
+              <span className="text-white font-medium text-sm md:text-base">E-Mail</span>
             </label>
 
             <label className="flex items-center cursor-pointer">
@@ -265,14 +265,14 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
                 onChange={handleChange}
                 className="sr-only"
               />
-              <div className={`w-5 h-5 rounded-full border-2 mr-2 flex items-center justify-center transition-colors ${
+              <div className={`w-4 h-4 md:w-5 md:h-5 rounded-full border-2 mr-1.5 md:mr-2 flex items-center justify-center transition-colors ${
                 formData.contactMethod === 'phone' ? 'border-cerulean bg-cerulean' : 'border-gray-400'
               }`}>
                 {formData.contactMethod === 'phone' && (
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-white rounded-full"></div>
                 )}
               </div>
-              <span className="text-white font-medium">Telefon</span>
+              <span className="text-white font-medium text-sm md:text-base">Telefon</span>
             </label>
           </div>
         </div>
@@ -280,7 +280,7 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
         {/* Email or Phone Input */}
         {formData.contactMethod === 'email' ? (
           <div>
-            <label className="block text-xs md:text-sm font-semibold text-white mb-2">
+            <label className="block text-xs md:text-sm font-semibold text-white mb-1.5 md:mb-2">
               E-Mail *
             </label>
             <input
@@ -289,13 +289,13 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400"
+              className="w-full px-3 py-2.5 md:px-4 md:py-3 bg-gray-800/50 border border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 text-sm md:text-base"
               placeholder="ihre@email.de"
             />
           </div>
         ) : (
           <div>
-            <label className="block text-xs md:text-sm font-semibold text-white mb-2">
+            <label className="block text-xs md:text-sm font-semibold text-white mb-1.5 md:mb-2">
               Telefon *
             </label>
             <input
@@ -304,7 +304,7 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
               required
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400"
+              className="w-full px-3 py-2.5 md:px-4 md:py-3 bg-gray-800/50 border border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 text-sm md:text-base"
               placeholder="Ihre Telefonnummer"
             />
           </div>
@@ -312,28 +312,28 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
 
         {/* Message (Optional) */}
         <div>
-          <label className="block text-xs md:text-sm font-semibold text-white mb-2">
+          <label className="block text-xs md:text-sm font-semibold text-white mb-1.5 md:mb-2">
             Ihre Nachricht (optional)
           </label>
           <textarea
             name="message"
-            rows={4}
+            rows={3}
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 resize-none"
+            className="w-full px-3 py-2.5 md:px-4 md:py-3 bg-gray-800/50 border border-gray-600 rounded-xl focus:border-cerulean focus:outline-none transition-colors text-white placeholder-gray-400 resize-none text-sm md:text-base"
             placeholder="Beschreiben Sie kurz Ihr Projekt..."
           />
         </div>
 
         {/* Privacy */}
-        <label className="flex items-start text-sm text-white cursor-pointer">
+        <label className="flex items-start text-xs md:text-sm text-white cursor-pointer">
           <input
             type="checkbox"
             name="datenschutz"
             required
             checked={formData.datenschutz}
             onChange={handleChange}
-            className="mr-3 mt-1 w-4 h-4"
+            className="mr-2 md:mr-3 mt-0.5 md:mt-1 w-4 h-4"
           />
           <span>
             Ich stimme der <a href="/datenschutz" className="text-cerulean hover:underline">Datenschutzerklärung</a> zu und erlaube die Kontaktaufnahme. *
@@ -363,7 +363,7 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
           type="submit"
           disabled={!isValid || isSubmitting}
           className={`
-            w-full py-4 rounded-xl font-bold transition-all text-lg flex items-center justify-center
+            w-full py-3 md:py-4 rounded-xl font-bold transition-all text-base md:text-lg flex items-center justify-center
             ${isValid && !isSubmitting
               ? 'bg-gradient-to-r from-cerulean to-indigo-dye text-white hover:from-indigo-dye hover:to-cerulean hover:scale-[1.02] shadow-xl'
               : 'bg-gray-700 text-gray-500 cursor-not-allowed'
@@ -372,21 +372,21 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
         >
           {isSubmitting ? (
             <>
-              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-              Wird gesendet...
+              <div className="animate-spin rounded-full h-4 w-4 md:h-5 md:w-5 border-b-2 border-white mr-2"></div>
+              <span className="text-sm md:text-base">Wird gesendet...</span>
             </>
           ) : (
             <>
-              <Icon name="mail" size={20} className="mr-2" />
-              Anfrage senden
+              <Icon name="mail" size={18} className="mr-2 md:w-5 md:h-5" />
+              <span className="text-sm md:text-base">Anfrage senden</span>
             </>
           )}
         </button>
       </form>
 
       {/* Footer */}
-      <div className="bg-gray-800/50 px-6 py-4 text-center border-t border-gray-700">
-        <p className="text-xs text-white/70">
+      <div className="bg-gray-800/50 px-4 py-3 md:px-6 md:py-4 text-center border-t border-gray-700">
+        <p className="text-xs md:text-sm text-white/70">
           Wir melden uns innerhalb von 24 Stunden bei Ihnen
         </p>
       </div>
