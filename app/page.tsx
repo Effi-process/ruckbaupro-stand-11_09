@@ -11,7 +11,7 @@ import Image from 'next/image';
 import Icon from './components/Icon';
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import ContactSection from './components/ContactSection';
+import SimpleContactForm from './components/SimpleContactForm';
 import { ScrollAnimation, ParallaxSection, RevealOnScroll } from './components/ScrollAnimations';
 import { GradientDivider, WaveTransition, MobileGradientSection } from './components/MobileGradientTransitions';
 import { MobileScrollingBannerCSS } from './components/MobileScrollingBanner';
@@ -79,11 +79,8 @@ export default function Home() {
 
       {/* Contact Form Section - Full Width */}
       <ScrollAnimation animation="slideUp" duration={1000}>
-        <section id="contact-form" className="section-divider" aria-label="Kontakt und Angebotsanfrage">
-          <ContactSection
-            title="Kostenloses Angebot anfordern"
-            subtitle="Professionelle Rückbau-Lösungen zu fairen Preisen"
-          />
+        <section id="contact-form" className="bg-oxford-blue section-divider" aria-label="Kontakt und Angebotsanfrage">
+          <SimpleContactForm purpose="quote" />
         </section>
       </ScrollAnimation>
 

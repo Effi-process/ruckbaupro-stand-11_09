@@ -4,7 +4,7 @@ import Icon from '../../components/Icon';
 import FloatingElements from '../../components/FloatingElements';
 import FooterWithMarquee from '../../components/FooterWithMarquee';
 // import ProcessFlow from '../../components/ProcessFlow';
-import ContactSection from '../../components/ContactSection';
+import SimpleContactForm from '../../components/SimpleContactForm';
 import ServiceHeroSection from '../../components/ServiceHeroSection';
 import { ScrollAnimation } from '../../components/ScrollAnimations';
 
@@ -267,11 +267,7 @@ export default function AsbestsanierungPage() {
       {/* Contact Form Section - Full Width */}
       <ScrollAnimation animation="slideUp" duration={1000}>
         <section id="contact-form" className="bg-oxford-blue section-divider">
-          <ContactSection
-            title="Kostenlose Beratung für Asbestsanierung"
-            subtitle="TRGS 519 zertifizierte Fachkräfte - sicher und professionell"
-            className="pt-0"
-          />
+          <SimpleContactForm purpose="quote" />
         </section>
       </ScrollAnimation>
 

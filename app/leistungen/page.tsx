@@ -6,7 +6,7 @@ import { useState, Suspense } from 'react';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
 import ProcessFlow from '../components/ProcessFlow';
-import ContactSection from '../components/ContactSection';
+import SimpleContactForm from '../components/SimpleContactForm';
 
 
 export default function LeistungenPage() {
@@ -221,11 +221,10 @@ export default function LeistungenPage() {
       {/* Process Flow Section - Beautiful Modern Design */}
       <ProcessFlow />
       
-      {/* Contact Form Section */}
-      <ContactSection
-        title="Kostenloses Angebot für Ihre Rückbau-Projekte"
-        subtitle="Professionelle Beratung und faire Preise - alles aus einer Hand"
-      />
+      {/* Contact Form Section - Full Width */}
+      <section id="contact-form" className="bg-oxford-blue section-divider">
+        <SimpleContactForm purpose="quote" />
+      </section>
       
       {/* Footer with Marquee - genau wie auf der Hauptseite */}
       <FooterWithMarquee />
