@@ -59,50 +59,65 @@ export default function PCBSanierungBielefeld() {
       {/* Main Content */}
       <section className="pb-12 md:pb-20 bg-gray-900 -mt-24">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap">
-            {/* Service Cards */}
-            <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
-              <div className="relative flex flex-col min-w-0 break-words backdrop-blur-md bg-gray-800/90 w-full mb-6 md:mb-8 shadow-lg rounded-xl border border-white/50">
-                <div className="px-4 py-4 md:py-5 flex-auto">
-                  <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-4 md:mb-5 shadow-lg rounded-full bg-red-400">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
+          {/* Modern Feature Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:pt-12 pt-6 mb-12 md:mb-16">
+            {/* Card 1 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-50 group-hover:opacity-100"></div>
+              <div className="relative bg-gradient-to-br from-gray-800/95 to-gray-900/95 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/10 group-hover:border-red-500/50 transition-all duration-300 h-full">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-red-500/30 rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-red-500 to-pink-600 p-4 rounded-2xl shadow-xl group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    </div>
                   </div>
-                  <h6 className="text-lg md:text-xl font-semibold text-white">TRGS 524 Zertifiziert</h6>
-                  <p className="mt-2 mb-3 md:mb-4 text-sm md:text-base text-gray-400">
+                  <h6 className="text-xl md:text-2xl font-bold text-white">TRGS 524 Zertifiziert</h6>
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed">
                     Sachkundenachweis für PCB-Sanierung nach gesetzlichen Vorgaben
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="w-full md:w-4/12 px-4 text-center">
-              <div className="relative flex flex-col min-w-0 break-words backdrop-blur-md bg-gray-800/90 w-full mb-6 md:mb-8 shadow-lg rounded-xl border border-white/50">
-                <div className="px-4 py-4 md:py-5 flex-auto">
-                  <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-4 md:mb-5 shadow-lg rounded-full bg-blue-400">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                    </svg>
+            {/* Card 2 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-50 group-hover:opacity-100"></div>
+              <div className="relative bg-gradient-to-br from-gray-800/95 to-gray-900/95 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/10 group-hover:border-blue-500/50 transition-all duration-300 h-full">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-blue-500/30 rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-blue-500 to-cyan-600 p-4 rounded-2xl shadow-xl group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                      </svg>
+                    </div>
                   </div>
-                  <h6 className="text-lg md:text-xl font-semibold text-white">Raumluftmessung inklusive</h6>
-                  <p className="mt-2 mb-3 md:mb-4 text-sm md:text-base text-gray-400">
+                  <h6 className="text-xl md:text-2xl font-bold text-white">Raumluftmessung inklusive</h6>
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed">
                     Freimessung nach Sanierung - dokumentiert & zertifiziert
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="pt-6 w-full md:w-4/12 px-4 text-center">
-              <div className="relative flex flex-col min-w-0 break-words backdrop-blur-md bg-gray-800/90 w-full mb-6 md:mb-8 shadow-lg rounded-xl border border-white/50">
-                <div className="px-4 py-4 md:py-5 flex-auto">
-                  <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-4 md:mb-5 shadow-lg rounded-full bg-green-400">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+            {/* Card 3 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-50 group-hover:opacity-100"></div>
+              <div className="relative bg-gradient-to-br from-gray-800/95 to-gray-900/95 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/10 group-hover:border-green-500/50 transition-all duration-300 h-full">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-green-500/30 rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-green-500 to-emerald-600 p-4 rounded-2xl shadow-xl group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
                   </div>
-                  <h6 className="text-lg md:text-xl font-semibold text-white">Festpreisgarantie</h6>
-                  <p className="mt-2 mb-3 md:mb-4 text-sm md:text-base text-gray-400">
+                  <h6 className="text-xl md:text-2xl font-bold text-white">Festpreisgarantie</h6>
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed">
                     Transparente Preise ohne versteckte Kosten
                   </p>
                 </div>
