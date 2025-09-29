@@ -91,6 +91,7 @@ const servicesData = {
         { name: 'Schimmelpilzsanierung Bielefeld', link: '/schimmelpilzsanierung-bielefeld' },
         { name: 'Oberflächenreinigung Bielefeld', link: '/oberflaechenreinigung-bielefeld' },
         { name: 'Schadstoffsanierung Bielefeld', link: '/schadstoffsanierung-bielefeld' },
+        { name: 'PCB-Sanierung Bielefeld', link: '/pcb-sanierung-bielefeld' },
         { name: 'Entstaubung Bielefeld', link: '/entstaubung-bielefeld' },
         { name: 'Reinigung Bielefeld', link: '/reinigung-bielefeld' }
       ]
