@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Icon from './Icon';
 import Image from 'next/image';
 import KontaktformularMitBild from './KontaktformularMitBild';
 
@@ -41,25 +40,25 @@ export default function TeilsanierungBielefeld() {
               </p>
               <div className="grid md:grid-cols-2 gap-4 mt-6">
                 <div className="flex items-start">
-                  <Icon name="check" size={20} className="text-green-400 mr-3 mt-1 flex-shrink-0" />
+                  <span className="text-green-400 mr-3 mt-1 flex-shrink-0 text-xl font-bold">✓</span>
                   <div className="text-white/90">
                     <strong className="text-white">Komplettservice:</strong> Abriss, Neubau und alles dazwischen
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Icon name="check" size={20} className="text-green-400 mr-3 mt-1 flex-shrink-0" />
+                  <span className="text-green-400 mr-3 mt-1 flex-shrink-0 text-xl font-bold">✓</span>
                   <div className="text-white/90">
                     <strong className="text-white">Festangestellte Profis:</strong> Keine Subunternehmer, alles aus einer Hand
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Icon name="check" size={20} className="text-green-400 mr-3 mt-1 flex-shrink-0" />
+                  <span className="text-green-400 mr-3 mt-1 flex-shrink-0 text-xl font-bold">✓</span>
                   <div className="text-white/90">
                     <strong className="text-white">Lokale Expertise:</strong> Wir kennen jedes Viertel in Bielefeld
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Icon name="check" size={20} className="text-green-400 mr-3 mt-1 flex-shrink-0" />
+                  <span className="text-green-400 mr-3 mt-1 flex-shrink-0 text-xl font-bold">✓</span>
                   <div className="text-white/90">
                     <strong className="text-white">Moderne Technik:</strong> Neueste Maschinen für effiziente Arbeit
                   </div>
@@ -82,7 +81,7 @@ export default function TeilsanierungBielefeld() {
             <div className="grid md:grid-cols-3 gap-4 mt-6">
               <div className="bg-white/10 border border-white/20 rounded-lg p-4">
                 <h3 className="font-bold mb-2 text-white flex items-center">
-                  <Icon name="building" size={20} className="mr-2 text-cerulean" />
+                  <span className="mr-2 text-cerulean font-bold text-lg">🏢</span>
                   Selektiver Rückbau
                 </h3>
                 <ul className="text-sm space-y-1 text-white/80">
@@ -94,7 +93,7 @@ export default function TeilsanierungBielefeld() {
               </div>
               <div className="bg-white/10 border border-white/20 rounded-lg p-4">
                 <h3 className="font-bold mb-2 text-white flex items-center">
-                  <Icon name="tool" size={20} className="mr-2 text-cerulean" />
+                  <span className="mr-2 text-cerulean font-bold text-lg">🔧</span>
                   Präzisionstechnik
                 </h3>
                 <ul className="text-sm space-y-1 text-white/80">
@@ -106,7 +105,7 @@ export default function TeilsanierungBielefeld() {
               </div>
               <div className="bg-white/10 border border-white/20 rounded-lg p-4">
                 <h3 className="font-bold mb-2 text-white flex items-center">
-                  <Icon name="shield" size={20} className="mr-2 text-cerulean" />
+                  <span className="mr-2 text-cerulean font-bold text-lg">🛡️</span>
                   Schutzmaßnahmen
                 </h3>
                 <ul className="text-sm space-y-1 text-white/80">
@@ -136,19 +135,19 @@ export default function TeilsanierungBielefeld() {
                   <h3 className="font-bold mb-3 text-white">Untersuchungsleistungen</h3>
                   <ul className="text-sm space-y-2 text-white/80">
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Raumweise Schadstoffkartierung
                     </li>
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Materialproben mit Labor-Analyse
                     </li>
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Raumluftmessungen vor Ort
                     </li>
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Digitale Schadstoffkataster
                     </li>
                   </ul>
@@ -157,19 +156,19 @@ export default function TeilsanierungBielefeld() {
                   <h3 className="font-bold mb-3 text-white">Typische Fundorte</h3>
                   <ul className="text-sm space-y-2 text-white/80">
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Dacheindeckungen (Asbest bis 1993)
                     </li>
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Fassadenplatten (Eternit)
                     </li>
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Bodenbeläge (Vinyl-Asbest)
                     </li>
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Rohrdämmungen im Keller
                     </li>
                   </ul>
@@ -193,27 +192,27 @@ export default function TeilsanierungBielefeld() {
               <h3 className="font-bold mb-4 text-white text-xl">Betonarbeiten bei Teilsanierung:</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <div className="flex items-center text-white/90">
-                  <Icon name="check-circle" size={20} className="mr-2 text-green-400" />
+                  <span className="mr-2 text-green-400 font-bold text-lg">✓</span>
                   Betonsanierung
                 </div>
                 <div className="flex items-center text-white/90">
-                  <Icon name="check-circle" size={20} className="mr-2 text-green-400" />
+                  <span className="mr-2 text-green-400 font-bold text-lg">✓</span>
                   Rissverpressung
                 </div>
                 <div className="flex items-center text-white/90">
-                  <Icon name="check-circle" size={20} className="mr-2 text-green-400" />
+                  <span className="mr-2 text-green-400 font-bold text-lg">✓</span>
                   Bewehrungsschutz
                 </div>
                 <div className="flex items-center text-white/90">
-                  <Icon name="check-circle" size={20} className="mr-2 text-green-400" />
+                  <span className="mr-2 text-green-400 font-bold text-lg">✓</span>
                   Betonkosmetik
                 </div>
                 <div className="flex items-center text-white/90">
-                  <Icon name="check-circle" size={20} className="mr-2 text-green-400" />
+                  <span className="mr-2 text-green-400 font-bold text-lg">✓</span>
                   Verstärkungen
                 </div>
                 <div className="flex items-center text-white/90">
-                  <Icon name="check-circle" size={20} className="mr-2 text-green-400" />
+                  <span className="mr-2 text-green-400 font-bold text-lg">✓</span>
                   Abdichtungen
                 </div>
               </div>
@@ -258,7 +257,7 @@ export default function TeilsanierungBielefeld() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold text-xl mb-4 text-white flex items-center">
-                  <Icon name="home" size={24} className="mr-3 text-cerulean" />
+                  <span className="mr-3 text-cerulean font-bold text-xl">🏠</span>
                   Dachsanierung
                 </h3>
                 <p className="text-white/80 mb-3">
@@ -275,7 +274,7 @@ export default function TeilsanierungBielefeld() {
               </div>
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold text-xl mb-4 text-white flex items-center">
-                  <Icon name="droplet" size={24} className="mr-3 text-cerulean" />
+                  <span className="mr-3 text-cerulean font-bold text-xl">💧</span>
                   Kellersanierung
                 </h3>
                 <p className="text-white/80 mb-3">
@@ -292,7 +291,7 @@ export default function TeilsanierungBielefeld() {
               </div>
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold text-xl mb-4 text-white flex items-center">
-                  <Icon name="sun" size={24} className="mr-3 text-cerulean" />
+                  <span className="mr-3 text-cerulean font-bold text-xl">☀️</span>
                   Fassadensanierung
                 </h3>
                 <p className="text-white/80 mb-3">
@@ -308,7 +307,7 @@ export default function TeilsanierungBielefeld() {
               </div>
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold text-xl mb-4 text-white flex items-center">
-                  <Icon name="zap" size={24} className="mr-3 text-cerulean" />
+                  <span className="mr-3 text-cerulean font-bold text-xl">⚡</span>
                   Haustechnik-Sanierung
                 </h3>
                 <p className="text-white/80 mb-3">
@@ -468,7 +467,7 @@ export default function TeilsanierungBielefeld() {
               </div>
               <div className="mt-6 p-4 bg-green-500/20 rounded-lg border border-green-500/30">
                 <h3 className="font-bold text-white mb-2 flex items-center">
-                  <Icon name="gift" size={20} className="mr-2" />
+                  <span className="mr-2 text-yellow-400 font-bold">🎁</span>
                   Förderungen nutzen!
                 </h3>
                 <p className="text-sm text-white/90">
@@ -486,7 +485,7 @@ export default function TeilsanierungBielefeld() {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="w-20 h-20 bg-gradient-to-br from-cerulean to-indigo-dye rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="piggy-bank" size={32} className="text-white" />
+                  <span className="text-white font-bold text-2xl">💰</span>
                 </div>
                 <h3 className="font-bold text-white mb-2">Kostenersparnis</h3>
                 <p className="text-sm text-white/70">
@@ -495,7 +494,7 @@ export default function TeilsanierungBielefeld() {
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 bg-gradient-to-br from-cerulean to-indigo-dye rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="home" size={32} className="text-white" />
+                  <span className="text-white font-bold text-2xl">🏠</span>
                 </div>
                 <h3 className="font-bold text-white mb-2">Bewohnbar bleiben</h3>
                 <p className="text-sm text-white/70">
@@ -504,7 +503,7 @@ export default function TeilsanierungBielefeld() {
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 bg-gradient-to-br from-cerulean to-indigo-dye rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="calendar" size={32} className="text-white" />
+                  <span className="text-white font-bold text-2xl">📅</span>
                 </div>
                 <h3 className="font-bold text-white mb-2">Etappenweise</h3>
                 <p className="text-sm text-white/70">
@@ -531,7 +530,7 @@ export default function TeilsanierungBielefeld() {
                   href="tel:+491748083023"
                   className="inline-flex items-center justify-center px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-bold transition-colors"
                 >
-                  <Icon name="phone" size={20} className="mr-2" />
+                  <span className="mr-2 text-lg">📞</span>
                   Notfall-Hotline: 0174 8083023
                 </Link>
               </div>
@@ -586,14 +585,14 @@ export default function TeilsanierungBielefeld() {
                 href="tel:+491748083023"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-gray-100 text-oxford-blue rounded-xl font-bold text-lg transition-colors"
               >
-                <Icon name="phone" size={24} className="mr-2" />
+                <span className="mr-2 text-xl">📞</span>
                 Jetzt anrufen: 0174 8083023
               </Link>
               <Link
                 href="/kontakt"
                 className="inline-flex items-center justify-center px-8 py-4 bg-oxford-blue hover:bg-oxford-blue/90 text-white rounded-xl font-bold text-lg transition-colors border-2 border-white/20"
               >
-                <Icon name="mail" size={24} className="mr-2" />
+                <span className="mr-2 text-xl">📧</span>
                 Angebot anfragen
               </Link>
             </div>

@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Icon from './Icon';
 import Image from 'next/image';
 import KontaktformularMitBild from './KontaktformularMitBild';
 
@@ -42,25 +41,25 @@ export default function KomplettsanierungBielefeld() {
               </p>
               <div className="grid md:grid-cols-2 gap-4 mt-6">
                 <div className="flex items-start">
-                  <Icon name="check" size={20} className="text-green-400 mr-3 mt-1 flex-shrink-0" />
+                  <span className="text-green-400 mr-3 mt-1 flex-shrink-0 text-xl font-bold">✓</span>
                   <div className="text-white/90">
                     <strong className="text-white">Komplettentkernung:</strong> Vom Dachboden bis zum Keller, alles raus
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Icon name="check" size={20} className="text-green-400 mr-3 mt-1 flex-shrink-0" />
+                  <span className="text-green-400 mr-3 mt-1 flex-shrink-0 text-xl font-bold">✓</span>
                   <div className="text-white/90">
                     <strong className="text-white">Schadstoffsanierung:</strong> Asbest, PCB, KMF - wir entfernen alles fachgerecht
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Icon name="check" size={20} className="text-green-400 mr-3 mt-1 flex-shrink-0" />
+                  <span className="text-green-400 mr-3 mt-1 flex-shrink-0 text-xl font-bold">✓</span>
                   <div className="text-white/90">
                     <strong className="text-white">Statische Eingriffe:</strong> Wände raus, Durchbrüche rein - immer mit Statiker
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Icon name="check" size={20} className="text-green-400 mr-3 mt-1 flex-shrink-0" />
+                  <span className="text-green-400 mr-3 mt-1 flex-shrink-0 text-xl font-bold">✓</span>
                   <div className="text-white/90">
                     <strong className="text-white">Entsorgung:</strong> Sortiert, dokumentiert, umweltgerecht
                   </div>
@@ -83,7 +82,7 @@ export default function KomplettsanierungBielefeld() {
             <div className="grid md:grid-cols-3 gap-4 mt-6">
               <div className="bg-white/10 border border-white/20 rounded-lg p-4">
                 <h3 className="font-bold mb-2 text-white flex items-center">
-                  <Icon name="hammer" size={20} className="mr-2 text-cerulean" />
+                  <span className="mr-2 text-cerulean font-bold text-lg">🔨</span>
                   Rohbauarbeiten
                 </h3>
                 <ul className="text-sm space-y-1 text-white/80">
@@ -95,7 +94,7 @@ export default function KomplettsanierungBielefeld() {
               </div>
               <div className="bg-white/10 border border-white/20 rounded-lg p-4">
                 <h3 className="font-bold mb-2 text-white flex items-center">
-                  <Icon name="wrench" size={20} className="mr-2 text-cerulean" />
+                  <span className="mr-2 text-cerulean font-bold text-lg">🔧</span>
                   Ausbauarbeiten
                 </h3>
                 <ul className="text-sm space-y-1 text-white/80">
@@ -107,7 +106,7 @@ export default function KomplettsanierungBielefeld() {
               </div>
               <div className="bg-white/10 border border-white/20 rounded-lg p-4">
                 <h3 className="font-bold mb-2 text-white flex items-center">
-                  <Icon name="zap" size={20} className="mr-2 text-cerulean" />
+                  <span className="mr-2 text-cerulean font-bold text-lg">⚡</span>
                   Haustechnik
                 </h3>
                 <ul className="text-sm space-y-1 text-white/80">
@@ -137,19 +136,19 @@ export default function KomplettsanierungBielefeld() {
                   <h3 className="font-bold mb-3 text-white">Wartungsleistungen</h3>
                   <ul className="text-sm space-y-2 text-white/80">
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Regelmäßige Gebäudechecks alle 6 Monate
                     </li>
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Dach- und Fassadeninspektion
                     </li>
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Heizungswartung und Optimierung
                     </li>
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       24/7 Notdienst bei Problemen
                     </li>
                   </ul>
@@ -158,19 +157,19 @@ export default function KomplettsanierungBielefeld() {
                   <h3 className="font-bold mb-3 text-white">Vorteile</h3>
                   <ul className="text-sm space-y-2 text-white/80">
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Werterhalt Ihrer Immobilie
                     </li>
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Probleme früh erkennen = Geld sparen
                     </li>
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Garantieverlängerung auf unsere Arbeiten
                     </li>
                     <li className="flex items-start">
-                      <Icon name="arrow-right" size={16} className="mr-2 mt-1 text-cerulean flex-shrink-0" />
+                      <span className="mr-2 mt-1 text-cerulean flex-shrink-0">▶</span>
                       Digitale Dokumentation aller Maßnahmen
                     </li>
                   </ul>
@@ -194,27 +193,27 @@ export default function KomplettsanierungBielefeld() {
               <h3 className="font-bold mb-4 text-white text-xl">Unsere Erdbau-Leistungen:</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <div className="flex items-center text-white/90">
-                  <Icon name="check-circle" size={20} className="mr-2 text-green-400" />
+                  <span className="mr-2 text-green-400 font-bold text-lg">✓</span>
                   Baugrubenaushub
                 </div>
                 <div className="flex items-center text-white/90">
-                  <Icon name="check-circle" size={20} className="mr-2 text-green-400" />
+                  <span className="mr-2 text-green-400 font-bold text-lg">✓</span>
                   Geländemodellierung
                 </div>
                 <div className="flex items-center text-white/90">
-                  <Icon name="check-circle" size={20} className="mr-2 text-green-400" />
+                  <span className="mr-2 text-green-400 font-bold text-lg">✓</span>
                   Fundamentarbeiten
                 </div>
                 <div className="flex items-center text-white/90">
-                  <Icon name="check-circle" size={20} className="mr-2 text-green-400" />
+                  <span className="mr-2 text-green-400 font-bold text-lg">✓</span>
                   Kanalbau
                 </div>
                 <div className="flex items-center text-white/90">
-                  <Icon name="check-circle" size={20} className="mr-2 text-green-400" />
+                  <span className="mr-2 text-green-400 font-bold text-lg">✓</span>
                   Pflasterarbeiten
                 </div>
                 <div className="flex items-center text-white/90">
-                  <Icon name="check-circle" size={20} className="mr-2 text-green-400" />
+                  <span className="mr-2 text-green-400 font-bold text-lg">✓</span>
                   Gartengestaltung
                 </div>
               </div>
@@ -312,7 +311,7 @@ export default function KomplettsanierungBielefeld() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold text-xl mb-4 text-white flex items-center">
-                  <Icon name="building" size={24} className="mr-3 text-cerulean" />
+                  <span className="mr-3 text-cerulean font-bold text-xl">🏢</span>
                   Bürogebäude Niederwall
                 </h3>
                 <p className="text-white/80 mb-3">
@@ -328,7 +327,7 @@ export default function KomplettsanierungBielefeld() {
               </div>
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold text-xl mb-4 text-white flex items-center">
-                  <Icon name="home" size={24} className="mr-3 text-cerulean" />
+                  <span className="mr-3 text-cerulean font-bold text-xl">🏠</span>
                   Villa Gadderbaum
                 </h3>
                 <p className="text-white/80 mb-3">
@@ -344,7 +343,7 @@ export default function KomplettsanierungBielefeld() {
               </div>
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold text-xl mb-4 text-white flex items-center">
-                  <Icon name="users" size={24} className="mr-3 text-cerulean" />
+                  <span className="mr-3 text-cerulean font-bold text-xl">👥</span>
                   Mehrfamilienhaus Brackwede
                 </h3>
                 <p className="text-white/80 mb-3">
@@ -360,7 +359,7 @@ export default function KomplettsanierungBielefeld() {
               </div>
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold text-xl mb-4 text-white flex items-center">
-                  <Icon name="truck" size={24} className="mr-3 text-cerulean" />
+                  <span className="mr-3 text-cerulean font-bold text-xl">🚚</span>
                   Industriehalle Oldentrup
                 </h3>
                 <p className="text-white/80 mb-3">
@@ -407,7 +406,7 @@ export default function KomplettsanierungBielefeld() {
               </div>
               <div className="mt-6 p-4 bg-green-500/20 rounded-lg border border-green-500/30">
                 <h3 className="font-bold text-white mb-2 flex items-center">
-                  <Icon name="euro" size={20} className="mr-2" />
+                  <span className="mr-2 text-yellow-400 font-bold">€</span>
                   Finanzierung & Förderung
                 </h3>
                 <p className="text-sm text-white/90 mb-2">
@@ -497,7 +496,7 @@ export default function KomplettsanierungBielefeld() {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="w-20 h-20 bg-gradient-to-br from-cerulean to-indigo-dye rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="trending-up" size={32} className="text-white" />
+                  <span className="text-white font-bold text-2xl">💰</span>
                 </div>
                 <h3 className="font-bold text-white mb-2">Wertsteigerung garantiert</h3>
                 <p className="text-sm text-white/70">
@@ -506,7 +505,7 @@ export default function KomplettsanierungBielefeld() {
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 bg-gradient-to-br from-cerulean to-indigo-dye rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="battery-charging" size={32} className="text-white" />
+                  <span className="text-white font-bold text-2xl">🔋</span>
                 </div>
                 <h3 className="font-bold text-white mb-2">Energiekosten halbiert</h3>
                 <p className="text-sm text-white/70">
@@ -515,7 +514,7 @@ export default function KomplettsanierungBielefeld() {
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 bg-gradient-to-br from-cerulean to-indigo-dye rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="shield-check" size={32} className="text-white" />
+                  <span className="text-white font-bold text-2xl">🛡️</span>
                 </div>
                 <h3 className="font-bold text-white mb-2">25 Jahre Ruhe</h3>
                 <p className="text-sm text-white/70">
@@ -577,14 +576,14 @@ export default function KomplettsanierungBielefeld() {
                 href="tel:+491748083023"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-gray-100 text-oxford-blue rounded-xl font-bold text-lg transition-colors"
               >
-                <Icon name="phone" size={24} className="mr-2" />
+                <span className="mr-2 text-xl">📞</span>
                 Jetzt anrufen: 0174 8083023
               </Link>
               <Link
                 href="/kontakt"
                 className="inline-flex items-center justify-center px-8 py-4 bg-oxford-blue hover:bg-oxford-blue/90 text-white rounded-xl font-bold text-lg transition-colors border-2 border-white/20"
               >
-                <Icon name="mail" size={24} className="mr-2" />
+                <span className="mr-2 text-xl">📧</span>
                 Beratungstermin buchen
               </Link>
             </div>
