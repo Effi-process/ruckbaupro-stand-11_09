@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Icon from './Icon';
 import Image from 'next/image';
-import KontaktformularMitBild from './KontaktformularMitBild';
+import ContactSection from './ContactSection';
 
 export default function SanierungBielefeld() {
   return (
@@ -500,8 +500,11 @@ export default function SanierungBielefeld() {
         </div>
       </section>
 
-      {/* Kontaktformular mit Bild */}
-      <KontaktformularMitBild />
+      {/* Kontaktformular */}
+      <ContactSection
+        title="Kostenlose Sanierungsberatung für Bielefeld"
+        subtitle="Professionelle Gebäudesanierung - sicher, schnell, zertifiziert"
+      />
     </>
   );
 }

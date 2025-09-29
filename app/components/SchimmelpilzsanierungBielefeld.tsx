@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import KontaktformularMitBild from './KontaktformularMitBild';
+import ContactSection from './ContactSection';
 
 export default function SchimmelpilzsanierungBielefeld() {
   return (
@@ -640,8 +640,11 @@ export default function SchimmelpilzsanierungBielefeld() {
         </div>
       </section>
 
-      {/* Kontaktformular mit Bild */}
-      <KontaktformularMitBild />
+      {/* Kontaktformular */}
+      <ContactSection
+        title="Schimmel entdeckt? Sofort handeln!"
+        subtitle="24/7 Notdienst - Professionelle Schimmelsanierung in Bielefeld"
+      />
     </>
   );
 }

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import KontaktformularMitBild from './KontaktformularMitBild';
+import ContactSection from './ContactSection';
 
 export default function KomplettsanierungBielefeld() {
   return (
@@ -629,8 +629,11 @@ export default function KomplettsanierungBielefeld() {
         </div>
       </section>
 
-      {/* Kontaktformular mit Bild */}
-      <KontaktformularMitBild />
+      {/* Kontaktformular */}
+      <ContactSection
+        title="Starten Sie Ihre Komplettsanierung"
+        subtitle="Von der Entkernung bis zur Schlüsselübergabe - alles aus einer Hand"
+      />
     </>
   );
 }

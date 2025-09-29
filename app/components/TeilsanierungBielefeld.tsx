@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import KontaktformularMitBild from './KontaktformularMitBild';
+import ContactSection from './ContactSection';
 
 export default function TeilsanierungBielefeld() {
   return (
@@ -638,8 +638,11 @@ export default function TeilsanierungBielefeld() {
         </div>
       </section>
 
-      {/* Kontaktformular mit Bild */}
-      <KontaktformularMitBild />
+      {/* Kontaktformular */}
+      <ContactSection
+        title="Kostenlose Beratung für Teilsanierung"
+        subtitle="Gezielt modernisieren statt komplett sanieren - sparen Sie Zeit und Geld"
+      />
     </>
   );
 }
