@@ -1,10 +1,48 @@
-# Robots.txt for Wertvoll Dienstleistungen GmbH - Asbestsanierung
+# Robots.txt for RückbauPRO - Professioneller Rückbau & Abbruch
 
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*utm_source=
+Disallow: /*?*utm_medium=
+Disallow: /*?*utm_campaign=
 
-# Sitemap
-Sitemap: https://abriss-schmiede.de/sitemap.xml
+# Allow important pages
+Allow: /
+Allow: /standorte/
+Allow: /leistungen/
+Allow: /kontakt/
+Allow: /preise/
+Allow: /ueber-uns/
 
-# Crawl-delay
+# Sitemap location
+Sitemap: https://www.rueckbaupro.de/sitemap.xml
+
+# Crawl delay to prevent overloading
 Crawl-delay: 1
+
+# Additional rules for specific bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Block SEO spam bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

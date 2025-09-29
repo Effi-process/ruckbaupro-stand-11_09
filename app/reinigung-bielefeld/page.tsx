@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
-import SimpleContactForm from '../components/SimpleContactForm';
+import ContactSection from '../components/ContactSection';
 
 export default function ReinigungBielefeldPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -367,29 +367,11 @@ export default function ReinigungBielefeldPage() {
         </div>
       </section>
 
-      {/* Contact Form with Background */}
-      <section className="relative py-16 md:py-20">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/bg.jpg"
-            alt="Kontakt Hintergrund"
-            fill
-            className="object-cover"
-            priority={false}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 to-blue-700/90" />
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 text-white">
-            Kostenloses Reinigungsangebot für Bielefeld
-          </h2>
-          <p className="text-center text-blue-100 mb-6 md:mb-8 text-base md:text-lg">
-            Professionelle Reinigung in ganz Bielefeld - schnell, gründlich, fair
-          </p>
-          <SimpleContactForm />
-        </div>
-      </section>
+      {/* Contact Form Section */}
+      <ContactSection
+        title="Kostenloses Reinigungsangebot für Bielefeld"
+        subtitle="Professionelle Reinigung in ganz Bielefeld - schnell, gründlich, fair"
+      />
 
       <FooterWithMarquee />
     </div>

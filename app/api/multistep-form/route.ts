@@ -1,5 +1,29 @@
 import { NextResponse } from 'next/server';
 import { sendQuoteRequestEmail } from '@/lib/email';
+import { headers } from 'next/headers';
+
+// Rate limiting (simple implementation)
+const requestTracker = new Map<string, { count: number; resetTime: number }>();
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const windowMs = 10 * 60 * 1000; // 10 minutes
+  const maxRequests = 3; // Max 3 requests per 10 minutes
+
+  const tracker = requestTracker.get(ip);
+
+  if (!tracker || now > tracker.resetTime) {
+    requestTracker.set(ip, { count: 1, resetTime: now + windowMs });
+    return true;
+  }
+
+  if (tracker.count >= maxRequests) {
+    return false;
+  }
+
+  tracker.count++;
+  return true;
+}
 
 export interface MultiStepFormData {
   name: string;
@@ -15,6 +39,27 @@ export interface MultiStepFormData {
 
 export async function POST(request: Request) {
   try {
+    // CSRF Protection - Check Content-Type
+    const contentType = request.headers.get('content-type');
+    if (!contentType?.includes('application/json')) {
+      return NextResponse.json({
+        success: false,
+        message: 'Invalid content type'
+      }, { status: 400 });
+    }
+
+    // Rate limiting
+    const headersList = headers();
+    const forwarded = headersList.get('x-forwarded-for');
+    const ip = forwarded ? forwarded.split(',')[0] : 'unknown';
+
+    if (!checkRateLimit(ip)) {
+      return NextResponse.json({
+        success: false,
+        message: 'Zu viele Anfragen. Bitte versuchen Sie es später erneut.'
+      }, { status: 429 });
+    }
+
     // Parse request body with error handling
     let data: MultiStepFormData;
     try {
@@ -27,16 +72,16 @@ export async function POST(request: Request) {
       }, { status: 400 });
     }
 
-    // Sanitize and validate input data
+    // Enhanced sanitization and validation
     const sanitizedData = {
-      name: String(data?.name || '').trim().slice(0, 100),
-      company: data?.company ? String(data.company).trim().slice(0, 100) : undefined,
+      name: String(data?.name || '').trim().replace(/<script[^>]*>.*?<\/script>/gi, '').slice(0, 100),
+      company: data?.company ? String(data.company).trim().replace(/<script[^>]*>.*?<\/script>/gi, '').slice(0, 100) : undefined,
       contactMethod: ['email', 'phone'].includes(data?.contactMethod) ? data.contactMethod : 'email',
-      email: data?.email ? String(data.email).trim().toLowerCase().slice(0, 100) : undefined,
-      phone: data?.phone ? String(data.phone).trim().slice(0, 30) : undefined,
-      city: String(data?.city || '').trim().slice(0, 100),
-      services: Array.isArray(data?.services) ? data.services.filter(s => typeof s === 'string').slice(0, 20) : [],
-      message: data?.message ? String(data.message).trim().slice(0, 2000) : undefined,
+      email: data?.email ? String(data.email).trim().toLowerCase().replace(/<script[^>]*>.*?<\/script>/gi, '').slice(0, 100) : undefined,
+      phone: data?.phone ? String(data.phone).trim().replace(/[^0-9\+\-\(\)\s]/g, '').slice(0, 30) : undefined,
+      city: String(data?.city || '').trim().replace(/<script[^>]*>.*?<\/script>/gi, '').slice(0, 100),
+      services: Array.isArray(data?.services) ? data.services.filter(s => typeof s === 'string').map(s => s.replace(/<script[^>]*>.*?<\/script>/gi, '')).slice(0, 20) : [],
+      message: data?.message ? String(data.message).trim().replace(/<script[^>]*>.*?<\/script>/gi, '').slice(0, 2000) : undefined,
       datenschutz: Boolean(data?.datenschutz)
     };
 
@@ -49,7 +94,8 @@ export async function POST(request: Request) {
     }
 
     if (sanitizedData.contactMethod === 'email') {
-      if (!sanitizedData.email || !sanitizedData.email.includes('@')) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!sanitizedData.email || !emailRegex.test(sanitizedData.email)) {
         return NextResponse.json({
           success: false,
           message: 'Gültige E-Mail-Adresse ist erforderlich'
@@ -58,10 +104,11 @@ export async function POST(request: Request) {
     }
 
     if (sanitizedData.contactMethod === 'phone') {
-      if (!sanitizedData.phone || sanitizedData.phone.length < 5) {
+      const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,20}$/;
+      if (!sanitizedData.phone || !phoneRegex.test(sanitizedData.phone)) {
         return NextResponse.json({
           success: false,
-          message: 'Gültige Telefonnummer ist erforderlich'
+          message: 'Gültige Telefonnummer ist erforderlich (10-20 Zeichen)'
         }, { status: 400 });
       }
     }

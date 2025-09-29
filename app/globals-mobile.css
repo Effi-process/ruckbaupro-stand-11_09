@@ -167,6 +167,26 @@
     z-index: 50 !important;
   }
 
+  /* Mobile header compensation - add padding to body content */
+  .mobile-content-wrapper {
+    padding-top: 6rem !important; /* Space for fixed mobile header */
+  }
+
+  /* Hero sections should not have extra padding */
+  .mobile-content-wrapper > main > section:first-child,
+  .mobile-content-wrapper > main > div:first-child,
+  .mobile-content-wrapper > main > #hero,
+  #hero {
+    margin-top: -6rem !important;
+    padding-top: 6rem !important;
+  }
+
+  /* For pages without main wrapper */
+  .mobile-content-wrapper > div:first-child > section:first-child {
+    margin-top: -6rem !important;
+    padding-top: 6rem !important;
+  }
+
   /* Mobile menu improvements */
   .mobile-menu,
   [class*="mobile-menu"] {
@@ -241,7 +261,12 @@
   .absolute.inset-0.flex.items-center {
     padding: 1rem !important;
     align-items: flex-start !important;
-    padding-top: 4rem !important;
+    padding-top: 8rem !important; /* Increased for mobile header */
+  }
+
+  /* Hero sections with video need proper spacing */
+  .relative.h-full.flex.items-end {
+    padding-bottom: 4rem !important;
   }
 
   /* Hero badge */

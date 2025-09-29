@@ -2,7 +2,7 @@
 import Icon from '../components/Icon';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
-import SimpleContactForm from '../components/SimpleContactForm';
+import ContactSection from '../components/ContactSection';
 
 export default function Kontakt() {
 
@@ -93,7 +93,11 @@ export default function Kontakt() {
 
       {/* Form Section - Full Width Outside Container */}
       <section className="bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
-        <SimpleContactForm purpose="quote" />
+        <ContactSection
+          title="Kontakt aufnehmen"
+          subtitle="Wir freuen uns auf Ihr Projekt und beraten Sie gerne kostenlos"
+          className="pt-0"
+        />
       </section>
 
       

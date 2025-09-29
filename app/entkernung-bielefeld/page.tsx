@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
-import SimpleContactForm from '../components/SimpleContactForm';
+import ContactSection from '../components/ContactSection';
 
 export default function EntkernungBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -332,10 +332,11 @@ export default function EntkernungBielefeld() {
         </div>
       </section>
 
-      {/* Contact Form Section with Background Image */}
-      <section className="relative">
-        <SimpleContactForm purpose="quote" />
-      </section>
+      {/* Contact Form Section */}
+      <ContactSection
+        title="Kostenloses Angebot für Entkernung Bielefeld"
+        subtitle="Professionelle Gebäude-Entkernung in ganz Bielefeld - schnell und zuverlässig"
+      />
 
       {/* Footer */}
       <FooterWithMarquee />

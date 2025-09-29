@@ -36,13 +36,14 @@ export function ScrollAnimation({
       { threshold }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    const currentElement = elementRef.current;
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, [delay, threshold]);
@@ -125,9 +126,10 @@ export function RevealOnScroll({ children, className = '' }: RevealOnScrollProps
       observer.observe(ref.current);
     }
 
+    const currentRef = ref.current;
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -200,9 +202,10 @@ export function CountUpAnimation({
       updateCount();
     };
 
+    const currentCountRef = countRef.current;
     return () => {
-      if (countRef.current) {
-        observer.unobserve(countRef.current);
+      if (currentCountRef) {
+        observer.unobserve(currentCountRef);
       }
     };
   }, [end, duration, prefix, suffix]);
@@ -244,9 +247,10 @@ export function StaggerChildren({ children, className = '', staggerDelay = 100 }
       observer.observe(containerRef.current);
     }
 
+    const currentContainerRef = containerRef.current;
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (currentContainerRef) {
+        observer.unobserve(currentContainerRef);
       }
     };
   }, [staggerDelay]);

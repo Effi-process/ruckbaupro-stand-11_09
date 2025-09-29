@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
-import SimpleContactForm from '../components/SimpleContactForm';
+import ContactSection from '../components/ContactSection';
 import MobileCollapsibleContent, { CollapsibleTextSection, MobileFAQSection } from '../components/MobileCollapsibleContent'
 import MobileOptimizedContent, { MobileParagraph, MobileHeading, MobileSection } from '../components/MobileOptimizedContent'
 
@@ -403,10 +403,11 @@ export default function AsbestentfernungBielefeld() {
         </div>
       </section>
 
-      {/* Contact Form Section with Background Image */}
-      <section className="relative">
-        <SimpleContactForm purpose="quote" />
-      </section>
+      {/* Contact Form Section */}
+      <ContactSection
+        title="Kostenloses Angebot für Asbestentfernung Bielefeld"
+        subtitle="Sicherer Asbest-Rückbau nach TRGS 519 - professionell und zuverlässig"
+      />
 
       {/* Footer */}
       <FooterWithMarquee />

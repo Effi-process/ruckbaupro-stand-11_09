@@ -1,19 +1,20 @@
-// Service Worker for Asbest Revenue Optimization
-// Enables offline contact access and aggressive caching
+// Service Worker for RückbauPRO
+// Enables offline contact access and performance optimization
 
-const CACHE_NAME = 'asbest-v2.1.0';
-const CACHE_VERSION = '2.1.0';
+const CACHE_NAME = 'rueckbaupro-v1.0.0';
+const CACHE_VERSION = '1.0.0';
 
 // Critical resources for offline functionality
 const CRITICAL_CACHE = [
   '/',
   '/kontakt',
   '/preise',
-  '/bielefeld',
-  '/offline',
+  '/standorte',
+  '/leistungen',
+  '/ueber-uns',
   '/manifest.json',
-  '/images/Logo.svg',
-  '/images/hero-poster.jpg'
+  '/logo-new.svg',
+  '/favicon.ico'
 ];
 
 // Strategy: Cache First for static assets, Network First for dynamic content
@@ -133,7 +134,7 @@ async function networkFirstStrategy(request) {
     // Return offline API response
     return new Response(JSON.stringify({
       error: 'Offline',
-      message: 'Bitte versuchen Sie es später erneut oder rufen Sie an: 0800 0060970'
+      message: 'Bitte versuchen Sie es später erneut oder rufen Sie an: +49 174 808 3023'
     }), {
       status: 503,
       headers: { 'Content-Type': 'application/json' }
@@ -189,7 +190,7 @@ async function handleNavigation(request) {
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Offline - Asbestsanierung</title>
+      <title>Offline - RückbauPRO</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
@@ -232,19 +233,19 @@ async function handleNavigation(request) {
       <div class="offline-container">
         <h1>🔌 Keine Internetverbindung</h1>
         <p>Sie sind momentan offline, aber wir sind trotzdem für Sie da!</p>
-        
+
         <h2>📞 Sofort-Kontakt:</h2>
-        <a href="tel:08000060970" class="phone-btn">
-          0800 0060970
+        <a href="tel:+49174808302" class="phone-btn" aria-label="Telefonnummer anrufen: +49 174 808 3023">
+          +49 174 808 3023
         </a>
-        
-        <h3>🚨 Notfall:</h3>
-        <a href="tel:08000060970" class="phone-btn emergency">
+
+        <h3>🚨 Notfall-Service:</h3>
+        <a href="tel:+49174808302" class="phone-btn emergency" aria-label="24/7 Notfall-Hotline anrufen">
           24/7 Notfall-Hotline
         </a>
         
         <p style="margin-top: 30px; color: #666; font-size: 14px;">
-          Kostenlose Beratung • Sofort-Terminvereinbarung • Notfall-Service
+          Kostenlose Beratung • Professioneller Rückbau • 24/7 Service
         </p>
         
         <button onclick="location.reload()" 
@@ -296,21 +297,21 @@ async function syncContactForm() {
 // Push notifications for urgent updates
 self.addEventListener('push', (event) => {
   const options = {
-    body: 'Ihr Asbestsanierungs-Angebot ist bereit!',
-    icon: '/images/icon-192.png',
-    badge: '/images/badge-72.png',
+    body: 'Ihr Rückbau-Angebot ist bereit!',
+    icon: '/icon-192x192.png',
+    badge: '/icon-192x192.png',
     actions: [
       { action: 'view', title: 'Angebot ansehen' },
       { action: 'call', title: 'Anrufen' }
     ],
     data: {
       url: '/kontakt',
-      phone: '08000060970'
+      phone: '+49174808302'
     }
   };
   
   event.waitUntil(
-    self.registration.showNotification('Asbestsanierung Premium', options)
+    self.registration.showNotification('RückbauPRO', options)
   );
 });
 
@@ -320,7 +321,7 @@ self.addEventListener('notificationclick', (event) => {
   
   if (event.action === 'call') {
     // Open phone dialer
-    clients.openWindow('tel:08000060970');
+    clients.openWindow('tel:+49174808302');
   } else {
     // Open website
     event.waitUntil(
@@ -356,4 +357,4 @@ self.addEventListener('message', (event) => {
   }
 });
 
-console.log('[SW] Service Worker loaded successfully - Revenue optimization active!');
+console.log('[SW] Service Worker loaded successfully - RückbauPRO performance optimization active!');

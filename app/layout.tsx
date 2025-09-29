@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="de">
+    <html lang="de" dir="ltr">
       <head>
         {/* Complete favicon setup for all browsers including Safari */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -58,7 +58,31 @@ export default function RootLayout({
         <meta name="theme-color" content="#1282a2" />
 
         {/* Google Site Verification */}
+        <meta name="google-site-verification" content="google8f87d17998b1ccc7" />
         <meta name="google-site-verification" content="google9e533183d0f335db" />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="RückbauPRO - Professioneller Rückbau & Abbruch" />
+        <meta property="og:description" content="Zertifizierter Fachbetrieb für Rückbau, Abbruch, Entkernung und Schadstoffsanierung. Modernste Ausrüstung, faire Preise und persönliche Beratung." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.rueckbaupro.de" />
+        <meta property="og:image" content="https://www.rueckbaupro.de/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="RückbauPRO" />
+        <meta property="og:locale" content="de_DE" />
+
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="RückbauPRO - Professioneller Rückbau & Abbruch" />
+        <meta name="twitter:description" content="Zertifizierter Fachbetrieb für Rückbau, Abbruch, Entkernung und Schadstoffsanierung. Modernste Ausrüstung, faire Preise und persönliche Beratung." />
+        <meta name="twitter:image" content="https://www.rueckbaupro.de/og-image.png" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://www.rueckbaupro.de" />
+
+        {/* Robots Meta */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
         {/* Structured Data */}
         <script
@@ -226,12 +250,16 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased bg-oxford-blue`} suppressHydrationWarning={true}>
+        {/* Skip to main content link for accessibility */}
+        <a href="#main-content" className="skip-link">Zum Hauptinhalt springen</a>
         <PerformanceMonitor />
         <PerformanceOptimizer />
         <MobileOptimizer />
         <MobileOptimizationWrapper />
         <MobileHeader />
-        {children}
+        <main id="main-content" className="mobile-content-wrapper" role="main">
+          {children}
+        </main>
         
         {/* Performance monitoring and analytics */}
         <Script

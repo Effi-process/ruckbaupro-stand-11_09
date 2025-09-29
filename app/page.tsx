@@ -11,7 +11,7 @@ import Image from 'next/image';
 import Icon from './components/Icon';
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import SimpleContactForm from './components/SimpleContactForm';
+import ContactSection from './components/ContactSection';
 import { ScrollAnimation, ParallaxSection, RevealOnScroll } from './components/ScrollAnimations';
 import { GradientDivider, WaveTransition, MobileGradientSection } from './components/MobileGradientTransitions';
 import { MobileScrollingBannerCSS } from './components/MobileScrollingBanner';
@@ -24,23 +24,23 @@ const ProjectGallery = dynamic(() => import('./components/ProjectGallery'), {
 
 export default function Home() {
   return (
-    <main className="relative">
+    <main className="relative" role="main">
       {/* Floating Logo and Menu */}
       <FloatingElements />
 
       {/* Video Hero Section - New modern design */}
-      <div id="hero" className="relative">
+      <section id="hero" className="relative" aria-label="Hauptbereich - RückbauPRO Vorstellung">
         <VideoHeroSection />
-      </div>
+      </section>
 
       {/* Container für durchgehenden Gradient ab dem Video */}
       <div className="bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white">
         {/* Ink Scroll Text Effect Section */}
         <MobileGradientSection variant="default">
           <ScrollAnimation animation="slideUp" duration={1000}>
-            <div id="services-grid" className="section-divider">
+            <section id="services-grid" className="section-divider" aria-label="Unsere Leistungen">
               <InkScrollSection />
-            </div>
+            </section>
           </ScrollAnimation>
         </MobileGradientSection>
 
@@ -52,9 +52,9 @@ export default function Home() {
         {/* Project Carousel Section */}
         <MobileGradientSection variant="reverse">
           <ScrollAnimation animation="fadeIn" duration={1200} delay={200}>
-            <div id="process" className="gradient-transition">
+            <section id="process" className="gradient-transition" aria-label="Unsere Projekte und Arbeitsabläufe">
               <ProjectCarousel />
-            </div>
+            </section>
           </ScrollAnimation>
         </MobileGradientSection>
 
@@ -66,9 +66,9 @@ export default function Home() {
       {/* City Services Section with Tab Navigation */}
       <MobileGradientSection variant="strong">
         <RevealOnScroll>
-          <div className="section-divider">
+          <section className="section-divider" aria-label="Standorte und regionale Services">
             <CityServicesSection />
-          </div>
+          </section>
         </RevealOnScroll>
       </MobileGradientSection>
 
@@ -79,8 +79,11 @@ export default function Home() {
 
       {/* Contact Form Section - Full Width */}
       <ScrollAnimation animation="slideUp" duration={1000}>
-        <section id="contact-form" className="bg-oxford-blue section-divider">
-          <SimpleContactForm purpose="quote" />
+        <section id="contact-form" className="section-divider" aria-label="Kontakt und Angebotsanfrage">
+          <ContactSection
+            title="Kostenloses Angebot anfordern"
+            subtitle="Professionelle Rückbau-Lösungen zu fairen Preisen"
+          />
         </section>
       </ScrollAnimation>
 

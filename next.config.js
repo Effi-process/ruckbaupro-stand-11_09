@@ -57,6 +57,18 @@ const nextConfig = {
             key: 'X-Content-Type-Options',
             value: 'nosniff'
           },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://analytics.ahrefs.com https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://asbestsanierung-cdn.b-cdn.net data:; media-src 'self'; connect-src 'self' https://analytics.ahrefs.com https://www.google-analytics.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self';"
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin'
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'geolocation=(), microphone=(), camera=()'
+          },
         ],
       },
       {
@@ -189,6 +201,23 @@ const nextConfig = {
     return config;
   },
   
+  // CSRF Protection for API routes
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: '/api/:path*',
+        has: [
+          {
+            type: 'header',
+            key: 'content-type',
+            value: 'application/json'
+          }
+        ]
+      }
+    ]
+  },
+
   // Output optimization
   output: 'standalone',
   
