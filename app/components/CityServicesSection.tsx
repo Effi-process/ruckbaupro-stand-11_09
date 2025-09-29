@@ -53,6 +53,7 @@ const servicesData = {
         { name: 'Entkernung Bielefeld', link: '/entkernung-bielefeld' },
         { name: 'Komplettentkernung Bielefeld', link: '/komplettentkernung-bielefeld' },
         { name: 'Teilentkernung Bielefeld', link: '/teilentkernung-bielefeld' },
+        { name: 'Teilsanierung Bielefeld', link: '/teilsanierung-bielefeld' },
         { name: 'Hochbau-Abriss Bielefeld', link: '/hochbau-abriss-bielefeld' },
         { name: 'Gebäudeabbruch Bielefeld', link: '/gebaeudeabbruch-bielefeld' },
         { name: 'Aufräumarbeiten Bielefeld', link: '/aufraeumarbeiten-bielefeld' },
