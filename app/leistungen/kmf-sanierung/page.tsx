@@ -282,8 +282,8 @@ export default function KmfSanierungPage() {
 
       {/* Contact Form Section - Full Width */}
       <ScrollAnimation animation="slideUp" duration={1000}>
-        <section id="contact-form" className="bg-oxford-blue section-divider">
-          <SimpleContactForm purpose="quote" />
+        <section id="contact-form" className="section-divider">
+          <SimpleContactForm />
         </section>
       </ScrollAnimation>
 

@@ -222,8 +222,8 @@ export default function LeistungenPage() {
       <ProcessFlow />
       
       {/* Contact Form Section - Full Width */}
-      <section id="contact-form" className="bg-oxford-blue section-divider">
-        <SimpleContactForm purpose="quote" />
+      <section id="contact-form" className="section-divider">
+        <SimpleContactForm />
       </section>
       
       {/* Footer with Marquee - genau wie auf der Hauptseite */}

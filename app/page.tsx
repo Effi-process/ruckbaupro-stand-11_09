@@ -79,8 +79,8 @@ export default function Home() {
 
       {/* Contact Form Section - Full Width */}
       <ScrollAnimation animation="slideUp" duration={1000}>
-        <section id="contact-form" className="bg-oxford-blue section-divider" aria-label="Kontakt und Angebotsanfrage">
-          <SimpleContactForm purpose="quote" />
+        <section id="contact-form" className="section-divider" aria-label="Kontakt und Angebotsanfrage">
+          <SimpleContactForm />
         </section>
       </ScrollAnimation>
 
