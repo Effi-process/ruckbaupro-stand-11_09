@@ -74,7 +74,8 @@ const servicesData = {
       description: 'Umfassende Projektberatung und Genehmigungsmanagement',
       seoPages: [
         { name: 'Abbruchgenehmigung Bielefeld', link: '/abbruchgenehmigung-bielefeld' },
-        { name: 'Behördengänge Bielefeld', link: '/behoerdengaenge-bielefeld' }
+        { name: 'Behördengänge Bielefeld', link: '/behoerdengaenge-bielefeld' },
+        { name: 'Dokumentationsverfahren Bielefeld', link: '/dokumentationsverfahren-bielefeld' }
       ]
     },
     {
