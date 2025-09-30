@@ -406,6 +406,14 @@ export default function StadtDetail({ city }: { city: CityData }) {
               <p className="text-gray-600 text-sm">Künstliche Mineralfaser Sanierung in {city.name}</p>
             </Link>
 
+            <Link href={`/glaswolle-entsorgung-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Icon name="package" size={28} color="white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Glaswolle Entsorgung</h3>
+              <p className="text-gray-600 text-sm">TRGS 521 konforme KMF-Entsorgung in {city.name}</p>
+            </Link>
+
             <Link href={`/schadstoffanmeldung-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
               <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Icon name="file" size={28} color="white" />
