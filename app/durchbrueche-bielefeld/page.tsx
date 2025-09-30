@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
 import SimpleContactForm from '../components/SimpleContactForm';
