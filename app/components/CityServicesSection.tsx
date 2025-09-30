@@ -102,7 +102,8 @@ const servicesData = {
       title: 'Betonarbeiten',
       description: 'Präzise Betonschnitt- und Bohrarbeiten',
       seoPages: [
-        { name: 'Betonabbruch Bielefeld', link: '/betonabbruch-bielefeld' }
+        { name: 'Betonabbruch Bielefeld', link: '/betonabbruch-bielefeld' },
+        { name: 'Durchbrüche Bielefeld', link: '/durchbrueche-bielefeld' }
       ]
     },
   ],
