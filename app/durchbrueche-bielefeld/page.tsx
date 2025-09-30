@@ -1,435 +1,452 @@
 'use client';
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import FooterWithMarquee from '../components/FooterWithMarquee';
+import FloatingElements from '../components/FloatingElements';
 import SimpleContactForm from '../components/SimpleContactForm';
 
 export default function DurchbruecheBielefeld() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-indigo-950 relative overflow-hidden">
-      {/* Animated Background Blobs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -inset-10 opacity-50">
-          <div className="absolute top-0 -left-4 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-          <div className="absolute top-0 -right-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-blue-800">
+      {/* Floating Background Elements */}
+      <FloatingElements />
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-24 pb-16 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-indigo-400 via-purple-300 to-indigo-400 bg-clip-text text-transparent leading-tight">
-            Durchbrüche Bielefeld – Professionelle Wand- und Deckendurchbrüche
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Vorige Woche ham wir bei nem Altbau in der Altstadt ne tragende Wand durchbrochen – 2,5m breit für ne offene Küche. Durchbrüche in Bielefeld sind unsere Spezialität, egal ob Beton, Mauerwerk oder Stahlbeton. Wir machen das sauber, schnell und vor allem statisch sicher.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+491748083023"
-              className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full font-bold text-lg text-white hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300"
-            >
-              <span className="relative z-10">☎ 0174 808 3023</span>
-            </a>
-            <a
-              href="#kontakt"
-              className="group relative px-8 py-4 bg-white/10 backdrop-blur-sm rounded-full font-bold text-lg text-white border-2 border-white/20 hover:bg-white/20 transition-all duration-300"
-            >
-              Kostenlose Beratung
-            </a>
+      <section className="relative pt-16 md:pt-20 pb-24 md:pb-32 flex content-center items-center justify-center min-h-[60vh] md:min-h-[75vh]">
+        <div className="absolute top-0 w-full h-full bg-center bg-cover">
+          <span className="w-full h-full absolute opacity-75 bg-black"></span>
+        </div>
+        <div className="container relative mx-auto">
+          <div className="items-center flex flex-wrap">
+            <div className="w-full lg:w-8/12 px-4 ml-auto mr-auto text-center">
+              <div className={`transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                <h1 className="text-white font-semibold text-3xl sm:text-4xl md:text-5xl mb-3 md:mb-4">
+                  Durchbrüche Bielefeld
+                </h1>
+                <p className="mt-2 md:mt-4 text-base md:text-lg text-gray-300 px-4">
+                  Professionelle Kernbohrungen & Wanddurchbrüche - Präzise & Staubarm
+                </p>
+                <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-4 justify-center px-4">
+                  <a
+                    href="tel:+4952199998480"
+                    className="bg-blue-500 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors inline-flex items-center justify-center text-sm md:text-base"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    0521 9999 8480
+                  </a>
+                  <Link
+                    href="/kontakt"
+                    className="bg-transparent border-2 border-white text-white font-bold px-6 py-3 rounded-lg hover:bg-white hover:text-gray-900 transition-colors inline-flex items-center justify-center text-sm md:text-base"
+                  >
+                    Kostenloses Angebot
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="relative z-10 py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[
-              { number: '580+', label: 'Durchbrüche realisiert' },
-              { number: '100%', label: 'Statisch geprüft' },
-              { number: '48h', label: 'Schnellstart möglich' },
-              { number: '15+', label: 'Jahre Erfahrung' }
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="group relative"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-50 group-hover:opacity-100"></div>
-                <div className="relative bg-gradient-to-br from-gray-800/95 to-gray-900/95 backdrop-blur-xl rounded-2xl p-8 border border-white/10 group-hover:border-indigo-500/50 transition-all duration-300">
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-gray-300 text-sm md:text-base">
-                    {stat.label}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Main Content Section */}
-      <section className="relative z-10 py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10 mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Was sind Durchbrüche und wann braucht man die?
-            </h2>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
-              <p>
-                Letzten Monat kam ne Familie zu uns in Schildesche. Wollten aus zwei kleinen Zimmern ein großes Wohnzimmer machen. Problem: Da stand ne <strong className="text-white">tragende Wand</strong> dazwischen. Genau für sowas sind wir da. <strong className="text-indigo-400">Durchbrüche in Bielefeld</strong> – das machen wir den ganzen Tag. Ob Wand durchbrechen für ne offene Küche, Deckendurchbruch für ne neue Treppe, oder Durchgang schaffen im Keller.
-              </p>
-              <p>
-                Das wichtigste bei Durchbrüchen: Man kann nich einfach loslegen mit nem Vorschlaghammer. Wenn die Wand tragend is – und das sind die meisten in Altbauten – dann brauchts nen Statiker, ne Genehmigung und vor allem nen ordentlichen Stahlträger als Sturz. Sonst kommt einem das Haus übern Kopf zusammen. Klingt dramatisch, is aber so.
-              </p>
-              <p>
-                In Bielefeld haben wir mit allem zu tun: Alte Fachwerkhäuser in der Altstadt, Nachkriegsbauten in Sennestadt mit dicken Betonwänden, moderne Bürogebäude am Kesselbrink. Jedes Gebäude is anders, jeder Durchbruch brauch ne eigene Planung. Aber nach über 580 Durchbrüchen wissen wir mittlerweile ganz gut was geht und was nich.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10 mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Wanddurchbrüche Bielefeld – Von Mauerwerk bis Stahlbeton
-            </h2>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
-              <p>
-                Die häufigste Anfrage die wir kriegen: "Wir wollen ne Wand raus, geht das?" Die Antwort is meistens: Ja geht, aber kommt drauf an. Tragende Wand oder nich? Aus welchem Material? Wieviel Platz is überm Durchbruch? All das muss geklärt werden bevor wir anfangen.
-              </p>
-              <p>
-                In Bielefeld ham wir hauptsächlich mit drei Wandtypen zu tun: Alte Ziegelwände (meistens 24cm oder 36cm dick), Kalksandsteinwände aus den 60ern und 70ern, und Stahlbetonwände in neueren Gebäuden. Jedes Material brauch ne andere Technik beim Durchbruch.
-              </p>
-              <div className="grid md:grid-cols-3 gap-6 my-6">
-                <div className="bg-gradient-to-br from-indigo-900/30 to-purple-900/30 rounded-2xl p-6 border border-indigo-500/20">
-                  <h3 className="text-xl font-bold text-indigo-400 mb-3">Ziegelwände</h3>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start">
-                      <span className="text-indigo-400 mr-2">•</span>
-                      <span>Altbauten vor 1960</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-indigo-400 mr-2">•</span>
-                      <span>Meist tragend</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-indigo-400 mr-2">•</span>
-                      <span>Stahlträger nötig</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-indigo-400 mr-2">•</span>
-                      <span>Staubt stark</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="bg-gradient-to-br from-indigo-900/30 to-purple-900/30 rounded-2xl p-6 border border-indigo-500/20">
-                  <h3 className="text-xl font-bold text-indigo-400 mb-3">Kalksandstein</h3>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start">
-                      <span className="text-purple-400 mr-2">•</span>
-                      <span>60er-80er Jahre</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-purple-400 mr-2">•</span>
-                      <span>Sehr hart</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-purple-400 mr-2">•</span>
-                      <span>Präzise Schnitte</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-purple-400 mr-2">•</span>
-                      <span>Wenig Staub</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="bg-gradient-to-br from-indigo-900/30 to-purple-900/30 rounded-2xl p-6 border border-indigo-500/20">
-                  <h3 className="text-xl font-bold text-indigo-400 mb-3">Stahlbeton</h3>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start">
-                      <span className="text-indigo-400 mr-2">•</span>
-                      <span>Neubauten ab 1990</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-indigo-400 mr-2">•</span>
-                      <span>Immer tragend</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-indigo-400 mr-2">•</span>
-                      <span>Diamantsäge nötig</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-indigo-400 mr-2">•</span>
-                      <span>Aufwendig</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <p>
-                Bei tragenden Wänden – und das is in Bielefeld gefühlt jede zweite Wand – müssen wir nen Stahlträger einbauen. Der fängt die Last ab die vorher die Wand getragen hat. Meistens is das so ein HEB- oder IPE-Träger, je nachdem wieviel Last drauf kommt. Das berechnet der Statiker, wir bauen das dann ein.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10 mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Deckendurchbrüche für Treppen und Gauben
-            </h2>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
-              <p>
-                Deckendurchbrüche sind nochmal ne Nummer komplizierter als Wanddurchbrüche. Warum? Weil Decken immer tragend sind. Immer. Da kann man nich sagen "ach die trägt nich". Wenn man da nen Loch reinschneidet, muss das rundherum verstärkt werden. Sonst hängts durch oder schlimmer – bricht durch.
-              </p>
-              <p>
-                Letztens ham wir bei nem Haus in Gadderbaum nen Deckendurchbruch für ne neue Treppe gemacht. Alte Holzbalkendecke, über 100 Jahre alt. Da muss man aufpassen dass man die Balken nich beschädigt. Wir ham mit ner Kettensäge gearbeitet, ganz vorsichtig. Hinterher Stahlträger drumrum, neue Balken eingehängt. Sowas dauert seine Zeit, aber wenn mans richtig macht hälts nochmal 100 Jahre.
-              </p>
-              <p>
-                Bei Betondecken gehts mit Diamantsägen. Das is zwar schneller, aber auch lauter. Und nasser – weil wir mit Wasser kühlen müssen. In Mehrfamilienhäusern machen wir das deswegen meistens am Wochenende, wenn weniger Leute da sind. Oder wir bauen Schallschutz auf. Kommt drauf an was der Kunde will.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10 mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Türdurchbrüche und Fenstervergrößerungen
-            </h2>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
-              <p>
-                Nich jeder Durchbruch is gleich riesig. Manchmal gehts nur um ne neue Tür. Aus nem Fenster ne Terrassentür machen. Oder ne normale Tür breiter machen für nen Rollstuhl. Auch das sind Durchbrüche, auch da müssen wir auf Statik achten.
-              </p>
-              <p>
-                Bei Türdurchbrüchen in tragenden Wänden brauchts nen Sturz – also nen Träger überm Durchbruch. Früher hat man da Betonfertigstürze genommen, heute meistens Stahlträger. Die sind leichter einzubauen und tragen mehr. Wichtig is dass der Sturz mindestens 15cm auf jeder Seite aufliegt, sonst kann der wegrutschen.
-              </p>
-              <p>
-                Fenstervergrößerungen sind in Bielefeld grad voll im Trend. Jeder will mehr Licht, größere Fenster, Bodentiefe Verglasung. Machen wir ständig, besonders in Sennestadt wo die alten Plattenbauten saniert werden. Da schneiden wir dann die Brüstung raus, verstärken das mit Stahl, fertig is die Terrassentür.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10 mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Betonschneiden und Betonsägen mit Diamanttechnik
-            </h2>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
-              <p>
-                Wenn Beton im Spiel is, kommts auf die richtige Technik an. Mit nem Vorschlaghammer kommt man da nich weit. Wir arbeiten mit Diamantwerkzeugen – Sägen, Bohrungen, Fräsen. Das geht sauber, präzise und relativ leise. Naja, leise für Bauarbeiten halt.
-              </p>
-              <div className="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 rounded-2xl p-6 border border-indigo-500/20 my-6">
-                <h3 className="text-xl font-bold text-indigo-400 mb-3">Unsere Betonschneid-Techniken:</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <h4 className="font-bold text-white mb-2">Wandsägen</h4>
-                    <p className="text-sm">Für vertikale Schnitte in Wänden bis 60cm Dicke. Die Säge fährt auf ner Schiene, schneidet millimetergenau.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white mb-2">Seilsägen</h4>
-                    <p className="text-sm">Für dicke Wände über 60cm oder schwer erreichbare Stellen. Das Seil schneidet sich durch alles durch.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white mb-2">Kernbohrungen</h4>
-                    <p className="text-sm">Für runde Durchbrüche, z.B. für Rohre oder Lüftungen. Von 20mm bis 120cm Durchmesser.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white mb-2">Bodensägen</h4>
-                    <p className="text-sm">Für Schnitte in Betonböden und Fundamenten. Bis 40cm Tiefe in einem Durchgang.</p>
-                  </div>
-                </div>
-              </div>
-              <p>
-                Das gute an Diamanttechnik: Es entsteht kaum Staub (wir arbeiten mit Wasser) und die Schnitte sind so sauber dass man die hinterher nur noch verputzen muss. Kein Nacharbeiten, kein Flicken. Das spart Zeit und Geld.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10 mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ablauf bei Durchbrüchen – So läufts bei uns
-            </h2>
-            <div className="space-y-6">
-              {[
-                {
-                  number: '1',
-                  title: 'Erstberatung vor Ort',
-                  description: 'Wir kommen vorbei, schauen uns die Wand an, messen alles aus. Klopfen auch mal gegen die Wand – hört sich komisch an, aber so merkt man ob die hohl is oder massiv. Machen paar Fotos, besprechen was Sie sich vorstellen.'
-                },
-                {
-                  number: '2',
-                  title: 'Statik-Prüfung und Berechnung',
-                  description: 'Wenn die Wand tragend sein könnte (und das is meistens der Fall), holen wir nen Statiker dazu. Der schaut sich die Baupläne an, berechnet die Lasten, sagt uns welcher Träger rein muss. Das dauert ca. 1 Woche.'
-                },
-                {
-                  number: '3',
-                  title: 'Genehmigung einholen',
-                  description: 'Bei tragenden Wänden brauchts ne Genehmigung vom Bauamt. Kümmern wir uns drum. In Bielefeld gehts meistens relativ flott, 2-3 Wochen. Bei denkmalgeschützten Gebäuden kann das länger dauern.'
-                },
-                {
-                  number: '4',
-                  title: 'Material besorgen und Baustelle vorbereiten',
-                  description: 'Stahlträger bestellen, Werkzeug bereitstellen, Staubschutzwände aufbauen. Wenn nötig Möbel wegräumen oder Stützen einziehen. Sicherheit geht vor.'
-                },
-                {
-                  number: '5',
-                  title: 'Durchbruch herstellen',
-                  description: 'Jetzt gehts los. Wir schneiden erst die Öffnung für den Stahlträger, setzen den ein, mauern den ein. Dann kommt der eigentliche Durchbruch. Bei ner normalen Wand dauert das 1-2 Tage. Bei Beton kann das auch ne Woche sein.'
-                },
-                {
-                  number: '6',
-                  title: 'Abschlussarbeiten und Abnahme',
-                  description: 'Stahlträger verputzen, Kanten sauber machen, Bauschutt wegräumen. Am Ende kommt der Statiker nochmal vorbei und prüft ob alles passt. Dann kriegen Sie die Abnahme schriftlich.'
-                }
-              ].map((step, index) => (
-                <div key={index} className="flex gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-2xl font-bold text-white shadow-lg shadow-indigo-500/50">
-                      {step.number}
+      {/* Main Content */}
+      <section className="pb-12 md:pb-20 bg-gray-900 -mt-24">
+        <div className="container mx-auto px-4">
+          {/* Modern Feature Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:pt-12 pt-6 mb-12 md:mb-16">
+            {/* Card 1 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-50 group-hover:opacity-100"></div>
+              <div className="relative bg-gradient-to-br from-gray-800/95 to-gray-900/95 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/10 group-hover:border-blue-500/50 transition-all duration-300 h-full">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-blue-500/30 rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-blue-500 to-cyan-600 p-4 rounded-2xl shadow-xl group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
                     </div>
                   </div>
-                  <div className="flex-grow">
-                    <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{step.description}</p>
+                  <h6 className="text-xl md:text-2xl font-bold text-white">Staubarme Technik</h6>
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                    Moderne Absauganlagen für sauberes Arbeiten ohne Dreck
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-50 group-hover:opacity-100"></div>
+              <div className="relative bg-gradient-to-br from-gray-800/95 to-gray-900/95 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/10 group-hover:border-green-500/50 transition-all duration-300 h-full">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-green-500/30 rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-green-500 to-emerald-600 p-4 rounded-2xl shadow-xl group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    </div>
                   </div>
+                  <h6 className="text-xl md:text-2xl font-bold text-white">Präzises Arbeiten</h6>
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                    Millimetergenaue Durchbrüche ohne Beschädigung der Bausubstanz
+                  </p>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
 
-          <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10 mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Durchbrüche in allen Bielefelder Stadtteilen
-            </h2>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Egal wo in Bielefeld Sie wohnen – wir sind innerhalb von ner halben Stunde bei Ihnen. Jeder Stadtteil hat so seine Eigenheiten. In der Altstadt gibts viele denkmalgeschützte Häuser wo man extra vorsichtig sein muss. In Sennestadt dominieren die Plattenbauten mit ihren dicken Betonwänden. Und in Gadderbaum stehen die alten Villen mit ihren massiven Ziegelwänden. Wir kennen die Stadt und ihre Gebäude.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-indigo-900/30 to-purple-900/30 rounded-2xl p-6 border border-indigo-500/20">
-                <h3 className="text-xl font-bold text-indigo-400 mb-4">Bielefeld Mitte</h3>
-                <ul className="space-y-2 text-gray-300 text-sm">
-                  <li>• Altstadt (Denkmalschutz)</li>
-                  <li>• Kesselbrink (Bürogebäude)</li>
-                  <li>• Jahnplatz (Geschäftshäuser)</li>
-                  <li>• Siegfriedplatz (Altbauten)</li>
-                </ul>
-              </div>
-              <div className="bg-gradient-to-br from-indigo-900/30 to-purple-900/30 rounded-2xl p-6 border border-indigo-500/20">
-                <h3 className="text-xl font-bold text-indigo-400 mb-4">Bielefeld Nord</h3>
-                <ul className="space-y-2 text-gray-300 text-sm">
-                  <li>• Schildesche (Reihenhäuser)</li>
-                  <li>• Oldentrup (Industrie)</li>
-                  <li>• Heepen (60er Jahre Bauten)</li>
-                  <li>• Brake (Wohnsiedlungen)</li>
-                </ul>
-              </div>
-              <div className="bg-gradient-to-br from-indigo-900/30 to-purple-900/30 rounded-2xl p-6 border border-indigo-500/20">
-                <h3 className="text-xl font-bold text-indigo-400 mb-4">Bielefeld Süd</h3>
-                <ul className="space-y-2 text-gray-300 text-sm">
-                  <li>• Sennestadt (Plattenbauten)</li>
-                  <li>• Brackwede (Mischbebauung)</li>
-                  <li>• Gadderbaum (Villen)</li>
-                  <li>• Bethel (Institutionen)</li>
-                </ul>
+            {/* Card 3 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-50 group-hover:opacity-100"></div>
+              <div className="relative bg-gradient-to-br from-gray-800/95 to-gray-900/95 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/10 group-hover:border-purple-500/50 transition-all duration-300 h-full">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-purple-500/30 rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-purple-500 to-pink-600 p-4 rounded-2xl shadow-xl group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <h6 className="text-xl md:text-2xl font-bold text-white">Schnelle Umsetzung</h6>
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                    Kurze Wartezeiten, flexible Terminplanung
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10 mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Was kostet ein Durchbruch in Bielefeld?
-            </h2>
-            <div className="space-y-6 text-gray-300 leading-relaxed">
-              <p>
-                Die Preisfrage. Und wie immer: Kommt drauf an. Tragende Wand oder nich? Welches Material? Wie groß soll der Durchbruch sein? Aber damit Sie ne Orientierung haben, hier paar echte Beispiele aus Bielefeld:
-              </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gradient-to-br from-indigo-900/30 to-purple-900/30 rounded-2xl p-6 border border-indigo-500/20">
-                  <h3 className="text-xl font-bold text-indigo-400 mb-3">Türdurchbruch (1m breit)</h3>
-                  <div className="text-3xl font-bold text-white mb-2">1.200 - 2.500 €</div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start">
-                      <span className="text-indigo-400 mr-2">✓</span>
-                      <span>Inkl. Sturz und Mauerwerk</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-indigo-400 mr-2">✓</span>
-                      <span>Statiker-Freigabe</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-indigo-400 mr-2">✓</span>
-                      <span>Verputzen der Laibungen</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-indigo-400 mr-2">✓</span>
-                      <span>Schuttentsorgung</span>
-                    </li>
+          {/* Text Content */}
+          <div className="flex flex-wrap items-center mt-8 md:mt-12">
+            <div className="w-full md:w-10/12 px-4 mr-auto ml-auto space-y-6">
+              {/* Introduction */}
+              <div className="backdrop-blur-md bg-gray-800/90 rounded-xl p-6 md:p-8 border border-white/50">
+                <h2 className="text-2xl md:text-4xl mb-4 md:mb-6 font-semibold text-white">
+                  Durchbrüche Bielefeld - Wenn neue Öffnungen her müssen
+                </h2>
+                <div className="text-sm md:text-base leading-relaxed space-y-3 md:space-y-4 text-gray-300">
+                  <p>
+                    Gestern waren wir in nem Altbau in der Altstadt - der Eigentümer wollte ne offene Küche und
+                    brauchte nen Durchbruch durch die tragende Wand. So Anfragen kriegen wir ständig! Mal soll
+                    ne neue Tür rein, mal braucht man Platz für Rohre oder Leitungen, manchmal will jemand einfach
+                    mehr Licht im Keller haben. Durchbrüche sind unsere tägliche Arbeit und wir haben die Technik,
+                    um das sauber und präzise zu machen - ohne dass Ihnen das halbe Haus zusammenkracht!
+                  </p>
+                  <p>
+                    In Bielefeld haben wir mit allen Gebäudetypen zu tun: Alte Fachwerkhäuser in Jöllenbeck, dicke
+                    Ziegelwände in Brackwede, Betonbauten in Sennestadt. Jedes Material braucht ne andere Technik
+                    und vorallem muss man wissen, was tragend ist und was nicht. Ein falscher Durchbruch kann richtig
+                    teuer werden - oder im schlimmsten Fall gefährlich!
+                  </p>
+                </div>
+              </div>
+
+              {/* Types of Breakthroughs */}
+              <div className="backdrop-blur-md bg-gray-800/90 rounded-xl p-6 md:p-8 border border-white/50">
+                <h3 className="text-xl md:text-3xl mb-3 md:mb-4 font-semibold text-white">
+                  Welche Durchbrüche machen wir?
+                </h3>
+                <div className="text-sm md:text-base leading-relaxed space-y-3 md:space-y-4 text-gray-300">
+                  <p>
+                    Bei Durchbrüchen gibts viele verschiedene Möglichkeiten. Hier sind die häufigsten Sachen,
+                    die wir machen:
+                  </p>
+                  <p className="font-semibold text-white">Wanddurchbrüche für Türen und Durchgänge</p>
+                  <p>
+                    Das ist der Klassiker - Sie wollen zwei Räume verbinden oder ne neue Tür einbauen. Dabei
+                    müssen wir erstmal klären, ob die Wand tragend ist. Bei tragenden Wänden brauchen wir nen
+                    Statiker und müssen mit Stahlträgern arbeiten, um die Last abzufangen. Bei nicht-tragenden
+                    Wänden geht das einfacher. Letzte Woche haben wir in ner Wohnung in Schildesche so nen
+                    Durchbruch gemacht - jetzt haben die ne richtig schöne offene Wohnküche!
+                  </p>
+                  <p className="font-semibold text-white">Kernbohrungen für Leitungen</p>
+                  <p>
+                    Wenn Sie neue Heizungsrohre, Wasserleitungen, Lüftungskanäle oder Kabel verlegen wollen,
+                    brauchen Sie oft Bohrungen durch Wände oder Decken. Wir haben Kernbohrgeräte von 10 bis
+                    60 cm Durchmesser - damit kriegen wir durch Beton, Ziegel, Naturstein, alles. Die Bohrungen
+                    sind millimetergenau und staubarm, weil wir mit Wasserabsaugung arbeiten.
+                  </p>
+                  <p className="font-semibold text-white">Deckendurchbrüche für Treppen und Schächte</p>
+                  <p>
+                    Manchmal braucht man nen Durchbruch durch die Decke - zum Beispiel wenn ne neue Treppe zum
+                    Dachboden soll oder ein Lüftungsschacht. Deckendurchbrüche sind komplizierter als Wanddurchbrüche,
+                    weil man von unten arbeiten muss und die Statik besonders wichtig ist. Da arbeiten wir immer
+                    mit nem Statiker zusammen.
+                  </p>
+                  <p className="font-semibold text-white">Fensterdurchbrüche</p>
+                  <p>
+                    Dunkler Keller? Fensterloser Raum? Wir machen neue Fensteröffnungen in Außenwänden. Grade
+                    bei Kellern ist das beliebt - mit nem Fenster wird aus dem dunklen Loch plötzlich ein
+                    nutzbarer Hobbyraum oder Büro. Bei Fensterdurchbrüchen müssen wir besonders aufpassen wegen
+                    der Dämmung und Abdichtung nach außen.
+                  </p>
+                  <p className="font-semibold text-white">Durchbrüche für Schornsteine und Abgasrohre</p>
+                  <p>
+                    Neue Heizung? Kaminofen? Dann brauchen Sie wahrscheinlich nen Durchbruch für den Schornstein
+                    oder das Abgasrohr. Da müssen wir die Brandschutzvorschriften beachten und die richtigen
+                    Abstände zu brennbaren Materialien einhalten. Wir arbeiten dabei eng mit den Schornsteinfegern
+                    und Heizungsbauern zusammen.
+                  </p>
+                </div>
+              </div>
+
+              {/* Process */}
+              <div className="backdrop-blur-md bg-gray-800/90 rounded-xl p-6 md:p-8 border border-white/50">
+                <h3 className="text-xl md:text-3xl mb-3 md:mb-4 font-semibold text-white">
+                  Wie läuft so ein Durchbruch ab?
+                </h3>
+                <div className="text-sm md:text-base leading-relaxed space-y-3 md:space-y-4 text-gray-300">
+                  <p>
+                    Viele Leute denken, Durchbruch machen ist einfach - Presslufthammer raus und drauflos! Aber
+                    so einfach ist das nicht. Wenn mans richtig macht, gibt's ne klare Reihenfolge:
+                  </p>
+                  <p className="font-semibold text-white">1. Bestandsaufnahme und Planung</p>
+                  <p>
+                    Zuerst kommen wir vorbei und gucken uns die Wand an. Wir checken die Baupläne (falls vorhanden),
+                    messen die Wanddicke, prüfen das Material. Besonders wichtig: Gibts da Leitungen in der Wand?
+                    Mit nem Leitungssuchgerät finden wir Strom-, Wasser- und Heizungsleitungen. Nichts ist blöder
+                    als versehentlich ne Wasserleitung durchzubohren!
+                  </p>
+                  <p className="font-semibold text-white">2. Statik prüfen</p>
+                  <p>
+                    Bei tragenden Wänden holen wir nen Statiker dazu. Der rechnet aus, wie groß der Durchbruch
+                    sein darf und welche Stahlträger wir brauchen. Die Statikprüfung kostet extra, ist aber Pflicht
+                    bei tragenden Wänden. Ohne Statiknachweis kriegen Sie keine Baugenehmigung!
+                  </p>
+                  <p className="font-semibold text-white">3. Baugenehmigung einholen</p>
+                  <p>
+                    Nicht jeder Durchbruch braucht ne Baugenehmigung, aber bei tragenden Wänden oder Außenwänden
+                    schon. Wir helfen Ihnen bei den Anträgen und Gesprächen mit dem Bauamt. In Bielefeld dauert
+                    das normalerweise 4-8 Wochen. Bei kleineren Durchbrüchen reicht manchmal auch nur ne Bauanzeige.
+                  </p>
+                  <p className="font-semibold text-white">4. Absicherung und Vorbereitung</p>
+                  <p>
+                    Bevor wir loslegen, wird alles abgesichert. Wir bauen Staubschutzwände auf, decken Möbel ab,
+                    legen Schutzfolien aus. Bei Kernbohrungen stellen wir unsere Wassertanks auf. Wenn nötig,
+                    sichern wir die Decke mit Stützen ab. Sicherheit geht vor!
+                  </p>
+                  <p className="font-semibold text-white">5. Der eigentliche Durchbruch</p>
+                  <p>
+                    Jetzt geht's los! Bei kleineren Durchbrüchen bohren wir erstmal die Umrisse vor, dann wird das
+                    Stück rausgesägt oder rausgemeißelt. Bei größeren Wanddurchbrüchen mit Stahlträger müssen wir
+                    schrittweise vorgehen: Erst die Auflager für den Träger schaffen, dann den Träger einsetzen,
+                    dann erst den kompletten Durchbruch machen. Bei Kernbohrungen setzen wir die Bohrmaschine an
+                    und bohren in einem Durchgang durch - sauber und präzise.
+                  </p>
+                  <p className="font-semibold text-white">6. Verputzen und Saubermachen</p>
+                  <p>
+                    Nach dem Durchbruch müssen die Kanten noch sauber verputzt werden. Bei Außenwänden kommt
+                    Dämmung rein. Wir machen die Baustelle sauber, saugen alles durch, entsorgen den Bauschutt.
+                    Sie kriegen die Baustelle besenrein zurück!
+                  </p>
+                </div>
+              </div>
+
+              {/* Materials and Techniques */}
+              <div className="backdrop-blur-md bg-gray-800/90 rounded-xl p-6 md:p-8 border border-white/50">
+                <h3 className="text-xl md:text-3xl mb-3 md:mb-4 font-semibold text-white">
+                  Durchbrüche in verschiedenen Materialien
+                </h3>
+                <div className="text-sm md:text-base leading-relaxed space-y-3 md:space-y-4 text-gray-300">
+                  <p>
+                    Jedes Baumaterial braucht ne andere Technik. In Bielefeld haben wir mit allem möglichen zu tun:
+                  </p>
+                  <p className="font-semibold text-white">Ziegelwände</p>
+                  <p>
+                    Das klassische Bielefelder Mauerwerk - rote Backsteine oder Kalksandstein. Ziegel lassen sich
+                    relativ gut durchbrechen, aber es staubt wie verrückt! Wir arbeiten mit Absaugung und feuchten
+                    das Material an. Bei alten Ziegeln muss man aufpassen, die sind manchmal ganz brüchig. In
+                    Brackwede und der Altstadt haben wir viele solche Wände.
+                  </p>
+                  <p className="font-semibold text-white">Betonwände</p>
+                  <p>
+                    Beton ist das härteste Material - vorallem Stahlbeton. Da kommen wir mit normalem Werkzeug
+                    nicht durch, wir brauchen Kernbohrmaschinen oder Betonsägen. Durchbrüche in Betonwänden
+                    dauern länger und kosten mehr, sind aber auch super präzise. In Sennestadt und rund um die
+                    Uni haben wir oft mit Beton zu tun.
+                  </p>
+                  <p className="font-semibold text-white">Natursteinwände</p>
+                  <p>
+                    Bei alten Bauernhäusern in Jöllenbeck oder Dornberg finden wir oft Natursteinwände - dicke
+                    Bruchsteinmauern, manchmal 80cm dick! Das ist richtig harte Arbeit, Naturstein ist mega zäh.
+                    Da braucht man Geduld und die richtige Technik. Manchmal müssen wir Stein für Stein rausholen.
+                  </p>
+                  <p className="font-semibold text-white">Fachwerk</p>
+                  <p>
+                    Fachwerk ist trickreich - da darf man auf keinen Fall die tragenden Balken beschädigen! Bei
+                    Fachwerkhäusern machen wir Durchbrüche nur in den Gefachen (die Ausfachungen zwischen den
+                    Balken). Das geht eigentlich ganz gut, weil das Gefach nicht tragend ist. Aber man muss
+                    wissen wo die Balken laufen!
+                  </p>
+                  <p className="font-semibold text-white">Poroton und Ytong</p>
+                  <p>
+                    Moderne Neubauten haben oft Porenbeton (Ytong) oder Poroton-Ziegel. Das sind leichte, gut
+                    dämmende Steine. Die lassen sich relativ einfach durchbrechen, sind aber auch empfindlich -
+                    da muss man sauber arbeiten, damit nicht mehr abbricht als geplant.
+                  </p>
+                </div>
+              </div>
+
+              {/* Costs */}
+              <div className="backdrop-blur-md bg-gray-800/90 rounded-xl p-6 md:p-8 border border-white/50">
+                <h3 className="text-xl md:text-3xl mb-3 md:mb-4 font-semibold text-white">
+                  Was kostet ein Durchbruch?
+                </h3>
+                <div className="text-sm md:text-base leading-relaxed space-y-3 md:space-y-4 text-gray-300">
+                  <p>
+                    Die Frage kommt immer zuerst! Die Kosten hängen von vielen Faktoren ab - Material, Größe,
+                    ob tragend oder nicht, Zugänglichkeit. Hier mal grobe Richtwerte für Bielefeld:
+                  </p>
+                  <ul className="list-disc pl-5 md:pl-6 space-y-2">
+                    <li>Kleine Kernbohrung (10-20cm Durchmesser): 150-400 Euro</li>
+                    <li>Große Kernbohrung (30-60cm Durchmesser): 500-1.500 Euro</li>
+                    <li>Türdurchbruch in nicht-tragender Wand: 800-2.000 Euro</li>
+                    <li>Türdurchbruch in tragender Wand (mit Stahlträger): 3.000-8.000 Euro</li>
+                    <li>Fensterdurchbruch Außenwand: 2.500-6.000 Euro</li>
+                    <li>Großer Wanddurchbruch für offene Küche: 4.000-12.000 Euro</li>
+                    <li>Statikgutachten: 500-2.000 Euro (abhängig vom Aufwand)</li>
                   </ul>
-                </div>
-                <div className="bg-gradient-to-br from-indigo-900/30 to-purple-900/30 rounded-2xl p-6 border border-indigo-500/20">
-                  <h3 className="text-xl font-bold text-indigo-400 mb-3">Wanddurchbruch (3m breit)</h3>
-                  <div className="text-3xl font-bold text-white mb-2">4.500 - 8.000 €</div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start">
-                      <span className="text-purple-400 mr-2">✓</span>
-                      <span>Inkl. Stahlträger HEB 160</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-purple-400 mr-2">✓</span>
-                      <span>Statische Berechnung</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-purple-400 mr-2">✓</span>
-                      <span>Bauantrag und Genehmigung</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-purple-400 mr-2">✓</span>
-                      <span>Komplette Fertigstellung</span>
-                    </li>
-                  </ul>
+                  <p>
+                    Bei tragenden Wänden kommen die Kosten für den Stahlträger dazu - je nach Größe und Material
+                    nochmal 1.000-3.000 Euro. Beton ist teurer als Ziegel, weil's länger dauert. Und wenn wir
+                    aufwendig Leitungen verlegen oder umsetzen müssen, kostet das auch extra.
+                  </p>
+                  <p>
+                    Wichtig: Die Preise sind ohne Baugenehmigung, Statiker, Folgearbeiten wie Elektrik, Heizung,
+                    Türeinbau. Das müssen Sie extra einplanen. Wir machen Ihnen nach ner Besichtigung nen Festpreis,
+                    dann wissen Sie genau was auf Sie zukommt.
+                  </p>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-green-900/20 to-emerald-900/20 rounded-2xl p-6 border border-green-500/20 mt-6">
-                <p className="text-white font-semibold mb-2">💡 Spartipp:</p>
-                <p>
-                  Wenn Sie mehrere Durchbrüche machen lassen wollen, lohnt sichs das auf einmal zu machen. Die Anfahrt, Baustelleneinrichtung und der Statiker fallen dann nur einmal an. Kann gut 20-30% sparen gegenüber einzelnen Aufträgen.
-                </p>
-              </div>
-              <p>
-                Wichtig zu wissen: Bei den Preisen is alles drin – Statiker, Material, Arbeit, Entsorgung. Keine versteckten Kosten. Manche Firmen rechnen das alles einzeln ab, bei uns kriegen Sie nen Festpreis. Was im Angebot steht, das kostets auch.
-              </p>
-            </div>
-          </div>
 
-          <div className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10 mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Häufige Fehler bei Durchbrüchen (und wie man sie vermeidet)
-            </h2>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
-              <p>
-                Nach 15 Jahren und über 580 Durchbrüchen haben wir schon alles gesehen. Auch viele Fälle wo vorher ne andere Firma dran war und Mist gebaut hat. Hier die häufigsten Fehler die man vermeiden sollte:
-              </p>
-              <div className="space-y-4 my-6">
-                <div className="bg-gradient-to-br from-red-900/20 to-orange-900/20 rounded-2xl p-6 border border-red-500/20">
-                  <h3 className="text-xl font-bold text-red-400 mb-3">❌ Ohne Statiker durchbrechen</h3>
-                  <p className="text-sm">
-                    Der Klassiker. "Ach die Wand trägt bestimmt nich". Denkste! Wenn man Glück hat passiert nix. Wenn man Pech hat bekommts Risse im ganzen Haus. Im schlimmsten Fall kommt die Decke runter. Lass immer erst nen Statiker draufschauen.
+              {/* Permits and Regulations */}
+              <div className="backdrop-blur-md bg-gray-800/90 rounded-xl p-6 md:p-8 border border-white/50">
+                <h3 className="text-xl md:text-3xl mb-3 md:mb-4 font-semibold text-white">
+                  Baugenehmigung und Vorschriften
+                </h3>
+                <div className="text-sm md:text-base leading-relaxed space-y-3 md:space-y-4 text-gray-300">
+                  <p>
+                    Viele Heimwerker denken: "Ist ja nur ne Wand, kann ich einfach durchhauen!" - Falsch! Bei
+                    Durchbrüchen gibts klare Vorschriften und manchmal braucht man ne Genehmigung. Hier die
+                    wichtigsten Regeln:
+                  </p>
+                  <p className="font-semibold text-white">Wann brauche ich ne Baugenehmigung?</p>
+                  <ul className="list-disc pl-5 md:pl-6 space-y-2">
+                    <li>Bei allen Durchbrüchen in tragenden Wänden</li>
+                    <li>Bei Durchbrüchen in Außenwänden (betrifft die Gebäudehülle)</li>
+                    <li>Bei Veränderungen an der Gebäudestatik</li>
+                    <li>Wenn durch den Durchbruch Brandschutzwände betroffen sind</li>
+                  </ul>
+                  <p>
+                    Kleine Durchbrüche in nicht-tragenden Innenwänden brauchen meistens keine Genehmigung, aber
+                    es schadet nicht beim Bauamt nachzufragen. In Bielefeld ist das Bauamt eigentlich ganz
+                    kooperativ.
+                  </p>
+                  <p className="font-semibold text-white">Was passiert wenn ich ohne Genehmigung durchbreche?</p>
+                  <p>
+                    Schwarzbau! Das Bauamt kann Sie zwingen, alles wieder zurückzubauen. Im schlimmsten Fall
+                    kostet das Bußgeld bis zu 50.000 Euro. Und bei nem Versicherungsschaden oder Verkauf der
+                    Immobilie bekommen Sie richtig Probleme, wenn der Durchbruch nicht genehmigt war. Also:
+                    Lieber vorher klären!
+                  </p>
+                  <p className="font-semibold text-white">Besondere Regeln bei Mietwohnungen</p>
+                  <p>
+                    Als Mieter dürfen Sie KEINE Durchbrüche machen ohne Erlaubnis vom Vermieter! Auch nicht in
+                    nicht-tragenden Wänden. Das wäre ne unzulässige Veränderung der Mietsache. Der Vermieter
+                    kann Sie auf Rückbau und Schadenersatz verklagen. Also immer vorher fragen und schriftlich
+                    genehmigen lassen!
+                  </p>
+                  <p className="font-semibold text-white">Denkmalschutz</p>
+                  <p>
+                    Steht Ihr Haus unter Denkmalschutz? Dann wird's kompliziert. In der Bielefelder Altstadt und
+                    bei vielen alten Höfen in den Außenbezirken gilt Denkmalschutz. Da müssen Sie erstmal mit
+                    der Denkmalbehörde reden, bevor Sie auch nur nen kleinen Durchbruch machen dürfen. Die sind
+                    manchmal sehr streng!
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-red-900/20 to-orange-900/20 rounded-2xl p-6 border border-red-500/20">
-                  <h3 className="text-xl font-bold text-red-400 mb-3">❌ Zu kleiner Stahlträger</h3>
-                  <p className="text-sm">
-                    Manche denken sie können Geld sparen indem sie nen kleineren Träger nehmen. Schlechte Idee. Der Träger muss die Last tragen können, sonst biegt der sich durch. Und durchgebogene Träger kann man hinterher nur noch ersetzen – teurer als gleich den richtigen zu nehmen.
+              </div>
+
+              {/* Common Mistakes */}
+              <div className="backdrop-blur-md bg-gray-800/90 rounded-xl p-6 md:p-8 border border-white/50">
+                <h3 className="text-xl md:text-3xl mb-3 md:mb-4 font-semibold text-white">
+                  Typische Fehler bei Durchbrüchen
+                </h3>
+                <div className="text-sm md:text-base leading-relaxed space-y-3 md:space-y-4 text-gray-300">
+                  <p>
+                    Wir sehen immer wieder die gleichen Fehler, wenn Leute selbst versuchen Durchbrüche zu machen
+                    oder ne billige Firma beauftragen. Hier die Top 5 Fehler:
+                  </p>
+                  <p className="font-semibold text-white">1. Tragende Wand angebohrt ohne Statiker</p>
+                  <p>
+                    Das ist der gefährlichste Fehler! Letzte Woche hatten wir nen Notfall in Heepen - da hatte
+                    jemand selbst nen Durchbruch in ne tragende Wand gemacht, ohne Stahlträger. Über dem Durchbruch
+                    haben sich Risse gebildet, die Decke hing durch. Wir mussten sofort stützen und dann mit
+                    Hochdruck nen Stahlträger einbauen. Das hat den Kunden am Ende das Dreifache gekostet!
+                  </p>
+                  <p className="font-semibold text-white">2. Leitungen nicht geortet</p>
+                  <p>
+                    Wasserleitung durchbohrt, Stromkabel erwischt - passiert leider oft. Mit nem Leitungssuchgerät
+                    für 30 Euro könnte man das vermeiden. Wenn Sie ne Leitung treffen, kann das richtig teuer
+                    werden. Wir hatten mal nen Fall wo jemand die Hauptwasserleitung durchbohrt hat - komplette
+                    Wohnung unter Wasser!
+                  </p>
+                  <p className="font-semibold text-white">3. Zu großer Durchbruch ohne Genehmigung</p>
+                  <p>
+                    "Bisschen größer geht schon" - dachte sich ein Kunde in Schildesche und hat aus seinem geplanten
+                    80cm Durchbruch einfach nen 2 Meter Durchgang gemacht. Ohne Statikprüfung, ohne Genehmigung.
+                    Das Bauamt hat das bei ner Routinebegehung gesehen - Baustopp, Zwangsgeld, Rückbau. Am Ende
+                    musste er die ganze Wand neu mauern und nochmal von vorne anfangen mit Genehmigung.
+                  </p>
+                  <p className="font-semibold text-white">4. Falsche Technik für Material</p>
+                  <p>
+                    Mit nem normalen Bohrhammer kommt man nicht durch Stahlbeton. Wir haben schon Leute gesehen,
+                    die tagelang an ner Betonwand rumgebohrt haben und am Ende nur ein paar Löcher hatten. Dann
+                    rufen sie uns an und es dauert mit der richtigen Technik 2 Stunden. Richtiges Werkzeug ist
+                    das A und O!
+                  </p>
+                  <p className="font-semibold text-white">5. Schlechte Abdichtung bei Außenwänden</p>
+                  <p>
+                    Bei Durchbrüchen in Außenwänden muss man ordentlich abdichten und dämmen, sonst kriegen Sie
+                    Feuchtigkeit und Schimmel. Wir hatten nen Fall in Jöllenbeck - da hatte jemand selbst nen
+                    Fensterdurchbruch gemacht und einfach nur verputzt, ohne Dämmung. Nach nem Jahr war die ganze
+                    Wand voll Schimmel, weil an der Stelle Kondenswasser entstand.
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-red-900/20 to-orange-900/20 rounded-2xl p-6 border border-red-500/20">
-                  <h3 className="text-xl font-bold text-red-400 mb-3">❌ Leitungen nicht beachten</h3>
-                  <p className="text-sm">
-                    In jeder Wand können Stromleitungen, Wasserleitungen, Heizungsrohre sein. Vor dem Durchbruch muss man die finden und umlegen. Sonst gibts nen Wasserrohrbruch oder Kurzschluss. Wir scannen jede Wand vorher mit Ortungsgerät.
+              </div>
+
+              {/* Why Choose Us */}
+              <div className="backdrop-blur-md bg-gray-800/90 rounded-xl p-6 md:p-8 border border-white/50">
+                <h3 className="text-xl md:text-3xl mb-3 md:mb-4 font-semibold text-white">
+                  Warum RückbauPRO für Ihre Durchbrüche?
+                </h3>
+                <div className="text-sm md:text-base leading-relaxed space-y-3 md:space-y-4 text-gray-300">
+                  <p>
+                    Durchbrüche sind Vertrauenssache - ein Fehler kann richtig teuer werden oder sogar gefährlich
+                    sein. Hier sind unsere Stärken:
                   </p>
-                </div>
-                <div className="bg-gradient-to-br from-red-900/20 to-orange-900/20 rounded-2xl p-6 border border-red-500/20">
-                  <h3 className="text-xl font-bold text-red-400 mb-3">❌ Keine Genehmigung einholen</h3>
-                  <p className="text-sm">
-                    Viele denken "is ja nur ne Wand, brauch ich keine Genehmigung". Falsch. Tragende Wände immer anmelden! Wenn das Bauamt das später rausfindet (und die finden das immer raus), kann man den Durchbruch zurückbauen müssen. Kostet dann doppelt.
+                  <ul className="list-disc pl-5 md:pl-6 space-y-2">
+                    <li><strong>Erfahrung:</strong> Wir haben hunderte Durchbrüche in Bielefeld gemacht - in allen Gebäudetypen und Materialien</li>
+                    <li><strong>Moderne Technik:</strong> Staubarme Kernbohrmaschinen, Betonsägen, Leitungsortung - wir haben alles</li>
+                    <li><strong>Statiker-Netzwerk:</strong> Wir arbeiten mit erfahrenen Statikern zusammen, schnelle Termine</li>
+                    <li><strong>Komplettservice:</strong> Vom Bauantrag über den Durchbruch bis zum Verputzen - alles aus einer Hand</li>
+                    <li><strong>Sauberes Arbeiten:</strong> Staubschutzwände, Absaugung, Schutzfolien - wir hinterlassen keine Baustelle</li>
+                    <li><strong>Festpreise:</strong> Nach Besichtigung gibt's nen verbindlichen Festpreis, keine Überraschungen</li>
+                    <li><strong>Schnelle Abwicklung:</strong> Kurze Wartezeiten, flexible Terminplanung auch am Wochenende möglich</li>
+                  </ul>
+                  <p>
+                    Unsere Kunden schätzen vorallem, dass wir ehrlich beraten. Wenn ein Durchbruch technisch
+                    problematisch oder zu teuer wäre, sagen wir das auch und schlagen Alternativen vor. Manchmal
+                    gibt's einfachere Lösungen! Und wenn der Durchbruch machbar ist, setzen wir ihn sauber und
+                    präzise um.
                   </p>
                 </div>
               </div>
@@ -439,151 +456,116 @@ export default function DurchbruecheBielefeld() {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative z-10 py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            Häufig gestellte Fragen zu Durchbrüchen
-          </h2>
-          <div className="space-y-4">
-            {[
-              {
-                question: 'Kann ich einen Durchbruch selber machen?',
-                answer: 'Theoretisch ja, praktisch nein. Bei nicht-tragenden Wänden (wie Rigipswänden) könnte mans selber machen. Aber bei tragenden Wänden brauchts Statiker, Genehmigung und Fachkenntnisse. Außerdem is das körperlich anstrengend und staubt wie verrückt. Lass das lieber Profis machen.'
-              },
-              {
-                question: 'Wie lange dauert ein Wanddurchbruch?',
-                answer: 'Kommt auf die Größe an. Nen kleinen Türdurchbruch schaffen wir an nem Tag. Nen großen Wanddurchbruch mit Stahlträger braucht 2-3 Tage. Dazu kommt noch die Vorbereitungszeit (Statik, Genehmigung) – das sind nochmal 2-4 Wochen. Aber die eigentliche Bauzeit is kurz.'
-              },
-              {
-                question: 'Muss ich während der Arbeiten ausziehen?',
-                answer: 'Normalerweise nich. Wir können die meisten Durchbrüche machen während Sie wohnen bleiben. Wirds halt laut und staubig für 1-2 Tage. Wir bauen Staubschutzwände auf und saugen ständig ab. Aber klar, wenns geht issen Tag woanders zu sein angenehmer.'
-              },
-              {
-                question: 'Was ist wenn hinter der Wand Leitungen sind?',
-                answer: 'Das checken wir vorher mit Ortungsgerät. Stromleitungen, Wasserleitungen, alles. Wenn da was is, legen wir das um bevor wir durchbrechen. Die Kosten dafür sind im Angebot mit drin. Überraschungen gibts bei uns keine.'
-              },
-              {
-                question: 'Brauche ich wirklich einen Statiker?',
-                answer: 'Bei tragenden Wänden auf jeden Fall! Das is nich optional, sondern Pflicht. Der Statiker berechnet welcher Träger rein muss und bescheinigt dass alles sicher is. Ohne diese Bescheinigung gibts auch keine Baugenehmigung. Und ohne Genehmigung droht Ärger mit dem Bauamt.'
-              },
-              {
-                question: 'Kann jede Wand durchbrochen werden?',
-                answer: 'Fast jede, aber nich alle. Manche Wände sind so wichtig für die Statik dass man die nich durchbrechen kann. Oder es wär so aufwendig dass es sich nich lohnt. Das sehen wir aber bei der Erstbesichtigung. Meistens findet man ne Lösung, manchmal muss man aber auch sagen: geht nich.'
-              }
-            ].map((faq, index) => (
-              <div
-                key={index}
-                className="group"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-indigo-500/30 transition-all duration-300 text-left"
-                >
-                  <div className="flex justify-between items-start gap-4">
-                    <h3 className="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">
-                      {faq.question}
-                    </h3>
-                    <span className="text-2xl text-indigo-400 flex-shrink-0">
-                      {openFaq === index ? '−' : '+'}
-                    </span>
-                  </div>
-                  {openFaq === index && (
-                    <p className="mt-4 text-gray-300 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  )}
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="relative py-12 md:py-16 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="items-center flex flex-wrap">
+            <div className="w-full md:w-10/12 px-4 ml-auto mr-auto">
+              <h2 className="text-2xl md:text-3xl mb-6 md:mb-8 font-semibold text-white text-center">
+                Häufige Fragen zu Durchbrüchen
+              </h2>
 
-      {/* CTA Section */}
-      <section className="relative z-10 py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-indigo-600/20 to-purple-600/20 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-indigo-500/30 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Bereit für Ihren Durchbruch in Bielefeld?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Kostenlose Beratung vor Ort, Statik-Check inklusive. Wir sind in 24h bei Ihnen.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:+491748083023"
-                className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full font-bold text-lg text-white hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-300"
-              >
-                ☎ Jetzt anrufen
-              </a>
-              <a
-                href="#kontakt"
-                className="px-8 py-4 bg-white/10 backdrop-blur-sm rounded-full font-bold text-lg text-white border-2 border-white/20 hover:bg-white/20 transition-all duration-300"
-              >
-                Beratung anfordern
-              </a>
+              <div className="space-y-4 md:space-y-6">
+                <div className="backdrop-blur-md bg-gray-800/90 p-4 md:p-6 rounded-xl border border-white/50">
+                  <h3 className="text-base md:text-xl font-semibold text-white mb-2">
+                    Kann ich selbst nen Durchbruch machen?
+                  </h3>
+                  <p className="text-sm md:text-base text-gray-300">
+                    Bei kleinen Durchbrüchen in nicht-tragenden Wänden können handwerklich geschickte Leute das
+                    theoretisch selbst machen. Aber Sie brauchen das richtige Werkzeug und müssen die Leitungen
+                    orten. Bei tragenden Wänden: Finger weg! Das ist lebensgefährlich und illegal ohne Statiker
+                    und Genehmigung. Außerdem haben Sie als Laie keine Haftpflichtversicherung für Bauarbeiten -
+                    wenn was schiefgeht, zahlen Sie alles selbst.
+                  </p>
+                </div>
+
+                <div className="backdrop-blur-md bg-gray-800/90 p-4 md:p-6 rounded-xl border border-white/50">
+                  <h3 className="text-base md:text-xl font-semibold text-white mb-2">
+                    Wie erkenne ich ob ne Wand tragend ist?
+                  </h3>
+                  <p className="text-sm md:text-base text-gray-300">
+                    Außenwände sind fast immer tragend. Wände die auf Fundamenten stehen oder durchgehend von
+                    Keller bis Dach gehen sind meistens tragend. Wände die parallel zu den Deckenbalken verlaufen
+                    sind oft nicht tragend. Aber 100% Sicherheit gibt nur nen Blick in die Baupläne oder ne
+                    Begutachtung durch nen Statiker. Im Zweifel immer nen Fachmann fragen!
+                  </p>
+                </div>
+
+                <div className="backdrop-blur-md bg-gray-800/90 p-4 md:p-6 rounded-xl border border-white/50">
+                  <h3 className="text-base md:text-xl font-semibold text-white mb-2">
+                    Wie lange dauert ein Durchbruch?
+                  </h3>
+                  <p className="text-sm md:text-base text-gray-300">
+                    Kleine Kernbohrungen schaffen wir in 1-2 Stunden. Ein einfacher Türdurchbruch in nicht-tragender
+                    Wand dauert 1-2 Tage. Bei tragenden Wänden mit Stahlträger brauchen wir 3-5 Tage. Die Planung
+                    und Baugenehmigung vorher kann aber 4-8 Wochen dauern. Wir empfehlen für größere Projekte
+                    mindestens 2-3 Monate Vorlaufzeit einzuplanen.
+                  </p>
+                </div>
+
+                <div className="backdrop-blur-md bg-gray-800/90 p-4 md:p-6 rounded-xl border border-white/50">
+                  <h3 className="text-base md:text-xl font-semibold text-white mb-2">
+                    Was passiert mit dem Bauschutt?
+                  </h3>
+                  <p className="text-sm md:text-base text-gray-300">
+                    Wir entsorgen den Bauschutt fachgerecht. Ziegel, Beton und Mörtel kommen auf die Bauschuttdeponie,
+                    wo sie recycelt werden können. Die Entsorgungskosten sind normalerweise in unserem Angebot mit
+                    drin. Bei größeren Mengen stellen wir nen Container - den können Sie auch für Ihren anderen
+                    Bauabfall nutzen.
+                  </p>
+                </div>
+
+                <div className="backdrop-blur-md bg-gray-800/90 p-4 md:p-6 rounded-xl border border-white/50">
+                  <h3 className="text-base md:text-xl font-semibold text-white mb-2">
+                    Macht ein Durchbruch viel Dreck?
+                  </h3>
+                  <p className="text-sm md:text-base text-gray-300">
+                    Mit der richtigen Technik hält sich der Dreck in Grenzen. Wir arbeiten mit Staubschutzwänden
+                    und Absauganlagen. Bei Kernbohrungen arbeiten wir mit Wasser, da entsteht kaum Staub. Trotzdem
+                    sollten Sie empfindliche Möbel aus dem Raum entfernen oder gut abdecken. Wir räumen nach getaner
+                    Arbeit alles sauber auf und saugen durch.
+                  </p>
+                </div>
+
+                <div className="backdrop-blur-md bg-gray-800/90 p-4 md:p-6 rounded-xl border border-white/50">
+                  <h3 className="text-base md:text-xl font-semibold text-white mb-2">
+                    Was kostet ein Statikgutachten?
+                  </h3>
+                  <p className="text-sm md:text-base text-gray-300">
+                    Ein einfaches Statikgutachten für nen Wanddurchbruch kostet etwa 500-800 Euro. Bei komplizierteren
+                    Fällen (große Durchbrüche, mehrere Geschosse, schwierige Statik) können es auch 1.500-2.000 Euro
+                    werden. Das Gutachten brauchen Sie für die Baugenehmigung und um den richtigen Stahlträger zu
+                    berechnen. Daran sollte man nicht sparen - ein zu schwacher Stahlträger kann katastrophale
+                    Folgen haben!
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="relative z-10 py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
-            Warum RückbauPRO für Ihre Durchbrüche?
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { icon: '📐', title: 'Eigener Statiker', description: 'Im Team' },
-              { icon: '💰', title: 'Festpreisgarantie', description: 'Keine Nachträge' },
-              { icon: '⚡', title: '580+ Durchbrüche', description: 'Viel Erfahrung' },
-              { icon: '🛡️', title: 'Vollversichert', description: '5 Mio. € Deckung' },
-              { icon: '🏆', title: '15+ Jahre', description: 'In Bielefeld aktiv' },
-              { icon: '✂️', title: 'Diamanttechnik', description: 'Sauber & präzise' },
-              { icon: '📋', title: 'Alle Genehmigungen', description: 'Wir übernehmen das' },
-              { icon: '🧹', title: 'Alles inklusive', description: 'Auch Entsorgung' }
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="group relative"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-2xl p-6 border border-white/10 group-hover:border-indigo-500/30 transition-all duration-300 text-center">
-                  <div className="text-4xl mb-3">{item.icon}</div>
-                  <h3 className="text-white font-bold mb-1 text-sm md:text-base">{item.title}</h3>
-                  <p className="text-gray-400 text-xs md:text-sm">{item.description}</p>
+      {/* Service Areas */}
+      <section className="pb-12 md:pb-16 relative block bg-gray-900">
+        <div className="container mx-auto px-4 pt-12 md:pt-16">
+          <div className="flex flex-wrap text-center justify-center">
+            <div className="w-full lg:w-8/12 px-4">
+              <div className="backdrop-blur-md bg-gray-800/90 rounded-xl p-6 md:p-8 border border-white/50">
+                <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">
+                  Durchbrüche in ganz Bielefeld & Ostwestfalen-Lippe
+                </h2>
+                <p className="text-sm md:text-base leading-relaxed mb-3 md:mb-4 text-gray-300">
+                  Wir sind in allen Bielefelder Stadtteilen für Sie da:
+                </p>
+                <div className="text-sm md:text-base text-gray-400 mb-3 md:mb-4">
+                  Sennestadt, Stieghorst, Brackwede, Mitte, Schildesche, Jöllenbeck,
+                  Heepen, Senne, Quelle, Ummeln, Dornberg, Gadderbaum, Hoberge-Uerentrup,
+                  Brake, Brönninghausen, Vilsendorf, Oldentrup, Sieker, Hillegossen,
+                  Altenhagen, Milse und Windwehe.
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Badges */}
-      <section className="relative z-10 py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-xl rounded-3xl p-8 border border-white/10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-              <div className="text-center">
-                <div className="text-4xl mb-2">📐</div>
-                <div className="text-white font-semibold text-sm">Geprüfte Statiker</div>
-                <div className="text-gray-400 text-xs">VPI zertifiziert</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-2">✂️</div>
-                <div className="text-white font-semibold text-sm">Diamanttechnik</div>
-                <div className="text-gray-400 text-xs">Modernste Geräte</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-2">🛡️</div>
-                <div className="text-white font-semibold text-sm">Vollversichert</div>
-                <div className="text-gray-400 text-xs">5 Mio. € Deckung</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-2">⭐</div>
-                <div className="text-white font-semibold text-sm">580+ Projekte</div>
-                <div className="text-gray-400 text-xs">Zufriedene Kunden</div>
+                <p className="text-sm md:text-base leading-relaxed text-gray-300">
+                  Auch in Gütersloh, Herford, Paderborn, Bad Salzuflen, Detmold,
+                  Lemgo und weiteren Städten in OWL führen wir Durchbrüche durch.
+                </p>
               </div>
             </div>
           </div>
@@ -591,28 +573,10 @@ export default function DurchbruecheBielefeld() {
       </section>
 
       {/* Contact Form */}
-      <section id="kontakt" className="relative z-10">
-        <SimpleContactForm />
-      </section>
+      <SimpleContactForm />
 
-      {/* Add animation styles */}
-      <style jsx global>{`
-        @keyframes blob {
-          0% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-          100% { transform: translate(0px, 0px) scale(1); }
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-      `}</style>
-    </main>
+      {/* Footer */}
+      <FooterWithMarquee />
+    </div>
   );
 }
