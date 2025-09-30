@@ -42,7 +42,8 @@ const servicesData = {
         { name: 'TRGS 519 Fachbetrieb Bielefeld', link: '/trgs-519-bielefeld' },
         { name: 'Asbestentfernung Bielefeld', link: '/asbestentfernung-bielefeld' },
         { name: 'Asbestmaterialentfernung Bielefeld', link: '/asbestmaterialentfernung-bielefeld' },
-        { name: 'Freimessung Bielefeld', link: '/freimessung-bielefeld' }
+        { name: 'Freimessung Bielefeld', link: '/freimessung-bielefeld' },
+        { name: 'Schadstoffanmeldung Bielefeld', link: '/schadstoffanmeldung-bielefeld' }
       ]
     },
     {
