@@ -4,7 +4,7 @@ import FloatingElements from '../components/FloatingElements';
 
 export const metadata = {
   title: 'Sanierung Bielefeld - Professionelle Gebäudesanierung | RückbauPRO',
-  description: 'Professionelle Gebäudesanierung in Bielefeld und OWL. ✓ Komplettsanierung ✓ Kernsanierung ✓ Schadstoffsanierung ✓ 15+ Jahre Erfahrung. Jetzt anrufen: 0174 8083023',
+  description: 'Gebäudesanierung Bielefeld: ✓ Komplett- & Kernsanierung ✓ Schadstoffsanierung ✓ 15+ Jahre Erfahrung ✓ Jetzt anrufen: 0174 8083023',
   keywords: 'Sanierung Bielefeld, Gebäudesanierung Bielefeld, Kernsanierung Bielefeld, Komplettsanierung Bielefeld, Altbausanierung Bielefeld, Abrissunternehmen Bielefeld, Bauunternehmen Bielefeld, Schadstoffsanierung Bielefeld, Gebäudesanierungsservice Bielefeld, Recyclingunternehmen Bielefeld',
   openGraph: {
     title: 'Sanierung Bielefeld - Professionelle Gebäudesanierung | RückbauPRO',
