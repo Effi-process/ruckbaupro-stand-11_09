@@ -1,6 +1,6 @@
 /**
  * German Cities Database for SEO-Optimized Local Pages
- * Bielefeld Only - Professional Demolition Services
+ * OWL Region - Professional Demolition Services
  */
 
 export interface CityData {
