@@ -242,6 +242,39 @@ export default function StadtDetail({ city }: { city: CityData }) {
         </div>
       </section>
 
+      {/* Stadt-Beschreibung */}
+      <section className="py-20 bg-gradient-to-b from-[#1a2332] to-[#0f1419]">
+        <div className="container-custom">
+          <div className="max-w-5xl mx-auto">
+            <div className="border-l-4 border-[#1282A2] pl-8">
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-6 flex items-center gap-3">
+                <span className="text-[#1282A2]">|</span> {city.name.toUpperCase()}
+              </h2>
+              {city.slug === 'bielefeld' && (
+                <p className="text-lg text-white/90 leading-relaxed">
+                  Als größte Stadt in Ostwestfalen-Lippe ist Bielefeld das wirtschaftliche Herz der Region. Mit über 340.000 Einwohnern und einer vielfältigen Industrielandschaft bietet die Stadt am Teutoburger Wald optimale Voraussetzungen für professionelle Abbruch- und Sanierungsarbeiten. Unsere langjährige Erfahrung in Bielefeld erstreckt sich von der historischen Sparrenburg über die modernen Universitätsgebäude bis hin zu den zahlreichen Industrieanlagen. Wir kennen die lokalen Gegebenheiten, Vorschriften und Besonderheiten der Stadt. Ob im Stadtzentrum am Jahnplatz, in den Wohngebieten von Schildesche oder den Gewerbegebieten in Brackwede - unser Team ist innerhalb kürzester Zeit vor Ort und garantiert eine fachgerechte, termingerechte Ausführung aller Arbeiten unter Berücksichtigung der städtischen Auflagen und Umweltstandards.
+                </p>
+              )}
+              {city.slug === 'paderborn' && (
+                <p className="text-lg text-white/90 leading-relaxed">
+                  Als traditionsreiche Stadt mit über 153.000 Einwohnern verbindet Paderborn historisches Erbe mit moderner Wirtschaftskraft. Die Stadt der Paderquellen beheimatet bedeutende Unternehmen und Institutionen, vom Dom über die renommierte Universität bis zum Heinz Nixdorf MuseumsForum. Unsere Expertise erstreckt sich über alle Stadtteile Paderborns - von der historischen Innenstadt bis zu den modernen Gewerbegebieten. Wir verstehen die besonderen Anforderungen, die der Denkmalschutz und die städtischen Vorschriften mit sich bringen. Unser Team kennt die lokalen Gegebenheiten genau und garantiert eine professionelle, termingerechte Durchführung aller Rückbau- und Sanierungsarbeiten. Mit kurzen Anfahrtswegen aus unserem Hauptsitz in Bielefeld sind wir schnell vor Ort und bieten zuverlässige Lösungen für Ihr Bauvorhaben in Paderborn.
+                </p>
+              )}
+              {city.slug === 'osnabrueck' && (
+                <p className="text-lg text-white/90 leading-relaxed">
+                  Als Friedensstadt mit über 165.000 Einwohnern ist Osnabrück ein bedeutendes Wirtschafts- und Kulturzentrum im südwestlichen Niedersachsen. Die Stadt am Teutoburger Wald zeichnet sich durch ihre vielfältige Industrielandschaft und historische Bausubstanz aus. Von der mittelalterlichen Altstadt über moderne Universitätsgebäude bis zu den Industriestandorten - unsere Expertise deckt alle Bereiche ab. Wir kennen die besonderen Herausforderungen der Stadt, von Denkmalschutzauflagen bis zu den spezifischen niedersächsischen Vorschriften. Unser erfahrenes Team garantiert fachgerechte Ausführung aller Abbruch-, Rückbau- und Sanierungsarbeiten unter Einhaltung höchster Sicherheits- und Umweltstandards. Mit schnellen Reaktionszeiten und lokaler Kompetenz sind wir Ihr verlässlicher Partner für alle Bauvorhaben in Osnabrück und Umgebung.
+                </p>
+              )}
+              {city.slug === 'guetersloh' && (
+                <p className="text-lg text-white/90 leading-relaxed">
+                  Mit über 100.000 Einwohnern ist Gütersloh eine dynamische Stadt in Ostwestfalen-Lippe mit einer starken Wirtschaftsstruktur und bedeutenden Industriestandorten. Die Stadt verbindet wirtschaftliche Stärke mit hoher Lebensqualität und bietet mit ihren Grünflächen wie dem Stadtpark und den Dalkeauen besondere Herausforderungen für Bauvorhaben. Unsere Erfahrung in Gütersloh reicht von gewerblichen Großprojekten bis zu sensiblen Sanierungen in Wohngebieten. Wir verstehen die lokalen Anforderungen und arbeiten eng mit den städtischen Behörden zusammen. Ob Industrieabbruch, Schadstoffsanierung oder Gebäudeentkernung - unser Team kennt die spezifischen Gegebenheiten vor Ort und garantiert eine professionelle, zügige Abwicklung. Mit nur 18 Kilometern Entfernung zu unserem Hauptsitz sind wir besonders schnell in Gütersloh einsatzbereit und bieten Ihnen zuverlässige Lösungen für Ihr Projekt.
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Lokale Projekte */}
       <section className="py-20 bg-gradient-to-b from-off-white to-off-white">
         <div className="container-custom">
