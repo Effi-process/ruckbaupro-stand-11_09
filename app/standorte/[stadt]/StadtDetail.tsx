@@ -335,139 +335,136 @@ export default function StadtDetail({ city }: { city: CityData }) {
         </div>
       </section>
 
-      {/* Unsere Leistungen in [Stadt] - SEO Service Links - nur für Bielefeld */}
-      {city.slug === 'bielefeld' && (
+      {/* Unsere Leistungen in [Stadt] - Allgemeine Service-Übersicht */}
       <section className="py-20 bg-gradient-to-b from-off-white to-white">
         <div className="container-custom">
           <div className="text-center mb-12">
             <span className="text-[#0066CC] font-semibold text-sm uppercase tracking-wider">Unsere Leistungen</span>
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-4 mb-6">
-              Alle Services in {city.name}
+              Professioneller Rückbau in {city.name}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Von Asbestentfernung bis Entkernung - Ihr zertifizierter Partner für alle Rückbau-Leistungen
+              Ihr zuverlässiger Partner für Schadstoffsanierung, Entkernung und Abbrucharbeiten
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Asbestsanierung Services */}
-            <Link href={`/asbestentfernung-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Icon name="shield" size={28} color="white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Asbestentfernung</h3>
-              <p className="text-gray-600 text-sm">TRGS 519 zertifizierte Asbestsanierung in {city.name}</p>
-            </Link>
+            {city.slug === 'bielefeld' ? (
+              // Bielefeld: Mit Links zu Detail-Seiten
+              <>
+                <Link href="/asbestentfernung-bielefeld" className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon name="shield" size={28} color="white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Asbestentfernung</h3>
+                  <p className="text-gray-600 text-sm">TRGS 519 zertifizierte Schadstoffsanierung</p>
+                </Link>
 
-            <Link href={`/entkernung-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Icon name="home" size={28} color="white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Entkernung</h3>
-              <p className="text-gray-600 text-sm">Professionelle Gebäudeentkernung in {city.name}</p>
-            </Link>
+                <Link href="/entkernung-bielefeld" className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon name="home" size={28} color="white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Entkernung</h3>
+                  <p className="text-gray-600 text-sm">Komplett- und Teilentkernung</p>
+                </Link>
 
-            <Link href={`/rueckbau-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Icon name="building" size={28} color="white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Rückbau</h3>
-              <p className="text-gray-600 text-sm">Fachgerechter Rückbau in {city.name}</p>
-            </Link>
+                <Link href="/gebaeudeabbruch-bielefeld" className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon name="hammer" size={28} color="white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Gebäudeabbruch</h3>
+                  <p className="text-gray-600 text-sm">Professioneller Komplett- und Teilabbruch</p>
+                </Link>
 
-            <Link href={`/schadstoffsanierung-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Icon name="warning" size={28} color="white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Schadstoffsanierung</h3>
-              <p className="text-gray-600 text-sm">Sichere Schadstoffentsorgung in {city.name}</p>
-            </Link>
+                <Link href="/schadstoffsanierung-bielefeld" className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon name="warning" size={28} color="white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Schadstoffsanierung</h3>
+                  <p className="text-gray-600 text-sm">Sichere Entfernung gefährlicher Stoffe</p>
+                </Link>
 
-            <Link href={`/sanierung-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Icon name="tool" size={28} color="white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Gebäudesanierung</h3>
-              <p className="text-gray-600 text-sm">Komplettsanierung in {city.name}</p>
-            </Link>
+                <Link href="/kmf-entfernung-bielefeld" className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon name="layers" size={28} color="white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">KMF-Entfernung</h3>
+                  <p className="text-gray-600 text-sm">Künstliche Mineralfaser-Sanierung</p>
+                </Link>
 
-            <Link href={`/gebaeudeabbruch-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Icon name="hammer" size={28} color="white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Gebäudeabbruch</h3>
-              <p className="text-gray-600 text-sm">Professioneller Abbruch in {city.name}</p>
-            </Link>
+                <Link href="/durchbrueche-bielefeld" className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Icon name="tool" size={28} color="white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Durchbrüche</h3>
+                  <p className="text-gray-600 text-sm">Präzise Wand- und Deckendurchbrüche</p>
+                </Link>
+              </>
+            ) : (
+              // Andere Städte: Nur Informations-Boxen ohne Links
+              <>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="shield" size={28} color="white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Asbestentfernung</h3>
+                  <p className="text-gray-600 text-sm">TRGS 519 zertifizierte Schadstoffsanierung</p>
+                </div>
 
-            <Link href={`/kmf-entfernung-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Icon name="layers" size={28} color="white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">KMF-Entfernung</h3>
-              <p className="text-gray-600 text-sm">Künstliche Mineralfaser Sanierung in {city.name}</p>
-            </Link>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="home" size={28} color="white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Entkernung</h3>
+                  <p className="text-gray-600 text-sm">Komplett- und Teilentkernung</p>
+                </div>
 
-            <Link href={`/glaswolle-entsorgung-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Icon name="package" size={28} color="white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Glaswolle Entsorgung</h3>
-              <p className="text-gray-600 text-sm">TRGS 521 konforme KMF-Entsorgung in {city.name}</p>
-            </Link>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="hammer" size={28} color="white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Gebäudeabbruch</h3>
+                  <p className="text-gray-600 text-sm">Professioneller Komplett- und Teilabbruch</p>
+                </div>
 
-            <Link href={`/schadstoffanmeldung-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Icon name="file" size={28} color="white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Schadstoffanmeldung</h3>
-              <p className="text-gray-600 text-sm">Behördliche Anmeldung in {city.name}</p>
-            </Link>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="warning" size={28} color="white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Schadstoffsanierung</h3>
+                  <p className="text-gray-600 text-sm">Sichere Entfernung gefährlicher Stoffe</p>
+                </div>
 
-            <Link href={`/dokumentationsverfahren-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Icon name="document" size={28} color="white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Dokumentationsverfahren</h3>
-              <p className="text-gray-600 text-sm">Vollständige Projektdokumentation in {city.name}</p>
-            </Link>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="layers" size={28} color="white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">KMF-Entfernung</h3>
+                  <p className="text-gray-600 text-sm">Künstliche Mineralfaser-Sanierung</p>
+                </div>
 
-            <Link href={`/behoerdengaenge-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Icon name="briefcase" size={28} color="white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Behördengänge</h3>
-              <p className="text-gray-600 text-sm">Komplette behördliche Abwicklung in {city.name}</p>
-            </Link>
-
-            <Link href={`/fachgerechte-entsorgung-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Icon name="trash" size={28} color="white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Fachgerechte Entsorgung</h3>
-              <p className="text-gray-600 text-sm">Professionelle Entsorgung in {city.name}</p>
-            </Link>
-
-            <Link href={`/durchbrueche-${city.slug}`} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#0066CC]">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Icon name="tool" size={28} color="white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#0066CC]">Durchbrüche</h3>
-              <p className="text-gray-600 text-sm">Präzise Wanddurchbrüche in {city.name}</p>
-            </Link>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#0066CC] to-[#0052A3] rounded-xl flex items-center justify-center mb-4">
+                    <Icon name="tool" size={28} color="white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Durchbrüche</h3>
+                  <p className="text-gray-600 text-sm">Präzise Wand- und Deckendurchbrüche</p>
+                </div>
+              </>
+            )}
           </div>
 
           <div className="mt-12 text-center">
             <Link
-              href="/leistungen"
+              href="/kontakt"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#0066CC] to-[#0052A3] text-white font-bold rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105"
             >
-              Alle Leistungen im Überblick
+              Jetzt Anfragen
               <Icon name="arrow" size={20} />
             </Link>
           </div>
         </div>
       </section>
-      )}
 
       {/* Google Maps Integration */}
       <section className="py-20 bg-off-white">
