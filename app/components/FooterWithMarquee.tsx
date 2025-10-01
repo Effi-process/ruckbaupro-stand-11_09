@@ -55,7 +55,6 @@ export default function FooterWithMarquee() {
             <div className="text-white/50 text-[11px] tracking-[.25em] uppercase mb-4">Information</div>
             <ul className="space-y-2 text-white/90">
               <li><Link href="/ueber-uns" className="hover:text-cerulean transition-colors">Über uns</Link></li>
-              <li><Link href="/zertifikate" className="hover:text-cerulean transition-colors">Zertifikate</Link></li>
               <li><Link href="/gesetzliche-vorschriften" className="hover:text-cerulean transition-colors">Gesetzliche Vorschriften</Link></li>
             </ul>
           </nav>

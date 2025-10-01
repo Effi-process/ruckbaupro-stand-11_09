@@ -335,7 +335,8 @@ export default function StadtDetail({ city }: { city: CityData }) {
         </div>
       </section>
 
-      {/* Unsere Leistungen in [Stadt] - SEO Service Links */}
+      {/* Unsere Leistungen in [Stadt] - SEO Service Links - nur für Bielefeld */}
+      {city.slug === 'bielefeld' && (
       <section className="py-20 bg-gradient-to-b from-off-white to-white">
         <div className="container-custom">
           <div className="text-center mb-12">
@@ -466,6 +467,7 @@ export default function StadtDetail({ city }: { city: CityData }) {
           </div>
         </div>
       </section>
+      )}
 
       {/* Google Maps Integration */}
       <section className="py-20 bg-off-white">

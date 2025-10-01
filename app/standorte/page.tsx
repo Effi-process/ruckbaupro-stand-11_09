@@ -16,6 +16,33 @@ export default function Standorte() {
       phone: '+49 174 8083023',
       address: 'Hauptstraße 12',
       zip: '33602'
+    },
+    {
+      id: 'paderborn',
+      name: 'Paderborn',
+      region: 'Ostwestfalen-Lippe',
+      services: ['Schadstoffsanierung', 'Entkernung', 'Betonarbeiten'],
+      phone: '+49 174 8083023',
+      address: 'Hauptstraße 12',
+      zip: '33098'
+    },
+    {
+      id: 'osnabrueck',
+      name: 'Osnabrück',
+      region: 'Niedersachsen',
+      services: ['Schadstoffsanierung', 'Entkernung', 'Betonarbeiten'],
+      phone: '+49 174 8083023',
+      address: 'Hauptstraße 12',
+      zip: '49074'
+    },
+    {
+      id: 'guetersloh',
+      name: 'Gütersloh',
+      region: 'Ostwestfalen-Lippe',
+      services: ['Schadstoffsanierung', 'Entkernung', 'Betonarbeiten'],
+      phone: '+49 174 8083023',
+      address: 'Hauptstraße 12',
+      zip: '33330'
     }
   ];
 

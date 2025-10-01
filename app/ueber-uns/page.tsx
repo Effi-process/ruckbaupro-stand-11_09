@@ -245,10 +245,10 @@ export default function UeberUns() {
               Kontakt aufnehmen
             </Link>
             <Link
-              href="/zertifikate"
+              href="/leistungen"
               className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0066CC] font-bold py-4 px-8 rounded-lg text-lg transition-all"
             >
-              Zertifikate ansehen
+              Unsere Leistungen
             </Link>
           </div>
         </div>
