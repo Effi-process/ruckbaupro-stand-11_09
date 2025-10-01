@@ -1,6 +1,6 @@
 /**
  * German Cities Database for SEO-Optimized Local Pages
- * OWL Region - Professional Demolition Services
+ * Bielefeld Only - Professional Demolition Services
  */
 
 export interface CityData {
@@ -33,6 +33,45 @@ export const CITIES_DATA: CityData[] = [
     localFeatures: ["Teutoburger Wald", "Sparrenburg", "Universität Bielefeld", "Senne"],
     emergencyNumber: "+49 174 8083023",
     serviceAreas: ["Innenstadt", "Senne", "Heepen", "Stieghorst", "Brackwede", "Gadderbaum", "Sennestadt", "Jöllenbeck", "Dornberg", "Mitte"]
+  },
+  {
+    name: "Gütersloh",
+    slug: "guetersloh",
+    state: "Nordrhein-Westfalen",
+    population: 100861,
+    postalCodes: ["33330"],
+    coordinates: { lat: 51.9067, lng: 8.3858 },
+    distanceFromBielefeld: 18,
+    seoKeywords: ["Rückbau Gütersloh", "Abbruch Gütersloh", "Entkernung Gütersloh", "Entsorgung Gütersloh"],
+    localFeatures: ["Stadtpark", "Dalkeauen", "Miele", "Bertelsmann"],
+    emergencyNumber: "+49 174 8083023",
+    serviceAreas: ["Innenstadt"]
+  },
+  {
+    name: "Paderborn",
+    slug: "paderborn",
+    state: "Nordrhein-Westfalen",
+    population: 153231,
+    postalCodes: ["33098"],
+    coordinates: { lat: 51.7189, lng: 8.7575 },
+    distanceFromBielefeld: 45,
+    seoKeywords: ["Rückbau Paderborn", "Abbruch Paderborn", "Entkernung Paderborn", "Entsorgung Paderborn"],
+    localFeatures: ["Paderquellen", "Dom", "Heinz Nixdorf MuseumsForum", "Universität"],
+    emergencyNumber: "+49 174 8083023",
+    serviceAreas: ["Innenstadt"]
+  },
+  {
+    name: "Osnabrück",
+    slug: "osnabrueck",
+    state: "Niedersachsen",
+    population: 165251,
+    postalCodes: ["49074"],
+    coordinates: { lat: 52.2799, lng: 8.0472 },
+    distanceFromBielefeld: 50,
+    seoKeywords: ["Rückbau Osnabrück", "Abbruch Osnabrück", "Entkernung Osnabrück", "Entsorgung Osnabrück"],
+    localFeatures: ["Friedensstadt", "Teutoburger Wald", "Zoo Osnabrück", "Universität"],
+    emergencyNumber: "+49 174 8083023",
+    serviceAreas: ["Innenstadt"]
   }
 ];
 

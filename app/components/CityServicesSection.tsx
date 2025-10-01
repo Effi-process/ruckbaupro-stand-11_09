@@ -15,6 +15,21 @@ const cities: CityData[] = [
     name: 'BIELEFELD',
     population: '340.000',
     description: `Als größte Stadt in Ostwestfalen-Lippe ist Bielefeld das wirtschaftliche Herz der Region. Mit über 340.000 Einwohnern und einer vielfältigen Industrielandschaft bietet die Stadt am Teutoburger Wald optimale Voraussetzungen für professionelle Abbruch- und Sanierungsarbeiten. Unsere langjährige Erfahrung in Bielefeld erstreckt sich von der historischen Sparrenburg über die modernen Universitätsgebäude bis hin zu den zahlreichen Industrieanlagen. Wir kennen die lokalen Gegebenheiten, Vorschriften und Besonderheiten der Stadt. Ob im Stadtzentrum am Jahnplatz, in den Wohngebieten von Schildesche oder den Gewerbegebieten in Brackwede - unser Team ist innerhalb kürzester Zeit vor Ort und garantiert eine fachgerechte, termingerechte Ausführung aller Arbeiten unter Berücksichtigung der städtischen Auflagen und Umweltstandards.`,
+  },
+  {
+    name: 'GÜTERSLOH',
+    population: '100.000',
+    description: ``,
+  },
+  {
+    name: 'PADERBORN',
+    population: '150.000',
+    description: ``,
+  },
+  {
+    name: 'OSNABRÜCK',
+    population: '165.000',
+    description: ``,
   }
 ];
 
@@ -96,6 +111,9 @@ const servicesData = {
       ]
     },
   ],
+  GÜTERSLOH: [],
+  PADERBORN: [],
+  OSNABRÜCK: [],
 };
 
 export default function CityServicesSection() {
