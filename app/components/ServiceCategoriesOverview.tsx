@@ -8,10 +8,7 @@ export default function ServiceCategoriesOverview() {
   const [selectedCity, setSelectedCity] = useState<string>('bielefeld');
 
   const cities = [
-    { name: 'Bielefeld', slug: 'bielefeld' },
-    { name: 'Gütersloh', slug: 'guetersloh' },
-    { name: 'Osnabrück', slug: 'osnabrueck' },
-    { name: 'Paderborn', slug: 'paderborn' }
+    { name: 'Bielefeld', slug: 'bielefeld' }
   ];
 
   const serviceCategories = [

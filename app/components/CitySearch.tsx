@@ -18,56 +18,7 @@ export default function CitySearch() {
   const router = useRouter();
 
   const cities: City[] = [
-    // Top-Priorität: Bielefeld
-    { id: 'bielefeld', name: 'Bielefeld', region: 'Ostwestfalen-Lippe', featured: true },
-    // Hauptstädte
-    { id: 'berlin', name: 'Berlin', region: 'Berlin & Brandenburg', featured: true },
-    { id: 'hamburg', name: 'Hamburg', region: 'Hamburg & Nord', featured: true },
-    { id: 'muenchen', name: 'München', region: 'Bayern', featured: true },
-    { id: 'koeln', name: 'Köln', region: 'NRW', featured: true },
-    { id: 'frankfurt', name: 'Frankfurt am Main', region: 'Hessen', featured: true },
-    { id: 'stuttgart', name: 'Stuttgart', region: 'Baden-Württemberg', featured: false },
-    { id: 'duesseldorf', name: 'Düsseldorf', region: 'NRW' },
-    { id: 'dortmund', name: 'Dortmund', region: 'NRW' },
-    // OWL-Region (Bielefeld Umgebung)
-    { id: 'herford', name: 'Herford', region: 'Ostwestfalen-Lippe' },
-    { id: 'guetersloh', name: 'Gütersloh', region: 'Ostwestfalen-Lippe' },
-    { id: 'detmold', name: 'Detmold', region: 'Ostwestfalen-Lippe' },
-    { id: 'paderborn', name: 'Paderborn', region: 'Ostwestfalen-Lippe' },
-    { id: 'bad-salzuflen', name: 'Bad Salzuflen', region: 'Ostwestfalen-Lippe' },
-    { id: 'lemgo', name: 'Lemgo', region: 'Ostwestfalen-Lippe' },
-    { id: 'minden', name: 'Minden', region: 'Ostwestfalen-Lippe' },
-    // Weitere Städte
-    { id: 'leipzig', name: 'Leipzig', region: 'Sachsen' },
-    { id: 'dresden', name: 'Dresden', region: 'Sachsen' },
-    { id: 'hannover', name: 'Hannover', region: 'Niedersachsen' },
-    { id: 'nuernberg', name: 'Nürnberg', region: 'Bayern' },
-    { id: 'bremen', name: 'Bremen', region: 'Bremen' },
-    { id: 'essen', name: 'Essen', region: 'NRW' },
-    { id: 'bochum', name: 'Bochum', region: 'NRW' },
-    { id: 'wuppertal', name: 'Wuppertal', region: 'NRW' },
-    { id: 'bonn', name: 'Bonn', region: 'NRW' },
-    { id: 'mannheim', name: 'Mannheim', region: 'Baden-Württemberg' },
-    { id: 'karlsruhe', name: 'Karlsruhe', region: 'Baden-Württemberg' },
-    { id: 'augsburg', name: 'Augsburg', region: 'Bayern' },
-    { id: 'wiesbaden', name: 'Wiesbaden', region: 'Hessen' },
-    { id: 'muenster', name: 'Münster', region: 'NRW' },
-    { id: 'aachen', name: 'Aachen', region: 'NRW' },
-    { id: 'kiel', name: 'Kiel', region: 'Schleswig-Holstein' },
-    { id: 'luebeck', name: 'Lübeck', region: 'Schleswig-Holstein' },
-    { id: 'magdeburg', name: 'Magdeburg', region: 'Sachsen-Anhalt' },
-    { id: 'erfurt', name: 'Erfurt', region: 'Thüringen' },
-    { id: 'rostock', name: 'Rostock', region: 'Mecklenburg-Vorpommern' },
-    { id: 'mainz', name: 'Mainz', region: 'Rheinland-Pfalz' },
-    { id: 'saarbruecken', name: 'Saarbrücken', region: 'Saarland' },
-    { id: 'potsdam', name: 'Potsdam', region: 'Brandenburg' },
-    { id: 'oldenburg', name: 'Oldenburg', region: 'Niedersachsen' },
-    { id: 'osnabrueck', name: 'Osnabrück', region: 'Niedersachsen' },
-    { id: 'heidelberg', name: 'Heidelberg', region: 'Baden-Württemberg' },
-    { id: 'darmstadt', name: 'Darmstadt', region: 'Hessen' },
-    { id: 'regensburg', name: 'Regensburg', region: 'Bayern' },
-    { id: 'freiburg', name: 'Freiburg', region: 'Baden-Württemberg' },
-    { id: 'ulm', name: 'Ulm', region: 'Baden-Württemberg' }
+    { id: 'bielefeld', name: 'Bielefeld', region: 'Ostwestfalen-Lippe', featured: true }
   ];
 
   const filteredCities = cities.filter(city =>

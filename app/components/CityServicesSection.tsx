@@ -15,22 +15,7 @@ const cities: CityData[] = [
     name: 'BIELEFELD',
     population: '340.000',
     description: `Als größte Stadt in Ostwestfalen-Lippe ist Bielefeld das wirtschaftliche Herz der Region. Mit über 340.000 Einwohnern und einer vielfältigen Industrielandschaft bietet die Stadt am Teutoburger Wald optimale Voraussetzungen für professionelle Abbruch- und Sanierungsarbeiten. Unsere langjährige Erfahrung in Bielefeld erstreckt sich von der historischen Sparrenburg über die modernen Universitätsgebäude bis hin zu den zahlreichen Industrieanlagen. Wir kennen die lokalen Gegebenheiten, Vorschriften und Besonderheiten der Stadt. Ob im Stadtzentrum am Jahnplatz, in den Wohngebieten von Schildesche oder den Gewerbegebieten in Brackwede - unser Team ist innerhalb kürzester Zeit vor Ort und garantiert eine fachgerechte, termingerechte Ausführung aller Arbeiten unter Berücksichtigung der städtischen Auflagen und Umweltstandards.`,
-  },
-  {
-    name: 'GÜTERSLOH',
-    population: '100.000',
-    description: `Gütersloh, die Stadt der kurzen Wege und Heimat weltbekannter Unternehmen wie Miele und Bertelsmann, stellt besondere Anforderungen an Abbruch- und Sanierungsunternehmen. Mit rund 100.000 Einwohnern vereint die Stadt traditionelle Wohnviertel mit modernen Industriebauten. Unsere Expertise in Gütersloh umfasst sowohl die sensible Sanierung historischer Fachwerkhäuser in der Altstadt als auch den professionellen Rückbau industrieller Anlagen. Die enge Bebauung im Stadtkern, die Nähe zur Dalke und die hohen Qualitätsansprüche der ansässigen Unternehmen erfordern präzise Planung und saubere Ausführung. Von Avenwedde bis Spexard, von Isselhorst bis Friedrichsdorf - wir sind mit den örtlichen Gegebenheiten bestens vertraut und arbeiten eng mit den städtischen Behörden zusammen, um Ihre Projekte reibungslos und effizient umzusetzen.`,
-  },
-  {
-    name: 'PADERBORN',
-    population: '150.000',
-    description: `Paderborn, die über 1200 Jahre alte Dom- und Universitätsstadt, verbindet historisches Erbe mit moderner Dynamik. Mit etwa 150.000 Einwohnern und als Oberzentrum für das östliche Westfalen stellt die Stadt besondere Herausforderungen an Abbruch- und Sanierungsexperten. Die Nähe zu denkmalgeschützten Gebäuden rund um Dom und Abdinghof, die besonderen geologischen Verhältnisse mit den Paderquellen und die moderne Universitätsarchitektur erfordern spezialisiertes Know-how. Unsere Arbeit in Paderborn zeichnet sich durch respektvollen Umgang mit der historischen Bausubstanz und modernste Techniken bei Neubauprojekten aus. Vom Riemekeviertel über Schloß Neuhaus bis zum Technologiepark - wir kennen jeden Stadtteil und seine Besonderheiten. Die enge Zusammenarbeit mit dem Denkmalschutz und den städtischen Ämtern garantiert eine vorschriftsmäßige und kulturell sensible Projektabwicklung.`,
-  },
-  {
-    name: 'OSNABRÜCK',
-    population: '165.000',
-    description: `Osnabrück, die Friedensstadt und drittgrößte Stadt Niedersachsens, mit ihren 165.000 Einwohnern steht für Nachhaltigkeit und Umweltbewusstsein. Als Standort zwischen Teutoburger Wald und Wiehengebirge hat die Stadt eine besondere Verantwortung für den Umweltschutz entwickelt. Diese Philosophie prägt auch unsere Arbeit in Osnabrück. Von der historischen Altstadt mit ihrem mittelalterlichen Marktplatz über die grünen Wohnviertel bis zu den modernen Gewerbegebieten - wir setzen auf umweltschonende Verfahren und nachhaltige Entsorgungskonzepte. Die Hase-Auen, der Schlossgarten und die zahlreichen Grünflächen der Stadt erfordern besondere Rücksichtnahme bei allen Baumaßnahmen. Unser Team in Osnabrück ist spezialisiert auf lärmarme Abbruchverfahren, staubminimierende Techniken und die fachgerechte Trennung von Wertstoffen. Die enge Abstimmung mit dem Umweltamt und die Einhaltung aller Naturschutzauflagen sind für uns selbstverständlich.`,
-  },
+  }
 ];
 
 const servicesData = {
@@ -109,102 +94,6 @@ const servicesData = {
         { name: 'Betonabbruch Bielefeld', link: '/betonabbruch-bielefeld' },
         { name: 'Durchbrüche Bielefeld', link: '/durchbrueche-bielefeld' }
       ]
-    },
-  ],
-  GÜTERSLOH: [
-    {
-      title: 'Asbest-Sanierung',
-      description: 'Professionelle Asbestentfernung nach TRGS 519',
-      seoPages: []
-    },
-    {
-      title: 'Entkernung',
-      description: 'Komplette oder teilweise Gebäudeentkernung',
-      seoPages: []
-    },
-    {
-      title: 'Beratung & Planung',
-      description: 'Umfassende Projektberatung und Genehmigungsmanagement',
-      seoPages: []
-    },
-    {
-      title: 'KMF-Sanierung',
-      description: 'Fachgerechte Entsorgung künstlicher Mineralfasern',
-      seoPages: []
-    },
-    {
-      title: 'Schimmelsanierung',
-      description: 'Nachhaltige Schimmelbeseitigung und Prävention',
-      seoPages: []
-    },
-    {
-      title: 'Betonarbeiten',
-      description: 'Präzise Betonschnitt- und Bohrarbeiten',
-      seoPages: []
-    },
-  ],
-  PADERBORN: [
-    {
-      title: 'Asbest-Sanierung',
-      description: 'Professionelle Asbestentfernung nach TRGS 519',
-      seoPages: []
-    },
-    {
-      title: 'Entkernung',
-      description: 'Komplette oder teilweise Gebäudeentkernung',
-      seoPages: []
-    },
-    {
-      title: 'Beratung & Planung',
-      description: 'Umfassende Projektberatung und Genehmigungsmanagement',
-      seoPages: []
-    },
-    {
-      title: 'KMF-Sanierung',
-      description: 'Fachgerechte Entsorgung künstlicher Mineralfasern',
-      seoPages: []
-    },
-    {
-      title: 'Schimmelsanierung',
-      description: 'Nachhaltige Schimmelbeseitigung und Prävention',
-      seoPages: []
-    },
-    {
-      title: 'Betonarbeiten',
-      description: 'Präzise Betonschnitt- und Bohrarbeiten',
-      seoPages: []
-    },
-  ],
-  OSNABRÜCK: [
-    {
-      title: 'Asbest-Sanierung',
-      description: 'Professionelle Asbestentfernung nach TRGS 519',
-      seoPages: []
-    },
-    {
-      title: 'Entkernung',
-      description: 'Komplette oder teilweise Gebäudeentkernung',
-      seoPages: []
-    },
-    {
-      title: 'Beratung & Planung',
-      description: 'Umfassende Projektberatung und Genehmigungsmanagement',
-      seoPages: []
-    },
-    {
-      title: 'KMF-Sanierung',
-      description: 'Fachgerechte Entsorgung künstlicher Mineralfasern',
-      seoPages: []
-    },
-    {
-      title: 'Schimmelsanierung',
-      description: 'Nachhaltige Schimmelbeseitigung und Prävention',
-      seoPages: []
-    },
-    {
-      title: 'Betonarbeiten',
-      description: 'Präzise Betonschnitt- und Bohrarbeiten',
-      seoPages: []
     },
   ],
 };

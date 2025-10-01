@@ -16,33 +16,6 @@ export default function Standorte() {
       phone: '+49 174 8083023',
       address: 'Hauptstraße 12',
       zip: '33602'
-    },
-    {
-      id: 'guetersloh',
-      name: 'Gütersloh',
-      region: 'Ostwestfalen-Lippe',
-      services: ['Asbestsanierung', 'KMF-Sanierung', 'Schimmelsanierung'],
-      phone: '+49 174 8083023',
-      address: 'Berliner Straße 45',
-      zip: '33330'
-    },
-    {
-      id: 'paderborn',
-      name: 'Paderborn',
-      region: 'Ostwestfalen-Lippe',
-      services: ['Schadstoffsanierung', 'Abbrucharbeiten', 'Entkernung'],
-      phone: '+49 174 8083023',
-      address: 'Marienplatz 8',
-      zip: '33098'
-    },
-    {
-      id: 'osnabrueck',
-      name: 'Osnabrück',
-      region: 'Niedersachsen',
-      services: ['Komplettabbruch', 'Schadstoffsanierung', 'Beratung'],
-      phone: '+49 174 8083023',
-      address: 'Große Straße 28',
-      zip: '49074'
     }
   ];
 
