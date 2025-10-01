@@ -104,7 +104,30 @@ const nextConfig = {
   // Redirects for SEO
   async redirects() {
     return [
-      // Add redirects for improved SEO
+      // Force www subdomain
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'rueckbaupro.de',
+          },
+        ],
+        destination: 'https://www.rueckbaupro.de/:path*',
+        permanent: true,
+      },
+      // Redirect non-www to www
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.rueckbaupro.de',
+          },
+        ],
+        destination: 'https://www.rueckbaupro.de/:path*',
+        permanent: true,
+      },
     ]
   },
   
