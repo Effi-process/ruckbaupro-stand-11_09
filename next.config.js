@@ -116,18 +116,6 @@ const nextConfig = {
         destination: 'https://www.rueckbaupro.de/:path*',
         permanent: true,
       },
-      // Redirect non-www to www
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.rueckbaupro.de',
-          },
-        ],
-        destination: 'https://www.rueckbaupro.de/:path*',
-        permanent: true,
-      },
     ]
   },
   
