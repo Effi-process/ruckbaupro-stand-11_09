@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: { stadt: string } }
   }
 
   const title = `Rückbau & Abbruch ${city.name} - Zertifiziert | 24h Notdienst`;
-  const description = `Professioneller Rückbau und Abbruch in ${city.name} ${city.state}. ✓ Zertifiziert ✓ 24h Notdienst ✓ Kostenlose Beratung ✓ Faire Preise. Ihr neuer, zuverlässiger Partner. Jetzt anrufen: ${city.emergencyNumber}`;
+  const description = `Professioneller Rückbau in ${city.name}. ✓ Zertifiziert ✓ 24h Notdienst ✓ Kostenlose Beratung. Jetzt anrufen: ${city.emergencyNumber}`;
 
   return {
     title,

@@ -108,6 +108,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // Service detail pages
+  const servicePages = [
+    'leistungen/rueckbau',
+    'leistungen/abbruch',
+    'leistungen/entkernung',
+    'leistungen/asbestsanierung',
+    'leistungen/entsorgung',
+    'leistungen/kmf-sanierung',
+    'leistungen/betonarbeiten',
+    'leistungen/schimmelsanierung',
+    'leistungen/beratung-planung',
+  ].map((service) => ({
+    url: `${baseUrl}/${service}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  // Additional pages
+  const additionalPages = [
+    {
+      url: `${baseUrl}/nachhaltigkeit`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/b2b`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+  ];
+
   // Legal pages
   const legalPages = [
     {
@@ -133,7 +167,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...mainPages,
     ...cityPages,
+    ...servicePages,
     ...bielefeldServicePages,
+    ...additionalPages,
     ...legalPages,
   ];
 }

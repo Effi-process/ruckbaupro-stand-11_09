@@ -40,7 +40,7 @@ export const SEO_CONSTANTS = {
 // Generate perfect city metadata
 export function generateCityMetadata(city: CityData, path: string): Metadata {
   const title = `Rückbau & Abbruch ${city.name} - Professionell & Zertifiziert | 24h Service`;
-  const description = `Professioneller Rückbau & Abbruch in ${city.name}, ${city.state}. ✓ Zertifiziert ✓ 24h Service ✓ Kostenlose Beratung ✓ Festpreise. Über 500 erfolgreiche Projekte. Jetzt anrufen: ${city.emergencyNumber}`;
+  const description = `Professioneller Rückbau in ${city.name}. ✓ Zertifiziert ✓ 24h Service ✓ Kostenlose Beratung. Jetzt anrufen: ${city.emergencyNumber}`;
   const canonicalUrl = `${SEO_CONSTANTS.BASE_URL}${path}`;
   
   return {
@@ -188,7 +188,7 @@ export function generateServiceMetadata(
 // Generate homepage metadata
 export function generateHomepageMetadata(): Metadata {
   const title = 'RückbauPRO - Professioneller Rückbau & Abbruch | Bundesweit';
-  const description = 'Professioneller Rückbau & Abbruch vom zertifizierten Fachbetrieb. ✓ Entkernung ✓ Gebäudeabbruch ✓ Demontage ✓ Schadstoffsanierung ✓ Entsorgung. 24h-Service ☎ Kostenlose Beratung!';
+  const description = 'Professioneller Rückbau & Abbruch. ✓ Entkernung ✓ Gebäudeabbruch ✓ Demontage ✓ Schadstoffsanierung. 24h-Service ☎ Kostenlose Beratung!';
 
   return {
     metadataBase: new URL(SEO_CONSTANTS.BASE_URL),

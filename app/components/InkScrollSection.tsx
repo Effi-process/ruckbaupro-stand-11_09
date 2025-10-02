@@ -113,12 +113,12 @@ export default function InkScrollSection() {
       {/* Section mit Typing-Reveal pro Buchstabe */}
       <section className="py-2 sm:py-12 md:py-16 lg:py-20">
         <div className="flex justify-center px-4 sm:px-[5vw]">
-          <h1
+          <h2
             ref={headlineRef}
             className="max-w-[900px] text-center font-extrabold leading-[1.2] sm:leading-[1.05] tracking-tight text-[20px] sm:text-[clamp(26px,6.2vw,64px)] whitespace-pre-wrap px-2"
           >
             {`Professioneller Rückbau.\nModerne Technik. Faire Preise.`}
-          </h1>
+          </h2>
         </div>
 
         {/* Professionelles Baustellen-Bild */}
