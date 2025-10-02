@@ -78,9 +78,6 @@ export default function RootLayout({
         <meta name="twitter:description" content="Zertifizierter Fachbetrieb für Rückbau, Abbruch, Entkernung und Schadstoffsanierung. Modernste Ausrüstung, faire Preise und persönliche Beratung." />
         <meta name="twitter:image" content="https://www.rueckbaupro.de/og-image.png" />
 
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://www.rueckbaupro.de" />
-
         {/* Robots Meta */}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
