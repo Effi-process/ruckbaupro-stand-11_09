@@ -33,7 +33,7 @@ export default function FooterWithMarquee() {
               <li><Link href="/leistungen" className="hover:text-cerulean transition-colors">Alle Leistungen</Link></li>
               <li><Link href="/leistungen/asbestsanierung" className="hover:text-cerulean transition-colors">Asbest-Sanierung</Link></li>
               <li><Link href="/leistungen/entkernung" className="hover:text-cerulean transition-colors">Entkernung</Link></li>
-              <li><Link href="/leistungen/beratung---planung" className="hover:text-cerulean transition-colors">Beratung & Planung</Link></li>
+              <li><Link href="/leistungen/beratung-planung" className="hover:text-cerulean transition-colors">Beratung & Planung</Link></li>
               <li><Link href="/leistungen/kmf-sanierung" className="hover:text-cerulean transition-colors">KMF-Sanierung</Link></li>
               <li><Link href="/leistungen/schimmelsanierung" className="hover:text-cerulean transition-colors">Schimmelsanierung</Link></li>
               <li><Link href="/leistungen/betonarbeiten" className="hover:text-cerulean transition-colors">Betonarbeiten</Link></li>

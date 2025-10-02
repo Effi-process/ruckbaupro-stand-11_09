@@ -14,7 +14,7 @@ export default function MenuFooter() {
         { name: "Alle Leistungen", href: "/leistungen" },
         { name: "Asbest-Sanierung", href: "/leistungen/asbestsanierung" },
         { name: "Entkernung", href: "/leistungen/entkernung" },
-        { name: "Beratung & Planung", href: "/leistungen/beratung---planung" },
+        { name: "Beratung & Planung", href: "/leistungen/beratung-planung" },
         { name: "KMF-Sanierung", href: "/leistungen/kmf-sanierung" },
         { name: "Schimmelsanierung", href: "/leistungen/schimmelsanierung" },
         { name: "Betonarbeiten", href: "/leistungen/betonarbeiten" }

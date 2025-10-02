@@ -60,7 +60,7 @@ export default function ProjectCarousel() {
       title: "Professionelle Beratung und detaillierte Projektplanung",
       image: "/images/beratung-planung-hero.png",
       alt: "Professionelle Beratung und Projektplanung",
-      link: "/leistungen/beratung---planung"
+      link: "/leistungen/beratung-planung"
     },
     {
       badge: "KMF-SANIERUNG",

@@ -32,7 +32,7 @@ export default function Header() {
         { name: 'Alle Leistungen', href: '/leistungen', icon: 'list', description: 'Komplette Übersicht' },
         { name: 'Asbest-Sanierung', href: '/leistungen/asbestsanierung', icon: 'shield', description: 'Sichere Asbestentfernung' },
         { name: 'Entkernung', href: '/leistungen/entkernung', icon: 'home', description: 'Innenraumdemontage' },
-        { name: 'Beratung & Planung', href: '/leistungen/beratung---planung', icon: 'users', description: 'Professionelle Projektplanung' },
+        { name: 'Beratung & Planung', href: '/leistungen/beratung-planung', icon: 'users', description: 'Professionelle Projektplanung' },
         { name: 'KMF-Sanierung', href: '/leistungen/kmf-sanierung', icon: 'warning', description: 'Künstliche Mineralfasern' },
         { name: 'Schimmelsanierung', href: '/leistungen/schimmelsanierung', icon: 'alert', description: 'Professionelle Schimmelentfernung' },
         { name: 'Betonarbeiten', href: '/leistungen/betonarbeiten', icon: 'cube', description: 'Betonschneiden und -bearbeitung' }

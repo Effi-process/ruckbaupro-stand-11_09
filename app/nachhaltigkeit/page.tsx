@@ -292,12 +292,6 @@ export default function Nachhaltigkeit() {
             >
               Beratung anfordern
             </Link>
-            <a
-              href="/downloads/umweltbericht.pdf"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-green-600 font-bold py-4 px-8 rounded-lg text-lg transition-all"
-            >
-              Umweltbericht 2023
-            </a>
           </div>
         </div>
       </section>
