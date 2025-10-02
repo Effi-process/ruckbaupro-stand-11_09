@@ -1342,7 +1342,7 @@ export default function AdvancedCalculator() {
               </a>
               
               <Link 
-                href="/termin"
+                href="/kontakt"
                 className="w-full border-2 border-cerulean text-cerulean py-4 px-6 rounded-xl font-bold text-center block hover:bg-cerulean hover:text-white transition-all"
               >
                 Vor-Ort-Termin vereinbaren

@@ -77,9 +77,6 @@ export default function Header() {
               <Link href="/standorte" className="text-gray-300 hover:text-white transition-colors font-medium">
                 STANDORTE
               </Link>
-              <Link href="/partner" className="text-gray-300 hover:text-white transition-colors font-medium">
-                PARTNER PORTAL
-              </Link>
             </div>
           </div>
         </div>
