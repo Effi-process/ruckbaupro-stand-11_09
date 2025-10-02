@@ -10,6 +10,7 @@ import MobileOptimizationWrapper from './components/MobileOptimizationWrapper'
 import MobileHeader from './components/MobileHeader'
 import FloatingMenuButton from './components/FloatingMenuButton'
 import Script from 'next/script'
+import CanonicalTag from './components/CanonicalTag'
 
 // Optimized font loading for faster LCP
 const inter = Inter({ 
@@ -254,6 +255,7 @@ export default function RootLayout({
         <MobileOptimizer />
         <MobileOptimizationWrapper />
         <MobileHeader />
+        <CanonicalTag />
         <main id="main-content" className="mobile-content-wrapper" role="main">
           {children}
         </main>

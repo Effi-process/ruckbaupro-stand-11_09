@@ -3,6 +3,15 @@ import Link from 'next/link';
 import Icon from '../components/Icon';
 import FloatingElements from '../components/FloatingElements';
 import FooterWithMarquee from '../components/FooterWithMarquee';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Über uns - RückbauPRO | Professioneller Rückbau & Abbruch',
+  description: 'Erfahren Sie mehr über RückbauPRO - Ihr zuverlässiger Partner für professionellen Rückbau, Abbruch und Sanierung. Modern, zertifiziert, kompetent.',
+  alternates: {
+    canonical: 'https://www.rueckbaupro.de/ueber-uns',
+  },
+};
 
 export default function UeberUns() {
   const milestones = [
