@@ -97,36 +97,11 @@ export default function Karriere() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Offene Stellen
+              Initiativbewerbung
             </h2>
             <p className="text-lg text-white/80 mb-8 leading-relaxed">
-              Wir suchen motivierte Fachkräfte und Quereinsteiger in verschiedenen Bereichen:
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-6 text-left mb-12">
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-                <h3 className="font-bold text-lg mb-2 text-cerulean">Asbestsanierer (m/w/d)</h3>
-                <p className="text-white/80 text-sm">Mit oder ohne TRGS 519 Sachkundenachweis</p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-                <h3 className="font-bold text-lg mb-2 text-cerulean">Bauleiter Sanierung (m/w/d)</h3>
-                <p className="text-white/80 text-sm">Für die Leitung unserer Sanierungsprojekte</p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-                <h3 className="font-bold text-lg mb-2 text-cerulean">Schadstoffgutachter (m/w/d)</h3>
-                <p className="text-white/80 text-sm">Experte für Schadstoffanalysen und Gutachten</p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
-                <h3 className="font-bold text-lg mb-2 text-cerulean">Auszubildende</h3>
-                <p className="text-white/80 text-sm">Starte deine Karriere in einem zukunftssicheren Beruf</p>
-              </div>
-            </div>
-
-            <p className="text-white/80 text-lg">
-              Auch wenn keine passende Stelle dabei ist: Wir freuen uns über Ihre Initiativbewerbung!
+              Derzeit haben wir keine offenen Stellen ausgeschrieben. Dennoch freuen wir uns über Ihre Initiativbewerbung!
+              Wir sind immer auf der Suche nach motivierten Fachkräften und Quereinsteigern.
             </p>
           </div>
         </div>
