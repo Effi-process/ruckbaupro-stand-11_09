@@ -166,18 +166,17 @@ Datum: ${new Date().toLocaleString('de-DE')}`;
 
   // Original fullscreen variant
   return (
-    <div className="relative w-full min-h-screen">
-      {/* Full-screen background image */}
-      <div className="absolute inset-0">
+    <div className="relative w-full min-h-screen bg-[#1a2332]">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
         <Image
-          src="/images/entkernung-professional.png"
-          alt="Professionelle Entkernung"
+          src="/images/professional-demolition-bg.png"
+          alt="Professional demolition background"
           fill
-          className="object-cover"
-          priority
+          className="object-cover opacity-30"
+          sizes="100vw"
+          priority={false}
         />
-        {/* Dark overlay for better form visibility */}
-        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       {/* Form overlay positioned on the right for desktop, centered for mobile */}

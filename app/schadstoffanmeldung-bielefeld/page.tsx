@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import GlassHeader from '../components/GlassHeader';
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import FloatingElements from '../components/FloatingElements';
 import SimpleContactForm from '../components/SimpleContactForm';
 
 export default function SchadstoffanmeldungBielefeld() {
@@ -14,7 +14,6 @@ export default function SchadstoffanmeldungBielefeld() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-blue-800">
       {/* Floating Background Elements */}
-      <FloatingElements />
 
       {/* Hero Section */}
       <section className="relative pt-16 md:pt-20 pb-24 md:pb-32 flex content-center items-center justify-center min-h-[60vh] md:min-h-[75vh]">

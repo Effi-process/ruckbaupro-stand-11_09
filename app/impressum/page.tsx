@@ -1,14 +1,14 @@
 'use client';
 
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import FloatingElements from '../components/FloatingElements';
+import GlassHeader from '../components/GlassHeader';
 
 export default function Impressum() {
   return (
     <>
       <main className="overflow-hidden relative bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white min-h-screen">
+        <GlassHeader />
         {/* Floating Logo and Menu */}
-        <FloatingElements />
 
         <div className="px-[5vw] pt-32 pb-24">
           <div className="max-w-4xl mx-auto">

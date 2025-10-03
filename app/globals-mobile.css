@@ -167,24 +167,24 @@
     z-index: 50 !important;
   }
 
-  /* Mobile header compensation - add padding to body content */
+  /* Mobile header compensation - REMOVED for floating header */
   .mobile-content-wrapper {
-    padding-top: 6rem !important; /* Space for fixed mobile header */
+    padding-top: 0 !important; /* No space needed - header is fixed/floating */
   }
 
-  /* Hero sections should not have extra padding */
+  /* Hero sections start at top */
   .mobile-content-wrapper > main > section:first-child,
   .mobile-content-wrapper > main > div:first-child,
   .mobile-content-wrapper > main > #hero,
   #hero {
-    margin-top: -6rem !important;
-    padding-top: 6rem !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 
   /* For pages without main wrapper */
   .mobile-content-wrapper > div:first-child > section:first-child {
-    margin-top: -6rem !important;
-    padding-top: 6rem !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 
   /* Mobile menu improvements */

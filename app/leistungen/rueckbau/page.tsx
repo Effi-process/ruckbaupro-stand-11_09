@@ -2,16 +2,16 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import GlassHeader from '../../components/GlassHeader';
 import FooterWithMarquee from '../../components/FooterWithMarquee';
 import SimpleContactForm from '../../components/SimpleContactForm';
 import StickyServiceMenu from '../../components/StickyServiceMenu';
-import FloatingElements from '../../components/FloatingElements';
 
 export default function RueckbauPage() {
   return (
     <main className="overflow-hidden">
+      <GlassHeader />
       {/* Transparent Header */}
-      <FloatingElements />
       
       <StickyServiceMenu />
       

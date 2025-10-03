@@ -1,11 +1,11 @@
 'use client'
 import { useState, useEffect } from 'react';
+import GlassHeader from '../components/GlassHeader';
 import { useRouter } from 'next/navigation';
 import Icon from '../components/Icon';
 import LoginForm from '../components/LoginForm';
 import Link from 'next/link';
 import Image from 'next/image';
-import FloatingElements from '../components/FloatingElements';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function ControlCenter() {
@@ -165,8 +165,8 @@ export default function ControlCenter() {
 
   return (
     <main className="min-h-screen bg-gray-50">
+      <GlassHeader />
       {/* Floating Logo and Menu */}
-      <FloatingElements />
       {/* Header */}
       <header className="bg-white shadow-sm border-b sticky top-0 z-50">
         <div className="flex items-center justify-between px-6 py-4">

@@ -1,14 +1,15 @@
 'use client';
 import Icon from '../components/Icon';
-import FloatingElements from '../components/FloatingElements';
+import GlassHeader from '../components/GlassHeader';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import AdvancedCalculator from '../components/AdvancedCalculator';
+import MobileHeader from '../components/MobileHeader';
 
 export default function Preise() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
-      {/* Floating Logo and Menu */}
-      <FloatingElements />
+      <GlassHeader />
+      <MobileHeader />
 
       {/* Hero Section */}
       <section className="relative pt-16 md:pt-24 pb-6 md:pb-10">

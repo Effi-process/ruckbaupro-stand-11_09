@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../../components/Icon';
-import FloatingElements from '../../components/FloatingElements';
+import GlassHeader from '../../components/GlassHeader';
 import FooterWithMarquee from '../../components/FooterWithMarquee';
 // import ProcessFlow from '../../components/ProcessFlow';
 import SimpleContactForm from '../../components/SimpleContactForm';
@@ -10,8 +10,8 @@ import { ScrollAnimation } from '../../components/ScrollAnimations';
 export default function BeratungPlanungPage() {
   return (
     <main className="min-h-screen">
+      <GlassHeader />
       {/* Floating Elements */}
-      <FloatingElements />
       
       {/* Full-Width Hero Section with Background Image */}
       <section className="relative h-screen w-full overflow-hidden">

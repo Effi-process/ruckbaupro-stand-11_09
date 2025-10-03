@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../components/Icon';
-import FloatingElements from '../components/FloatingElements';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import { Metadata } from 'next';
 
@@ -67,7 +66,6 @@ export default function UeberUns() {
   return (
     <main className="relative">
       {/* Floating Logo and Menu */}
-      <FloatingElements />
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-8 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">

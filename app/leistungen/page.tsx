@@ -3,10 +3,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, Suspense } from 'react';
+import GlassHeader from '../components/GlassHeader';
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import FloatingElements from '../components/FloatingElements';
 import ProcessFlow from '../components/ProcessFlow';
 import SimpleContactForm from '../components/SimpleContactForm';
+import MobileHeader from '../components/MobileHeader';
 
 
 export default function LeistungenPage() {
@@ -116,8 +117,8 @@ export default function LeistungenPage() {
 
   return (
     <main className="overflow-hidden relative">
-      {/* Floating Logo and Menu */}
-      <FloatingElements />
+      <GlassHeader />
+      <MobileHeader />
       
       {/* Hero Section - mit Video wie auf der Hauptseite */}
       <section id="hero" className="relative h-screen w-full overflow-hidden">

@@ -1,9 +1,9 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import GlassHeader from '../components/GlassHeader';
 import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import FloatingElements from '../components/FloatingElements';
 import SimpleContactForm from '../components/SimpleContactForm';
 
 export default function EntstaubungBielefeld() {
@@ -16,7 +16,6 @@ export default function EntstaubungBielefeld() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-blue-800">
       {/* Floating Background Elements */}
-      <FloatingElements />
 
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 flex content-center items-center justify-center min-h-[75vh]">

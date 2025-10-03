@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import GlassHeader from '../components/GlassHeader';
 import Link from 'next/link';
 import SimpleContactForm from '../components/SimpleContactForm';
 
@@ -9,6 +10,7 @@ export default function RueckbauBielefeldPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-blue-950 relative overflow-hidden">
+      <GlassHeader />
       {/* Animated Background Blobs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -inset-10 opacity-50">

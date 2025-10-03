@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
+import GlassHeader from '../components/GlassHeader';
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import FloatingElements from '../components/FloatingElements';
 
 export default function Standorte() {
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
@@ -48,8 +48,8 @@ export default function Standorte() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-oxford-blue">
+      <GlassHeader />
       {/* Transparent Header */}
-      <FloatingElements />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16">

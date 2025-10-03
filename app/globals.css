@@ -13,6 +13,13 @@
   --off-white: #F8F9FA;
 }
 
+/* Global heading styles - Impact font family */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Impact, Haettenschweiler, 'Arial Black', sans-serif !important;
+  }
+}
+
 /* Hide scrollbars globally but keep functionality */
 * {
   scrollbar-width: none; /* Firefox */
@@ -130,6 +137,14 @@ html {
 body {
   position: relative;
   min-height: 100vh;
+  background-color: #1a2332;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  margin: 0;
+  padding: 0;
 }
 
 /* Accessibility improvements */

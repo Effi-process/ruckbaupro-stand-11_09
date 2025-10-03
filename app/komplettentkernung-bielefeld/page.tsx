@@ -1,9 +1,9 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import GlassHeader from '../components/GlassHeader';
 import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import FloatingElements from '../components/FloatingElements';
 import SimpleContactForm from '../components/SimpleContactForm';
 
 export default function KomplettentkernungBielefeld() {
@@ -15,6 +15,7 @@ export default function KomplettentkernungBielefeld() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-sky-950 relative overflow-hidden">
+      <GlassHeader />
       {/* Animated Background Gradients */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -inset-10 opacity-50">
@@ -23,7 +24,6 @@ export default function KomplettentkernungBielefeld() {
           <div className="absolute -bottom-8 left-20 w-72 h-72 bg-sky-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
       </div>
-      <FloatingElements />
 
       {/* Hero Section */}
       <section className="relative pt-16 pb-16">

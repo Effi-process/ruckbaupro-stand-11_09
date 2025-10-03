@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import GlassHeader from '../components/GlassHeader';
 import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import FloatingElements from '../components/FloatingElements';
 import ContactSection from '../components/ContactSection';
 
 export default function ReinigungBielefeldPage() {
@@ -16,7 +16,6 @@ export default function ReinigungBielefeldPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <FloatingElements />
 
       {/* Hero Section */}
       <section className={`relative bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16 md:py-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>

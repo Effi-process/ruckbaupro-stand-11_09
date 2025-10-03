@@ -34,7 +34,7 @@ export default function VideoBackground({ src, poster, className = '' }: VideoBa
   return (
     <video
       ref={videoRef}
-      className={`absolute inset-0 w-full h-full object-cover ${className}`}
+      className={`absolute -top-20 left-0 right-0 bottom-0 w-full h-[calc(100%+5rem)] object-cover ${className}`}
       autoPlay
       muted
       loop

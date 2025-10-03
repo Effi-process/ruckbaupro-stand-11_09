@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../../components/Icon';
-import FloatingElements from '../../components/FloatingElements';
+import GlassHeader from '../../components/GlassHeader';
 import FooterWithMarquee from '../../components/FooterWithMarquee';
 // import ProcessFlow from '../../components/ProcessFlow';
 import SimpleContactForm from '../../components/SimpleContactForm';
@@ -11,8 +11,8 @@ import { ScrollAnimation } from '../../components/ScrollAnimations';
 export default function AsbestsanierungPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue">
+      <GlassHeader />
       {/* Floating Logo and Menu */}
-      <FloatingElements />
       
       {/* Full-Width Hero Section with Background Image */}
       <ServiceHeroSection

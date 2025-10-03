@@ -76,6 +76,7 @@ export default function FloatingMenuButton() {
       expanded: false,
       items: [
         { name: "Über uns", href: "/ueber-uns", icon: "users", description: "Unser Unternehmen" },
+        { name: "Karriere", href: "/karriere", icon: "briefcase", description: "Jobs & Bewerbungen" },
         { name: "Schadstoffschulungen", href: "/schadstoffschulungen", icon: "award", description: "Fortbildungen & Seminare" },
         { name: "Gesetzliche Vorschriften", href: "/gesetzliche-vorschriften", icon: "file-text", description: "Rechtliche Grundlagen" },
       ]

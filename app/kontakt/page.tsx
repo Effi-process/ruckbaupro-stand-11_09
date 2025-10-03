@@ -1,15 +1,16 @@
 'use client'
 import Icon from '../components/Icon';
+import GlassHeader from '../components/GlassHeader';
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import FloatingElements from '../components/FloatingElements';
 import SimpleContactForm from '../components/SimpleContactForm';
+import MobileHeader from '../components/MobileHeader';
 
 export default function Kontakt() {
 
   return (
     <main className="overflow-hidden relative min-h-screen">
-      {/* Floating Logo and Menu */}
-      <FloatingElements />
+      <GlassHeader />
+      <MobileHeader />
 
       <section className="relative pt-16 md:pt-24 pb-4 md:pb-8 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -16,7 +16,7 @@ export default function InkScrollSection() {
         const s = document.createElement("span");
         s.textContent = ch;
         s.style.whiteSpace = "pre";
-        s.style.color = "rgba(255,255,255,0.3)";
+        s.style.color = "rgba(255,255,255,0.3)"; // white mit wenig Opacity
         element.appendChild(s);
         return s;
       });
@@ -61,7 +61,7 @@ export default function InkScrollSection() {
           const t = clamp01(d / SOFT_WINDOW);
           alpha = lerp(INK_MIN, INK_MAX, t);
         }
-        headlineSpans[i].style.color = `rgba(255,255,255,${alpha})`;
+        headlineSpans[i].style.color = `rgba(255,255,255,${alpha})`; // white
       }
 
       // Subtext effect (starts when subtext enters viewport)
@@ -80,7 +80,7 @@ export default function InkScrollSection() {
           const t = clamp01(d / SOFT_WINDOW);
           alpha = lerp(INK_MIN, INK_MAX, t);
         }
-        subtextSpans[i].style.color = `rgba(255,255,255,${alpha})`;
+        subtextSpans[i].style.color = `rgba(255,255,255,${alpha})`; // white
       }
     }
 
@@ -105,85 +105,24 @@ export default function InkScrollSection() {
   }, []);
 
   return (
-    <div className="relative min-h-screen text-white">
-      {/* Dekorativer Gradient-Overlay */}
-      <div className="absolute inset-0 bg-gradient-radial from-cerulean/5 via-transparent to-transparent pointer-events-none" />
+    <div className="relative bg-[#1a2332]">
 
-      {/* Hero section - reduced height without chip */}
-      <section className="relative min-h-[8vh] sm:min-h-[15vh] overflow-hidden">
-      </section>
+      {/* UNSERE PROJEKTE Section mit Milchglas-Hintergrund */}
+      <div className="relative bg-[#1a2332] py-12 mt-0 z-0">
+        <div className="px-3 sm:px-4 md:px-[5vw] relative">
 
-      {/* Section mit Typing-Reveal pro Buchstabe */}
-      <section className="relative py-2 sm:py-12 md:py-16 lg:py-20">
-        {/* Zusätzliche Layout-Elemente für Vielfalt */}
-        <div className="absolute top-10 left-[5%] w-2 h-24 bg-gradient-to-b from-cerulean to-transparent opacity-30 rounded-full hidden md:block" />
-        <div className="absolute top-20 right-[8%] w-2 h-32 bg-gradient-to-b from-penn-blue to-transparent opacity-30 rounded-full hidden md:block" />
-
-        <div className="flex justify-center px-4 sm:px-[5vw]">
-          <h2
-            ref={headlineRef}
-            className="max-w-[900px] text-center font-extrabold leading-[1.2] sm:leading-[1.05] tracking-tight text-[20px] sm:text-[clamp(26px,6.2vw,64px)] whitespace-pre-wrap px-2"
-          >
-            {`Professioneller Rückbau.\nModerne Technik. Faire Preise.`}
-          </h2>
-        </div>
-
-        {/* Professionelles Baustellen-Bild mit verbessertem Design */}
-        <div className="relative mt-8 sm:mt-12 md:mt-16 lg:mt-20 mb-0 w-[min(1100px,95vw)] mx-auto">
-          {/* Dekorativer Rahmen-Effekt */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-cerulean/20 via-penn-blue/20 to-cerulean/20 rounded-3xl sm:rounded-[2rem] blur-2xl opacity-50" />
-
-          <div className="relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,.3)] group hover:scale-[1.02] transition-all duration-500">
-            <Image
-              src="/images/team-photo.jpeg"
-              alt="Professioneller Rückbau mit Container-Entsorgung"
-              className="absolute inset-0 w-full h-full object-cover"
-              fill
-              sizes="(max-width: 1100px) 92vw, 1100px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-
-            {/* Floating Elements mit mehr Design */}
-            <div className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 flex gap-2">
-              <div className="bg-white/10 backdrop-blur-md rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold border border-white/20">
-                Deutschlandweit
-              </div>
-            </div>
-
-            {/* Zusätzlicher Badge oben links */}
-            <div className="absolute top-3 left-3 sm:top-6 sm:left-6">
-              <div className="bg-cerulean/20 backdrop-blur-md rounded-full px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold border border-cerulean/30 text-white">
-                ✓ Zertifiziert
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Text removed for mobile */}
-      </section>
-
-      {/* UNSERE PROJEKTE Section mit verbessertem Design */}
-      <div className="relative">
-        {/* Dekorative Akzent-Linie */}
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-1 h-16 bg-gradient-to-b from-transparent via-cerulean/40 to-transparent" />
-
-        <div className="px-3 sm:px-4 md:px-[5vw] pt-16 pb-8 relative">
-          {/* Hintergrund-Akzente */}
-          <div className="absolute top-20 left-[10%] w-32 h-32 bg-cerulean/10 rounded-full blur-3xl" />
-          <div className="absolute top-10 right-[15%] w-40 h-40 bg-penn-blue/10 rounded-full blur-3xl" />
-
-          <div className="relative text-center mb-8 sm:mb-10 md:mb-12 px-4">
-            {/* Chip mit Gradient-Border */}
+          <div className="relative text-center mb-4 px-4">
+            {/* Chip mit Gradient-Border - heller */}
             <div className="inline-flex items-center gap-2 mb-4">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-cerulean to-penn-blue rounded-full blur-sm opacity-50" />
-                <span className="relative block text-cerulean font-semibold text-sm uppercase tracking-wider px-4 py-1.5 bg-oxford-blue/50 backdrop-blur-sm rounded-full border border-cerulean/30">
+                <div className="absolute inset-0 bg-gradient-to-r from-cerulean to-blue-500 rounded-full blur-sm opacity-40" />
+                <span className="relative block text-cerulean font-semibold text-sm uppercase tracking-wider px-4 py-1.5 bg-white/70 backdrop-blur-sm rounded-full border border-cerulean/40">
                   Unsere Projekte
                 </span>
               </div>
             </div>
 
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mt-3 sm:mt-4 mb-4 sm:mb-6 tracking-wider">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mt-3 sm:mt-4 mb-4 sm:mb-6 tracking-wider px-4">
               Professioneller Rückbau & Schadstoffsanierung
             </h2>
 
@@ -192,7 +131,7 @@ export default function InkScrollSection() {
               <div className="h-1 w-24 bg-gradient-to-r from-transparent via-cerulean to-transparent rounded-full" />
             </div>
 
-            <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
               Sehen Sie selbst: Unsere Experten führen Rückbau- und Schadstoffsanierung mit höchsten Standards durch
             </p>
           </div>

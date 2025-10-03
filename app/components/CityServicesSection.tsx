@@ -124,12 +124,7 @@ export default function CityServicesSection() {
   const currentServices = servicesData[currentCityName as keyof typeof servicesData] || [];
 
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cerulean/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-dye/10 rounded-full blur-3xl"></div>
-      </div>
+    <section className="relative py-16 md:py-24 bg-[#1a2332] overflow-hidden">
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Enhanced Header */}

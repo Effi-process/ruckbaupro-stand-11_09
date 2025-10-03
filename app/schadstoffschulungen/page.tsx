@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import FloatingElements from '@/app/components/FloatingElements';
+import GlassHeader from '@/app/components/GlassHeader';
 import FooterWithMarquee from '@/app/components/FooterWithMarquee';
 import SimpleContactForm from '@/app/components/SimpleContactForm';
 import dynamic from 'next/dynamic';
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
 export default function SchadstoffschulungenPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-oxford-blue via-gray-800 to-oxford-blue">
+      <GlassHeader />
       {/* Floating Logo and Menu */}
-      <FloatingElements />
 
       {/* Hero Section */}
       <section className="relative py-24 px-4 sm:px-6 lg:px-8 mt-20 overflow-hidden">

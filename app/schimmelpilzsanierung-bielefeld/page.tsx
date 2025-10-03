@@ -1,6 +1,6 @@
 import SchimmelpilzsanierungBielefeld from '../components/SchimmelpilzsanierungBielefeld';
+import GlassHeader from '../components/GlassHeader';
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import FloatingElements from '../components/FloatingElements';
 
 export const metadata = {
   title: 'Schimmelpilzsanierung Bielefeld - Gesund wohnen | RückbauPRO',
@@ -33,7 +33,7 @@ export const metadata = {
 export default function SchimmelpilzsanierungBielefeldPage() {
   return (
     <main className="relative">
-      <FloatingElements />
+      <GlassHeader />
       <SchimmelpilzsanierungBielefeld />
       <FooterWithMarquee />
     </main>

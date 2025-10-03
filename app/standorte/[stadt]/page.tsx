@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import StadtDetail from './StadtDetail';
 import { CITIES_DATA, getCityBySlug, generateCitySchema, getAllCitySlugs } from '../../lib/cities-data';
-import FloatingElements from '../../components/FloatingElements';
 
 export async function generateStaticParams() {
   return getAllCitySlugs().map((slug) => ({
@@ -107,7 +106,6 @@ export default function StadtPage({ params }: { params: { stadt: string } }) {
   return (
     <>
       {/* Floating Logo and Menu */}
-      <FloatingElements />
       
       {/* Structured Data for Local SEO */}
       <script

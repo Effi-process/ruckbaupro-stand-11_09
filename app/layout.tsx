@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Montserrat, Poppins, Raleway, Work_Sans } from 'next/font/google'
 import './globals.css'
 import Footer from './components/Footer'
 import { PerformanceMonitor } from './components/PerformanceMonitor'
@@ -12,13 +12,45 @@ import FloatingMenuButton from './components/FloatingMenuButton'
 import Script from 'next/script'
 
 // Optimized font loading for faster LCP
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   preload: true,
   fallback: ['system-ui', 'arial'],
   adjustFontFallback: true,
   variable: '--font-inter'
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-montserrat',
+  weight: ['400', '500', '600', '700', '800', '900']
+})
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-poppins',
+  weight: ['400', '500', '600', '700', '800', '900']
+})
+
+const raleway = Raleway({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-raleway',
+  weight: ['300', '400', '500', '600', '700', '800', '900']
+})
+
+const workSans = Work_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-work-sans',
+  weight: ['300', '400', '500', '600', '700', '800', '900']
 })
 
 import { generateHomepageMetadata } from './lib/metadata-utils';
@@ -52,10 +84,10 @@ export default function RootLayout({
 
         {/* Microsoft Tiles */}
         <meta name="msapplication-TileImage" content="/icon-192x192.png" />
-        <meta name="msapplication-TileColor" content="#0a4078" />
+        <meta name="msapplication-TileColor" content="#1a2332" />
 
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#1282a2" />
+        <meta name="theme-color" content="#1a2332" />
 
         {/* Google Site Verification */}
         <meta name="google-site-verification" content="google8f87d17998b1ccc7" />
@@ -246,7 +278,7 @@ export default function RootLayout({
           async
         />
       </head>
-      <body className={`${inter.variable} font-sans antialiased bg-oxford-blue`} suppressHydrationWarning={true}>
+      <body className={`${inter.variable} ${montserrat.variable} ${poppins.variable} ${raleway.variable} ${workSans.variable} font-sans antialiased bg-oxford-blue`} suppressHydrationWarning={true}>
         {/* Skip to main content link for accessibility */}
         <a href="#main-content" className="skip-link">Zum Hauptinhalt springen</a>
         <PerformanceMonitor />

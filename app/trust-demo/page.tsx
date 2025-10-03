@@ -1,9 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
+import GlassHeader from '../components/GlassHeader';
 import MasterTrustBuilder from '../components/MasterTrustBuilder';
 import SocialProofSystem from '../components/SocialProofSystem';
 import ReputationManagement from '../components/ReputationManagement';
-import FloatingElements from '../components/FloatingElements';
 import RetentionSystem from '../components/RetentionSystem';
 import TrustBadges from '../components/TrustBadges';
 import Icon from '../components/Icon';
@@ -26,7 +26,6 @@ export default function TrustDemo() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Floating Logo and Menu */}
-      <FloatingElements />
       {/* Header */}
       <header className="bg-white shadow-sm border-b sticky top-0 z-50">
         <div className="container-custom py-4">

@@ -39,15 +39,14 @@ export default function MobileHeader() {
   return (
     <>
       {/* Logo - Fixed position with safe area for mobile */}
-      <Link href="/" className="lg:hidden fixed top-2 left-4 z-[100] block bg-black/20 backdrop-blur-md rounded-2xl p-1 border border-white/10 -rotate-90">
-        <Image
-          src="/Design ohne Titel 2.svg.svg"
-          alt="RückbauPRO"
-          className="h-20 w-auto sm:h-24"
-          width={300}
-          height={100}
-          priority
-        />
+      <Link href="/" className="lg:hidden fixed top-2 left-4 z-[100] block">
+        <div className="bg-black/20 backdrop-blur-md rounded-lg p-0.5 border border-white/10 inline-block -rotate-90">
+          <img
+            src="/logo-mobile.svg"
+            alt="RückbauPRO"
+            className="h-28 w-auto sm:h-32"
+          />
+        </div>
       </Link>
 
       {/* Menu Button - Fixed position on video with glass effect */}
@@ -82,7 +81,7 @@ export default function MobileHeader() {
         ></div>
 
         {/* Menu Panel with glass morphism effect */}
-        <div className={`absolute right-2 top-20 w-[calc(100vw-1rem)] sm:w-[380px] max-w-[420px] bg-white/10 backdrop-blur-3xl shadow-3xl border border-white/25 rounded-2xl z-[99] overflow-hidden max-h-[85vh] transform transition-all duration-300 ${
+        <div className={`absolute right-2 top-24 w-[calc(100vw-1rem)] sm:w-[380px] max-w-[420px] bg-white/10 backdrop-blur-3xl shadow-3xl border border-white/25 rounded-2xl z-[99] overflow-hidden max-h-[85vh] transform transition-all duration-300 ${
           isOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'
         }`}
           style={{

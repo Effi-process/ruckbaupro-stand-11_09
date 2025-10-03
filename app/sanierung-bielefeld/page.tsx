@@ -1,6 +1,6 @@
 import SanierungBielefeld from '../components/SanierungBielefeld';
+import GlassHeader from '../components/GlassHeader';
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import FloatingElements from '../components/FloatingElements';
 
 export const metadata = {
   title: 'Sanierung Bielefeld - Professionelle Gebäudesanierung | RückbauPRO',
@@ -33,7 +33,7 @@ export const metadata = {
 export default function SanierungBielefeldPage() {
   return (
     <main className="relative">
-      <FloatingElements />
+      <GlassHeader />
       <SanierungBielefeld />
       <FooterWithMarquee />
     </main>

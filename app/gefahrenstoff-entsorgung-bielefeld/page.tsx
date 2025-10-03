@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import GlassHeader from '../components/GlassHeader';
 import SimpleContactForm from '../components/SimpleContactForm';
 
 export default function GefahrenstoffEntsorgungBielefeld() {
@@ -8,6 +9,7 @@ export default function GefahrenstoffEntsorgungBielefeld() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-red-950 relative overflow-hidden">
+      <GlassHeader />
       {/* Animated Background Blobs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -inset-10 opacity-50">

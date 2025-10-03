@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import FloatingElements from '../components/FloatingElements';
+import GlassHeader from '../components/GlassHeader';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function Sitemap() {
@@ -19,8 +19,8 @@ export default function Sitemap() {
 
   return (
     <main className="pt-32 pb-20 relative bg-gradient-to-b from-gray-800 via-gray-700 to-oxford-blue text-white min-h-screen">
+      <GlassHeader />
       {/* Transparent Header */}
-      <FloatingElements />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-xl shadow-lg p-8">
           <h1 className="text-4xl font-bold text-[#2C4F5E] mb-8">Sitemap</h1>

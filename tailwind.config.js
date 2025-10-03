@@ -8,7 +8,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Professional RückbauPRO Color Scheme
+        // Definierte Farbpalette - NUR DIESE FARBEN VERWENDEN
+        'midnight-blue': '#102B54', // Mitternachtsblau (Sekundärer Hintergrundverlauf)
+        'light-blue': '#4DA8FF',    // Hellblau (Hervorhebungen, Überschriften)
+        'white': '#FFFFFF',         // Weiß (Textfarbe)
+        'gray-blue': '#A8B3C4',     // Grau-Blau (Textsekundär, Buttons, Icons)
+        'bright-blue': '#1E80FF',   // Leuchtblau (Button-Hover & aktive Elemente)
+
+        // Legacy colors (deprecated - use new palette above)
         'oxford-blue': '#0a1128',
         'penn-blue': '#001f54',
         'indigo-dye': '#034078',
@@ -110,6 +117,10 @@ module.exports = {
           'Helvetica Neue',
           'sans-serif'
         ],
+        montserrat: ['var(--font-montserrat)', 'Montserrat', 'sans-serif'],
+        poppins: ['var(--font-poppins)', 'Poppins', 'sans-serif'],
+        raleway: ['var(--font-raleway)', 'Raleway', 'sans-serif'],
+        'work-sans': ['var(--font-work-sans)', 'Work Sans', 'sans-serif'],
         display: ['Playfair Display', 'serif'],
       },
       fontSize: {

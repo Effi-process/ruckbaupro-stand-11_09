@@ -1,9 +1,9 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import GlassHeader from '../components/GlassHeader';
 import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import FloatingElements from '../components/FloatingElements';
 
 export default function RaeumungRodungBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,12 +14,12 @@ export default function RaeumungRodungBielefeld() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-sky-950 relative overflow-hidden">
+      <GlassHeader />
       {/* Animated background gradients */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-tr from-sky-900/20 via-transparent to-transparent animate-pulse" />
         <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-sky-800/10 to-slate-900/50" />
       </div>
-      <FloatingElements />
       <div className="relative z-10">
 
       {/* Hero Section */}

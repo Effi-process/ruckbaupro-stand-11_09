@@ -1,6 +1,6 @@
 import TeilsanierungBielefeld from '../components/TeilsanierungBielefeld';
+import GlassHeader from '../components/GlassHeader';
 import FooterWithMarquee from '../components/FooterWithMarquee';
-import FloatingElements from '../components/FloatingElements';
 
 export const metadata = {
   title: 'Teilsanierung Bielefeld - Gezielte Modernisierung | RückbauPRO',
@@ -33,7 +33,7 @@ export const metadata = {
 export default function TeilsanierungBielefeldPage() {
   return (
     <main className="relative">
-      <FloatingElements />
+      <GlassHeader />
       <TeilsanierungBielefeld />
       <FooterWithMarquee />
     </main>

@@ -86,9 +86,7 @@ export default function ProjectCarousel() {
   ];
 
   return (
-    <section className="relative px-3 sm:px-4 md:px-[5vw] -mt-32 pb-8 sm:py-16 md:py-20 overflow-hidden">
-      {/* Professioneller Gradient-Hintergrund */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-oxford-blue/30 to-oxford-blue/60 pointer-events-none" />
+    <section className="relative overflow-hidden bg-[#1a2332]">
 
       {/* Carousel Container */}
       <div className="relative z-10">
@@ -96,17 +94,14 @@ export default function ProjectCarousel() {
         {/* Track */}
         <div
           ref={trackRef}
-          className="no-scrollbar overflow-x-auto scroll-smooth snap-x snap-center snap-mandatory flex gap-8 md:gap-6 pb-2 md:pb-6"
+          className="no-scrollbar overflow-x-auto scroll-smooth snap-x snap-center snap-mandatory flex gap-8 md:gap-6"
           style={{ paddingLeft: 'calc(50% - 45vw)', paddingRight: 'calc(50% - 45vw)' }}
         >
           {projects.map((project, i) => (
             <Link key={i} href={project.link} className="snap-center shrink-0 w-[90vw] sm:w-[85vw] md:w-[380px] lg:w-[420px] group cursor-pointer">
               <article className="flex flex-col">
                 <div className="relative">
-                  {/* Dekorativer Glow-Effekt hinter der Karte */}
-                  <div className="absolute -inset-2 bg-gradient-to-br from-cerulean/20 via-penn-blue/10 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <div className="relative h-[280px] sm:h-[320px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,.3)] group-hover:scale-[1.03] transition-all duration-500">
+                  <div className="relative h-[360px] sm:h-[400px] md:h-[360px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,.3)] group-hover:scale-[1.03] transition-all duration-500">
                     <Image
                       src={project.image}
                       alt={project.alt}
@@ -119,12 +114,9 @@ export default function ProjectCarousel() {
 
                     {/* Badge mit verbessertem Design */}
                     <div className="absolute top-4 left-4 md:top-6 md:left-6">
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-cerulean/40 to-penn-blue/40 rounded-full blur-md" />
-                        <span className="relative block text-xs md:text-sm px-3 py-2 md:px-4 md:py-3 rounded-full bg-white/20 backdrop-blur-md tracking-wide uppercase text-white font-bold shadow-lg border border-white/30">
-                          {project.badge}
-                        </span>
-                      </div>
+                      <span className="relative block text-xs md:text-sm px-3 py-2 md:px-4 md:py-3 rounded-full bg-white/20 backdrop-blur-md tracking-wide uppercase text-white font-bold shadow-lg border border-white/30">
+                        {project.badge}
+                      </span>
                     </div>
 
                     {/* Zusätzliches Icon unten rechts für Desktop */}
@@ -191,7 +183,7 @@ export default function ProjectCarousel() {
       </div>
 
       {/* CTA Button */}
-      <div className="text-center mt-8 sm:mt-10 md:mt-12">
+      <div className="text-center mt-2">
         <Link
           href="/leistungen"
           className="inline-flex items-center gap-3 sm:gap-4 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold hover:bg-white/20 transition-all duration-300 text-sm sm:text-base"

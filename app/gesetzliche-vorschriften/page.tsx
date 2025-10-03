@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import FloatingElements from '../components/FloatingElements';
+import GlassHeader from '../components/GlassHeader';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import SimpleContactForm from '../components/SimpleContactForm';
 import { ScrollAnimation } from '../components/ScrollAnimations';
@@ -103,8 +103,8 @@ export default function GesetzlicheVorschriften() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-oxford-blue via-gray-800 to-oxford-blue">
+      <GlassHeader />
       {/* Floating Logo and Menu */}
-      <FloatingElements />
 
       {/* Hero Section */}
       <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">

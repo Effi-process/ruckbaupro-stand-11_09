@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Icon from '../components/Icon';
-import FloatingElements from '../components/FloatingElements';
+import GlassHeader from '../components/GlassHeader';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 
 export default function Franchise() {
@@ -75,8 +75,8 @@ export default function Franchise() {
 
   return (
     <main className="relative">
+      <GlassHeader />
       {/* Transparent Header */}
-      <FloatingElements />
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-gray-800 via-gray-700 to-oxford-blue">
