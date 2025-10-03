@@ -57,7 +57,8 @@ export default function Footer() {
                 <Link href="/leistungen#rueckbau" className="text-secondary-400">Rückbau</Link>
                 <Link href="/leistungen#abbruch" className="text-secondary-400">Abbruch</Link>
                 <Link href="/leistungen#entkernung" className="text-secondary-400">Entkernung</Link>
-                <Link href="/leistungen#asbestsanierung" className="text-secondary-400">Asbest</Link>
+                <Link href="/b2b" className="text-secondary-400">B2B</Link>
+                <Link href="/karriere" className="text-secondary-400">Karriere</Link>
               </div>
             </div>
             <div className="text-right">
@@ -80,6 +81,8 @@ export default function Footer() {
             <Link href="/datenschutz" className="mx-1" aria-label="Datenschutzerklärung öffnen">Datenschutz</Link>
             <span className="mx-1">•</span>
             <Link href="/agb" className="mx-1" aria-label="Allgemeine Geschäftsbedingungen öffnen">AGB</Link>
+            <span className="mx-1">•</span>
+            <Link href="/rechtliches" className="mx-1" aria-label="Rechtliche Hinweise">Rechtliches</Link>
           </div>
         </div>
 
@@ -135,6 +138,8 @@ export default function Footer() {
                 <li><Link href="/leistungen#abbruch" className="text-secondary-400 hover:text-cerulean transition-colors" aria-label="Mehr über Abbruch-Leistungen erfahren">Abbruch</Link></li>
                 <li><Link href="/leistungen#entkernung" className="text-secondary-400 hover:text-cerulean transition-colors" aria-label="Mehr über Entkernung-Leistungen erfahren">Entkernung</Link></li>
                 <li><Link href="/leistungen#entsorgung" className="text-secondary-400 hover:text-cerulean transition-colors" aria-label="Mehr über Entsorgungs-Leistungen erfahren">Entsorgung</Link></li>
+                <li><Link href="/b2b" className="text-secondary-400 hover:text-cerulean transition-colors" aria-label="B2B Geschäftskunden">B2B</Link></li>
+                <li><Link href="/karriere" className="text-secondary-400 hover:text-cerulean transition-colors" aria-label="Karriere bei RückbauPRO">Karriere</Link></li>
               </ul>
             </div>
 
@@ -167,6 +172,8 @@ export default function Footer() {
                 <Link href="/impressum" className="hover:text-cerulean transition-colors" aria-label="Impressum öffnen">Impressum</Link>
                 <Link href="/datenschutz" className="hover:text-cerulean transition-colors" aria-label="Datenschutzerklärung öffnen">Datenschutz</Link>
                 <Link href="/agb" className="hover:text-cerulean transition-colors" aria-label="Allgemeine Geschäftsbedingungen öffnen">AGB</Link>
+                <Link href="/rechtliches" className="hover:text-cerulean transition-colors" aria-label="Rechtliche Hinweise">Rechtliches</Link>
+                <Link href="/nachhaltigkeit" className="hover:text-cerulean transition-colors" aria-label="Nachhaltigkeit">Nachhaltigkeit</Link>
               </div>
 
               {/* Social Links */}

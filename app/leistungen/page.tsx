@@ -14,6 +14,28 @@ export default function LeistungenPage() {
 
   const services = [
     {
+      title: 'Rückbau',
+      description: 'Professioneller Rückbau von Gebäuden und Anlagen. Fachgerecht, umweltschonend und termingerecht mit modernster Technik.',
+      image: '/images/demolition-action.png',
+      features: [
+        'Kompletter Gebäuderückbau',
+        'Selektiver Rückbau',
+        'Umweltgerechte Entsorgung',
+        'Termingarantie'
+      ]
+    },
+    {
+      title: 'Abbruch',
+      description: 'Kompletter Abbruch von Gebäuden, Hallen und Industrieanlagen. Schnell, sicher und zu fairen Preisen.',
+      image: '/images/demolition-action.png',
+      features: [
+        'Gebäudeabbruch',
+        'Hallenabbruch',
+        'Industrieabbruch',
+        'Spezialabbruch'
+      ]
+    },
+    {
       title: 'Asbestsanierung',
       description: 'Professionelle und sichere Entfernung von Asbest nach TRGS 519. Zertifizierte Fachkräfte garantieren höchste Sicherheitsstandards.',
       image: '/images/asbest-team-hero.png',
@@ -33,6 +55,17 @@ export default function LeistungenPage() {
         'Teilentkernung möglich',
         'Schadstoffsanierung',
         'Recycling & Entsorgung'
+      ]
+    },
+    {
+      title: 'Entsorgung',
+      description: 'Fachgerechte Entsorgung und Verwertung aller anfallenden Materialien. Umweltgerecht und gesetzeskonform.',
+      image: '/images/demolition-action.png',
+      features: [
+        'Bauschutt-Entsorgung',
+        'Sonderabfall-Entsorgung',
+        'Recycling & Verwertung',
+        'Entsorgungsnachweise'
       ]
     },
     {
