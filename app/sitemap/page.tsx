@@ -9,9 +9,7 @@ export default function Sitemap() {
     { name: 'Preise', path: '/preise' },
     { name: 'Kontakt', path: '/kontakt' },
     { name: 'Über uns', path: '/ueber-uns' },
-    { name: 'B2B', path: '/b2b' },
     { name: 'Karriere', path: '/karriere' },
-    { name: 'Nachhaltigkeit', path: '/nachhaltigkeit' },
     { name: 'Impressum', path: '/impressum' },
     { name: 'Datenschutz', path: '/datenschutz' },
     { name: 'AGB', path: '/agb' }

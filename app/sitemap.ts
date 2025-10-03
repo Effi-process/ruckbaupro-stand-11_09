@@ -129,18 +129,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Additional pages
   const additionalPages = [
     {
-      url: `${baseUrl}/nachhaltigkeit`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/b2b`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/franchise`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
@@ -151,12 +139,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'yearly' as const,
       priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/rechtliches`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly' as const,
-      priority: 0.4,
     },
     {
       url: `${baseUrl}/schadstoffschulungen`,
