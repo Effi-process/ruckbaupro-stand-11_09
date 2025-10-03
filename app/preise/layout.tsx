@@ -1,14 +1,18 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Preise & Kosten - RückbauPRO | Kostenloser Kostenvoranschlag',
-  description: 'Transparente Preise für Rückbau & Abbruch. ✓ Kostenloser Kostenvoranschlag ✓ Faire Preise ✓ Keine versteckten Kosten. Jetzt Preis berechnen!',
   alternates: {
     canonical: 'https://www.rueckbaupro.de/preise',
   },
+  openGraph: {
+    url: 'https://www.rueckbaupro.de/preise',
+    siteName: 'RückbauPRO',
+    locale: 'de_DE',
+    type: 'website',
+  },
 };
 
-export default function PreiseLayout({
+export default function Layout({
   children,
 }: {
   children: React.ReactNode;

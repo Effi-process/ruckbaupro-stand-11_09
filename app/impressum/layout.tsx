@@ -4,6 +4,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.rueckbaupro.de/impressum',
   },
+  openGraph: {
+    url: 'https://www.rueckbaupro.de/impressum',
+    siteName: 'RückbauPRO',
+    locale: 'de_DE',
+    type: 'website',
+  },
 };
 
 export default function Layout({

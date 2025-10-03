@@ -4,6 +4,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.rueckbaupro.de/leistungen/schimmelsanierung',
   },
+  openGraph: {
+    url: 'https://www.rueckbaupro.de/leistungen/schimmelsanierung',
+    siteName: 'RückbauPRO',
+    locale: 'de_DE',
+    type: 'website',
+  },
 };
 
 export default function Layout({

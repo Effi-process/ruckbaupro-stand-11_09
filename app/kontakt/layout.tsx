@@ -1,14 +1,18 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Kontakt - RückbauPRO | Kostenlose Beratung',
-  description: 'Kontaktieren Sie RückbauPRO für professionellen Rückbau & Abbruch. ✓ 24h Notdienst ✓ Kostenlose Beratung ✓ Schnelle Reaktionszeit.',
   alternates: {
     canonical: 'https://www.rueckbaupro.de/kontakt',
   },
+  openGraph: {
+    url: 'https://www.rueckbaupro.de/kontakt',
+    siteName: 'RückbauPRO',
+    locale: 'de_DE',
+    type: 'website',
+  },
 };
 
-export default function KontaktLayout({
+export default function Layout({
   children,
 }: {
   children: React.ReactNode;
