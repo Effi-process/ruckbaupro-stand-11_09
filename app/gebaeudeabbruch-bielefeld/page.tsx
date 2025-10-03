@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import SimpleContactForm from '../components/SimpleContactForm';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function GebaeudeabbruchBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -356,7 +357,11 @@ export default function GebaeudeabbruchBielefeld() {
 
       {/* Contact Form Section with Background Image */}
       <section className="relative">
-        <SimpleContactForm purpose="quote" />
+        /* Related Services - Internal Linking for SEO */
+
+        <RelatedServicesBielefeld currentSlug="gebaeudeabbruch-bielefeld" category="abbruch" maxServices={6} />
+
+ purpose="quote" />
       </section>
 
       <FooterWithMarquee />

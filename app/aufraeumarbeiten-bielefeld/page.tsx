@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import SimpleContactForm from '../components/SimpleContactForm';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function AufraeumarbeitenBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -442,6 +443,9 @@ export default function AufraeumarbeitenBielefeld() {
           </div>
         </div>
       </section>
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="aufraeumarbeiten-bielefeld" category="entsorgung" maxServices={6} />
 
       {/* Contact Form Section with Background Image */}
       <section className="relative">

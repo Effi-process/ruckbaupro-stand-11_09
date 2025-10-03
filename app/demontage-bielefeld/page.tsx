@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import SimpleContactForm from '../components/SimpleContactForm';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function DemontageBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -435,6 +436,9 @@ export default function DemontageBielefeld() {
           </div>
         </div>
       </section>
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="demontage-bielefeld" category="abbruch" maxServices={6} />
 
       {/* Contact Form */}
       <SimpleContactForm />

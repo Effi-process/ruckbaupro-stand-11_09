@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import SimpleContactForm from '../components/MultiStepWizard';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 import MobileCollapsibleContent, { CollapsibleTextSection, MobileFAQSection } from '../components/MobileCollapsibleContent'
 import MobileOptimizedContent, { MobileParagraph, MobileHeading, MobileSection } from '../components/MobileOptimizedContent'
 
@@ -457,6 +458,9 @@ export default function FachgerechteEntsorgungBielefeld() {
           </div>
         </div>
       </section>
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="fachgerechte-entsorgung-bielefeld" category="entsorgung" maxServices={6} />
 
       {/* Footer */}
       <FooterWithMarquee />

@@ -4,6 +4,7 @@ import GlassHeader from '../components/GlassHeader';
 import Link from 'next/link';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import SimpleContactForm from '../components/SimpleContactForm';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function DurchbruecheBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -569,6 +570,9 @@ export default function DurchbruecheBielefeld() {
           </div>
         </div>
       </section>
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="durchbrueche-bielefeld" category="all" maxServices={6} />
 
       {/* Contact Form */}
       <SimpleContactForm />

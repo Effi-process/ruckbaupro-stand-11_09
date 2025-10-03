@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import SimpleContactForm from '../components/SimpleContactForm';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function EntstaubungBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -383,6 +384,9 @@ export default function EntstaubungBielefeld() {
           </div>
         </div>
       </section>
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="entstaubung-bielefeld" category="all" maxServices={6} />
 
       {/* Contact Form */}
       <SimpleContactForm />

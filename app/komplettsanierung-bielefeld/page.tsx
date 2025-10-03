@@ -1,6 +1,7 @@
 import KomplettsanierungBielefeld from '../components/KomplettsanierungBielefeld';
 import GlassHeader from '../components/GlassHeader';
 import FooterWithMarquee from '../components/FooterWithMarquee';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export const metadata = {
   title: 'Komplettsanierung Bielefeld - Rundum-Erneuerung | RückbauPRO',
@@ -35,6 +36,7 @@ export default function KomplettsanierungBielefeldPage() {
     <main className="relative">
       <GlassHeader />
       <KomplettsanierungBielefeld />
+      <RelatedServicesBielefeld currentSlug="komplettsanierung-bielefeld" category="sanierung" maxServices={6} />
       <FooterWithMarquee />
     </main>
   );

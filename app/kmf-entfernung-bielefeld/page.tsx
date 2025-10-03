@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import SimpleContactForm from '../components/SimpleContactForm';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function KMFEntfernungBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -380,7 +381,11 @@ export default function KMFEntfernungBielefeld() {
       </section>
 
       {/* Contact Form Section */}
-      <SimpleContactForm />
+      /* Related Services - Internal Linking for SEO */
+
+      <RelatedServicesBielefeld currentSlug="kmf-entfernung-bielefeld" category="sanierung" maxServices={6} />
+
+ />
 
       {/* Footer */}
       <FooterWithMarquee />

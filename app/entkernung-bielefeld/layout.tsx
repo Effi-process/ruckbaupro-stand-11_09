@@ -1,19 +1,51 @@
 import { Metadata } from 'next';
+import { generateLocalBusinessSchema, generateServiceSchema, generateBreadcrumbSchema } from '../lib/seo-schemas';
+
+const serviceData = {
+  serviceName: 'Entkernung Bielefeld',
+  serviceSlug: 'entkernung-bielefeld',
+  description: 'Professionelle Gebäudeentkernung in Bielefeld. Komplett- und Teilentkernungen für Sanierung und Umbau. Schnell, gründlich, alle Stadtteile. Entsorgung inklusive.',
+  areaServed: ['Bielefeld', 'Brackwede', 'Senne', 'Heepen', 'Sennestadt', 'Gütersloh', 'Paderborn'],
+  priceRange: '€€€'
+};
 
 export const metadata: Metadata = {
-  title: 'Entkernung Bielefeld - Professionell & Zertifiziert | RückbauPRO',
-  description: 'Professionelle Entkernung in Bielefeld. ✓ Zertifiziert ✓ Schnell ✓ Fair ✓ Kostenlose Beratung. Jetzt anrufen: 0521 9999 8480',
-  keywords: ['entkernung bielefeld', 'entkernung  Bielefeld', 'Rückbau Bielefeld', 'Abbruch Bielefeld'],
+  title: 'Entkernung Bielefeld - Komplett & Teil | Schnell & Gründlich | Entsorgung Inkl. | RückbauPRO',
+  description: 'Entkernung Bielefeld ✓ Komplett & Teilentkernung ✓ Sanierung & Umbau ✓ Alle Stadtteile ✓ Entsorgung inklusive ✓ Schnelle Durchführung ☎ 0174 8083023',
   alternates: {
     canonical: 'https://www.rueckbaupro.de/entkernung-bielefeld',
   },
   openGraph: {
-    title: 'Entkernung Bielefeld - Professionell & Zertifiziert',
-    description: 'Professionelle Entkernung in Bielefeld. Zertifiziert, schnell und fair.',
+    title: 'Entkernung Bielefeld - Komplett & Teil | RückbauPRO',
+    description: 'Professionelle Gebäudeentkernung in Bielefeld. Komplett- und Teilentkernungen, Entsorgung inklusive.',
     url: 'https://www.rueckbaupro.de/entkernung-bielefeld',
     siteName: 'RückbauPRO',
     locale: 'de_DE',
     type: 'website',
+    images: [
+      {
+        url: 'https://www.rueckbaupro.de/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'RückbauPRO Entkernung Bielefeld'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Entkernung Bielefeld - Komplett & Teil',
+    description: 'Professionelle Gebäudeentkernung in Bielefeld. Kostenlose Beratung.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -22,5 +54,25 @@ export default function Layout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  const localBusinessSchema = generateLocalBusinessSchema(serviceData);
+  const serviceSchema = generateServiceSchema(serviceData);
+  const breadcrumbSchema = generateBreadcrumbSchema(serviceData.serviceName, serviceData.serviceSlug);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {children}
+    </>
+  );
 }

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import ContactSection from '../components/ContactSection';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function EntkernungBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -331,6 +332,9 @@ export default function EntkernungBielefeld() {
           </div>
         </div>
       </section>
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="entkernung-bielefeld" category="entkernung" maxServices={6} />
 
       {/* Contact Form Section */}
       <ContactSection

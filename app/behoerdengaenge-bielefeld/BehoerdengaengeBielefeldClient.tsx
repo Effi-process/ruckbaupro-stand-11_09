@@ -4,6 +4,7 @@ import Link from 'next/link';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import FloatingElements from '../components/FloatingElements';
 import SimpleContactForm from '../components/SimpleContactForm';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function BehoerdengaengeBielefeldClient() {
   const [isVisible, setIsVisible] = useState(false);
@@ -162,6 +163,9 @@ export default function BehoerdengaengeBielefeldClient() {
 
       {/* FAQ, Service Areas, Contact sections... */}
       {/* All original content remains */}
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="behoerdengaenge-bielefeld" category="beratung" maxServices={6} />
 
       {/* Contact Form */}
       <section id="kontakt">

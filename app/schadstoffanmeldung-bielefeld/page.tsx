@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import GlassHeader from '../components/GlassHeader';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import SimpleContactForm from '../components/SimpleContactForm';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function SchadstoffanmeldungBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -625,7 +626,11 @@ export default function SchadstoffanmeldungBielefeld() {
 
       {/* Contact Form */}
       <section id="kontakt">
-        <SimpleContactForm />
+        /* Related Services - Internal Linking for SEO */
+
+        <RelatedServicesBielefeld currentSlug="schadstoffanmeldung-bielefeld" category="sanierung" maxServices={6} />
+
+ />
       </section>
 
       {/* Footer */}

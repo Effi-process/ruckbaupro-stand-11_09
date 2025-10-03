@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import SimpleContactForm from '../components/SimpleContactForm';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function PCBSanierungBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -505,7 +506,11 @@ export default function PCBSanierungBielefeld() {
       </section>
 
       {/* Contact Form */}
-      <SimpleContactForm />
+      /* Related Services - Internal Linking for SEO */
+
+      <RelatedServicesBielefeld currentSlug="pcb-sanierung-bielefeld" category="sanierung" maxServices={6} />
+
+ />
 
       {/* Footer */}
       <FooterWithMarquee />

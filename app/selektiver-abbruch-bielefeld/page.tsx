@@ -6,6 +6,7 @@ import MobileCollapsibleContent, { CollapsibleTextSection, MobileFAQSection } fr
 import MobileOptimizedContent, { MobileParagraph, MobileHeading, MobileSection } from '../components/MobileOptimizedContent'
 import Link from 'next/link'
 import Image from 'next/image'
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function SelektiverAbbruchBielefeldPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -280,6 +281,9 @@ export default function SelektiverAbbruchBielefeldPage() {
       </MobileOptimizedContent>
 
       </div>
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="selektiver-abbruch-bielefeld" category="abbruch" maxServices={6} />
 
       <FooterWithMarquee />
     </main>

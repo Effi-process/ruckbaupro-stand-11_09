@@ -7,6 +7,7 @@ import FooterWithMarquee from '../components/FooterWithMarquee';
 import SimpleContactForm from '../components/MultiStepWizard';
 import MobileCollapsibleContent, { CollapsibleTextSection, MobileFAQSection } from '../components/MobileCollapsibleContent'
 import MobileOptimizedContent, { MobileParagraph, MobileHeading, MobileSection } from '../components/MobileOptimizedContent'
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function LandschaftsbauVorbereitungBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -440,6 +441,9 @@ export default function LandschaftsbauVorbereitungBielefeld() {
           </div>
         </div>
       </section>
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="landschaftsbau-vorbereitung-bielefeld" category="all" maxServices={6} />
 
       {/* Footer */}
       <FooterWithMarquee />

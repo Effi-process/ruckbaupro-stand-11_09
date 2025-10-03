@@ -8,6 +8,7 @@ import ContactSection from '../components/ContactSection';
 import MobileCollapsibleContent, { CollapsibleTextSection, MobileFAQSection } from '../components/MobileCollapsibleContent'
 import MobileOptimizedContent, { MobileParagraph, MobileHeading, MobileSection } from '../components/MobileOptimizedContent'
 import MobileHeader from '../components/MobileHeader';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function AsbestentfernungBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -404,6 +405,9 @@ export default function AsbestentfernungBielefeld() {
           </div>
         </div>
       </section>
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="asbestentfernung-bielefeld" category="sanierung" maxServices={6} />
 
       {/* Contact Form Section */}
       <ContactSection

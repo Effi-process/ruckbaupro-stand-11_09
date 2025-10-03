@@ -7,6 +7,7 @@ import FloatingElements from '../components/FloatingElements';
 import ContactSection from '../components/ContactSection';
 import MobileCollapsibleContent, { CollapsibleTextSection, MobileFAQSection } from '../components/MobileCollapsibleContent';
 import MobileOptimizedContent, { MobileParagraph, MobileHeading, MobileSection } from '../components/MobileOptimizedContent';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function GlaswolleEntsorgungBielefeldClient() {
   const [isVisible, setIsVisible] = useState(false);
@@ -451,6 +452,11 @@ export default function GlaswolleEntsorgungBielefeldClient() {
       />
 
       {/* Footer */}
+      /* Related Services - Internal Linking for SEO */
+
+      <RelatedServicesBielefeld currentSlug="glaswolle-entsorgung-bielefeld" category="sanierung" maxServices={6} />
+
+
       <FooterWithMarquee />
     </main>
   );

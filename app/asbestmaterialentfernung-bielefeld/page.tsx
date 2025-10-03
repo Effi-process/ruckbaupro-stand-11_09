@@ -7,6 +7,7 @@ import FooterWithMarquee from '../components/FooterWithMarquee';
 import SimpleContactForm from '../components/SimpleContactForm';
 import MobileCollapsibleContent, { CollapsibleTextSection, MobileFAQSection } from '../components/MobileCollapsibleContent'
 import MobileOptimizedContent, { MobileParagraph, MobileHeading, MobileSection } from '../components/MobileOptimizedContent'
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function AsbestmaterialentfernungBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -446,6 +447,9 @@ export default function AsbestmaterialentfernungBielefeld() {
           </div>
         </div>
       </section>
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="asbestmaterialentfernung-bielefeld" category="sanierung" maxServices={6} />
 
       {/* Contact Form Section with Background Image */}
       <section className="relative">

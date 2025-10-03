@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import ContactSection from '../components/ContactSection';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function ReinigungBielefeldPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -367,7 +368,11 @@ export default function ReinigungBielefeldPage() {
       </section>
 
       {/* Contact Form Section */}
-      <ContactSection
+      /* Related Services - Internal Linking for SEO */
+
+      <RelatedServicesBielefeld currentSlug="reinigung-bielefeld" category="all" maxServices={6} />
+
+
         title="Kostenloses Reinigungsangebot für Bielefeld"
         subtitle="Professionelle Reinigung in ganz Bielefeld - schnell, gründlich, fair"
       />

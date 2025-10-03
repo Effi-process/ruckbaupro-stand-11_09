@@ -7,6 +7,7 @@ import FooterWithMarquee from '../components/FooterWithMarquee';
 import SimpleContactForm from '../components/SimpleContactForm';
 import MobileCollapsibleContent, { CollapsibleTextSection, MobileFAQSection } from '../components/MobileCollapsibleContent'
 import MobileOptimizedContent, { MobileParagraph, MobileHeading, MobileSection } from '../components/MobileOptimizedContent'
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function TRGS519Bielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -469,10 +470,9 @@ export default function TRGS519Bielefeld() {
         </div>
       </section>
 
-      {/* Contact Form Section with Background Image */}
-      <section className="relative">
-        <SimpleContactForm purpose="quote" />
-      </section>
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="trgs-519-bielefeld" category="beratung" maxServices={6} />
 
       {/* Footer */}
       <FooterWithMarquee />

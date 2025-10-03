@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import GlassHeader from '../components/GlassHeader';
 import SimpleContactForm from '../components/SimpleContactForm';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function GefahrenstoffEntsorgungBielefeld() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -558,7 +559,11 @@ export default function GefahrenstoffEntsorgungBielefeld() {
 
       {/* Contact Form */}
       <section id="kontakt" className="relative z-10">
-        <SimpleContactForm />
+        /* Related Services - Internal Linking for SEO */
+
+        <RelatedServicesBielefeld currentSlug="gefahrenstoff-entsorgung-bielefeld" category="entsorgung" maxServices={6} />
+
+ />
       </section>
 
       {/* Add animation styles */}

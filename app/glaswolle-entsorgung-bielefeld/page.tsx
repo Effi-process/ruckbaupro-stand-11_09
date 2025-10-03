@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import GlaswolleEntsorgungBielefeldClient from './GlaswolleEntsorgungBielefeldClient';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export const metadata: Metadata = {
   title: 'Glaswolle Entsorgung Bielefeld - KMF fachgerecht entsorgen | RückbauPRO',

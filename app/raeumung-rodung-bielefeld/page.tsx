@@ -4,6 +4,7 @@ import GlassHeader from '../components/GlassHeader';
 import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function RaeumungRodungBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -382,6 +383,9 @@ export default function RaeumungRodungBielefeld() {
           </div>
         </div>
       </section>
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="raeumung-rodung-bielefeld" category="entsorgung" maxServices={6} />
 
       {/* Footer */}
       <FooterWithMarquee />

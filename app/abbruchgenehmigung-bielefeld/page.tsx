@@ -4,6 +4,7 @@ import GlassHeader from '../components/GlassHeader';
 import Link from 'next/link';
 import Image from 'next/image';
 import FooterWithMarquee from '../components/FooterWithMarquee';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function AbbruchgenehmigungBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -370,6 +371,9 @@ export default function AbbruchgenehmigungBielefeld() {
           </div>
         </div>
       </section>
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="abbruchgenehmigung-bielefeld" category="abbruch" maxServices={6} />
 
       {/* Footer */}
       <FooterWithMarquee />

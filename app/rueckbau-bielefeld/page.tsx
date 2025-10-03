@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import GlassHeader from '../components/GlassHeader';
 import Link from 'next/link';
 import SimpleContactForm from '../components/SimpleContactForm';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function RueckbauBielefeldPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -527,7 +528,11 @@ export default function RueckbauBielefeldPage() {
 
       {/* Contact Form */}
       <section id="kontakt" className="relative z-10">
-        <SimpleContactForm />
+        /* Related Services - Internal Linking for SEO */
+
+        <RelatedServicesBielefeld currentSlug="rueckbau-bielefeld" category="all" maxServices={6} />
+
+ />
       </section>
 
       {/* Add animation styles */}

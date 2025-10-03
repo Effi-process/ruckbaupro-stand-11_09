@@ -4,6 +4,7 @@ import GlassHeader from '../components/GlassHeader';
 import Link from 'next/link';
 import FooterWithMarquee from '../components/FooterWithMarquee';
 import SimpleContactForm from '../components/SimpleContactForm';
+import RelatedServicesBielefeld from '../components/RelatedServicesBielefeld';
 
 export default function DokumentationsverfahrenBielefeld() {
   const [isVisible, setIsVisible] = useState(false);
@@ -629,6 +630,9 @@ export default function DokumentationsverfahrenBielefeld() {
           </div>
         </div>
       </section>
+
+      {/* Related Services - Internal Linking for SEO */}
+      <RelatedServicesBielefeld currentSlug="dokumentationsverfahren-bielefeld" category="beratung" maxServices={6} />
 
       {/* Contact Form */}
       <SimpleContactForm />
