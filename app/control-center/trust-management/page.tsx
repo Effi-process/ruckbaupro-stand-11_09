@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import GlassHeader from '../components/GlassHeader';
+import GlassHeader from '../../components/GlassHeader';
 import Link from 'next/link';
 import Icon from '../../components/Icon';
 import FooterWithMarquee from '../../components/FooterWithMarquee';
