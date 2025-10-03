@@ -188,6 +188,7 @@ export default function LeistungenPage() {
               {services.map((service, index) => (
                 <div
                   key={index}
+                  id={service.title.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}
                   className="group relative flex"
                   onMouseEnter={() => setHoveredService(index)}
                   onMouseLeave={() => setHoveredService(null)}
@@ -232,7 +233,7 @@ export default function LeistungenPage() {
 
                       {/* CTA Button */}
                       <Link
-                        href={`/leistungen/${service.title.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
+                        href={`/leistungen/${service.title.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
                         className="inline-flex items-center justify-center w-full px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300 mt-auto"
                       >
                         Ins Detail
