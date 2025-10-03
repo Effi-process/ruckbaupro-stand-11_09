@@ -70,6 +70,24 @@ export default function Home() {
         </section>
       </ScrollAnimation>
 
+      {/* Karriere CTA Section */}
+      <section className="py-16 bg-gradient-to-b from-[#1a2332] to-gray-800">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Werden Sie Teil unseres Teams
+          </h2>
+          <p className="text-lg text-white/80 mb-8">
+            Wir suchen motivierte Fachkräfte für sichere und zukunftsorientierte Arbeitsplätze
+          </p>
+          <Link
+            href="/karriere"
+            className="inline-block bg-cerulean text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-indigo-dye transition-all duration-300"
+          >
+            Zu den Karrieremöglichkeiten
+          </Link>
+        </div>
+      </section>
+
       {/* Footer with Marquee */}
       <FooterWithMarquee />
     </main>
